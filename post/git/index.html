@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Git - 六一的部落格</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="六一" /><meta name="description" content="代码管理, 版本控制 " /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.107.0 with theme even" />
+
+
+<link rel="canonical" href="https://enjoy61.github.io/post/git/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.d620071d3eadf2b6a8110ffc26f1209f786994ebcd1641a7bce59eadb5f1a133.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Git" />
+<meta property="og:description" content="代码管理, 版本控制 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://enjoy61.github.io/post/git/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-10T21:44:19+00:00" />
+<meta property="article:modified_time" content="2023-07-25T18:01:29+08:00" />
+
+<meta itemprop="name" content="Git">
+<meta itemprop="description" content="代码管理, 版本控制 "><meta itemprop="datePublished" content="2023-06-10T21:44:19+00:00" />
+<meta itemprop="dateModified" content="2023-07-25T18:01:29+08:00" />
+<meta itemprop="wordCount" content="1452">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git"/>
+<meta name="twitter:description" content="代码管理, 版本控制 "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Clean Rain</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Clean Rain</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Git</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-06-10 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#方法一">方法一</a></li>
+            <li><a href="#方法二">方法二</a></li>
+            <li><a href="#方法三">方法三</a></li>
+            <li><a href="#若安装成功-可执行git命令查看版本">若安装成功, 可执行git命令查看版本</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#在github设置ssh公钥">在Github设置SSH公钥</a></li>
+            <li><a href="#查看当前配置">查看当前配置</a></li>
+            <li><a href="#本地配置git账户">本地配置Git账户</a></li>
+            <li><a href="#设置代理">设置代理</a></li>
+          </ul>
+        </li>
+        <li><a href="#初始化项目">初始化项目</a>
+          <ul>
+            <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
+            <li><a href="#场景二-手动配置上游信息">场景二: 手动配置上游信息</a></li>
+            <li><a href="#查看远端信息">查看远端信息</a></li>
+            <li><a href="#场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</a></li>
+            <li><a href="#子模块管理">子模块管理</a>
+              <ul>
+                <li><a href="#添加子模块">添加子模块</a></li>
+                <li><a href="#从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</a></li>
+              </ul>
+            </li>
+            <li><a href="#设置项目同步链接">设置项目同步链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交">提交</a>
+          <ul>
+            <li><a href="#文件托管">文件托管</a>
+              <ul>
+                <li><a href="#添加">添加</a></li>
+                <li><a href="#删除">删除</a></li>
+                <li><a href="#查看已托管文件状态">查看已托管文件状态</a></li>
+                <li><a href="#查看项目内所有文件状态">查看项目内所有文件状态</a></li>
+              </ul>
+            </li>
+            <li><a href="#提交">提交</a>
+              <ul>
+                <li><a href="#提交当前改动">提交当前改动</a></li>
+                <li><a href="#推送到远端">推送到远端</a></li>
+                <li><a href="#查看提交记录">查看提交记录</a></li>
+                <li><a href="#删除提交记录">删除提交记录</a></li>
+              </ul>
+            </li>
+            <li><a href="#存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</a></li>
+            <li><a href="#提交规范">提交规范</a>
+              <ul>
+                <li><a href="#标题行-必填">标题行-必填</a></li>
+                <li><a href="#正文">正文</a></li>
+                <li><a href="#页脚注释">页脚注释</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#分支">分支</a>
+          <ul>
+            <li><a href="#当前分支和分支列表">当前分支和分支列表</a></li>
+            <li><a href="#切换到已有分支">切换到已有分支</a></li>
+            <li><a href="#创建分支">创建分支</a></li>
+            <li><a href="#创建并切换到新分支">创建并切换到新分支</a></li>
+            <li><a href="#删除本地分支">删除本地分支</a></li>
+            <li><a href="#删除上游分支">删除上游分支</a></li>
+            <li><a href="#创建新分支后首次提交-需将分支推送到远端">创建新分支后首次提交，需将分支推送到远端</a></li>
+            <li><a href="#重命名分支">重命名分支</a>
+              <ul>
+                <li><a href="#未推送到远端-重命名即可">未推送到远端, 重命名即可</a></li>
+                <li><a href="#已推送过远端">已推送过远端</a></li>
+              </ul>
+            </li>
+            <li><a href="#分支合并">分支合并</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>代码管理, 版本控制 <br/></p>
+<h2 id="安装">安装</h2>
+<p><code>macOS</code> <br/></p>
+<h3 id="方法一">方法一</h3>
+<p>Xcode自带Git，无需安装 <br/></p>
+<h3 id="方法二">方法二</h3>
+<p>使用homebrew安装较新版本 <br/></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="方法三">方法三</h3>
+<p>下载源码, 编译安装 <br/>
+<a href="https://mirrors.edge.kernel.org/pub/software/scm/git/">官网下载git-2.41.0.tar.gz</a> <br/></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="若安装成功-可执行git命令查看版本">若安装成功, 可执行git命令查看版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git -v      
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置">配置</h2>
+<h3 id="在github设置ssh公钥">在Github设置SSH公钥</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 生成秘钥</span>
+</span></span><span class="line"><span class="cl">ssh-keygen
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat ~/.ssh/id_rsa.pub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拷贝公钥到Github <br/></p>
+<h3 id="查看当前配置">查看当前配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="本地配置git账户">本地配置Git账户</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;enjoy61&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;enjoy61@protonmail.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置代理">设置代理</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 用代理端口替换1949</span>
+</span></span><span class="line"><span class="cl">git config --global https.proxy https://localhost:1949
+</span></span><span class="line"><span class="cl">git config --global http.proxy http://localhost:1949
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消设置</span>
+</span></span><span class="line"><span class="cl">git config --global --unset http.proxy
+</span></span><span class="line"><span class="cl">git config --global --unset https.proxy
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="初始化项目">初始化项目</h2>
+<p>已在Github创建项目 <br/></p>
+<h3 id="场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone git@github.com:enjoy61/even.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="场景二-手动配置上游信息">场景二: 手动配置上游信息</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add cute git@github.com:enjoy61/even.git <span class="c1"># cute为上游别名</span>
+</span></span><span class="line"><span class="cl">git fetch cute <span class="c1"># 拉取上游内容，和Github项目同步</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="查看远端信息">查看远端信息</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add README.md <span class="c1"># 添加管理文件</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:enjoy61/even.git
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="子模块管理">子模块管理</h3>
+<h4 id="添加子模块">添加子模块</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git submodule add git@github.com:enjoy61/hugo-theme-even.git themes/even
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recursive git@github.com:enjoy61/even.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置项目同步链接">设置项目同步链接</h3>
+<ul>
+<li>SSH <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote set-url cute git@github.com:enjoy61/even.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>HTTPS <br/>
+<em>push时需要验证，Github不再支持用户名和密码</em> <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote set-url cute https://github.com/enjoy61/even.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="提交">提交</h2>
+<h3 id="文件托管">文件托管</h3>
+<h4 id="添加">添加</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add file <span class="c1"># 指定文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git add -A <span class="c1"># 所有文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="删除">删除</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rm file
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看已托管文件状态">查看已托管文件状态</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git diff
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看项目内所有文件状态">查看项目内所有文件状态</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git status
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="提交">提交</h3>
+<h4 id="提交当前改动">提交当前改动</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="推送到远端">推送到远端</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查看提交记录">查看提交记录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="删除提交记录">删除提交记录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看提交记录</span>
+</span></span><span class="line"><span class="cl">git log <span class="c1"># 最新提交 F E D C B，要删除F和E，记录D</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置回溯目标</span>
+</span></span><span class="line"><span class="cl">git rebase -i D <span class="c1"># 将F E的pick改为drop</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查设置是否生效</span>
+</span></span><span class="line"><span class="cl">git log <span class="c1"># 查看当前提交 D C B</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 同步到远端</span>
+</span></span><span class="line"><span class="cl">git push cute master --force <span class="c1"># 上游cute 分支master</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</h3>
+<p><code>不建议如此操作，提交前建议检阅改动</code> <br/></p>
+<ol>
+<li>项目文件夹一式两份，A和A_BAK, 项目新版本B <br/></li>
+<li>删除文件夹A内所有代码 <br/>
+<em>不会删除.git文件夹，提交和同步记录均保留; .gitignore忽略的文件夹被删除</em> <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf A/*
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>将B内的所有文件拷贝到A <br/>
+<em>不会拷贝.git</em> <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -r B A
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>打开文件夹A, 再次提交 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Comments&#34;</span>
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="提交规范">提交规范</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;footer&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="标题行-必填">标题行-必填</h4>
+<!--list-separator-->
+<ul>
+<li>类型
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feat</td>
+<td>feature 新功能</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>修复bug</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>文档</td>
+</tr>
+<tr>
+<td>style</td>
+<td>格式，如.clang-format</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>重构</td>
+</tr>
+<tr>
+<td>test</td>
+<td>测试用例</td>
+</tr>
+<tr>
+<td>build</td>
+<td>项目构建和依赖项</td>
+</tr>
+<tr>
+<td>revert</td>
+<td>回退</td>
+</tr>
+<tr>
+<td>ci</td>
+<td>持续集成</td>
+</tr>
+<tr>
+<td>perf</td>
+<td>性能优化</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>代码合并</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>同步主线或分支的bug</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>其他类型</td>
+</tr>
+<tr>
+<td>release</td>
+<td>新版本发布</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>工作流</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>受到提交影响的范围</p>
+<p><code>scope</code> <br/></p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>概述</p>
+<p><code>subject</code> <br/></p>
+<ul>
+<li>动词开头 <br/></li>
+<li>如果用英文，使用第一人称现在时，首字母小写 <br/></li>
+<li>结尾不加句号 <br/></li>
+</ul>
+</li>
+</ul>
+<h4 id="正文">正文</h4>
+<p>具体修改内容, 可多行 <br/></p>
+<h4 id="页脚注释">页脚注释</h4>
+<p>备注 <br/></p>
+<h2 id="分支">分支</h2>
+<h3 id="当前分支和分支列表">当前分支和分支列表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="切换到已有分支">切换到已有分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建分支">创建分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建并切换到新分支">创建并切换到新分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout -b iss53
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除本地分支">删除本地分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -d iss51
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除上游分支">删除上游分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push origin -d iss51
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建新分支后首次提交-需将分支推送到远端">创建新分支后首次提交，需将分支推送到远端</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push --set-upstream cute master  <span class="c1"># 上游cute 新分支master</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="重命名分支">重命名分支</h3>
+<h4 id="未推送到远端-重命名即可">未推送到远端, 重命名即可</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -m oldName newName
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="已推送过远端">已推送过远端</h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>重命名本地分支</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -m oldName newName
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>删除远端分支</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push --delete origin oldName <span class="c1"># 上游origin 分支oldName</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>将本地分支推送到远端</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push origin newName
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>将本地分支和远端分支关联</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch --set-upstream-to origin/newName
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="分支合并">分支合并</h3>
+<p>合并过程中可能产生冲突 <br/>
+<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">git-scm</a> <br/></p>
+<ul>
+<li>在分支iss53上开发新功能 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master <span class="c1"># 主分支</span>
+</span></span><span class="line"><span class="cl">git checkout -b iss53
+</span></span><span class="line"><span class="cl">vim index.html
+</span></span><span class="line"><span class="cl">git commit -a -m <span class="s1">&#39;added a new footer [issue 53]&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>在分支hotfix上解决问题 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master <span class="c1"># 主分支        </span>
+</span></span><span class="line"><span class="cl">git checkout -b hotfix
+</span></span><span class="line"><span class="cl">vim index.html
+</span></span><span class="line"><span class="cl">git commit -a -m <span class="s1">&#39;fixed the broken email address&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>在主分支上修复问题，并删除hotfix分支 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">git merge hotfix
+</span></span><span class="line"><span class="cl">git branch -d hotfix
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>继续在分支iss53上开发新功能 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout iss53
+</span></span><span class="line"><span class="cl">vim index.html
+</span></span><span class="line"><span class="cl">git commit -a -m <span class="s1">&#39;finished the new footer [issue 53]&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>合并新功能到主分支，并删除iss53分支 <br/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">git merge iss53
+</span></span><span class="line"><span class="cl">git branch -d iss53
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">六一</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-07-25
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023
+    <span><i class="iconfont icon-footer"></i></span>
+    
+    <span>All Rights Reserved.</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

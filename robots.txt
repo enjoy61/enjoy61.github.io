@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://enjoy61.github.io/sitemap.xml
