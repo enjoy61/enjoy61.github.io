@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.3cd6d471ff768e7084c30f026169648b306fedfe9914e492dee25ae4607feae4e7cea0ff7263323f80c5b373b25e406066ad0dc0e02ae3d01a9b4fe77a818edd.css" integrity="sha512-PNbUcf92jnCEww8CYWlkizBv7f6ZFOSS3uJa5GB/6uTnzqD/cmMyP4DFs3OyXkBgZq0NwOAq49Aam0/neoGO3Q==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>使用Hugo&#43;Github搭建静态博客 - 六一的部落格</title>
+<meta name="description" content="说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hugo&#43;Github搭建静态博客">
+<meta property="og:description" content="说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
+<meta property="og:site_name" content="六一的部落格">
+<meta property="article:published_time" content="2023-06-08T10:57:46+00:00">
+  <meta property="article:modified_time" content="2023-08-03T22:44:18+08:00">
+  
+  <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
+      <meta property="og:image:alt" content="六一的部落格">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="使用Hugo&#43;Github搭建静态博客">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
+    <meta name="twitter:image:alt" content="使用Hugo&#43;Github搭建静态博客">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://enjoy61.github.io/#/schema/organization/1",
+      "name": "Doks",
+      "url": "https://enjoy61.github.io/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/#/schema/image/1",
+          "url": "https://enjoy61.github.io/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "https://enjoy61.github.io/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://enjoy61.github.io/#/schema/website/1",
+      "url": "https://enjoy61.github.io/",
+      "name": "六一的部落格",
+      "description": "",
+      "publisher": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/",
+      "url": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/",
+      "name": "使用Hugo\u002bGithub搭建静态博客",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://enjoy61.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        },
+      "datePublished": "2023-06-08T10:57:46CET",
+      "dateModified": "2023-08-03T22:44:18CET",
+      "breadcrumb": {
+        "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/",
+          "url": "https://enjoy61.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/",
+          "url": "https://enjoy61.github.io/docs/",
+          "name": "Docs"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/",
+          "url": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/",
+          "name": "% E5%8 D%9 A% E5% Ae% A2"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://enjoy61.github.io/#/schema/article/1",
+          "headline": "使用Hugo\u002bGithub搭建静态博客",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
+          },
+          "datePublished": "2023-06-08T10:57:46CET",
+          "dateModified": "2023-08-03T22:44:18CET",
+          "author": {
+            "@id": "https://enjoy61.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://enjoy61.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://enjoy61.github.io/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2",
+          "url": "https://enjoy61.github.io/doks.png",
+          "contentUrl": "https://enjoy61.github.io/doks.png",
+          "caption": "使用Hugo\u002bGithub搭建静态博客"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="https://enjoy61.github.io/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="https://enjoy61.github.io/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://enjoy61.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://enjoy61.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://enjoy61.github.io/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="https://enjoy61.github.io/site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-fluid flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="/" aria-label="六一的部落格">
+      六一的部落格
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c50d13646ec66f1929da5d491f2dff0f" aria-expanded="true">
+          博客
+        </button>
+        <div class="collapse show" id="section-c50d13646ec66f1929da5d491f2dff0f">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="/">六一的部落格</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">笔记</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/blog/">日志</a>
+              </li>
+            
+          
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  关于
+                  <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                      <a class="dropdown-item" href="/about/skill-tree/">技能树</a>
+                    </li>
+                  <li>
+                      <a class="dropdown-item" href="/about/hobby/">Hobby</a>
+                    </li>
+                  </ul>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/enjoy61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-fluid">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c50d13646ec66f1929da5d491f2dff0f" aria-expanded="true">
+          博客
+        </button>
+        <div class="collapse show" id="section-c50d13646ec66f1929da5d491f2dff0f">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c50d13646ec66f1929da5d491f2dff0f" aria-expanded="true">
+          博客
+        </button>
+        <div class="collapse show" id="section-c50d13646ec66f1929da5d491f2dff0f">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#安装hugo">安装Hugo</a>
+          <ul>
+            <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+            <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建站点项目">创建站点项目</a></li>
+        <li><a href="#使用主题anubis">使用主题anubis</a></li>
+        <li><a href="#构建静态网页">构建静态网页</a>
+          <ul>
+            <li><a href="#本地测试">本地测试</a></li>
+            <li><a href="#构建静态页面">构建静态页面</a></li>
+          </ul>
+        </li>
+        <li><a href="#在github创建项目">在Github创建项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#安装hugo">安装Hugo</a>
+          <ul>
+            <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+            <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建站点项目">创建站点项目</a></li>
+        <li><a href="#使用主题anubis">使用主题anubis</a></li>
+        <li><a href="#构建静态网页">构建静态网页</a>
+          <ul>
+            <li><a href="#本地测试">本地测试</a></li>
+            <li><a href="#构建静态页面">构建静态页面</a></li>
+          </ul>
+        </li>
+        <li><a href="#在github创建项目">在Github创建项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%8D%9A%E5%AE%A2/">博客</a></li>
+<li class="breadcrumb-item active" aria-current="page">使用Hugo&#43;Github搭建静态博客</li>
+					</ol>
+				</nav>
+			
+			<h1>使用Hugo&#43;Github搭建静态博客</h1>
+			<p class="lead"></p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#安装hugo">安装Hugo</a>
+          <ul>
+            <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+            <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建站点项目">创建站点项目</a></li>
+        <li><a href="#使用主题anubis">使用主题anubis</a></li>
+        <li><a href="#构建静态网页">构建静态网页</a>
+          <ul>
+            <li><a href="#本地测试">本地测试</a></li>
+            <li><a href="#构建静态页面">构建静态页面</a></li>
+          </ul>
+        </li>
+        <li><a href="#在github创建项目">在Github创建项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#安装hugo">安装Hugo</a>
+          <ul>
+            <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+            <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建站点项目">创建站点项目</a></li>
+        <li><a href="#使用主题anubis">使用主题anubis</a></li>
+        <li><a href="#构建静态网页">构建静态网页</a>
+          <ul>
+            <li><a href="#本地测试">本地测试</a></li>
+            <li><a href="#构建静态页面">构建静态页面</a></li>
+          </ul>
+        </li>
+        <li><a href="#在github创建项目">在Github创建项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+			</nav>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Github Pages</td>
+<td>使用Github提供的免费服务部署静态博客</td>
+</tr>
+<tr>
+<td>Hugo</td>
+<td>本地构建静态网页</td>
+</tr>
+<tr>
+<td>anubis</td>
+<td>主题</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装hugo">安装Hugo <a href="#%e5%ae%89%e8%a3%85hugo" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://github.com/gohugoio/hugo#install-hugo-as-your-site-generator-binary-install">Github</a> <br/>
+<a href="https://gohugo.io/">官网</a> <br/></p>
+<h3 id="方法一-使用go安装">方法一: 使用go安装 <a href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e4%bd%bf%e7%94%a8go%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Windows</code> <br/></p>
+<ol>
+<li>安装go <br/>
+<a href="https://go.dev/dl/">官网下载</a> <br/>
+<ul>
+<li>环境变量 <br/>
+<pre><code class="language-bash"># go
+export PATH=/usr/local/go/bin:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=/Users/USERNAME/go
+export GOBIN=/Users/USERNAME/go/bin
+
+# go安装的软件
+export PATH=$GOBIN:$PATH
+</code></pre>
+</li>
+</ul>
+</li>
+<li>安装hugo <br/>
+<ul>
+<li>如若遇上网络不佳, 配置代理 <br/>
+<pre><code class="language-bash">go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GOSUMDB=off
+</code></pre>
+</li>
+<li>安装并验证 <br/>
+<pre><code class="language-bash">go install github.com/gohugoio/hugo@latest
+hugo env -v
+</code></pre>
+</li>
+<li><a href="https://github.com/gohugoio/hugo/releases">部分主题需用hugo_extended提供的支持</a> <br/></li>
+</ul>
+</li>
+</ol>
+<h3 id="方法二-使用homebrew安装">方法二: 使用homebrew安装 <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e4%bd%bf%e7%94%a8homebrew%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>macOS</code> <br/></p>
+<pre><code class="language-bash">brew install hugo
+</code></pre>
+<h2 id="创建站点项目">创建站点项目 <a href="#%e5%88%9b%e5%bb%ba%e7%ab%99%e7%82%b9%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>新建站点 <br/>
+<pre><code class="language-bash">hugo new site /site/path
+</code></pre>
+</li>
+<li>站点项目结构 <br/>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config.toml</td>
+<td>配置文件；yaml格式也可以</td>
+</tr>
+<tr>
+<td>content</td>
+<td>存放blog；支持md和org</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>存放主题</td>
+</tr>
+<tr>
+<td>public</td>
+<td>生成的静态页面；同步到Github项目</td>
+</tr>
+<tr>
+<td>archetypes</td>
+<td>文章模版</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>新建博客 <br/>
+所在目录为 ./content/post <br/>
+<pre><code class="language-bash">hugo new post/first-blog.org
+</code></pre>
+</li>
+</ol>
+<h2 id="使用主题anubis">使用主题anubis <a href="#%e4%bd%bf%e7%94%a8%e4%b8%bb%e9%a2%98anubis" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://themes.gohugo.io/themes/hugo-theme-anubis/">anubis on hugo</a> <br/>
+<a href="https://github.com/mitrichius/hugo-theme-anubis">anubis on github</a> <br/></p>
+<ol>
+<li>
+<p>将主题作为项目子模块 <br/></p>
+<pre><code class="language-bash">git init
+git submodule add https://github.com/mitrichius/hugo-theme-anubis.git themes/anubis
+</code></pre>
+</li>
+<li>
+<p>使用anubis提供的模板 <br/>
+<code>./themes/anubis/exampleSite/</code> <br/></p>
+<pre><code class="language-bash">cp themes/anubis/exampleSite/config.toml .
+cp themes/anubis/exampleSite/content/. content
+</code></pre>
+</li>
+<li>
+<p>主题说明 <br/></p>
+<ul>
+<li>提供标签(tags)和分类(categories)功能, 提供文章列表(archives) <br/></li>
+<li>文章存放到content/post目录下 <br/></li>
+</ul>
+</li>
+<li>
+<p>文章模板 <br/>
+<code>yaml</code> <br/></p>
+<blockquote>
+<p>&mdash; <br/>
+author: &ldquo;author&rdquo; <br/>
+title: &ldquo;article title&rdquo; <br/>
+date: &ldquo;2023-03-17&rdquo; <br/>
+description: &ldquo;article description&rdquo; <br/>
+tags: [ <br/>
+&ldquo;tag-1&rdquo;, <br/>
+&ldquo;tag-2&rdquo;, <br/>
+] <br/>
+categories: [ <br/>
+&ldquo;category&rdquo;, <br/>
+] <br/>
+&mdash; <br/></p>
+<p>简单介绍 <br/></p>
+<p>&lt;!&ndash;more&ndash;&gt; <br/></p>
+<p>正文 <br/></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="构建静态网页">构建静态网页 <a href="#%e6%9e%84%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th></th>
+<th>构建或测试</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ndash;theme=anubis</td>
+<td>设置主题</td>
+<td>-t anubis</td>
+<td>both</td>
+</tr>
+<tr>
+<td>&ndash;watch</td>
+<td>修改文件后自动刷新浏览器</td>
+<td>-w</td>
+<td>server</td>
+</tr>
+<tr>
+<td>&ndash;buildDrafts</td>
+<td>包括标记为draft的笔记</td>
+<td>-D</td>
+<td>both</td>
+</tr>
+<tr>
+<td>&ndash;buildFuture</td>
+<td>包括新发布笔记；检查date选项</td>
+<td>-F</td>
+<td>both</td>
+</tr>
+<tr>
+<td>&ndash;baseUrl=&quot;<a href="http://enjoy61.github.io/">http://enjoy61.github.io/</a>&quot;</td>
+<td>未配置编译，GithubPage部署会丢失样式</td>
+<td></td>
+<td>both</td>
+</tr>
+<tr>
+<td>&ndash;cleanDestinationDir</td>
+<td>将public文件夹中不再使用的文件删除</td>
+<td></td>
+<td>hugo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="本地测试">本地测试 <a href="#%e6%9c%ac%e5%9c%b0%e6%b5%8b%e8%af%95" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>查询server选项 <br/>
+<a href="https://www.gohugo.org/doc/overview/quickstart/">参考</a> <br/>
+<pre><code class="language-bash">hugo help server
+</code></pre>
+</li>
+<li>访问 <a href="http://localhost:1313/">http://localhost:1313/</a> <br/>
+<pre><code class="language-bash">hugo server --theme=anubis --watch
+# hugo server
+</code></pre>
+</li>
+</ul>
+<h3 id="构建静态页面">构建静态页面 <a href="#%e6%9e%84%e5%bb%ba%e9%9d%99%e6%80%81%e9%a1%b5%e9%9d%a2" class="anchor" aria-hidden="true">#</a></h3>
+<p>生成文件路径 ./public/ <br/></p>
+<pre><code class="language-bash">hugo --theme=anubis --baseUrl=&quot;https://enjoy61.github.io/&quot;
+# hugo
+</code></pre>
+<h2 id="在github创建项目">在Github创建项目 <a href="#%e5%9c%a8github%e5%88%9b%e5%bb%ba%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>创建仓库 <br/>
+<ul>
+<li>仓库名为enjoy61.github.io <br/></li>
+<li>使用Github Pages提供的免费服务需公开项目 <br/></li>
+</ul>
+</li>
+<li>测试服务: 为github设置主题 <br/>
+添加_config.yaml文件 <br/>
+<pre><code class="language-bash">remote_theme: pages-themes/midnight@v0.2.0
+</code></pre>
+</li>
+<li>将public文件夹提交到仓库 <br/></li>
+</ol>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://github.com/">Github</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
+  <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.de797611dbf524a36fff4b49c4d685fee96f7bf62d74fba278871d5abf3e6e47544134a2d1a0e6b08b24db7fff7d8b3712b7e499b2d51456f3f70e67800cb4fe.js" integrity="sha512-3nl2Edv1JKNv/0tJxNaF/ulve/YtdPuieIcdWr8&#43;bkdUQTSi0aDmsIsk23//fYs3ErfkmbLVFFbz9w5ngAy0/g==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>
