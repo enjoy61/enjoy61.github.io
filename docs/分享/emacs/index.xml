@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on </title>
+    <link>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/</link>
+    <description>Recent content in Emacs on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Jun 2023 01:02:04 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>org-mode</title>
+      <link>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/</link>
+      <pubDate>Sat, 10 Jun 2023 23:56:27 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/</guid>
+      <description>便签 # The Org Manual 样式 # 删除线 +Content+ 下划线 ox-hugo转markdown存在问题 _Content_ 文本块 =test= ~test~ 斜体 /test/ 加粗 *test* 分隔线 ----- 标题 # 标题间移动 # - 上一个 C-c C-p 下一个 C-c C-n 去到上级标题 C-c C-u 同级标题间移动 上一个 C-c C-b 同级标题间移动 下一个 C-c C-f 创建标题 # - 同级标题 C-RET 同级标题 / 列表项 M-RET 同级TODO标题 M-S-RET 标题、列表项转换 # - 标题转换为列表项 C-c - 文本、列表项 转换为标题 C-c * 升降级 # - 标题、列表项 升降级 M-LEFT / M-RIGHT 子树 # - 删除子树 C-c C-x C-w 拷贝子树 C-c C-x M-w 升降级 M-S-LEFT / M-S-RIGHT 标题状态切换 # - TODO标题状态切换 C-c C-t S-LEFT / S-RIGHT &amp;gt; 普通标题 &amp;gt; TODO &amp;gt; DONE 显示 # - 进入预览模式，显示一级标题 C-c C-j 标题展开 S-TAB &amp;gt; 只展开一级标题 &amp;gt; 展开所有标题 &amp;gt; 展开全部内容 模板 # Structure Templates - 快捷键 C-c C-, &amp;lt;s TAB 不再支持 函数 org-insert-structure-template 模板样式 # 代码框 填写编程语言 // C++样式 #+begin_src &amp;lt;language&amp;gt; #+end_src 文本框 文本框样式 #+begin_example #+end_example quote quote样式 #+begin_quote #+end_quote 代码块编辑 # - 插入代码框 C-c C-, s 在新窗口编辑代码 C-c &#39; 保存修改 C-x C-s 关闭编辑窗口(未保存丢失) C-c C-k 执行 C-c C-c 计时 # 精确到分钟 - 开始 C-c C-x C-i 停止 C-c C-x C-o 链接 # - 插入 C-c C-l 打开 C-c C-o 显示/ 隐藏 图片 C-c C-x C-v 链接 # [[http://www.</description>
+    </item>
+    
+  </channel>
+</rss>

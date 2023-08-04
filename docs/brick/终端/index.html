@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.31d3002bebb18731060d5e1f7108e87199c049d3c84f191c8e91cc6256d68c790c49029116304792562db5cff5061ad4042bdc6fe67c551d37580f87fd1e99f1.css" integrity="sha512-MdMAK&#43;uxhzEGDV4fcQjocZnASdPITxkcjpHMYlbWjHkMSQKRFjBHklYttc/1BhrUBCvcb&#43;Z8VR03WA&#43;H/R6Z8Q==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>终端 - 六一的部落格</title>
+<meta name="description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终端">
+<meta property="og:description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:site_name" content="六一的部落格">
+<meta property="article:published_time" content="2023-06-10T22:11:40+00:00">
+  <meta property="article:modified_time" content="2023-08-04T18:50:45+08:00">
+  
+  <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
+      <meta property="og:image:alt" content="六一的部落格">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="终端">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
+    <meta name="twitter:image:alt" content="终端">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://enjoy61.github.io/#/schema/organization/1",
+      "name": "Doks",
+      "url": "https://enjoy61.github.io/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/#/schema/image/1",
+          "url": "https://enjoy61.github.io/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "https://enjoy61.github.io/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://enjoy61.github.io/#/schema/website/1",
+      "url": "https://enjoy61.github.io/",
+      "name": "六一的部落格",
+      "description": "",
+      "publisher": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
+      "url": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
+      "name": "终端",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://enjoy61.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        },
+      "datePublished": "2023-06-10T22:11:40CET",
+      "dateModified": "2023-08-04T18:50:45CET",
+      "breadcrumb": {
+        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/",
+          "url": "https://enjoy61.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/",
+          "url": "https://enjoy61.github.io/docs/",
+          "name": "Docs"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/brick/",
+          "url": "https://enjoy61.github.io/docs/brick/",
+          "name": "Brick"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://enjoy61.github.io/#/schema/article/1",
+          "headline": "终端",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          },
+          "datePublished": "2023-06-10T22:11:40CET",
+          "dateModified": "2023-08-04T18:50:45CET",
+          "author": {
+            "@id": "https://enjoy61.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://enjoy61.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://enjoy61.github.io/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2",
+          "url": "https://enjoy61.github.io/doks.png",
+          "contentUrl": "https://enjoy61.github.io/doks.png",
+          "caption": "终端"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="https://enjoy61.github.io/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="https://enjoy61.github.io/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://enjoy61.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://enjoy61.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://enjoy61.github.io/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="https://enjoy61.github.io/site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-fluid flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="/" aria-label="六一的部落格">
+      六一的部落格
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+          🧱
+        </button>
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="/">六一的部落格</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">笔记</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/blog/">日志</a>
+              </li>
+            
+          
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  关于
+                  <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                      <a class="dropdown-item" href="/about/skill-tree/">技能树</a>
+                    </li>
+                  <li>
+                      <a class="dropdown-item" href="/about/hobby/">Hobby</a>
+                    </li>
+                  </ul>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/enjoy61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-fluid">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+          🧱
+        </button>
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+          🧱
+        </button>
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#shell概念">shell概念</a></li>
+        <li><a href="#终端程序">终端程序</a></li>
+        <li><a href="#命令解释器">命令解释器</a></li>
+        <li><a href="#脚本语言">脚本语言</a></li>
+        <li><a href="#shell脚本">Shell脚本</a></li>
+        <li><a href="#命令提示符">命令提示符</a></li>
+        <li><a href="#查看shell信息">查看Shell信息</a></li>
+        <li><a href="#shell操作">Shell操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#shell概念">shell概念</a></li>
+        <li><a href="#终端程序">终端程序</a></li>
+        <li><a href="#命令解释器">命令解释器</a></li>
+        <li><a href="#脚本语言">脚本语言</a></li>
+        <li><a href="#shell脚本">Shell脚本</a></li>
+        <li><a href="#命令提示符">命令提示符</a></li>
+        <li><a href="#查看shell信息">查看Shell信息</a></li>
+        <li><a href="#shell操作">Shell操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
+<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
+<li class="breadcrumb-item active" aria-current="page">终端</li>
+					</ol>
+				</nav>
+			
+			<h1>终端</h1>
+			<p class="lead"></p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#shell概念">shell概念</a></li>
+        <li><a href="#终端程序">终端程序</a></li>
+        <li><a href="#命令解释器">命令解释器</a></li>
+        <li><a href="#脚本语言">脚本语言</a></li>
+        <li><a href="#shell脚本">Shell脚本</a></li>
+        <li><a href="#命令提示符">命令提示符</a></li>
+        <li><a href="#查看shell信息">查看Shell信息</a></li>
+        <li><a href="#shell操作">Shell操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#shell概念">shell概念</a></li>
+        <li><a href="#终端程序">终端程序</a></li>
+        <li><a href="#命令解释器">命令解释器</a></li>
+        <li><a href="#脚本语言">脚本语言</a></li>
+        <li><a href="#shell脚本">Shell脚本</a></li>
+        <li><a href="#命令提示符">命令提示符</a></li>
+        <li><a href="#查看shell信息">查看Shell信息</a></li>
+        <li><a href="#shell操作">Shell操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+			</nav>
+			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://www.bilibili.com/video/BV1rk4y1W7dZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click">介绍CLI，Terminal，Shell和Prompt视频</a> <br/></p>
+<h2 id="shell概念">shell概念 <a href="#shell%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>接口</code> <br/>
+shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 <br/></p>
+<p>根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 <br/></p>
+<ol>
+<li>CLI <br/>
+<em>Command-Line Interface</em> <br/>
+<code>命令行界面</code> <br/>
+通过文本命令和计算机交互 <br/></li>
+<li>GUI <br/>
+<em>Graphical User Interface</em> <br/>
+<code>图形用户界面</code> <br/>
+通过鼠标操作 <br/></li>
+</ol>
+<p>早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 <br/></p>
+<h2 id="终端程序">终端程序 <a href="#%e7%bb%88%e7%ab%af%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Terminal</code> <br/>
+<code>Wrapper Program</code> <br/>
+在终端输入文本命令 <br/></p>
+<table>
+<thead>
+<tr>
+<th>终端程序</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iTerm</td>
+<td>MacOS</td>
+</tr>
+<tr>
+<td>Windows Terminal</td>
+<td>Windows</td>
+</tr>
+<tr>
+<td>Gnome Terminal</td>
+<td>使用Gnome作为桌面的Linux自带的终端程序</td>
+</tr>
+<tr>
+<td>Hyper</td>
+<td></td>
+</tr>
+<tr>
+<td>Warp</td>
+<td>目前MacOS；自动补全，鼠标交互，内置工作流，AI功能</td>
+</tr>
+<tr>
+<td>Alacrity</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令解释器">命令解释器 <a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a%e5%99%a8" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Shell</code> <code>程序</code> <br/>
+终端中运行的程序。接受命令，然后解释并执行。 <br/></p>
+<p>Shell启动时自动读取配置文件。 <br/></p>
+<table>
+<thead>
+<tr>
+<th>Shell</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sh</td>
+<td><em>Bourne Shell</em></td>
+</tr>
+<tr>
+<td></td>
+<td>UNIX上的标准shell</td>
+</tr>
+<tr>
+<td>bash</td>
+<td><em>Bourne-Again Shell</em></td>
+</tr>
+<tr>
+<td></td>
+<td>GNU开发；Linux默认</td>
+</tr>
+<tr>
+<td></td>
+<td>不完全兼容sh shell，对一些命令和参数进行了扩展</td>
+</tr>
+<tr>
+<td></td>
+<td>配置文件 ~/.bash_profile</td>
+</tr>
+<tr>
+<td>zsh</td>
+<td>19年之前MacOS默认Bash；之后使用zsh</td>
+</tr>
+<tr>
+<td></td>
+<td>配置文件 ~/zshrc</td>
+</tr>
+<tr>
+<td></td>
+<td>第三方框架oh-my-zsh提供其他功能</td>
+</tr>
+<tr>
+<td>phish</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="脚本语言">脚本语言 <a href="#%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80" class="anchor" aria-hidden="true">#</a></h2>
+<p>需要解释器，每次运行时都需要解释。 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>PHP</td>
+</tr>
+<tr>
+<td>Lua</td>
+</tr>
+<tr>
+<td>Python</td>
+</tr>
+<tr>
+<td>C#</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shell脚本">Shell脚本 <a href="#shell%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>开发语言</code> <code>Shell Script</code> <br/>
+由一连串Shell命令组成，可以指定解释脚本的Shell程序。 <br/></p>
+<h2 id="命令提示符">命令提示符 <a href="#%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Prompt</code> <br/>
+命令解释器提供并在终端显示，如当前路径和git信息。 <br/></p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第三方提示</td>
+<td><code>Powerline</code> <code>Starship</code> <code>Power Level 10K</code> <code>Spaceship</code></td>
+</tr>
+<tr>
+<td>第三方框架</td>
+<td><code>oh-my-zsh</code></td>
+</tr>
+<tr>
+<td></td>
+<td>提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查看shell信息">查看Shell信息 <a href="#%e6%9f%a5%e7%9c%8bshell%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>命令解释器</code> <br/></p>
+<ol>
+<li>当前使用的Shell <br/>
+<pre><code class="language-bash">echo $SHELL
+echo $0
+</code></pre>
+</li>
+<li>已安装Shell <br/>
+<pre><code class="language-bash">cat /etc/shells
+</code></pre>
+</li>
+</ol>
+<h2 id="shell操作">Shell操作 <a href="#shell%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>切换Shell程序 <br/>
+<em>重新打开终端生效</em> <br/>
+<pre><code class="language-bash">chsh -s /bin/bash
+</code></pre>
+<em>不修改SHELL环境变量</em> <br/>
+<pre><code class="language-bash">zsh
+</code></pre>
+</li>
+<li>手动读取配置文件 <br/>
+<em>zsh</em> <br/>
+<pre><code class="language-bash">source ~/.zshrc
+</code></pre>
+</li>
+<li>指定Shell脚本的命令解释器 <br/>
+<pre><code class="language-bash">#!/bin/bash
+</code></pre>
+</li>
+</ol>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; Shell脚本
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					Git &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://github.com/">Github</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
+  <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.2f34193e73c15552dbde449943c6bb0ea9c4f33ebb5abd8b5b6c1331bf35c572b8c5528c975f404dca1e4e51ec744597511632aa93966dc0739837c2605e186d.js" integrity="sha512-LzQZPnPBVVLb3kSZQ8a7DqnE8z67Wr2LW2wTMb81xXK4xVKMl19ATcoeTlHsdEWXURYyqpOWbcBzmDfCYF4YbQ==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>

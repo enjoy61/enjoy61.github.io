@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.31d3002bebb18731060d5e1f7108e87199c049d3c84f191c8e91cc6256d68c790c49029116304792562db5cff5061ad4042bdc6fe67c551d37580f87fd1e99f1.css" integrity="sha512-MdMAK&#43;uxhzEGDV4fcQjocZnASdPITxkcjpHMYlbWjHkMSQKRFjBHklYttc/1BhrUBCvcb&#43;Z8VR03WA&#43;H/R6Z8Q==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>Git - 六一的部落格</title>
+<meta name="description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 git config --list 配置Git账户 git config --global user.name &amp;quot;enjoy61&amp;quot; git config --global user.email &amp;quot;enjoy61@protonmail.com&amp;quot; 配置SSH 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.proxy git config --global --unset https.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 git config --list 配置Git账户 git config --global user.name &quot;enjoy61&quot; git config --global user.email &quot;enjoy61@protonmail.com&quot; 配置SSH 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.proxy git config --global --unset https.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+<meta property="og:site_name" content="六一的部落格">
+<meta property="article:published_time" content="2023-06-10T21:44:19+00:00">
+  <meta property="article:modified_time" content="2023-08-04T13:55:54+08:00">
+  
+  <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
+      <meta property="og:image:alt" content="六一的部落格">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
+    <meta name="twitter:image:alt" content="Git">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://enjoy61.github.io/#/schema/organization/1",
+      "name": "Doks",
+      "url": "https://enjoy61.github.io/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/#/schema/image/1",
+          "url": "https://enjoy61.github.io/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "https://enjoy61.github.io/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://enjoy61.github.io/#/schema/website/1",
+      "url": "https://enjoy61.github.io/",
+      "name": "六一的部落格",
+      "description": "",
+      "publisher": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/",
+      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/",
+      "name": "Git",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://enjoy61.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        },
+      "datePublished": "2023-06-10T21:44:19CET",
+      "dateModified": "2023-08-04T13:55:54CET",
+      "breadcrumb": {
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/",
+          "url": "https://enjoy61.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/",
+          "url": "https://enjoy61.github.io/docs/",
+          "name": "Docs"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "name": "% E5%88%86% E4% Ba% Ab"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/",
+          "name": "% E5% Bc%80% E5%8 F%91% E5% B7% A5% E5%85% B7"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://enjoy61.github.io/#/schema/article/1",
+          "headline": "Git",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/"
+          },
+          "datePublished": "2023-06-10T21:44:19CET",
+          "dateModified": "2023-08-04T13:55:54CET",
+          "author": {
+            "@id": "https://enjoy61.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://enjoy61.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://enjoy61.github.io/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/image/2",
+          "url": "https://enjoy61.github.io/doks.png",
+          "contentUrl": "https://enjoy61.github.io/doks.png",
+          "caption": "Git"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="https://enjoy61.github.io/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="https://enjoy61.github.io/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://enjoy61.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://enjoy61.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://enjoy61.github.io/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="https://enjoy61.github.io/site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-fluid flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="/" aria-label="六一的部落格">
+      六一的部落格
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
+                    开发工具
+                  </button>
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="/">六一的部落格</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">笔记</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/blog/">日志</a>
+              </li>
+            
+          
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  关于
+                  <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                      <a class="dropdown-item" href="/about/skill-tree/">技能树</a>
+                    </li>
+                  <li>
+                      <a class="dropdown-item" href="/about/hobby/">Hobby</a>
+                    </li>
+                  </ul>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/enjoy61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-fluid">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
+                    开发工具
+                  </button>
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
+                    开发工具
+                  </button>
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8b06df0295926efcdcc1f9e13c49848e" aria-expanded="false">
+                    macOS
+                  </button>
+                  <div class="collapse" id="section-8b06df0295926efcdcc1f9e13c49848e">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#方法一-xcode自带">方法一: Xcode自带</a></li>
+            <li><a href="#方法二-使用homebrew安装较新版本">方法二: 使用homebrew安装较新版本</a></li>
+            <li><a href="#方法三-下载源码-编译安装">方法三: 下载源码, 编译安装</a></li>
+            <li><a href="#验证">验证</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#初始化项目">初始化项目</a>
+          <ul>
+            <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
+            <li><a href="#查看远端信息">查看远端信息</a></li>
+            <li><a href="#场景二-手动配置上游信息">场景二: 手动配置上游信息</a></li>
+            <li><a href="#场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</a></li>
+            <li><a href="#子模块管理">子模块管理</a>
+              <ul>
+                <li><a href="#添加子模块">添加子模块</a></li>
+                <li><a href="#从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</a></li>
+              </ul>
+            </li>
+            <li><a href="#设置项目同步链接">设置项目同步链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件托管">文件托管</a>
+          <ul>
+            <li><a href="#添加">添加</a></li>
+            <li><a href="#删除">删除</a></li>
+            <li><a href="#查看托管文件状态">查看托管文件状态</a></li>
+            <li><a href="#查看项目内文件状态">查看项目内文件状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交">提交</a>
+          <ul>
+            <li><a href="#提交当前改动">提交当前改动</a></li>
+            <li><a href="#推送到远端">推送到远端</a></li>
+            <li><a href="#查看提交记录">查看提交记录</a></li>
+            <li><a href="#删除历史提交">删除历史提交</a></li>
+            <li><a href="#存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交规范">提交规范</a>
+          <ul>
+            <li><a href="#标题行">标题行</a>
+              <ul>
+                <li><a href="#类型">类型</a></li>
+                <li><a href="#受到提交影响的范围">受到提交影响的范围</a></li>
+                <li><a href="#概述">概述</a></li>
+              </ul>
+            </li>
+            <li><a href="#正文">正文</a></li>
+            <li><a href="#页脚注释">页脚注释</a></li>
+          </ul>
+        </li>
+        <li><a href="#分支">分支</a>
+          <ul>
+            <li><a href="#当前分支和分支列表">当前分支和分支列表</a></li>
+            <li><a href="#切换分支">切换分支</a></li>
+            <li><a href="#创建分支">创建分支</a></li>
+            <li><a href="#本地创建新分支后-同步到远端">本地创建新分支后, 同步到远端</a></li>
+            <li><a href="#创建并切换">创建并切换</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
+            <li><a href="#重命名分支">重命名分支</a>
+              <ul>
+                <li><a href="#未推送到远端-重命名即可">未推送到远端, 重命名即可</a></li>
+                <li><a href="#已推送过远端">已推送过远端</a></li>
+              </ul>
+            </li>
+            <li><a href="#分支合并">分支合并</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#方法一-xcode自带">方法一: Xcode自带</a></li>
+            <li><a href="#方法二-使用homebrew安装较新版本">方法二: 使用homebrew安装较新版本</a></li>
+            <li><a href="#方法三-下载源码-编译安装">方法三: 下载源码, 编译安装</a></li>
+            <li><a href="#验证">验证</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#初始化项目">初始化项目</a>
+          <ul>
+            <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
+            <li><a href="#查看远端信息">查看远端信息</a></li>
+            <li><a href="#场景二-手动配置上游信息">场景二: 手动配置上游信息</a></li>
+            <li><a href="#场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</a></li>
+            <li><a href="#子模块管理">子模块管理</a>
+              <ul>
+                <li><a href="#添加子模块">添加子模块</a></li>
+                <li><a href="#从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</a></li>
+              </ul>
+            </li>
+            <li><a href="#设置项目同步链接">设置项目同步链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件托管">文件托管</a>
+          <ul>
+            <li><a href="#添加">添加</a></li>
+            <li><a href="#删除">删除</a></li>
+            <li><a href="#查看托管文件状态">查看托管文件状态</a></li>
+            <li><a href="#查看项目内文件状态">查看项目内文件状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交">提交</a>
+          <ul>
+            <li><a href="#提交当前改动">提交当前改动</a></li>
+            <li><a href="#推送到远端">推送到远端</a></li>
+            <li><a href="#查看提交记录">查看提交记录</a></li>
+            <li><a href="#删除历史提交">删除历史提交</a></li>
+            <li><a href="#存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交规范">提交规范</a>
+          <ul>
+            <li><a href="#标题行">标题行</a>
+              <ul>
+                <li><a href="#类型">类型</a></li>
+                <li><a href="#受到提交影响的范围">受到提交影响的范围</a></li>
+                <li><a href="#概述">概述</a></li>
+              </ul>
+            </li>
+            <li><a href="#正文">正文</a></li>
+            <li><a href="#页脚注释">页脚注释</a></li>
+          </ul>
+        </li>
+        <li><a href="#分支">分支</a>
+          <ul>
+            <li><a href="#当前分支和分支列表">当前分支和分支列表</a></li>
+            <li><a href="#切换分支">切换分支</a></li>
+            <li><a href="#创建分支">创建分支</a></li>
+            <li><a href="#本地创建新分支后-同步到远端">本地创建新分支后, 同步到远端</a></li>
+            <li><a href="#创建并切换">创建并切换</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
+            <li><a href="#重命名分支">重命名分支</a>
+              <ul>
+                <li><a href="#未推送到远端-重命名即可">未推送到远端, 重命名即可</a></li>
+                <li><a href="#已推送过远端">已推送过远端</a></li>
+              </ul>
+            </li>
+            <li><a href="#分支合并">分支合并</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li>
+<li class="breadcrumb-item active" aria-current="page">Git</li>
+					</ol>
+				</nav>
+			
+			<h1>Git</h1>
+			<p class="lead"></p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#方法一-xcode自带">方法一: Xcode自带</a></li>
+            <li><a href="#方法二-使用homebrew安装较新版本">方法二: 使用homebrew安装较新版本</a></li>
+            <li><a href="#方法三-下载源码-编译安装">方法三: 下载源码, 编译安装</a></li>
+            <li><a href="#验证">验证</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#初始化项目">初始化项目</a>
+          <ul>
+            <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
+            <li><a href="#查看远端信息">查看远端信息</a></li>
+            <li><a href="#场景二-手动配置上游信息">场景二: 手动配置上游信息</a></li>
+            <li><a href="#场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</a></li>
+            <li><a href="#子模块管理">子模块管理</a>
+              <ul>
+                <li><a href="#添加子模块">添加子模块</a></li>
+                <li><a href="#从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</a></li>
+              </ul>
+            </li>
+            <li><a href="#设置项目同步链接">设置项目同步链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件托管">文件托管</a>
+          <ul>
+            <li><a href="#添加">添加</a></li>
+            <li><a href="#删除">删除</a></li>
+            <li><a href="#查看托管文件状态">查看托管文件状态</a></li>
+            <li><a href="#查看项目内文件状态">查看项目内文件状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交">提交</a>
+          <ul>
+            <li><a href="#提交当前改动">提交当前改动</a></li>
+            <li><a href="#推送到远端">推送到远端</a></li>
+            <li><a href="#查看提交记录">查看提交记录</a></li>
+            <li><a href="#删除历史提交">删除历史提交</a></li>
+            <li><a href="#存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交规范">提交规范</a>
+          <ul>
+            <li><a href="#标题行">标题行</a>
+              <ul>
+                <li><a href="#类型">类型</a></li>
+                <li><a href="#受到提交影响的范围">受到提交影响的范围</a></li>
+                <li><a href="#概述">概述</a></li>
+              </ul>
+            </li>
+            <li><a href="#正文">正文</a></li>
+            <li><a href="#页脚注释">页脚注释</a></li>
+          </ul>
+        </li>
+        <li><a href="#分支">分支</a>
+          <ul>
+            <li><a href="#当前分支和分支列表">当前分支和分支列表</a></li>
+            <li><a href="#切换分支">切换分支</a></li>
+            <li><a href="#创建分支">创建分支</a></li>
+            <li><a href="#本地创建新分支后-同步到远端">本地创建新分支后, 同步到远端</a></li>
+            <li><a href="#创建并切换">创建并切换</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
+            <li><a href="#重命名分支">重命名分支</a>
+              <ul>
+                <li><a href="#未推送到远端-重命名即可">未推送到远端, 重命名即可</a></li>
+                <li><a href="#已推送过远端">已推送过远端</a></li>
+              </ul>
+            </li>
+            <li><a href="#分支合并">分支合并</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#方法一-xcode自带">方法一: Xcode自带</a></li>
+            <li><a href="#方法二-使用homebrew安装较新版本">方法二: 使用homebrew安装较新版本</a></li>
+            <li><a href="#方法三-下载源码-编译安装">方法三: 下载源码, 编译安装</a></li>
+            <li><a href="#验证">验证</a></li>
+          </ul>
+        </li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#初始化项目">初始化项目</a>
+          <ul>
+            <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
+            <li><a href="#查看远端信息">查看远端信息</a></li>
+            <li><a href="#场景二-手动配置上游信息">场景二: 手动配置上游信息</a></li>
+            <li><a href="#场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端</a></li>
+            <li><a href="#子模块管理">子模块管理</a>
+              <ul>
+                <li><a href="#添加子模块">添加子模块</a></li>
+                <li><a href="#从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目</a></li>
+              </ul>
+            </li>
+            <li><a href="#设置项目同步链接">设置项目同步链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件托管">文件托管</a>
+          <ul>
+            <li><a href="#添加">添加</a></li>
+            <li><a href="#删除">删除</a></li>
+            <li><a href="#查看托管文件状态">查看托管文件状态</a></li>
+            <li><a href="#查看项目内文件状态">查看项目内文件状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交">提交</a>
+          <ul>
+            <li><a href="#提交当前改动">提交当前改动</a></li>
+            <li><a href="#推送到远端">推送到远端</a></li>
+            <li><a href="#查看提交记录">查看提交记录</a></li>
+            <li><a href="#删除历史提交">删除历史提交</a></li>
+            <li><a href="#存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交</a></li>
+          </ul>
+        </li>
+        <li><a href="#提交规范">提交规范</a>
+          <ul>
+            <li><a href="#标题行">标题行</a>
+              <ul>
+                <li><a href="#类型">类型</a></li>
+                <li><a href="#受到提交影响的范围">受到提交影响的范围</a></li>
+                <li><a href="#概述">概述</a></li>
+              </ul>
+            </li>
+            <li><a href="#正文">正文</a></li>
+            <li><a href="#页脚注释">页脚注释</a></li>
+          </ul>
+        </li>
+        <li><a href="#分支">分支</a>
+          <ul>
+            <li><a href="#当前分支和分支列表">当前分支和分支列表</a></li>
+            <li><a href="#切换分支">切换分支</a></li>
+            <li><a href="#创建分支">创建分支</a></li>
+            <li><a href="#本地创建新分支后-同步到远端">本地创建新分支后, 同步到远端</a></li>
+            <li><a href="#创建并切换">创建并切换</a></li>
+            <li><a href="#删除分支">删除分支</a></li>
+            <li><a href="#重命名分支">重命名分支</a>
+              <ul>
+                <li><a href="#未推送到远端-重命名即可">未推送到远端, 重命名即可</a></li>
+                <li><a href="#已推送过远端">已推送过远端</a></li>
+              </ul>
+            </li>
+            <li><a href="#分支合并">分支合并</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+			</nav>
+			<p>代码管理, 版本控制 <br/></p>
+<h2 id="安装">安装 <a href="#%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>macOS</code> <br/></p>
+<h3 id="方法一-xcode自带">方法一: Xcode自带 <a href="#%e6%96%b9%e6%b3%95%e4%b8%80-xcode%e8%87%aa%e5%b8%a6" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="方法二-使用homebrew安装较新版本">方法二: 使用homebrew安装较新版本 <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e4%bd%bf%e7%94%a8homebrew%e5%ae%89%e8%a3%85%e8%be%83%e6%96%b0%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">brew install git
+</code></pre>
+<h3 id="方法三-下载源码-编译安装">方法三: 下载源码, 编译安装 <a href="#%e6%96%b9%e6%b3%95%e4%b8%89-%e4%b8%8b%e8%bd%bd%e6%ba%90%e7%a0%81-%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h3>
+<p><a href="https://mirrors.edge.kernel.org/pub/software/scm/git/">官网下载git-2.41.0.tar.gz</a> <br/></p>
+<pre><code class="language-bash">make install
+</code></pre>
+<h3 id="验证">验证 <a href="#%e9%aa%8c%e8%af%81" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git -v      
+</code></pre>
+<h2 id="配置">配置 <a href="#%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>
+<p>查看Git配置 <br/></p>
+<pre><code class="language-bash">git config --list
+</code></pre>
+</li>
+<li>
+<p>配置Git账户 <br/></p>
+<pre><code class="language-bash">git config --global user.name &quot;enjoy61&quot;
+git config --global user.email &quot;enjoy61@protonmail.com&quot;
+</code></pre>
+</li>
+<li>
+<p>配置SSH <br/></p>
+<ul>
+<li>生成密钥 <br/></li>
+</ul>
+<!--listend-->
+<pre><code class="language-bash">ssh-keygen
+cat ~/.ssh/id_rsa.pub
+</code></pre>
+<ul>
+<li>拷贝公钥到Github <br/></li>
+</ul>
+</li>
+<li>
+<p>代理 <br/></p>
+<ul>
+<li>设置 <br/>
+<pre><code class="language-bash"># 使用代理端口替换1949
+git config --global https.proxy https://localhost:1949
+git config --global http.proxy http://localhost:1949
+</code></pre>
+</li>
+<li>取消 <br/>
+<pre><code class="language-bash">git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="初始化项目">初始化项目 <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<p>已在Github创建项目 <br/></p>
+<h3 id="场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置 <a href="#%e5%9c%ba%e6%99%af%e4%b8%80-%e4%bb%8egithub%e5%85%8b%e9%9a%86%e9%a1%b9%e7%9b%ae-%e4%b8%8a%e6%b8%b8%e4%bf%a1%e6%81%af%e8%87%aa%e5%8a%a8%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git clone git@github.com:enjoy61/even.git
+</code></pre>
+<h3 id="查看远端信息">查看远端信息 <a href="#%e6%9f%a5%e7%9c%8b%e8%bf%9c%e7%ab%af%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<h3 id="场景二-手动配置上游信息">场景二: 手动配置上游信息 <a href="#%e5%9c%ba%e6%99%af%e4%ba%8c-%e6%89%8b%e5%8a%a8%e9%85%8d%e7%bd%ae%e4%b8%8a%e6%b8%b8%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git init
+git remote add cute git@github.com:enjoy61/even.git # cute为上游别名
+git fetch cute # 拉取上游内容，和Github项目同步
+</code></pre>
+<h3 id="场景三-首次提交本地项目到远端">场景三: 首次提交本地项目到远端 <a href="#%e5%9c%ba%e6%99%af%e4%b8%89-%e9%a6%96%e6%ac%a1%e6%8f%90%e4%ba%a4%e6%9c%ac%e5%9c%b0%e9%a1%b9%e7%9b%ae%e5%88%b0%e8%bf%9c%e7%ab%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git init
+git add README.md # 添加管理文件
+git commit -m &quot;first commit&quot;
+git branch -M main
+git remote add origin git@github.com:enjoy61/even.git
+git push -u origin main
+</code></pre>
+<h3 id="子模块管理">子模块管理 <a href="#%e5%ad%90%e6%a8%a1%e5%9d%97%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="添加子模块">添加子模块 <a href="#%e6%b7%bb%e5%8a%a0%e5%ad%90%e6%a8%a1%e5%9d%97" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">git submodule add git@github.com:enjoy61/hugo-theme-even.git themes/even
+</code></pre>
+<h4 id="从远端拉取项目时亦拉取子模块项目">从远端拉取项目时亦拉取子模块项目 <a href="#%e4%bb%8e%e8%bf%9c%e7%ab%af%e6%8b%89%e5%8f%96%e9%a1%b9%e7%9b%ae%e6%97%b6%e4%ba%a6%e6%8b%89%e5%8f%96%e5%ad%90%e6%a8%a1%e5%9d%97%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">git clone --recursive git@github.com:enjoy61/even.git
+</code></pre>
+<h3 id="设置项目同步链接">设置项目同步链接 <a href="#%e8%ae%be%e7%bd%ae%e9%a1%b9%e7%9b%ae%e5%90%8c%e6%ad%a5%e9%93%be%e6%8e%a5" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>SSH <br/>
+<pre><code class="language-bash">git remote set-url cute git@github.com:enjoy61/even.git
+</code></pre>
+</li>
+<li>HTTPS <br/>
+<em>push时需要验证，Github不再支持用户名和密码</em> <br/>
+<pre><code class="language-bash">git remote set-url cute https://github.com/enjoy61/even.git
+</code></pre>
+</li>
+</ul>
+<h2 id="文件托管">文件托管 <a href="#%e6%96%87%e4%bb%b6%e6%89%98%e7%ae%a1" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="添加">添加 <a href="#%e6%b7%bb%e5%8a%a0" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git add file # 指定文件
+
+git add -A # 所有文件
+</code></pre>
+<h3 id="删除">删除 <a href="#%e5%88%a0%e9%99%a4" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git rm file
+</code></pre>
+<h3 id="查看托管文件状态">查看托管文件状态 <a href="#%e6%9f%a5%e7%9c%8b%e6%89%98%e7%ae%a1%e6%96%87%e4%bb%b6%e7%8a%b6%e6%80%81" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git diff
+</code></pre>
+<h3 id="查看项目内文件状态">查看项目内文件状态 <a href="#%e6%9f%a5%e7%9c%8b%e9%a1%b9%e7%9b%ae%e5%86%85%e6%96%87%e4%bb%b6%e7%8a%b6%e6%80%81" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git status
+</code></pre>
+<h2 id="提交">提交 <a href="#%e6%8f%90%e4%ba%a4" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="提交当前改动">提交当前改动 <a href="#%e6%8f%90%e4%ba%a4%e5%bd%93%e5%89%8d%e6%94%b9%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git commit -m &quot;first commit&quot;
+</code></pre>
+<h3 id="推送到远端">推送到远端 <a href="#%e6%8e%a8%e9%80%81%e5%88%b0%e8%bf%9c%e7%ab%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git push
+</code></pre>
+<h3 id="查看提交记录">查看提交记录 <a href="#%e6%9f%a5%e7%9c%8b%e6%8f%90%e4%ba%a4%e8%ae%b0%e5%bd%95" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git log
+</code></pre>
+<h3 id="删除历史提交">删除历史提交 <a href="#%e5%88%a0%e9%99%a4%e5%8e%86%e5%8f%b2%e6%8f%90%e4%ba%a4" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash"># 查看提交记录
+git log # 最新提交 F E D C B，要删除F和E，记录D
+
+# 设置回溯目标
+git rebase -i D # 将F E的pick改为drop
+
+# 检查设置是否生效
+git log # 查看当前提交 D C B
+
+# 同步到远端
+git push cute master --force # 上游cute 分支master
+</code></pre>
+<h3 id="存在多个文件添加-删除-修改-在上次提交的基础上再次提交">存在多个文件添加/删除/修改，在上次提交的基础上再次提交 <a href="#%e5%ad%98%e5%9c%a8%e5%a4%9a%e4%b8%aa%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0-%e5%88%a0%e9%99%a4-%e4%bf%ae%e6%94%b9-%e5%9c%a8%e4%b8%8a%e6%ac%a1%e6%8f%90%e4%ba%a4%e7%9a%84%e5%9f%ba%e7%a1%80%e4%b8%8a%e5%86%8d%e6%ac%a1%e6%8f%90%e4%ba%a4" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>不建议如此操作，提交前建议检阅改动</code> <br/></p>
+<ol>
+<li>项目文件夹一式两份，A和A.BAK, 项目新版本B <br/></li>
+<li>删除文件夹A内所有代码 <br/>
+<em>不会删除.git，提交和同步记录均保留</em> <br/>
+<pre><code class="language-bash">rm -rf A/*
+</code></pre>
+</li>
+<li>将B内的所有文件拷贝到A <br/>
+<em>不会拷贝.git</em> <br/>
+<pre><code class="language-bash">cp -r B A
+</code></pre>
+</li>
+<li>打开文件夹A, 再次提交 <br/>
+<pre><code class="language-bash">git add -A
+git commit -m &quot;Comments&quot;
+git push
+</code></pre>
+</li>
+</ol>
+<h2 id="提交规范">提交规范 <a href="#%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;
+</code></pre>
+<h3 id="标题行">标题行 <a href="#%e6%a0%87%e9%a2%98%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
+<p><strong>必填</strong> <br/></p>
+<h4 id="类型">类型 <a href="#%e7%b1%bb%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>type</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feat</td>
+<td>feature 新功能</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>修复bug</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>文档</td>
+</tr>
+<tr>
+<td>style</td>
+<td>格式，如.clang-format</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>重构</td>
+</tr>
+<tr>
+<td>test</td>
+<td>测试用例</td>
+</tr>
+<tr>
+<td>build</td>
+<td>项目构建和依赖项</td>
+</tr>
+<tr>
+<td>revert</td>
+<td>回退</td>
+</tr>
+<tr>
+<td>ci</td>
+<td>持续集成</td>
+</tr>
+<tr>
+<td>perf</td>
+<td>性能优化</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>代码合并</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>同步主线或分支的bug</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>其他类型</td>
+</tr>
+<tr>
+<td>release</td>
+<td>新版本发布</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>工作流</td>
+</tr>
+</tbody>
+</table>
+<h4 id="受到提交影响的范围">受到提交影响的范围 <a href="#%e5%8f%97%e5%88%b0%e6%8f%90%e4%ba%a4%e5%bd%b1%e5%93%8d%e7%9a%84%e8%8c%83%e5%9b%b4" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>scope</code> <br/></p>
+<h4 id="概述">概述 <a href="#%e6%a6%82%e8%bf%b0" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>subject</code> <br/></p>
+<ul>
+<li>动词开头 <br/></li>
+<li>如果用英文，使用第一人称现在时，首字母小写 <br/></li>
+<li>结尾不加句号 <br/></li>
+</ul>
+<h3 id="正文">正文 <a href="#%e6%ad%a3%e6%96%87" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>body</code> <br/>
+具体修改内容, 可多行 <br/></p>
+<h3 id="页脚注释">页脚注释 <a href="#%e9%a1%b5%e8%84%9a%e6%b3%a8%e9%87%8a" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>footer</code> <br/>
+备注 <br/></p>
+<h2 id="分支">分支 <a href="#%e5%88%86%e6%94%af" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="当前分支和分支列表">当前分支和分支列表 <a href="#%e5%bd%93%e5%89%8d%e5%88%86%e6%94%af%e5%92%8c%e5%88%86%e6%94%af%e5%88%97%e8%a1%a8" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git branch -a
+</code></pre>
+<h3 id="切换分支">切换分支 <a href="#%e5%88%87%e6%8d%a2%e5%88%86%e6%94%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git checkout main
+</code></pre>
+<h3 id="创建分支">创建分支 <a href="#%e5%88%9b%e5%bb%ba%e5%88%86%e6%94%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git branch master
+</code></pre>
+<h3 id="本地创建新分支后-同步到远端">本地创建新分支后, 同步到远端 <a href="#%e6%9c%ac%e5%9c%b0%e5%88%9b%e5%bb%ba%e6%96%b0%e5%88%86%e6%94%af%e5%90%8e-%e5%90%8c%e6%ad%a5%e5%88%b0%e8%bf%9c%e7%ab%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git push --set-upstream origin master
+</code></pre>
+<h3 id="创建并切换">创建并切换 <a href="#%e5%88%9b%e5%bb%ba%e5%b9%b6%e5%88%87%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git checkout -b iss53
+</code></pre>
+<h3 id="删除分支">删除分支 <a href="#%e5%88%a0%e9%99%a4%e5%88%86%e6%94%af" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>本地 <br/>
+<pre><code class="language-bash">git branch -d iss51
+</code></pre>
+</li>
+<li>上游 <br/>
+<pre><code class="language-bash">git push origin -d iss51
+</code></pre>
+</li>
+</ul>
+<h3 id="重命名分支">重命名分支 <a href="#%e9%87%8d%e5%91%bd%e5%90%8d%e5%88%86%e6%94%af" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="未推送到远端-重命名即可">未推送到远端, 重命名即可 <a href="#%e6%9c%aa%e6%8e%a8%e9%80%81%e5%88%b0%e8%bf%9c%e7%ab%af-%e9%87%8d%e5%91%bd%e5%90%8d%e5%8d%b3%e5%8f%af" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">git branch -m oldName newName
+</code></pre>
+<h4 id="已推送过远端">已推送过远端 <a href="#%e5%b7%b2%e6%8e%a8%e9%80%81%e8%bf%87%e8%bf%9c%e7%ab%af" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>重命名本地分支 <br/>
+<pre><code class="language-bash">git branch -m oldName newName
+</code></pre>
+</li>
+<li>删除远端分支 <br/>
+<pre><code class="language-bash">git push --delete origin oldName
+</code></pre>
+</li>
+<li>将本地分支推送到远端 <br/>
+<pre><code class="language-bash">git push origin newName
+</code></pre>
+</li>
+<li>将本地分支和远端分支关联 <br/>
+<pre><code class="language-bash">git branch --set-upstream-to origin/newName
+</code></pre>
+</li>
+</ol>
+<h3 id="分支合并">分支合并 <a href="#%e5%88%86%e6%94%af%e5%90%88%e5%b9%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p>合并过程中可能会产生冲突 <br/>
+<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">git-scm</a> <br/></p>
+<ol>
+<li>在iss53分支上开发新功能 <br/>
+<pre><code class="language-bash">git checkout master # 主分支
+git checkout -b iss53
+vim index.html
+git commit -a -m 'added a new footer [issue 53]'
+</code></pre>
+</li>
+<li>在hotfix分支上解决问题 <br/>
+<pre><code class="language-bash">git checkout master # 主分支        
+git checkout -b hotfix
+vim index.html
+git commit -a -m 'fixed the broken email address'
+</code></pre>
+</li>
+<li>在主分支上合并解决方案，删除hotfix分支 <br/>
+<pre><code class="language-bash">git checkout master
+git merge hotfix
+git branch -d hotfix
+</code></pre>
+</li>
+<li>继续在分支iss53上开发新功能 <br/>
+<pre><code class="language-bash">git checkout iss53
+vim index.html
+git commit -a -m 'finished the new footer [issue 53]'
+</code></pre>
+</li>
+<li>合并新功能到主分支，删除iss53分支 <br/>
+<pre><code class="language-bash">git checkout master
+git merge iss53
+git branch -d iss53
+</code></pre>
+</li>
+</ol>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="/docs/brick/%E7%BB%88%E7%AB%AF/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; 终端
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					使用Hugo&#43;Github搭建静态博客 &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://github.com/">Github</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
+  <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.2f34193e73c15552dbde449943c6bb0ea9c4f33ebb5abd8b5b6c1331bf35c572b8c5528c975f404dca1e4e51ec744597511632aa93966dc0739837c2605e186d.js" integrity="sha512-LzQZPnPBVVLb3kSZQ8a7DqnE8z67Wr2LW2wTMb81xXK4xVKMl19ATcoeTlHsdEWXURYyqpOWbcBzmDfCYF4YbQ==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>
