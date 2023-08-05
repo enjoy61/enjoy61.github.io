@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>角色和动画 on </title>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/</link>
+    <description>Recent content in 角色和动画 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Jun 2023 05:36:39 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>运行ShooterGame示例项目</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 11 Jun 2023 06:14:27 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <description>下载ShooterGame # Epic Games Launcher &amp;gt; Samples &amp;gt; Shooter Game 支持引擎版本 4.0 - 4.27 ，当前使用引擎版本 5.1.1 修改源码 # 退化类 # UMatineeCameraShake 已被 ULegacyCameraShake 替代 不再支持的宏 # PLATFORM_PS4 改法一: 定义该宏 # 在引擎代码中，紧接着 SWITCH 定义该宏 改法二: 屏蔽该宏的出现 # 条件运算符第二个和第三个操作数类型不一致, 且可以互相转换 # 参考 AController * 和 AActor * 可以相互转换，此处有歧义 Source/ShooterGame/Private/Player/ShooterCharacter.cpp:322 运行效果 # </description>
+    </item>
+    
+    <item>
+      <title>初始化ShootThemUp项目</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 11 Jun 2023 06:14:49 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</guid>
+      <description>说明 # 虚幻编辑器 将 ShooterGame 作为内容包，基于此开发 ShootThemUp 。好比室内设计师提供游戏资料，我们在此之上开发游戏。 创建ShootThemUp项目 # Blank Blueprint 配置ShootThemUp # 添加版权信息 # 项目设置 &amp;gt; Project &amp;gt; Description &amp;gt; Legal &amp;gt; Copyright Notice Shoot Them Up Game, All Rights Reserved. 关卡设置 # 添加关卡文件夹 Content/Levels 创建关卡 新建关卡 选择 Basic 保存到Content/Levels/，命名为DefaultMap 设置 EditorStartupMap 和 GameDefaultMap 使用 DefaultMap 项目设置 &amp;gt; Project &amp;gt; Maps &amp;amp; Modes 从ShooterGame导入资产 # ShooterGame导出 # 打开ShooterGame项目 &amp;gt; 在内容浏览器选中Content/Animations/TTP_Animations，右键 &amp;gt; Migrate 取消Sounds勾选 默认勾选的文件夹里的内容都与 TTP_Animations 相关 保存到 ShootThemUp/Content 目录下 不能直接迁移到 5.</description>
+    </item>
+    
+    <item>
+      <title>代码规范</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Sun, 11 Jun 2023 06:15:03 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+      <description>说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当语句较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .</description>
+    </item>
+    
+    <item>
+      <title>为游戏角色绑定模型</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Sun, 11 Jun 2023 06:15:23 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</guid>
+      <description>概览 # - 玩家控制的游戏角色 Character 游戏角色控制器 PlayerController 关卡设置 GameModeBase: DefaultPawnClass, PlayerControllerClass 第三视角 CameraComponent 创建Character类和PlayController类 # 虚幻编辑器 创建 Player/STUBaseCharacter ACharacter 公有类 创建 Player/STUPlayerController APlayerController 公有类 设置头文件搜索路径 # 源文件路径已包含上级文件夹 ShootThemUp: Player/STUBaseCharacter.cpp 设置头文件搜索路径之后，可以不指明上级文件夹 ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot; }); 设置STUGameModeBase使用STUBaseCharacter和STUPlayController # C++ - DefaultPawnClass 游戏角色类型 PlayerControllerClass 游戏角色控制器类型 添加默认构造函数声明 ShootThemUp: STUGameModeBase.h 设置默认游戏角色类型和游戏角色控制器类型 ShootThemUp: STUGameModeBase.cpp #include &amp;quot;Player/STUBaseCharacter.h&amp;quot; #include &amp;quot;Player/STUPlayerController.h&amp;quot; // 以下亦正确 // #include &amp;quot;STUBaseCharacter.h&amp;quot; // #include &amp;quot;STUPlayerController.h&amp;quot; ASTUGameModeBase::ASTUGameModeBase() { DefaultPawnClass = ASTUBaseCharacter::StaticClass(); PlayerControllerClass = ASTUPlayerController::StaticClass(); } 为游戏角色添加第三视角 # C++ 为STUBaseCharacter添加UCameraComponent类型成员 添加CameraComponent类型成员 ShootThemUp: Player/STUBaseCharacter.</description>
+    </item>
+    
+    <item>
+      <title>实现游戏角色前后左右移动</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</link>
+      <pubDate>Sun, 11 Jun 2023 06:15:39 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</guid>
+      <description>概览 # 举例 轴映射 连续 前后左右移动 动作映射 离散 跳跃，装弹，更换武器 绑定移动键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 轴映射 函数描述 键位 Scale MoveRight Left/A -1 Right/D 1 MoveForward Up/W 1 Down/S -1 实现前后左右移动逻辑 # C++ - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 方向 输入处理 MoveForward MoveForward GetActorForwardVector AddMovementInput MoveRight MoveRight GetActorRightVector AddMovementInput 实现回调函数 ShootThemUp: Player/STUBaseCharacter.cpp #include &amp;quot;Components/InputComponent.h&amp;quot; void ASTUBaseCharacter::MoveForward(float Amount) { AddMovementInput(GetActorForwardVector(), Amount); } void ASTUBaseCharacter::MoveRight(float Amount) { AddMovementInput(GetActorRightVector(), Amount); } 绑定到函数描述 ShootThemUp: Player/STUBaseCharacter.</description>
+    </item>
+    
+    <item>
+      <title>实现游戏角色视角旋转</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</link>
+      <pubDate>Sun, 11 Jun 2023 06:17:23 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</guid>
+      <description>说明 # 视角旋转 垂直方向 抬头低头 Camera绕Y轴旋转 鼠标垂直方向位移决定旋转角度 水平方向 环顾左右 Camera绕Z轴旋转 鼠标水平方向位移决定旋转角度 绑定旋转键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 轴映射 函数描述 键位 LookUp MouseY TurnAround MouseX 实现视角旋转逻辑 # C++ - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 LookUp LookUp AddControllerPitchInput 绕Y轴旋转，增加Y轴旋转角度(Pitch) TurnAround TurnAround AddControllerYawInput 绕Z轴旋转，增加Z轴旋转角度(Yaw) 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::LookUp(float Amount) {} void ASTUBaseCharacter::TurnAround(float Amount) {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;LookUp&amp;quot;, this, &amp;amp;ASTUBaseCharacter::LookUp); PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;TurnAround&amp;quot;, this, &amp;amp;ASTUBaseCharacter::TurnAround); 添加函数声明 ShootThemUp: Player/STUBaseCharacter.</description>
+    </item>
+    
+  </channel>
+</rss>
