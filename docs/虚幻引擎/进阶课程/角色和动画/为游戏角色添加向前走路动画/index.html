@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>终端 - 六一的部落格</title>
-<meta name="description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+  <title>为游戏角色添加向前走路动画 - 六一的部落格</title>
+<meta name="description" content="概览 # 虚幻编辑器 动画随着游戏角色的运动速度而变化 brush # 最简单的可编辑几何体，我们可以修改其顶点位置，调整其他参数，然后将其转换成静态网格体 CharacterMovementComponent # 负责 Character 运动，其各种属性均和 Character 运动有关 动画蓝图 # Animation Blueprint 动画蓝图需绑定 Skeleton Mesh 命名：ABP_ 打头 动画混合 # Animation Blend 流畅地从一个动画切入到另一个动画 混合空间 # Blend Space 能在两个骨骼动画之间创建过渡动画 使用插值来得到动画姿势的中间值 需绑定 Skeleton Mesh 命名： 混合空间 和 混合空间1D 均以 BS_ 打头 一维混合空间 # Blend Space 1D 横轴 混合空间 # Blend Space 横轴和纵轴 重新设置平台 # 从场景中移除Floor 添加 Geometry/Box 恢复 Box Brush 默认位置，设置长宽高 Character运动速度上限 # BP_STUBaseCharacter CharacterMovementComponent 选择CharacterMovementComponent &amp;gt; 细节面板 &amp;gt; Character Movement: Walking &amp;gt; MaxWalkSpeed MaxWalkSpeed 即 Character 的最大运动速度，单位 cm/s 虚幻引擎里的步长使用 cm 修改 MaxWalkSpeed ，当速度改为 1600 时，可以看到单位时间内移动的距离增加，而跑步动画缺少对应的加速过程 获取实时速度并打印 # BP_STUBaseCharacter 在 EventGraph 实现 - GetVelocity函数 获取Character速度 获得Actor各个方向上的速度，保存在FVector中 FVector::VectorLength 获得速度标量 PrintString 在屏幕上输出实时速度 PrintString 使用 AddOnScreenDebugMessage 可以看到加速过程 移除打印 创建动画蓝图ABP_BaseCharacter # Animation Blueprint 创建文件夹Content/Players/Animations # 方法一: 基于Skeleton Mesh创建动画蓝图 # 选中ExternalContent/Animation/Characters/HeroTPP/HeroTPP &amp;gt; 右键 &amp;gt; Create &amp;gt; AnimBlueprint 方法二: 在指定位置创建动画蓝图 # 去到 Content/Player/Animations，右键 &amp;gt; Animation &amp;gt; 选择Animation Blueprint 选择 HeroTPP_Skeleton 命名为 ABP_BaseCharacter 在蓝图编辑器中查看动画蓝图 # ABP_BaseCharacter - EventGraph 事件图表 处理各种动画事件；像使用 Tick 一样使用 EventBlueprintUpdateAnimation AnimGraph 动画图表 处理所有动画；可以将动画资产作为 OutputPose 的输入 AssetBrowser 动画资产窗口 可以从 Window &amp;gt; AssetBrowser 打开，罗列了 SkeletonMesh 所有相关动画 为游戏角色设置动画时使用动画蓝图 # 为ABP_BaseCharacter设置输入 # 动画图表 将 Run_Fwd 作为 OutputPose 的输入 设置 Run_Fwd 重复播放 选中Run_Fwd &amp;gt; Details &amp;gt; Settings &amp;gt; 使能 LoopAnimation 让Character使用动画蓝图 # BP_STBaseCharacter - Animation Mode Use Animation Blueprint Anim Class ABP_BaseCharacter 查看动画资产 # 去到Content/ExternalContent/Animation/Animations/TTP_Animations，双击 Run_Fwd 可在 AssetBrowser 中选择其他动画 混合空间资产 # Blend Space 速度从 0 - 600 ，动画从 Idle 过渡到 Run_Fwd 创建BS_Locomotion_Walk_1D # 去到Content/Player/Animations，右键 选择 HeroTPP_Skeleton 命名为 BS_Locomotion_Walk_1D 配置BS_Locomotion_Walk_1D # 双击打开 BS_Locomotion_Walk_1D 配置横轴 Asset Details &amp;gt; Axis Settings &amp;gt; Horizontal Axis 说明 Name 名称 Velocity Minimum Axis Value 轴最小值 0 Maximum Axis Value 轴最大值 600 游戏角色运动速度上限 Grid Divisions 过渡区间 4 使用默认值；和可以添加的动画个数有关 配置动画 动画资产 Velocity 起点 Idle 0 终点 Run_Fwd 600 查看插值 系统 键位 Windows Control MacOS Command 按下键位，水平移动鼠标，绿色X随之在起点和终点间移动，视口展示过渡动画 将BS_Locomotion_Walk_1D作为动画蓝图输入 # ABP_BaseCharacter 添加变量Velocity # 在 MyBlueprint 添加变量 Velocity ，在Details设置名称和类型 设置变量Velocity # EventGraph 将变量Velocity拖动到EventGraph, 选择设置变量值 在 EventBlueprintUpdateAnimation 之后，执行 SetVelocity GetPawnOwner 返回 Pawn 实例的引用, 变量 Velocity 的输入是 Actor 实时速度 设置动画蓝图输入 # AnimGraph 将BS_Locomotion_Walk_1D作为OutputPose的输入 将变量Velocity拖动到AnimGraph, 选择获取变量值 将变量Velocity作为BS_Locomotion_Walk_1D的输入 ">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终端">
-<meta property="og:description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:title" content="为游戏角色添加向前走路动画">
+<meta property="og:description" content="概览 # 虚幻编辑器 动画随着游戏角色的运动速度而变化 brush # 最简单的可编辑几何体，我们可以修改其顶点位置，调整其他参数，然后将其转换成静态网格体 CharacterMovementComponent # 负责 Character 运动，其各种属性均和 Character 运动有关 动画蓝图 # Animation Blueprint 动画蓝图需绑定 Skeleton Mesh 命名：ABP_ 打头 动画混合 # Animation Blend 流畅地从一个动画切入到另一个动画 混合空间 # Blend Space 能在两个骨骼动画之间创建过渡动画 使用插值来得到动画姿势的中间值 需绑定 Skeleton Mesh 命名： 混合空间 和 混合空间1D 均以 BS_ 打头 一维混合空间 # Blend Space 1D 横轴 混合空间 # Blend Space 横轴和纵轴 重新设置平台 # 从场景中移除Floor 添加 Geometry/Box 恢复 Box Brush 默认位置，设置长宽高 Character运动速度上限 # BP_STUBaseCharacter CharacterMovementComponent 选择CharacterMovementComponent &gt; 细节面板 &gt; Character Movement: Walking &gt; MaxWalkSpeed MaxWalkSpeed 即 Character 的最大运动速度，单位 cm/s 虚幻引擎里的步长使用 cm 修改 MaxWalkSpeed ，当速度改为 1600 时，可以看到单位时间内移动的距离增加，而跑步动画缺少对应的加速过程 获取实时速度并打印 # BP_STUBaseCharacter 在 EventGraph 实现 - GetVelocity函数 获取Character速度 获得Actor各个方向上的速度，保存在FVector中 FVector::VectorLength 获得速度标量 PrintString 在屏幕上输出实时速度 PrintString 使用 AddOnScreenDebugMessage 可以看到加速过程 移除打印 创建动画蓝图ABP_BaseCharacter # Animation Blueprint 创建文件夹Content/Players/Animations # 方法一: 基于Skeleton Mesh创建动画蓝图 # 选中ExternalContent/Animation/Characters/HeroTPP/HeroTPP &gt; 右键 &gt; Create &gt; AnimBlueprint 方法二: 在指定位置创建动画蓝图 # 去到 Content/Player/Animations，右键 &gt; Animation &gt; 选择Animation Blueprint 选择 HeroTPP_Skeleton 命名为 ABP_BaseCharacter 在蓝图编辑器中查看动画蓝图 # ABP_BaseCharacter - EventGraph 事件图表 处理各种动画事件；像使用 Tick 一样使用 EventBlueprintUpdateAnimation AnimGraph 动画图表 处理所有动画；可以将动画资产作为 OutputPose 的输入 AssetBrowser 动画资产窗口 可以从 Window &gt; AssetBrowser 打开，罗列了 SkeletonMesh 所有相关动画 为游戏角色设置动画时使用动画蓝图 # 为ABP_BaseCharacter设置输入 # 动画图表 将 Run_Fwd 作为 OutputPose 的输入 设置 Run_Fwd 重复播放 选中Run_Fwd &gt; Details &gt; Settings &gt; 使能 LoopAnimation 让Character使用动画蓝图 # BP_STBaseCharacter - Animation Mode Use Animation Blueprint Anim Class ABP_BaseCharacter 查看动画资产 # 去到Content/ExternalContent/Animation/Animations/TTP_Animations，双击 Run_Fwd 可在 AssetBrowser 中选择其他动画 混合空间资产 # Blend Space 速度从 0 - 600 ，动画从 Idle 过渡到 Run_Fwd 创建BS_Locomotion_Walk_1D # 去到Content/Player/Animations，右键 选择 HeroTPP_Skeleton 命名为 BS_Locomotion_Walk_1D 配置BS_Locomotion_Walk_1D # 双击打开 BS_Locomotion_Walk_1D 配置横轴 Asset Details &gt; Axis Settings &gt; Horizontal Axis 说明 Name 名称 Velocity Minimum Axis Value 轴最小值 0 Maximum Axis Value 轴最大值 600 游戏角色运动速度上限 Grid Divisions 过渡区间 4 使用默认值；和可以添加的动画个数有关 配置动画 动画资产 Velocity 起点 Idle 0 终点 Run_Fwd 600 查看插值 系统 键位 Windows Control MacOS Command 按下键位，水平移动鼠标，绿色X随之在起点和终点间移动，视口展示过渡动画 将BS_Locomotion_Walk_1D作为动画蓝图输入 # ABP_BaseCharacter 添加变量Velocity # 在 MyBlueprint 添加变量 Velocity ，在Details设置名称和类型 设置变量Velocity # EventGraph 将变量Velocity拖动到EventGraph, 选择设置变量值 在 EventBlueprintUpdateAnimation 之后，执行 SetVelocity GetPawnOwner 返回 Pawn 实例的引用, 变量 Velocity 的输入是 Actor 实时速度 设置动画蓝图输入 # AnimGraph 将BS_Locomotion_Walk_1D作为OutputPose的输入 将变量Velocity拖动到AnimGraph, 选择获取变量值 将变量Velocity作为BS_Locomotion_Walk_1D的输入 ">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-10T22:11:40+00:00">
-  <meta property="article:modified_time" content="2023-08-04T18:50:45+08:00">
+<meta property="article:published_time" content="2023-06-11T06:17:31+00:00">
+  <meta property="article:modified_time" content="2023-08-06T10:33:39+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="终端">
+<meta name="twitter:title" content="为游戏角色添加向前走路动画">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="终端">
+    <meta name="twitter:image:alt" content="为游戏角色添加向前走路动画">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "url": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "name": "终端",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/",
+      "name": "为游戏角色添加向前走路动画",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-10T22:11:40CET",
-      "dateModified": "2023-08-04T18:50:45CET",
+      "datePublished": "2023-06-11T06:17:31CET",
+      "dateModified": "2023-08-06T10:33:39CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,15 +125,33 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/brick/",
-          "url": "https://enjoy61.github.io/docs/brick/",
-          "name": "Brick"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "name": "% E8% A7%92% E8%89% B2% E5%92%8 C% E5%8 A% A8% E7%94% Bb"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/"
           }
         }]
     },
@@ -144,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "终端",
+          "headline": "为游戏角色添加向前走路动画",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/"
           },
-          "datePublished": "2023-06-10T22:11:40CET",
-          "dateModified": "2023-08-04T18:50:45CET",
+          "datePublished": "2023-06-11T06:17:31CET",
+          "dateModified": "2023-08-06T10:33:39CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -161,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/#/schema/image/2"
           }
         }
       ]
@@ -186,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "终端"
+          "caption": "为游戏角色添加向前走路动画"
         }
       ]
     }
@@ -239,15 +257,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -256,29 +274,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -326,7 +344,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
                                   
 
                                 
@@ -575,15 +593,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -592,29 +610,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -662,7 +680,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
                                   
 
                                 
@@ -853,15 +871,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -870,29 +888,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -940,7 +958,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
                                   
 
                                 
@@ -1132,15 +1150,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#brush">brush</a></li>
+            <li><a href="#charactermovementcomponent">CharacterMovementComponent</a></li>
+            <li><a href="#动画蓝图">动画蓝图</a></li>
+            <li><a href="#动画混合">动画混合</a></li>
+            <li><a href="#混合空间">混合空间</a>
+              <ul>
+                <li><a href="#一维混合空间">一维混合空间</a></li>
+                <li><a href="#混合空间">混合空间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#重新设置平台">重新设置平台</a></li>
+        <li><a href="#character运动速度上限">Character运动速度上限</a></li>
+        <li><a href="#获取实时速度并打印">获取实时速度并打印</a></li>
+        <li><a href="#创建动画蓝图abp-basecharacter">创建动画蓝图ABP_BaseCharacter</a>
+          <ul>
+            <li><a href="#创建文件夹content-players-animations">创建文件夹Content/Players/Animations</a></li>
+            <li><a href="#方法一-基于skeleton-mesh创建动画蓝图">方法一: 基于Skeleton Mesh创建动画蓝图</a></li>
+            <li><a href="#方法二-在指定位置创建动画蓝图">方法二: 在指定位置创建动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#在蓝图编辑器中查看动画蓝图">在蓝图编辑器中查看动画蓝图</a></li>
+        <li><a href="#为游戏角色设置动画时使用动画蓝图">为游戏角色设置动画时使用动画蓝图</a>
+          <ul>
+            <li><a href="#为abp-basecharacter设置输入">为ABP_BaseCharacter设置输入</a></li>
+            <li><a href="#让character使用动画蓝图">让Character使用动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看动画资产">查看动画资产</a></li>
+        <li><a href="#混合空间资产">混合空间资产</a>
+          <ul>
+            <li><a href="#创建bs-locomotion-walk-1d">创建BS_Locomotion_Walk_1D</a></li>
+            <li><a href="#配置bs-locomotion-walk-1d">配置BS_Locomotion_Walk_1D</a></li>
+          </ul>
+        </li>
+        <li><a href="#将bs-locomotion-walk-1d作为动画蓝图输入">将BS_Locomotion_Walk_1D作为动画蓝图输入</a>
+          <ul>
+            <li><a href="#添加变量velocity">添加变量Velocity</a></li>
+            <li><a href="#设置变量velocity">设置变量Velocity</a></li>
+            <li><a href="#设置动画蓝图输入">设置动画蓝图输入</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1156,15 +1210,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#brush">brush</a></li>
+            <li><a href="#charactermovementcomponent">CharacterMovementComponent</a></li>
+            <li><a href="#动画蓝图">动画蓝图</a></li>
+            <li><a href="#动画混合">动画混合</a></li>
+            <li><a href="#混合空间">混合空间</a>
+              <ul>
+                <li><a href="#一维混合空间">一维混合空间</a></li>
+                <li><a href="#混合空间">混合空间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#重新设置平台">重新设置平台</a></li>
+        <li><a href="#character运动速度上限">Character运动速度上限</a></li>
+        <li><a href="#获取实时速度并打印">获取实时速度并打印</a></li>
+        <li><a href="#创建动画蓝图abp-basecharacter">创建动画蓝图ABP_BaseCharacter</a>
+          <ul>
+            <li><a href="#创建文件夹content-players-animations">创建文件夹Content/Players/Animations</a></li>
+            <li><a href="#方法一-基于skeleton-mesh创建动画蓝图">方法一: 基于Skeleton Mesh创建动画蓝图</a></li>
+            <li><a href="#方法二-在指定位置创建动画蓝图">方法二: 在指定位置创建动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#在蓝图编辑器中查看动画蓝图">在蓝图编辑器中查看动画蓝图</a></li>
+        <li><a href="#为游戏角色设置动画时使用动画蓝图">为游戏角色设置动画时使用动画蓝图</a>
+          <ul>
+            <li><a href="#为abp-basecharacter设置输入">为ABP_BaseCharacter设置输入</a></li>
+            <li><a href="#让character使用动画蓝图">让Character使用动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看动画资产">查看动画资产</a></li>
+        <li><a href="#混合空间资产">混合空间资产</a>
+          <ul>
+            <li><a href="#创建bs-locomotion-walk-1d">创建BS_Locomotion_Walk_1D</a></li>
+            <li><a href="#配置bs-locomotion-walk-1d">配置BS_Locomotion_Walk_1D</a></li>
+          </ul>
+        </li>
+        <li><a href="#将bs-locomotion-walk-1d作为动画蓝图输入">将BS_Locomotion_Walk_1D作为动画蓝图输入</a>
+          <ul>
+            <li><a href="#添加变量velocity">添加变量Velocity</a></li>
+            <li><a href="#设置变量velocity">设置变量Velocity</a></li>
+            <li><a href="#设置动画蓝图输入">设置动画蓝图输入</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1179,12 +1269,14 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
-<li class="breadcrumb-item active" aria-current="page">终端</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/">角色和动画</a></li>
+<li class="breadcrumb-item active" aria-current="page">为游戏角色添加向前走路动画</li>
 					</ol>
 				</nav>
 			
-			<h1>终端</h1>
+			<h1>为游戏角色添加向前走路动画</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -1202,15 +1294,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#brush">brush</a></li>
+            <li><a href="#charactermovementcomponent">CharacterMovementComponent</a></li>
+            <li><a href="#动画蓝图">动画蓝图</a></li>
+            <li><a href="#动画混合">动画混合</a></li>
+            <li><a href="#混合空间">混合空间</a>
+              <ul>
+                <li><a href="#一维混合空间">一维混合空间</a></li>
+                <li><a href="#混合空间">混合空间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#重新设置平台">重新设置平台</a></li>
+        <li><a href="#character运动速度上限">Character运动速度上限</a></li>
+        <li><a href="#获取实时速度并打印">获取实时速度并打印</a></li>
+        <li><a href="#创建动画蓝图abp-basecharacter">创建动画蓝图ABP_BaseCharacter</a>
+          <ul>
+            <li><a href="#创建文件夹content-players-animations">创建文件夹Content/Players/Animations</a></li>
+            <li><a href="#方法一-基于skeleton-mesh创建动画蓝图">方法一: 基于Skeleton Mesh创建动画蓝图</a></li>
+            <li><a href="#方法二-在指定位置创建动画蓝图">方法二: 在指定位置创建动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#在蓝图编辑器中查看动画蓝图">在蓝图编辑器中查看动画蓝图</a></li>
+        <li><a href="#为游戏角色设置动画时使用动画蓝图">为游戏角色设置动画时使用动画蓝图</a>
+          <ul>
+            <li><a href="#为abp-basecharacter设置输入">为ABP_BaseCharacter设置输入</a></li>
+            <li><a href="#让character使用动画蓝图">让Character使用动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看动画资产">查看动画资产</a></li>
+        <li><a href="#混合空间资产">混合空间资产</a>
+          <ul>
+            <li><a href="#创建bs-locomotion-walk-1d">创建BS_Locomotion_Walk_1D</a></li>
+            <li><a href="#配置bs-locomotion-walk-1d">配置BS_Locomotion_Walk_1D</a></li>
+          </ul>
+        </li>
+        <li><a href="#将bs-locomotion-walk-1d作为动画蓝图输入">将BS_Locomotion_Walk_1D作为动画蓝图输入</a>
+          <ul>
+            <li><a href="#添加变量velocity">添加变量Velocity</a></li>
+            <li><a href="#设置变量velocity">设置变量Velocity</a></li>
+            <li><a href="#设置动画蓝图输入">设置动画蓝图输入</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1226,15 +1354,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#brush">brush</a></li>
+            <li><a href="#charactermovementcomponent">CharacterMovementComponent</a></li>
+            <li><a href="#动画蓝图">动画蓝图</a></li>
+            <li><a href="#动画混合">动画混合</a></li>
+            <li><a href="#混合空间">混合空间</a>
+              <ul>
+                <li><a href="#一维混合空间">一维混合空间</a></li>
+                <li><a href="#混合空间">混合空间</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#重新设置平台">重新设置平台</a></li>
+        <li><a href="#character运动速度上限">Character运动速度上限</a></li>
+        <li><a href="#获取实时速度并打印">获取实时速度并打印</a></li>
+        <li><a href="#创建动画蓝图abp-basecharacter">创建动画蓝图ABP_BaseCharacter</a>
+          <ul>
+            <li><a href="#创建文件夹content-players-animations">创建文件夹Content/Players/Animations</a></li>
+            <li><a href="#方法一-基于skeleton-mesh创建动画蓝图">方法一: 基于Skeleton Mesh创建动画蓝图</a></li>
+            <li><a href="#方法二-在指定位置创建动画蓝图">方法二: 在指定位置创建动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#在蓝图编辑器中查看动画蓝图">在蓝图编辑器中查看动画蓝图</a></li>
+        <li><a href="#为游戏角色设置动画时使用动画蓝图">为游戏角色设置动画时使用动画蓝图</a>
+          <ul>
+            <li><a href="#为abp-basecharacter设置输入">为ABP_BaseCharacter设置输入</a></li>
+            <li><a href="#让character使用动画蓝图">让Character使用动画蓝图</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看动画资产">查看动画资产</a></li>
+        <li><a href="#混合空间资产">混合空间资产</a>
+          <ul>
+            <li><a href="#创建bs-locomotion-walk-1d">创建BS_Locomotion_Walk_1D</a></li>
+            <li><a href="#配置bs-locomotion-walk-1d">配置BS_Locomotion_Walk_1D</a></li>
+          </ul>
+        </li>
+        <li><a href="#将bs-locomotion-walk-1d作为动画蓝图输入">将BS_Locomotion_Walk_1D作为动画蓝图输入</a>
+          <ul>
+            <li><a href="#添加变量velocity">添加变量Velocity</a></li>
+            <li><a href="#设置变量velocity">设置变量Velocity</a></li>
+            <li><a href="#设置动画蓝图输入">设置动画蓝图输入</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1243,200 +1407,341 @@
   </div>
 
 			</nav>
-			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.bilibili.com/video/BV1rk4y1W7dZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click">介绍CLI，Terminal，Shell和Prompt视频</a> <br/></p>
-<h2 id="shell概念">shell概念 <a href="#shell%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>接口</code> <br/>
-shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 <br/></p>
-<p>根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 <br/></p>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/>
+动画随着游戏角色的运动速度而变化 <br/></p>
+<h3 id="brush">brush <a href="#brush" class="anchor" aria-hidden="true">#</a></h3>
+<p>最简单的可编辑几何体，我们可以修改其顶点位置，调整其他参数，然后将其转换成静态网格体 <br/></p>
+<h3 id="charactermovementcomponent">CharacterMovementComponent <a href="#charactermovementcomponent" class="anchor" aria-hidden="true">#</a></h3>
+<p>负责 <code>Character</code> 运动，其各种属性均和 <code>Character</code> 运动有关 <br/></p>
+<h3 id="动画蓝图">动画蓝图 <a href="#%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Animation Blueprint</code> <br/></p>
+<ul>
+<li>动画蓝图需绑定 <code>Skeleton Mesh</code> <br/></li>
+<li>命名：ABP_ 打头 <br/></li>
+</ul>
+<h3 id="动画混合">动画混合 <a href="#%e5%8a%a8%e7%94%bb%e6%b7%b7%e5%90%88" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Animation Blend</code> <br/>
+流畅地从一个动画切入到另一个动画 <br/></p>
+<h3 id="混合空间">混合空间 <a href="#%e6%b7%b7%e5%90%88%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Blend Space</code> <br/></p>
+<ul>
+<li>能在两个骨骼动画之间创建过渡动画 <br/></li>
+<li>使用插值来得到动画姿势的中间值 <br/></li>
+<li>需绑定 <code>Skeleton Mesh</code> <br/></li>
+<li>命名： <code>混合空间</code> 和 <code>混合空间1D</code> 均以 BS_ 打头 <br/></li>
+</ul>
+<h4 id="一维混合空间">一维混合空间 <a href="#%e4%b8%80%e7%bb%b4%e6%b7%b7%e5%90%88%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Blend Space 1D</code> <br/>
+横轴 <br/></p>
+<h4 id="混合空间">混合空间 <a href="#%e6%b7%b7%e5%90%88%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Blend Space</code> <br/>
+横轴和纵轴 <br/></p>
+<h2 id="重新设置平台">重新设置平台 <a href="#%e9%87%8d%e6%96%b0%e8%ae%be%e7%bd%ae%e5%b9%b3%e5%8f%b0" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
-<li>CLI <br/>
-<em>Command-Line Interface</em> <br/>
-<code>命令行界面</code> <br/>
-通过文本命令和计算机交互 <br/></li>
-<li>GUI <br/>
-<em>Graphical User Interface</em> <br/>
-<code>图形用户界面</code> <br/>
-通过鼠标操作 <br/></li>
+<li>
+<p>从场景中移除Floor <br/></p>
+</li>
+<li>
+<p>添加 <code>Geometry/Box</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/PlaceActors-Geometry-Box.png" width="200" /> <br/> <br/></p>
+</li>
+<li>
+<p>恢复 <code>Box Brush</code> 默认位置，设置长宽高 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/BoxBrush-Details.png" width="400" /> <br/> <br/></p>
+</li>
 </ol>
-<p>早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 <br/></p>
-<h2 id="终端程序">终端程序 <a href="#%e7%bb%88%e7%ab%af%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Terminal</code> <br/>
-<code>Wrapper Program</code> <br/>
-在终端输入文本命令 <br/></p>
-<table>
-<thead>
-<tr>
-<th>终端程序</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>iTerm</td>
-<td>MacOS</td>
-</tr>
-<tr>
-<td>Windows Terminal</td>
-<td>Windows</td>
-</tr>
-<tr>
-<td>Gnome Terminal</td>
-<td>使用Gnome作为桌面的Linux自带的终端程序</td>
-</tr>
-<tr>
-<td>Hyper</td>
-<td></td>
-</tr>
-<tr>
-<td>Warp</td>
-<td>目前MacOS；自动补全，鼠标交互，内置工作流，AI功能</td>
-</tr>
-<tr>
-<td>Alacrity</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="命令解释器">命令解释器 <a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a%e5%99%a8" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Shell</code> <code>程序</code> <br/>
-终端中运行的程序。接受命令，然后解释并执行。 <br/></p>
-<p>Shell启动时自动读取配置文件。 <br/></p>
-<table>
-<thead>
-<tr>
-<th>Shell</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sh</td>
-<td><em>Bourne Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>UNIX上的标准shell</td>
-</tr>
-<tr>
-<td>bash</td>
-<td><em>Bourne-Again Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>GNU开发；Linux默认</td>
-</tr>
-<tr>
-<td></td>
-<td>不完全兼容sh shell，对一些命令和参数进行了扩展</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/.bash_profile</td>
-</tr>
-<tr>
-<td>zsh</td>
-<td>19年之前MacOS默认Bash；之后使用zsh</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/zshrc</td>
-</tr>
-<tr>
-<td></td>
-<td>第三方框架oh-my-zsh提供其他功能</td>
-</tr>
-<tr>
-<td>phish</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="脚本语言">脚本语言 <a href="#%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80" class="anchor" aria-hidden="true">#</a></h2>
-<p>需要解释器，每次运行时都需要解释。 <br/></p>
+<h2 id="character运动速度上限">Character运动速度上限 <a href="#character%e8%bf%90%e5%8a%a8%e9%80%9f%e5%ba%a6%e4%b8%8a%e9%99%90" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>BP_STUBaseCharacter</code> <br/>
+<code>CharacterMovementComponent</code> <br/></p>
+<ol>
+<li>
+<p><code>选择CharacterMovementComponent &gt; 细节面板 &gt; Character Movement: Walking &gt; MaxWalkSpeed</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/CharacterMovement-Details-MaxWalkSpeed.png" width="1200" /> <br/> <br/></p>
+<p><code>MaxWalkSpeed</code> 即 Character 的最大运动速度，单位 <code>cm/s</code> <br/></p>
+<p>虚幻引擎里的步长使用 <code>cm</code> <br/></p>
+</li>
+<li>
+<p>修改 <code>MaxWalkSpeed</code> ，当速度改为 <code>1600</code> 时，可以看到单位时间内移动的距离增加，而跑步动画缺少对应的加速过程 <br/></p>
+</li>
+</ol>
+<h2 id="获取实时速度并打印">获取实时速度并打印 <a href="#%e8%8e%b7%e5%8f%96%e5%ae%9e%e6%97%b6%e9%80%9f%e5%ba%a6%e5%b9%b6%e6%89%93%e5%8d%b0" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>BP_STUBaseCharacter</code> <br/></p>
+<ol>
+<li>
+<p>在 <code>EventGraph</code> 实现 <br/></p>
 <table>
 <thead>
 <tr>
 <th>-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JavaScript</td>
-</tr>
-<tr>
-<td>PHP</td>
-</tr>
-<tr>
-<td>Lua</td>
-</tr>
-<tr>
-<td>Python</td>
-</tr>
-<tr>
-<td>C#</td>
-</tr>
-</tbody>
-</table>
-<h2 id="shell脚本">Shell脚本 <a href="#shell%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>开发语言</code> <code>Shell Script</code> <br/>
-由一连串Shell命令组成，可以指定解释脚本的Shell程序。 <br/></p>
-<h2 id="命令提示符">命令提示符 <a href="#%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Prompt</code> <br/>
-命令解释器提供并在终端显示，如当前路径和git信息。 <br/></p>
-<table>
-<thead>
-<tr>
-<th>类别</th>
+<th></th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>第三方提示</td>
-<td><code>Powerline</code> <code>Starship</code> <code>Power Level 10K</code> <code>Spaceship</code></td>
+<td>GetVelocity函数</td>
+<td>获取Character速度</td>
+<td>获得Actor各个方向上的速度，保存在FVector中</td>
 </tr>
 <tr>
-<td>第三方框架</td>
-<td><code>oh-my-zsh</code></td>
-</tr>
-<tr>
+<td>FVector::VectorLength</td>
+<td>获得速度标量</td>
 <td></td>
-<td>提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为</td>
+</tr>
+<tr>
+<td>PrintString</td>
+<td>在屏幕上输出实时速度</td>
+<td><code>PrintString</code> 使用 <code>AddOnScreenDebugMessage</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="查看shell信息">查看Shell信息 <a href="#%e6%9f%a5%e7%9c%8bshell%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>命令解释器</code> <br/></p>
-<ol>
-<li>当前使用的Shell <br/>
-<pre><code class="language-bash">echo $SHELL
-echo $0
-</code></pre>
+<p><img src="/pic/角色和动画/添加向前走路动画/在屏幕上输出实时速度.png" width="700" /> <br/> <br/></p>
+<p>可以看到加速过程 <br/></p>
 </li>
-<li>已安装Shell <br/>
-<pre><code class="language-bash">cat /etc/shells
-</code></pre>
+<li>
+<p>移除打印 <br/></p>
 </li>
 </ol>
-<h2 id="shell操作">Shell操作 <a href="#shell%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="创建动画蓝图abp-basecharacter">创建动画蓝图ABP_BaseCharacter <a href="#%e5%88%9b%e5%bb%ba%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%beabp-basecharacter" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Animation Blueprint</code> <br/></p>
+<h3 id="创建文件夹content-players-animations">创建文件夹Content/Players/Animations <a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9content-players-animations" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="方法一-基于skeleton-mesh创建动画蓝图">方法一: 基于Skeleton Mesh创建动画蓝图 <a href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e5%9f%ba%e4%ba%8eskeleton-mesh%e5%88%9b%e5%bb%ba%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>选中ExternalContent/Animation/Characters/HeroTPP/HeroTPP &gt; 右键 &gt; Create &gt; AnimBlueprint</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/HeroTPP-Create-AnimBlueprint.png" width="600" /> <br/> <br/></p>
+<h3 id="方法二-在指定位置创建动画蓝图">方法二: 在指定位置创建动画蓝图 <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e5%9c%a8%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae%e5%88%9b%e5%bb%ba%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
-<li>切换Shell程序 <br/>
-<em>重新打开终端生效</em> <br/>
-<pre><code class="language-bash">chsh -s /bin/bash
-</code></pre>
-<em>不修改SHELL环境变量</em> <br/>
-<pre><code class="language-bash">zsh
-</code></pre>
+<li>
+<p><code>去到 Content/Player/Animations，右键 &gt; Animation &gt; 选择Animation Blueprint</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/在指定位置创建动画蓝图.png" width="700" /> <br/> <br/></p>
 </li>
-<li>手动读取配置文件 <br/>
-<em>zsh</em> <br/>
-<pre><code class="language-bash">source ~/.zshrc
-</code></pre>
+<li>
+<p>选择 <code>HeroTPP_Skeleton</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/AnimationBlueprint-HeroTPP_Skeleton.png" width="350" /> <br/> <br/></p>
 </li>
-<li>指定Shell脚本的命令解释器 <br/>
-<pre><code class="language-bash">#!/bin/bash
-</code></pre>
+<li>
+<p>命名为 <code>ABP_BaseCharacter</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/Animations-ABP_BaseCharacter.png" width="350" /> <br/> <br/></p>
+</li>
+</ol>
+<h2 id="在蓝图编辑器中查看动画蓝图">在蓝图编辑器中查看动画蓝图 <a href="#%e5%9c%a8%e8%93%9d%e5%9b%be%e7%bc%96%e8%be%91%e5%99%a8%e4%b8%ad%e6%9f%a5%e7%9c%8b%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>ABP_BaseCharacter</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EventGraph</td>
+<td>事件图表</td>
+<td>处理各种动画事件；像使用 <code>Tick</code> 一样使用 <code>EventBlueprintUpdateAnimation</code></td>
+</tr>
+<tr>
+<td>AnimGraph</td>
+<td>动画图表</td>
+<td>处理所有动画；可以将动画资产作为 <code>OutputPose</code> 的输入</td>
+</tr>
+<tr>
+<td>AssetBrowser</td>
+<td>动画资产窗口</td>
+<td>可以从 <code>Window &gt; AssetBrowser</code> 打开，罗列了 <code>SkeletonMesh</code> 所有相关动画</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter.png" width="1200" /> <br/> <br/></p>
+<h2 id="为游戏角色设置动画时使用动画蓝图">为游戏角色设置动画时使用动画蓝图 <a href="#%e4%b8%ba%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e8%ae%be%e7%bd%ae%e5%8a%a8%e7%94%bb%e6%97%b6%e4%bd%bf%e7%94%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="为abp-basecharacter设置输入">为ABP_BaseCharacter设置输入 <a href="#%e4%b8%baabp-basecharacter%e8%ae%be%e7%bd%ae%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>动画图表</code> <br/></p>
+<ol>
+<li>
+<p>将 <code>Run_Fwd</code> 作为 <code>OutputPose</code> 的输入 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/将Run_Fwd作为OutputPose的输入.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p>设置 <code>Run_Fwd</code> 重复播放 <br/>
+<code>选中Run_Fwd &gt; Details &gt; Settings &gt; 使能 LoopAnimation</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-AnimGraph-RunFwd-LoopAnimation.png" width="300" /> <br/> <br/></p>
+</li>
+</ol>
+<h3 id="让character使用动画蓝图">让Character使用动画蓝图 <a href="#%e8%ae%a9character%e4%bd%bf%e7%94%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>BP_STBaseCharacter</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animation Mode</td>
+<td>Use Animation Blueprint</td>
+</tr>
+<tr>
+<td>Anim Class</td>
+<td>ABP_BaseCharacter</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/角色和动画/添加向前走路动画/BP_STUBaseCharacter-UseAnimationBlueprint-ABP_BaseCharacter.png" width="1300" /> <br/> <br/></p>
+<h2 id="查看动画资产">查看动画资产 <a href="#%e6%9f%a5%e7%9c%8b%e5%8a%a8%e7%94%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>去到Content/ExternalContent/Animation/Animations/TTP_Animations，双击 Run_Fwd</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/Run_Fwd.png" width="1200" /> <br/> <br/></p>
+<p>可在 <code>AssetBrowser</code> 中选择其他动画 <br/></p>
+<h2 id="混合空间资产">混合空间资产 <a href="#%e6%b7%b7%e5%90%88%e7%a9%ba%e9%97%b4%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Blend Space</code> <br/></p>
+<p>速度从 <code>0</code> - <code>600</code> ，动画从 <code>Idle</code> 过渡到 <code>Run_Fwd</code> <br/></p>
+<h3 id="创建bs-locomotion-walk-1d">创建BS_Locomotion_Walk_1D <a href="#%e5%88%9b%e5%bb%babs-locomotion-walk-1d" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p><code>去到Content/Player/Animations，右键</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/创建BlendSpace1D.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>选择 <code>HeroTPP_Skeleton</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/BS_Locomotion_Walk_1D-HeroTPP_Skeleton.png" width="450" /> <br/> <br/></p>
+</li>
+<li>
+<p>命名为 <code>BS_Locomotion_Walk_1D</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/Animations-BS_Locomotion_Walk_1D.png" width="950" /> <br/> <br/></p>
+</li>
+</ol>
+<h3 id="配置bs-locomotion-walk-1d">配置BS_Locomotion_Walk_1D <a href="#%e9%85%8d%e7%bd%aebs-locomotion-walk-1d" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p>双击打开 <code>BS_Locomotion_Walk_1D</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/BS_Locomotion_Walk_1D.png" width="1400" /> <br/> <br/></p>
+</li>
+<li>
+<p>配置横轴 <br/>
+<code>Asset Details &gt; Axis Settings &gt; Horizontal Axis</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>名称</td>
+<td>Velocity</td>
+<td></td>
+</tr>
+<tr>
+<td>Minimum Axis Value</td>
+<td>轴最小值</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum Axis Value</td>
+<td>轴最大值</td>
+<td>600</td>
+<td>游戏角色运动速度上限</td>
+</tr>
+<tr>
+<td>Grid Divisions</td>
+<td>过渡区间</td>
+<td>4</td>
+<td>使用默认值；和可以添加的动画个数有关</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/角色和动画/添加向前走路动画/BS_Locomotion_Walk_1D-AssetDetails-配置轴.png" width="350" /> <br/> <br/></p>
+</li>
+<li>
+<p>配置动画 <br/></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>动画资产</th>
+<th>Velocity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起点</td>
+<td>Idle</td>
+<td>0</td>
+</tr>
+<tr>
+<td>终点</td>
+<td>Run_Fwd</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>查看插值 <br/></p>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>键位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>Control</td>
+</tr>
+<tr>
+<td>MacOS</td>
+<td>Command</td>
+</tr>
+</tbody>
+</table>
+<p>按下键位，水平移动鼠标，绿色X随之在起点和终点间移动，视口展示过渡动画 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/BS_Locomotion_Walk_1D-过渡动画.png" width="700" /> <br/> <br/></p>
+</li>
+</ol>
+<h2 id="将bs-locomotion-walk-1d作为动画蓝图输入">将BS_Locomotion_Walk_1D作为动画蓝图输入 <a href="#%e5%b0%86bs-locomotion-walk-1d%e4%bd%9c%e4%b8%ba%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>ABP_BaseCharacter</code> <br/></p>
+<h3 id="添加变量velocity">添加变量Velocity <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8fvelocity" class="anchor" aria-hidden="true">#</a></h3>
+<p>在 <code>MyBlueprint</code> 添加变量 <code>Velocity</code> ，在Details设置名称和类型 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-添加变量-Float-Velocity.png" width="1300" /> <br/> <br/></p>
+<h3 id="设置变量velocity">设置变量Velocity <a href="#%e8%ae%be%e7%bd%ae%e5%8f%98%e9%87%8fvelocity" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>EventGraph</code> <br/></p>
+<ol>
+<li>
+<p>将变量Velocity拖动到EventGraph, 选择设置变量值 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-EventGraph-Velocity.png" width="100" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-EventGraph-Velocity-Result.png" width="150" /> <br/> <br/></p>
+</li>
+<li>
+<p>在 <code>EventBlueprintUpdateAnimation</code> 之后，执行 <code>SetVelocity</code> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-EventGraph-SetVelocity.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>GetPawnOwner</code> 返回 <code>Pawn</code> 实例的引用, 变量 <code>Velocity</code> 的输入是 <code>Actor</code> 实时速度 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-EventGraph-Final.png" width="800" /> <br/> <br/></p>
+</li>
+</ol>
+<h3 id="设置动画蓝图输入">设置动画蓝图输入 <a href="#%e8%ae%be%e7%bd%ae%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>AnimGraph</code> <br/></p>
+<ol>
+<li>
+<p>将BS_Locomotion_Walk_1D作为OutputPose的输入 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-BS_Locomotion_Walk_1D作为OutputPose输入.png" width="500" /> <br/> <br/></p>
+</li>
+<li>
+<p>将变量Velocity拖动到AnimGraph, 选择获取变量值 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-AnimGraph-Velocity.png" width="100" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-AnimGraph-Velocity-Get.png" width="150" /> <br/> <br/></p>
+</li>
+<li>
+<p>将变量Velocity作为BS_Locomotion_Walk_1D的输入 <br/></p>
+<p><img src="/pic/角色和动画/添加向前走路动画/ABP_BaseCharacter-AnimGraph-Final.png" width="700" /> <br/> <br/></p>
 </li>
 </ol>
 
@@ -1444,17 +1749,17 @@ echo $0
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Shell脚本
+					&larr; 实现游戏角色视角旋转
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					Git &rarr;
+					实现游戏角色跳跃 &rarr;
 				</div>
 			</div>
 		</a>

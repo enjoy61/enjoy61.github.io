@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>终端 - 六一的部落格</title>
-<meta name="description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+  <title>实现游戏角色跳跃 - 六一的部落格</title>
+<meta name="description" content="概览 # 状态机 # State Machine 定义多个状态，每个状态对应一个动画 在一个动画蓝图中管理多个状态，并定义状态之间的迁移条件 ACharacter::IsFalling # 当Character在空中时返回true，Character落地时返回false 绑定跳跃键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 动作映射 函数描述 键位 Jump SpaceBar 实现跳跃逻辑 # C&#43;&#43; - 回调函数签名 BindAction void handler() 函数描述 回调函数 Jump Jump 回调函数由虚幻引擎提供，按下时触发 绑定函数描述和回调函数 # ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Jump&amp;quot;, IE_Pressed, this, &amp;amp;ASTUBaseCharacter::Jump); 使用状态机实现跳跃动画 # 虚幻编辑器 实现跳跃动画 # ABP_BaseCharacter 添加状态机, 将其作为OutPose的输入 # AnimGraph 添加 状态机 ，命名为 Locomotion 将 Locomotion 作为 OutputPose 的输入 状态机说明 # 跳跃动画资产 - JumpStart 跳起 JumpLoop 在空中 JumpEnd 落地 状态 - Walk JumpStart JumpLoop JumpEnd 状态迁移 - Walk &amp;gt; JumpStart 游戏角色在空中 JumpStart &amp;gt; JumpLoop JumpStart 动画播放结束 JumpLoop &amp;gt; JumpEnd 游戏角色落地 JumpEnd &amp;gt; Walk JumpEnd 动画播放结束 实现状态机 # 双击Locomotion，进入状态机">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终端">
-<meta property="og:description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:title" content="实现游戏角色跳跃">
+<meta property="og:description" content="概览 # 状态机 # State Machine 定义多个状态，每个状态对应一个动画 在一个动画蓝图中管理多个状态，并定义状态之间的迁移条件 ACharacter::IsFalling # 当Character在空中时返回true，Character落地时返回false 绑定跳跃键位 # 虚幻编辑器 项目设置 &gt; Engine &gt; Input 动作映射 函数描述 键位 Jump SpaceBar 实现跳跃逻辑 # C&#43;&#43; - 回调函数签名 BindAction void handler() 函数描述 回调函数 Jump Jump 回调函数由虚幻引擎提供，按下时触发 绑定函数描述和回调函数 # ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&gt;BindAction(&quot;Jump&quot;, IE_Pressed, this, &amp;ASTUBaseCharacter::Jump); 使用状态机实现跳跃动画 # 虚幻编辑器 实现跳跃动画 # ABP_BaseCharacter 添加状态机, 将其作为OutPose的输入 # AnimGraph 添加 状态机 ，命名为 Locomotion 将 Locomotion 作为 OutputPose 的输入 状态机说明 # 跳跃动画资产 - JumpStart 跳起 JumpLoop 在空中 JumpEnd 落地 状态 - Walk JumpStart JumpLoop JumpEnd 状态迁移 - Walk &gt; JumpStart 游戏角色在空中 JumpStart &gt; JumpLoop JumpStart 动画播放结束 JumpLoop &gt; JumpEnd 游戏角色落地 JumpEnd &gt; Walk JumpEnd 动画播放结束 实现状态机 # 双击Locomotion，进入状态机">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-10T22:11:40+00:00">
-  <meta property="article:modified_time" content="2023-08-04T18:50:45+08:00">
+<meta property="article:published_time" content="2023-06-11T06:17:39+00:00">
+  <meta property="article:modified_time" content="2023-08-06T13:56:17+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="终端">
+<meta name="twitter:title" content="实现游戏角色跳跃">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="终端">
+    <meta name="twitter:image:alt" content="实现游戏角色跳跃">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "url": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "name": "终端",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/",
+      "name": "实现游戏角色跳跃",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-10T22:11:40CET",
-      "dateModified": "2023-08-04T18:50:45CET",
+      "datePublished": "2023-06-11T06:17:39CET",
+      "dateModified": "2023-08-06T13:56:17CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,15 +125,33 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/brick/",
-          "url": "https://enjoy61.github.io/docs/brick/",
-          "name": "Brick"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "name": "% E8% A7%92% E8%89% B2% E5%92%8 C% E5%8 A% A8% E7%94% Bb"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/"
           }
         }]
     },
@@ -144,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "终端",
+          "headline": "实现游戏角色跳跃",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/"
           },
-          "datePublished": "2023-06-10T22:11:40CET",
-          "dateModified": "2023-08-04T18:50:45CET",
+          "datePublished": "2023-06-11T06:17:39CET",
+          "dateModified": "2023-08-06T13:56:17CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -161,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/#/schema/image/2"
           }
         }
       ]
@@ -186,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "终端"
+          "caption": "实现游戏角色跳跃"
         }
       ]
     }
@@ -239,15 +257,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -256,29 +274,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -333,7 +351,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
                                   
 
                                 
@@ -575,15 +593,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -592,29 +610,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -669,7 +687,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
                                   
 
                                 
@@ -853,15 +871,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -870,29 +888,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -947,7 +965,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
                                   
 
                                 
@@ -1132,15 +1150,31 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#状态机">状态机</a></li>
+            <li><a href="#acharacter-isfalling">ACharacter::IsFalling</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跳跃键位">绑定跳跃键位</a></li>
+        <li><a href="#实现跳跃逻辑">实现跳跃逻辑</a>
+          <ul>
+            <li><a href="#绑定函数描述和回调函数">绑定函数描述和回调函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用状态机实现跳跃动画">使用状态机实现跳跃动画</a>
+          <ul>
+            <li><a href="#实现跳跃动画">实现跳跃动画</a>
+              <ul>
+                <li><a href="#添加状态机-将其作为outpose的输入">添加状态机, 将其作为OutPose的输入</a></li>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#实现状态机">实现状态机</a></li>
+              </ul>
+            </li>
+            <li><a href="#添加楼梯-查看jump三阶段是否正常显示">添加楼梯，查看Jump三阶段是否正常显示</a></li>
+          </ul>
+        </li>
+        <li><a href="#跳跃时z方向速度">跳跃时Z方向速度</a></li>
       </ul>
     </li>
   </ul>
@@ -1156,15 +1190,31 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#状态机">状态机</a></li>
+            <li><a href="#acharacter-isfalling">ACharacter::IsFalling</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跳跃键位">绑定跳跃键位</a></li>
+        <li><a href="#实现跳跃逻辑">实现跳跃逻辑</a>
+          <ul>
+            <li><a href="#绑定函数描述和回调函数">绑定函数描述和回调函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用状态机实现跳跃动画">使用状态机实现跳跃动画</a>
+          <ul>
+            <li><a href="#实现跳跃动画">实现跳跃动画</a>
+              <ul>
+                <li><a href="#添加状态机-将其作为outpose的输入">添加状态机, 将其作为OutPose的输入</a></li>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#实现状态机">实现状态机</a></li>
+              </ul>
+            </li>
+            <li><a href="#添加楼梯-查看jump三阶段是否正常显示">添加楼梯，查看Jump三阶段是否正常显示</a></li>
+          </ul>
+        </li>
+        <li><a href="#跳跃时z方向速度">跳跃时Z方向速度</a></li>
       </ul>
     </li>
   </ul>
@@ -1179,12 +1229,14 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
-<li class="breadcrumb-item active" aria-current="page">终端</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/">角色和动画</a></li>
+<li class="breadcrumb-item active" aria-current="page">实现游戏角色跳跃</li>
 					</ol>
 				</nav>
 			
-			<h1>终端</h1>
+			<h1>实现游戏角色跳跃</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -1202,15 +1254,31 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#状态机">状态机</a></li>
+            <li><a href="#acharacter-isfalling">ACharacter::IsFalling</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跳跃键位">绑定跳跃键位</a></li>
+        <li><a href="#实现跳跃逻辑">实现跳跃逻辑</a>
+          <ul>
+            <li><a href="#绑定函数描述和回调函数">绑定函数描述和回调函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用状态机实现跳跃动画">使用状态机实现跳跃动画</a>
+          <ul>
+            <li><a href="#实现跳跃动画">实现跳跃动画</a>
+              <ul>
+                <li><a href="#添加状态机-将其作为outpose的输入">添加状态机, 将其作为OutPose的输入</a></li>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#实现状态机">实现状态机</a></li>
+              </ul>
+            </li>
+            <li><a href="#添加楼梯-查看jump三阶段是否正常显示">添加楼梯，查看Jump三阶段是否正常显示</a></li>
+          </ul>
+        </li>
+        <li><a href="#跳跃时z方向速度">跳跃时Z方向速度</a></li>
       </ul>
     </li>
   </ul>
@@ -1226,15 +1294,31 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#状态机">状态机</a></li>
+            <li><a href="#acharacter-isfalling">ACharacter::IsFalling</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跳跃键位">绑定跳跃键位</a></li>
+        <li><a href="#实现跳跃逻辑">实现跳跃逻辑</a>
+          <ul>
+            <li><a href="#绑定函数描述和回调函数">绑定函数描述和回调函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用状态机实现跳跃动画">使用状态机实现跳跃动画</a>
+          <ul>
+            <li><a href="#实现跳跃动画">实现跳跃动画</a>
+              <ul>
+                <li><a href="#添加状态机-将其作为outpose的输入">添加状态机, 将其作为OutPose的输入</a></li>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#实现状态机">实现状态机</a></li>
+              </ul>
+            </li>
+            <li><a href="#添加楼梯-查看jump三阶段是否正常显示">添加楼梯，查看Jump三阶段是否正常显示</a></li>
+          </ul>
+        </li>
+        <li><a href="#跳跃时z方向速度">跳跃时Z方向速度</a></li>
       </ul>
     </li>
   </ul>
@@ -1243,117 +1327,121 @@
   </div>
 
 			</nav>
-			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.bilibili.com/video/BV1rk4y1W7dZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click">介绍CLI，Terminal，Shell和Prompt视频</a> <br/></p>
-<h2 id="shell概念">shell概念 <a href="#shell%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>接口</code> <br/>
-shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 <br/></p>
-<p>根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 <br/></p>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="状态机">状态机 <a href="#%e7%8a%b6%e6%80%81%e6%9c%ba" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>State Machine</code> <br/></p>
+<ul>
+<li>定义多个状态，每个状态对应一个动画 <br/></li>
+<li>在一个动画蓝图中管理多个状态，并定义状态之间的迁移条件 <br/></li>
+</ul>
+<h3 id="acharacter-isfalling">ACharacter::IsFalling <a href="#acharacter-isfalling" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>当Character在空中时返回true，Character落地时返回false <br/></li>
+</ul>
+<h2 id="绑定跳跃键位">绑定跳跃键位 <a href="#%e7%bb%91%e5%ae%9a%e8%b7%b3%e8%b7%83%e9%94%ae%e4%bd%8d" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/>
+<code>项目设置 &gt; Engine &gt; Input</code> <br/>
+<code>动作映射</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>函数描述</th>
+<th>键位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jump</td>
+<td>SpaceBar</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/角色和动画/实现Character跳跃/绑定跳跃键位/跳跃键位.png" width="500" /> <br/> <br/></p>
+<h2 id="实现跳跃逻辑">实现跳跃逻辑 <a href="#%e5%ae%9e%e7%8e%b0%e8%b7%b3%e8%b7%83%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>回调函数签名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BindAction</td>
+<td>void handler()</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>函数描述</th>
+<th>回调函数</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jump</td>
+<td>Jump</td>
+<td>回调函数由虚幻引擎提供，按下时触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="绑定函数描述和回调函数">绑定函数描述和回调函数 <a href="#%e7%bb%91%e5%ae%9a%e5%87%bd%e6%95%b0%e6%8f%8f%e8%bf%b0%e5%92%8c%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: Player/STUBaseCharacter.cpp</code>       <br/></p>
+<pre><code class="language-cpp">// SetupPlayerInputComponent
+PlayerInputComponent-&gt;BindAction(&quot;Jump&quot;, IE_Pressed, this, &amp;ASTUBaseCharacter::Jump);
+</code></pre>
+<h2 id="使用状态机实现跳跃动画">使用状态机实现跳跃动画 <a href="#%e4%bd%bf%e7%94%a8%e7%8a%b6%e6%80%81%e6%9c%ba%e5%ae%9e%e7%8e%b0%e8%b7%b3%e8%b7%83%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code>  <br/></p>
+<h3 id="实现跳跃动画">实现跳跃动画 <a href="#%e5%ae%9e%e7%8e%b0%e8%b7%b3%e8%b7%83%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ABP_BaseCharacter</code> <br/></p>
+<h4 id="添加状态机-将其作为outpose的输入">添加状态机, 将其作为OutPose的输入 <a href="#%e6%b7%bb%e5%8a%a0%e7%8a%b6%e6%80%81%e6%9c%ba-%e5%b0%86%e5%85%b6%e4%bd%9c%e4%b8%baoutpose%e7%9a%84%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>AnimGraph</code> <br/></p>
 <ol>
-<li>CLI <br/>
-<em>Command-Line Interface</em> <br/>
-<code>命令行界面</code> <br/>
-通过文本命令和计算机交互 <br/></li>
-<li>GUI <br/>
-<em>Graphical User Interface</em> <br/>
-<code>图形用户界面</code> <br/>
-通过鼠标操作 <br/></li>
+<li>
+<p>添加 <code>状态机</code> ，命名为 <code>Locomotion</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-StateMachine.png" width="400" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Locomotion.png" width="120" /> <br/> <br/></p>
+</li>
+<li>
+<p>将 <code>Locomotion</code> 作为 <code>OutputPose</code> 的输入 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph.png" width="500" /> <br/> <br/></p>
+</li>
 </ol>
-<p>早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 <br/></p>
-<h2 id="终端程序">终端程序 <a href="#%e7%bb%88%e7%ab%af%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Terminal</code> <br/>
-<code>Wrapper Program</code> <br/>
-在终端输入文本命令 <br/></p>
+<h4 id="状态机说明">状态机说明 <a href="#%e7%8a%b6%e6%80%81%e6%9c%ba%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>跳跃动画资产
 <table>
 <thead>
 <tr>
-<th>终端程序</th>
-<th>说明</th>
+<th>-</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>iTerm</td>
-<td>MacOS</td>
+<td>JumpStart</td>
+<td>跳起</td>
 </tr>
 <tr>
-<td>Windows Terminal</td>
-<td>Windows</td>
+<td>JumpLoop</td>
+<td>在空中</td>
 </tr>
 <tr>
-<td>Gnome Terminal</td>
-<td>使用Gnome作为桌面的Linux自带的终端程序</td>
-</tr>
-<tr>
-<td>Hyper</td>
-<td></td>
-</tr>
-<tr>
-<td>Warp</td>
-<td>目前MacOS；自动补全，鼠标交互，内置工作流，AI功能</td>
-</tr>
-<tr>
-<td>Alacrity</td>
-<td></td>
+<td>JumpEnd</td>
+<td>落地</td>
 </tr>
 </tbody>
 </table>
-<h2 id="命令解释器">命令解释器 <a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a%e5%99%a8" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Shell</code> <code>程序</code> <br/>
-终端中运行的程序。接受命令，然后解释并执行。 <br/></p>
-<p>Shell启动时自动读取配置文件。 <br/></p>
-<table>
-<thead>
-<tr>
-<th>Shell</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sh</td>
-<td><em>Bourne Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>UNIX上的标准shell</td>
-</tr>
-<tr>
-<td>bash</td>
-<td><em>Bourne-Again Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>GNU开发；Linux默认</td>
-</tr>
-<tr>
-<td></td>
-<td>不完全兼容sh shell，对一些命令和参数进行了扩展</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/.bash_profile</td>
-</tr>
-<tr>
-<td>zsh</td>
-<td>19年之前MacOS默认Bash；之后使用zsh</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/zshrc</td>
-</tr>
-<tr>
-<td></td>
-<td>第三方框架oh-my-zsh提供其他功能</td>
-</tr>
-<tr>
-<td>phish</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="脚本语言">脚本语言 <a href="#%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80" class="anchor" aria-hidden="true">#</a></h2>
-<p>需要解释器，每次运行时都需要解释。 <br/></p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>状态
 <table>
 <thead>
 <tr>
@@ -1362,99 +1450,321 @@ shell，和core相区分，是操作系统的外层。通过Shell程序，可以
 </thead>
 <tbody>
 <tr>
-<td>JavaScript</td>
+<td>Walk</td>
 </tr>
 <tr>
-<td>PHP</td>
+<td>JumpStart</td>
 </tr>
 <tr>
-<td>Lua</td>
+<td>JumpLoop</td>
 </tr>
 <tr>
-<td>Python</td>
-</tr>
-<tr>
-<td>C#</td>
+<td>JumpEnd</td>
 </tr>
 </tbody>
 </table>
-<h2 id="shell脚本">Shell脚本 <a href="#shell%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>开发语言</code> <code>Shell Script</code> <br/>
-由一连串Shell命令组成，可以指定解释脚本的Shell程序。 <br/></p>
-<h2 id="命令提示符">命令提示符 <a href="#%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Prompt</code> <br/>
-命令解释器提供并在终端显示，如当前路径和git信息。 <br/></p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>状态迁移
 <table>
 <thead>
 <tr>
-<th>类别</th>
+<th>-</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>第三方提示</td>
-<td><code>Powerline</code> <code>Starship</code> <code>Power Level 10K</code> <code>Spaceship</code></td>
+<td>Walk &gt; JumpStart</td>
+<td>游戏角色在空中</td>
 </tr>
 <tr>
-<td>第三方框架</td>
-<td><code>oh-my-zsh</code></td>
+<td>JumpStart &gt; JumpLoop</td>
+<td>JumpStart 动画播放结束</td>
 </tr>
 <tr>
-<td></td>
-<td>提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为</td>
+<td>JumpLoop &gt; JumpEnd</td>
+<td>游戏角色落地</td>
+</tr>
+<tr>
+<td>JumpEnd &gt; Walk</td>
+<td>JumpEnd 动画播放结束</td>
 </tr>
 </tbody>
 </table>
-<h2 id="查看shell信息">查看Shell信息 <a href="#%e6%9f%a5%e7%9c%8bshell%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>命令解释器</code> <br/></p>
-<ol>
-<li>当前使用的Shell <br/>
-<pre><code class="language-bash">echo $SHELL
-echo $0
-</code></pre>
 </li>
-<li>已安装Shell <br/>
-<pre><code class="language-bash">cat /etc/shells
-</code></pre>
+</ul>
+<h4 id="实现状态机">实现状态机 <a href="#%e5%ae%9e%e7%8e%b0%e7%8a%b6%e6%80%81%e6%9c%ba" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>双击Locomotion，进入状态机</p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Default.png" width="500" /> <br/> <br/></p>
+<p>仅一个入口 <code>Entry</code> <br/></p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>移植Walk状态</p>
+<ol>
+<li>
+<p>为 <code>Locomotion</code> 添加 <code>State</code> ，命名为 <code>Walk</code> ，使 <code>Entry</code> 指向 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Entry-AddState.png" width="300" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Entry-Walk.png" width="200" /> <br/> <br/></p>
+</li>
+<li>
+<p>双击 <code>Walk</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Walk.png" width="150" /> <br/> <br/></p>
+</li>
+<li>
+<p>将OutputPose之前的输入， <code>Velocity + BS_Locomotion_Walk_1D</code> 封装到 <code>Walk</code> 状态（剪切）， 作为其 OutputAnimationPose 的输入 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Walk-BS_Locomotion_Walk_1D.png" width="600" /> <br/> <br/></p>
+<p>至此， <code>Character</code> 的运动动画和上一小节一致 <br/></p>
 </li>
 </ol>
-<h2 id="shell操作">Shell操作 <a href="#shell%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h2>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>实现跳跃状态</p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>添加布尔型变量IsFalling</p>
+<p>上一小节中，变量 <code>Velocity</code> 横跨 <code>ABP_BaseCharacter</code> 的 <code>EventGraph</code> 和 <code>AnimGraph</code> ，这里，布尔类型变量 <code>IsFalling</code> 也一样 <br/></p>
+<p>在 <code>EventGraph</code> 设置变量值，在 <code>AnimGraph</code> 中使用变量 <br/></p>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>使用ACharacter::IsFalling设置变量IsFalling</p>
+<p><code>EventGraph</code> <br/></p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>将Pawn转换为Character</p>
 <ol>
-<li>切换Shell程序 <br/>
-<em>重新打开终端生效</em> <br/>
-<pre><code class="language-bash">chsh -s /bin/bash
-</code></pre>
-<em>不修改SHELL环境变量</em> <br/>
-<pre><code class="language-bash">zsh
-</code></pre>
+<li>
+<p>接着设置Velocity, 将Pawn转换为Character <br/>
+不能同时从 <code>EventBlueprintUpdateAnimation</code> 出发， <code>SetVelocity</code> 之后，执行转换 <br/></p>
 </li>
-<li>手动读取配置文件 <br/>
-<em>zsh</em> <br/>
-<pre><code class="language-bash">source ~/.zshrc
-</code></pre>
-</li>
-<li>指定Shell脚本的命令解释器 <br/>
-<pre><code class="language-bash">#!/bin/bash
-</code></pre>
+<li>
+<p>双击 <code>TryGetPawnOwner</code> 和 <code>CastToCharacter</code> 连线上的一点，创建Bezier曲线，排线更易整理 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-将Pawn转换成Character.png" width="800" /> <br/> <br/></p>
 </li>
 </ol>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>对ACharacter::CharacterMovement调用ACharacter::IsFalling</p>
+<ol>
+<li>
+<p>接着CastToCharacter, 设置IsFalling <br/></p>
+</li>
+<li>
+<p>从 <code>CaseToCharacter &gt; AsCharacter</code> 到 <code>IsFalling &gt; Target</code> ，自动添加提取数据成员; <code>IsFalling</code> 函数的返回类型是布尔，作为 <code>SetIsFalling</code> 的输入 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-设置变量IsFalling.png" width="900" /> <br/> <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>完整EventGraph</p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-EventGraph.png" width="800" /> <br/>          <br/></p>
+</li>
+</ul>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>实现状态机</p>
+<ol>
+<li>
+<p>回到 <code>Locomotion</code> <br/></p>
+</li>
+<li>
+<p>从 <code>AssetBrowser</code> 把 <code>Jump</code> 的三个动画拖入 <code>Locomotion</code> <br/>
+动画自动被封装为 <code>State</code> ，和之前 <code>AddState</code> ，再将动画作为状态输入达到的效果一样 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Locomotion-添加Jump.png" width="900" /> <br/> <br/></p>
+</li>
+<li>
+<p>添加状态迁移路径 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Locomotion-添加转换.png" width="700" /> <br/> <br/></p>
+</li>
+<li>
+<p>添加状态迁移条件 <br/></p>
+<table>
+<thead>
+<tr>
+<th>状态迁移</th>
+<th>触发条件</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk &gt; JumpStart</td>
+<td>游戏角色在空中</td>
+<td>ACharacter::IsFalling 返回true</td>
+</tr>
+<tr>
+<td>JumpStart &gt; JumpLoop</td>
+<td>JumpStart 动画播放结束</td>
+<td>TimeRemaining &lt; 0.1</td>
+</tr>
+<tr>
+<td>JumpLoop &gt; JumpEnd</td>
+<td>游戏角色落地</td>
+<td>ACharacter::IsFalling 返回true</td>
+</tr>
+<tr>
+<td>JumpEnd &gt; Walk</td>
+<td>JumpEnd 动画播放结束</td>
+<td>TimeRemaining &lt; 0.1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>双击转换图标，即可为状态迁移添加迁移条件 <br/>
+拿 <code>Walk &gt; JumpStart</code> 举例 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Locomotion-双击转换图标.png" width="350" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>Walk &gt; JumpStart</code> 迁移条件：变量 <code>IsFalling</code> 为 <code>true</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Walk-JumpStart.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>JumpStart &gt; JumpLoop</code> 迁移条件： <code>JumpStart</code> 动画将近结束 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Less.png" width="350" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-JumpStart-JumpLoop.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>JumpLoop &gt; JumpEnd</code> 迁移条件：变量 <code>IsFalling</code> 为 <code>false</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Not.png" width="350" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-JumpLoop-JumpEnd.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>JumpEnd &gt; Walk</code> 迁移条件： <code>JumpEnd</code> 将近结束 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-JumpEnd-Walk.png" width="800" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>设置 <code>State</code> 输入动画是否循环播放 <br/></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BS_Locomotion_Walk_1D</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>JumpStart</td>
+<td>播放一次</td>
+</tr>
+<tr>
+<td>JumpLoop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>JumpEnd</td>
+<td>播放一次</td>
+</tr>
+</tbody>
+</table>
+<p>拿 <code>JumpStart</code> 状态举例: <code>选中JumpStart动画 &gt; Details &gt; Settings &gt; LoopAnimation 为true</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/ABP_BaseCharacter-AnimGraph-Locomotion-JumpStart.png" width="1000" /> <br/> <br/></p>
+<p>如此设置还可修复Character跳跃时的卡顿 <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="添加楼梯-查看jump三阶段是否正常显示">添加楼梯，查看Jump三阶段是否正常显示 <a href="#%e6%b7%bb%e5%8a%a0%e6%a5%bc%e6%a2%af-%e6%9f%a5%e7%9c%8bjump%e4%b8%89%e9%98%b6%e6%ae%b5%e6%98%af%e5%90%a6%e6%ad%a3%e5%b8%b8%e6%98%be%e7%a4%ba" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p>添加楼梯 <br/>
+<code>PlaceActors &gt; Geometry &gt; LinearStair</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/LevelEditor-添加楼梯.png" width="200" /> <br/> <br/></p>
+</li>
+<li>
+<p>设置阶数 <br/>
+<code>选中LinearStairBrush &gt; Details &gt; BrushSettings &gt; NumSteps</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/LevelEditor-Details-设置楼梯阶数.png" width="300" /> <br/> <br/></p>
+</li>
+<li>
+<p>将楼梯移动到合适位置 <br/></p>
+</li>
+<li>
+<p>游戏角色从楼梯跳到平面时，循环 <code>JumpLoop</code> <br/></p>
+</li>
+<li>
+<p>跑步时跳跃，落地后会平滑一段距离 <br/></p>
+</li>
+</ol>
+<h2 id="跳跃时z方向速度">跳跃时Z方向速度 <a href="#%e8%b7%b3%e8%b7%83%e6%97%b6z%e6%96%b9%e5%90%91%e9%80%9f%e5%ba%a6" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>BP_STUBaseCharacter</code> <br/></p>
+<p>JumpZVelocity不宜过大, 不然 <code>JumpStart</code> 动画播放结束，速度却未减为0，此时Character还在上升，却在播放 <code>JumpLoop</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vz &gt; 0</td>
+<td>JumpStart</td>
+<td>该过程应 近似 <code>JumpStart</code> 播放时长</td>
+</tr>
+<tr>
+<td>Vz &lt;= 0</td>
+<td>JumpLoop</td>
+<td>从临界点落下</td>
+</tr>
+<tr>
+<td>Vz = 0</td>
+<td>JumpEnd</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/角色和动画/实现Character跳跃/添加跳跃动画/BP_STUBaseCharacter-CharacterMovement-Details-JumpZVelocity.png" width="1200" /> <br/> <br/></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Shell脚本
+					&larr; 为游戏角色添加向前走路动画
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					Git &rarr;
+					实现游戏角色跑步 &rarr;
 				</div>
 			</div>
 		</a>

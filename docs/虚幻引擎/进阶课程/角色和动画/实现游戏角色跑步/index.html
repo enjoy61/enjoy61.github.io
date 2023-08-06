@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>终端 - 六一的部落格</title>
-<meta name="description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+  <title>实现游戏角色跑步 - 六一的部落格</title>
+<meta name="description" content="概览 # 跑步条件 # 按下Shift键 运动方向为向前 判断方法1：同时按下 W 或 Up 判断方法2：速度矢量和朝向的夹角为0 速度不为0 前方有障碍物时，游戏角色无法跑步 跑步时，播放跑步动画 # 跑步时，游戏角色运动速度提高 # 绑定跑步键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 动作映射 函数描述 键位 Run LeftShift 实现跑步逻辑 # C&#43;&#43; - 回调函数签名 BindAction void handler() 函数描述 回调函数 Run RunEnable 按下时触发 RunDisable 松开时触发 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::RunEnable() {} void ASTUBaseCharacter::RunDisable() {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Run&amp;quot;, IE_Pressed, this, &amp;amp;ASTUBaseCharacter::RunEnable); PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Run&amp;quot;, IE_Released, this, &amp;amp;ASTUBaseCharacter::RunDisable); 添加函数声明 private ShootThemUp: Player/STUBaseCharacter.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终端">
-<meta property="og:description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:title" content="实现游戏角色跑步">
+<meta property="og:description" content="概览 # 跑步条件 # 按下Shift键 运动方向为向前 判断方法1：同时按下 W 或 Up 判断方法2：速度矢量和朝向的夹角为0 速度不为0 前方有障碍物时，游戏角色无法跑步 跑步时，播放跑步动画 # 跑步时，游戏角色运动速度提高 # 绑定跑步键位 # 虚幻编辑器 项目设置 &gt; Engine &gt; Input 动作映射 函数描述 键位 Run LeftShift 实现跑步逻辑 # C&#43;&#43; - 回调函数签名 BindAction void handler() 函数描述 回调函数 Run RunEnable 按下时触发 RunDisable 松开时触发 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::RunEnable() {} void ASTUBaseCharacter::RunDisable() {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&gt;BindAction(&quot;Run&quot;, IE_Pressed, this, &amp;ASTUBaseCharacter::RunEnable); PlayerInputComponent-&gt;BindAction(&quot;Run&quot;, IE_Released, this, &amp;ASTUBaseCharacter::RunDisable); 添加函数声明 private ShootThemUp: Player/STUBaseCharacter.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-10T22:11:40+00:00">
-  <meta property="article:modified_time" content="2023-08-04T18:50:45+08:00">
+<meta property="article:published_time" content="2023-06-11T06:17:43+00:00">
+  <meta property="article:modified_time" content="2023-08-06T16:15:13+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="终端">
+<meta name="twitter:title" content="实现游戏角色跑步">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="终端">
+    <meta name="twitter:image:alt" content="实现游戏角色跑步">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "url": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "name": "终端",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/",
+      "name": "实现游戏角色跑步",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-10T22:11:40CET",
-      "dateModified": "2023-08-04T18:50:45CET",
+      "datePublished": "2023-06-11T06:17:43CET",
+      "dateModified": "2023-08-06T16:15:13CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,15 +125,33 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/brick/",
-          "url": "https://enjoy61.github.io/docs/brick/",
-          "name": "Brick"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "name": "% E8% A7%92% E8%89% B2% E5%92%8 C% E5%8 A% A8% E7%94% Bb"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/"
           }
         }]
     },
@@ -144,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "终端",
+          "headline": "实现游戏角色跑步",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/"
           },
-          "datePublished": "2023-06-10T22:11:40CET",
-          "dateModified": "2023-08-04T18:50:45CET",
+          "datePublished": "2023-06-11T06:17:43CET",
+          "dateModified": "2023-08-06T16:15:13CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -161,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/#/schema/image/2"
           }
         }
       ]
@@ -186,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "终端"
+          "caption": "实现游戏角色跑步"
         }
       ]
     }
@@ -239,15 +257,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -256,29 +274,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -340,7 +358,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
                                   
 
                                 
@@ -575,15 +593,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -592,29 +610,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -676,7 +694,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
                                   
 
                                 
@@ -853,15 +871,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -870,29 +888,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -954,7 +972,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
                                   
 
                                 
@@ -1132,15 +1150,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#跑步条件">跑步条件</a></li>
+            <li><a href="#跑步时-播放跑步动画">跑步时，播放跑步动画</a></li>
+            <li><a href="#跑步时-游戏角色运动速度提高">跑步时，游戏角色运动速度提高</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跑步键位">绑定跑步键位</a></li>
+        <li><a href="#实现跑步逻辑">实现跑步逻辑</a>
+          <ul>
+            <li><a href="#搭建框架">搭建框架</a></li>
+            <li><a href="#实现回调函数">实现回调函数</a>
+              <ul>
+                <li><a href="#键位生效时-设置标识位">键位生效时，设置标识位</a></li>
+                <li><a href="#运动方向向前时-设置标志位">运动方向向前时，设置标志位</a></li>
+                <li><a href="#添加接口-返回跑步条件满足情况">添加接口, 返回跑步条件满足情况</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#添加跑步动画">添加跑步动画</a>
+          <ul>
+            <li><a href="#创建混合空间资产作为跑步动画">创建混合空间资产作为跑步动画</a></li>
+            <li><a href="#在动画蓝图中引入跑步动画">在动画蓝图中引入跑步动画</a>
+              <ul>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#使状态机管理跑步状态">使状态机管理跑步状态</a></li>
+                <li><a href="#效果">效果</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#实现跑步加速">实现跑步加速</a>
+          <ul>
+            <li><a href="#创建components-charactermovementcomponent的派生类">创建Components/CharacterMovementComponent的派生类</a></li>
+            <li><a href="#设置头文件搜索路径">设置头文件搜索路径</a></li>
+            <li><a href="#满足跑步条件时-增加游戏角色运动速度上限">满足跑步条件时, 增加游戏角色运动速度上限</a>
+              <ul>
+                <li><a href="#添加加速系数">添加加速系数</a></li>
+                <li><a href="#覆写ucharactermovementcomponent-getmaxspeed">覆写UCharacterMovementComponent::GetMaxSpeed</a></li>
+                <li><a href="#游戏角色使用stucharactermovementcomponent">游戏角色使用STUCharacterMovementComponent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1156,15 +1210,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#跑步条件">跑步条件</a></li>
+            <li><a href="#跑步时-播放跑步动画">跑步时，播放跑步动画</a></li>
+            <li><a href="#跑步时-游戏角色运动速度提高">跑步时，游戏角色运动速度提高</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跑步键位">绑定跑步键位</a></li>
+        <li><a href="#实现跑步逻辑">实现跑步逻辑</a>
+          <ul>
+            <li><a href="#搭建框架">搭建框架</a></li>
+            <li><a href="#实现回调函数">实现回调函数</a>
+              <ul>
+                <li><a href="#键位生效时-设置标识位">键位生效时，设置标识位</a></li>
+                <li><a href="#运动方向向前时-设置标志位">运动方向向前时，设置标志位</a></li>
+                <li><a href="#添加接口-返回跑步条件满足情况">添加接口, 返回跑步条件满足情况</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#添加跑步动画">添加跑步动画</a>
+          <ul>
+            <li><a href="#创建混合空间资产作为跑步动画">创建混合空间资产作为跑步动画</a></li>
+            <li><a href="#在动画蓝图中引入跑步动画">在动画蓝图中引入跑步动画</a>
+              <ul>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#使状态机管理跑步状态">使状态机管理跑步状态</a></li>
+                <li><a href="#效果">效果</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#实现跑步加速">实现跑步加速</a>
+          <ul>
+            <li><a href="#创建components-charactermovementcomponent的派生类">创建Components/CharacterMovementComponent的派生类</a></li>
+            <li><a href="#设置头文件搜索路径">设置头文件搜索路径</a></li>
+            <li><a href="#满足跑步条件时-增加游戏角色运动速度上限">满足跑步条件时, 增加游戏角色运动速度上限</a>
+              <ul>
+                <li><a href="#添加加速系数">添加加速系数</a></li>
+                <li><a href="#覆写ucharactermovementcomponent-getmaxspeed">覆写UCharacterMovementComponent::GetMaxSpeed</a></li>
+                <li><a href="#游戏角色使用stucharactermovementcomponent">游戏角色使用STUCharacterMovementComponent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1179,12 +1269,14 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
-<li class="breadcrumb-item active" aria-current="page">终端</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/">角色和动画</a></li>
+<li class="breadcrumb-item active" aria-current="page">实现游戏角色跑步</li>
 					</ol>
 				</nav>
 			
-			<h1>终端</h1>
+			<h1>实现游戏角色跑步</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -1202,15 +1294,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#跑步条件">跑步条件</a></li>
+            <li><a href="#跑步时-播放跑步动画">跑步时，播放跑步动画</a></li>
+            <li><a href="#跑步时-游戏角色运动速度提高">跑步时，游戏角色运动速度提高</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跑步键位">绑定跑步键位</a></li>
+        <li><a href="#实现跑步逻辑">实现跑步逻辑</a>
+          <ul>
+            <li><a href="#搭建框架">搭建框架</a></li>
+            <li><a href="#实现回调函数">实现回调函数</a>
+              <ul>
+                <li><a href="#键位生效时-设置标识位">键位生效时，设置标识位</a></li>
+                <li><a href="#运动方向向前时-设置标志位">运动方向向前时，设置标志位</a></li>
+                <li><a href="#添加接口-返回跑步条件满足情况">添加接口, 返回跑步条件满足情况</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#添加跑步动画">添加跑步动画</a>
+          <ul>
+            <li><a href="#创建混合空间资产作为跑步动画">创建混合空间资产作为跑步动画</a></li>
+            <li><a href="#在动画蓝图中引入跑步动画">在动画蓝图中引入跑步动画</a>
+              <ul>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#使状态机管理跑步状态">使状态机管理跑步状态</a></li>
+                <li><a href="#效果">效果</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#实现跑步加速">实现跑步加速</a>
+          <ul>
+            <li><a href="#创建components-charactermovementcomponent的派生类">创建Components/CharacterMovementComponent的派生类</a></li>
+            <li><a href="#设置头文件搜索路径">设置头文件搜索路径</a></li>
+            <li><a href="#满足跑步条件时-增加游戏角色运动速度上限">满足跑步条件时, 增加游戏角色运动速度上限</a>
+              <ul>
+                <li><a href="#添加加速系数">添加加速系数</a></li>
+                <li><a href="#覆写ucharactermovementcomponent-getmaxspeed">覆写UCharacterMovementComponent::GetMaxSpeed</a></li>
+                <li><a href="#游戏角色使用stucharactermovementcomponent">游戏角色使用STUCharacterMovementComponent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1226,15 +1354,51 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#跑步条件">跑步条件</a></li>
+            <li><a href="#跑步时-播放跑步动画">跑步时，播放跑步动画</a></li>
+            <li><a href="#跑步时-游戏角色运动速度提高">跑步时，游戏角色运动速度提高</a></li>
+          </ul>
+        </li>
+        <li><a href="#绑定跑步键位">绑定跑步键位</a></li>
+        <li><a href="#实现跑步逻辑">实现跑步逻辑</a>
+          <ul>
+            <li><a href="#搭建框架">搭建框架</a></li>
+            <li><a href="#实现回调函数">实现回调函数</a>
+              <ul>
+                <li><a href="#键位生效时-设置标识位">键位生效时，设置标识位</a></li>
+                <li><a href="#运动方向向前时-设置标志位">运动方向向前时，设置标志位</a></li>
+                <li><a href="#添加接口-返回跑步条件满足情况">添加接口, 返回跑步条件满足情况</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#添加跑步动画">添加跑步动画</a>
+          <ul>
+            <li><a href="#创建混合空间资产作为跑步动画">创建混合空间资产作为跑步动画</a></li>
+            <li><a href="#在动画蓝图中引入跑步动画">在动画蓝图中引入跑步动画</a>
+              <ul>
+                <li><a href="#状态机说明">状态机说明</a></li>
+                <li><a href="#使状态机管理跑步状态">使状态机管理跑步状态</a></li>
+                <li><a href="#效果">效果</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#实现跑步加速">实现跑步加速</a>
+          <ul>
+            <li><a href="#创建components-charactermovementcomponent的派生类">创建Components/CharacterMovementComponent的派生类</a></li>
+            <li><a href="#设置头文件搜索路径">设置头文件搜索路径</a></li>
+            <li><a href="#满足跑步条件时-增加游戏角色运动速度上限">满足跑步条件时, 增加游戏角色运动速度上限</a>
+              <ul>
+                <li><a href="#添加加速系数">添加加速系数</a></li>
+                <li><a href="#覆写ucharactermovementcomponent-getmaxspeed">覆写UCharacterMovementComponent::GetMaxSpeed</a></li>
+                <li><a href="#游戏角色使用stucharactermovementcomponent">游戏角色使用STUCharacterMovementComponent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1243,199 +1407,462 @@
   </div>
 
 			</nav>
-			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.bilibili.com/video/BV1rk4y1W7dZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click">介绍CLI，Terminal，Shell和Prompt视频</a> <br/></p>
-<h2 id="shell概念">shell概念 <a href="#shell%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>接口</code> <br/>
-shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 <br/></p>
-<p>根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 <br/></p>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="跑步条件">跑步条件 <a href="#%e8%b7%91%e6%ad%a5%e6%9d%a1%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
-<li>CLI <br/>
-<em>Command-Line Interface</em> <br/>
-<code>命令行界面</code> <br/>
-通过文本命令和计算机交互 <br/></li>
-<li>GUI <br/>
-<em>Graphical User Interface</em> <br/>
-<code>图形用户界面</code> <br/>
-通过鼠标操作 <br/></li>
+<li>按下Shift键 <br/></li>
+<li>运动方向为向前 <br/>
+<ul>
+<li>判断方法1：同时按下 <code>W</code> 或 <code>Up</code> <br/></li>
+<li>判断方法2：速度矢量和朝向的夹角为0 <br/></li>
+</ul>
+</li>
+<li>速度不为0 <br/>
+前方有障碍物时，游戏角色无法跑步 <br/></li>
 </ol>
-<p>早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 <br/></p>
-<h2 id="终端程序">终端程序 <a href="#%e7%bb%88%e7%ab%af%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Terminal</code> <br/>
-<code>Wrapper Program</code> <br/>
-在终端输入文本命令 <br/></p>
+<h3 id="跑步时-播放跑步动画">跑步时，播放跑步动画 <a href="#%e8%b7%91%e6%ad%a5%e6%97%b6-%e6%92%ad%e6%94%be%e8%b7%91%e6%ad%a5%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="跑步时-游戏角色运动速度提高">跑步时，游戏角色运动速度提高 <a href="#%e8%b7%91%e6%ad%a5%e6%97%b6-%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e8%bf%90%e5%8a%a8%e9%80%9f%e5%ba%a6%e6%8f%90%e9%ab%98" class="anchor" aria-hidden="true">#</a></h3>
+<h2 id="绑定跑步键位">绑定跑步键位 <a href="#%e7%bb%91%e5%ae%9a%e8%b7%91%e6%ad%a5%e9%94%ae%e4%bd%8d" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/>
+<code>项目设置 &gt; Engine &gt; Input</code> <br/>
+<code>动作映射</code>      <br/></p>
 <table>
 <thead>
 <tr>
-<th>终端程序</th>
-<th>说明</th>
+<th>函数描述</th>
+<th>键位</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>iTerm</td>
-<td>MacOS</td>
-</tr>
-<tr>
-<td>Windows Terminal</td>
-<td>Windows</td>
-</tr>
-<tr>
-<td>Gnome Terminal</td>
-<td>使用Gnome作为桌面的Linux自带的终端程序</td>
-</tr>
-<tr>
-<td>Hyper</td>
-<td></td>
-</tr>
-<tr>
-<td>Warp</td>
-<td>目前MacOS；自动补全，鼠标交互，内置工作流，AI功能</td>
-</tr>
-<tr>
-<td>Alacrity</td>
-<td></td>
+<td>Run</td>
+<td>LeftShift</td>
 </tr>
 </tbody>
 </table>
-<h2 id="命令解释器">命令解释器 <a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a%e5%99%a8" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Shell</code> <code>程序</code> <br/>
-终端中运行的程序。接受命令，然后解释并执行。 <br/></p>
-<p>Shell启动时自动读取配置文件。 <br/></p>
-<table>
-<thead>
-<tr>
-<th>Shell</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sh</td>
-<td><em>Bourne Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>UNIX上的标准shell</td>
-</tr>
-<tr>
-<td>bash</td>
-<td><em>Bourne-Again Shell</em></td>
-</tr>
-<tr>
-<td></td>
-<td>GNU开发；Linux默认</td>
-</tr>
-<tr>
-<td></td>
-<td>不完全兼容sh shell，对一些命令和参数进行了扩展</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/.bash_profile</td>
-</tr>
-<tr>
-<td>zsh</td>
-<td>19年之前MacOS默认Bash；之后使用zsh</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/zshrc</td>
-</tr>
-<tr>
-<td></td>
-<td>第三方框架oh-my-zsh提供其他功能</td>
-</tr>
-<tr>
-<td>phish</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="脚本语言">脚本语言 <a href="#%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80" class="anchor" aria-hidden="true">#</a></h2>
-<p>需要解释器，每次运行时都需要解释。 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/绑定跑步键位/跑步键位.png" width="500" /> <br/> <br/></p>
+<h2 id="实现跑步逻辑">实现跑步逻辑 <a href="#%e5%ae%9e%e7%8e%b0%e8%b7%91%e6%ad%a5%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code> <br/></p>
 <table>
 <thead>
 <tr>
 <th>-</th>
+<th>回调函数签名</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>JavaScript</td>
-</tr>
-<tr>
-<td>PHP</td>
-</tr>
-<tr>
-<td>Lua</td>
-</tr>
-<tr>
-<td>Python</td>
-</tr>
-<tr>
-<td>C#</td>
+<td>BindAction</td>
+<td>void handler()</td>
 </tr>
 </tbody>
 </table>
-<h2 id="shell脚本">Shell脚本 <a href="#shell%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>开发语言</code> <code>Shell Script</code> <br/>
-由一连串Shell命令组成，可以指定解释脚本的Shell程序。 <br/></p>
-<h2 id="命令提示符">命令提示符 <a href="#%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Prompt</code> <br/>
-命令解释器提供并在终端显示，如当前路径和git信息。 <br/></p>
 <table>
 <thead>
 <tr>
-<th>类别</th>
+<th>函数描述</th>
+<th>回调函数</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>第三方提示</td>
-<td><code>Powerline</code> <code>Starship</code> <code>Power Level 10K</code> <code>Spaceship</code></td>
-</tr>
-<tr>
-<td>第三方框架</td>
-<td><code>oh-my-zsh</code></td>
+<td>Run</td>
+<td>RunEnable</td>
+<td>按下时触发</td>
 </tr>
 <tr>
 <td></td>
-<td>提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为</td>
+<td>RunDisable</td>
+<td>松开时触发</td>
 </tr>
 </tbody>
 </table>
-<h2 id="查看shell信息">查看Shell信息 <a href="#%e6%9f%a5%e7%9c%8bshell%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>命令解释器</code> <br/></p>
+<h3 id="搭建框架">搭建框架 <a href="#%e6%90%ad%e5%bb%ba%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
-<li>当前使用的Shell <br/>
-<pre><code class="language-bash">echo $SHELL
-echo $0
+<li>添加空函数 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">void ASTUBaseCharacter::RunEnable() {}
+void ASTUBaseCharacter::RunDisable() {}
 </code></pre>
 </li>
-<li>已安装Shell <br/>
-<pre><code class="language-bash">cat /etc/shells
+<li>绑定函数描述和回调函数 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">// SetupPlayerInputComponent
+PlayerInputComponent-&gt;BindAction(&quot;Run&quot;, IE_Pressed, this, &amp;ASTUBaseCharacter::RunEnable);
+PlayerInputComponent-&gt;BindAction(&quot;Run&quot;, IE_Released, this, &amp;ASTUBaseCharacter::RunDisable);
+</code></pre>
+</li>
+<li>添加函数声明 <br/>
+<code>private</code>          <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/></li>
+</ol>
+<h3 id="实现回调函数">实现回调函数 <a href="#%e5%ae%9e%e7%8e%b0%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="键位生效时-设置标识位">键位生效时，设置标识位 <a href="#%e9%94%ae%e4%bd%8d%e7%94%9f%e6%95%88%e6%97%b6-%e8%ae%be%e7%bd%ae%e6%a0%87%e8%af%86%e4%bd%8d" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>定义标志位 <br/>
+<code>private</code> <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
+<pre><code class="language-cpp">bool AbleRun = false;
+</code></pre>
+</li>
+<li>键位事件发生时, 更新标志位 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">void ASTUBaseCharacter::RunEnable()
+{
+    AbleRun = true;
+}
+void ASTUBaseCharacter::RunDisable()
+{
+    AbleRun = false;
+}
 </code></pre>
 </li>
 </ol>
-<h2 id="shell操作">Shell操作 <a href="#shell%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h2>
+<h4 id="运动方向向前时-设置标志位">运动方向向前时，设置标志位 <a href="#%e8%bf%90%e5%8a%a8%e6%96%b9%e5%90%91%e5%90%91%e5%89%8d%e6%97%b6-%e8%ae%be%e7%bd%ae%e6%a0%87%e5%bf%97%e4%bd%8d" class="anchor" aria-hidden="true">#</a></h4>
 <ol>
-<li>切换Shell程序 <br/>
-<em>重新打开终端生效</em> <br/>
-<pre><code class="language-bash">chsh -s /bin/bash
-</code></pre>
-<em>不修改SHELL环境变量</em> <br/>
-<pre><code class="language-bash">zsh
+<li>定义标志位 <br/>
+<code>private</code> <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
+<pre><code class="language-cpp">bool IsForward = false;
 </code></pre>
 </li>
-<li>手动读取配置文件 <br/>
-<em>zsh</em> <br/>
-<pre><code class="language-bash">source ~/.zshrc
+<li>MoveForward被调用时, 更新标志位 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">// MoveForward
+IsForward = Amount &gt; 0.0f;
 </code></pre>
 </li>
-<li>指定Shell脚本的命令解释器 <br/>
-<pre><code class="language-bash">#!/bin/bash
+</ol>
+<h4 id="添加接口-返回跑步条件满足情况">添加接口, 返回跑步条件满足情况 <a href="#%e6%b7%bb%e5%8a%a0%e6%8e%a5%e5%8f%a3-%e8%bf%94%e5%9b%9e%e8%b7%91%e6%ad%a5%e6%9d%a1%e4%bb%b6%e6%bb%a1%e8%b6%b3%e6%83%85%e5%86%b5" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>添加函数声明 <br/>
+<code>public</code> <br/>
+可在蓝图中调用，也可供其他类使用 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
+<pre><code class="language-cpp">UFUNCTION(BlueprintCallable)
+bool IsRunning() const;
+</code></pre>
+</li>
+<li>实现 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">bool ASTUBaseCharacter::IsRunning() const
+{
+    return AbleRun &amp;&amp; IsForward &amp;&amp; !GetVelocity().IsZero();
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="添加跑步动画">添加跑步动画 <a href="#%e6%b7%bb%e5%8a%a0%e8%b7%91%e6%ad%a5%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/></p>
+<h3 id="创建混合空间资产作为跑步动画">创建混合空间资产作为跑步动画 <a href="#%e5%88%9b%e5%bb%ba%e6%b7%b7%e5%90%88%e7%a9%ba%e9%97%b4%e8%b5%84%e4%ba%a7%e4%bd%9c%e4%b8%ba%e8%b7%91%e6%ad%a5%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Blend Space 1D</code> <br/></p>
+<ol>
+<li>创建 Content/Player/Animations/BS_Locomotion_Run，绑定骨骼网格体 HeroTPP_Skeleton <br/></li>
+<li>设置轴 <br/>
+<code>Asset Details &gt; Axis Settings &gt; Horizontal Axis</code> <br/>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Velocity</td>
+</tr>
+<tr>
+<td>Maximum Axis Value</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>设置动画 <br/>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起点</td>
+<td>Idle</td>
+</tr>
+<tr>
+<td>终点</td>
+<td>RoadieRun_Fwd</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h3 id="在动画蓝图中引入跑步动画">在动画蓝图中引入跑步动画 <a href="#%e5%9c%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be%e4%b8%ad%e5%bc%95%e5%85%a5%e8%b7%91%e6%ad%a5%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ABP_BaseCharacter</code> <br/></p>
+<h4 id="状态机说明">状态机说明 <a href="#%e7%8a%b6%e6%80%81%e6%9c%ba%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>新增状态: Run</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>状态迁移
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk &gt; Run</td>
+<td>满足跑步条件</td>
+</tr>
+<tr>
+<td>Run &gt; Walk</td>
+<td>不再满足跑步条件</td>
+</tr>
+<tr>
+<td>Run &gt; JumpStart</td>
+<td>游戏角色在空中</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="使状态机管理跑步状态">使状态机管理跑步状态 <a href="#%e4%bd%bf%e7%8a%b6%e6%80%81%e6%9c%ba%e7%ae%a1%e7%90%86%e8%b7%91%e6%ad%a5%e7%8a%b6%e6%80%81" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>添加布尔型变量IsRunning</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>设置变量IsRunning</p>
+<p><code>EventGraph</code> <br/></p>
+<ol>
+<li>
+<p>使用 <code>STUBaseCharacter::IsRunning</code> ，需要 <code>Pawn</code> 到 <code>STUBaseCharacter</code> 的转换 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-EventGraph-STUBaseCharacter.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>设置IsFalling后, 执行Pawn到STUBaseCharacter的转换 <br/></p>
+</li>
+<li>
+<p>转换完成后, 设置变量 <code>IsRunning</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-EventGraph-IsRunning.png" width="700" /> <br/> <br/></p>
+</li>
+<li>
+<p>完整 <code>EventGraph</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-EventGraph.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>可以合并 <code>Pawn</code> 到 <code>Character</code> 和 <code>STUBaseCharacter</code> 的转换 <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>状态机中添加跑步状态</p>
+<p><code>AnimGraph</code> <br/></p>
+<ol>
+<li>
+<p>将BS_Locomotion_Run拖入到状态机, 命令为 <code>Run</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-AddRun.png" width="600" /> <br/> <br/></p>
+</li>
+<li>
+<p>双击 <code>Run</code> ，设置BS_Locomotion_Run输入 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-Run.png" width="600" /> <br/> <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>添加状态迁移条件</p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>触发条件</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk &gt; Run</td>
+<td>满足跑步条件</td>
+<td>STUBaseCharacter::IsRunning 返回true</td>
+</tr>
+<tr>
+<td>Run &gt; Walk</td>
+<td>不再满足跑步条件</td>
+<td>STUBaseCharacter::IsRunning 返回false</td>
+</tr>
+<tr>
+<td>Run &gt; JumpStart</td>
+<td>游戏角色在空中</td>
+<td>复用 Walk &gt; JumpStart 迁移条件</td>
+</tr>
+</tbody>
+</table>
+ <!--list-separator-->
+<ul>
+<li>
+<p>Walk &lt;&gt; Run</p>
+<ol>
+<li>
+<p>状态迁移路径 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-WalkAndRun.png" width="600" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>Walk &gt; Run</code> 迁移条件 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-WalkToRun.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>Run &gt; Walk</code> 迁移条件 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-RunToWalk.png" width="500" /> <br/> <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>Run &gt; Jump</p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>状态迁移路径</p>
+<ol>
+<li>
+<p>初稿 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-RunAndJump-Draft.png" width="500" /> <br/> <br/></p>
+</li>
+<li>
+<p>优解 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/ABP_BaseCharacter-AnimGraph-Locomotion-RunAndJump.png" width="500" /> <br/> <br/></p>
+<ul>
+<li>如果 <code>IsRunning</code> 为 <code>true</code>, 发生 <code>JumpEnd &gt; Walk</code> 时, 会立即从 <code>Walk</code> 切换到 <code>Run</code> <br/></li>
+<li>省略 <code>JumpEnd &gt; =Run</code> ，可以降低状态机复杂度 <br/></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>复用迁移条件</p>
+<p><code>Run &gt; JumpStart</code> 复用 <code>Walk &gt; JumpStart</code> 迁移条件 <br/></p>
+<ol>
+<li>
+<p><code>选中 Walk &gt; JumpStart 迁移条件, Details &gt; Transiton &gt; Transition Rule Sharing &gt; Promote To Share</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/WalkToJumpStart-Condition-PromoteToShare.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>命名为 <code>IsFalling</code> ，共享条件显示为红色 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/WalkToJumpStart-Condition-IsFalling.png" width="350" /> <br/> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/WalkToJumpStart-Condition-IsFalling-Result.png" width="1100" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>选中 Run &gt; JumpStart 迁移条件, Details &gt; Transition &gt; Transition Rule Sharing &gt; Use Shared &gt; 选择IsFalling</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/RunToJumpStart-Condition-UseShare.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>完整状态机 <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/添加跑步动画/RunToJumpStart-Condition-UseShare-IsFalling.png" width="1000" /> <br/> <br/></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="效果">效果 <a href="#%e6%95%88%e6%9e%9c" class="anchor" aria-hidden="true">#</a></h4>
+<p>运行游戏，走路到跑步动画正常切换 <br/></p>
+<h2 id="实现跑步加速">实现跑步加速 <a href="#%e5%ae%9e%e7%8e%b0%e8%b7%91%e6%ad%a5%e5%8a%a0%e9%80%9f" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="创建components-charactermovementcomponent的派生类">创建Components/CharacterMovementComponent的派生类 <a href="#%e5%88%9b%e5%bb%bacomponents-charactermovementcomponent%e7%9a%84%e6%b4%be%e7%94%9f%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>虚幻编辑器</code> <br/></p>
+<ul>
+<li>
+<p><code>CharacterMovementComponent</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/创建派生自CharacterMovementComponent的C++类/基类CharacterMovementComponent.png" width="700" /> <br/> <br/></p>
+</li>
+<li>
+<p><code>公有类</code> <br/></p>
+<p><img src="/pic/角色和动画/实现Character跑步/创建派生自CharacterMovementComponent的C++类/Components-STUCharacterMovementComponent.png" width="700" /> <br/> <br/></p>
+</li>
+</ul>
+<h3 id="设置头文件搜索路径">设置头文件搜索路径 <a href="#%e8%ae%be%e7%bd%ae%e5%a4%b4%e6%96%87%e4%bb%b6%e6%90%9c%e7%b4%a2%e8%b7%af%e5%be%84" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: ShootThemUp.Build.cs</code> <br/></p>
+<pre><code class="language-csharp">PublicIncludePaths.AddRange(new string[] { &quot;ShootThemUp/Public/Player&quot;, &quot;ShootThemUp/Public/Components&quot; });         
+</code></pre>
+<h3 id="满足跑步条件时-增加游戏角色运动速度上限">满足跑步条件时, 增加游戏角色运动速度上限 <a href="#%e6%bb%a1%e8%b6%b3%e8%b7%91%e6%ad%a5%e6%9d%a1%e4%bb%b6%e6%97%b6-%e5%a2%9e%e5%8a%a0%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e8%bf%90%e5%8a%a8%e9%80%9f%e5%ba%a6%e4%b8%8a%e9%99%90" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>C++</code> <br/></p>
+<h4 id="添加加速系数">添加加速系数 <a href="#%e6%b7%bb%e5%8a%a0%e5%8a%a0%e9%80%9f%e7%b3%bb%e6%95%b0" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>protected</code> <br/>
+<code>ShootThemUp: Components/STUCharacterMovementComponent.h</code> <br/></p>
+<pre><code class="language-cpp">UPROPERTY(EditDefaultsOnly, meta = (ClampMin = &quot;1.5&quot;, ClampMax = &quot;10.0&quot;))
+float SpeedAcceleration = 2.0f;
+</code></pre>
+<h4 id="覆写ucharactermovementcomponent-getmaxspeed">覆写UCharacterMovementComponent::GetMaxSpeed <a href="#%e8%a6%86%e5%86%99ucharactermovementcomponent-getmaxspeed" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>并不直接修改 <code>MaxWalkSpeed</code> <br/></li>
+<li>某个地方会调用 <code>GetMaxSpeed</code> 来确定 <code>Character</code> 运动速度的上限，当获取的 <code>MaxWalkSpeed</code> 增加，速度增加的幅度也变大，用以实现加速 <br/></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>添加函数声明</p>
+<p><code>public</code> <br/>
+<code>ShootThemUp: Components/STUCharacterMovementComponent.h</code>         <br/></p>
+<pre><code class="language-cpp">virtual float GetMaxSpeed() const override;
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>实现</p>
+<p><code>ShootThemUp: Components/STUCharacterMovementComponent.cpp</code> <br/></p>
+<pre><code class="language-cpp">#include &quot;Player/STUBaseCharacter.h&quot;
+
+float USTUCharacterMovementComponent::GetMaxSpeed() const
+{
+    const float MaxSpeed = Super::GetMaxSpeed();
+    ASTUBaseCharacter *Player = Cast&lt;ASTUBaseCharacter&gt;(GetPawnOwner());
+    return Player &amp;&amp; Player-&gt;IsRunning() ? SpeedAcceleration * MaxSpeed : MaxSpeed;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="游戏角色使用stucharactermovementcomponent">游戏角色使用STUCharacterMovementComponent <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bd%bf%e7%94%a8stucharactermovementcomponent" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>屏蔽默认构造函数声明，声明构造函数 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
+<pre><code class="language-cpp">// ASTUBaseCharacter();
+ASTUBaseCharacter(const FObjectInitializer &amp;ObjInit);
+</code></pre>
+</li>
+<li>修改构造函数初始化列表 <br/>
+<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
+<pre><code class="language-cpp">#include &quot;Components/STUCharacterMovementComponent.h&quot;
+
+ASTUBaseCharacter::ASTUBaseCharacter(const FObjectInitializer &amp;ObjInit)
+    : Super(ObjInit.SetDefaultSubobjectClass&lt;USTUCharacterMovementComponent&gt;(ACharacter::CharacterMovementComponentName))
+{
+    // ...
+}
 </code></pre>
 </li>
 </ol>
@@ -1444,17 +1871,17 @@ echo $0
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Shell脚本
+					&larr; 实现游戏角色跳跃
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					Git &rarr;
+					添加走路转向动画 &rarr;
 				</div>
 			</div>
 		</a>

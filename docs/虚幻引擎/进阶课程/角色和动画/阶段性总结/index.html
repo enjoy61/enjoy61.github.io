@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>终端 - 六一的部落格</title>
-<meta name="description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+  <title>阶段性总结 - 六一的部落格</title>
+<meta name="description" content="项目结构 # 资产 # - Content ExternalContent Animation Levels DefaultMap Player Animations ABP_BaseCharacter BS_Locomotion_Run BS_Locomotion_Walk BS_Locomotion_Walk_1D BP_STUBaseCharacter BP_STUPlayerController BP_STUGameModeBase 代码 # - ShootThemUp Public Components STUCharacterMovementComponent Player STUBaseCharacter STUPlayerController STUGameModeBase 项目基础设置 # - 载入 ExternalContent/Animation 创建 DefaultMap 并设置 设置地板 配置头文件搜索路径 添加 PlayerStart 设置 编译成功自动保存 游戏角色 # - C&#43;&#43; Player/STUBaseCharacter Blueprint Player/BP_STUBaseCharacter Player/Animations/ABP_BaseCharacter Player/Animations/BS_Locomotion_Run Player/Animations/BS_Locomotion_Walk Player/Animations/BS_Locomotion_Walk_1D STUBaseCharacter # C&#43;&#43; 函数成员 # 基本函数 操作 构造函数 设置组件类型(初始化列表)；初始化组件 BeginPlay 检查组件是否成功创建(check)；组件设置；注册委托 SetupPlayerInputComponent 检查组件；绑定平移旋转跳跃跑步键位 键位绑定 回调函数 键位 相关函数 MoveRight 左右移动 AddMovementInput；GetActorRightVector MoveForward 前后移动 AddMovementInput；GetActorForwardVector 左右旋转 ACharacter::AddControllerYawInput 上下旋转 ACharacter::AddControllerPitchInput 跳跃 ACharacter::Jump RunEnable，RunDisable 跑步 接口 接口函数 操作 GetDirection 计算前进方向和速度方向的夹角；供ABP_STBaseCharacter使用 IsRunning 判断角色是否满足跑步条件；供STUCharacterMovementComponent使用；供ABP_STBaseCharacter使用 数据成员 # 组件 用途 SpringArmComponent 以游戏角色为中心左右旋转 CameraComponent 第三视角 CharacterMovementComponent 运动组件 标志位 说明 AbleRun 跑步键位是否按下 IsForward 向前方向键是否按下 Player/BP_STUBaseCharacter # Blueprint CapsuleComponent # MeshComponent # 说明 Mesh &amp;gt; Skeletal Mesh Asset HeroTPP Materials &amp;gt; Element 0 HeroTPP Animation Mode UseAnimationBlueprint AnimClass ABP_BaseCharacter SpringArmComponent # 说明 UsePawnControlRotation true Player/Animations/ABP_BaseCharacter # Blueprint AnimGraph # 状态机">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终端">
-<meta property="og:description" content="便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">
+<meta property="og:title" content="阶段性总结">
+<meta property="og:description" content="项目结构 # 资产 # - Content ExternalContent Animation Levels DefaultMap Player Animations ABP_BaseCharacter BS_Locomotion_Run BS_Locomotion_Walk BS_Locomotion_Walk_1D BP_STUBaseCharacter BP_STUPlayerController BP_STUGameModeBase 代码 # - ShootThemUp Public Components STUCharacterMovementComponent Player STUBaseCharacter STUPlayerController STUGameModeBase 项目基础设置 # - 载入 ExternalContent/Animation 创建 DefaultMap 并设置 设置地板 配置头文件搜索路径 添加 PlayerStart 设置 编译成功自动保存 游戏角色 # - C&#43;&#43; Player/STUBaseCharacter Blueprint Player/BP_STUBaseCharacter Player/Animations/ABP_BaseCharacter Player/Animations/BS_Locomotion_Run Player/Animations/BS_Locomotion_Walk Player/Animations/BS_Locomotion_Walk_1D STUBaseCharacter # C&#43;&#43; 函数成员 # 基本函数 操作 构造函数 设置组件类型(初始化列表)；初始化组件 BeginPlay 检查组件是否成功创建(check)；组件设置；注册委托 SetupPlayerInputComponent 检查组件；绑定平移旋转跳跃跑步键位 键位绑定 回调函数 键位 相关函数 MoveRight 左右移动 AddMovementInput；GetActorRightVector MoveForward 前后移动 AddMovementInput；GetActorForwardVector 左右旋转 ACharacter::AddControllerYawInput 上下旋转 ACharacter::AddControllerPitchInput 跳跃 ACharacter::Jump RunEnable，RunDisable 跑步 接口 接口函数 操作 GetDirection 计算前进方向和速度方向的夹角；供ABP_STBaseCharacter使用 IsRunning 判断角色是否满足跑步条件；供STUCharacterMovementComponent使用；供ABP_STBaseCharacter使用 数据成员 # 组件 用途 SpringArmComponent 以游戏角色为中心左右旋转 CameraComponent 第三视角 CharacterMovementComponent 运动组件 标志位 说明 AbleRun 跑步键位是否按下 IsForward 向前方向键是否按下 Player/BP_STUBaseCharacter # Blueprint CapsuleComponent # MeshComponent # 说明 Mesh &gt; Skeletal Mesh Asset HeroTPP Materials &gt; Element 0 HeroTPP Animation Mode UseAnimationBlueprint AnimClass ABP_BaseCharacter SpringArmComponent # 说明 UsePawnControlRotation true Player/Animations/ABP_BaseCharacter # Blueprint AnimGraph # 状态机">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-10T22:11:40+00:00">
-  <meta property="article:modified_time" content="2023-08-04T18:50:45+08:00">
+<meta property="article:published_time" content="2023-06-11T06:17:51+00:00">
+  <meta property="article:modified_time" content="2023-08-06T19:22:23+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="终端">
+<meta name="twitter:title" content="阶段性总结">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="终端">
+    <meta name="twitter:image:alt" content="阶段性总结">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "url": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/",
-      "name": "终端",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/",
+      "name": "阶段性总结",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-10T22:11:40CET",
-      "dateModified": "2023-08-04T18:50:45CET",
+      "datePublished": "2023-06-11T06:17:51CET",
+      "dateModified": "2023-08-06T19:22:23CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,15 +125,33 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/brick/",
-          "url": "https://enjoy61.github.io/docs/brick/",
-          "name": "Brick"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
+          "name": "% E8% A7%92% E8%89% B2% E5%92%8 C% E5%8 A% A8% E7%94% Bb"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"
           }
         }]
     },
@@ -144,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "终端",
+          "headline": "阶段性总结",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/"
           },
-          "datePublished": "2023-06-10T22:11:40CET",
-          "dateModified": "2023-08-04T18:50:45CET",
+          "datePublished": "2023-06-11T06:17:51CET",
+          "dateModified": "2023-08-06T19:22:23CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -161,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/#/schema/image/2"
           }
         }
       ]
@@ -186,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "终端"
+          "caption": "阶段性总结"
         }
       ]
     }
@@ -239,15 +257,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -256,29 +274,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -361,7 +379,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
                                   
 
                                 
@@ -575,15 +593,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -592,29 +610,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -697,7 +715,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
                                   
 
                                 
@@ -853,15 +871,15 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
-        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
-                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
               
             
           </ul>
@@ -870,29 +888,29 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
           虚幻引擎
         </button>
-        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
                               角色和动画
                             </button>
-                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -975,7 +993,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
                                   
 
                                 
@@ -1132,15 +1150,41 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#项目结构">项目结构</a>
+          <ul>
+            <li><a href="#资产">资产</a></li>
+            <li><a href="#代码">代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#项目基础设置">项目基础设置</a></li>
+        <li><a href="#游戏角色">游戏角色</a>
+          <ul>
+            <li><a href="#stubasecharacter">STUBaseCharacter</a>
+              <ul>
+                <li><a href="#函数成员">函数成员</a></li>
+                <li><a href="#数据成员">数据成员</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-bp-stubasecharacter">Player/BP_STUBaseCharacter</a>
+              <ul>
+                <li><a href="#capsulecomponent">CapsuleComponent</a></li>
+                <li><a href="#meshcomponent">MeshComponent</a></li>
+                <li><a href="#springarmcomponent">SpringArmComponent</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-animations-abp-basecharacter">Player/Animations/ABP_BaseCharacter</a>
+              <ul>
+                <li><a href="#animgraph">AnimGraph</a></li>
+                <li><a href="#eventgraph">EventGraph</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#组件">组件</a>
+          <ul>
+            <li><a href="#stucharactermovementcomponent">STUCharacterMovementComponent</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1156,15 +1200,41 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#项目结构">项目结构</a>
+          <ul>
+            <li><a href="#资产">资产</a></li>
+            <li><a href="#代码">代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#项目基础设置">项目基础设置</a></li>
+        <li><a href="#游戏角色">游戏角色</a>
+          <ul>
+            <li><a href="#stubasecharacter">STUBaseCharacter</a>
+              <ul>
+                <li><a href="#函数成员">函数成员</a></li>
+                <li><a href="#数据成员">数据成员</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-bp-stubasecharacter">Player/BP_STUBaseCharacter</a>
+              <ul>
+                <li><a href="#capsulecomponent">CapsuleComponent</a></li>
+                <li><a href="#meshcomponent">MeshComponent</a></li>
+                <li><a href="#springarmcomponent">SpringArmComponent</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-animations-abp-basecharacter">Player/Animations/ABP_BaseCharacter</a>
+              <ul>
+                <li><a href="#animgraph">AnimGraph</a></li>
+                <li><a href="#eventgraph">EventGraph</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#组件">组件</a>
+          <ul>
+            <li><a href="#stucharactermovementcomponent">STUCharacterMovementComponent</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1179,12 +1249,14 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
-<li class="breadcrumb-item active" aria-current="page">终端</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/">角色和动画</a></li>
+<li class="breadcrumb-item active" aria-current="page">阶段性总结</li>
 					</ol>
 				</nav>
 			
-			<h1>终端</h1>
+			<h1>阶段性总结</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -1202,15 +1274,41 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#项目结构">项目结构</a>
+          <ul>
+            <li><a href="#资产">资产</a></li>
+            <li><a href="#代码">代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#项目基础设置">项目基础设置</a></li>
+        <li><a href="#游戏角色">游戏角色</a>
+          <ul>
+            <li><a href="#stubasecharacter">STUBaseCharacter</a>
+              <ul>
+                <li><a href="#函数成员">函数成员</a></li>
+                <li><a href="#数据成员">数据成员</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-bp-stubasecharacter">Player/BP_STUBaseCharacter</a>
+              <ul>
+                <li><a href="#capsulecomponent">CapsuleComponent</a></li>
+                <li><a href="#meshcomponent">MeshComponent</a></li>
+                <li><a href="#springarmcomponent">SpringArmComponent</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-animations-abp-basecharacter">Player/Animations/ABP_BaseCharacter</a>
+              <ul>
+                <li><a href="#animgraph">AnimGraph</a></li>
+                <li><a href="#eventgraph">EventGraph</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#组件">组件</a>
+          <ul>
+            <li><a href="#stucharactermovementcomponent">STUCharacterMovementComponent</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1226,15 +1324,41 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#shell概念">shell概念</a></li>
-        <li><a href="#终端程序">终端程序</a></li>
-        <li><a href="#命令解释器">命令解释器</a></li>
-        <li><a href="#脚本语言">脚本语言</a></li>
-        <li><a href="#shell脚本">Shell脚本</a></li>
-        <li><a href="#命令提示符">命令提示符</a></li>
-        <li><a href="#查看shell信息">查看Shell信息</a></li>
-        <li><a href="#shell操作">Shell操作</a></li>
+        <li><a href="#项目结构">项目结构</a>
+          <ul>
+            <li><a href="#资产">资产</a></li>
+            <li><a href="#代码">代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#项目基础设置">项目基础设置</a></li>
+        <li><a href="#游戏角色">游戏角色</a>
+          <ul>
+            <li><a href="#stubasecharacter">STUBaseCharacter</a>
+              <ul>
+                <li><a href="#函数成员">函数成员</a></li>
+                <li><a href="#数据成员">数据成员</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-bp-stubasecharacter">Player/BP_STUBaseCharacter</a>
+              <ul>
+                <li><a href="#capsulecomponent">CapsuleComponent</a></li>
+                <li><a href="#meshcomponent">MeshComponent</a></li>
+                <li><a href="#springarmcomponent">SpringArmComponent</a></li>
+              </ul>
+            </li>
+            <li><a href="#player-animations-abp-basecharacter">Player/Animations/ABP_BaseCharacter</a>
+              <ul>
+                <li><a href="#animgraph">AnimGraph</a></li>
+                <li><a href="#eventgraph">EventGraph</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#组件">组件</a>
+          <ul>
+            <li><a href="#stucharactermovementcomponent">STUCharacterMovementComponent</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1243,117 +1367,112 @@
   </div>
 
 			</nav>
-			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.bilibili.com/video/BV1rk4y1W7dZ/?spm_id_from=333.1007.top_right_bar_window_history.content.click">介绍CLI，Terminal，Shell和Prompt视频</a> <br/></p>
-<h2 id="shell概念">shell概念 <a href="#shell%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>接口</code> <br/>
-shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 <br/></p>
-<p>根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 <br/></p>
-<ol>
-<li>CLI <br/>
-<em>Command-Line Interface</em> <br/>
-<code>命令行界面</code> <br/>
-通过文本命令和计算机交互 <br/></li>
-<li>GUI <br/>
-<em>Graphical User Interface</em> <br/>
-<code>图形用户界面</code> <br/>
-通过鼠标操作 <br/></li>
-</ol>
-<p>早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 <br/></p>
-<h2 id="终端程序">终端程序 <a href="#%e7%bb%88%e7%ab%af%e7%a8%8b%e5%ba%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Terminal</code> <br/>
-<code>Wrapper Program</code> <br/>
-在终端输入文本命令 <br/></p>
+			<h2 id="项目结构">项目结构 <a href="#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="资产">资产 <a href="#%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>终端程序</th>
-<th>说明</th>
+<th>-</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>iTerm</td>
-<td>MacOS</td>
-</tr>
-<tr>
-<td>Windows Terminal</td>
-<td>Windows</td>
-</tr>
-<tr>
-<td>Gnome Terminal</td>
-<td>使用Gnome作为桌面的Linux自带的终端程序</td>
-</tr>
-<tr>
-<td>Hyper</td>
+<td>Content</td>
+<td>ExternalContent</td>
+<td>Animation</td>
 <td></td>
 </tr>
 <tr>
-<td>Warp</td>
-<td>目前MacOS；自动补全，鼠标交互，内置工作流，AI功能</td>
+<td></td>
+<td>Levels</td>
+<td>DefaultMap</td>
+<td></td>
 </tr>
 <tr>
-<td>Alacrity</td>
+<td></td>
+<td>Player</td>
+<td>Animations</td>
+<td>ABP_BaseCharacter</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>BS_Locomotion_Run</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>BS_Locomotion_Walk</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>BS_Locomotion_Walk_1D</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>BP_STUBaseCharacter</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>BP_STUPlayerController</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BP_STUGameModeBase</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="命令解释器">命令解释器 <a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a%e5%99%a8" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Shell</code> <code>程序</code> <br/>
-终端中运行的程序。接受命令，然后解释并执行。 <br/></p>
-<p>Shell启动时自动读取配置文件。 <br/></p>
+<h3 id="代码">代码 <a href="#%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>Shell</th>
-<th>说明</th>
+<th>-</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>sh</td>
-<td><em>Bourne Shell</em></td>
+<td>ShootThemUp</td>
+<td>Public</td>
+<td>Components</td>
+<td>STUCharacterMovementComponent</td>
 </tr>
 <tr>
 <td></td>
-<td>UNIX上的标准shell</td>
-</tr>
-<tr>
-<td>bash</td>
-<td><em>Bourne-Again Shell</em></td>
+<td></td>
+<td>Player</td>
+<td>STUBaseCharacter</td>
 </tr>
 <tr>
 <td></td>
-<td>GNU开发；Linux默认</td>
+<td></td>
+<td></td>
+<td>STUPlayerController</td>
 </tr>
 <tr>
 <td></td>
-<td>不完全兼容sh shell，对一些命令和参数进行了扩展</td>
-</tr>
-<tr>
+<td>STUGameModeBase</td>
 <td></td>
-<td>配置文件 ~/.bash_profile</td>
-</tr>
-<tr>
-<td>zsh</td>
-<td>19年之前MacOS默认Bash；之后使用zsh</td>
-</tr>
-<tr>
-<td></td>
-<td>配置文件 ~/zshrc</td>
-</tr>
-<tr>
-<td></td>
-<td>第三方框架oh-my-zsh提供其他功能</td>
-</tr>
-<tr>
-<td>phish</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="脚本语言">脚本语言 <a href="#%e8%84%9a%e6%9c%ac%e8%af%ad%e8%a8%80" class="anchor" aria-hidden="true">#</a></h2>
-<p>需要解释器，每次运行时都需要解释。 <br/></p>
+<h2 id="项目基础设置">项目基础设置 <a href="#%e9%a1%b9%e7%9b%ae%e5%9f%ba%e7%a1%80%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -1362,99 +1481,392 @@ shell，和core相区分，是操作系统的外层。通过Shell程序，可以
 </thead>
 <tbody>
 <tr>
-<td>JavaScript</td>
+<td>载入 <code>ExternalContent/Animation</code></td>
 </tr>
 <tr>
-<td>PHP</td>
+<td>创建 <code>DefaultMap</code> 并设置</td>
 </tr>
 <tr>
-<td>Lua</td>
+<td>设置地板</td>
 </tr>
 <tr>
-<td>Python</td>
+<td>配置头文件搜索路径</td>
 </tr>
 <tr>
-<td>C#</td>
+<td>添加 <code>PlayerStart</code></td>
+</tr>
+<tr>
+<td>设置 <code>编译成功自动保存</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="shell脚本">Shell脚本 <a href="#shell%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>开发语言</code> <code>Shell Script</code> <br/>
-由一连串Shell命令组成，可以指定解释脚本的Shell程序。 <br/></p>
-<h2 id="命令提示符">命令提示符 <a href="#%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Prompt</code> <br/>
-命令解释器提供并在终端显示，如当前路径和git信息。 <br/></p>
+<h2 id="游戏角色">游戏角色 <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2" class="anchor" aria-hidden="true">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>类别</th>
+<th>-</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>第三方提示</td>
-<td><code>Powerline</code> <code>Starship</code> <code>Power Level 10K</code> <code>Spaceship</code></td>
+<td><code>C++</code></td>
+<td>Player/STUBaseCharacter</td>
 </tr>
 <tr>
-<td>第三方框架</td>
-<td><code>oh-my-zsh</code></td>
+<td><code>Blueprint</code></td>
+<td>Player/BP_STUBaseCharacter</td>
 </tr>
 <tr>
 <td></td>
-<td>提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为</td>
+<td>Player/Animations/ABP_BaseCharacter</td>
+</tr>
+<tr>
+<td></td>
+<td>Player/Animations/BS_Locomotion_Run</td>
+</tr>
+<tr>
+<td></td>
+<td>Player/Animations/BS_Locomotion_Walk</td>
+</tr>
+<tr>
+<td></td>
+<td>Player/Animations/BS_Locomotion_Walk_1D</td>
 </tr>
 </tbody>
 </table>
-<h2 id="查看shell信息">查看Shell信息 <a href="#%e6%9f%a5%e7%9c%8bshell%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>命令解释器</code> <br/></p>
-<ol>
-<li>当前使用的Shell <br/>
-<pre><code class="language-bash">echo $SHELL
-echo $0
-</code></pre>
+<h3 id="stubasecharacter">STUBaseCharacter <a href="#stubasecharacter" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>C++</code> <br/></p>
+<h4 id="函数成员">函数成员 <a href="#%e5%87%bd%e6%95%b0%e6%88%90%e5%91%98" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>基本函数</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构造函数</td>
+<td>设置组件类型(初始化列表)；初始化组件</td>
+</tr>
+<tr>
+<td>BeginPlay</td>
+<td>检查组件是否成功创建(check)；组件设置；注册委托</td>
+</tr>
+<tr>
+<td>SetupPlayerInputComponent</td>
+<td>检查组件；绑定平移旋转跳跃跑步键位</td>
+</tr>
+</tbody>
+</table>
+<!--list-separator-->
+<ul>
+<li>键位绑定
+<table>
+<thead>
+<tr>
+<th>回调函数</th>
+<th>键位</th>
+<th>相关函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MoveRight</td>
+<td>左右移动</td>
+<td>AddMovementInput；GetActorRightVector</td>
+</tr>
+<tr>
+<td>MoveForward</td>
+<td>前后移动</td>
+<td>AddMovementInput；GetActorForwardVector</td>
+</tr>
+<tr>
+<td></td>
+<td>左右旋转</td>
+<td>ACharacter::AddControllerYawInput</td>
+</tr>
+<tr>
+<td></td>
+<td>上下旋转</td>
+<td>ACharacter::AddControllerPitchInput</td>
+</tr>
+<tr>
+<td></td>
+<td>跳跃</td>
+<td>ACharacter::Jump</td>
+</tr>
+<tr>
+<td>RunEnable，RunDisable</td>
+<td>跑步</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </li>
-<li>已安装Shell <br/>
-<pre><code class="language-bash">cat /etc/shells
-</code></pre>
+</ul>
+<!--list-separator-->
+<ul>
+<li>接口
+<table>
+<thead>
+<tr>
+<th>接口函数</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetDirection</td>
+<td>计算前进方向和速度方向的夹角；供ABP_STBaseCharacter使用</td>
+</tr>
+<tr>
+<td>IsRunning</td>
+<td>判断角色是否满足跑步条件；供STUCharacterMovementComponent使用；供ABP_STBaseCharacter使用</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="数据成员">数据成员 <a href="#%e6%95%b0%e6%8d%ae%e6%88%90%e5%91%98" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpringArmComponent</td>
+<td>以游戏角色为中心左右旋转</td>
+</tr>
+<tr>
+<td>CameraComponent</td>
+<td>第三视角</td>
+</tr>
+<tr>
+<td>CharacterMovementComponent</td>
+<td>运动组件</td>
+</tr>
+</tbody>
+</table>
+<!--list-separator-->
+<ul>
+<li>标志位
+<table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AbleRun</td>
+<td>跑步键位是否按下</td>
+</tr>
+<tr>
+<td>IsForward</td>
+<td>向前方向键是否按下</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="player-bp-stubasecharacter">Player/BP_STUBaseCharacter <a href="#player-bp-stubasecharacter" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Blueprint</code> <br/></p>
+<h4 id="capsulecomponent">CapsuleComponent <a href="#capsulecomponent" class="anchor" aria-hidden="true">#</a></h4>
+<h4 id="meshcomponent">MeshComponent <a href="#meshcomponent" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mesh &gt; Skeletal Mesh Asset</td>
+<td>HeroTPP</td>
+</tr>
+<tr>
+<td>Materials &gt; Element 0</td>
+<td>HeroTPP</td>
+</tr>
+<tr>
+<td>Animation Mode</td>
+<td>UseAnimationBlueprint</td>
+</tr>
+<tr>
+<td>AnimClass</td>
+<td>ABP_BaseCharacter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="springarmcomponent">SpringArmComponent <a href="#springarmcomponent" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UsePawnControlRotation</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="player-animations-abp-basecharacter">Player/Animations/ABP_BaseCharacter <a href="#player-animations-abp-basecharacter" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Blueprint</code> <br/></p>
+<h4 id="animgraph">AnimGraph <a href="#animgraph" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>状态机</p>
+<ol>
+<li>Locomotion作为OutputPose的输入 <br/></li>
+<li>状态 <br/>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>走路</td>
+<td>Walk</td>
+<td>BS_Locomotion_Walk；混合空间</td>
+</tr>
+<tr>
+<td>跑步</td>
+<td>Run</td>
+<td>BS_Locomotion_Run；混合空间1D</td>
+</tr>
+<tr>
+<td>跳跃</td>
+<td>JumpStart</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>JumpLoop</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>JumpEnd</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>变量 <br/>
+<ul>
+<li>动画输入 <br/>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度</td>
+<td>Velocity</td>
+</tr>
+<tr>
+<td>速度和前进方向的夹角</td>
+<td>Directon</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>转换条件 <br/>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IsRunning</td>
+<td>C++</td>
+<td>满足3个条件：按下Shift；速度和前进方向夹角为0（按下W或Up）；速度不为0</td>
+</tr>
+<tr>
+<td>IsFalling</td>
+<td>CharacterMovementComponent::IsFalling</td>
+<td>返回true，意味着游戏角色跳起；接着返回false，意味着游戏角色回到地面</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </li>
 </ol>
-<h2 id="shell操作">Shell操作 <a href="#shell%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>切换Shell程序 <br/>
-<em>重新打开终端生效</em> <br/>
-<pre><code class="language-bash">chsh -s /bin/bash
-</code></pre>
-<em>不修改SHELL环境变量</em> <br/>
-<pre><code class="language-bash">zsh
-</code></pre>
 </li>
-<li>手动读取配置文件 <br/>
-<em>zsh</em> <br/>
-<pre><code class="language-bash">source ~/.zshrc
-</code></pre>
-</li>
-<li>指定Shell脚本的命令解释器 <br/>
-<pre><code class="language-bash">#!/bin/bash
-</code></pre>
-</li>
-</ol>
+</ul>
+<h4 id="eventgraph">EventGraph <a href="#eventgraph" class="anchor" aria-hidden="true">#</a></h4>
+<p>设置变量 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Velocity</td>
+</tr>
+<tr>
+<td>Directon</td>
+</tr>
+<tr>
+<td>IsRunning</td>
+</tr>
+<tr>
+<td>IsFalling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="组件">组件 <a href="#%e7%bb%84%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code> <br/></p>
+<h3 id="stucharactermovementcomponent">STUCharacterMovementComponent <a href="#stucharactermovementcomponent" class="anchor" aria-hidden="true">#</a></h3>
+<p>满足跑步条件时，提高运动速度上限 <br/></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpeedAcceleration</td>
+<td>加速系数</td>
+</tr>
+</tbody>
+</table>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Shell脚本
-				</div>
-			</div>
-		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
-			<div class="card my-1">
-				<div class="card-body py-2">
-					Git &rarr;
+					&larr; 打包游戏
 				</div>
 			</div>
 		</a>
