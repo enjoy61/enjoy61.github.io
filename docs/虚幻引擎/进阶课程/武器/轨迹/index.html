@@ -1,0 +1,3056 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-500.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="https://enjoy61.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2" type="font/woff2" crossorigin>
+
+  <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.31d3002bebb18731060d5e1f7108e87199c049d3c84f191c8e91cc6256d68c790c49029116304792562db5cff5061ad4042bdc6fe67c551d37580f87fd1e99f1.css" integrity="sha512-MdMAK&#43;uxhzEGDV4fcQjocZnASdPITxkcjpHMYlbWjHkMSQKRFjBHklYttc/1BhrUBCvcb&#43;Z8VR03WA&#43;H/R6Z8Q==" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>轨迹 - 六一的部落格</title>
+<meta name="description" content="概览 # Line Trace 本节课介绍如何使用武器进行射击 Socket # 之前我们使用socket作为锚来附加武器 现在我们使用它来标记枪口 添加Muzzle Socket # 虚幻编辑器 之后会在代码中访问Socket, 以及从枪口发射子弹 双击打开 Content &amp;gt; ExternalContent &amp;gt; Weapon &amp;gt; Weapons &amp;gt; Rifle 选中 Skeleton Tree &amp;gt; RifleRoot , 右键, 选择Add Socket, 命名为MuzzleSocket 在细节面板设置Relative Location 默认在武器坐标系的0坐标, 调整到枪口位置, 和各个轴对齐 可以更换观察视角, 调整枪口变换 Top视角 沿着武器发射子弹的方向绘制线段 # C&#43;&#43; 添加MakeShot # 包含发射子弹的所有逻辑 把Fire和Shot分开 如温切斯特连发步枪, 扣一下扳机, 连发数枚子弹 timer for shooting 声明 # protected ShootThemUp: Weapon/STUBaseWeapon.h 空函数 # ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeShot() {} 在Fire中调用 # 检查WeaponMeshComponent # 使用时不必再检查 ShootThemUp: Weapon/STUBaseWeapon.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轨迹">
+<meta property="og:description" content="概览 # Line Trace 本节课介绍如何使用武器进行射击 Socket # 之前我们使用socket作为锚来附加武器 现在我们使用它来标记枪口 添加Muzzle Socket # 虚幻编辑器 之后会在代码中访问Socket, 以及从枪口发射子弹 双击打开 Content &gt; ExternalContent &gt; Weapon &gt; Weapons &gt; Rifle 选中 Skeleton Tree &gt; RifleRoot , 右键, 选择Add Socket, 命名为MuzzleSocket 在细节面板设置Relative Location 默认在武器坐标系的0坐标, 调整到枪口位置, 和各个轴对齐 可以更换观察视角, 调整枪口变换 Top视角 沿着武器发射子弹的方向绘制线段 # C&#43;&#43; 添加MakeShot # 包含发射子弹的所有逻辑 把Fire和Shot分开 如温切斯特连发步枪, 扣一下扳机, 连发数枚子弹 timer for shooting 声明 # protected ShootThemUp: Weapon/STUBaseWeapon.h 空函数 # ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeShot() {} 在Fire中调用 # 检查WeaponMeshComponent # 使用时不必再检查 ShootThemUp: Weapon/STUBaseWeapon.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">
+<meta property="og:site_name" content="六一的部落格">
+<meta property="article:published_time" content="2023-08-11T18:01:42+00:00">
+  <meta property="article:modified_time" content="2023-08-11T18:14:43+08:00">
+  
+  <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
+      <meta property="og:image:alt" content="六一的部落格">
+    
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@getdoks">
+<meta name="twitter:creator" content="@henkverlinde">
+<meta name="twitter:title" content="轨迹">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
+    <meta name="twitter:image:alt" content="轨迹">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://enjoy61.github.io/#/schema/organization/1",
+      "name": "Doks",
+      "url": "https://enjoy61.github.io/",
+      "sameAs": [
+        "https://twitter.com/getdoks"
+        , "https://github.com/h-enk/doks"
+        ],
+      "logo": {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/#/schema/image/1",
+          "url": "https://enjoy61.github.io/logo-doks.png",
+          "width":  512 ,
+          "height":  512 ,
+          "caption": "Doks"
+        },
+        "image": {
+          "@id": "https://enjoy61.github.io/#/schema/image/1"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://enjoy61.github.io/#/schema/website/1",
+      "url": "https://enjoy61.github.io/",
+      "name": "六一的部落格",
+      "description": "",
+      "publisher": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/",
+      "name": "轨迹",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://enjoy61.github.io/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://enjoy61.github.io/#/schema/organization/1"
+        },
+      "datePublished": "2023-08-11T18:01:42CET",
+      "dateModified": "2023-08-11T18:14:43CET",
+      "breadcrumb": {
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/#/schema/image/2"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/",
+          "url": "https://enjoy61.github.io/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/",
+          "url": "https://enjoy61.github.io/docs/",
+          "name": "Docs"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  5 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/",
+          "name": "% E6% Ad% A6% E5%99% A8"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  6 ,
+        "item": {
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://enjoy61.github.io/#/schema/article/1",
+          "headline": "轨迹",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/"
+          },
+          "datePublished": "2023-08-11T18:01:42CET",
+          "dateModified": "2023-08-11T18:14:43CET",
+          "author": {
+            "@id": "https://enjoy61.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://enjoy61.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://enjoy61.github.io/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/#/schema/image/2",
+          "url": "https://enjoy61.github.io/doks.png",
+          "contentUrl": "https://enjoy61.github.io/doks.png",
+          "caption": "轨迹"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+
+  <meta name="theme-color" content="#fff">
+<link rel="icon" href="https://enjoy61.github.io/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="https://enjoy61.github.io/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://enjoy61.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://enjoy61.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://enjoy61.github.io/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="https://enjoy61.github.io/site.webmanifest">
+
+  
+
+</head>
+
+  <body class="docs single">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+
+<header class="navbar navbar-expand-lg navbar-light doks-navbar">
+  <nav class="container-fluid flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+
+    <a class="navbar-brand order-0" href="/" aria-label="六一的部落格">
+      六一的部落格
+    </a>
+
+    <button class="btn btn-link order-0 ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Browse docs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+          虚幻引擎
+        </button>
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                    专题
+                  </button>
+                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                              虚幻编辑器
+                            </button>
+                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">碰撞选项</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
+                    API
+                  </button>
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7bfa30721c5e726ff17e3f972237a82c" aria-expanded="false">
+                                        Engine
+                                      </button>
+                                      <div class="collapse" id="section-7bfa30721c5e726ff17e3f972237a82c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/engine/canvas%E7%B1%BB/">Canvas类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7ee8a7d97d92d4dc37a3aac07b1f549c" aria-expanded="false">
+                                        关卡设置
+                                      </button>
+                                      <div class="collapse" id="section-7ee8a7d97d92d4dc37a3aac07b1f549c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/">HUD类</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/">GameModeBase类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-0fea7c47d93da5689f31820ee525b367" aria-expanded="false">
+                                        数据结构
+                                      </button>
+                                      <div class="collapse" id="section-0fea7c47d93da5689f31820ee525b367">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/interval%E6%A8%A1%E6%9D%BF%E7%B1%BB/">Interval模板类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
+                                        游戏角色
+                                      </button>
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
+                                        组件
+                                      </button>
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">TextRender组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">SpringArm组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">Primitive组件</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                    进阶课程
+                  </button>
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                              角色和动画
+                            </button>
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/">运行ShooterGame示例项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/">初始化ShootThemUp项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/">实现游戏角色前后左右移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/">添加走路转向动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">打包游戏</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b11d90242b17900ec3540f79bdc2cb0f" aria-expanded="false">
+                              健康系统
+                            </button>
+                            <div class="collapse" id="section-b11d90242b17900ec3540f79bdc2cb0f">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E5%80%BC/">实时显示游戏角色生命值</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E9%80%A0%E6%88%90%E4%BC%A4%E5%AE%B3/">对游戏角色造成伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%A8%A1%E6%8B%9F%E6%A6%B4%E5%BC%B9%E7%88%86%E7%82%B8/">模拟榴弹爆炸</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">使用伤害类型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1%E9%80%BB%E8%BE%91/">添加游戏角色死亡逻辑</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%A7%86%E8%A7%92/">添加观察视角</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%8A%A8%E6%B2%BB%E7%96%97/">自动治疗</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%9D%A0%E8%90%BD%E4%BC%A4%E5%AE%B3/">坠落伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
+                              武器
+                            </button>
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/">给游戏角色装载武器</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">初识碰撞</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">轨迹</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <button class="btn btn-menu order-2 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDoks" aria-controls="offcanvasDoks" aria-label="Open main menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <div class="offcanvas offcanvas-end border-0 py-lg-1" tabindex="-1" id="offcanvasDoks" data-bs-backdrop="true" aria-labelledby="offcanvasDoksLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header d-lg-none">
+        <h2 class="h5 offcanvas-title ps-2" id="offcanvasDoksLabel"><a class="text-dark" href="/">六一的部落格</a></h2>
+        <button type="button" class="btn-close text-reset me-2" data-bs-dismiss="offcanvas" aria-label="Close main menu"></button>
+      </div>
+      <div class="offcanvas-body p-4 p-lg-0">
+        <ul class="nav flex-column flex-lg-row align-items-lg-center mt-2 mt-lg-0 ms-lg-2 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">笔记</a>
+              </li>
+            
+          
+              <li class="nav-item">
+                <a class="nav-link ps-0 py-1" href="/blog/">日志</a>
+              </li>
+            
+          
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  关于
+                  <span class="dropdown-caret"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-main shadow rounded border-0" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                      <a class="dropdown-item" href="/about/skill-tree/">技能树</a>
+                    </li>
+                  <li>
+                      <a class="dropdown-item" href="/about/hobby/">Hobby</a>
+                    </li>
+                  </ul>
+              </li>
+            
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <form class="doks-search position-relative flex-grow-1 ms-lg-auto me-lg-2">
+          <input id="search" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+          <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+        </form>
+        <hr class="text-black-50 my-4 d-lg-none">
+        <ul class="nav flex-column flex-lg-row">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/enjoy61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><small class="ms-2 d-lg-none">GitHub</small></a>
+            </li>
+          </ul>
+
+        <hr class="text-black-50 my-4 d-lg-none">
+        <button id="mode" class="btn btn-link" type="button" aria-label="Toggle user interface mode">
+          <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        </button>
+        </div>
+    </div>
+  </nav>
+</header>
+
+
+</div>
+<div class="container-fluid">
+  <aside class="doks-sidebar">
+    <nav id="doks-docs-nav" class="collapse d-lg-none" aria-label="Tertiary navigation">
+      
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+          虚幻引擎
+        </button>
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                    专题
+                  </button>
+                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                              虚幻编辑器
+                            </button>
+                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">碰撞选项</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
+                    API
+                  </button>
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7bfa30721c5e726ff17e3f972237a82c" aria-expanded="false">
+                                        Engine
+                                      </button>
+                                      <div class="collapse" id="section-7bfa30721c5e726ff17e3f972237a82c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/engine/canvas%E7%B1%BB/">Canvas类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7ee8a7d97d92d4dc37a3aac07b1f549c" aria-expanded="false">
+                                        关卡设置
+                                      </button>
+                                      <div class="collapse" id="section-7ee8a7d97d92d4dc37a3aac07b1f549c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/">HUD类</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/">GameModeBase类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-0fea7c47d93da5689f31820ee525b367" aria-expanded="false">
+                                        数据结构
+                                      </button>
+                                      <div class="collapse" id="section-0fea7c47d93da5689f31820ee525b367">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/interval%E6%A8%A1%E6%9D%BF%E7%B1%BB/">Interval模板类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
+                                        游戏角色
+                                      </button>
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
+                                        组件
+                                      </button>
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">TextRender组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">SpringArm组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">Primitive组件</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                    进阶课程
+                  </button>
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                              角色和动画
+                            </button>
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/">运行ShooterGame示例项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/">初始化ShootThemUp项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/">实现游戏角色前后左右移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/">添加走路转向动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">打包游戏</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b11d90242b17900ec3540f79bdc2cb0f" aria-expanded="false">
+                              健康系统
+                            </button>
+                            <div class="collapse" id="section-b11d90242b17900ec3540f79bdc2cb0f">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E5%80%BC/">实时显示游戏角色生命值</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E9%80%A0%E6%88%90%E4%BC%A4%E5%AE%B3/">对游戏角色造成伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%A8%A1%E6%8B%9F%E6%A6%B4%E5%BC%B9%E7%88%86%E7%82%B8/">模拟榴弹爆炸</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">使用伤害类型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1%E9%80%BB%E8%BE%91/">添加游戏角色死亡逻辑</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%A7%86%E8%A7%92/">添加观察视角</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%8A%A8%E6%B2%BB%E7%96%97/">自动治疗</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%9D%A0%E8%90%BD%E4%BC%A4%E5%AE%B3/">坠落伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
+                              武器
+                            </button>
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/">给游戏角色装载武器</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">初识碰撞</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">轨迹</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+  </aside>
+</div>
+
+
+    <div class="wrap container-fluid" role="document">
+      <div class="content">
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
+				
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+          虚幻引擎
+        </button>
+        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                    专题
+                  </button>
+                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                              虚幻编辑器
+                            </button>
+                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">碰撞选项</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
+                    API
+                  </button>
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7bfa30721c5e726ff17e3f972237a82c" aria-expanded="false">
+                                        Engine
+                                      </button>
+                                      <div class="collapse" id="section-7bfa30721c5e726ff17e3f972237a82c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/engine/canvas%E7%B1%BB/">Canvas类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7ee8a7d97d92d4dc37a3aac07b1f549c" aria-expanded="false">
+                                        关卡设置
+                                      </button>
+                                      <div class="collapse" id="section-7ee8a7d97d92d4dc37a3aac07b1f549c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/">HUD类</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/">GameModeBase类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-0fea7c47d93da5689f31820ee525b367" aria-expanded="false">
+                                        数据结构
+                                      </button>
+                                      <div class="collapse" id="section-0fea7c47d93da5689f31820ee525b367">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/interval%E6%A8%A1%E6%9D%BF%E7%B1%BB/">Interval模板类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
+                                        游戏角色
+                                      </button>
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
+                                        组件
+                                      </button>
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">TextRender组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">SpringArm组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">Primitive组件</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                    进阶课程
+                  </button>
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                              角色和动画
+                            </button>
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/">运行ShooterGame示例项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/">初始化ShootThemUp项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/">实现游戏角色前后左右移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/">添加走路转向动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">打包游戏</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b11d90242b17900ec3540f79bdc2cb0f" aria-expanded="false">
+                              健康系统
+                            </button>
+                            <div class="collapse" id="section-b11d90242b17900ec3540f79bdc2cb0f">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E5%80%BC/">实时显示游戏角色生命值</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E9%80%A0%E6%88%90%E4%BC%A4%E5%AE%B3/">对游戏角色造成伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%A8%A1%E6%8B%9F%E6%A6%B4%E5%BC%B9%E7%88%86%E7%82%B8/">模拟榴弹爆炸</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">使用伤害类型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1%E9%80%BB%E8%BE%91/">添加游戏角色死亡逻辑</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%A7%86%E8%A7%92/">添加观察视角</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%8A%A8%E6%B2%BB%E7%96%97/">自动治疗</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%9D%A0%E8%90%BD%E4%BC%A4%E5%AE%B3/">坠落伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
+                              武器
+                            </button>
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/">给游戏角色装载武器</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">初识碰撞</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">轨迹</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+          分享
+        </button>
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                    Emacs
+                  </button>
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#socket">Socket</a></li>
+          </ul>
+        </li>
+        <li><a href="#添加muzzle-socket">添加Muzzle Socket</a></li>
+        <li><a href="#沿着武器发射子弹的方向绘制线段">沿着武器发射子弹的方向绘制线段</a>
+          <ul>
+            <li><a href="#添加makeshot">添加MakeShot</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#实现makeshot">实现MakeShot</a></li>
+          </ul>
+        </li>
+        <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
+        <li><a href="#绘制相交点">绘制相交点</a>
+          <ul>
+            <li><a href="#获取与轨迹相交的物体信息">获取与轨迹相交的物体信息</a></li>
+            <li><a href="#hitresult存放相交信息">HitResult存放相交信息</a></li>
+            <li><a href="#绘制相交点">绘制相交点</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看相交点">查看相交点</a></li>
+        <li><a href="#计算机游戏的射击机制">计算机游戏的射击机制</a>
+          <ul>
+            <li><a href="#在weapon类访问cameracomponent">在Weapon类访问CameraComponent</a></li>
+            <li><a href="#射击路线">射击路线</a></li>
+            <li><a href="#绘制">绘制</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看游戏射击机制绘图">查看游戏射击机制绘图</a></li>
+        <li><a href="#击中mesh组件">击中Mesh组件</a>
+          <ul>
+            <li><a href="#验证-我们射击游戏角色时-打中的是capsulecomponent">验证: 我们射击游戏角色时, 打中的是CapsuleComponent</a></li>
+            <li><a href="#调整为击中静态网格体">调整为击中静态网格体</a></li>
+            <li><a href="#当前的问题-射程的起点为camera-我们可以打到枪口无法打到的位置">当前的问题: 射程的起点为Camera, 我们可以打到枪口无法打到的位置</a></li>
+            <li><a href="#射中时-输出骨骼信息">射中时, 输出骨骼信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#socket">Socket</a></li>
+          </ul>
+        </li>
+        <li><a href="#添加muzzle-socket">添加Muzzle Socket</a></li>
+        <li><a href="#沿着武器发射子弹的方向绘制线段">沿着武器发射子弹的方向绘制线段</a>
+          <ul>
+            <li><a href="#添加makeshot">添加MakeShot</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#实现makeshot">实现MakeShot</a></li>
+          </ul>
+        </li>
+        <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
+        <li><a href="#绘制相交点">绘制相交点</a>
+          <ul>
+            <li><a href="#获取与轨迹相交的物体信息">获取与轨迹相交的物体信息</a></li>
+            <li><a href="#hitresult存放相交信息">HitResult存放相交信息</a></li>
+            <li><a href="#绘制相交点">绘制相交点</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看相交点">查看相交点</a></li>
+        <li><a href="#计算机游戏的射击机制">计算机游戏的射击机制</a>
+          <ul>
+            <li><a href="#在weapon类访问cameracomponent">在Weapon类访问CameraComponent</a></li>
+            <li><a href="#射击路线">射击路线</a></li>
+            <li><a href="#绘制">绘制</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看游戏射击机制绘图">查看游戏射击机制绘图</a></li>
+        <li><a href="#击中mesh组件">击中Mesh组件</a>
+          <ul>
+            <li><a href="#验证-我们射击游戏角色时-打中的是capsulecomponent">验证: 我们射击游戏角色时, 打中的是CapsuleComponent</a></li>
+            <li><a href="#调整为击中静态网格体">调整为击中静态网格体</a></li>
+            <li><a href="#当前的问题-射程的起点为camera-我们可以打到枪口无法打到的位置">当前的问题: 射程的起点为Camera, 我们可以打到枪口无法打到的位置</a></li>
+            <li><a href="#射中时-输出骨骼信息">射中时, 输出骨骼信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/">武器</a></li>
+<li class="breadcrumb-item active" aria-current="page">轨迹</li>
+					</ol>
+				</nav>
+			
+			<h1>轨迹</h1>
+			<p class="lead"></p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>On this page</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#socket">Socket</a></li>
+          </ul>
+        </li>
+        <li><a href="#添加muzzle-socket">添加Muzzle Socket</a></li>
+        <li><a href="#沿着武器发射子弹的方向绘制线段">沿着武器发射子弹的方向绘制线段</a>
+          <ul>
+            <li><a href="#添加makeshot">添加MakeShot</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#实现makeshot">实现MakeShot</a></li>
+          </ul>
+        </li>
+        <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
+        <li><a href="#绘制相交点">绘制相交点</a>
+          <ul>
+            <li><a href="#获取与轨迹相交的物体信息">获取与轨迹相交的物体信息</a></li>
+            <li><a href="#hitresult存放相交信息">HitResult存放相交信息</a></li>
+            <li><a href="#绘制相交点">绘制相交点</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看相交点">查看相交点</a></li>
+        <li><a href="#计算机游戏的射击机制">计算机游戏的射击机制</a>
+          <ul>
+            <li><a href="#在weapon类访问cameracomponent">在Weapon类访问CameraComponent</a></li>
+            <li><a href="#射击路线">射击路线</a></li>
+            <li><a href="#绘制">绘制</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看游戏射击机制绘图">查看游戏射击机制绘图</a></li>
+        <li><a href="#击中mesh组件">击中Mesh组件</a>
+          <ul>
+            <li><a href="#验证-我们射击游戏角色时-打中的是capsulecomponent">验证: 我们射击游戏角色时, 打中的是CapsuleComponent</a></li>
+            <li><a href="#调整为击中静态网格体">调整为击中静态网格体</a></li>
+            <li><a href="#当前的问题-射程的起点为camera-我们可以打到枪口无法打到的位置">当前的问题: 射程的起点为Camera, 我们可以打到枪口无法打到的位置</a></li>
+            <li><a href="#射中时-输出骨骼信息">射中时, 输出骨骼信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>On this page</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#概览">概览</a>
+          <ul>
+            <li><a href="#socket">Socket</a></li>
+          </ul>
+        </li>
+        <li><a href="#添加muzzle-socket">添加Muzzle Socket</a></li>
+        <li><a href="#沿着武器发射子弹的方向绘制线段">沿着武器发射子弹的方向绘制线段</a>
+          <ul>
+            <li><a href="#添加makeshot">添加MakeShot</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#实现makeshot">实现MakeShot</a></li>
+          </ul>
+        </li>
+        <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
+        <li><a href="#绘制相交点">绘制相交点</a>
+          <ul>
+            <li><a href="#获取与轨迹相交的物体信息">获取与轨迹相交的物体信息</a></li>
+            <li><a href="#hitresult存放相交信息">HitResult存放相交信息</a></li>
+            <li><a href="#绘制相交点">绘制相交点</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看相交点">查看相交点</a></li>
+        <li><a href="#计算机游戏的射击机制">计算机游戏的射击机制</a>
+          <ul>
+            <li><a href="#在weapon类访问cameracomponent">在Weapon类访问CameraComponent</a></li>
+            <li><a href="#射击路线">射击路线</a></li>
+            <li><a href="#绘制">绘制</a></li>
+          </ul>
+        </li>
+        <li><a href="#查看游戏射击机制绘图">查看游戏射击机制绘图</a></li>
+        <li><a href="#击中mesh组件">击中Mesh组件</a>
+          <ul>
+            <li><a href="#验证-我们射击游戏角色时-打中的是capsulecomponent">验证: 我们射击游戏角色时, 打中的是CapsuleComponent</a></li>
+            <li><a href="#调整为击中静态网格体">调整为击中静态网格体</a></li>
+            <li><a href="#当前的问题-射程的起点为camera-我们可以打到枪口无法打到的位置">当前的问题: 射程的起点为Camera, 我们可以打到枪口无法打到的位置</a></li>
+            <li><a href="#射中时-输出骨骼信息">射中时, 输出骨骼信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+			</nav>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Line Trace</code> <br/></p>
+<p>本节课介绍如何使用武器进行射击 <br/></p>
+<h3 id="socket">Socket <a href="#socket" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>之前我们使用socket作为锚来附加武器 <br/></li>
+<li>现在我们使用它来标记枪口 <br/></li>
+</ol>
+<h2 id="添加muzzle-socket">添加Muzzle Socket <a href="#%e6%b7%bb%e5%8a%a0muzzle-socket" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/>
+之后会在代码中访问Socket, 以及从枪口发射子弹 <br/></p>
+<ol>
+<li>
+<p>双击打开 <code>Content &gt; ExternalContent &gt; Weapon &gt; Weapons &gt; Rifle</code> <br/></p>
+</li>
+<li>
+<p>选中 <code>Skeleton Tree &gt; RifleRoot</code> , 右键, 选择Add Socket, 命名为MuzzleSocket <br/></p>
+</li>
+<li>
+<p>在细节面板设置Relative Location <br/>
+默认在武器坐标系的0坐标, 调整到枪口位置, 和各个轴对齐 <br/></p>
+<p><img src="/pic/武器/轨迹/添加MuzzleSocket.png" width="1200" /> <br/> <br/></p>
+</li>
+<li>
+<p>可以更换观察视角, 调整枪口变换 <br/></p>
+<p><img src="/pic/武器/轨迹/设置Perspective.png" width="600" /> <br/> <br/></p>
+<ul>
+<li>
+<p>Top视角 <br/></p>
+<p><img src="/pic/武器/轨迹/Top.png" width="600" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="沿着武器发射子弹的方向绘制线段">沿着武器发射子弹的方向绘制线段 <a href="#%e6%b2%bf%e7%9d%80%e6%ad%a6%e5%99%a8%e5%8f%91%e5%b0%84%e5%ad%90%e5%bc%b9%e7%9a%84%e6%96%b9%e5%90%91%e7%bb%98%e5%88%b6%e7%ba%bf%e6%ae%b5" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code> <br/></p>
+<h3 id="添加makeshot">添加MakeShot <a href="#%e6%b7%bb%e5%8a%a0makeshot" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>包含发射子弹的所有逻辑 <br/></li>
+<li>把Fire和Shot分开 <br/>
+<ul>
+<li>如温切斯特连发步枪, 扣一下扳机, 连发数枚子弹 <br/></li>
+<li>timer for shooting <br/></li>
+</ul>
+</li>
+</ol>
+<h4 id="声明">声明 <a href="#%e5%a3%b0%e6%98%8e" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>protected</code> <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.h</code>          <br/></p>
+<h4 id="空函数">空函数 <a href="#%e7%a9%ba%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">void ASTUBaseWeapon::MakeShot() {}
+</code></pre>
+<h4 id="在fire中调用">在Fire中调用 <a href="#%e5%9c%a8fire%e4%b8%ad%e8%b0%83%e7%94%a8" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="检查weaponmeshcomponent">检查WeaponMeshComponent <a href="#%e6%a3%80%e6%9f%a5weaponmeshcomponent" class="anchor" aria-hidden="true">#</a></h3>
+<p>使用时不必再检查 <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// BeginPlay
+check(WeaponMeshComponent);
+</code></pre>
+<h3 id="实现makeshot">实现MakeShot <a href="#%e5%ae%9e%e7%8e%b0makeshot" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="获取muzzlesocket变换">获取MuzzleSocket变换 <a href="#%e8%8e%b7%e5%8f%96muzzlesocket%e5%8f%98%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>添加Socket名</p>
+<p><code>protected</code> <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/></p>
+<pre><code class="language-cpp">UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+FName MuzzleSocketName = &quot;MuzzleSocket&quot;;
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>获取Socket变换</p>
+<p>参数 <br/></p>
+<ol>
+<li>Socket名 <br/></li>
+<li>相对于指定座标系的Socket变换, 默认值是世界座标系 <br/></li>
+</ol>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// MakeShot
+const FTransform SocketTransform = WeaponMeshComponent-&gt;GetSocketTransform(MuzzleSocketName); // 默认世界坐标系
+</code></pre>
+</li>
+</ul>
+<h4 id="绘制线段">绘制线段 <a href="#%e7%bb%98%e5%88%b6%e7%ba%bf%e6%ae%b5" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>添加放大系数</p>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/></p>
+<pre><code class="language-cpp">UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+float TraceMaxDistance = 1500.0f; // 1 unreal unit = 1cm &gt; 15m
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>取出起点, 获取方向向量, 计算终点</p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起点</td>
+<td>Socket位置</td>
+</tr>
+<tr>
+<td>方向</td>
+<td>Socket旋转单位向量</td>
+</tr>
+<tr>
+<td>终点</td>
+<td>起点 + 放大的方向向量</td>
+</tr>
+</tbody>
+</table>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// MakeShot
+
+const FVector TraceStart = SocketTransform.GetLocation();
+
+const FVector ShootDirection = SocketTransform.GetRotation().GetForwardVector(); // 单位向量
+// GetRotation返回类型FQuat: Quaternion
+// 在此处FQuat比FRotator更方便, 因为GetForwardVector的存在, 可以获取X轴分量
+
+const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>获取World对象</p>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>        <br/></p>
+<pre><code class="language-cpp">#include &quot;Engine/World.h&quot;         
+
+// MakeShot
+if(!GetWorld()) return;
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>绘制线段</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bPersistentLines</td>
+<td>是否一直存在</td>
+<td>false</td>
+</tr>
+<tr>
+<td>LifeTime</td>
+<td>持续时间, 单位s</td>
+<td>3</td>
+</tr>
+<tr>
+<td>DepthPriority</td>
+<td>绘制优先级</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">#include &quot;DrawDebugHelpers.h&quot;
+
+// MakeShot
+DrawDebugLine(GetWorld(), TraceStart, TraceEnd, FColor::Red, false, 3.0f, 0, 3.0f);          
+</code></pre>
+</li>
+</ul>
+<h2 id="在虚幻编辑器中查看">在虚幻编辑器中查看 <a href="#%e5%9c%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%b8%ad%e6%9f%a5%e7%9c%8b" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>
+<p>点击鼠标左键, 触发Fire <br/></p>
+</li>
+<li>
+<p>轨迹与枪口垂直 <br/></p>
+<p><img src="/pic/武器/轨迹/轨迹与枪口垂直.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>修改 <code>Rifle</code> 变换 <br/></p>
+<ul>
+<li>
+<p>当前 <br/></p>
+<p><img src="/pic/武器/轨迹/Rifle-MuzzleSocket-Rotation.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>前进方向对应X轴方向, 使X轴绕Y轴逆时针旋转90度 <br/>
+Relative Rotation &gt; Y=90 <br/></p>
+<p><img src="/pic/武器/轨迹/Rifle-MuzzleSocket-Rotation-Y90.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>向上方向对应Z轴方向, 使其绕X轴顺时针旋转90度 <br/>
+Relative Rotation &gt; X=-90 <br/></p>
+<p><img src="/pic/武器/轨迹/Rifle-MuzzleSocket-Rotation-X-90.png" width="1000" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+<li>
+<p>效果图 <br/></p>
+<p><img src="/pic/武器/轨迹/射线效果图.png" width="800" /> <br/> <br/></p>
+</li>
+</ol>
+<h2 id="绘制相交点">绘制相交点 <a href="#%e7%bb%98%e5%88%b6%e7%9b%b8%e4%ba%a4%e7%82%b9" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code>      <br/></p>
+<h3 id="获取与轨迹相交的物体信息">获取与轨迹相交的物体信息 <a href="#%e8%8e%b7%e5%8f%96%e4%b8%8e%e8%bd%a8%e8%bf%b9%e7%9b%b8%e4%ba%a4%e7%9a%84%e7%89%a9%e4%bd%93%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>需要获得线段与场景中的物体的交点. Engine提供了很多支持该功能的函数, 我们使用UWorld对象的一个功能 <br/></li>
+<li>如果存在, LineTraceSingleByChannel通过函数参数返回与线段相交的第一个物体的信息 <br/></li>
+<li>LineTraceSingleByChannel返回true则有相交, false则无; 而HitResult中亦有bBlockingHit <br/></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECollisionChannel::ECC_Visibility</td>
+<td>阻挡了Visibility的物体才参与相交计算</td>
+</tr>
+</tbody>
+</table>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// MakeShot
+FHitResult HitResult;
+GetWorld()-&gt;LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, ECollisionChannel::ECC_Visibility);
+</code></pre>
+<h3 id="hitresult存放相交信息">HitResult存放相交信息 <a href="#hitresult%e5%ad%98%e6%94%be%e7%9b%b8%e4%ba%a4%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>需要交点 <br/></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相交时间</td>
+<td></td>
+</tr>
+<tr>
+<td>交点</td>
+<td>ImpactPoint</td>
+</tr>
+<tr>
+<td>法向量</td>
+<td></td>
+</tr>
+<tr>
+<td>指向相交Actor的指针</td>
+<td></td>
+</tr>
+<tr>
+<td>相交标志</td>
+<td>bBlockingHit</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="绘制相交点">绘制相交点 <a href="#%e7%bb%98%e5%88%b6%e7%9b%b8%e4%ba%a4%e7%82%b9" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// MakeShot
+if (HitResult.bBlockingHit)
+{
+    DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 5.0f);
+}
+</code></pre>
+<h2 id="查看相交点">查看相交点 <a href="#%e6%9f%a5%e7%9c%8b%e7%9b%b8%e4%ba%a4%e7%82%b9" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/></p>
+<ol>
+<li>
+<p>查看 <code>BP_STUBaseCharacter &gt; CapsuleComponent &gt; Collision</code> <br/></p>
+<ul>
+<li><code>Collision Presets, 为Custom</code> <br/></li>
+<li><code>Trace Responses &gt; Visibility为Block</code> <br/>
+为Overlap或Ignore时, 不会参与相交计算 <br/></li>
+</ul>
+<p><img src="/pic/武器/轨迹/相交点-查看Character.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>射中时, 绘制球 <br/></p>
+<p><img src="/pic/武器/轨迹/绘制交点.png" width="800" /> <br/> <br/></p>
+<p>瞄准十字和射击点不在一处 <br/></p>
+</li>
+</ol>
+<h2 id="计算机游戏的射击机制">计算机游戏的射击机制 <a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%b8%b8%e6%88%8f%e7%9a%84%e5%b0%84%e5%87%bb%e6%9c%ba%e5%88%b6" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>C++</code> <br/></p>
+<ul>
+<li>子弹从枪口射出, 是对真实世界中的射击进行模拟 <br/></li>
+<li>射击游戏中, 使子弹从Camera组件所在处设置, 该建模也适用于VR <br/>
+<code>Virtual Reality</code> <br/></li>
+<li>需要将玩家的CameraComponent作为计算起点 <br/></li>
+</ul>
+<h3 id="在weapon类访问cameracomponent">在Weapon类访问CameraComponent <a href="#%e5%9c%a8weapon%e7%b1%bb%e8%ae%bf%e9%97%aecameracomponent" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p>创建武器时, 为其指定Owner <br/></p>
+<ul>
+<li>我们在Actor中创建组件, 所以组件的Owner自动为Actor <br/></li>
+<li>创建Actor时, 需要为其配置Owner <br/>
+SpawnActor时, 通过FActorSpawnParameters; 或者调用SetOwner, 武器的Owner和WeaponComponent的Owner相同 <br/>
+<code>ShootThemUp: Components/STUWeaponComponent.cpp</code> <br/>
+<pre><code class="language-cpp">// SpawnWeapon
+
+// CurrentWeapon-&gt;SetOwner(GetOwner());
+CurrentWeapon-&gt;SetOwner(Character);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>包含头文件 <br/>
+需要获取Character和Controller <br/></p>
+<ul>
+<li>通过Character获取Controller <br/></li>
+<li>通过Controller获取CameraComponent <br/></li>
+</ul>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>          <br/></p>
+<pre><code class="language-cpp">#include &quot;GameFramework/Character.h&quot;
+#include &quot;GameFramework/PlayerController.h&quot;
+</code></pre>
+</li>
+<li>
+<p>获取Controller <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>          <br/></p>
+<pre><code class="language-cpp">// MakeShot
+
+const auto Player = Cast&lt;ACharacter&gt;(GetOwner());
+if (!Player) return;
+
+const auto Controller = Player-&gt;GetController&lt;APlayerController&gt;();
+if (!Controller) return;
+</code></pre>
+</li>
+<li>
+<p>获取CameraComponent的位置和朝向 <br/></p>
+<ul>
+<li>PlayerCameraManager是全局类, 负责管理Camera, 可以直接获取Character的Camera组件 <br/></li>
+<li>GetPlayerViewPoint访问PlayerCameraManager类 <br/></li>
+</ul>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>          <br/></p>
+<pre><code class="language-cpp">// MakeShot
+
+FVector ViewLocation;
+FRotator ViewRotation;
+Controller-&gt;GetPlayerViewPoint(ViewLocation, ViewRotation);
+</code></pre>
+</li>
+</ol>
+<h3 id="射击路线">射击路线 <a href="#%e5%b0%84%e5%87%bb%e8%b7%af%e7%ba%bf" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>起点</td>
+<td>Camera位置</td>
+</tr>
+<tr>
+<td>朝向</td>
+<td>Camera旋转的X轴分量</td>
+</tr>
+</tbody>
+</table>
+<p>用以计算是否击中 <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>                <br/></p>
+<pre><code class="language-cpp">const FVector TraceStart = ViewLocation;
+const FVector ShootDirection = ViewRotation.Vector();
+const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;    
+
+FHitResult HitResult;
+GetWorld()-&gt;LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, ECollisionChannel::ECC_Visibility);    
+</code></pre>
+<h3 id="绘制">绘制 <a href="#%e7%bb%98%e5%88%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p>起点是枪口, 若击中, 终点在击中物体上, 否则, 绘制射程的末尾 <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>       <br/></p>
+<pre><code class="language-cpp">if (HitResult.bBlockingHit)
+{
+    DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), HitResult.ImpactPoint, FColor::Red, false, 3.0f, 0, 3.0f);
+    DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 5.0f);
+}
+else
+{
+    DrawDebugLine(GetWorld(), SocketTransform.GetLocation(), TraceEnd, FColor::Red, false, 3.0f, 0, 3.0f);
+}
+</code></pre>
+<h2 id="查看游戏射击机制绘图">查看游戏射击机制绘图 <a href="#%e6%9f%a5%e7%9c%8b%e6%b8%b8%e6%88%8f%e5%b0%84%e5%87%bb%e6%9c%ba%e5%88%b6%e7%bb%98%e5%9b%be" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>
+<p>击中 <br/></p>
+<p><img src="/pic/武器/轨迹/击中.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>未击中 <br/></p>
+<p><img src="/pic/武器/轨迹/未击中.png" width="800" /> <br/> <br/></p>
+<ul>
+<li>实际是CameraComponent作为起点 <br/></li>
+<li>终点和瞄准十字近似重合; 射击时游戏角色身体没有旋转 <br/></li>
+</ul>
+</li>
+</ol>
+<h2 id="击中mesh组件">击中Mesh组件 <a href="#%e5%87%bb%e4%b8%admesh%e7%bb%84%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/></p>
+<h3 id="验证-我们射击游戏角色时-打中的是capsulecomponent">验证: 我们射击游戏角色时, 打中的是CapsuleComponent <a href="#%e9%aa%8c%e8%af%81-%e6%88%91%e4%bb%ac%e5%b0%84%e5%87%bb%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%97%b6-%e6%89%93%e4%b8%ad%e7%9a%84%e6%98%afcapsulecomponent" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p>打开BP_STUBaseCharacter, 选择CapsuleComponent, 去到Details &gt; Shape <br/></p>
+<ul>
+<li>
+<p>当前 <br/></p>
+<p><img src="/pic/武器/轨迹/CapsuleComponent-Shape-Current.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p>设置 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capsule Half Height</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Capsule Radius</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>在Console显示CapsuleComponent <br/></p>
+<pre><code class="language-bash">show collision           
+</code></pre>
+</li>
+<li>
+<p>效果图 <br/></p>
+<p><img src="/pic/武器/轨迹/击中Capsule.png" width="800" /> <br/> <br/></p>
+</li>
+</ol>
+<h3 id="调整为击中静态网格体">调整为击中静态网格体 <a href="#%e8%b0%83%e6%95%b4%e4%b8%ba%e5%87%bb%e4%b8%ad%e9%9d%99%e6%80%81%e7%bd%91%e6%a0%bc%e4%bd%93" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>设置CapsuleComponent <br/>
+<code>BP_STUBaseCharacter &gt; CapsuleComponent &gt; Details &gt; Collision &gt; Collision Presets</code> <br/>
+<ul>
+<li>
+<p>当前 <br/>
+<code>TraceResponses &gt; Visibility为Block, 参与交叉计算</code> <br/></p>
+<p><img src="/pic/武器/轨迹/Character-Capsule-CollisionPresets-Custom.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p>恢复为默认 <br/>
+<code>TraceResponses &gt; Visibility为Ignore, 不参与交叉计算</code> <br/></p>
+<p><img src="/pic/武器/轨迹/Character-Capsule-CollisionPresets-Pawn.png" width="400" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+<li>设置MeshComponent <br/>
+<code>BP_STUBaseCharacter &gt; CapsuleComponent &gt; Details &gt; Collision &gt; Collision Presets</code>          <br/>
+<ul>
+<li>
+<p>默认为CharacterMesh <br/>
+<code>TraceResponses &gt; Visibility为Ignore, 不参与交叉计算</code> <br/></p>
+<p><img src="/pic/武器/轨迹/Character-Mesh-CollisionPresets-CharacterMesh.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>设置为Custom <br/>
+<code>将TraceResponses &gt; Visibility设置为Block, 参与交叉计算</code> <br/></p>
+<p><img src="/pic/武器/轨迹/Character-Mesh-CollisionPresets-Custom.png" width="350" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+<li>查看 <br/>
+<ul>
+<li>
+<p>击中Mesh <br/></p>
+<p><img src="/pic/武器/轨迹/击中Mesh.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>可以击中两腿之间而不被CapsuleComponent阻挡 <br/></p>
+<p><img src="/pic/武器/轨迹/不被Capsule阻挡.png" width="1000" /> <br/> <br/></p>
+</li>
+</ul>
+</li>
+<li>恢复CapsuleComponent的Shape <br/></li>
+</ol>
+<h3 id="当前的问题-射程的起点为camera-我们可以打到枪口无法打到的位置">当前的问题: 射程的起点为Camera, 我们可以打到枪口无法打到的位置 <a href="#%e5%bd%93%e5%89%8d%e7%9a%84%e9%97%ae%e9%a2%98-%e5%b0%84%e7%a8%8b%e7%9a%84%e8%b5%b7%e7%82%b9%e4%b8%bacamera-%e6%88%91%e4%bb%ac%e5%8f%af%e4%bb%a5%e6%89%93%e5%88%b0%e6%9e%aa%e5%8f%a3%e6%97%a0%e6%b3%95%e6%89%93%e5%88%b0%e7%9a%84%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>从敌人的背后打到他 <br/>
+<ul>
+<li>没调出来 <br/></li>
+<li>角色思路: 限制轨迹和枪口方向的夹角为锐角 <br/></li>
+</ul>
+</li>
+<li>打到自己 <br/>
+<ul>
+<li>没调出来 <br/></li>
+</ul>
+</li>
+</ol>
+<h4 id="计算击中时忽略自己">计算击中时忽略自己 <a href="#%e8%ae%a1%e7%ae%97%e5%87%bb%e4%b8%ad%e6%97%b6%e5%bf%bd%e7%95%a5%e8%87%aa%e5%b7%b1" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>FCollisionQueryParams参数 <br/>
+将不参与相交计算的Actor添加到变量中 <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/>
+<pre><code class="language-cpp">FCollisionQueryParams CollisionParams;
+// CollisionParams.AddIgnoredActor(Player);
+CollisionParams.AddIgnoredActor(GetOwner());
+</code></pre>
+</li>
+<li>修改相交计算的参数 <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/>
+<pre><code class="language-cpp">// MakeShot
+GetWorld()-&gt;LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd, ECollisionChannel::ECC_Visibility, CollisionParams);
+</code></pre>
+</li>
+</ol>
+<h3 id="射中时-输出骨骼信息">射中时, 输出骨骼信息 <a href="#%e5%b0%84%e4%b8%ad%e6%97%b6-%e8%be%93%e5%87%ba%e9%aa%a8%e9%aa%bc%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<p>伤害不同部位时, 减少的生命值不同, 如爆头 <br/></p>
+<h4 id="实现">实现 <a href="#%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>C++</code> <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">// MakeShot         
+UE_LOG(LogBaseWeapon, Display, TEXT(&quot;Bone: %s&quot;), *HitResult.BoneName.ToString());
+</code></pre>
+<h4 id="查看日志">查看日志 <a href="#%e6%9f%a5%e7%9c%8b%e6%97%a5%e5%bf%97" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>虚幻编辑器</code> <br/></p>
+<p><img src="/pic/武器/轨迹/骨骼信息.png" width="1000" /> <br/> <br/></p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; 使用伤害类型
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					实现游戏角色前后左右移动 &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
+
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 order-last order-lg-first">
+        <ul class="list-inline">
+          <li class="list-inline-item">Powered by <a class="text-muted" href="https://github.com/">Github</a>, <a class="text-muted" href="https://gohugo.io/">Hugo</a>, and <a class="text-muted" href="https://getdoks.org/">Doks</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 order-first order-lg-last text-lg-end">
+        <ul class="list-inline">
+          </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
+  <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.41160a24bf3d5fdc1711570d9d32469bbf18c447d83e3f89466224aad69d411029b92d72783147303aa8b9d12670f63022ae40ed596dc5bd7d23e9f7453903d1.js" integrity="sha512-QRYKJL89X9wXEVcNnTJGm78YxEfYPj&#43;JRmIkqtadQRApuS1yeDFHMDqoudEmcPYwIq5A7Vltxb19I&#43;n3RTkD0Q==" crossorigin="anonymous" defer></script>
+  
+    
+  </body>
+</html>

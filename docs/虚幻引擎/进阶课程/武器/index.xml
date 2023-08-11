@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>武器 on </title>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/</link>
+    <description>Recent content in 武器 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Jun 2023 05:37:09 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>给游戏角色装载武器</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/</link>
+      <pubDate>Sun, 11 Jun 2023 07:24:08 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/</guid>
+      <description>概览 # 骨骼网格体组件 USkeletalComponent 武器Actor对象 动态创建，并附加到Character 说明 Launcher 发射导弹 Rifle 发射子弹(shoot regular cartridges) 给骨骼网格体添加挂载点 在可变换组件上挂载Actor 导入资产 # 虚幻编辑器 之前将资产导入到Content/ExternalContent/Animation，有两点需注意 资产之前存在相互引用，这个在Migrate过程中，不一定会全无问题 我们选择Migrate ShooterGame/Content/Animations/TTP_Animations ，而实际导出有多个文件夹，里面的内容都和 TTP_Animations 有关 本节需要Migrate的武器资产，其相关内容甚至和之前的内容有重叠，和之前一样, 在ExternalContent下单独创建一个文件夹，作为章节资产汇总 迁移资产 # ShooterGame 选中Content/Weapons &amp;gt; Migrate 相关文件分别存放在Characters，Environment和Weapons中 保存到ShootThemUp/Content 导入到ShootThemUp # 创建ExternalContent/Weapon，并设置文件夹颜色 将资产移动到ExternalContent/Weapon 效果图 初始化Weapon/STUBaseWeapon # 创建Weapon/STUBaseWeapon # 虚幻编辑器 Actor 公有类 设置头文件路径 # C++ ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot; }); 调整框架 # C++ 基础函数 操作 构造函数 每帧调用置为false Tick 屏蔽 BeginPlay - ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
+    <item>
+      <title>绘制瞄准十字</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</link>
+      <pubDate>Wed, 21 Jun 2023 19:03:08 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</guid>
+      <description>概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 虚幻C++ AGameModeBase::HUDClass 设置关卡使用的HUD类 AHUD 始终显示在游戏 AHUD::DrawHUD 循环体，每帧调用 AHUD::Canvas 数据成员，获取屏幕信息 AHUD::DrawLine 绘制线条 UCanvas UCanvas::SizeX 和 UCanvas::SizeY，画布长宽 TInterval 模板类，保存区间；TInterval::Min 和 TInterval::Max，区间端点 USpringArmComponent::SocketOffset 设置Camera偏移 UPrimitiveComponent::SetOwnerNoSee 设置渲染标志bOwnerNoSee 虚幻编辑器 BP_STUBaseCharacter SpringArm组件 设置Camera偏移 TextRender组件 设置渲染标志OwnerNoSee 创建AHUD派生类 # 虚幻编辑器 创建AHUD派生类，绘制我们需要的元素 Actor &amp;gt; AHUD public 绘制瞄准十字 # 虚幻C++ 更新头文件搜索路径 # ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot; }); 设置关卡使用STUGameHUD # ShootThemUp: STUGameModeBase.cpp #include &amp;quot;UI/STUGameHUD.h&amp;quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 绘制瞄准十字 # 暂时的解决方案，之后会使用widget来绘制 功能函数DrawCrossHair # 声明 private ShootThemUp: UI/STUGameHUD.</description>
+    </item>
+    
+    <item>
+      <title>武器组件</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 25 Jun 2023 16:42:52 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/</guid>
+      <description>概览 # 前提概要 给游戏角色装载武器时, 先动态生成武器Actor, 之后附加到HeroTPP的WeaponSocket 武器类 添加 fire 接口, 对应扣动扳机逻辑 之后会有 shoot 接口，在 fire 中调用；二者关联是，机关枪扣动一次扳机，可以连发数枪 武器组件 STUWeaponComponent 将 SpawnWeapon 逻辑移到这里 包括开火 Fire 逻辑: 调用 STUBaseWeapon&amp;gt;Fire 接口 还有更换武器, 装弹逻辑 Character 绑定键位: 点击鼠标左键, 调用 STUWeaponComponent&amp;gt;Fire 接口 创建STUWeaponComponent # 创建STUWeaponComponent 虚幻编辑器 - ActorComponent Public Components 调整STUWeaponComponent结构 C++ - 构造函数 每帧调用置false TickComponent 屏蔽 ShootThemUp: Components/STUWeaponComponent.h ShootThemUp: Components/STUWeaponComponent.cpp 重构: 移动SpawnWeapon逻辑 # C++ 在STUWeaponComponent中实现SpawnWeapon # 添加数据成员 # ShootThemUp: Components/STUWeaponComponent.h 相关数据成员 protected class ASTUBaseWeapon; UPROPERTY(EditDefaultsOnly) TSubclassOf&amp;lt;ASTUBaseWeapon&amp;gt; WeaponClass; 保存Socket名 protected UPROPERTY(EditDefaultsOnly) FName WeaponAttachPointName = &amp;quot;WeaponSocket&amp;quot;; 保存武器Actor private 所有的指针需要使用UPROPERTY宏标识, 否则Garbage Collector不会维护该指针管理的内存 UPROPERTY() ASTUBaseWeapon *CurrentWeapon= nullptr; 添加函数成员 # 声明 private ShootThemUp: Components/STUWeaponComponent.</description>
+    </item>
+    
+    <item>
+      <title>初识碰撞</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/</link>
+      <pubDate>Sun, 25 Jun 2023 16:56:18 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/</guid>
+      <description>说明 # 虚幻编辑器 了解碰撞 # 碰撞 碰撞是世界中物体的物理交互 如Character的Capsule组件, 因为它的存在, 我们跳起后会落到地面, 而不是穿过地板; 我们可以上楼梯, 或是和另一个Character碰撞(而不是穿过他) Logical Trace 一条轨迹, 给定端点A和B, 计算与轨迹相交的场景中的物体 射击时通过该判断, 得到击中目标 在虚幻编辑器使用Console # 鼠标已由程序控制, 打开Console 按下 ` (apostrophe sign), 在视口下方会出现命令行, 可以输入debug命令 设置打开Console的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方角落显示, 一秒将近40帧, 40 x 25 ms = 1000 ms = 1 s 输出GPU统计数据 # stat GPU 隐藏debug信息 # 输入相同命令, 或 stat none 显示场景中碰撞相关 # show collision 可以看到Character的Capsule组件.</description>
+    </item>
+    
+    <item>
+      <title>轨迹</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/</link>
+      <pubDate>Fri, 11 Aug 2023 18:01:42 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/</guid>
+      <description>概览 # Line Trace 本节课介绍如何使用武器进行射击 Socket # 之前我们使用socket作为锚来附加武器 现在我们使用它来标记枪口 添加Muzzle Socket # 虚幻编辑器 之后会在代码中访问Socket, 以及从枪口发射子弹 双击打开 Content &amp;gt; ExternalContent &amp;gt; Weapon &amp;gt; Weapons &amp;gt; Rifle 选中 Skeleton Tree &amp;gt; RifleRoot , 右键, 选择Add Socket, 命名为MuzzleSocket 在细节面板设置Relative Location 默认在武器坐标系的0坐标, 调整到枪口位置, 和各个轴对齐 可以更换观察视角, 调整枪口变换 Top视角 沿着武器发射子弹的方向绘制线段 # C++ 添加MakeShot # 包含发射子弹的所有逻辑 把Fire和Shot分开 如温切斯特连发步枪, 扣一下扳机, 连发数枚子弹 timer for shooting 声明 # protected ShootThemUp: Weapon/STUBaseWeapon.h 空函数 # ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeShot() {} 在Fire中调用 # 检查WeaponMeshComponent # 使用时不必再检查 ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
+  </channel>
+</rss>
