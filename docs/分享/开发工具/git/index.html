@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>Git - 六一的部落格</title>
-<meta name="description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 git config --list 配置Git账户 git config --global user.name &amp;quot;enjoy61&amp;quot; git config --global user.email &amp;quot;enjoy61@protonmail.com&amp;quot; 配置SSH 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.proxy git config --global --unset https.">
+<meta name="description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 # git config --list 配置Git账户 # git config --global user.name &amp;quot;enjoy61&amp;quot; git config --global user.email &amp;quot;enjoy61@protonmail.com&amp;quot; 配置SSH # 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 # 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
-<meta property="og:description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 git config --list 配置Git账户 git config --global user.name &quot;enjoy61&quot; git config --global user.email &quot;enjoy61@protonmail.com&quot; 配置SSH 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.proxy git config --global --unset https.">
+<meta property="og:description" content="代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 # git config --list 配置Git账户 # git config --global user.name &quot;enjoy61&quot; git config --global user.email &quot;enjoy61@protonmail.com&quot; 配置SSH # 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 # 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-10T21:44:19+00:00">
-  <meta property="article:modified_time" content="2023-08-04T13:55:54+08:00">
+  <meta property="article:modified_time" content="2023-08-12T21:07:58+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-10T21:44:19CET",
-      "dateModified": "2023-08-04T13:55:54CET",
+      "dateModified": "2023-08-12T21:07:58CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/"
           },
           "datePublished": "2023-06-10T21:44:19CET",
-          "dateModified": "2023-08-04T13:55:54CET",
+          "dateModified": "2023-08-12T21:07:58CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2400,7 +2400,15 @@
             <li><a href="#验证">验证</a></li>
           </ul>
         </li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#查看git配置">查看Git配置</a></li>
+            <li><a href="#配置git账户">配置Git账户</a></li>
+            <li><a href="#配置ssh">配置SSH</a></li>
+            <li><a href="#代理">代理</a></li>
+            <li><a href="#中文乱码">中文乱码</a></li>
+          </ul>
+        </li>
         <li><a href="#初始化项目">初始化项目</a>
           <ul>
             <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
@@ -2470,7 +2478,15 @@
             <li><a href="#验证">验证</a></li>
           </ul>
         </li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#查看git配置">查看Git配置</a></li>
+            <li><a href="#配置git账户">配置Git账户</a></li>
+            <li><a href="#配置ssh">配置SSH</a></li>
+            <li><a href="#代理">代理</a></li>
+            <li><a href="#中文乱码">中文乱码</a></li>
+          </ul>
+        </li>
         <li><a href="#初始化项目">初始化项目</a>
           <ul>
             <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
@@ -2563,7 +2579,15 @@
             <li><a href="#验证">验证</a></li>
           </ul>
         </li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#查看git配置">查看Git配置</a></li>
+            <li><a href="#配置git账户">配置Git账户</a></li>
+            <li><a href="#配置ssh">配置SSH</a></li>
+            <li><a href="#代理">代理</a></li>
+            <li><a href="#中文乱码">中文乱码</a></li>
+          </ul>
+        </li>
         <li><a href="#初始化项目">初始化项目</a>
           <ul>
             <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
@@ -2633,7 +2657,15 @@
             <li><a href="#验证">验证</a></li>
           </ul>
         </li>
-        <li><a href="#配置">配置</a></li>
+        <li><a href="#配置">配置</a>
+          <ul>
+            <li><a href="#查看git配置">查看Git配置</a></li>
+            <li><a href="#配置git账户">配置Git账户</a></li>
+            <li><a href="#配置ssh">配置SSH</a></li>
+            <li><a href="#代理">代理</a></li>
+            <li><a href="#中文乱码">中文乱码</a></li>
+          </ul>
+        </li>
         <li><a href="#初始化项目">初始化项目</a>
           <ul>
             <li><a href="#场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置</a></li>
@@ -2703,33 +2735,23 @@
 <pre><code class="language-bash">git -v      
 </code></pre>
 <h2 id="配置">配置 <a href="#%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>
-<p>查看Git配置 <br/></p>
+<h3 id="查看git配置">查看Git配置 <a href="#%e6%9f%a5%e7%9c%8bgit%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-bash">git config --list
 </code></pre>
-</li>
-<li>
-<p>配置Git账户 <br/></p>
+<h3 id="配置git账户">配置Git账户 <a href="#%e9%85%8d%e7%bd%aegit%e8%b4%a6%e6%88%b7" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-bash">git config --global user.name &quot;enjoy61&quot;
 git config --global user.email &quot;enjoy61@protonmail.com&quot;
 </code></pre>
-</li>
-<li>
-<p>配置SSH <br/></p>
+<h3 id="配置ssh">配置SSH <a href="#%e9%85%8d%e7%bd%aessh" class="anchor" aria-hidden="true">#</a></h3>
 <ul>
-<li>生成密钥 <br/></li>
-</ul>
-<!--listend-->
+<li>生成密钥 <br/>
 <pre><code class="language-bash">ssh-keygen
 cat ~/.ssh/id_rsa.pub
 </code></pre>
-<ul>
+</li>
 <li>拷贝公钥到Github <br/></li>
 </ul>
-</li>
-<li>
-<p>代理 <br/></p>
+<h3 id="代理">代理 <a href="#%e4%bb%a3%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
 <ul>
 <li>设置 <br/>
 <pre><code class="language-bash"># 使用代理端口替换1949
@@ -2743,8 +2765,9 @@ git config --global --unset https.proxy
 </code></pre>
 </li>
 </ul>
-</li>
-</ol>
+<h3 id="中文乱码">中文乱码 <a href="#%e4%b8%ad%e6%96%87%e4%b9%b1%e7%a0%81" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-bash">git config --global core.quotepath false
+</code></pre>
 <h2 id="初始化项目">初始化项目 <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
 <p>已在Github创建项目 <br/></p>
 <h3 id="场景一-从github克隆项目-上游信息自动配置">场景一: 从Github克隆项目，上游信息自动配置 <a href="#%e5%9c%ba%e6%99%af%e4%b8%80-%e4%bb%8egithub%e5%85%8b%e9%9a%86%e9%a1%b9%e7%9b%ae-%e4%b8%8a%e6%b8%b8%e4%bf%a1%e6%81%af%e8%87%aa%e5%8a%a8%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
@@ -3077,7 +3100,7 @@ git branch -d iss53
   <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.fa608c4f78703130984b1de0299428ee93d458e6d653c9afa9c8922c2b120863fcbbe96e46489f01572bff37d94114847701b512c1b09341c872367d3aa5de07.js" integrity="sha512-&#43;mCMT3hwMTCYSx3gKZQo7pPUWObWU8mvqciSLCsSCGP8u&#43;luRkifAVcr/zfZQRSEdwG1EsGwk0HIcjZ9OqXeBw==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.db485b0cd9e313c0dab3aa3287c731efbe9277a8cc00e73da5001cdb08aee96f711f3de6e22983fc5b5709ab1e3d7061362cc0574c3b1080b88cd865d9fc6b41.js" integrity="sha512-20hbDNnjE8Das6oyh8cx776Sd6jMAOc9pQAc2wiu6W9xHz3m4imD/FtXCasePXBhNizAV0w7EIC4jNhl2fxrQQ==" crossorigin="anonymous" defer></script>
   
     
   </body>

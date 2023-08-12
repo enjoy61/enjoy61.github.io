@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>双链笔记本 - 六一的部落格</title>
-<meta name="description" content="说明 # 不可能在多个地方维护同一个知识点 知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 org-roam-安装 # (use-package org-roam :ensure t :custom (org-roam-directory my/org-roam-directory) ;; custom (org-roam-completion-everywhere t) :bind ((&amp;quot;C-c n f&amp;quot; . org-roam-node-find) (&amp;quot;C-c n i&amp;quot; . org-roam-node-insert) (&amp;quot;C-c n l&amp;quot; . org-roam-buffer-toggle) ;; (&amp;quot;C-c n g&amp;quot; . org-roam-graph) (&amp;quot;C-c n c&amp;quot; . org-roam-capture) ;; Dailies (&amp;quot;C-c n j&amp;quot; . org-roam-dailies-capture-today) ;; custom ;; 使能 org-roam-completion-everywhere (&amp;quot;C-M-i&amp;quot; . completion-at-point) (&amp;quot;C-c n s&amp;quot; . org-roam-db-sync) (&amp;quot;C-c n r&amp;quot; . org-roam-db-clear-all)) :config ;; If you&#39;re using a vertical completion framework, you might want a more informative completion interface (setq org-roam-node-display-template (concat &amp;quot;${title:*} &amp;quot; (propertize &amp;quot;${tags:10}&amp;quot; &#39;face &#39;org-tag))) (org-roam-db-autosync-mode) (org-roam-db-sync) ;; If using org-roam-protocol (require &#39;org-roam-protocol) (setq org-roam-capture-templates &#39;( (&amp;quot;d&amp;quot; &amp;quot;default&amp;quot; plain &amp;quot;%?">
+<meta name="description" content="说明 # 不可能在多个地方维护同一个知识点 知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 需配置roam文件根目录 # ;; (setq my/org-roam-directory &amp;quot;path/to/org-roam/directory&amp;quot;) org-roam-安装 # (use-package org-roam :ensure t :custom (org-roam-directory my/org-roam-directory) ;; custom (org-roam-completion-everywhere t) :bind ((&amp;quot;C-c n f&amp;quot; . org-roam-node-find) (&amp;quot;C-c n i&amp;quot; . org-roam-node-insert) (&amp;quot;C-c n l&amp;quot; . org-roam-buffer-toggle) ;; (&amp;quot;C-c n g&amp;quot; . org-roam-graph) (&amp;quot;C-c n c&amp;quot; . org-roam-capture) ;; Dailies (&amp;quot;C-c n j&amp;quot; . org-roam-dailies-capture-today) ;; custom ;; 使能 org-roam-completion-everywhere (&amp;quot;C-M-i&amp;quot; . completion-at-point) (&amp;quot;C-c n s&amp;quot; . org-roam-db-sync) (&amp;quot;C-c n r&amp;quot; .">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双链笔记本">
-<meta property="og:description" content="说明 # 不可能在多个地方维护同一个知识点 知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 org-roam-安装 # (use-package org-roam :ensure t :custom (org-roam-directory my/org-roam-directory) ;; custom (org-roam-completion-everywhere t) :bind ((&quot;C-c n f&quot; . org-roam-node-find) (&quot;C-c n i&quot; . org-roam-node-insert) (&quot;C-c n l&quot; . org-roam-buffer-toggle) ;; (&quot;C-c n g&quot; . org-roam-graph) (&quot;C-c n c&quot; . org-roam-capture) ;; Dailies (&quot;C-c n j&quot; . org-roam-dailies-capture-today) ;; custom ;; 使能 org-roam-completion-everywhere (&quot;C-M-i&quot; . completion-at-point) (&quot;C-c n s&quot; . org-roam-db-sync) (&quot;C-c n r&quot; . org-roam-db-clear-all)) :config ;; If you&#39;re using a vertical completion framework, you might want a more informative completion interface (setq org-roam-node-display-template (concat &quot;${title:*} &quot; (propertize &quot;${tags:10}&quot; &#39;face &#39;org-tag))) (org-roam-db-autosync-mode) (org-roam-db-sync) ;; If using org-roam-protocol (require &#39;org-roam-protocol) (setq org-roam-capture-templates &#39;( (&quot;d&quot; &quot;default&quot; plain &quot;%?">
+<meta property="og:description" content="说明 # 不可能在多个地方维护同一个知识点 知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 需配置roam文件根目录 # ;; (setq my/org-roam-directory &quot;path/to/org-roam/directory&quot;) org-roam-安装 # (use-package org-roam :ensure t :custom (org-roam-directory my/org-roam-directory) ;; custom (org-roam-completion-everywhere t) :bind ((&quot;C-c n f&quot; . org-roam-node-find) (&quot;C-c n i&quot; . org-roam-node-insert) (&quot;C-c n l&quot; . org-roam-buffer-toggle) ;; (&quot;C-c n g&quot; . org-roam-graph) (&quot;C-c n c&quot; . org-roam-capture) ;; Dailies (&quot;C-c n j&quot; . org-roam-dailies-capture-today) ;; custom ;; 使能 org-roam-completion-everywhere (&quot;C-M-i&quot; . completion-at-point) (&quot;C-c n s&quot; . org-roam-db-sync) (&quot;C-c n r&quot; .">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-12T16:25:51+00:00">
-  <meta property="article:modified_time" content="2023-08-12T18:29:14+08:00">
+  <meta property="article:modified_time" content="2023-08-12T21:35:32+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-12T16:25:51CET",
-      "dateModified": "2023-08-12T18:29:14CET",
+      "dateModified": "2023-08-12T21:35:32CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/"
           },
           "datePublished": "2023-08-12T16:25:51CET",
-          "dateModified": "2023-08-12T18:29:14CET",
+          "dateModified": "2023-08-12T21:35:32CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2402,6 +2402,7 @@
     <li>
       <ul>
         <li><a href="#说明">说明</a></li>
+        <li><a href="#需配置roam文件根目录">需配置roam文件根目录</a></li>
         <li><a href="#org-roam-安装">org-roam-安装</a></li>
         <li><a href="#org-roam-ui-安装">org-roam-ui-安装</a></li>
       </ul>
@@ -2420,6 +2421,7 @@
     <li>
       <ul>
         <li><a href="#说明">说明</a></li>
+        <li><a href="#需配置roam文件根目录">需配置roam文件根目录</a></li>
         <li><a href="#org-roam-安装">org-roam-安装</a></li>
         <li><a href="#org-roam-ui-安装">org-roam-ui-安装</a></li>
       </ul>
@@ -2462,6 +2464,7 @@
     <li>
       <ul>
         <li><a href="#说明">说明</a></li>
+        <li><a href="#需配置roam文件根目录">需配置roam文件根目录</a></li>
         <li><a href="#org-roam-安装">org-roam-安装</a></li>
         <li><a href="#org-roam-ui-安装">org-roam-ui-安装</a></li>
       </ul>
@@ -2480,6 +2483,7 @@
     <li>
       <ul>
         <li><a href="#说明">说明</a></li>
+        <li><a href="#需配置roam文件根目录">需配置roam文件根目录</a></li>
         <li><a href="#org-roam-安装">org-roam-安装</a></li>
         <li><a href="#org-roam-ui-安装">org-roam-ui-安装</a></li>
       </ul>
@@ -2495,6 +2499,9 @@
 <li>不可能在多个地方维护同一个知识点 <br/></li>
 <li>知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 <br/></li>
 </ul>
+<h2 id="需配置roam文件根目录">需配置roam文件根目录 <a href="#%e9%9c%80%e9%85%8d%e7%bd%aeroam%e6%96%87%e4%bb%b6%e6%a0%b9%e7%9b%ae%e5%bd%95" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-elisp">;; (setq my/org-roam-directory &quot;path/to/org-roam/directory&quot;)
+</code></pre>
 <h2 id="org-roam-安装">org-roam-安装 <a href="#org-roam-%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h2>
 <pre><code class="language-elisp">(use-package org-roam
   :ensure t
@@ -2592,7 +2599,7 @@
   <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.b1d20a6006e054d8abbfa057182fa1361d0806382dbf57b7b7ede59ba94abcf015ab553e6d48d77bc0de077dccfe5e5df8d76939907355690539d37f7582db3a.js" integrity="sha512-sdIKYAbgVNirv6BXGC&#43;hNh0IBjgtv1e3t&#43;3lm6lKvPAVq1U&#43;bUjXe8DeB33M/l5d&#43;NdpOZBzVWkFOdN/dYLbOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.fa608c4f78703130984b1de0299428ee93d458e6d653c9afa9c8922c2b120863fcbbe96e46489f01572bff37d94114847701b512c1b09341c872367d3aa5de07.js" integrity="sha512-&#43;mCMT3hwMTCYSx3gKZQo7pPUWObWU8mvqciSLCsSCGP8u&#43;luRkifAVcr/zfZQRSEdwG1EsGwk0HIcjZ9OqXeBw==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.db485b0cd9e313c0dab3aa3287c731efbe9277a8cc00e73da5001cdb08aee96f711f3de6e22983fc5b5709ab1e3d7061362cc0574c3b1080b88cd865d9fc6b41.js" integrity="sha512-20hbDNnjE8Das6oyh8cx776Sd6jMAOc9pQAc2wiu6W9xHz3m4imD/FtXCasePXBhNizAV0w7EIC4jNhl2fxrQQ==" crossorigin="anonymous" defer></script>
   
     
   </body>
