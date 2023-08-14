@@ -15,5 +15,14 @@
       <description>说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.</description>
     </item>
     
+    <item>
+      <title>图片水平循环滚动</title>
+      <link>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</link>
+      <pubDate>Mon, 14 Aug 2023 01:20:15 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</guid>
+      <description>便签 # - 环状滚动 1. html格式 2. css样式 3. transform: translateX 多个li显示在一行 display: inline-block 基础html格式+css样式 通过js设置css参数 1. element.style.setProperty(&amp;rsquo;transform&amp;rsquo;, &amp;rsquo;translateX(1px)&#39;) 2. element.style.getPropertyValue(&amp;rsquo;transform&#39;) 3. element.style.cssText = &amp;rsquo;left: 10px&#39; 4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置 css Position 1. li标签不自动换行: absolute, fixed 2. 计算绝对位置 3. 垂直滚动时不跟随页面滚动: perspective 样式 # css - imageList height 滚动框高度, 滚动框之间的边界 overflow 向右滚动时, 溢出不触发滚动条 perspective 1. 滚动框左右的边界 2. 垂直滚动时, 滚动框跟随滚动 li width 图片宽度 padding 第一个参数: top边界, 滚动框之间的间隔 第二个参数: 嵌套时长宽边界 position 1. 多个li不自动换行 2.</description>
+    </item>
+    
   </channel>
 </rss>

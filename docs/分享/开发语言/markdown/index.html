@@ -10,22 +10,22 @@
 
   <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
 
-  <link rel="stylesheet" href="https://enjoy61.github.io/main.6bc32bd8f387b1adfc2e95438bf97785089d31a59a24ef870943eb5c9b4e0bc9b091c2186fbbc6ae52ab40bae976e2afabb044de7d4f9606b20197f16e24586c.css" integrity="sha512-a8Mr2POHsa38LpVDi/l3hQidMaWaJO&#43;HCUPrXJtOC8mwkcIYb7vGrlKrQLrpduKvq7BE3n1PlgayAZfxbiRYbA==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.035408f6dd611fc553b884ce6003a3eb7b77d5822df8c446e4e5bdaecd5dda0f0ea48d47b6f5029361fbd8c9b25e0e9772ad9e1a89fbc5b4d11df1a6c7f258b9.css" integrity="sha512-A1QI9t1hH8VTuITOYAOj63t31YIt&#43;MRG5OW9rs1d2g8OpI1HtvUCk2H72MmyXg6Xcq2eGon7xbTRHfGmx/JYuQ==" crossorigin="anonymous">
 <noscript><style>img.lazyload { display: none; }</style></noscript>
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>EmacsLisp - 六一的部落格</title>
-<meta name="description" content="便签 # Manual 文件 # 打开文件 # (find-file &amp;quot;path/to/file&amp;quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &amp;quot;path/to/file&amp;quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &amp;quot;Hello&amp;quot;) 读取输入 # (read-string &amp;quot;Promots: &amp;quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &amp;quot;file:tt.txt&amp;quot; nil t) (replace-match &amp;quot;file:pp.txt&amp;quot; nil t)) 字符串查找 # search-backward # (search-backward &amp;quot;=&amp;quot;) ;; 查找成功返回t (search-backward &amp;quot;[[ue:&amp;quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; )) ;; 匹配返回t (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &amp;quot;hello&amp;quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &amp;quot;hello&amp;quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &amp;quot;equal&amp;quot;) (message &amp;quot;not equal&amp;quot;)) when：cond为true时继续 # (when (&amp;lt; 3 5) (setq ooout &#39;(&amp;quot;less&amp;quot;)) (message &amp;quot;%s&amp;quot; (cons &amp;quot;multi&amp;quot; ooout))) unless：cond为false时继续 # (unless (&amp;gt; 3 4) (setq ooout &#39;(&amp;quot;false&amp;quot; &amp;quot;3 &amp;lt; 4&amp;quot; &amp;quot;is&amp;quot; &amp;quot;true&amp;quot; &amp;quot;!">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/">
+  <title>Markdown - 六一的部落格</title>
+<meta name="description" content="便签 # - 表格 runoob 代码框 # ```elisp ``` 插入图片 # #&#43;begin_example !img #&#43;end_src 插入连接 # #&#43;begin_example 参考 #&#43;end_src 下划线 # &amp;lt;u&amp;gt;Content&amp;lt;/u&amp;gt; 文本块 # `text` 换行 # &amp;lt;br&amp;gt; 分隔线 # --- 注释 # &amp;lt;!--哈哈我是注释，不会在浏览器中显示。--&amp;gt; Todo List # - [ ] - [x] 表格 # | 表头 | 表头 | | ---- | ---- | | 单元格 | 单元格 | | 单元格 | 单元格 | ">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EmacsLisp">
-<meta property="og:description" content="便签 # Manual 文件 # 打开文件 # (find-file &quot;path/to/file&quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &quot;path/to/file&quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &quot;Hello&quot;) 读取输入 # (read-string &quot;Promots: &quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &quot;file:tt.txt&quot; nil t) (replace-match &quot;file:pp.txt&quot; nil t)) 字符串查找 # search-backward # (search-backward &quot;=&quot;) ;; 查找成功返回t (search-backward &quot;[[ue:&quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; )) ;; 匹配返回t (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &quot;hello&quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &quot;hello&quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &quot;equal&quot;) (message &quot;not equal&quot;)) when：cond为true时继续 # (when (&lt; 3 5) (setq ooout &#39;(&quot;less&quot;)) (message &quot;%s&quot; (cons &quot;multi&quot; ooout))) unless：cond为false时继续 # (unless (&gt; 3 4) (setq ooout &#39;(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/">
+<meta property="og:title" content="Markdown">
+<meta property="og:description" content="便签 # - 表格 runoob 代码框 # ```elisp ``` 插入图片 # #&#43;begin_example !img #&#43;end_src 插入连接 # #&#43;begin_example 参考 #&#43;end_src 下划线 # &lt;u&gt;Content&lt;/u&gt; 文本块 # `text` 换行 # &lt;br&gt; 分隔线 # --- 注释 # &lt;!--哈哈我是注释，不会在浏览器中显示。--&gt; Todo List # - [ ] - [x] 表格 # | 表头 | 表头 | | ---- | ---- | | 单元格 | 单元格 | | 单元格 | 单元格 | ">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-08-12T23:48:25+00:00">
-  <meta property="article:modified_time" content="2023-08-13T00:06:53+08:00">
+<meta property="article:published_time" content="2023-06-10T23:35:59+00:00">
+  <meta property="article:modified_time" content="2023-08-14T13:30:09+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="EmacsLisp">
+<meta name="twitter:title" content="Markdown">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="EmacsLisp">
+    <meta name="twitter:image:alt" content="Markdown">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/",
-      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/",
-      "name": "EmacsLisp",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/",
+      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/",
+      "name": "Markdown",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-08-12T23:48:25CET",
-      "dateModified": "2023-08-13T00:06:53CET",
+      "datePublished": "2023-06-10T23:35:59CET",
+      "dateModified": "2023-08-14T13:30:09CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -134,15 +134,15 @@
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
-          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
-          "name": "Emacs"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/",
+          "name": "% E5% Bc%80% E5%8 F%91% E8% Af% Ad% E8% A8%80"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/"
           }
         }]
     },
@@ -153,16 +153,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "EmacsLisp",
+          "headline": "Markdown",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/"
           },
-          "datePublished": "2023-08-12T23:48:25CET",
-          "dateModified": "2023-08-13T00:06:53CET",
+          "datePublished": "2023-06-10T23:35:59CET",
+          "dateModified": "2023-08-14T13:30:09CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -170,7 +170,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/#/schema/image/2"
           }
         }
       ]
@@ -195,10 +195,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "EmacsLisp"
+          "caption": "Markdown"
         }
       ]
     }
@@ -752,10 +752,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -768,7 +768,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/">EmacsLisp</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
                         
                         
                       
@@ -889,16 +889,30 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="true">
                     开发语言
                   </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                  <div class="collapse show" id="section-262a78b7bebf63c3eaefb8b7370826cb">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
                         
                         
                       
@@ -920,6 +934,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
                       
@@ -1535,10 +1556,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1551,7 +1572,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/">EmacsLisp</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
                         
                         
                       
@@ -1672,16 +1693,30 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="true">
                     开发语言
                   </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                  <div class="collapse show" id="section-262a78b7bebf63c3eaefb8b7370826cb">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
                         
                         
                       
@@ -1703,6 +1738,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
                       
@@ -2260,10 +2302,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -2276,7 +2318,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/emacslisp/">EmacsLisp</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
                         
                         
                       
@@ -2397,16 +2439,30 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="true">
                     开发语言
                   </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                  <div class="collapse show" id="section-262a78b7bebf63c3eaefb8b7370826cb">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
                         
                         
                       
@@ -2428,6 +2484,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
                       
@@ -2483,80 +2546,16 @@
     <li>
       <ul>
         <li><a href="#便签">便签</a></li>
-        <li><a href="#文件">文件</a>
-          <ul>
-            <li><a href="#打开文件">打开文件</a></li>
-            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
-            <li><a href="#打开链接">打开链接</a></li>
-          </ul>
-        </li>
-        <li><a href="#文本">文本</a>
-          <ul>
-            <li><a href="#在光标处插入">在光标处插入</a></li>
-            <li><a href="#读取输入">读取输入</a></li>
-            <li><a href="#搜索并替换">搜索并替换</a></li>
-            <li><a href="#字符串查找">字符串查找</a></li>
-            <li><a href="#正则查找">正则查找</a></li>
-            <li><a href="#复制">复制</a></li>
-          </ul>
-        </li>
-        <li><a href="#光标">光标</a>
-          <ul>
-            <li><a href="#光标所在位置">光标所在位置</a></li>
-            <li><a href="#去到指定位置">去到指定位置</a></li>
-            <li><a href="#光标信息">光标信息</a></li>
-            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
-            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓冲区">缓冲区</a>
-          <ul>
-            <li><a href="#获取buffer内容">获取buffer内容</a></li>
-            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
-            <li><a href="#保存buffer">保存buffer</a></li>
-            <li><a href="#关闭buffer">关闭buffer</a></li>
-            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
-            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
-          </ul>
-        </li>
-        <li><a href="#控制语句">控制语句</a>
-          <ul>
-            <li><a href="#条件控制语句">条件控制语句</a></li>
-            <li><a href="#循环while">循环while</a></li>
-          </ul>
-        </li>
-        <li><a href="#功能函数">功能函数</a>
-          <ul>
-            <li><a href="#等待">等待</a></li>
-            <li><a href="#hook">hook</a></li>
-            <li><a href="#函数调用">函数调用</a></li>
-          </ul>
-        </li>
-        <li><a href="#定义变量">定义变量</a>
-          <ul>
-            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
-            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
-            <li><a href="#buffer-local变量">buffer-local变量</a></li>
-          </ul>
-        </li>
-        <li><a href="#函数">函数</a>
-          <ul>
-            <li><a href="#返回值">返回值</a></li>
-            <li><a href="#定义">定义</a></li>
-          </ul>
-        </li>
-        <li><a href="#数据结构">数据结构</a>
-          <ul>
-            <li><a href="#string">string</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#alist">alist</a></li>
-          </ul>
-        </li>
-        <li><a href="#运算符">运算符</a>
-          <ul>
-            <li><a href="#不等">不等</a></li>
-          </ul>
-        </li>
+        <li><a href="#代码框">代码框</a></li>
+        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#插入连接">插入连接</a></li>
+        <li><a href="#下划线">下划线</a></li>
+        <li><a href="#文本块">文本块</a></li>
+        <li><a href="#换行">换行</a></li>
+        <li><a href="#分隔线">分隔线</a></li>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#todo-list">Todo List</a></li>
+        <li><a href="#表格">表格</a></li>
       </ul>
     </li>
   </ul>
@@ -2573,80 +2572,16 @@
     <li>
       <ul>
         <li><a href="#便签">便签</a></li>
-        <li><a href="#文件">文件</a>
-          <ul>
-            <li><a href="#打开文件">打开文件</a></li>
-            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
-            <li><a href="#打开链接">打开链接</a></li>
-          </ul>
-        </li>
-        <li><a href="#文本">文本</a>
-          <ul>
-            <li><a href="#在光标处插入">在光标处插入</a></li>
-            <li><a href="#读取输入">读取输入</a></li>
-            <li><a href="#搜索并替换">搜索并替换</a></li>
-            <li><a href="#字符串查找">字符串查找</a></li>
-            <li><a href="#正则查找">正则查找</a></li>
-            <li><a href="#复制">复制</a></li>
-          </ul>
-        </li>
-        <li><a href="#光标">光标</a>
-          <ul>
-            <li><a href="#光标所在位置">光标所在位置</a></li>
-            <li><a href="#去到指定位置">去到指定位置</a></li>
-            <li><a href="#光标信息">光标信息</a></li>
-            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
-            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓冲区">缓冲区</a>
-          <ul>
-            <li><a href="#获取buffer内容">获取buffer内容</a></li>
-            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
-            <li><a href="#保存buffer">保存buffer</a></li>
-            <li><a href="#关闭buffer">关闭buffer</a></li>
-            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
-            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
-          </ul>
-        </li>
-        <li><a href="#控制语句">控制语句</a>
-          <ul>
-            <li><a href="#条件控制语句">条件控制语句</a></li>
-            <li><a href="#循环while">循环while</a></li>
-          </ul>
-        </li>
-        <li><a href="#功能函数">功能函数</a>
-          <ul>
-            <li><a href="#等待">等待</a></li>
-            <li><a href="#hook">hook</a></li>
-            <li><a href="#函数调用">函数调用</a></li>
-          </ul>
-        </li>
-        <li><a href="#定义变量">定义变量</a>
-          <ul>
-            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
-            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
-            <li><a href="#buffer-local变量">buffer-local变量</a></li>
-          </ul>
-        </li>
-        <li><a href="#函数">函数</a>
-          <ul>
-            <li><a href="#返回值">返回值</a></li>
-            <li><a href="#定义">定义</a></li>
-          </ul>
-        </li>
-        <li><a href="#数据结构">数据结构</a>
-          <ul>
-            <li><a href="#string">string</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#alist">alist</a></li>
-          </ul>
-        </li>
-        <li><a href="#运算符">运算符</a>
-          <ul>
-            <li><a href="#不等">不等</a></li>
-          </ul>
-        </li>
+        <li><a href="#代码框">代码框</a></li>
+        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#插入连接">插入连接</a></li>
+        <li><a href="#下划线">下划线</a></li>
+        <li><a href="#文本块">文本块</a></li>
+        <li><a href="#换行">换行</a></li>
+        <li><a href="#分隔线">分隔线</a></li>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#todo-list">Todo List</a></li>
+        <li><a href="#表格">表格</a></li>
       </ul>
     </li>
   </ul>
@@ -2662,12 +2597,12 @@
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
 <li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/emacs/">Emacs</a></li>
-<li class="breadcrumb-item active" aria-current="page">EmacsLisp</li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a></li>
+<li class="breadcrumb-item active" aria-current="page">Markdown</li>
 					</ol>
 				</nav>
 			
-			<h1>EmacsLisp</h1>
+			<h1>Markdown</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -2686,80 +2621,16 @@
     <li>
       <ul>
         <li><a href="#便签">便签</a></li>
-        <li><a href="#文件">文件</a>
-          <ul>
-            <li><a href="#打开文件">打开文件</a></li>
-            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
-            <li><a href="#打开链接">打开链接</a></li>
-          </ul>
-        </li>
-        <li><a href="#文本">文本</a>
-          <ul>
-            <li><a href="#在光标处插入">在光标处插入</a></li>
-            <li><a href="#读取输入">读取输入</a></li>
-            <li><a href="#搜索并替换">搜索并替换</a></li>
-            <li><a href="#字符串查找">字符串查找</a></li>
-            <li><a href="#正则查找">正则查找</a></li>
-            <li><a href="#复制">复制</a></li>
-          </ul>
-        </li>
-        <li><a href="#光标">光标</a>
-          <ul>
-            <li><a href="#光标所在位置">光标所在位置</a></li>
-            <li><a href="#去到指定位置">去到指定位置</a></li>
-            <li><a href="#光标信息">光标信息</a></li>
-            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
-            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓冲区">缓冲区</a>
-          <ul>
-            <li><a href="#获取buffer内容">获取buffer内容</a></li>
-            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
-            <li><a href="#保存buffer">保存buffer</a></li>
-            <li><a href="#关闭buffer">关闭buffer</a></li>
-            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
-            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
-          </ul>
-        </li>
-        <li><a href="#控制语句">控制语句</a>
-          <ul>
-            <li><a href="#条件控制语句">条件控制语句</a></li>
-            <li><a href="#循环while">循环while</a></li>
-          </ul>
-        </li>
-        <li><a href="#功能函数">功能函数</a>
-          <ul>
-            <li><a href="#等待">等待</a></li>
-            <li><a href="#hook">hook</a></li>
-            <li><a href="#函数调用">函数调用</a></li>
-          </ul>
-        </li>
-        <li><a href="#定义变量">定义变量</a>
-          <ul>
-            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
-            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
-            <li><a href="#buffer-local变量">buffer-local变量</a></li>
-          </ul>
-        </li>
-        <li><a href="#函数">函数</a>
-          <ul>
-            <li><a href="#返回值">返回值</a></li>
-            <li><a href="#定义">定义</a></li>
-          </ul>
-        </li>
-        <li><a href="#数据结构">数据结构</a>
-          <ul>
-            <li><a href="#string">string</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#alist">alist</a></li>
-          </ul>
-        </li>
-        <li><a href="#运算符">运算符</a>
-          <ul>
-            <li><a href="#不等">不等</a></li>
-          </ul>
-        </li>
+        <li><a href="#代码框">代码框</a></li>
+        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#插入连接">插入连接</a></li>
+        <li><a href="#下划线">下划线</a></li>
+        <li><a href="#文本块">文本块</a></li>
+        <li><a href="#换行">换行</a></li>
+        <li><a href="#分隔线">分隔线</a></li>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#todo-list">Todo List</a></li>
+        <li><a href="#表格">表格</a></li>
       </ul>
     </li>
   </ul>
@@ -2776,80 +2647,16 @@
     <li>
       <ul>
         <li><a href="#便签">便签</a></li>
-        <li><a href="#文件">文件</a>
-          <ul>
-            <li><a href="#打开文件">打开文件</a></li>
-            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
-            <li><a href="#打开链接">打开链接</a></li>
-          </ul>
-        </li>
-        <li><a href="#文本">文本</a>
-          <ul>
-            <li><a href="#在光标处插入">在光标处插入</a></li>
-            <li><a href="#读取输入">读取输入</a></li>
-            <li><a href="#搜索并替换">搜索并替换</a></li>
-            <li><a href="#字符串查找">字符串查找</a></li>
-            <li><a href="#正则查找">正则查找</a></li>
-            <li><a href="#复制">复制</a></li>
-          </ul>
-        </li>
-        <li><a href="#光标">光标</a>
-          <ul>
-            <li><a href="#光标所在位置">光标所在位置</a></li>
-            <li><a href="#去到指定位置">去到指定位置</a></li>
-            <li><a href="#光标信息">光标信息</a></li>
-            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
-            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
-          </ul>
-        </li>
-        <li><a href="#缓冲区">缓冲区</a>
-          <ul>
-            <li><a href="#获取buffer内容">获取buffer内容</a></li>
-            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
-            <li><a href="#保存buffer">保存buffer</a></li>
-            <li><a href="#关闭buffer">关闭buffer</a></li>
-            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
-            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
-          </ul>
-        </li>
-        <li><a href="#控制语句">控制语句</a>
-          <ul>
-            <li><a href="#条件控制语句">条件控制语句</a></li>
-            <li><a href="#循环while">循环while</a></li>
-          </ul>
-        </li>
-        <li><a href="#功能函数">功能函数</a>
-          <ul>
-            <li><a href="#等待">等待</a></li>
-            <li><a href="#hook">hook</a></li>
-            <li><a href="#函数调用">函数调用</a></li>
-          </ul>
-        </li>
-        <li><a href="#定义变量">定义变量</a>
-          <ul>
-            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
-            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
-            <li><a href="#buffer-local变量">buffer-local变量</a></li>
-          </ul>
-        </li>
-        <li><a href="#函数">函数</a>
-          <ul>
-            <li><a href="#返回值">返回值</a></li>
-            <li><a href="#定义">定义</a></li>
-          </ul>
-        </li>
-        <li><a href="#数据结构">数据结构</a>
-          <ul>
-            <li><a href="#string">string</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#alist">alist</a></li>
-          </ul>
-        </li>
-        <li><a href="#运算符">运算符</a>
-          <ul>
-            <li><a href="#不等">不等</a></li>
-          </ul>
-        </li>
+        <li><a href="#代码框">代码框</a></li>
+        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#插入连接">插入连接</a></li>
+        <li><a href="#下划线">下划线</a></li>
+        <li><a href="#文本块">文本块</a></li>
+        <li><a href="#换行">换行</a></li>
+        <li><a href="#分隔线">分隔线</a></li>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#todo-list">Todo List</a></li>
+        <li><a href="#表格">表格</a></li>
       </ul>
     </li>
   </ul>
@@ -2859,353 +2666,56 @@
 
 			</nav>
 			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html">Manual</a> <br/></p>
-<h2 id="文件">文件 <a href="#%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="打开文件">打开文件 <a href="#%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(find-file &quot;path/to/file&quot;)
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格</td>
+<td><a href="https://www.runoob.com/markdown/md-table.html">runoob</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码框">代码框 <a href="#%e4%bb%a3%e7%a0%81%e6%a1%86" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">```elisp
+```
 </code></pre>
-<h3 id="使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件 <a href="#%e4%bd%bf%e7%94%a8%e6%89%93%e5%bc%80%e9%93%be%e6%8e%a5%e7%9a%84%e6%96%b9%e5%bc%8f-%e6%89%93%e5%bc%80%e6%8c%87%e5%ae%9a%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(org-open-file &quot;path/to/file&quot;)
+<h2 id="插入图片">插入图片 <a href="#%e6%8f%92%e5%85%a5%e5%9b%be%e7%89%87" class="anchor" aria-hidden="true">#</a></h2>
+<p>#+begin_example <br/>
+!<a href="/pic/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8CShooterGame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png">img</a> <br/>
+#+end_src <br/></p>
+<h2 id="插入连接">插入连接 <a href="#%e6%8f%92%e5%85%a5%e8%bf%9e%e6%8e%a5" class="anchor" aria-hidden="true">#</a></h2>
+<p>#+begin_example <br/>
+<a href="https://learn.microsoft.com/zh-cn/cpp/cpp/conditional-operator-q?view=msvc-170">参考</a> <br/>
+#+end_src <br/></p>
+<h2 id="下划线">下划线 <a href="#%e4%b8%8b%e5%88%92%e7%ba%bf" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">&lt;u&gt;Content&lt;/u&gt;
 </code></pre>
-<h3 id="打开链接">打开链接 <a href="#%e6%89%93%e5%bc%80%e9%93%be%e6%8e%a5" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>C-c C-o</code> <br/></p>
-<pre><code class="language-elisp">(org-open-at-point)
+<h2 id="文本块">文本块 <a href="#%e6%96%87%e6%9c%ac%e5%9d%97" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">`text`
 </code></pre>
-<h2 id="文本">文本 <a href="#%e6%96%87%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="在光标处插入">在光标处插入 <a href="#%e5%9c%a8%e5%85%89%e6%a0%87%e5%a4%84%e6%8f%92%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(insert &quot;Hello&quot;)
+<h2 id="换行">换行 <a href="#%e6%8d%a2%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">&lt;br&gt;
 </code></pre>
-<h3 id="读取输入">读取输入 <a href="#%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(read-string &quot;Promots: &quot;)
+<h2 id="分隔线">分隔线 <a href="#%e5%88%86%e9%9a%94%e7%ba%bf" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">---
 </code></pre>
-<h3 id="搜索并替换">搜索并替换 <a href="#%e6%90%9c%e7%b4%a2%e5%b9%b6%e6%9b%bf%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="字符串replace-string">字符串replace-string <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2replace-string" class="anchor" aria-hidden="true">#</a></h4>
-<p>replace-string会跳过链接匹配 <br/></p>
-<h4 id="全文搜索并替换">全文搜索并替换 <a href="#%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2%e5%b9%b6%e6%9b%bf%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(while (search-forward &quot;file:tt.txt&quot; nil t)
-  (replace-match &quot;file:pp.txt&quot; nil t))
+<h2 id="注释">注释 <a href="#%e6%b3%a8%e9%87%8a" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">&lt;!--哈哈我是注释，不会在浏览器中显示。--&gt;
 </code></pre>
-<h3 id="字符串查找">字符串查找 <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="search-backward">search-backward <a href="#search-backward" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(search-backward &quot;=&quot;)
-
-;; 查找成功返回t
-(search-backward &quot;[[ue:&quot; nil t)
+<h2 id="todo-list">Todo List <a href="#todo-list" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">- [ ]
+- [x]
 </code></pre>
-<h3 id="正则查找">正则查找 <a href="#%e6%ad%a3%e5%88%99%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="re-search-forward">re-search-forward <a href="#re-search-forward" class="anchor" aria-hidden="true">#</a></h4>
-<ul>
-<li>目的字符串 <br/>
-<pre><code class="language-text">[[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h=
-</code></pre>
-</li>
-<li>正则匹配 <br/>
-<pre><code class="language-elisp">(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ))
-
-;; 匹配返回t
-(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ) nil t)
-</code></pre>
-</li>
-</ul>
-<h3 id="复制">复制 <a href="#%e5%a4%8d%e5%88%b6" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(copy-region-as-kill (point-min) (point-max))
-</code></pre>
-<h2 id="光标">光标 <a href="#%e5%85%89%e6%a0%87" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="光标所在位置">光标所在位置 <a href="#%e5%85%89%e6%a0%87%e6%89%80%e5%9c%a8%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(point)
-</code></pre>
-<h3 id="去到指定位置">去到指定位置 <a href="#%e5%8e%bb%e5%88%b0%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(goto-char (point))
-</code></pre>
-<h3 id="光标信息">光标信息 <a href="#%e5%85%89%e6%a0%87%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(what-cursor-position)
-</code></pre>
-<h3 id="记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复 <a href="#%e8%ae%b0%e5%bf%86%e5%85%89%e6%a0%87%e4%bd%8d%e7%bd%ae-%e5%a4%84%e7%90%86%e7%bb%93%e6%9d%9f%e6%81%a2%e5%a4%8d" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(save-excursion
-  (insert &quot;hello&quot;))
-</code></pre>
-<h3 id="获取光标间字符串">获取光标间字符串 <a href="#%e8%8e%b7%e5%8f%96%e5%85%89%e6%a0%87%e9%97%b4%e5%ad%97%e7%ac%a6%e4%b8%b2" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(buffer-substring-no-properties (point-min) (point-max))
-</code></pre>
-<h2 id="缓冲区">缓冲区 <a href="#%e7%bc%93%e5%86%b2%e5%8c%ba" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="获取buffer内容">获取buffer内容 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%86%85%e5%ae%b9" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(buffer-string)
-</code></pre>
-<h3 id="在临时buffer中做处理">在临时buffer中做处理 <a href="#%e5%9c%a8%e4%b8%b4%e6%97%b6buffer%e4%b8%ad%e5%81%9a%e5%a4%84%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(with-temp-buffer
-  (insert &quot;hello&quot;))
-</code></pre>
-<h3 id="保存buffer">保存buffer <a href="#%e4%bf%9d%e5%ad%98buffer" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(save-buffer)
-</code></pre>
-<h3 id="关闭buffer">关闭buffer <a href="#%e5%85%b3%e9%97%adbuffer" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(kill-buffer)
-</code></pre>
-<h3 id="获取buffer对应的文件名">获取buffer对应的文件名 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%af%b9%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6%e5%90%8d" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(buffer-name)
-</code></pre>
-<h3 id="获取给定文件的buffer">获取给定文件的buffer <a href="#%e8%8e%b7%e5%8f%96%e7%bb%99%e5%ae%9a%e6%96%87%e4%bb%b6%e7%9a%84buffer" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(get-buffer (buffer-name))
-</code></pre>
-<h2 id="控制语句">控制语句 <a href="#%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="条件控制语句">条件控制语句 <a href="#%e6%9d%a1%e4%bb%b6%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="if">if <a href="#if" class="anchor" aria-hidden="true">#</a></h4>
-<ul>
-<li>缩进作为true和false的分支 <br/></li>
-<li>各一条语句 <br/></li>
-</ul>
-<!--listend-->
-<pre><code class="language-elisp">(if (= 3 5)
-    (message &quot;equal&quot;)
-  (message &quot;not equal&quot;))
-</code></pre>
-<h4 id="when-cond为true时继续">when：cond为true时继续 <a href="#when-cond%e4%b8%batrue%e6%97%b6%e7%bb%a7%e7%bb%ad" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(when (&lt; 3 5)
-  (setq ooout '(&quot;less&quot;))
-  (message &quot;%s&quot; (cons &quot;multi&quot; ooout)))
-</code></pre>
-<h4 id="unless-cond为false时继续">unless：cond为false时继续 <a href="#unless-cond%e4%b8%bafalse%e6%97%b6%e7%bb%a7%e7%bb%ad" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(unless (&gt; 3 4)
-  (setq ooout '(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!&quot;))
-  (pop ooout)
-  (message &quot;%s&quot; ooout))
-</code></pre>
-<h3 id="循环while">循环while <a href="#%e5%be%aa%e7%8e%afwhile" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="break">break <a href="#break" class="anchor" aria-hidden="true">#</a></h4>
-<p><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Catch-and-Throw.html">Catch-and-Throw</a> <br/></p>
-<pre><code class="language-elisp">(let ((cnt 0))
-  (catch 'break
-    (while t
-      (setq cnt (+ cnt 1))
-      (sleep-for 1)
-      (if (= cnt 5)
-          (throw 'break t)              
-        )
-      )
-    )
-  )
-</code></pre>
-<h2 id="功能函数">功能函数 <a href="#%e5%8a%9f%e8%83%bd%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="等待">等待 <a href="#%e7%ad%89%e5%be%85" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(sleep-for 2)
-</code></pre>
-<h3 id="hook">hook <a href="#hook" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="添加hook">添加hook <a href="#%e6%b7%bb%e5%8a%a0hook" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(add-hook 'emms-player-started-hook (lambda () (emms-seek-to &quot;05:05&quot;) (emms-pause)))
-</code></pre>
-<h4 id="移除hook">移除hook <a href="#%e7%a7%bb%e9%99%a4hook" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(remove-hook 'emms-player-started-hook (lambda () (emms-seek-to &quot;05:05&quot;) (emms-pause)))
-</code></pre>
-<h3 id="函数调用">函数调用 <a href="#%e5%87%bd%e6%95%b0%e8%b0%83%e7%94%a8" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="funcall">funcall <a href="#funcall" class="anchor" aria-hidden="true">#</a></h4>
-<p>第一个参数是函数，之后的组成参数列表，传入第一个参数对应的函数 <br/></p>
-<pre><code class="language-elisp">(funcall (emms-player-get player 'start) track)
-
-;; (emms-player-get player 'start)  查dictionary得到emms-player-mpv-start
-;; (emms-player-mpv-start track)
-</code></pre>
-<h4 id="apply-partially">apply-partially <a href="#apply-partially" class="anchor" aria-hidden="true">#</a></h4>
-<ul>
-<li>类似C++的bind，预设函数调用的参数 <br/></li>
-<li>使用时，根据需求传入剩余参数 <br/></li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>返回函数</p>
-<p>将args作为func的前n个参数传入，调用函数时，和实际传参拼接，传给func <br/></p>
-<pre><code class="language-elisp">(defun apply-partially (func &amp;rest args)
-  ;;...
-  )
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>定义函数</p>
-<pre><code class="language-elisp">(defun emms-player-mpv-cmd (cmd &amp;optional handler)
-  ;;...
-  )
-
-(setq func (apply-partially 'emms-player-mpv-cmd play-cmd
-                            (lambda (_mpv-data mpv-error)
-                              (when (eq mpv-error 'connection-error)
-                                (emms-player-mpv-cmd play-cmd)))))
-
-(funcall func)
-</code></pre>
-</li>
-</ul>
-<h2 id="定义变量">定义变量 <a href="#%e5%ae%9a%e4%b9%89%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="使用let定义局部变量">使用let定义局部变量 <a href="#%e4%bd%bf%e7%94%a8let%e5%ae%9a%e4%b9%89%e5%b1%80%e9%83%a8%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">(let ((x 10) (y 20) (z 30))
-  (message (format &quot;%d %d %d&quot; x y z)))
-</code></pre>
-<h4 id="变量之间存在引用">变量之间存在引用 <a href="#%e5%8f%98%e9%87%8f%e4%b9%8b%e9%97%b4%e5%ad%98%e5%9c%a8%e5%bc%95%e7%94%a8" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(let* ((x 10) (y (+ x 10)))
-  (message (format &quot;%d %d&quot; x y)))
-</code></pre>
-<h4 id="使用setq对局部变量值进行修改">使用setq对局部变量值进行修改 <a href="#%e4%bd%bf%e7%94%a8setq%e5%af%b9%e5%b1%80%e9%83%a8%e5%8f%98%e9%87%8f%e5%80%bc%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9" class="anchor" aria-hidden="true">#</a></h4>
-<h3 id="使用setq定义全局变量">使用setq定义全局变量 <a href="#%e4%bd%bf%e7%94%a8setq%e5%ae%9a%e4%b9%89%e5%85%a8%e5%b1%80%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
-<p>可以使用 <code>C-h v</code> 查看变量值 <br/></p>
-<h3 id="buffer-local变量">buffer-local变量 <a href="#buffer-local%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
-<p>buffer内设置变量使用setq, 所有buffer生效使用setq-default <br/></p>
-<h2 id="函数">函数 <a href="#%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="返回值">返回值 <a href="#%e8%bf%94%e5%9b%9e%e5%80%bc" class="anchor" aria-hidden="true">#</a></h3>
-<p>函数最后一条语句的执行结果作为返回值 <br/></p>
-<h3 id="定义">定义 <a href="#%e5%ae%9a%e4%b9%89" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="可选参数-传参时-arg1必须匹配-arg2可选">可选参数：传参时，arg1必须匹配，arg2可选 <a href="#%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0-%e4%bc%a0%e5%8f%82%e6%97%b6-arg1%e5%bf%85%e9%a1%bb%e5%8c%b9%e9%85%8d-arg2%e5%8f%af%e9%80%89" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(defun test-func (arg1 &amp;option arg2)
-  ;;...
-  )
-</code></pre>
-<h4 id="可变参数-传参时-arg1必须匹配-之后传入参数个数可变">可变参数：传参时，arg1必须匹配，之后传入参数个数可变 <a href="#%e5%8f%af%e5%8f%98%e5%8f%82%e6%95%b0-%e4%bc%a0%e5%8f%82%e6%97%b6-arg1%e5%bf%85%e9%a1%bb%e5%8c%b9%e9%85%8d-%e4%b9%8b%e5%90%8e%e4%bc%a0%e5%85%a5%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%e5%8f%af%e5%8f%98" class="anchor" aria-hidden="true">#</a></h4>
-<p>必须放在参数列表最后 <br/></p>
-<pre><code class="language-elisp">(defun test-func (arg1 &amp;rest args)
-  ;;...
-  )
-</code></pre>
-<h2 id="数据结构">数据结构 <a href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="string">string <a href="#string" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="删除空格">删除空格 <a href="#%e5%88%a0%e9%99%a4%e7%a9%ba%e6%a0%bc" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(string-trim &quot; Hello &quot;)
-</code></pre>
-<h4 id="切分字符串成列表">切分字符串成列表 <a href="#%e5%88%87%e5%88%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%88%90%e5%88%97%e8%a1%a8" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(split-string opath &quot;/&quot;)
-
-;; 不包含为空的元素
-(split-string opath &quot;/&quot; t)
-</code></pre>
-<h4 id="判等">判等 <a href="#%e5%88%a4%e7%ad%89" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(string= &quot;hello&quot; &quot;Hello&quot;)
-</code></pre>
-<h4 id="不改变字符串-返回去除前缀结果">不改变字符串, 返回去除前缀结果 <a href="#%e4%b8%8d%e6%94%b9%e5%8f%98%e5%ad%97%e7%ac%a6%e4%b8%b2-%e8%bf%94%e5%9b%9e%e5%8e%bb%e9%99%a4%e5%89%8d%e7%bc%80%e7%bb%93%e6%9e%9c" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(string-remove-prefix &quot;/&quot; slot)
-</code></pre>
-<h3 id="list">list <a href="#list" class="anchor" aria-hidden="true">#</a></h3>
-<h4 id="构造list">构造list <a href="#%e6%9e%84%e9%80%a0list" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(setq slotlist '())
-</code></pre>
-<h4 id="元素操作">元素操作 <a href="#%e5%85%83%e7%b4%a0%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h4>
-<!--list-separator-->
-<ul>
-<li>
-<p>将元素添加到列表(头插)</p>
-<pre><code class="language-elisp">(add-to-list 'slotlist export-name)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>删除首元素</p>
-<pre><code class="language-elisp">(pop list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>获取指定元素</p>
-<pre><code class="language-elisp">(nth N list)
-</code></pre>
-</li>
-</ul>
-<h4 id="list操作">list操作 <a href="#list%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h4>
-<!--list-separator-->
-<ul>
-<li>
-<p>长度</p>
-<pre><code class="language-elisp">(length list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>打印</p>
-<pre><code class="language-elisp">(print list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>返回头插的新list</p>
-<pre><code class="language-elisp">(cons x list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>返回拼接后的新list</p>
-<pre><code class="language-elisp">(append list1 list2)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>将list转换为字符串</p>
-<pre><code class="language-elisp">(format &quot;%s&quot; list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>遍历列表</p>
-<pre><code class="language-elisp">(dolist (item the-list)
-  ;; 操作item
-  )
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>将末尾元素组成列表</p>
-<pre><code class="language-elisp">(last list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>获取首元素</p>
-<pre><code class="language-elisp">(car list)
-</code></pre>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>返回反转列表拷贝</p>
-<pre><code class="language-elisp">(reverse slotlist)
-</code></pre>
-</li>
-</ul>
-<h3 id="alist">alist <a href="#alist" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>Associate List</code> <br/></p>
-<pre><code class="language-elisp">(setq list '((&quot;mary&quot; . 23) (&quot;john&quot; . 24) (&quot;smith&quot; . 33)))
-</code></pre>
-<h4 id="通过key获取键值对">通过key获取键值对 <a href="#%e9%80%9a%e8%bf%87key%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(assoc &quot;john&quot; list)
-</code></pre>
-<h4 id="通过value获取键值对">通过value获取键值对 <a href="#%e9%80%9a%e8%bf%87value%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(rassoc 24 list)
-</code></pre>
-<h4 id="获取键值对的key">获取键值对的key <a href="#%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9%e7%9a%84key" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(car (assoc &quot;john&quot; x))    
-</code></pre>
-<h4 id="获取键值对的value">获取键值对的value <a href="#%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9%e7%9a%84value" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(cdr (assoc &quot;john&quot; x))
-</code></pre>
-<h2 id="运算符">运算符 <a href="#%e8%bf%90%e7%ae%97%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="不等">不等 <a href="#%e4%b8%8d%e7%ad%89" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">/=
+<h2 id="表格">表格 <a href="#%e8%a1%a8%e6%a0%bc" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-text">|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
 </code></pre>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
@@ -3219,10 +2729,10 @@
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					绘制瞄准十字 &rarr;
+					HTML &rarr;
 				</div>
 			</div>
 		</a>
@@ -3254,10 +2764,10 @@
     
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
-  <script src="/js/highlight.min.47aaac9ece7803346a12986e14708fcb9dc710c984dedc755a50097365982e7b54dddfe6c41f1af6a0d3cce05c1bf53ee22ecb18628986170231d8d8acbdfa2e.js" integrity="sha512-R6qsns54AzRqEphuFHCPy53HEMmE3tx1WlAJc2WYLntU3d/mxB8a9qDTzOBcG/U&#43;4i7LGGKJhhcCMdjYrL36Lg==" crossorigin="anonymous" defer></script>
+  <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.797470329c18723f04d89535a1d1fc3db2ecf5d2c28239231dfc64f9a0f54932fc32de9d3b1f27cf0988ae081d2c4ba0ff1f12446ef087731241d981d84eee98.js" integrity="sha512-eXRwMpwYcj8E2JU1odH8PbLs9dLCgjkjHfxk&#43;aD1STL8Mt6dOx8nzwmIrggdLEug/x8SRG7wh3MSQdmB2E7umA==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.1f8c3880fa1f5212e87afc1fa2fda845e425836589adab426fb297ba346185d06f1d50f745e388af1e88afb5c397cbb4d0add4c3776350a2cb677747de283d05.js" integrity="sha512-H4w4gPofUhLoevwfov2oReQlg2WJratCb7KXujRhhdBvHVD3ReOIrx6Ir7XDl8u00K3Uw3djUKLLZ3dH3ig9BQ==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.b73c7ea52665ab642a6085ad15d0ad080ee75d231ce1bd498a1d80ae5f42a161ab97d03d87c89fc902920a24a5f46c038831fc757bc412d3f5668030333af2cb.js" integrity="sha512-tzx&#43;pSZlq2QqYIWtFdCtCA7nXSMc4b1Jih2Arl9CoWGrl9A9h8ifyQKSCiSl9GwDiDH8dXvEEtP1ZoAwMzryyw==" crossorigin="anonymous" defer></script>
   
     
   </body>

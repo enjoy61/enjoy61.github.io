@@ -15,16 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>组件 - 六一的部落格</title>
-<meta name="description" content="">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/">
+  <title>elisp - 六一的部落格</title>
+<meta name="description" content="便签 # Manual 文件 # 打开文件 # (find-file &amp;quot;path/to/file&amp;quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &amp;quot;path/to/file&amp;quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &amp;quot;Hello&amp;quot;) 读取输入 # (read-string &amp;quot;Promots: &amp;quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &amp;quot;file:tt.txt&amp;quot; nil t) (replace-match &amp;quot;file:pp.txt&amp;quot; nil t)) 字符串查找 # search-backward # (search-backward &amp;quot;=&amp;quot;) ;; 查找成功返回t (search-backward &amp;quot;[[ue:&amp;quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; )) ;; 匹配返回t (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &amp;quot;hello&amp;quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &amp;quot;hello&amp;quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &amp;quot;equal&amp;quot;) (message &amp;quot;not equal&amp;quot;)) when：cond为true时继续 # (when (&amp;lt; 3 5) (setq ooout &#39;(&amp;quot;less&amp;quot;)) (message &amp;quot;%s&amp;quot; (cons &amp;quot;multi&amp;quot; ooout))) unless：cond为false时继续 # (unless (&amp;gt; 3 4) (setq ooout &#39;(&amp;quot;false&amp;quot; &amp;quot;3 &amp;lt; 4&amp;quot; &amp;quot;is&amp;quot; &amp;quot;true&amp;quot; &amp;quot;!">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">
 <meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
-<meta property="og:title" content="组件">
-<meta property="og:description" content="">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elisp">
+<meta property="og:description" content="便签 # Manual 文件 # 打开文件 # (find-file &quot;path/to/file&quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &quot;path/to/file&quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &quot;Hello&quot;) 读取输入 # (read-string &quot;Promots: &quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &quot;file:tt.txt&quot; nil t) (replace-match &quot;file:pp.txt&quot; nil t)) 字符串查找 # search-backward # (search-backward &quot;=&quot;) ;; 查找成功返回t (search-backward &quot;[[ue:&quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; )) ;; 匹配返回t (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &quot;hello&quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &quot;hello&quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &quot;equal&quot;) (message &quot;not equal&quot;)) when：cond为true时继续 # (when (&lt; 3 5) (setq ooout &#39;(&quot;less&quot;)) (message &quot;%s&quot; (cons &quot;multi&quot; ooout))) unless：cond为false时继续 # (unless (&gt; 3 4) (setq ooout &#39;(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="og:updated_time" content="2023-08-08T16:01:08+08:00">
+<meta property="article:published_time" content="2023-08-12T23:48:25+00:00">
+  <meta property="article:modified_time" content="2023-08-14T13:17:22+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -32,13 +33,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="组件">
+<meta name="twitter:title" content="elisp">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="组件">
+    <meta name="twitter:image:alt" content="elisp">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/index.xml">
-<link rel="sitemap" type="application/xml" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/sitemap.xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/",
-      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/",
-      "name": "组件",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/",
+      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/",
+      "name": "elisp",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -86,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-21T19:52:25CET",
-      "dateModified": "2023-08-08T16:01:08CET",
+      "datePublished": "2023-08-12T23:48:25CET",
+      "dateModified": "2023-08-14T13:17:22CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -126,33 +125,24 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "name": "% E5%88%86% E4% Ba% Ab"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "name": "API"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
+          "name": "Emacs"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "name": "% E8%99%9 A% E5% B9% Bbc"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  6 ,
-        "item": {
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/"
           }
         }]
     },
@@ -161,11 +151,54 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Article",
+          "@id": "https://enjoy61.github.io/#/schema/article/1",
+          "headline": "elisp",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/"
+          },
+          "datePublished": "2023-08-12T23:48:25CET",
+          "dateModified": "2023-08-14T13:17:22CET",
+          "author": {
+            "@id": "https://enjoy61.github.io/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://enjoy61.github.io/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://enjoy61.github.io/#/schema/person/2",
+          "name": "Henk Verlinde",
+          "sameAs": [
+            "https://twitter.com/henkverlinde"
+            , "https://www.linkedin.com/in/henkverlinde/"
+            , "https://github.com/h-enk"
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "组件"
+          "caption": "elisp"
         }
       ]
     }
@@ -186,7 +219,7 @@
 
 </head>
 
-  <body class="docs list">
+  <body class="docs single">
     <div class="sticky-top">
 <div class="header-bar"></div>
 
@@ -232,10 +265,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -308,20 +341,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -417,10 +450,10 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
                                         组件
                                       </button>
-                                      <div class="collapse show" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
@@ -710,19 +743,19 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
                     Emacs
                   </button>
-                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -735,7 +768,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
                         
                         
                       
@@ -1036,10 +1069,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -1112,20 +1145,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1221,10 +1254,10 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
                                         组件
                                       </button>
-                                      <div class="collapse show" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
@@ -1514,19 +1547,19 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
                     Emacs
                   </button>
-                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1539,7 +1572,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
                         
                         
                       
@@ -1756,154 +1789,1511 @@
     <div class="wrap container-fluid" role="document">
       <div class="content">
         
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">组件</h1>
-      <div class="text-center"></div>
-			<div class="card-list">
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			<nav class="docs-links" aria-label="Main navigation">
 				
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">Primitive组件 &rarr;</a>
-							</div>
-						</div>
-					
-				
-					
-				
-					
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件 &rarr;</a>
-							</div>
-						</div>
-					
-				
-					
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">SpringArm组件 &rarr;</a>
-							</div>
-						</div>
-					
-				
-					
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">TextRender组件 &rarr;</a>
-							</div>
-						</div>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-			</div>
-    </article>
+<ul class="list-unstyled collapsible-sidebar">
+  
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
+          虚幻引擎
+        </button>
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                    专题
+                  </button>
+                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                              虚幻编辑器
+                            </button>
+                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">碰撞选项</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
+                    API
+                  </button>
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
+                              虚幻C&#43;&#43;
+                            </button>
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7bfa30721c5e726ff17e3f972237a82c" aria-expanded="false">
+                                        Engine
+                                      </button>
+                                      <div class="collapse" id="section-7bfa30721c5e726ff17e3f972237a82c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/engine/canvas%E7%B1%BB/">Canvas类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-7ee8a7d97d92d4dc37a3aac07b1f549c" aria-expanded="false">
+                                        关卡设置
+                                      </button>
+                                      <div class="collapse" id="section-7ee8a7d97d92d4dc37a3aac07b1f549c">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/">HUD类</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/">GameModeBase类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-0fea7c47d93da5689f31820ee525b367" aria-expanded="false">
+                                        数据结构
+                                      </button>
+                                      <div class="collapse" id="section-0fea7c47d93da5689f31820ee525b367">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/interval%E6%A8%A1%E6%9D%BF%E7%B1%BB/">Interval模板类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
+                                        游戏角色
+                                      </button>
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li class="my-1 ms-3">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
+                                        组件
+                                      </button>
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">TextRender组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">SpringArm组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+          
+                                          
+
+                                            
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">Primitive组件</a></li>
+          
+                                          
+                                        </ul>
+                                      </div>
+                                    </li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                    进阶课程
+                  </button>
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
+                              角色和动画
+                            </button>
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/">运行ShooterGame示例项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/">初始化ShootThemUp项目</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/">实现游戏角色前后左右移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/">为游戏角色添加向前走路动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/">实现游戏角色跳跃</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/">实现游戏角色跑步</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/">添加走路转向动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">打包游戏</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b11d90242b17900ec3540f79bdc2cb0f" aria-expanded="false">
+                              健康系统
+                            </button>
+                            <div class="collapse" id="section-b11d90242b17900ec3540f79bdc2cb0f">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E5%80%BC/">实时显示游戏角色生命值</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E9%80%A0%E6%88%90%E4%BC%A4%E5%AE%B3/">对游戏角色造成伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%A8%A1%E6%8B%9F%E6%A6%B4%E5%BC%B9%E7%88%86%E7%82%B8/">模拟榴弹爆炸</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">使用伤害类型</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%AD%BB%E4%BA%A1%E9%80%BB%E8%BE%91/">添加游戏角色死亡逻辑</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%A7%86%E8%A7%92/">添加观察视角</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E8%87%AA%E5%8A%A8%E6%B2%BB%E7%96%97/">自动治疗</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E5%9D%A0%E8%90%BD%E4%BC%A4%E5%AE%B3/">坠落伤害</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="false">
+                              武器
+                            </button>
+                            <div class="collapse" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/">给游戏角色装载武器</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">初识碰撞</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">轨迹</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                    Emacs
+                  </button>
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
+                              需求
+                            </button>
+                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="false">
+                              想法
+                            </button>
+                            <div class="collapse" id="section-b5502af7b881499f34f840f46a9487b6">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;Github搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+  
+</ul>
+
+			</nav>
+		</div>
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>文章目录</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#文件">文件</a>
+          <ul>
+            <li><a href="#打开文件">打开文件</a></li>
+            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
+            <li><a href="#打开链接">打开链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文本">文本</a>
+          <ul>
+            <li><a href="#在光标处插入">在光标处插入</a></li>
+            <li><a href="#读取输入">读取输入</a></li>
+            <li><a href="#搜索并替换">搜索并替换</a></li>
+            <li><a href="#字符串查找">字符串查找</a></li>
+            <li><a href="#正则查找">正则查找</a></li>
+            <li><a href="#复制">复制</a></li>
+          </ul>
+        </li>
+        <li><a href="#光标">光标</a>
+          <ul>
+            <li><a href="#光标所在位置">光标所在位置</a></li>
+            <li><a href="#去到指定位置">去到指定位置</a></li>
+            <li><a href="#光标信息">光标信息</a></li>
+            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
+            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲区">缓冲区</a>
+          <ul>
+            <li><a href="#获取buffer内容">获取buffer内容</a></li>
+            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+            <li><a href="#保存buffer">保存buffer</a></li>
+            <li><a href="#关闭buffer">关闭buffer</a></li>
+            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
+          </ul>
+        </li>
+        <li><a href="#控制语句">控制语句</a>
+          <ul>
+            <li><a href="#条件控制语句">条件控制语句</a></li>
+            <li><a href="#循环while">循环while</a></li>
+          </ul>
+        </li>
+        <li><a href="#功能函数">功能函数</a>
+          <ul>
+            <li><a href="#等待">等待</a></li>
+            <li><a href="#hook">hook</a></li>
+            <li><a href="#函数调用">函数调用</a></li>
+          </ul>
+        </li>
+        <li><a href="#定义变量">定义变量</a>
+          <ul>
+            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
+            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
+            <li><a href="#buffer-local变量">buffer-local变量</a></li>
+          </ul>
+        </li>
+        <li><a href="#函数">函数</a>
+          <ul>
+            <li><a href="#返回值">返回值</a></li>
+            <li><a href="#定义">定义</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据结构">数据结构</a>
+          <ul>
+            <li><a href="#string">string</a></li>
+            <li><a href="#list">list</a></li>
+            <li><a href="#alist">alist</a></li>
+          </ul>
+        </li>
+        <li><a href="#运算符">运算符</a>
+          <ul>
+            <li><a href="#不等">不等</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
   </div>
 </div>
+<div class="page-links d-none d-xl-block">
+  <h3>文章目录</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#文件">文件</a>
+          <ul>
+            <li><a href="#打开文件">打开文件</a></li>
+            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
+            <li><a href="#打开链接">打开链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文本">文本</a>
+          <ul>
+            <li><a href="#在光标处插入">在光标处插入</a></li>
+            <li><a href="#读取输入">读取输入</a></li>
+            <li><a href="#搜索并替换">搜索并替换</a></li>
+            <li><a href="#字符串查找">字符串查找</a></li>
+            <li><a href="#正则查找">正则查找</a></li>
+            <li><a href="#复制">复制</a></li>
+          </ul>
+        </li>
+        <li><a href="#光标">光标</a>
+          <ul>
+            <li><a href="#光标所在位置">光标所在位置</a></li>
+            <li><a href="#去到指定位置">去到指定位置</a></li>
+            <li><a href="#光标信息">光标信息</a></li>
+            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
+            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲区">缓冲区</a>
+          <ul>
+            <li><a href="#获取buffer内容">获取buffer内容</a></li>
+            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+            <li><a href="#保存buffer">保存buffer</a></li>
+            <li><a href="#关闭buffer">关闭buffer</a></li>
+            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
+          </ul>
+        </li>
+        <li><a href="#控制语句">控制语句</a>
+          <ul>
+            <li><a href="#条件控制语句">条件控制语句</a></li>
+            <li><a href="#循环while">循环while</a></li>
+          </ul>
+        </li>
+        <li><a href="#功能函数">功能函数</a>
+          <ul>
+            <li><a href="#等待">等待</a></li>
+            <li><a href="#hook">hook</a></li>
+            <li><a href="#函数调用">函数调用</a></li>
+          </ul>
+        </li>
+        <li><a href="#定义变量">定义变量</a>
+          <ul>
+            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
+            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
+            <li><a href="#buffer-local变量">buffer-local变量</a></li>
+          </ul>
+        </li>
+        <li><a href="#函数">函数</a>
+          <ul>
+            <li><a href="#返回值">返回值</a></li>
+            <li><a href="#定义">定义</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据结构">数据结构</a>
+          <ul>
+            <li><a href="#string">string</a></li>
+            <li><a href="#list">list</a></li>
+            <li><a href="#alist">alist</a></li>
+          </ul>
+        </li>
+        <li><a href="#运算符">运算符</a>
+          <ul>
+            <li><a href="#不等">不等</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/emacs/">Emacs</a></li>
+<li class="breadcrumb-item active" aria-current="page">elisp</li>
+					</ol>
+				</nav>
+			
+			<h1>elisp</h1>
+			<p class="lead"></p>
+			<nav class="d-xl-none" aria-label="Quaternary navigation">
+				<div class="d-xl-none">
+  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
+    <span>文章目录</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+    </span>
+  </button>
+  <div class="collapse" id="onThisPage">
+    <div class="card card-body mt-3 py-1">
+      <div class="page-links">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#文件">文件</a>
+          <ul>
+            <li><a href="#打开文件">打开文件</a></li>
+            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
+            <li><a href="#打开链接">打开链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文本">文本</a>
+          <ul>
+            <li><a href="#在光标处插入">在光标处插入</a></li>
+            <li><a href="#读取输入">读取输入</a></li>
+            <li><a href="#搜索并替换">搜索并替换</a></li>
+            <li><a href="#字符串查找">字符串查找</a></li>
+            <li><a href="#正则查找">正则查找</a></li>
+            <li><a href="#复制">复制</a></li>
+          </ul>
+        </li>
+        <li><a href="#光标">光标</a>
+          <ul>
+            <li><a href="#光标所在位置">光标所在位置</a></li>
+            <li><a href="#去到指定位置">去到指定位置</a></li>
+            <li><a href="#光标信息">光标信息</a></li>
+            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
+            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲区">缓冲区</a>
+          <ul>
+            <li><a href="#获取buffer内容">获取buffer内容</a></li>
+            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+            <li><a href="#保存buffer">保存buffer</a></li>
+            <li><a href="#关闭buffer">关闭buffer</a></li>
+            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
+          </ul>
+        </li>
+        <li><a href="#控制语句">控制语句</a>
+          <ul>
+            <li><a href="#条件控制语句">条件控制语句</a></li>
+            <li><a href="#循环while">循环while</a></li>
+          </ul>
+        </li>
+        <li><a href="#功能函数">功能函数</a>
+          <ul>
+            <li><a href="#等待">等待</a></li>
+            <li><a href="#hook">hook</a></li>
+            <li><a href="#函数调用">函数调用</a></li>
+          </ul>
+        </li>
+        <li><a href="#定义变量">定义变量</a>
+          <ul>
+            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
+            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
+            <li><a href="#buffer-local变量">buffer-local变量</a></li>
+          </ul>
+        </li>
+        <li><a href="#函数">函数</a>
+          <ul>
+            <li><a href="#返回值">返回值</a></li>
+            <li><a href="#定义">定义</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据结构">数据结构</a>
+          <ul>
+            <li><a href="#string">string</a></li>
+            <li><a href="#list">list</a></li>
+            <li><a href="#alist">alist</a></li>
+          </ul>
+        </li>
+        <li><a href="#运算符">运算符</a>
+          <ul>
+            <li><a href="#不等">不等</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-links d-none d-xl-block">
+  <h3>文章目录</h3>
+  <nav class="my-toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#便签">便签</a></li>
+        <li><a href="#文件">文件</a>
+          <ul>
+            <li><a href="#打开文件">打开文件</a></li>
+            <li><a href="#使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件</a></li>
+            <li><a href="#打开链接">打开链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#文本">文本</a>
+          <ul>
+            <li><a href="#在光标处插入">在光标处插入</a></li>
+            <li><a href="#读取输入">读取输入</a></li>
+            <li><a href="#搜索并替换">搜索并替换</a></li>
+            <li><a href="#字符串查找">字符串查找</a></li>
+            <li><a href="#正则查找">正则查找</a></li>
+            <li><a href="#复制">复制</a></li>
+          </ul>
+        </li>
+        <li><a href="#光标">光标</a>
+          <ul>
+            <li><a href="#光标所在位置">光标所在位置</a></li>
+            <li><a href="#去到指定位置">去到指定位置</a></li>
+            <li><a href="#光标信息">光标信息</a></li>
+            <li><a href="#记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复</a></li>
+            <li><a href="#获取光标间字符串">获取光标间字符串</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲区">缓冲区</a>
+          <ul>
+            <li><a href="#获取buffer内容">获取buffer内容</a></li>
+            <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+            <li><a href="#保存buffer">保存buffer</a></li>
+            <li><a href="#关闭buffer">关闭buffer</a></li>
+            <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+            <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
+          </ul>
+        </li>
+        <li><a href="#控制语句">控制语句</a>
+          <ul>
+            <li><a href="#条件控制语句">条件控制语句</a></li>
+            <li><a href="#循环while">循环while</a></li>
+          </ul>
+        </li>
+        <li><a href="#功能函数">功能函数</a>
+          <ul>
+            <li><a href="#等待">等待</a></li>
+            <li><a href="#hook">hook</a></li>
+            <li><a href="#函数调用">函数调用</a></li>
+          </ul>
+        </li>
+        <li><a href="#定义变量">定义变量</a>
+          <ul>
+            <li><a href="#使用let定义局部变量">使用let定义局部变量</a></li>
+            <li><a href="#使用setq定义全局变量">使用setq定义全局变量</a></li>
+            <li><a href="#buffer-local变量">buffer-local变量</a></li>
+          </ul>
+        </li>
+        <li><a href="#函数">函数</a>
+          <ul>
+            <li><a href="#返回值">返回值</a></li>
+            <li><a href="#定义">定义</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据结构">数据结构</a>
+          <ul>
+            <li><a href="#string">string</a></li>
+            <li><a href="#list">list</a></li>
+            <li><a href="#alist">alist</a></li>
+          </ul>
+        </li>
+        <li><a href="#运算符">运算符</a>
+          <ul>
+            <li><a href="#不等">不等</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+  </div>
+
+			</nav>
+			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html">Manual</a> <br/></p>
+<h2 id="文件">文件 <a href="#%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="打开文件">打开文件 <a href="#%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(find-file &quot;path/to/file&quot;)
+</code></pre>
+<h3 id="使用打开链接的方式-打开指定文件">使用打开链接的方式，打开指定文件 <a href="#%e4%bd%bf%e7%94%a8%e6%89%93%e5%bc%80%e9%93%be%e6%8e%a5%e7%9a%84%e6%96%b9%e5%bc%8f-%e6%89%93%e5%bc%80%e6%8c%87%e5%ae%9a%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(org-open-file &quot;path/to/file&quot;)
+</code></pre>
+<h3 id="打开链接">打开链接 <a href="#%e6%89%93%e5%bc%80%e9%93%be%e6%8e%a5" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>C-c C-o</code> <br/></p>
+<pre><code class="language-elisp">(org-open-at-point)
+</code></pre>
+<h2 id="文本">文本 <a href="#%e6%96%87%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="在光标处插入">在光标处插入 <a href="#%e5%9c%a8%e5%85%89%e6%a0%87%e5%a4%84%e6%8f%92%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(insert &quot;Hello&quot;)
+</code></pre>
+<h3 id="读取输入">读取输入 <a href="#%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(read-string &quot;Promots: &quot;)
+</code></pre>
+<h3 id="搜索并替换">搜索并替换 <a href="#%e6%90%9c%e7%b4%a2%e5%b9%b6%e6%9b%bf%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="字符串replace-string">字符串replace-string <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2replace-string" class="anchor" aria-hidden="true">#</a></h4>
+<p>replace-string会跳过链接匹配 <br/></p>
+<h4 id="全文搜索并替换">全文搜索并替换 <a href="#%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2%e5%b9%b6%e6%9b%bf%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(while (search-forward &quot;file:tt.txt&quot; nil t)
+  (replace-match &quot;file:pp.txt&quot; nil t))
+</code></pre>
+<h3 id="字符串查找">字符串查找 <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="search-backward">search-backward <a href="#search-backward" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(search-backward &quot;=&quot;)
+
+;; 查找成功返回t
+(search-backward &quot;[[ue:&quot; nil t)
+</code></pre>
+<h3 id="正则查找">正则查找 <a href="#%e6%ad%a3%e5%88%99%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="re-search-forward">re-search-forward <a href="#re-search-forward" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>目的字符串 <br/>
+<pre><code class="language-text">[[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h=
+</code></pre>
+</li>
+<li>正则匹配 <br/>
+<pre><code class="language-elisp">(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ))
+
+;; 匹配返回t
+(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ) nil t)
+</code></pre>
+</li>
+</ul>
+<h3 id="复制">复制 <a href="#%e5%a4%8d%e5%88%b6" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(copy-region-as-kill (point-min) (point-max))
+</code></pre>
+<h2 id="光标">光标 <a href="#%e5%85%89%e6%a0%87" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="光标所在位置">光标所在位置 <a href="#%e5%85%89%e6%a0%87%e6%89%80%e5%9c%a8%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(point)
+</code></pre>
+<h3 id="去到指定位置">去到指定位置 <a href="#%e5%8e%bb%e5%88%b0%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(goto-char (point))
+</code></pre>
+<h3 id="光标信息">光标信息 <a href="#%e5%85%89%e6%a0%87%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(what-cursor-position)
+</code></pre>
+<h3 id="记忆光标位置-处理结束恢复">记忆光标位置, 处理结束恢复 <a href="#%e8%ae%b0%e5%bf%86%e5%85%89%e6%a0%87%e4%bd%8d%e7%bd%ae-%e5%a4%84%e7%90%86%e7%bb%93%e6%9d%9f%e6%81%a2%e5%a4%8d" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(save-excursion
+  (insert &quot;hello&quot;))
+</code></pre>
+<h3 id="获取光标间字符串">获取光标间字符串 <a href="#%e8%8e%b7%e5%8f%96%e5%85%89%e6%a0%87%e9%97%b4%e5%ad%97%e7%ac%a6%e4%b8%b2" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(buffer-substring-no-properties (point-min) (point-max))
+</code></pre>
+<h2 id="缓冲区">缓冲区 <a href="#%e7%bc%93%e5%86%b2%e5%8c%ba" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="获取buffer内容">获取buffer内容 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%86%85%e5%ae%b9" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(buffer-string)
+</code></pre>
+<h3 id="在临时buffer中做处理">在临时buffer中做处理 <a href="#%e5%9c%a8%e4%b8%b4%e6%97%b6buffer%e4%b8%ad%e5%81%9a%e5%a4%84%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(with-temp-buffer
+  (insert &quot;hello&quot;))
+</code></pre>
+<h3 id="保存buffer">保存buffer <a href="#%e4%bf%9d%e5%ad%98buffer" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(save-buffer)
+</code></pre>
+<h3 id="关闭buffer">关闭buffer <a href="#%e5%85%b3%e9%97%adbuffer" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(kill-buffer)
+</code></pre>
+<h3 id="获取buffer对应的文件名">获取buffer对应的文件名 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%af%b9%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6%e5%90%8d" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(buffer-name)
+</code></pre>
+<h3 id="获取给定文件的buffer">获取给定文件的buffer <a href="#%e8%8e%b7%e5%8f%96%e7%bb%99%e5%ae%9a%e6%96%87%e4%bb%b6%e7%9a%84buffer" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(get-buffer (buffer-name))
+</code></pre>
+<h2 id="控制语句">控制语句 <a href="#%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="条件控制语句">条件控制语句 <a href="#%e6%9d%a1%e4%bb%b6%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="if">if <a href="#if" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>缩进作为true和false的分支 <br/></li>
+<li>各一条语句 <br/></li>
+</ul>
+<!--listend-->
+<pre><code class="language-elisp">(if (= 3 5)
+    (message &quot;equal&quot;)
+  (message &quot;not equal&quot;))
+</code></pre>
+<h4 id="when-cond为true时继续">when：cond为true时继续 <a href="#when-cond%e4%b8%batrue%e6%97%b6%e7%bb%a7%e7%bb%ad" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(when (&lt; 3 5)
+  (setq ooout '(&quot;less&quot;))
+  (message &quot;%s&quot; (cons &quot;multi&quot; ooout)))
+</code></pre>
+<h4 id="unless-cond为false时继续">unless：cond为false时继续 <a href="#unless-cond%e4%b8%bafalse%e6%97%b6%e7%bb%a7%e7%bb%ad" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(unless (&gt; 3 4)
+  (setq ooout '(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!&quot;))
+  (pop ooout)
+  (message &quot;%s&quot; ooout))
+</code></pre>
+<h3 id="循环while">循环while <a href="#%e5%be%aa%e7%8e%afwhile" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="break">break <a href="#break" class="anchor" aria-hidden="true">#</a></h4>
+<p><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Catch-and-Throw.html">Catch-and-Throw</a> <br/></p>
+<pre><code class="language-elisp">(let ((cnt 0))
+  (catch 'break
+    (while t
+      (setq cnt (+ cnt 1))
+      (sleep-for 1)
+      (if (= cnt 5)
+          (throw 'break t)              
+        )
+      )
+    )
+  )
+</code></pre>
+<h2 id="功能函数">功能函数 <a href="#%e5%8a%9f%e8%83%bd%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="等待">等待 <a href="#%e7%ad%89%e5%be%85" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(sleep-for 2)
+</code></pre>
+<h3 id="hook">hook <a href="#hook" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="添加hook">添加hook <a href="#%e6%b7%bb%e5%8a%a0hook" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(add-hook 'emms-player-started-hook (lambda () (emms-seek-to &quot;05:05&quot;) (emms-pause)))
+</code></pre>
+<h4 id="移除hook">移除hook <a href="#%e7%a7%bb%e9%99%a4hook" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(remove-hook 'emms-player-started-hook (lambda () (emms-seek-to &quot;05:05&quot;) (emms-pause)))
+</code></pre>
+<h3 id="函数调用">函数调用 <a href="#%e5%87%bd%e6%95%b0%e8%b0%83%e7%94%a8" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="funcall">funcall <a href="#funcall" class="anchor" aria-hidden="true">#</a></h4>
+<p>第一个参数是函数，之后的组成参数列表，传入第一个参数对应的函数 <br/></p>
+<pre><code class="language-elisp">(funcall (emms-player-get player 'start) track)
+
+;; (emms-player-get player 'start)  查dictionary得到emms-player-mpv-start
+;; (emms-player-mpv-start track)
+</code></pre>
+<h4 id="apply-partially">apply-partially <a href="#apply-partially" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>类似C++的bind，预设函数调用的参数 <br/></li>
+<li>使用时，根据需求传入剩余参数 <br/></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>返回函数</p>
+<p>将args作为func的前n个参数传入，调用函数时，和实际传参拼接，传给func <br/></p>
+<pre><code class="language-elisp">(defun apply-partially (func &amp;rest args)
+  ;;...
+  )
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>定义函数</p>
+<pre><code class="language-elisp">(defun emms-player-mpv-cmd (cmd &amp;optional handler)
+  ;;...
+  )
+
+(setq func (apply-partially 'emms-player-mpv-cmd play-cmd
+                            (lambda (_mpv-data mpv-error)
+                              (when (eq mpv-error 'connection-error)
+                                (emms-player-mpv-cmd play-cmd)))))
+
+(funcall func)
+</code></pre>
+</li>
+</ul>
+<h2 id="定义变量">定义变量 <a href="#%e5%ae%9a%e4%b9%89%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="使用let定义局部变量">使用let定义局部变量 <a href="#%e4%bd%bf%e7%94%a8let%e5%ae%9a%e4%b9%89%e5%b1%80%e9%83%a8%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(let ((x 10) (y 20) (z 30))
+  (message (format &quot;%d %d %d&quot; x y z)))
+</code></pre>
+<h4 id="变量之间存在引用">变量之间存在引用 <a href="#%e5%8f%98%e9%87%8f%e4%b9%8b%e9%97%b4%e5%ad%98%e5%9c%a8%e5%bc%95%e7%94%a8" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(let* ((x 10) (y (+ x 10)))
+  (message (format &quot;%d %d&quot; x y)))
+</code></pre>
+<h4 id="使用setq对局部变量值进行修改">使用setq对局部变量值进行修改 <a href="#%e4%bd%bf%e7%94%a8setq%e5%af%b9%e5%b1%80%e9%83%a8%e5%8f%98%e9%87%8f%e5%80%bc%e8%bf%9b%e8%a1%8c%e4%bf%ae%e6%94%b9" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="使用setq定义全局变量">使用setq定义全局变量 <a href="#%e4%bd%bf%e7%94%a8setq%e5%ae%9a%e4%b9%89%e5%85%a8%e5%b1%80%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
+<p>可以使用 <code>C-h v</code> 查看变量值 <br/></p>
+<h3 id="buffer-local变量">buffer-local变量 <a href="#buffer-local%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
+<p>buffer内设置变量使用setq, 所有buffer生效使用setq-default <br/></p>
+<h2 id="函数">函数 <a href="#%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="返回值">返回值 <a href="#%e8%bf%94%e5%9b%9e%e5%80%bc" class="anchor" aria-hidden="true">#</a></h3>
+<p>函数最后一条语句的执行结果作为返回值 <br/></p>
+<h3 id="定义">定义 <a href="#%e5%ae%9a%e4%b9%89" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="可选参数-传参时-arg1必须匹配-arg2可选">可选参数：传参时，arg1必须匹配，arg2可选 <a href="#%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0-%e4%bc%a0%e5%8f%82%e6%97%b6-arg1%e5%bf%85%e9%a1%bb%e5%8c%b9%e9%85%8d-arg2%e5%8f%af%e9%80%89" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(defun test-func (arg1 &amp;option arg2)
+  ;;...
+  )
+</code></pre>
+<h4 id="可变参数-传参时-arg1必须匹配-之后传入参数个数可变">可变参数：传参时，arg1必须匹配，之后传入参数个数可变 <a href="#%e5%8f%af%e5%8f%98%e5%8f%82%e6%95%b0-%e4%bc%a0%e5%8f%82%e6%97%b6-arg1%e5%bf%85%e9%a1%bb%e5%8c%b9%e9%85%8d-%e4%b9%8b%e5%90%8e%e4%bc%a0%e5%85%a5%e5%8f%82%e6%95%b0%e4%b8%aa%e6%95%b0%e5%8f%af%e5%8f%98" class="anchor" aria-hidden="true">#</a></h4>
+<p>必须放在参数列表最后 <br/></p>
+<pre><code class="language-elisp">(defun test-func (arg1 &amp;rest args)
+  ;;...
+  )
+</code></pre>
+<h2 id="数据结构">数据结构 <a href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="string">string <a href="#string" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="删除空格">删除空格 <a href="#%e5%88%a0%e9%99%a4%e7%a9%ba%e6%a0%bc" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(string-trim &quot; Hello &quot;)
+</code></pre>
+<h4 id="切分字符串成列表">切分字符串成列表 <a href="#%e5%88%87%e5%88%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%88%90%e5%88%97%e8%a1%a8" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(split-string opath &quot;/&quot;)
+
+;; 不包含为空的元素
+(split-string opath &quot;/&quot; t)
+</code></pre>
+<h4 id="判等">判等 <a href="#%e5%88%a4%e7%ad%89" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(string= &quot;hello&quot; &quot;Hello&quot;)
+</code></pre>
+<h4 id="不改变字符串-返回去除前缀结果">不改变字符串, 返回去除前缀结果 <a href="#%e4%b8%8d%e6%94%b9%e5%8f%98%e5%ad%97%e7%ac%a6%e4%b8%b2-%e8%bf%94%e5%9b%9e%e5%8e%bb%e9%99%a4%e5%89%8d%e7%bc%80%e7%bb%93%e6%9e%9c" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(string-remove-prefix &quot;/&quot; slot)
+</code></pre>
+<h3 id="list">list <a href="#list" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="构造list">构造list <a href="#%e6%9e%84%e9%80%a0list" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(setq slotlist '())
+</code></pre>
+<h4 id="元素操作">元素操作 <a href="#%e5%85%83%e7%b4%a0%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>将元素添加到列表(头插)</p>
+<pre><code class="language-elisp">(add-to-list 'slotlist export-name)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>删除首元素</p>
+<pre><code class="language-elisp">(pop list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>获取指定元素</p>
+<pre><code class="language-elisp">(nth N list)
+</code></pre>
+</li>
+</ul>
+<h4 id="list操作">list操作 <a href="#list%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>长度</p>
+<pre><code class="language-elisp">(length list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>打印</p>
+<pre><code class="language-elisp">(print list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>返回头插的新list</p>
+<pre><code class="language-elisp">(cons x list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>返回拼接后的新list</p>
+<pre><code class="language-elisp">(append list1 list2)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>将list转换为字符串</p>
+<pre><code class="language-elisp">(format &quot;%s&quot; list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>遍历列表</p>
+<pre><code class="language-elisp">(dolist (item the-list)
+  ;; 操作item
+  )
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>将末尾元素组成列表</p>
+<pre><code class="language-elisp">(last list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>获取首元素</p>
+<pre><code class="language-elisp">(car list)
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>返回反转列表拷贝</p>
+<pre><code class="language-elisp">(reverse slotlist)
+</code></pre>
+</li>
+</ul>
+<h3 id="alist">alist <a href="#alist" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Associate List</code> <br/></p>
+<pre><code class="language-elisp">(setq list '((&quot;mary&quot; . 23) (&quot;john&quot; . 24) (&quot;smith&quot; . 33)))
+</code></pre>
+<h4 id="通过key获取键值对">通过key获取键值对 <a href="#%e9%80%9a%e8%bf%87key%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(assoc &quot;john&quot; list)
+</code></pre>
+<h4 id="通过value获取键值对">通过value获取键值对 <a href="#%e9%80%9a%e8%bf%87value%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(rassoc 24 list)
+</code></pre>
+<h4 id="获取键值对的key">获取键值对的key <a href="#%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9%e7%9a%84key" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(car (assoc &quot;john&quot; x))    
+</code></pre>
+<h4 id="获取键值对的value">获取键值对的value <a href="#%e8%8e%b7%e5%8f%96%e9%94%ae%e5%80%bc%e5%af%b9%e7%9a%84value" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-elisp">(cdr (assoc &quot;john&quot; x))
+</code></pre>
+<h2 id="运算符">运算符 <a href="#%e8%bf%90%e7%ae%97%e7%ac%a6" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="不等">不等 <a href="#%e4%b8%8d%e7%ad%89" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">/=
+</code></pre>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="docs-navigation d-flex justify-content-between">
+	
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					&larr; HTML
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					绘制瞄准十字 &rarr;
+				</div>
+			</div>
+		</a>
+	</div>
+
+			
+		</main>
+	</div>
 
       </div>
     </div>
