@@ -57,7 +57,16 @@
       <pubDate>Fri, 11 Aug 2023 18:23:16 +0000</pubDate>
       
       <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E9%87%8D%E6%9E%84makeshot/</guid>
-      <description>说明 # 本节使用的重构被称作the extract method, 将函数切分, 使得代码可读性更高 对武器类的MakeShot重构 纯理论逻辑放在protected, 供派生类调用 调整逻辑 # void ASTUBaseWeapon::MakeShot() { if(!GetWorld()) return; // 获取PlayerController const auto Player = Cast&amp;lt;ACharacter&amp;gt;(GetOwner()); if (!Player) return; const auto Controller = Player-&amp;gt;GetController&amp;lt;APlayerController&amp;gt;(); if (!Controller) return; // 通过Controller获取CameraComponent的位置和方向 FVector ViewLocation; FRotator ViewRotation; Controller-&amp;gt;GetPlayerViewPoint(ViewLocation, ViewRotation); // 通过CameraComponent的位置和方向计算轨迹信息 const FVector TraceStart = ViewLocation; const FVector ShootDirection = ViewRotation.Vector(); const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance; // 提供轨迹获取碰撞信息 FHitResult HitResult; FCollisionQueryParams CollisionParams; CollisionParams.</description>
+      <description>说明 # 本节使用的重构被称作提取 The Extract Method , 将函数切分, 使得代码可读性更高 对武器类的MakeShot重构 纯理论逻辑放在protected, 供派生类调用 调整逻辑 # void ASTUBaseWeapon::MakeShot() { if(!GetWorld()) return; // 获取PlayerController const auto Player = Cast&amp;lt;ACharacter&amp;gt;(GetOwner()); if (!Player) return; const auto Controller = Player-&amp;gt;GetController&amp;lt;APlayerController&amp;gt;(); if (!Controller) return; // 通过Controller获取CameraComponent的位置和方向 FVector ViewLocation; FRotator ViewRotation; Controller-&amp;gt;GetPlayerViewPoint(ViewLocation, ViewRotation); // 通过CameraComponent的位置和方向计算轨迹信息 const FVector TraceStart = ViewLocation; const FVector ShootDirection = ViewRotation.Vector(); const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance; // 提供轨迹获取碰撞信息 FHitResult HitResult; FCollisionQueryParams CollisionParams; CollisionParams.</description>
+    </item>
+    
+    <item>
+      <title>射击伤害</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/</link>
+      <pubDate>Fri, 11 Aug 2023 18:23:26 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/</guid>
+      <description>说明 # 从交点获取击中的Actor信息 创建MakeDamage, 击中目标时调用, 传入相交信息 # C++ 搭建框架 # 声明 preotected ShootThemUp: Weapon/STUBaseWeapon.h void MakeDamage(const FHitResult&amp;amp; HitResult); 空定义 ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp;amp; HitResult) {} MakeShot中调用 ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 获取击中的Actor ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; 添加数据成员: 伤害值 protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 对Actor造成伤害, 直接对其调用TakeDamage DamagedActor-&amp;gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物 # 虚幻编辑器 运行时显示CapsuleComponent show collision 游戏角色死亡, CapsuleComponent成为障碍物 死亡处理函数中, 禁止CapsuleComponent的碰撞 # C++ ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
   </channel>
