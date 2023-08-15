@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>实现游戏角色视角旋转 - 六一的部落格</title>
-<meta name="description" content="说明 # 视角旋转 垂直方向 抬头低头 Camera绕Y轴旋转 鼠标垂直方向位移决定旋转角度 水平方向 环顾左右 Camera绕Z轴旋转 鼠标水平方向位移决定旋转角度 绑定旋转键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 轴映射 函数描述 键位 LookUp MouseY TurnAround MouseX 实现视角旋转逻辑 # C&#43;&#43; - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 LookUp LookUp AddControllerPitchInput 绕Y轴旋转，增加Y轴旋转角度(Pitch) TurnAround TurnAround AddControllerYawInput 绕Z轴旋转，增加Z轴旋转角度(Yaw) 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::LookUp(float Amount) {} void ASTUBaseCharacter::TurnAround(float Amount) {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;LookUp&amp;quot;, this, &amp;amp;ASTUBaseCharacter::LookUp); PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;TurnAround&amp;quot;, this, &amp;amp;ASTUBaseCharacter::TurnAround); 添加函数声明 ShootThemUp: Player/STUBaseCharacter.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">
+  <title>文章目录跟随文章内容滚动 - 六一的部落格</title>
+<meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc my-toc 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现游戏角色视角旋转">
-<meta property="og:description" content="说明 # 视角旋转 垂直方向 抬头低头 Camera绕Y轴旋转 鼠标垂直方向位移决定旋转角度 水平方向 环顾左右 Camera绕Z轴旋转 鼠标水平方向位移决定旋转角度 绑定旋转键位 # 虚幻编辑器 项目设置 &gt; Engine &gt; Input 轴映射 函数描述 键位 LookUp MouseY TurnAround MouseX 实现视角旋转逻辑 # C&#43;&#43; - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 LookUp LookUp AddControllerPitchInput 绕Y轴旋转，增加Y轴旋转角度(Pitch) TurnAround TurnAround AddControllerYawInput 绕Z轴旋转，增加Z轴旋转角度(Yaw) 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::LookUp(float Amount) {} void ASTUBaseCharacter::TurnAround(float Amount) {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&gt;BindAxis(&quot;LookUp&quot;, this, &amp;ASTUBaseCharacter::LookUp); PlayerInputComponent-&gt;BindAxis(&quot;TurnAround&quot;, this, &amp;ASTUBaseCharacter::TurnAround); 添加函数声明 ShootThemUp: Player/STUBaseCharacter.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">
+<meta property="og:title" content="文章目录跟随文章内容滚动">
+<meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc my-toc 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-11T06:17:23+00:00">
-  <meta property="article:modified_time" content="2023-08-05T23:33:19+08:00">
+<meta property="article:published_time" content="2023-06-10T10:46:13+00:00">
+  <meta property="article:modified_time" content="2023-08-16T02:34:46+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="实现游戏角色视角旋转">
+<meta name="twitter:title" content="文章目录跟随文章内容滚动">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="实现游戏角色视角旋转">
+    <meta name="twitter:image:alt" content="文章目录跟随文章内容滚动">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/",
-      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/",
-      "name": "实现游戏角色视角旋转",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
+      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
+      "name": "文章目录跟随文章内容滚动",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-11T06:17:23CET",
-      "dateModified": "2023-08-05T23:33:19CET",
+      "datePublished": "2023-06-10T10:46:13CET",
+      "dateModified": "2023-08-16T02:34:46CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,33 +125,24 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
+          "name": "% E5%88%86% E4% Ba% Ab"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
-          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/",
+          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/",
+          "name": "Hugo"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/",
-          "name": "% E8% A7%92% E8%89% B2% E5%92%8 C% E5%8 A% A8% E7%94% Bb"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  6 ,
-        "item": {
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           }
         }]
     },
@@ -162,16 +153,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "实现游戏角色视角旋转",
+          "headline": "文章目录跟随文章内容滚动",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
-          "datePublished": "2023-06-11T06:17:23CET",
-          "dateModified": "2023-08-05T23:33:19CET",
+          "datePublished": "2023-06-10T10:46:13CET",
+          "dateModified": "2023-08-16T02:34:46CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -179,7 +170,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
           }
         }
       ]
@@ -204,10 +195,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "实现游戏角色视角旋转"
+          "caption": "文章目录跟随文章内容滚动"
         }
       ]
     }
@@ -274,10 +265,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -505,20 +496,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
                               角色和动画
                             </button>
-                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -559,7 +550,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
                                   
 
                                 
@@ -766,10 +757,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -947,10 +938,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
                     Hugo
                   </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -977,7 +968,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
                         
                         
                       
@@ -1111,10 +1102,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -1342,20 +1333,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
                               角色和动画
                             </button>
-                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1396,7 +1387,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
                                   
 
                                 
@@ -1603,10 +1594,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -1784,10 +1775,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
                     Hugo
                   </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1814,7 +1805,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
                         
                         
                       
@@ -1885,10 +1876,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2116,20 +2107,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-05d87cb41d01c4048ccdb94056a90119" aria-expanded="false">
                               角色和动画
                             </button>
-                            <div class="collapse show" id="section-05d87cb41d01c4048ccdb94056a90119">
+                            <div class="collapse" id="section-05d87cb41d01c4048ccdb94056a90119">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -2170,7 +2161,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/">实现游戏角色视角旋转</a></li>
                                   
 
                                 
@@ -2377,10 +2368,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2558,10 +2549,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
                     Hugo
                   </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -2588,7 +2579,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
                         
                         
                       
@@ -2642,29 +2633,17 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#绑定旋转键位">绑定旋转键位</a></li>
-    <li><a href="#实现视角旋转逻辑">实现视角旋转逻辑</a>
+    <li><a href="#滚动监听">滚动监听</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
+    <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#添加静态日志类型">添加静态日志类型</a></li>
-        <li><a href="#实现回调函数">实现回调函数</a></li>
-        <li><a href="#编译shootthemup并运行">编译ShootThemUp并运行</a></li>
+        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#文章目录结构">文章目录结构</a></li>
+        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
-    <li><a href="#使视角可以在垂直方向旋转">使视角可以在垂直方向旋转</a>
-      <ul>
-        <li><a href="#cameracomponent的usepawncontrolrotation选项">CameraComponent的UsePawnControlRotation选项</a></li>
-        <li><a href="#playercontroller的inputpitchscale选项">PlayerController的InputPitchScale选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#游戏角色视角绕z轴旋转时-使中心点为游戏角色">游戏角色视角绕Z轴旋转时，使中心点为游戏角色</a>
-      <ul>
-        <li><a href="#为stubasecharacter添加uspringarmcomponent类型成员">为STUBaseCharacter添加USpringArmComponent类型成员</a></li>
-        <li><a href="#配置springarmcomponent">配置SpringArmComponent</a></li>
-      </ul>
-    </li>
-    <li><a href="#为character绑定动画">为Character绑定动画</a></li>
-    <li><a href="#优化视角旋转逻辑">优化视角旋转逻辑</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
   </ul>
 </nav>
       </div>
@@ -2677,29 +2656,17 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#绑定旋转键位">绑定旋转键位</a></li>
-    <li><a href="#实现视角旋转逻辑">实现视角旋转逻辑</a>
+    <li><a href="#滚动监听">滚动监听</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
+    <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#添加静态日志类型">添加静态日志类型</a></li>
-        <li><a href="#实现回调函数">实现回调函数</a></li>
-        <li><a href="#编译shootthemup并运行">编译ShootThemUp并运行</a></li>
+        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#文章目录结构">文章目录结构</a></li>
+        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
-    <li><a href="#使视角可以在垂直方向旋转">使视角可以在垂直方向旋转</a>
-      <ul>
-        <li><a href="#cameracomponent的usepawncontrolrotation选项">CameraComponent的UsePawnControlRotation选项</a></li>
-        <li><a href="#playercontroller的inputpitchscale选项">PlayerController的InputPitchScale选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#游戏角色视角绕z轴旋转时-使中心点为游戏角色">游戏角色视角绕Z轴旋转时，使中心点为游戏角色</a>
-      <ul>
-        <li><a href="#为stubasecharacter添加uspringarmcomponent类型成员">为STUBaseCharacter添加USpringArmComponent类型成员</a></li>
-        <li><a href="#配置springarmcomponent">配置SpringArmComponent</a></li>
-      </ul>
-    </li>
-    <li><a href="#为character绑定动画">为Character绑定动画</a></li>
-    <li><a href="#优化视角旋转逻辑">优化视角旋转逻辑</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
   </ul>
 </nav>
   </nav>
@@ -2712,14 +2679,13 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/">角色和动画</a></li>
-<li class="breadcrumb-item active" aria-current="page">实现游戏角色视角旋转</li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/hugo/">Hugo</a></li>
+<li class="breadcrumb-item active" aria-current="page">文章目录跟随文章内容滚动</li>
 					</ol>
 				</nav>
 			
-			<h1>实现游戏角色视角旋转</h1>
+			<h1>文章目录跟随文章内容滚动</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -2736,29 +2702,17 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#绑定旋转键位">绑定旋转键位</a></li>
-    <li><a href="#实现视角旋转逻辑">实现视角旋转逻辑</a>
+    <li><a href="#滚动监听">滚动监听</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
+    <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#添加静态日志类型">添加静态日志类型</a></li>
-        <li><a href="#实现回调函数">实现回调函数</a></li>
-        <li><a href="#编译shootthemup并运行">编译ShootThemUp并运行</a></li>
+        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#文章目录结构">文章目录结构</a></li>
+        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
-    <li><a href="#使视角可以在垂直方向旋转">使视角可以在垂直方向旋转</a>
-      <ul>
-        <li><a href="#cameracomponent的usepawncontrolrotation选项">CameraComponent的UsePawnControlRotation选项</a></li>
-        <li><a href="#playercontroller的inputpitchscale选项">PlayerController的InputPitchScale选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#游戏角色视角绕z轴旋转时-使中心点为游戏角色">游戏角色视角绕Z轴旋转时，使中心点为游戏角色</a>
-      <ul>
-        <li><a href="#为stubasecharacter添加uspringarmcomponent类型成员">为STUBaseCharacter添加USpringArmComponent类型成员</a></li>
-        <li><a href="#配置springarmcomponent">配置SpringArmComponent</a></li>
-      </ul>
-    </li>
-    <li><a href="#为character绑定动画">为Character绑定动画</a></li>
-    <li><a href="#优化视角旋转逻辑">优化视角旋转逻辑</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
   </ul>
 </nav>
       </div>
@@ -2771,29 +2725,17 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#绑定旋转键位">绑定旋转键位</a></li>
-    <li><a href="#实现视角旋转逻辑">实现视角旋转逻辑</a>
+    <li><a href="#滚动监听">滚动监听</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
+    <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#添加静态日志类型">添加静态日志类型</a></li>
-        <li><a href="#实现回调函数">实现回调函数</a></li>
-        <li><a href="#编译shootthemup并运行">编译ShootThemUp并运行</a></li>
+        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#文章目录结构">文章目录结构</a></li>
+        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
-    <li><a href="#使视角可以在垂直方向旋转">使视角可以在垂直方向旋转</a>
-      <ul>
-        <li><a href="#cameracomponent的usepawncontrolrotation选项">CameraComponent的UsePawnControlRotation选项</a></li>
-        <li><a href="#playercontroller的inputpitchscale选项">PlayerController的InputPitchScale选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#游戏角色视角绕z轴旋转时-使中心点为游戏角色">游戏角色视角绕Z轴旋转时，使中心点为游戏角色</a>
-      <ul>
-        <li><a href="#为stubasecharacter添加uspringarmcomponent类型成员">为STUBaseCharacter添加USpringArmComponent类型成员</a></li>
-        <li><a href="#配置springarmcomponent">配置SpringArmComponent</a></li>
-      </ul>
-    </li>
-    <li><a href="#为character绑定动画">为Character绑定动画</a></li>
-    <li><a href="#优化视角旋转逻辑">优化视角旋转逻辑</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
   </ul>
 </nav>
   </nav>
@@ -2801,341 +2743,193 @@
 
 			</nav>
 			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>视角旋转</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>垂直方向</td>
-<td>抬头低头</td>
-<td>Camera绕Y轴旋转</td>
-<td>鼠标垂直方向位移决定旋转角度</td>
-</tr>
-<tr>
-<td>水平方向</td>
-<td>环顾左右</td>
-<td>Camera绕Z轴旋转</td>
-<td>鼠标水平方向位移决定旋转角度</td>
-</tr>
-</tbody>
-</table>
-<h2 id="绑定旋转键位">绑定旋转键位 <a href="#%e7%bb%91%e5%ae%9a%e6%97%8b%e8%bd%ac%e9%94%ae%e4%bd%8d" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>虚幻编辑器</code> <br/>
-<code>项目设置 &gt; Engine &gt; Input</code> <br/>
-<code>轴映射</code> <br/></p>
-<table>
-<thead>
-<tr>
-<th>函数描述</th>
-<th>键位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LookUp</td>
-<td>MouseY</td>
-</tr>
-<tr>
-<td>TurnAround</td>
-<td>MouseX</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/pic/角色和动画/实现Character视角旋转/绑定Camera旋转的鼠标键位/鼠标键位.png" width="400" /> <br/> <br/></p>
-<h2 id="实现视角旋转逻辑">实现视角旋转逻辑 <a href="#%e5%ae%9e%e7%8e%b0%e8%a7%86%e8%a7%92%e6%97%8b%e8%bd%ac%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>C++</code> <br/></p>
+<ol>
+<li>监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 <br/></li>
+<li>浏览器支持 <br/>
 <table>
 <thead>
 <tr>
 <th>-</th>
-<th>回调函数签名</th>
+<th>docs-toc</th>
+<th>my-toc</th>
+<th>文章目录跳转</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>BindAxis</td>
-<td>void handler(float Amount)</td>
+<td>Safari</td>
+<td>O</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>O</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>O</td>
+<td>O</td>
+<td>docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时</td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th>函数描述</th>
-<th>回调函数</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LookUp</td>
-<td>LookUp</td>
-<td>AddControllerPitchInput</td>
-<td>绕Y轴旋转，增加Y轴旋转角度(Pitch)</td>
-</tr>
-<tr>
-<td>TurnAround</td>
-<td>TurnAround</td>
-<td>AddControllerYawInput</td>
-<td>绕Z轴旋转，增加Z轴旋转角度(Yaw)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="搭建框架">搭建框架 <a href="#%e6%90%ad%e5%bb%ba%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>添加空函数 <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<pre><code class="language-cpp">void ASTUBaseCharacter::LookUp(float Amount) {}
-void ASTUBaseCharacter::TurnAround(float Amount) {}
-</code></pre>
-</li>
-<li>绑定函数描述和回调函数 <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<pre><code class="language-cpp">// SetupPlayerInputComponent
-PlayerInputComponent-&gt;BindAxis(&quot;LookUp&quot;, this, &amp;ASTUBaseCharacter::LookUp);
-PlayerInputComponent-&gt;BindAxis(&quot;TurnAround&quot;, this, &amp;ASTUBaseCharacter::TurnAround);
-</code></pre>
-</li>
-<li>添加函数声明 <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
-<ul>
-<li><code>private</code> <br/></li>
-</ul>
 </li>
 </ol>
-<h3 id="添加静态日志类型">添加静态日志类型 <a href="#%e6%b7%bb%e5%8a%a0%e9%9d%99%e6%80%81%e6%97%a5%e5%bf%97%e7%b1%bb%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/></p>
-<pre><code class="language-cpp">DEFINE_LOG_CATEGORY_STATIC(LogBaseCharacter, All, All);
+<h2 id="滚动监听">滚动监听 <a href="#%e6%bb%9a%e5%8a%a8%e7%9b%91%e5%90%ac" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>window添加事件监听 <br/>
+<pre><code class="language-javascript">window.addEventListener('scroll', () =&gt; {
+    // 处理
+  });
 </code></pre>
-<h3 id="实现回调函数">实现回调函数 <a href="#%e5%ae%9e%e7%8e%b0%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/></p>
-<pre><code class="language-cpp">void ASTUBaseCharacter::LookUp(float Amount)
-{
-    AddControllerPitchInput(Amount);
-    UE_LOG(LogBaseCharacter, Log, TEXT(&quot;LookUp Amount: %f&quot;), Amount);
-}
+</li>
+<li>window注册滚动处理 <br/>
+<pre><code class="language-javascript">window.onscroll = function () {
+    // 处理
+};
+</code></pre>
+</li>
+</ol>
+<h2 id="进入判断">进入判断 <a href="#%e8%bf%9b%e5%85%a5%e5%88%a4%e6%96%ad" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', () =&gt; {
+  const myToc = document.querySelector('.my-toc');
+  const fullToc = document.querySelector('.docs-toc');
+  if (!myToc || !fullToc) return;
 
-void ASTUBaseCharacter::TurnAround(float Amount)
-{
-    AddControllerYawInput(Amount);
+  // 后续处理  
+});
+</code></pre>
+<h2 id="滚动计算">滚动计算 <a href="#%e6%bb%9a%e5%8a%a8%e8%ae%a1%e7%ae%97" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置 <a href="#%e4%b8%ba%e6%a0%87%e9%a2%98%e6%8e%92%e5%ba%8f-%e5%8e%98%e6%b8%85%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e7%9b%b8%e5%af%b9%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-javascript">let i = 0;
+myToc.querySelectorAll('a').forEach(entry =&gt; {
+    entry.setAttribute('scrollIdx', i++);
+});
+</code></pre>
+<h3 id="文章目录结构">文章目录结构 <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true">#</a></h3>
+<p>.my-toc嵌套在.docs-toc中, .docs-toc多一个&quot;文章目录&quot;提示 <br/></p>
+<ol>
+<li>根据.my-toc的滚动高度和其容纳的标题个数计算单个标题的高度 <br/>
+<pre><code class="language-javascript">function computeHeadingHeight() {
+  const toc = document.querySelector('.my-toc');
+  return toc.scrollHeight / toc.querySelectorAll('a').length;
 }
 </code></pre>
-<h3 id="编译shootthemup并运行">编译ShootThemUp并运行 <a href="#%e7%bc%96%e8%af%91shootthemup%e5%b9%b6%e8%bf%90%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
-<ul>
-<li>
-<p>视角可以在水平方向旋转, 身体跟随旋转 <br/></p>
 </li>
-<li>
-<p>无法在垂直方向旋转 <br/></p>
+<li>根据页面能容纳的标题数，经过测试，取其1/6，可以使得高亮标题在文章目录偏上位置 <br/>
+<pre><code class="language-javascript">function computeUpIdx() {
+  const fullToc = document.querySelector('.docs-toc');
+  const myToc = document.querySelector('.my-toc');
+  const offset = fullToc.scrollHeight - myToc.scrollHeight;
+  const max = parseInt((window.innerHeight - offset) / headingHeight);
+  return parseInt(max / 6);
+}
+</code></pre>
 </li>
-<li>
-<p>查看日志，鼠标向上移动时，Amount为正数 <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/MouseY-Up.png" width="300" /> <br/> <br/></p>
-</li>
-</ul>
-<h2 id="使视角可以在垂直方向旋转">使视角可以在垂直方向旋转 <a href="#%e4%bd%bf%e8%a7%86%e8%a7%92%e5%8f%af%e4%bb%a5%e5%9c%a8%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e6%97%8b%e8%bd%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>虚幻编辑器</code> <br/></p>
-<h3 id="cameracomponent的usepawncontrolrotation选项">CameraComponent的UsePawnControlRotation选项 <a href="#cameracomponent%e7%9a%84usepawncontrolrotation%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
-<p>设置CamerComponent是否跟随Pawn旋转 <br/></p>
-<ol>
-<li>
-<p>勾选 <code>BP_STUBaseCharacter &gt; CameraComponent &gt; UsePawnControlRotation</code> <br/>
-<code>选中Camera Component &gt; 细节面板 &gt; CameraOptions &gt; 勾选UsePawnControlRotation</code> <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/BP_STUBaseCharacter-UsePawnControlRotation-Enable.png" width="1400" /> <br/> <br/></p>
-</li>
-<li>
-<p>编译并运行 <br/></p>
-<ul>
-<li>向下移动鼠标，Camera向上旋转; 向上移动鼠标，Camera向下旋转 <br/></li>
-<li>旋转中心点为CameraComponent <br/></li>
-</ul>
-</li>
-</ol>
-<h3 id="playercontroller的inputpitchscale选项">PlayerController的InputPitchScale选项 <a href="#playercontroller%e7%9a%84inputpitchscale%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
-<ul>
-<li>游戏角色旋转的逻辑是通过旋转PlayerController完成的 <br/></li>
-<li>游戏角色视角垂直方向旋转反向InputPitchScale有关，该参数默认为负数, 已退化 <br/>
-<a href="https://docs.unrealengine.com/5.1/en-US/BlueprintAPI/PlayerController/GetDeprecatedInputPitchScale/">参考</a> <br/></li>
-<li>InputPitchScale, InputYawScale, InputRollScale的绝对值对应旋转速度 <br/></li>
-<li>引擎版本 <code>5.1</code> 之前，可以在 <code>PlayerController蓝图类</code> 的细节面板查看 <code>InputPitchScale</code> <br/></li>
-</ul>
-<h4 id="打印inputpitchscale">打印InputPitchScale <a href="#%e6%89%93%e5%8d%b0inputpitchscale" class="anchor" aria-hidden="true">#</a></h4>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/BP_STUPlayerController-打印InputScale.png" width="700" /> <br/> <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/BP_STUPlayerController-打印InputScale-Output.png" width="150" /> <br/> <br/></p>
-<h4 id="解决方法一-将inputpitchscale设为正数">解决方法一: 将InputPitchScale设为正数 <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%e4%b8%80-%e5%b0%86inputpitchscale%e8%ae%be%e4%b8%ba%e6%ad%a3%e6%95%b0" class="anchor" aria-hidden="true">#</a></h4>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/BP_STUPlayerController-设置InputPitchScale.png" width="400" /> <br/> <br/></p>
-<h4 id="解决方法二-将lookup的scale改为-1">解决方法二: 将LookUp的Scale改为-1 <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95%e4%ba%8c-%e5%b0%86lookup%e7%9a%84scale%e6%94%b9%e4%b8%ba-1" class="anchor" aria-hidden="true">#</a></h4>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整Camera垂直方向上旋转/将LookUp的Scale改为-1.png" width="400" /> <br/> <br/></p>
-<h4 id="善后">善后 <a href="#%e5%96%84%e5%90%8e" class="anchor" aria-hidden="true">#</a></h4>
-<ol>
-<li>采用解决方法二 <br/></li>
-<li>去除 <code>BP_STUPlayerController</code> 中的打印和InputPitchScale设置 <br/></li>
-<li>去除 C++ <code>LookUp</code> 中的日志打印 <br/></li>
-</ol>
-<h2 id="游戏角色视角绕z轴旋转时-使中心点为游戏角色">游戏角色视角绕Z轴旋转时，使中心点为游戏角色 <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e8%a7%86%e8%a7%92%e7%bb%95z%e8%bd%b4%e6%97%8b%e8%bd%ac%e6%97%b6-%e4%bd%bf%e4%b8%ad%e5%bf%83%e7%82%b9%e4%b8%ba%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="为stubasecharacter添加uspringarmcomponent类型成员">为STUBaseCharacter添加USpringArmComponent类型成员 <a href="#%e4%b8%bastubasecharacter%e6%b7%bb%e5%8a%a0uspringarmcomponent%e7%b1%bb%e5%9e%8b%e6%88%90%e5%91%98" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>C++</code> <br/></p>
-<ol>
-<li>添加SpringArmComponent类型成员 <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/>
-<pre><code class="language-cpp">// 前向声明
-class USpringArmComponent;
+<li>添加全局变量, 保存单个标题高度和高亮标题理想位置 <br/>
+<pre><code class="language-javascript">let headingHeight, UpIdx;
 
-// protected
-UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-USpringArmComponent *SpringArmComponent;
+headingHeight = computeHeadingHeight();
+upIdx = computeUpIdx();
 </code></pre>
 </li>
-<li>初始化组件, 设置SpringArmComponent默认跟随Pawn旋转 <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<pre><code class="language-cpp">#include &quot;GameFrameWork/SpringArmComponent.h&quot;
+</ol>
+<h3 id="注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动 <a href="#%e6%b3%a8%e5%86%8c%e7%9b%91%e5%90%ac%e5%a4%84%e7%90%86-%e5%bc%80%e5%90%af%e5%ae%9a%e6%97%b6%e5%99%a8-%e5%bb%b6%e6%97%b6%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-javascript">const followTimerInterval = 300;
+let followTimer = null; // 全局
 
-// 默认构造函数
-SpringArmComponent = CreateDefaultSubobject&lt;USpringArmComponent&gt;(&quot;SpringArmComponent&quot;);
-SpringArmComponent-&gt;SetupAttachment(GetRootComponent());
-SpringArmComponent-&gt;bUsePawnControlRotation = true;
+window.onscroll = function () {
+    clearTimeout(followTimer);
+    followTimer = setTimeout(function () {
+        // 文章目录滚动
+        scrollFollow();
+    }, followTimerInterval);
+};
 </code></pre>
-</li>
-<li>修改CameraComponent的上级组件为SpringArmComponent <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<pre><code class="language-cpp">// 默认构造函数
-// CameraComponent-&gt;SetupAttachment(GetRootComponent());
-CameraComponent-&gt;SetupAttachment(SpringArmComponent);
+<h3 id="实现文章目录滚动">实现文章目录滚动 <a href="#%e5%ae%9e%e7%8e%b0%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>无标题高亮, 不作处理 <br/></li>
+<li>多个标题高亮时, 选择第一个标题计算滚动偏移 <br/></li>
+</ol>
+<!--listend-->
+<pre><code class="language-javascript">function scrollFollow() {
+  const activeHeadings = document.querySelector('.my-toc').querySelectorAll('a.active');
+  if (activeHeadings.length &gt; 0) {
+    const heading = activeHeadings.item(0);
+    const idx = heading.getAttribute('scrollIdx');
+    const scrollTarget = idx - upIdx;
+    document.querySelector('.docs-toc').scrollTop = headingHeight * scrollTarget;
+  }
+}
 </code></pre>
-</li>
-<li>编译ShootThemUp <br/></li>
-</ol>
-<h3 id="配置springarmcomponent">配置SpringArmComponent <a href="#%e9%85%8d%e7%bd%aespringarmcomponent" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>虚幻编辑器</code> <br/>
-<code>BP_STUBaseCharacter</code> <br/></p>
-<h4 id="查看springarmcomponent和cameracomponent">查看SpringArmComponent和CameraComponent <a href="#%e6%9f%a5%e7%9c%8bspringarmcomponent%e5%92%8ccameracomponent" class="anchor" aria-hidden="true">#</a></h4>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整SpringArm和Camera/BP_STUBaseCharacter-Component.png" width="300" /> <br/> <br/></p>
-<h4 id="关于busepawncontrolrotation设置">关于bUsePawnControlRotation设置 <a href="#%e5%85%b3%e4%ba%8ebusepawncontrolrotation%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h4>
-<ol>
-<li><code>UCameraComponent</code> 和 <code>USpringArmComponent</code> 均有该数据成员 <br/></li>
-<li>在代码中设置 <code>bUsePawnControlRotation</code> ，设置的是类数据成员初始值。在蓝图编辑器中，对基于C++类的蓝图类数据成员恢复默认值，得到类数据成员初始值 <br/></li>
-<li>为参数添加默认值，不会改变参数已有值 <br/></li>
-</ol>
-<h4 id="清除cameracomponent的相对变换-置usepawncontrolrotation为false">清除CameraComponent的相对变换，置UsePawnControlRotation为false <a href="#%e6%b8%85%e9%99%a4cameracomponent%e7%9a%84%e7%9b%b8%e5%af%b9%e5%8f%98%e6%8d%a2-%e7%bd%aeusepawncontrolrotation%e4%b8%bafalse" class="anchor" aria-hidden="true">#</a></h4>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整SpringArm和Camera/BP_STUBaseCharacter-Camera-Transform.png" width="1300" /> <br/> <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整SpringArm和Camera/BP_STUBaseCharacter-Camera-Transform-Reset.png" width="1300" /> <br/>     <br/></p>
-<h4 id="设置springarmcomponent和cameracomponent的相对变换">设置SpringArmComponent和CameraComponent的相对变换 <a href="#%e8%ae%be%e7%bd%aespringarmcomponent%e5%92%8ccameracomponent%e7%9a%84%e7%9b%b8%e5%af%b9%e5%8f%98%e6%8d%a2" class="anchor" aria-hidden="true">#</a></h4>
-<ol>
-<li>
-<p>查看 <code>SpringArmComponent</code> 臂长参数 <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整SpringArm和Camera/BP_STUBaseCharacter-SpringArm-TargetArmLength.png" width="1300" /> <br/> <br/></p>
-</li>
-<li>
-<p>设置CameraComponent相对SpringArmComponent的偏移 <br/></p>
-<p><img src="/pic/角色和动画/实现Character视角旋转/调整SpringArm和Camera/BP_STUBaseCharacter-SpringArm-SocketOffset.png" width="1300" /> <br/> <br/></p>
-</li>
-</ol>
-<h4 id="cameracomponent和springarmcomponent的busepawncontrolrotation生效问题">CameraComponent和SpringArmComponent的bUsePawnControlRotation生效问题 <a href="#cameracomponent%e5%92%8cspringarmcomponent%e7%9a%84busepawncontrolrotation%e7%94%9f%e6%95%88%e9%97%ae%e9%a2%98" class="anchor" aria-hidden="true">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>二者均为 <code>true</code></td>
-<td>SpringArmComponent的生效，Camera以游戏角色为中心绕Y轴旋转</td>
-</tr>
-<tr>
-<td>二者均为 <code>false</code></td>
-<td>Camera不可绕Y轴旋转</td>
-</tr>
-<tr>
-<td>仅 <code>CameraComponent</code> 的为true</td>
-<td>以Camera为中心绕Y轴旋转</td>
-</tr>
-<tr>
-<td>仅 <code>SpringArmComponent</code> 的为true</td>
-<td>Camera以游戏角色为中心绕Y轴旋转</td>
-</tr>
-</tbody>
-</table>
-<h2 id="为character绑定动画">为Character绑定动画 <a href="#%e4%b8%bacharacter%e7%bb%91%e5%ae%9a%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>虚幻编辑器</code> <br/>
-<code>BP_STUBaseCharacter</code> <br/></p>
-<ol>
-<li>
-<p>绑定动画 <br/>
-<code>选中Mesh组件 &gt; Details &gt; Animation</code> <br/></p>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Animation Mode</td>
-<td>Use Animation Asset</td>
-</tr>
-<tr>
-<td>Anim To Play</td>
-<td>Run_Fwd</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/pic/角色和动画/实现Character视角旋转/为Character添加跑步动画/BP_STUBaseCharacter-Mesh-Animation.png" width="1300" /> <br/> <br/></p>
-<p>可能存在动画下拉框无可选项的情况, 需要重新为动画绑定骨骼网格体 <br/></p>
-</li>
-<li>
-<p>编译并运行 <br/></p>
-</li>
-</ol>
-<h2 id="优化视角旋转逻辑">优化视角旋转逻辑 <a href="#%e4%bc%98%e5%8c%96%e8%a7%86%e8%a7%92%e6%97%8b%e8%bd%ac%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>C++</code> <br/>
-<code>STUBaseCharacter</code> <br/>
-<strong>LookUp, TurnAround, AddControllerPitchInput和AddControllerYawInput的函数签名一致</strong> <br/></p>
-<pre><code class="language-cpp">void LookUp(float Amount);
-void TurnAround(float Amount);
-void AddControllerPitchInput(float Val);
-void AddControllerYawInput(float Val)
+<h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-javascript">const followTimerInterval = 300;
+let headingHeight, UpIdx;
+let followTimer = null;
+
+function computeHeadingHeight() {
+  const toc = document.querySelector('.my-toc');
+  return toc.scrollHeight / toc.querySelectorAll('a').length;
+}
+
+function computeUpIdx() {
+  const fullToc = document.querySelector('.docs-toc');
+  const myToc = document.querySelector('.my-toc');
+  const offset = fullToc.scrollHeight - myToc.scrollHeight;
+  const max = parseInt((window.innerHeight - offset) / headingHeight);
+  return parseInt(max / 6);
+}
+
+function scrollFollow() {
+  const activeHeadings = document.querySelector('.my-toc').querySelectorAll('a.active');
+  if (activeHeadings.length &gt; 0) {
+    const heading = activeHeadings.item(0);
+    const idx = heading.getAttribute('scrollIdx');
+    const scrollTarget = idx - upIdx;
+    document.querySelector('.docs-toc').scrollTop = headingHeight * scrollTarget;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () =&gt; {
+  const myToc = document.querySelector('.my-toc');
+  const fullToc = document.querySelector('.docs-toc');
+  if (!myToc || !fullToc) return;
+
+  let i = 0;
+  myToc.querySelectorAll('a').forEach(entry =&gt; {
+    entry.setAttribute('scrollIdx', i++);
+  });
+
+  headingHeight = computeHeadingHeight();
+  upIdx = computeUpIdx();
+
+  window.onscroll = function () {
+    clearTimeout(followTimer);
+    followTimer = setTimeout(function () {
+      scrollFollow();
+    }, followTimerInterval);
+  };
+});
 </code></pre>
-<ol>
-<li>屏蔽 <code>LookUp</code> 和 <code>TurnAround</code> <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.h</code> <br/></li>
-<li>函数描述直接绑定 <code>AddControllerPitchInput</code> 和 <code>AddControllerYawInput</code> <br/>
-<code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/>
-<pre><code class="language-cpp">// SetupPlayerInputComponent
-// PlayerInputComponent-&gt;BindAxis(&quot;LookUp&quot;, this, &amp;ASTUBaseCharacter::LookUp);
-// PlayerInputComponent-&gt;BindAxis(&quot;TurnAround&quot;, this, &amp;ASTUBaseCharacter::TurnAround);
-PlayerInputComponent-&gt;BindAxis(&quot;Lookup&quot;, this, &amp;ASTUBaseCharacter::AddControllerPitchInput);
-PlayerInputComponent-&gt;BindAxis(&quot;TurnAround&quot;, this, &amp;ASTUBaseCharacter::AddControllerYawInput)
-</code></pre>
-</li>
-<li>编译并运行 <br/></li>
-</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%BD%A8%E8%BF%B9/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; 轨迹
+					&larr; 使用伤害类型
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%A7%86%E8%A7%92/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					添加观察视角 &rarr;
+					初识碰撞 &rarr;
 				</div>
 			</div>
 		</a>

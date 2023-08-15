@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-12T12:00:38+00:00">
-  <meta property="article:modified_time" content="2023-08-15T23:14:57+08:00">
+  <meta property="article:modified_time" content="2023-08-16T01:53:08+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-12T12:00:38CET",
-      "dateModified": "2023-08-15T23:14:57CET",
+      "dateModified": "2023-08-16T01:53:08CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
           },
           "datePublished": "2023-06-12T12:00:38CET",
-          "dateModified": "2023-08-15T23:14:57CET",
+          "dateModified": "2023-08-16T01:53:08CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -962,6 +962,13 @@
                         
                           
                           <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
                         
                         
                       
@@ -1795,6 +1802,13 @@
                         
                         
                       
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
                     </ul>
                   </div>
                 </li>
@@ -2562,6 +2576,13 @@
                         
                         
                       
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
                     </ul>
                   </div>
                 </li>
@@ -2619,18 +2640,19 @@
         <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
-    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#正文标题">正文标题</a></li>
     <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
     <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
     <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
       <ul>
         <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
         <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
       </ul>
     </li>
-    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
     <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
@@ -2651,18 +2673,19 @@
         <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
-    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#正文标题">正文标题</a></li>
     <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
     <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
     <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
       <ul>
         <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
         <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
       </ul>
     </li>
-    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
     <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
@@ -2706,18 +2729,19 @@
         <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
-    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#正文标题">正文标题</a></li>
     <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
     <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
     <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
       <ul>
         <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
         <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
       </ul>
     </li>
-    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
     <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
@@ -2738,18 +2762,19 @@
         <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
-    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#正文标题">正文标题</a></li>
     <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
     <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
     <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
       <ul>
         <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
         <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
       </ul>
     </li>
-    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
     <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
@@ -2895,15 +2920,23 @@ config/_default/markup.toml <br/>
   {{ .TableOfContents }}
 &lt;/nav&gt;
 </code></pre>
+<h2 id="进入判断">进入判断 <a href="#%e8%bf%9b%e5%85%a5%e5%88%a4%e6%96%ad" class="anchor" aria-hidden="true">#</a></h2>
+<pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', () =&gt; {
+  const toc = document.querySelector('.my-toc');
+  if (!toc) return;
+
+  // 后续处理  
+});
+</code></pre>
+<h2 id="文章目录标题">文章目录标题 <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98" class="anchor" aria-hidden="true">#</a></h2>
+<p>获取有类my-toc的元素的链接 <br/></p>
+<pre><code class="language-javascript">const tocHeadings = toc.querySelectorAll('a');
+</code></pre>
 <h2 id="正文标题">正文标题 <a href="#%e6%ad%a3%e6%96%87%e6%a0%87%e9%a2%98" class="anchor" aria-hidden="true">#</a></h2>
 <p>只关注显示在文章目录的标题, 筛选时, 要求标题的下级链接有类anchor <br/></p>
 <pre><code class="language-javascript">const headings = Array.apply(null, document.querySelectorAll('h2[id], h3[id]')).filter(function (value, index, arr) {
     return arr[index].querySelector('.anchor');
 });
-</code></pre>
-<h2 id="文章目录标题">文章目录标题 <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98" class="anchor" aria-hidden="true">#</a></h2>
-<p>获取有类my-toc的元素的链接 <br/></p>
-<pre><code class="language-javascript">const toc = document.querySelector('.my-toc').querySelectorAll('a');
 </code></pre>
 <h2 id="将文章目录标题和正文标题关联">将文章目录标题和正文标题关联 <a href="#%e5%b0%86%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98%e5%92%8c%e6%ad%a3%e6%96%87%e6%a0%87%e9%a2%98%e5%85%b3%e8%81%94" class="anchor" aria-hidden="true">#</a></h2>
 <p>当二者标题数一致时, 认为一一对应, 设置标号; 否则就此结束 <br/></p>
@@ -2914,12 +2947,10 @@ config/_default/markup.toml <br/>
   });
 }
 
-if (toc.length === headings.length) {
-    addHeadingIdx(toc);
-    addHeadingIdx(headings);
+if (tocHeadings.length !== headings.length) return;
 
-    // 其他处理
-}
+addHeadingIdx(tocHeadings);
+addHeadingIdx(headings);
 </code></pre>
 <h2 id="搭建交叉观察框架">搭建交叉观察框架 <a href="#%e6%90%ad%e5%bb%ba%e4%ba%a4%e5%8f%89%e8%a7%82%e5%af%9f%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
@@ -2955,13 +2986,15 @@ if (toc.length === headings.length) {
 
 headingFlag = new Array(headings.length).fill(false);
 </code></pre>
-<h3 id="添加变量-保存高亮标题个数">添加变量，保存高亮标题个数 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e4%bf%9d%e5%ad%98%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">let headingCnt = 0;
+<h3 id="添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e4%bf%9d%e5%ad%98%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%ba0" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-javascript">let headingCnt;
+
+headingCnt = 0;
 </code></pre>
 <h3 id="进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数 <a href="#%e8%bf%9b%e5%85%a5%e8%a7%82%e5%af%9f%e5%99%a8%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0-%e6%9b%b4%e6%96%b0%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e6%96%b0%e5%a2%9e%e9%ab%98%e4%ba%ae-%e6%88%96%e8%80%85%e6%9c%89%e5%a4%9a%e4%b8%aa%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e6%97%b6%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae-%e6%a0%b9%e6%8d%ae%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81%e8%ae%be%e7%bd%ae%e6%a0%87%e9%a2%98-%e6%9b%b4%e6%96%b0%e9%ab%98%e4%ba%ae%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">function refreshHighlight() {
     headingCnt = 0;
-    for (var i = 0; i &lt; headingFlag.length; ++i) {
+    for (let i = 0; i &lt; headingFlag.length; ++i) {
         if (headingFlag[i]) {
             headingCnt++;
             document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
@@ -2978,21 +3011,21 @@ if ((headingFlag[idx] = heading.isIntersecting) || (headingCnt !== 1)) {
     refreshHighlight();
 }
 </code></pre>
-<h2 id="完整javascript代码">完整Javascript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
 <p>assets/js/toc.js <br/></p>
-<pre><code class="language-javascript">function addHeadingIdx(list) {
+<pre><code class="language-javascript">let headingFlag;
+let headingCnt;
+
+function addHeadingIdx(list) {
   let i = 0;
   list.forEach((item) =&gt; {
     item.setAttribute('headingIdx', i++);
   });
 }
 
-let headingFlag;
-let headingCnt = 0;
-
 function refreshHighlight() {
   headingCnt = 0;
-  for (var i = 0; i &lt; headingFlag.length; ++i) {
+  for (let i = 0; i &lt; headingFlag.length; ++i) {
     if (headingFlag[i]) {
       headingCnt++;
       document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
@@ -3004,36 +3037,40 @@ function refreshHighlight() {
   }
 }
 
-const intersectionOptions = {
-  threshold: 1.0
-};
-
 document.addEventListener('DOMContentLoaded', () =&gt; {
+  const toc = document.querySelector('.my-toc');
+  if (!toc) return;
+
+  const tocHeadings = toc.querySelectorAll('a');
   const headings = Array.apply(null, document.querySelectorAll('h2[id], h3[id]')).filter(function (value, index, arr) {
     return arr[index].querySelector('.anchor');
   });
-  const toc = document.querySelector('.my-toc').querySelectorAll('a');
 
-  if (toc.length === headings.length) {
-    addHeadingIdx(toc);
-    addHeadingIdx(headings);
+  if (tocHeadings.length !== headings.length) return;
 
-    headingFlag = new Array(headings.length).fill(false);
+  addHeadingIdx(tocHeadings);
+  addHeadingIdx(headings);
 
-    const headingObserver = new IntersectionObserver(headings =&gt; {
-      headings.forEach(heading =&gt; {
-        // console.log('ratio', heading.target.getAttribute('id'), heading.intersectionRatio, heading.isIntersecting, headingCnt);
-        const idx = heading.target.getAttribute('headingIdx');
-        if ((headingFlag[idx] = heading.isIntersecting) || (headingCnt !== 1)) {
-          refreshHighlight();
-        }
-      });
-    }, intersectionOptions); 
+  headingFlag = new Array(headings.length).fill(false);
+  headingCnt = 0;
 
-    headings.forEach((heading) =&gt; {
-      headingObserver.observe(heading);
+  const intersectionOptions = {
+    threshold: 1.0
+  };
+
+  const headingObserver = new IntersectionObserver(headings =&gt; {
+    headings.forEach(heading =&gt; {
+      // console.log('ratio', heading.target.getAttribute('id'), heading.intersectionRatio, heading.isIntersecting, headingCnt);
+      const idx = heading.target.getAttribute('headingIdx');
+      if ((headingFlag[idx] = heading.isIntersecting) || (headingCnt !== 1)) {
+        refreshHighlight();
+      }
     });
-  }
+  }, intersectionOptions); 
+
+  headings.forEach((heading) =&gt; {
+    headingObserver.observe(heading);
+  });
 });
 </code></pre>
 <h2 id="doks主题执行javascript脚本">Doks主题执行JavaScript脚本 <a href="#doks%e4%b8%bb%e9%a2%98%e6%89%a7%e8%a1%8cjavascript%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
@@ -3106,9 +3143,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.cc236d501a12764e9145542a58cafa58af002614406bea27263078ce7f2010ab9b71c38da637249e14dfa5e7c69732c6abbc3fcea66d368e8eeb770860376128.js" integrity="sha512-zCNtUBoSdk6RRVQqWMr6WK8AJhRAa&#43;onJjB4zn8gEKubccONpjcknhTfpefGlzLGq7w/zqZtNo6O63cIYDdhKA==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.0b30f5448a6537b1fa3b326ab3788ecca1975bb49fdc163ad621f73c547890f69392873d8ac6fca741999d82aecc06d16c2e30c21938235e982eac079ca14cb5.js" integrity="sha512-CzD1RIplN7H6OzJqs3iOzKGXW7Sf3BY61iH3PFR4kPaTkoc9isb8p0GZnYKuzAbRbC4wwhk4I16YLqwHnKFMtQ==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.16573254d460a97ddcbf5972f9c2fc76b0725f0dd08f2ac17009b9143cea1f6ac9d178da38941798f234f4f02b73a7f3c1bff2132fdd9a64db045119d1a384fd.js" integrity="sha512-FlcyVNRgqX3cv1ly&#43;cL8drByXw3QjyrBcAm5FDzqH2rJ0XjaOJQXmPI09PArc6fzwb/yEy/dmmTbBFEZ0aOE/Q==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.91cd0f98087e76b8f7fd2595d20ac794dbb8583c8e3b30971783318e29b9e8d2d52e1807259e4790ae43f4d84743312abcbc73c095fe19f8a736556b49fedf6d.js" integrity="sha512-kc0PmAh&#43;drj3/SWV0grHlNu4WDyOOzCXF4Mxjim56NLVLhgHJZ5HkK5D9NhHQzEqvLxzwJX&#43;GfinNlVrSf7fbQ==" crossorigin="anonymous" defer></script>
   
     
   </body>
