@@ -970,7 +970,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -1800,7 +1800,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -2567,7 +2567,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -2620,61 +2620,57 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#概览">概览</a>
       <ul>
-        <li><a href="#概览">概览</a>
-          <ul>
-            <li><a href="#已实现动作">已实现动作</a></li>
-            <li><a href="#本节内容">本节内容</a></li>
-            <li><a href="#2d混合空间">2D混合空间</a></li>
-          </ul>
-        </li>
-        <li><a href="#建模">建模</a>
-          <ul>
-            <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
-            <li><a href="#数学基础">数学基础</a></li>
-            <li><a href="#速度方向">速度方向</a></li>
-            <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
-            <li><a href="#分析特殊情形">分析特殊情形</a></li>
-            <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
-          </ul>
-        </li>
-        <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
-          <ul>
-            <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
-            <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
-            <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
-            <li><a href="#效果图">效果图</a></li>
-            <li><a href="#优化显示">优化显示</a></li>
-          </ul>
-        </li>
-        <li><a href="#添加走路转向动画">添加走路转向动画</a>
-          <ul>
-            <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
-            <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
-          </ul>
-        </li>
-        <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
-          <ul>
-            <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
-            <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
-            <li><a href="#取消变量的设置">取消变量的设置</a></li>
-          </ul>
-        </li>
-        <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
-          <ul>
-            <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
-            <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
-            <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
-          </ul>
-        </li>
-        <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
-          <ul>
-            <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
-            <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
-            <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
-          </ul>
-        </li>
+        <li><a href="#已实现动作">已实现动作</a></li>
+        <li><a href="#本节内容">本节内容</a></li>
+        <li><a href="#2d混合空间">2D混合空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#建模">建模</a>
+      <ul>
+        <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
+        <li><a href="#数学基础">数学基础</a></li>
+        <li><a href="#速度方向">速度方向</a></li>
+        <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
+        <li><a href="#分析特殊情形">分析特殊情形</a></li>
+        <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
+      <ul>
+        <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
+        <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
+        <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
+        <li><a href="#效果图">效果图</a></li>
+        <li><a href="#优化显示">优化显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加走路转向动画">添加走路转向动画</a>
+      <ul>
+        <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
+        <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
+      </ul>
+    </li>
+    <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
+      <ul>
+        <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
+        <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
+        <li><a href="#取消变量的设置">取消变量的设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
+      <ul>
+        <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
+        <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
+        <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
+      </ul>
+    </li>
+    <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
+      <ul>
+        <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
+        <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
+        <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
       </ul>
     </li>
   </ul>
@@ -2688,61 +2684,57 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#概览">概览</a>
       <ul>
-        <li><a href="#概览">概览</a>
-          <ul>
-            <li><a href="#已实现动作">已实现动作</a></li>
-            <li><a href="#本节内容">本节内容</a></li>
-            <li><a href="#2d混合空间">2D混合空间</a></li>
-          </ul>
-        </li>
-        <li><a href="#建模">建模</a>
-          <ul>
-            <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
-            <li><a href="#数学基础">数学基础</a></li>
-            <li><a href="#速度方向">速度方向</a></li>
-            <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
-            <li><a href="#分析特殊情形">分析特殊情形</a></li>
-            <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
-          </ul>
-        </li>
-        <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
-          <ul>
-            <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
-            <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
-            <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
-            <li><a href="#效果图">效果图</a></li>
-            <li><a href="#优化显示">优化显示</a></li>
-          </ul>
-        </li>
-        <li><a href="#添加走路转向动画">添加走路转向动画</a>
-          <ul>
-            <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
-            <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
-          </ul>
-        </li>
-        <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
-          <ul>
-            <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
-            <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
-            <li><a href="#取消变量的设置">取消变量的设置</a></li>
-          </ul>
-        </li>
-        <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
-          <ul>
-            <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
-            <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
-            <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
-          </ul>
-        </li>
-        <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
-          <ul>
-            <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
-            <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
-            <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
-          </ul>
-        </li>
+        <li><a href="#已实现动作">已实现动作</a></li>
+        <li><a href="#本节内容">本节内容</a></li>
+        <li><a href="#2d混合空间">2D混合空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#建模">建模</a>
+      <ul>
+        <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
+        <li><a href="#数学基础">数学基础</a></li>
+        <li><a href="#速度方向">速度方向</a></li>
+        <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
+        <li><a href="#分析特殊情形">分析特殊情形</a></li>
+        <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
+      <ul>
+        <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
+        <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
+        <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
+        <li><a href="#效果图">效果图</a></li>
+        <li><a href="#优化显示">优化显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加走路转向动画">添加走路转向动画</a>
+      <ul>
+        <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
+        <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
+      </ul>
+    </li>
+    <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
+      <ul>
+        <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
+        <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
+        <li><a href="#取消变量的设置">取消变量的设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
+      <ul>
+        <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
+        <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
+        <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
+      </ul>
+    </li>
+    <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
+      <ul>
+        <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
+        <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
+        <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
       </ul>
     </li>
   </ul>
@@ -2780,61 +2772,57 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#概览">概览</a>
       <ul>
-        <li><a href="#概览">概览</a>
-          <ul>
-            <li><a href="#已实现动作">已实现动作</a></li>
-            <li><a href="#本节内容">本节内容</a></li>
-            <li><a href="#2d混合空间">2D混合空间</a></li>
-          </ul>
-        </li>
-        <li><a href="#建模">建模</a>
-          <ul>
-            <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
-            <li><a href="#数学基础">数学基础</a></li>
-            <li><a href="#速度方向">速度方向</a></li>
-            <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
-            <li><a href="#分析特殊情形">分析特殊情形</a></li>
-            <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
-          </ul>
-        </li>
-        <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
-          <ul>
-            <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
-            <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
-            <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
-            <li><a href="#效果图">效果图</a></li>
-            <li><a href="#优化显示">优化显示</a></li>
-          </ul>
-        </li>
-        <li><a href="#添加走路转向动画">添加走路转向动画</a>
-          <ul>
-            <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
-            <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
-          </ul>
-        </li>
-        <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
-          <ul>
-            <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
-            <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
-            <li><a href="#取消变量的设置">取消变量的设置</a></li>
-          </ul>
-        </li>
-        <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
-          <ul>
-            <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
-            <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
-            <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
-          </ul>
-        </li>
-        <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
-          <ul>
-            <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
-            <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
-            <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
-          </ul>
-        </li>
+        <li><a href="#已实现动作">已实现动作</a></li>
+        <li><a href="#本节内容">本节内容</a></li>
+        <li><a href="#2d混合空间">2D混合空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#建模">建模</a>
+      <ul>
+        <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
+        <li><a href="#数学基础">数学基础</a></li>
+        <li><a href="#速度方向">速度方向</a></li>
+        <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
+        <li><a href="#分析特殊情形">分析特殊情形</a></li>
+        <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
+      <ul>
+        <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
+        <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
+        <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
+        <li><a href="#效果图">效果图</a></li>
+        <li><a href="#优化显示">优化显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加走路转向动画">添加走路转向动画</a>
+      <ul>
+        <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
+        <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
+      </ul>
+    </li>
+    <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
+      <ul>
+        <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
+        <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
+        <li><a href="#取消变量的设置">取消变量的设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
+      <ul>
+        <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
+        <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
+        <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
+      </ul>
+    </li>
+    <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
+      <ul>
+        <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
+        <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
+        <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
       </ul>
     </li>
   </ul>
@@ -2848,61 +2836,57 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#概览">概览</a>
       <ul>
-        <li><a href="#概览">概览</a>
-          <ul>
-            <li><a href="#已实现动作">已实现动作</a></li>
-            <li><a href="#本节内容">本节内容</a></li>
-            <li><a href="#2d混合空间">2D混合空间</a></li>
-          </ul>
-        </li>
-        <li><a href="#建模">建模</a>
-          <ul>
-            <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
-            <li><a href="#数学基础">数学基础</a></li>
-            <li><a href="#速度方向">速度方向</a></li>
-            <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
-            <li><a href="#分析特殊情形">分析特殊情形</a></li>
-            <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
-          </ul>
-        </li>
-        <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
-          <ul>
-            <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
-            <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
-            <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
-            <li><a href="#效果图">效果图</a></li>
-            <li><a href="#优化显示">优化显示</a></li>
-          </ul>
-        </li>
-        <li><a href="#添加走路转向动画">添加走路转向动画</a>
-          <ul>
-            <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
-            <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
-          </ul>
-        </li>
-        <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
-          <ul>
-            <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
-            <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
-            <li><a href="#取消变量的设置">取消变量的设置</a></li>
-          </ul>
-        </li>
-        <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
-          <ul>
-            <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
-            <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
-            <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
-          </ul>
-        </li>
-        <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
-          <ul>
-            <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
-            <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
-            <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
-          </ul>
-        </li>
+        <li><a href="#已实现动作">已实现动作</a></li>
+        <li><a href="#本节内容">本节内容</a></li>
+        <li><a href="#2d混合空间">2D混合空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#建模">建模</a>
+      <ul>
+        <li><a href="#游戏角色朝向">游戏角色朝向</a></li>
+        <li><a href="#数学基础">数学基础</a></li>
+        <li><a href="#速度方向">速度方向</a></li>
+        <li><a href="#计算游戏角色前进方向和速度方向的夹角">计算游戏角色前进方向和速度方向的夹角</a></li>
+        <li><a href="#分析特殊情形">分析特殊情形</a></li>
+        <li><a href="#可以在蓝图中实现夹角的计算-也可以在c-plus-plus-中实现">可以在蓝图中实现夹角的计算，也可以在C++中实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#绘制forwardvector-rightvector和velocityvector">绘制ForwardVector，RightVector和VelocityVector</a>
+      <ul>
+        <li><a href="#绘制-forwardvector">绘制 ForwardVector</a></li>
+        <li><a href="#绘制-rightvector">绘制 RightVector</a></li>
+        <li><a href="#绘制-velocityvector">绘制 VelocityVector</a></li>
+        <li><a href="#效果图">效果图</a></li>
+        <li><a href="#优化显示">优化显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加走路转向动画">添加走路转向动画</a>
+      <ul>
+        <li><a href="#创建2d混合空间资产作为走路转向动画">创建2D混合空间资产作为走路转向动画</a></li>
+        <li><a href="#将bs-locomotion-walk用作走路动画">将BS_Locomotion_Walk用作走路动画</a></li>
+      </ul>
+    </li>
+    <li><a href="#在蓝图中计算夹角">在蓝图中计算夹角</a>
+      <ul>
+        <li><a href="#在蓝图中计算夹角并设置变量">在蓝图中计算夹角并设置变量</a></li>
+        <li><a href="#绘制-forwardvectr-和-velocityvector-的叉乘结果">绘制 ForwardVectr 和 VelocityVector 的叉乘结果</a></li>
+        <li><a href="#取消变量的设置">取消变量的设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#在代码中计算夹角">在代码中计算夹角</a>
+      <ul>
+        <li><a href="#添加接口-返回direction">添加接口, 返回Direction</a></li>
+        <li><a href="#代码优化-前后左右移动的回调函数moveforward和moveright">代码优化: 前后左右移动的回调函数MoveForward和MoveRight</a></li>
+        <li><a href="#在蓝图中使用c-plus-plus-函数设置变量direction">在蓝图中使用C++函数设置变量Direction</a></li>
+      </ul>
+    </li>
+    <li><a href="#阻断动画蓝图无效状态">阻断动画蓝图无效状态</a>
+      <ul>
+        <li><a href="#从eventblueprintupdateanimation出发-trygetpawnowner得到空指针-停在casttocharacter">从EventBlueprintUpdateAnimation出发，TryGetPawnOwner得到空指针，停在CastToCharacter</a></li>
+        <li><a href="#添加打印名-验证动画蓝图运行">添加打印名，验证动画蓝图运行</a></li>
+        <li><a href="#未运行游戏时-阻断动画蓝图">未运行游戏时，阻断动画蓝图</a></li>
       </ul>
     </li>
   </ul>
@@ -3442,9 +3426,9 @@ void ASTUBaseCharacter::MoveRight(float Amount)
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.3a4c84d82d38484d20646d85876f7f93f5986d49a1cad032e504e3ca679facace1c8198a0c52c51bad7b172ca466902f1be9138e15d942f215aff423b361cd98.js" integrity="sha512-OkyE2C04SE0gZG2Fh29/k/WYbUmhytAy5QTjymefrKzhyBmKDFLFG617FyykZpAvG&#43;kTjhXZQvIVr/Qjs2HNmA==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.cc236d501a12764e9145542a58cafa58af002614406bea27263078ce7f2010ab9b71c38da637249e14dfa5e7c69732c6abbc3fcea66d368e8eeb770860376128.js" integrity="sha512-zCNtUBoSdk6RRVQqWMr6WK8AJhRAa&#43;onJjB4zn8gEKubccONpjcknhTfpefGlzLGq7w/zqZtNo6O63cIYDdhKA==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.54aedd843d2b5bef8785b21d239df1787b582761d89873a10020dac181ea1be62888b88fbc64f150240eeb747e2fa34bf76c8d64f0b97965f8f76deccfe9cb12.js" integrity="sha512-VK7dhD0rW&#43;&#43;HhbIdI53xeHtYJ2HYmHOhACDawYHqG&#43;YoiLiPvGTxUCQO63R&#43;L6NL92yNZPC5eWX4923sz&#43;nLEg==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.0e6c24cd7bec9fc664a6475707567bf7fa9cd4db0251460957839a12545a3df70fa2a2fb18e57394a2ea61a3aac4705a05fdba84c2722692fb494f5e1f7b9cdd.js" integrity="sha512-DmwkzXvsn8ZkpkdXB1Z79/qc1NsCUUYJV4OaElRaPfcPoqL7GOVzlKLqYaOqxHBaBf26hMJyJpL7SU9eH3uc3Q==" crossorigin="anonymous" defer></script>
   
     
   </body>

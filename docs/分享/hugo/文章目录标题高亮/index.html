@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>文章目录标题高亮 - 六一的部落格</title>
-<meta name="description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &amp;ldquo;a[target]&amp;rdquo; 2. 获取指定父元素的元素: &amp;ldquo;div &amp;gt; p&amp;rdquo; 3. 获取多个分类元素: &amp;ldquo;h2[id], h3[id]&amp;rdquo; 获取元素的方式 1. id: getElementById, 上下文要求时documnet 2. name: getElementsByName, 一组 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">
+<meta name="description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 config/_default/markup.toml - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 提供一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &amp;ldquo;a[target]&amp;rdquo; 2. 获取指定父元素的元素: &amp;ldquo;div &amp;gt; p&amp;rdquo; 3. 获取多个分类元素: &amp;ldquo;h2[id], h3[id]&amp;rdquo; 获取元素的方式 1. id: getElementById, 上下文要求是documnet 2. name: getElementsByName, 一组 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文章目录标题高亮">
-<meta property="og:description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &ldquo;a[target]&rdquo; 2. 获取指定父元素的元素: &ldquo;div &gt; p&rdquo; 3. 获取多个分类元素: &ldquo;h2[id], h3[id]&rdquo; 获取元素的方式 1. id: getElementById, 上下文要求时documnet 2. name: getElementsByName, 一组 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">
+<meta property="og:description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 config/_default/markup.toml - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 提供一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &ldquo;a[target]&rdquo; 2. 获取指定父元素的元素: &ldquo;div &gt; p&rdquo; 3. 获取多个分类元素: &ldquo;h2[id], h3[id]&rdquo; 获取元素的方式 1. id: getElementById, 上下文要求是documnet 2. name: getElementsByName, 一组 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-12T12:00:38+00:00">
-  <meta property="article:modified_time" content="2023-08-15T21:43:03+08:00">
+  <meta property="article:modified_time" content="2023-08-15T22:52:52+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -75,8 +75,8 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/",
-      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/",
+      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/",
       "name": "文章目录标题高亮",
       "description": "",
       "isPartOf": {
@@ -86,21 +86,21 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-12T12:00:38CET",
-      "dateModified": "2023-08-15T21:43:03CET",
+      "dateModified": "2023-08-15T22:52:52CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -142,7 +142,7 @@
         "@type": "ListItem",
         "position":  5 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/"
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
           }
         }]
     },
@@ -156,13 +156,13 @@
           "headline": "文章目录标题高亮",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
           },
           "datePublished": "2023-06-12T12:00:38CET",
-          "dateModified": "2023-08-15T21:43:03CET",
+          "dateModified": "2023-08-15T22:52:52CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -170,7 +170,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2"
           }
         }
       ]
@@ -195,7 +195,7 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
           "caption": "文章目录标题高亮"
@@ -961,7 +961,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -1791,7 +1791,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -2558,7 +2558,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                          <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
                         
                         
                       
@@ -2611,31 +2611,27 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#文章目录">文章目录</a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#文章目录">文章目录</a>
-          <ul>
-            <li><a href="#高亮样式">高亮样式</a></li>
-            <li><a href="#为toc设置类">为ToC设置类</a></li>
-          </ul>
-        </li>
-        <li><a href="#正文标题">正文标题</a></li>
-        <li><a href="#文章目录标题">文章目录标题</a></li>
-        <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
-        <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-        <li><a href="#为当前标题添加-移除高亮">为当前标题添加/移除高亮</a>
-          <ul>
-            <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-            <li><a href="#添加变量-统计高亮标题个数">添加变量，统计高亮标题个数</a></li>
-            <li><a href="#进入观察器回调函数时-更新标题高亮状态-标题满足阈值-或者高亮标题个数大于1-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数时，更新标题高亮状态; 标题满足阈值，或者高亮标题个数大于1，根据高亮状态设置标题，更新高亮个数</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整javascript代码">完整Javascript代码</a></li>
-        <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
+        <li><a href="#高亮样式">高亮样式</a></li>
+        <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
+    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
+    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
+    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
+      <ul>
+        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
+        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
+      </ul>
+    </li>
+    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
       </div>
@@ -2647,31 +2643,27 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#文章目录">文章目录</a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#文章目录">文章目录</a>
-          <ul>
-            <li><a href="#高亮样式">高亮样式</a></li>
-            <li><a href="#为toc设置类">为ToC设置类</a></li>
-          </ul>
-        </li>
-        <li><a href="#正文标题">正文标题</a></li>
-        <li><a href="#文章目录标题">文章目录标题</a></li>
-        <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
-        <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-        <li><a href="#为当前标题添加-移除高亮">为当前标题添加/移除高亮</a>
-          <ul>
-            <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-            <li><a href="#添加变量-统计高亮标题个数">添加变量，统计高亮标题个数</a></li>
-            <li><a href="#进入观察器回调函数时-更新标题高亮状态-标题满足阈值-或者高亮标题个数大于1-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数时，更新标题高亮状态; 标题满足阈值，或者高亮标题个数大于1，根据高亮状态设置标题，更新高亮个数</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整javascript代码">完整Javascript代码</a></li>
-        <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
+        <li><a href="#高亮样式">高亮样式</a></li>
+        <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
+    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
+    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
+    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
+      <ul>
+        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
+        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
+      </ul>
+    </li>
+    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
   </nav>
@@ -2706,31 +2698,27 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#文章目录">文章目录</a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#文章目录">文章目录</a>
-          <ul>
-            <li><a href="#高亮样式">高亮样式</a></li>
-            <li><a href="#为toc设置类">为ToC设置类</a></li>
-          </ul>
-        </li>
-        <li><a href="#正文标题">正文标题</a></li>
-        <li><a href="#文章目录标题">文章目录标题</a></li>
-        <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
-        <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-        <li><a href="#为当前标题添加-移除高亮">为当前标题添加/移除高亮</a>
-          <ul>
-            <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-            <li><a href="#添加变量-统计高亮标题个数">添加变量，统计高亮标题个数</a></li>
-            <li><a href="#进入观察器回调函数时-更新标题高亮状态-标题满足阈值-或者高亮标题个数大于1-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数时，更新标题高亮状态; 标题满足阈值，或者高亮标题个数大于1，根据高亮状态设置标题，更新高亮个数</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整javascript代码">完整Javascript代码</a></li>
-        <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
+        <li><a href="#高亮样式">高亮样式</a></li>
+        <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
+    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
+    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
+    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
+      <ul>
+        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
+        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
+      </ul>
+    </li>
+    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
       </div>
@@ -2742,31 +2730,27 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#文章目录">文章目录</a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#便签">便签</a></li>
-        <li><a href="#文章目录">文章目录</a>
-          <ul>
-            <li><a href="#高亮样式">高亮样式</a></li>
-            <li><a href="#为toc设置类">为ToC设置类</a></li>
-          </ul>
-        </li>
-        <li><a href="#正文标题">正文标题</a></li>
-        <li><a href="#文章目录标题">文章目录标题</a></li>
-        <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
-        <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-        <li><a href="#为当前标题添加-移除高亮">为当前标题添加/移除高亮</a>
-          <ul>
-            <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-            <li><a href="#添加变量-统计高亮标题个数">添加变量，统计高亮标题个数</a></li>
-            <li><a href="#进入观察器回调函数时-更新标题高亮状态-标题满足阈值-或者高亮标题个数大于1-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数时，更新标题高亮状态; 标题满足阈值，或者高亮标题个数大于1，根据高亮状态设置标题，更新高亮个数</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整javascript代码">完整Javascript代码</a></li>
-        <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
+        <li><a href="#高亮样式">高亮样式</a></li>
+        <li><a href="#为toc设置类">为ToC设置类</a></li>
       </ul>
     </li>
+    <li><a href="#正文标题">正文标题</a></li>
+    <li><a href="#文章目录标题">文章目录标题</a></li>
+    <li><a href="#将文章目录和正文标题关联">将文章目录和正文标题关联</a></li>
+    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
+    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
+      <ul>
+        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
+        <li><a href="#添加变量-保存高亮标题个数">添加变量，保存高亮标题个数</a></li>
+        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
+      </ul>
+    </li>
+    <li><a href="#完整javascript代码">完整Javascript代码</a></li>
+    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
   </nav>
@@ -2778,6 +2762,7 @@
 <li>设置高亮样式 <code>css</code> <br/></li>
 <li>使用Intersection Observer实现 <code>JavaScript</code> <br/></li>
 <li>文章目录设置 <br/>
+config/_default/markup.toml <br/>
 <table>
 <thead>
 <tr>
@@ -2819,7 +2804,7 @@
 </tr>
 <tr>
 <td></td>
-<td>3. 一种实现</td>
+<td>3. 提供一种实现</td>
 </tr>
 <tr>
 <td><a href="https://blog.csdn.net/dangbai01_/article/details/120130875">高亮样式</a></td>
@@ -2859,7 +2844,7 @@
 </tr>
 <tr>
 <td><a href="https://www.jianshu.com/p/6fefda57b51f">获取元素的方式</a></td>
-<td>1. id: getElementById, 上下文要求时documnet</td>
+<td>1. id: getElementById, 上下文要求是documnet</td>
 </tr>
 <tr>
 <td></td>
@@ -2926,7 +2911,7 @@ if (toc.length === headings.length) {
 </code></pre>
 <h2 id="搭建交叉观察框架">搭建交叉观察框架 <a href="#%e6%90%ad%e5%bb%ba%e4%ba%a4%e5%8f%89%e8%a7%82%e5%af%9f%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
-<li>触发条件：当标题的intersectionRatio变为1，或者不再为1时，对标题进行处理 <br/>
+<li>触发条件：当标题的intersectionRatio变为threshold，或者不再为threshold时，对标题进行处理 <br/>
 <pre><code class="language-javascript">const intersectionOptions = {
   threshold: 1.0
 }
@@ -2947,20 +2932,21 @@ if (toc.length === headings.length) {
 </code></pre>
 </li>
 </ol>
-<h2 id="为当前标题添加-移除高亮">为当前标题添加/移除高亮 <a href="#%e4%b8%ba%e5%bd%93%e5%89%8d%e6%a0%87%e9%a2%98%e6%b7%bb%e5%8a%a0-%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="为标题添加-移除高亮">为标题添加/移除高亮 <a href="#%e4%b8%ba%e6%a0%87%e9%a2%98%e6%b7%bb%e5%8a%a0-%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
-<li>标题的intersectionRatio满足阈值，isIntersecting为true，intersectionRatio不满足阈值，其为false <br/></li>
-<li>若标题isIntersecting变为true, 为其添加高亮; 变为false，若当前只一个标题高亮, 不作处理, 否则, 移除高亮 <br/></li>
+<li>标题的intersectionRatio满足阈值，isIntersecting为true，intersectionRatio不满足阈值，为false <br/></li>
+<li>根据isIntersecting更新标题高亮状态 <br/></li>
+<li>新增高亮标题, 或者有多个标题高亮时移除高亮: 根据高亮状态刷新, 更新高亮标题个数 <br/></li>
 </ol>
 <h3 id="添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false <a href="#%e6%b7%bb%e5%8a%a0%e5%85%a8%e5%b1%80%e6%95%b0%e7%bb%84-%e4%bf%9d%e5%ad%98%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%bafalse" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">let headingFlag;
 
 headingFlag = new Array(headings.length).fill(false);
 </code></pre>
-<h3 id="添加变量-统计高亮标题个数">添加变量，统计高亮标题个数 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e7%bb%9f%e8%ae%a1%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="添加变量-保存高亮标题个数">添加变量，保存高亮标题个数 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e4%bf%9d%e5%ad%98%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">let headingCnt = 0;
 </code></pre>
-<h3 id="进入观察器回调函数时-更新标题高亮状态-标题满足阈值-或者高亮标题个数大于1-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数时，更新标题高亮状态; 标题满足阈值，或者高亮标题个数大于1，根据高亮状态设置标题，更新高亮个数 <a href="#%e8%bf%9b%e5%85%a5%e8%a7%82%e5%af%9f%e5%99%a8%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0%e6%97%b6-%e6%9b%b4%e6%96%b0%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e6%a0%87%e9%a2%98%e6%bb%a1%e8%b6%b3%e9%98%88%e5%80%bc-%e6%88%96%e8%80%85%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0%e5%a4%a7%e4%ba%8e1-%e6%a0%b9%e6%8d%ae%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81%e8%ae%be%e7%bd%ae%e6%a0%87%e9%a2%98-%e6%9b%b4%e6%96%b0%e9%ab%98%e4%ba%ae%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数 <a href="#%e8%bf%9b%e5%85%a5%e8%a7%82%e5%af%9f%e5%99%a8%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0-%e6%9b%b4%e6%96%b0%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e6%96%b0%e5%a2%9e%e9%ab%98%e4%ba%ae-%e6%88%96%e8%80%85%e6%9c%89%e5%a4%9a%e4%b8%aa%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e6%97%b6%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae-%e6%a0%b9%e6%8d%ae%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81%e8%ae%be%e7%bd%ae%e6%a0%87%e9%a2%98-%e6%9b%b4%e6%96%b0%e9%ab%98%e4%ba%ae%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">function refreshHighlight() {
     headingCnt = 0;
     for (var i = 0; i &lt; headingFlag.length; ++i) {
@@ -3008,7 +2994,7 @@ function refreshHighlight() {
 
 const intersectionOptions = {
   threshold: 1.0
-}
+};
 
 document.addEventListener('DOMContentLoaded', () =&gt; {
   const headings = Array.apply(null, document.querySelectorAll('h2[id], h3[id]')).filter(function (value, index, arr) {
@@ -3019,6 +3005,8 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   if (toc.length === headings.length) {
     addHeadingIdx(toc);
     addHeadingIdx(headings);
+
+    headingFlag = new Array(headings.length).fill(false);
 
     const headingObserver = new IntersectionObserver(headings =&gt; {
       headings.forEach(heading =&gt; {
@@ -3033,13 +3021,11 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
     headings.forEach((heading) =&gt; {
       headingObserver.observe(heading);
     });
-
-    headingFlag = new Array(headings.length).fill(false);
   }
 });
 </code></pre>
 <h2 id="doks主题执行javascript脚本">Doks主题执行JavaScript脚本 <a href="#doks%e4%b8%bb%e9%a2%98%e6%89%a7%e8%a1%8cjavascript%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p>参考assets/highlight.js的执行 <br/></p>
+<p>参照assets/highlight.js的执行 <br/></p>
 <p><code>layouts/partials/footer/script-footer.html</code>     <br/></p>
 <ol>
 <li><code>10</code> <br/>
@@ -3108,9 +3094,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.3a4c84d82d38484d20646d85876f7f93f5986d49a1cad032e504e3ca679facace1c8198a0c52c51bad7b172ca466902f1be9138e15d942f215aff423b361cd98.js" integrity="sha512-OkyE2C04SE0gZG2Fh29/k/WYbUmhytAy5QTjymefrKzhyBmKDFLFG617FyykZpAvG&#43;kTjhXZQvIVr/Qjs2HNmA==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.cc236d501a12764e9145542a58cafa58af002614406bea27263078ce7f2010ab9b71c38da637249e14dfa5e7c69732c6abbc3fcea66d368e8eeb770860376128.js" integrity="sha512-zCNtUBoSdk6RRVQqWMr6WK8AJhRAa&#43;onJjB4zn8gEKubccONpjcknhTfpefGlzLGq7w/zqZtNo6O63cIYDdhKA==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.54aedd843d2b5bef8785b21d239df1787b582761d89873a10020dac181ea1be62888b88fbc64f150240eeb747e2fa34bf76c8d64f0b97965f8f76deccfe9cb12.js" integrity="sha512-VK7dhD0rW&#43;&#43;HhbIdI53xeHtYJ2HYmHOhACDawYHqG&#43;YoiLiPvGTxUCQO63R&#43;L6NL92yNZPC5eWX4923sz&#43;nLEg==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.0e6c24cd7bec9fc664a6475707567bf7fa9cd4db0251460957839a12545a3df70fa2a2fb18e57394a2ea61a3aac4705a05fdba84c2722692fb494f5e1f7b9cdd.js" integrity="sha512-DmwkzXvsn8ZkpkdXB1Z79/qc1NsCUUYJV4OaElRaPfcPoqL7GOVzlKLqYaOqxHBaBf26hMJyJpL7SU9eH3uc3Q==" crossorigin="anonymous" defer></script>
   
     
   </body>
