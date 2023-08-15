@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>文章目录跟随文章内容滚动 - 六一的部落格</title>
-<meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc my-toc 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+<meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文章目录跟随文章内容滚动">
-<meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc my-toc 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+<meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-10T10:46:13+00:00">
-  <meta property="article:modified_time" content="2023-08-16T02:34:46+08:00">
+  <meta property="article:modified_time" content="2023-08-16T02:58:00+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-10T10:46:13CET",
-      "dateModified": "2023-08-16T02:34:46CET",
+      "dateModified": "2023-08-16T02:58:00CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "datePublished": "2023-06-10T10:46:13CET",
-          "dateModified": "2023-08-16T02:34:46CET",
+          "dateModified": "2023-08-16T02:58:00CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2750,8 +2750,8 @@
 <thead>
 <tr>
 <th>-</th>
-<th>docs-toc</th>
-<th>my-toc</th>
+<th>docs-toc scrollTop</th>
+<th>my-toc scrollTop</th>
 <th>文章目录跳转</th>
 </tr>
 </thead>
@@ -2819,7 +2819,7 @@ myToc.querySelectorAll('a').forEach(entry =&gt; {
 }
 </code></pre>
 </li>
-<li>根据页面能容纳的标题数，经过测试，取其1/6，可以使得高亮标题在文章目录偏上位置 <br/>
+<li>计算页面能容纳的标题数，经过测试，取其1/6，可以使得高亮标题在文章目录偏上位置 <br/>
 <pre><code class="language-javascript">function computeUpIdx() {
   const fullToc = document.querySelector('.docs-toc');
   const myToc = document.querySelector('.my-toc');
@@ -2830,7 +2830,7 @@ myToc.querySelectorAll('a').forEach(entry =&gt; {
 </code></pre>
 </li>
 <li>添加全局变量, 保存单个标题高度和高亮标题理想位置 <br/>
-<pre><code class="language-javascript">let headingHeight, UpIdx;
+<pre><code class="language-javascript">let headingHeight, upIdx;
 
 headingHeight = computeHeadingHeight();
 upIdx = computeUpIdx();
@@ -2867,7 +2867,7 @@ window.onscroll = function () {
 </code></pre>
 <h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
 <pre><code class="language-javascript">const followTimerInterval = 300;
-let headingHeight, UpIdx;
+let headingHeight, upIdx;
 let followTimer = null;
 
 function computeHeadingHeight() {
@@ -2962,9 +2962,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.0b30f5448a6537b1fa3b326ab3788ecca1975bb49fdc163ad621f73c547890f69392873d8ac6fca741999d82aecc06d16c2e30c21938235e982eac079ca14cb5.js" integrity="sha512-CzD1RIplN7H6OzJqs3iOzKGXW7Sf3BY61iH3PFR4kPaTkoc9isb8p0GZnYKuzAbRbC4wwhk4I16YLqwHnKFMtQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.c4c44c8f529007423e4264d35975079d3f5bac709bcd6323224ceb620aa827032ad1568b72dd5dc110add60f96fe3d28c183dec38c05fcdd13518a71269adfe2.js" integrity="sha512-xMRMj1KQB0I&#43;QmTTWXUHnT9brHCbzWMjIkzrYgqoJwMq0VaLct1dwRCt1g&#43;W/j0owYPew4wF/N0TUYpxJprf4g==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.91cd0f98087e76b8f7fd2595d20ac794dbb8583c8e3b30971783318e29b9e8d2d52e1807259e4790ae43f4d84743312abcbc73c095fe19f8a736556b49fedf6d.js" integrity="sha512-kc0PmAh&#43;drj3/SWV0grHlNu4WDyOOzCXF4Mxjim56NLVLhgHJZ5HkK5D9NhHQzEqvLxzwJX&#43;GfinNlVrSf7fbQ==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.4b67d4020de91797f29c0df60944b9a64cc19e92fbc3cac22156a1c7781a0f6547fcb3f138b11cdda42d594ee41b9d90fced5588a6f3b210726fbd16a1f89502.js" integrity="sha512-S2fUAg3pF5fynA32CUS5pkzBnpL7w8rCIVahx3gaD2VH/LPxOLEc3aQtWU7kG52Q/O1ViKbzshByb70WofiVAg==" crossorigin="anonymous" defer></script>
   
     
   </body>
