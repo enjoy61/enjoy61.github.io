@@ -24,5 +24,14 @@
       <description>便签 # - 环状滚动 1. html格式 2. css样式 3. transform: translateX 多个li显示在一行 display: inline-block 基础html格式+css样式 通过js设置css参数 1. element.style.setProperty(&amp;rsquo;transform&amp;rsquo;, &amp;rsquo;translateX(1px)&#39;) 2. element.style.getPropertyValue(&amp;rsquo;transform&#39;) 3. element.style.cssText = &amp;rsquo;left: 10px&#39; 4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置 css Position 1. li标签不自动换行: absolute, fixed 2. 计算绝对位置 样式 # css - imageList height 滚动框高度, 滚动框之间的边界 overflow 向右滚动时, 溢出不触发滚动条 perspective 1. 滚动框左右的边界 2. 垂直滚动时, 滚动框跟随滚动 li width 图片宽度 padding 第一个参数: top边界, 滚动框之间的间隔 第二个参数: 嵌套时长宽边界 position 1. 多个li不自动换行 2. 采用绝对位置 3. fixed或absolute都可 display li显示在一行 .</description>
     </item>
     
+    <item>
+      <title>文章目录标题高亮</title>
+      <link>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/</link>
+      <pubDate>Mon, 12 Jun 2023 12:00:38 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%AE%9E%E7%8E%B0%E7%9B%AE%E5%BD%95%E9%AB%98%E4%BA%AE/</guid>
+      <description>说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &amp;ldquo;a[target]&amp;rdquo; 2. 获取指定父元素的元素: &amp;ldquo;div &amp;gt; p&amp;rdquo; 3. 获取多个分类元素: &amp;ldquo;h2[id], h3[id]&amp;rdquo; 获取元素的方式 1. id: getElementById, 上下文要求时documnet 2. name: getElementsByName, 一组 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.</description>
+    </item>
+    
   </channel>
 </rss>
