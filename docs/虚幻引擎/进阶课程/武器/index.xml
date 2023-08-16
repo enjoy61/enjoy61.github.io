@@ -69,5 +69,16 @@
       <description>说明 # 从交点获取击中的Actor信息 创建MakeDamage, 击中目标时调用, 传入相交信息 # C++ 搭建框架 # 声明 preotected ShootThemUp: Weapon/STUBaseWeapon.h void MakeDamage(const FHitResult&amp;amp; HitResult); 空定义 ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp;amp; HitResult) {} MakeShot中调用 ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 获取击中的Actor ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; 添加数据成员: 伤害值 protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 对Actor造成伤害, 直接对其调用TakeDamage DamagedActor-&amp;gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物 # 虚幻编辑器 运行时显示CapsuleComponent show collision 游戏角色死亡, CapsuleComponent成为障碍物 死亡处理函数中, 禁止CapsuleComponent的碰撞 # C++ ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
+    <item>
+      <title>瞄准偏移</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/</link>
+      <pubDate>Wed, 16 Aug 2023 13:59:48 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/</guid>
+      <description>概览 # Aim Offset 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼网格体 命名前缀为AO_ 本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移 # 射击瞄准相较之前自然一些 使用到的动画资产 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量 # 通过游戏角色控制器旋转CameraComponent实现游戏角色的视角旋转 水平旋转游戏角色时, 身体跟随 绘制CameraComponent的前进向量 # 获取CameraComponent的旋转分量, 通过旋转分量获取前进向量 在动画蓝图EventGraph计算CameraComponent旋转分量 # ABP_BaseCharacter &amp;gt; EventGraph 获取CameraComponent的旋转分量 # - 输入 Pawn 函数 GetBaseAimRotation: 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 保存旋转分量到变量, AnimGraph中会用到
+Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现
+根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制 # - 起点 游戏角色位置 Pawn &amp;gt; GetActorLocation 偏移 放大的CameraComponent前进向量 Pawn &amp;gt; GetBaseAimRotation &amp;gt; GetForwardVector 终点 起点 + 偏移 乘法输入转为float: 右键另一个输入 DrawDebugLine参数 - Duration 0.</description>
+    </item>
+    
   </channel>
 </rss>
