@@ -39,7 +39,7 @@
       <pubDate>Sat, 10 Jun 2023 10:46:13 +0000</pubDate>
       
       <guid>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/</guid>
-      <description>说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.</description>
+      <description>说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.</description>
     </item>
     
   </channel>

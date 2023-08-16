@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>文章目录跟随文章内容滚动 - 六一的部落格</title>
-<meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+<meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文章目录跟随文章内容滚动">
-<meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题相对位置 # let i = 0; myToc.">
+<meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-10T10:46:13+00:00">
-  <meta property="article:modified_time" content="2023-08-16T02:58:00+08:00">
+  <meta property="article:modified_time" content="2023-08-16T13:39:05+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-10T10:46:13CET",
-      "dateModified": "2023-08-16T02:58:00CET",
+      "dateModified": "2023-08-16T13:39:05CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "datePublished": "2023-06-10T10:46:13CET",
-          "dateModified": "2023-08-16T02:58:00CET",
+          "dateModified": "2023-08-16T13:39:05CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2637,9 +2637,9 @@
     <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#为标题排序-厘清高亮标题在文章目录中的位置">为标题排序, 厘清高亮标题在文章目录中的位置</a></li>
         <li><a href="#文章目录结构">文章目录结构</a></li>
-        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#注册监听处理-重启定时器-延时滚动文章目录">注册监听处理：重启定时器, 延时滚动文章目录</a></li>
         <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
@@ -2660,9 +2660,9 @@
     <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#为标题排序-厘清高亮标题在文章目录中的位置">为标题排序, 厘清高亮标题在文章目录中的位置</a></li>
         <li><a href="#文章目录结构">文章目录结构</a></li>
-        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#注册监听处理-重启定时器-延时滚动文章目录">注册监听处理：重启定时器, 延时滚动文章目录</a></li>
         <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
@@ -2706,9 +2706,9 @@
     <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#为标题排序-厘清高亮标题在文章目录中的位置">为标题排序, 厘清高亮标题在文章目录中的位置</a></li>
         <li><a href="#文章目录结构">文章目录结构</a></li>
-        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#注册监听处理-重启定时器-延时滚动文章目录">注册监听处理：重启定时器, 延时滚动文章目录</a></li>
         <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
@@ -2729,9 +2729,9 @@
     <li><a href="#进入判断">进入判断</a></li>
     <li><a href="#滚动计算">滚动计算</a>
       <ul>
-        <li><a href="#为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置</a></li>
+        <li><a href="#为标题排序-厘清高亮标题在文章目录中的位置">为标题排序, 厘清高亮标题在文章目录中的位置</a></li>
         <li><a href="#文章目录结构">文章目录结构</a></li>
-        <li><a href="#注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动</a></li>
+        <li><a href="#注册监听处理-重启定时器-延时滚动文章目录">注册监听处理：重启定时器, 延时滚动文章目录</a></li>
         <li><a href="#实现文章目录滚动">实现文章目录滚动</a></li>
       </ul>
     </li>
@@ -2803,7 +2803,7 @@
 });
 </code></pre>
 <h2 id="滚动计算">滚动计算 <a href="#%e6%bb%9a%e5%8a%a8%e8%ae%a1%e7%ae%97" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="为标题排序-厘清高亮标题相对位置">为标题排序, 厘清高亮标题相对位置 <a href="#%e4%b8%ba%e6%a0%87%e9%a2%98%e6%8e%92%e5%ba%8f-%e5%8e%98%e6%b8%85%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e7%9b%b8%e5%af%b9%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="为标题排序-厘清高亮标题在文章目录中的位置">为标题排序, 厘清高亮标题在文章目录中的位置 <a href="#%e4%b8%ba%e6%a0%87%e9%a2%98%e6%8e%92%e5%ba%8f-%e5%8e%98%e6%b8%85%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e5%9c%a8%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e4%b8%ad%e7%9a%84%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">let i = 0;
 myToc.querySelectorAll('a').forEach(entry =&gt; {
     entry.setAttribute('scrollIdx', i++);
@@ -2824,37 +2824,32 @@ myToc.querySelectorAll('a').forEach(entry =&gt; {
   const fullToc = document.querySelector('.docs-toc');
   const myToc = document.querySelector('.my-toc');
   const offset = fullToc.scrollHeight - myToc.scrollHeight;
-  const max = parseInt((window.innerHeight - offset) / headingHeight);
+  const max = parseInt((window.innerHeight - offset) / HeadingHeight);
   return parseInt(max / 6);
 }
 </code></pre>
 </li>
 <li>添加全局变量, 保存单个标题高度和高亮标题理想位置 <br/>
-<pre><code class="language-javascript">let headingHeight, upIdx;
+<pre><code class="language-javascript">let HeadingHeight, UpIdx;
 
-headingHeight = computeHeadingHeight();
-upIdx = computeUpIdx();
+HeadingHeight = computeHeadingHeight();
+UpIdx = computeUpIdx();
 </code></pre>
 </li>
 </ol>
-<h3 id="注册监听处理-开启定时器-延时文章目录滚动">注册监听处理, 开启定时器, 延时文章目录滚动 <a href="#%e6%b3%a8%e5%86%8c%e7%9b%91%e5%90%ac%e5%a4%84%e7%90%86-%e5%bc%80%e5%90%af%e5%ae%9a%e6%97%b6%e5%99%a8-%e5%bb%b6%e6%97%b6%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">const followTimerInterval = 300;
-let followTimer = null; // 全局
+<h3 id="注册监听处理-重启定时器-延时滚动文章目录">注册监听处理：重启定时器, 延时滚动文章目录 <a href="#%e6%b3%a8%e5%86%8c%e7%9b%91%e5%90%ac%e5%a4%84%e7%90%86-%e9%87%8d%e5%90%af%e5%ae%9a%e6%97%b6%e5%99%a8-%e5%bb%b6%e6%97%b6%e6%bb%9a%e5%8a%a8%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-javascript">let FollowTimer = null; // 全局
+const FollowTimerInterval = 300;
 
 window.onscroll = function () {
-    clearTimeout(followTimer);
-    followTimer = setTimeout(function () {
-        // 文章目录滚动
+    clearTimeout(FollowTimer);
+    FollowTimer = setTimeout(function () {
         scrollFollow();
-    }, followTimerInterval);
+    }, FollowTimerInterval);
 };
 </code></pre>
 <h3 id="实现文章目录滚动">实现文章目录滚动 <a href="#%e5%ae%9e%e7%8e%b0%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>无标题高亮, 不作处理 <br/></li>
-<li>多个标题高亮时, 选择第一个标题计算滚动偏移 <br/></li>
-</ol>
-<!--listend-->
+<p>无标题高亮, 不作处理；多个标题高亮时, 选择第一个标题计算滚动偏移 <br/></p>
 <pre><code class="language-javascript">function scrollFollow() {
   const activeHeadings = document.querySelector('.my-toc').querySelectorAll('a.active');
   if (activeHeadings.length &gt; 0) {
@@ -2962,9 +2957,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.c4c44c8f529007423e4264d35975079d3f5bac709bcd6323224ceb620aa827032ad1568b72dd5dc110add60f96fe3d28c183dec38c05fcdd13518a71269adfe2.js" integrity="sha512-xMRMj1KQB0I&#43;QmTTWXUHnT9brHCbzWMjIkzrYgqoJwMq0VaLct1dwRCt1g&#43;W/j0owYPew4wF/N0TUYpxJprf4g==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.cd2e34ffcdc7fa0015b31ddaf68a333e3fcd6d02b9d040e785da8aff8a4ab113f31ca219e85ffc256f773b3d63fc2f7aaf1f6b3670bda714ca20b9d1986a993a.js" integrity="sha512-zS40/83H&#43;gAVsx3a9oozPj/NbQK50EDnhdqK/4pKsRPzHKIZ6F/8JW93Oz1j/C96rx9rNnC9pxTKILnRmGqZOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.4b67d4020de91797f29c0df60944b9a64cc19e92fbc3cac22156a1c7781a0f6547fcb3f138b11cdda42d594ee41b9d90fced5588a6f3b210726fbd16a1f89502.js" integrity="sha512-S2fUAg3pF5fynA32CUS5pkzBnpL7w8rCIVahx3gaD2VH/LPxOLEc3aQtWU7kG52Q/O1ViKbzshByb70WofiVAg==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.4a95abeeb663b7b724f49e680904647a7783c2535e07d36696ce067f577181267e1a8dc6c856ec3b76bbfc623980533de0a6322c50b219dc7df26853152fc923.js" integrity="sha512-SpWr7rZjt7ck9J5oCQRkeneDwlNeB9Nmls4Gf1dxgSZ&#43;Go3GyFbsO3a7/GI5gFM94KYyLFCyGdx98mhTFS/JIw==" crossorigin="anonymous" defer></script>
   
     
   </body>

@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-12T12:00:38+00:00">
-  <meta property="article:modified_time" content="2023-08-16T01:53:08+08:00">
+  <meta property="article:modified_time" content="2023-08-16T13:32:35+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-12T12:00:38CET",
-      "dateModified": "2023-08-16T01:53:08CET",
+      "dateModified": "2023-08-16T13:32:35CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
           },
           "datePublished": "2023-06-12T12:00:38CET",
-          "dateModified": "2023-08-16T01:53:08CET",
+          "dateModified": "2023-08-16T13:32:35CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2982,21 +2982,21 @@ addHeadingIdx(headings);
 <li>新增高亮标题, 或者有多个标题高亮时移除高亮: 根据高亮状态刷新, 更新高亮标题个数 <br/></li>
 </ol>
 <h3 id="添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false <a href="#%e6%b7%bb%e5%8a%a0%e5%85%a8%e5%b1%80%e6%95%b0%e7%bb%84-%e4%bf%9d%e5%ad%98%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%bafalse" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">let headingFlag;
+<pre><code class="language-javascript">let HeadingFlag;
 
-headingFlag = new Array(headings.length).fill(false);
+HeadingFlag = new Array(headings.length).fill(false);
 </code></pre>
 <h3 id="添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e4%bf%9d%e5%ad%98%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%ba0" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">let headingCnt;
+<pre><code class="language-javascript">let HeadingCnt;
 
-headingCnt = 0;
+HeadingCnt = 0;
 </code></pre>
 <h3 id="进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数 <a href="#%e8%bf%9b%e5%85%a5%e8%a7%82%e5%af%9f%e5%99%a8%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0-%e6%9b%b4%e6%96%b0%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e6%96%b0%e5%a2%9e%e9%ab%98%e4%ba%ae-%e6%88%96%e8%80%85%e6%9c%89%e5%a4%9a%e4%b8%aa%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e6%97%b6%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae-%e6%a0%b9%e6%8d%ae%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81%e8%ae%be%e7%bd%ae%e6%a0%87%e9%a2%98-%e6%9b%b4%e6%96%b0%e9%ab%98%e4%ba%ae%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-javascript">function refreshHighlight() {
-    headingCnt = 0;
-    for (let i = 0; i &lt; headingFlag.length; ++i) {
-        if (headingFlag[i]) {
-            headingCnt++;
+    HeadingCnt = 0;
+    for (let i = 0; i &lt; HeadingFlag.length; ++i) {
+        if (HeadingFlag[i]) {
+            ++HeadingCnt;
             document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
         }
         else
@@ -3007,14 +3007,14 @@ headingCnt = 0;
 }
 
 const idx = heading.target.getAttribute('headingIdx');
-if ((headingFlag[idx] = heading.isIntersecting) || (headingCnt !== 1)) {
+if ((HeadingFlag[idx] = heading.isIntersecting) || (HeadingCnt !== 1)) {
     refreshHighlight();
 }
 </code></pre>
 <h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
 <p>assets/js/toc.js <br/></p>
-<pre><code class="language-javascript">let headingFlag;
-let headingCnt;
+<pre><code class="language-javascript">let HeadingFlag;
+let HeadingCnt;
 
 function addHeadingIdx(list) {
   let i = 0;
@@ -3024,10 +3024,10 @@ function addHeadingIdx(list) {
 }
 
 function refreshHighlight() {
-  headingCnt = 0;
-  for (let i = 0; i &lt; headingFlag.length; ++i) {
-    if (headingFlag[i]) {
-      headingCnt++;
+  HeadingCnt = 0;
+  for (let i = 0; i &lt; HeadingFlag.length; ++i) {
+    if (HeadingFlag[i]) {
+      ++HeadingCnt;
       document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
     }
     else
@@ -3051,8 +3051,8 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   addHeadingIdx(tocHeadings);
   addHeadingIdx(headings);
 
-  headingFlag = new Array(headings.length).fill(false);
-  headingCnt = 0;
+  HeadingFlag = new Array(headings.length).fill(false);
+  HeadingCnt = 0;
 
   const intersectionOptions = {
     threshold: 1.0
@@ -3060,9 +3060,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
   const headingObserver = new IntersectionObserver(headings =&gt; {
     headings.forEach(heading =&gt; {
-      // console.log('ratio', heading.target.getAttribute('id'), heading.intersectionRatio, heading.isIntersecting, headingCnt);
+      // console.log('ratio', heading.target.getAttribute('id'), heading.intersectionRatio, heading.isIntersecting, HeadingCnt);
       const idx = heading.target.getAttribute('headingIdx');
-      if ((headingFlag[idx] = heading.isIntersecting) || (headingCnt !== 1)) {
+      if ((HeadingFlag[idx] = heading.isIntersecting) || (HeadingCnt !== 1)) {
         refreshHighlight();
       }
     });
@@ -3143,9 +3143,9 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.c4c44c8f529007423e4264d35975079d3f5bac709bcd6323224ceb620aa827032ad1568b72dd5dc110add60f96fe3d28c183dec38c05fcdd13518a71269adfe2.js" integrity="sha512-xMRMj1KQB0I&#43;QmTTWXUHnT9brHCbzWMjIkzrYgqoJwMq0VaLct1dwRCt1g&#43;W/j0owYPew4wF/N0TUYpxJprf4g==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.cd2e34ffcdc7fa0015b31ddaf68a333e3fcd6d02b9d040e785da8aff8a4ab113f31ca219e85ffc256f773b3d63fc2f7aaf1f6b3670bda714ca20b9d1986a993a.js" integrity="sha512-zS40/83H&#43;gAVsx3a9oozPj/NbQK50EDnhdqK/4pKsRPzHKIZ6F/8JW93Oz1j/C96rx9rNnC9pxTKILnRmGqZOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.4b67d4020de91797f29c0df60944b9a64cc19e92fbc3cac22156a1c7781a0f6547fcb3f138b11cdda42d594ee41b9d90fced5588a6f3b210726fbd16a1f89502.js" integrity="sha512-S2fUAg3pF5fynA32CUS5pkzBnpL7w8rCIVahx3gaD2VH/LPxOLEc3aQtWU7kG52Q/O1ViKbzshByb70WofiVAg==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.4a95abeeb663b7b724f49e680904647a7783c2535e07d36696ce067f577181267e1a8dc6c856ec3b76bbfc623980533de0a6322c50b219dc7df26853152fc923.js" integrity="sha512-SpWr7rZjt7ck9J5oCQRkeneDwlNeB9Nmls4Gf1dxgSZ&#43;Go3GyFbsO3a7/GI5gFM94KYyLFCyGdx98mhTFS/JIw==" crossorigin="anonymous" defer></script>
   
     
   </body>
