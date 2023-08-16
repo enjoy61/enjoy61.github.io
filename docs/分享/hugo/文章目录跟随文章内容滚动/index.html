@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-10T10:46:13+00:00">
-  <meta property="article:modified_time" content="2023-08-16T13:39:05+08:00">
+  <meta property="article:modified_time" content="2023-08-16T13:57:12+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-10T10:46:13CET",
-      "dateModified": "2023-08-16T13:39:05CET",
+      "dateModified": "2023-08-16T13:57:12CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "datePublished": "2023-06-10T10:46:13CET",
-          "dateModified": "2023-08-16T13:39:05CET",
+          "dateModified": "2023-08-16T13:57:12CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2819,7 +2819,7 @@ myToc.querySelectorAll('a').forEach(entry =&gt; {
 }
 </code></pre>
 </li>
-<li>计算页面能容纳的标题数，经过测试，取其1/6，可以使得高亮标题在文章目录偏上位置 <br/>
+<li>计算窗口能容纳的标题数，经过测试，取其1/6，可以使高亮标题始终处于文章目录偏上位置 <br/>
 <pre><code class="language-javascript">function computeUpIdx() {
   const fullToc = document.querySelector('.docs-toc');
   const myToc = document.querySelector('.my-toc');
@@ -2849,21 +2849,21 @@ window.onscroll = function () {
 };
 </code></pre>
 <h3 id="实现文章目录滚动">实现文章目录滚动 <a href="#%e5%ae%9e%e7%8e%b0%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h3>
-<p>无标题高亮, 不作处理；多个标题高亮时, 选择第一个标题计算滚动偏移 <br/></p>
+<p>无高亮标题, 不作处理；多个标题高亮时, 基于第一个标题计算滚动偏移 <br/></p>
 <pre><code class="language-javascript">function scrollFollow() {
   const activeHeadings = document.querySelector('.my-toc').querySelectorAll('a.active');
   if (activeHeadings.length &gt; 0) {
     const heading = activeHeadings.item(0);
     const idx = heading.getAttribute('scrollIdx');
     const scrollTarget = idx - upIdx;
-    document.querySelector('.docs-toc').scrollTop = headingHeight * scrollTarget;
+    document.querySelector('.docs-toc').scrollTop = HeadingHeight * scrollTarget;
   }
 }
 </code></pre>
 <h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
-<pre><code class="language-javascript">const followTimerInterval = 300;
-let headingHeight, upIdx;
-let followTimer = null;
+<pre><code class="language-javascript">let HeadingHeight, UpIdx;
+let FollowTimer = null;
+const FollowTimerInterval = 300;
 
 function computeHeadingHeight() {
   const toc = document.querySelector('.my-toc');
@@ -2874,7 +2874,7 @@ function computeUpIdx() {
   const fullToc = document.querySelector('.docs-toc');
   const myToc = document.querySelector('.my-toc');
   const offset = fullToc.scrollHeight - myToc.scrollHeight;
-  const max = parseInt((window.innerHeight - offset) / headingHeight);
+  const max = parseInt((window.innerHeight - offset) / HeadingHeight);
   return parseInt(max / 6);
 }
 
@@ -2883,8 +2883,8 @@ function scrollFollow() {
   if (activeHeadings.length &gt; 0) {
     const heading = activeHeadings.item(0);
     const idx = heading.getAttribute('scrollIdx');
-    const scrollTarget = idx - upIdx;
-    document.querySelector('.docs-toc').scrollTop = headingHeight * scrollTarget;
+    const scrollTarget = idx - UpIdx;
+    document.querySelector('.docs-toc').scrollTop = HeadingHeight * scrollTarget;
   }
 }
 
@@ -2898,14 +2898,14 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
     entry.setAttribute('scrollIdx', i++);
   });
 
-  headingHeight = computeHeadingHeight();
-  upIdx = computeUpIdx();
+  HeadingHeight = computeHeadingHeight();
+  UpIdx = computeUpIdx();
 
   window.onscroll = function () {
-    clearTimeout(followTimer);
-    followTimer = setTimeout(function () {
+    clearTimeout(FollowTimer);
+    FollowTimer = setTimeout(function () {
       scrollFollow();
-    }, followTimerInterval);
+    }, FollowTimerInterval);
   };
 });
 </code></pre>
@@ -2959,7 +2959,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cd2e34ffcdc7fa0015b31ddaf68a333e3fcd6d02b9d040e785da8aff8a4ab113f31ca219e85ffc256f773b3d63fc2f7aaf1f6b3670bda714ca20b9d1986a993a.js" integrity="sha512-zS40/83H&#43;gAVsx3a9oozPj/NbQK50EDnhdqK/4pKsRPzHKIZ6F/8JW93Oz1j/C96rx9rNnC9pxTKILnRmGqZOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.4a95abeeb663b7b724f49e680904647a7783c2535e07d36696ce067f577181267e1a8dc6c856ec3b76bbfc623980533de0a6322c50b219dc7df26853152fc923.js" integrity="sha512-SpWr7rZjt7ck9J5oCQRkeneDwlNeB9Nmls4Gf1dxgSZ&#43;Go3GyFbsO3a7/GI5gFM94KYyLFCyGdx98mhTFS/JIw==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.c26c2a3c5c8b204686da0fb47b5cb2f4bbc4c5c54bb8c0519d240b0804103241ffd978eabf69b7171ea8e50cd9031e9dd010bc510f60932cbc946fd7be455b41.js" integrity="sha512-wmwqPFyLIEaG2g&#43;0e1yy9LvExcVLuMBRnSQLCAQQMkH/2Xjqv2m3Fx6o5QzZAx6d0BC8UQ9gkyy8lG/XvkVbQQ==" crossorigin="anonymous" defer></script>
   
     
   </body>
