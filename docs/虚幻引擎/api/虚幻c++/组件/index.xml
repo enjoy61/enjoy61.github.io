@@ -25,12 +25,12 @@
     </item>
     
     <item>
-      <title>Skeletal组件</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/</link>
+      <title>SkeletalMesh组件</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletalmesh%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Wed, 21 Jun 2023 21:51:03 +0000</pubDate>
       
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/</guid>
-      <description>USkeletalComponent # 骨骼网格体外形是多边形，内里由具有层级结构的骨骼组成，因此，可以为骨骼网格体编排动画 可以是人，可以是物 可以为骨骼网格体绑定模型 头文件 # #include &amp;quot;Components/SkeletalMeshComponent.h&amp;quot; 相关函数 # - ACharacter::GetMesh 获取Character的骨骼网格体组件 </description>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletalmesh%E7%BB%84%E4%BB%B6/</guid>
+      <description>USkeletalMeshComponent # UE_5.1/Engine/Source/Runtime/Engine/Classes/Components/SkeletalMeshComponent.h 骨骼网格体外形是多边形，内里由具有层级结构的骨骼组成，因此，可以为骨骼网格体编排动画 可以是人，可以是物 可以为骨骼网格体绑定模型 USkeletalMeshComponent和UStaticMeshComponent拥有共同基类UMeshComponent UMeshComponent派生自UPrimitiveComponent, UPrimitiveComponent派生自USceneComponent, 而USceneComponent具有变换属性 ACharacter自带Skeletal组件 头文件 # #include &amp;quot;Components/SkeletalMeshComponent.h&amp;quot; 相关函数 # - ACharacter::GetMesh 获取Character的SkeletalMesh组件 </description>
     </item>
     
     <item>

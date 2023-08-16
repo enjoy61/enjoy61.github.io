@@ -7,12 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 21 Jun 2023 21:55:21 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc++/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>在可变换组件上挂载Actor</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/</link>
+      <title>将Actor附加到可变换组件的挂载点</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</link>
       <pubDate>Wed, 21 Jun 2023 21:56:47 +0000</pubDate>
       
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/</guid>
-      <description>概览 # - 可变换组件 USceneComponent及其派生类 挂载函数 AActor::AttachToComponent 获取骨骼网格体组件 ACharacter::GetMesh 挂载规则集合 FAttachmentTransformRules 应用于挂载规则的枚举类型 EAttachmentRule EAttachmentRule # 概览 # API 应用于挂载规则的枚举类型 UE_5.1/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h 枚举成员 # Actor最终变换矩阵 SnapToTarget 组件变换矩阵 x 组件和Actor的相对变换 KeepWorld ？ 计算Actor和组件在世界坐标系中的相对变换，并在最终变换矩阵中使用 socket相对b_Right_Weapon的变换对Actor的最终位置无影响 与组件的变换矩阵无关 与BP_STUBaseCharacter对象在世界坐标系中的变换有关 KeepRelative ？ 使用Actor相对变换矩阵乘以最终变换矩阵 Actor也能挂载到合适位置 FAttachmentTransformRules # 数据成员 # - LocationRule RotationRule SacleRule 使用EAttachmentRule进行设置 bWeldSimulatedBodies 连接两部分时，是否将其焊接 构造函数 # 对变换分量使用相同规则 分别设置变换分量 ACharacter::GetMesh # 获取Character USkeletalComponent组件 AActor::AttachToComponent # 说明 # 将Actor挂载到可变换组件 参数 # - Parent 要挂载的可变换组件 AttachmentRules 挂载后变换矩阵的计算规则 SocketName 挂载点名字 </description>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</guid>
+      <description>概览 # 通过AActor::AttachToComponent将Actor附加到可变换组件的挂载点上, 要求已在组件上添加挂载点, 并提供以下信息 - Actor 可变换组件 挂载规则 挂载点名称 挂载函数 AActor::AttachToComponent # AActor::AttachToComponent 可变换组件 USceneComponent # 基类 UPrimitiveComponent USceneComponent UMeshComponent UPrimitiveComponent USkeletalMeshComponent UMeshComponent UStaticMeshComponent UMeshComponent 挂载规则: FAttachmentTransformRules对象 # FAttachmentTransformRules # 说明 # UE_5.1/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h 如何计算附加Actor的变换属性 数据成员 # LocationRule, RotationRule和ScaleRule
+对应变换属性的三个分量 使用EAttachmentRule进行设置 bInWeldSimulatedBodies
+Whether to weld simulated bodies together when attaching 不知道效果, 当前使用false 构造函数 # 对变换属性的分量使用相同规则 FAttachmentTransformRules(EAttachmentRule InRule, bool bInWeldSimulatedBodies) : LocationRule(InRule) , RotationRule(InRule) , ScaleRule(InRule) , bWeldSimulatedBodies(bInWeldSimulatedBodies) {} 分别设置变换属性分量 FAttachmentTransformRules(EAttachmentRule InLocationRule, EAttachmentRule InRotationRule, EAttachmentRule InScaleRule, bool bInWeldSimulatedBodies) : LocationRule(InLocationRule) , RotationRule(InRotationRule) , ScaleRule(InScaleRule) , bWeldSimulatedBodies(bInWeldSimulatedBodies) {} EAttachmentRule # 说明 # UE_5.</description>
     </item>
     
   </channel>

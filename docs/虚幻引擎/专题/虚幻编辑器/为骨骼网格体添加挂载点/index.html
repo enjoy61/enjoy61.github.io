@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>Skeletal组件 - 六一的部落格</title>
-<meta name="description" content="USkeletalComponent # 骨骼网格体外形是多边形，内里由具有层级结构的骨骼组成，因此，可以为骨骼网格体编排动画 可以是人，可以是物 可以为骨骼网格体绑定模型 头文件 # #include &amp;quot;Components/SkeletalMeshComponent.h&amp;quot; 相关函数 # - ACharacter::GetMesh 获取Character的骨骼网格体组件 ">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">
+  <title>为骨骼网格体添加挂载点 - 六一的部落格</title>
+<meta name="description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &amp;gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &amp;gt; Add Preview Asset &amp;gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Skeletal组件">
-<meta property="og:description" content="USkeletalComponent # 骨骼网格体外形是多边形，内里由具有层级结构的骨骼组成，因此，可以为骨骼网格体编排动画 可以是人，可以是物 可以为骨骼网格体绑定模型 头文件 # #include &quot;Components/SkeletalMeshComponent.h&quot; 相关函数 # - ACharacter::GetMesh 获取Character的骨骼网格体组件 ">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">
+<meta property="og:title" content="为骨骼网格体添加挂载点">
+<meta property="og:description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &gt; Add Preview Asset &gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-21T21:51:03+00:00">
-  <meta property="article:modified_time" content="2023-08-08T16:15:38+08:00">
+<meta property="article:published_time" content="2023-06-21T22:00:04+00:00">
+  <meta property="article:modified_time" content="2023-08-17T03:25:25+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="Skeletal组件">
+<meta name="twitter:title" content="为骨骼网格体添加挂载点">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="Skeletal组件">
+    <meta name="twitter:image:alt" content="为骨骼网格体添加挂载点">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/",
-      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/",
-      "name": "Skeletal组件",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/",
+      "name": "为骨骼网格体添加挂载点",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-06-21T21:51:03CET",
-      "dateModified": "2023-08-08T16:15:38CET",
+      "datePublished": "2023-06-21T22:00:04CET",
+      "dateModified": "2023-08-17T03:25:25CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -134,33 +134,24 @@
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "name": "API"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/",
+          "name": "% E4% B8%93% E9% A2%98"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "name": "% E8%99%9 A% E5% B9% Bbc"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/",
+          "name": "% E8%99%9 A% E5% B9% Bb% E7% Bc%96% E8% Be%91% E5%99% A8"
           }
         },{
         "@type": "ListItem",
         "position":  6 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/",
-          "name": "% E7% Bb%84% E4% Bb% B6"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  7 ,
-        "item": {
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/"
           }
         }]
     },
@@ -171,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "Skeletal组件",
+          "headline": "为骨骼网格体添加挂载点",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/"
           },
-          "datePublished": "2023-06-21T21:51:03CET",
-          "dateModified": "2023-08-08T16:15:38CET",
+          "datePublished": "2023-06-21T22:00:04CET",
+          "dateModified": "2023-08-17T03:25:25CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -188,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/image/2"
           }
         }
       ]
@@ -213,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "Skeletal组件"
+          "caption": "为骨骼网格体添加挂载点"
         }
       ]
     }
@@ -292,26 +283,26 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="true">
                     专题
                   </button>
-                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                  <div class="collapse show" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="true">
                               虚幻编辑器
                             </button>
-                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                            <div class="collapse show" id="section-2c72b138347c54a0b482ac32249b8566">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">为骨骼网格体添加挂载点</a></li>
                                   
 
                                 
@@ -341,7 +332,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/">将Actor附加到可变换组件的挂载点</a></li>
                                   
 
                                 
@@ -359,20 +350,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -455,6 +446,11 @@
                                           
 
                                             
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+          
+                                          
+
+                                            
                                             <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
           
                                           
@@ -468,10 +464,10 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
                                         组件
                                       </button>
-                                      <div class="collapse show" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
@@ -486,7 +482,7 @@
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletalmesh%E7%BB%84%E4%BB%B6/">SkeletalMesh组件</a></li>
           
                                           
 
@@ -1136,26 +1132,26 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="true">
                     专题
                   </button>
-                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                  <div class="collapse show" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="true">
                               虚幻编辑器
                             </button>
-                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                            <div class="collapse show" id="section-2c72b138347c54a0b482ac32249b8566">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">为骨骼网格体添加挂载点</a></li>
                                   
 
                                 
@@ -1185,7 +1181,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/">将Actor附加到可变换组件的挂载点</a></li>
                                   
 
                                 
@@ -1203,20 +1199,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1299,6 +1295,11 @@
                                           
 
                                             
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+          
+                                          
+
+                                            
                                             <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
           
                                           
@@ -1312,10 +1313,10 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
                                         组件
                                       </button>
-                                      <div class="collapse show" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
@@ -1330,7 +1331,7 @@
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletalmesh%E7%BB%84%E4%BB%B6/">SkeletalMesh组件</a></li>
           
                                           
 
@@ -1917,26 +1918,26 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-041d1704a45f737ddaa4380bcf1dfcc7" aria-expanded="true">
                     专题
                   </button>
-                  <div class="collapse" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
+                  <div class="collapse show" id="section-041d1704a45f737ddaa4380bcf1dfcc7">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c72b138347c54a0b482ac32249b8566" aria-expanded="true">
                               虚幻编辑器
                             </button>
-                            <div class="collapse" id="section-2c72b138347c54a0b482ac32249b8566">
+                            <div class="collapse show" id="section-2c72b138347c54a0b482ac32249b8566">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%BB%99%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E8%A3%85%E8%BD%BD%E7%82%B9/">给骨骼网格体添加装载点</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">为骨骼网格体添加挂载点</a></li>
                                   
 
                                 
@@ -1966,7 +1967,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/">在可变换组件上挂载Actor</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/">将Actor附加到可变换组件的挂载点</a></li>
                                   
 
                                 
@@ -1984,20 +1985,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -2080,6 +2081,11 @@
                                           
 
                                             
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+          
+                                          
+
+                                            
                                             <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/">Character类</a></li>
           
                                           
@@ -2093,10 +2099,10 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-bb79667f37035e9562ec6bcffd6cf8ef" aria-expanded="false">
                                         组件
                                       </button>
-                                      <div class="collapse show" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
+                                      <div class="collapse" id="section-bb79667f37035e9562ec6bcffd6cf8ef">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
@@ -2111,7 +2117,7 @@
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletal%E7%BB%84%E4%BB%B6/">Skeletal组件</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/skeletalmesh%E7%BB%84%E4%BB%B6/">SkeletalMesh组件</a></li>
           
                                           
 
@@ -2671,9 +2677,18 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#uskeletalcomponent">USkeletalComponent</a></li>
-    <li><a href="#头文件">头文件</a></li>
-    <li><a href="#相关函数">相关函数</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点</a>
+      <ul>
+        <li><a href="#打开herotpp">打开HeroTPP</a></li>
+        <li><a href="#查看骨骼网格体">查看骨骼网格体</a></li>
+        <li><a href="#为骨骼添加挂载点">为骨骼添加挂载点</a></li>
+        <li><a href="#设置挂载点参数">设置挂载点参数</a></li>
+        <li><a href="#为挂载点添加预览模型">为挂载点添加预览模型</a></li>
+        <li><a href="#在多种资产中预览挂载效果">在多种资产中预览挂载效果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -2685,9 +2700,18 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#uskeletalcomponent">USkeletalComponent</a></li>
-    <li><a href="#头文件">头文件</a></li>
-    <li><a href="#相关函数">相关函数</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点</a>
+      <ul>
+        <li><a href="#打开herotpp">打开HeroTPP</a></li>
+        <li><a href="#查看骨骼网格体">查看骨骼网格体</a></li>
+        <li><a href="#为骨骼添加挂载点">为骨骼添加挂载点</a></li>
+        <li><a href="#设置挂载点参数">设置挂载点参数</a></li>
+        <li><a href="#为挂载点添加预览模型">为挂载点添加预览模型</a></li>
+        <li><a href="#在多种资产中预览挂载效果">在多种资产中预览挂载效果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </nav>
@@ -2701,14 +2725,13 @@
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
 <li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/">API</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/">虚幻C&#43;&#43;</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/">组件</a></li>
-<li class="breadcrumb-item active" aria-current="page">Skeletal组件</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/">专题</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/">虚幻编辑器</a></li>
+<li class="breadcrumb-item active" aria-current="page">为骨骼网格体添加挂载点</li>
 					</ol>
 				</nav>
 			
-			<h1>Skeletal组件</h1>
+			<h1>为骨骼网格体添加挂载点</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -2724,9 +2747,18 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#uskeletalcomponent">USkeletalComponent</a></li>
-    <li><a href="#头文件">头文件</a></li>
-    <li><a href="#相关函数">相关函数</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点</a>
+      <ul>
+        <li><a href="#打开herotpp">打开HeroTPP</a></li>
+        <li><a href="#查看骨骼网格体">查看骨骼网格体</a></li>
+        <li><a href="#为骨骼添加挂载点">为骨骼添加挂载点</a></li>
+        <li><a href="#设置挂载点参数">设置挂载点参数</a></li>
+        <li><a href="#为挂载点添加预览模型">为挂载点添加预览模型</a></li>
+        <li><a href="#在多种资产中预览挂载效果">在多种资产中预览挂载效果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -2738,25 +2770,25 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#uskeletalcomponent">USkeletalComponent</a></li>
-    <li><a href="#头文件">头文件</a></li>
-    <li><a href="#相关函数">相关函数</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#socket">Socket</a></li>
+    <li><a href="#在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点</a>
+      <ul>
+        <li><a href="#打开herotpp">打开HeroTPP</a></li>
+        <li><a href="#查看骨骼网格体">查看骨骼网格体</a></li>
+        <li><a href="#为骨骼添加挂载点">为骨骼添加挂载点</a></li>
+        <li><a href="#设置挂载点参数">设置挂载点参数</a></li>
+        <li><a href="#为挂载点添加预览模型">为挂载点添加预览模型</a></li>
+        <li><a href="#在多种资产中预览挂载效果">在多种资产中预览挂载效果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="uskeletalcomponent">USkeletalComponent <a href="#uskeletalcomponent" class="anchor" aria-hidden="true">#</a></h2>
-<ul>
-<li>骨骼网格体外形是多边形，内里由具有层级结构的骨骼组成，因此，可以为骨骼网格体编排动画 <br/></li>
-<li>可以是人，可以是物 <br/></li>
-<li>可以为骨骼网格体绑定模型 <br/></li>
-</ul>
-<h2 id="头文件">头文件 <a href="#%e5%a4%b4%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
-<pre><code class="language-cpp">#include &quot;Components/SkeletalMeshComponent.h&quot;
-</code></pre>
-<h2 id="相关函数">相关函数 <a href="#%e7%9b%b8%e5%85%b3%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -2766,27 +2798,119 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc++/%E5%9C%A8%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E4%B8%8A%E6%8C%82%E8%BD%BDactor/#acharacter-getmesh">ACharacter::GetMesh</a></td>
-<td>获取Character的骨骼网格体组件</td>
+<td>骨骼网格体</td>
+<td>HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset</td>
+</tr>
+<tr>
+<td>挂载点上级骨骼</td>
+<td>b_Right_Weapon</td>
+</tr>
+<tr>
+<td>挂载点名称</td>
+<td>WeaponSocket</td>
 </tr>
 </tbody>
 </table>
+<h2 id="socket">Socket <a href="#socket" class="anchor" aria-hidden="true">#</a></h2>
+<p>骨骼网格体中的特殊物体 <code>Object</code> ，可以为任何骨骼添加Socket <br/></p>
+<p>Socket的实质是骨骼网格体的命名变换，可以在蓝图和C++中获取 <br/></p>
+<p>骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 <br/></p>
+<h2 id="在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点 <a href="#%e5%9c%a8%e9%aa%a8%e9%aa%bc%e7%bd%91%e6%a0%bc%e4%bd%93%e4%b8%8a%e6%b7%bb%e5%8a%a0%e6%8c%82%e8%bd%bd%e7%82%b9" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="打开herotpp">打开HeroTPP <a href="#%e6%89%93%e5%bc%80herotpp" class="anchor" aria-hidden="true">#</a></h3>
+<p>方法一: 双击打开 <br/>
+方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP <br/></p>
+<h3 id="查看骨骼网格体">查看骨骼网格体 <a href="#%e6%9f%a5%e7%9c%8b%e9%aa%a8%e9%aa%bc%e7%bd%91%e6%a0%bc%e4%bd%93" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 <br/></li>
+<li>可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon <br/></li>
+</ul>
+<h3 id="为骨骼添加挂载点">为骨骼添加挂载点 <a href="#%e4%b8%ba%e9%aa%a8%e9%aa%bc%e6%b7%bb%e5%8a%a0%e6%8c%82%e8%bd%bd%e7%82%b9" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>选中b_RightWeapon，右键 &gt; Add Socket</code> <br/></p>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/AddSocket.png" width="500" /> <br/> <br/></p>
+<h3 id="设置挂载点参数">设置挂载点参数 <a href="#%e8%ae%be%e7%bd%ae%e6%8c%82%e8%bd%bd%e7%82%b9%e5%8f%82%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Details</code> <br/>
+选中Socket，在右侧细节面板设置参数 <br/></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Socket Name</td>
+<td>WeaponSocket</td>
+</tr>
+<tr>
+<td>Relative Rotation</td>
+<td>X: -90</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/SocketParam.png" width="1200" /> <br/> <br/></p>
+<h3 id="为挂载点添加预览模型">为挂载点添加预览模型 <a href="#%e4%b8%ba%e6%8c%82%e8%bd%bd%e7%82%b9%e6%b7%bb%e5%8a%a0%e9%a2%84%e8%a7%88%e6%a8%a1%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>WeaponSocket &gt; Add Preview Asset &gt; Rifle</code> <br/></p>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/SupportPreview.png" width="850" /> <br/> <br/></p>
+<h3 id="在多种资产中预览挂载效果">在多种资产中预览挂载效果 <a href="#%e5%9c%a8%e5%a4%9a%e7%a7%8d%e8%b5%84%e4%ba%a7%e4%b8%ad%e9%a2%84%e8%a7%88%e6%8c%82%e8%bd%bd%e6%95%88%e6%9e%9c" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>举例</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HeroTPP_Skeleton</td>
+<td>骨骼</td>
+</tr>
+<tr>
+<td>HeroTPP</td>
+<td>骨骼网格体</td>
+</tr>
+<tr>
+<td>BS_Locomotion_Run</td>
+<td>动画资产</td>
+</tr>
+<tr>
+<td>ABP_BaseCharacter</td>
+<td>动画蓝图</td>
+</tr>
+<tr>
+<td>HeroTPP_Physics</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过编辑器的选项卡, 选择资产类型 <br/></p>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/AdjustOption.png" width="400" /> <br/> <br/></p>
+<ul>
+<li>
+<p>动画资产 <br/></p>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/AdjustInAsset.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>动画蓝图 <br/></p>
+<p><img src="/pic/专题/给骨骼网格体添加装载点/AdjustInABP.png" width="1100" /> <br/> <br/></p>
+</li>
+</ul>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/springarm%E7%BB%84%E4%BB%B6/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; SpringArm组件
+					&larr; TextRender组件
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/primitive%E7%BB%84%E4%BB%B6/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					Primitive组件 &rarr;
+					将Actor附加到可变换组件的挂载点 &rarr;
 				</div>
 			</div>
 		</a>
@@ -2821,7 +2945,7 @@
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cd2e34ffcdc7fa0015b31ddaf68a333e3fcd6d02b9d040e785da8aff8a4ab113f31ca219e85ffc256f773b3d63fc2f7aaf1f6b3670bda714ca20b9d1986a993a.js" integrity="sha512-zS40/83H&#43;gAVsx3a9oozPj/NbQK50EDnhdqK/4pKsRPzHKIZ6F/8JW93Oz1j/C96rx9rNnC9pxTKILnRmGqZOg==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.99548cda04dee798916432218afde3bb46f33056824e4539f8ac2fc14d9ae3c2a830d251425ab87b5181e1a6fcf034b0c83a3ca2278bb494c353925fa33b06f2.js" integrity="sha512-mVSM2gTe55iRZDIhiv3ju0bzMFaCTkU5&#43;KwvwU2a48KoMNJRQlq4e1GB4ab88DSwyDo8oieLtJTDU5JfozsG8g==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/js/index.js" integrity="" crossorigin="anonymous" defer></script>
   
     
   </body>
