@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>碰撞选项 - 六一的部落格</title>
-<meta name="description" content="概览 # Details &amp;gt; Collision 碰撞预设 碰撞使能选项 物体类型 碰撞反馈 产生重叠事件 产生碰撞事件 碰撞预设 # Collision Presets 专注自定义选项 Custom 提供多种选项 # 默认面板 # Default 自定义面板 # Custom 碰撞使能选项 # Collision Enabled - No Collision 不产生碰撞 Query Only (No Physics Collision) 只参与轨迹计算 Logical Trace : 参与给定线段与物体相交计算 Physics Only (No Query Collision) 只用于物理仿真 Physical Simulation : 穿过或被阻挡 Collision Enabled (Query and Physics) 轨迹计算 &#43; 物理仿真 物体类型 # Object Type 对该物体的物体类型进行设置, 其他物体依据该属性作出反馈 碰撞反馈 # Collision Responses 产生碰撞时, 如何给出反馈; 通过交互矩阵 Interaction Matrix 实现 反馈类型 # - Ignore 不产生碰撞 Overlap 重叠: 可以产生重叠事件 Block 阻碍: 可以产生碰撞事件 通道反馈 # Trace Responses 是否参与该通道轨迹计算 - Visibility 给定线段起点和终点 Camera Camera组件 物体反馈 # Object Responses 对其他物体类型作出何种反馈 - WorldStatic WorldDynamic Pawn &amp;hellip; 产生重叠事件 # Generate Overlap Events 出于优化考虑, 默认false 勾选则触发重叠事件, 可以在蓝图中对该类型事件进行处理 产生碰撞事件 # Simulation Generates Hit Events 出于优化考虑, 默认false 勾选则触发碰撞事件, 可以获取碰撞信息 ">
+<meta name="description" content="概览 # Details &amp;gt; Collision 碰撞预设 碰撞使能选项 物体类型 碰撞反馈 产生重叠事件 产生碰撞事件 碰撞预设 # Collision Presets 专注自定义选项 Custom 提供多种选项 # 默认面板 # Default 自定义面板 # Custom 查看碰撞预设定义 # 项目设置 &amp;gt; Engine &amp;gt; Collision 支持自定义预设, 对碰撞使能选项, 物体类型, 碰撞反馈进行设置; 可以对已有预设进行修改 碰撞使能选项 # Collision Enabled - No Collision 不产生碰撞 Query Only (No Physics Collision) 只参与轨迹计算 Logical Trace : 参与给定线段与物体相交计算 Physics Only (No Query Collision) 只用于物理仿真 Physical Simulation : 穿过或被阻挡 Collision Enabled (Query and Physics) 轨迹计算 &#43; 物理仿真 物体类型 # Object Type 对该物体的物体类型进行设置, 其他物体依据该属性作出反馈 碰撞反馈 # Collision Responses 产生碰撞时, 如何给出反馈; 通过交互矩阵 Interaction Matrix 实现 反馈类型 # - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻碍: 可以发生碰撞, 形成阻碍, 可以产生碰撞事件 对通道的反馈 # Trace Responses 是否参与该通道的轨迹计算 - Visibility 给定线段起点和终点 Camera Camera组件 对其他物体类型的反馈 # Object Responses 对其他物体类型作出何种反馈 - WorldStatic WorldDynamic Pawn &amp;hellip; 发生碰撞时产生重叠事件 # Generate Overlap Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生重叠事件, 可以在蓝图中对该类型事件进行处理 发生碰撞时产生碰撞事件 # Simulation Generates Hit Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生碰撞事件, 可以获取碰撞信息 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="碰撞选项">
-<meta property="og:description" content="概览 # Details &gt; Collision 碰撞预设 碰撞使能选项 物体类型 碰撞反馈 产生重叠事件 产生碰撞事件 碰撞预设 # Collision Presets 专注自定义选项 Custom 提供多种选项 # 默认面板 # Default 自定义面板 # Custom 碰撞使能选项 # Collision Enabled - No Collision 不产生碰撞 Query Only (No Physics Collision) 只参与轨迹计算 Logical Trace : 参与给定线段与物体相交计算 Physics Only (No Query Collision) 只用于物理仿真 Physical Simulation : 穿过或被阻挡 Collision Enabled (Query and Physics) 轨迹计算 &#43; 物理仿真 物体类型 # Object Type 对该物体的物体类型进行设置, 其他物体依据该属性作出反馈 碰撞反馈 # Collision Responses 产生碰撞时, 如何给出反馈; 通过交互矩阵 Interaction Matrix 实现 反馈类型 # - Ignore 不产生碰撞 Overlap 重叠: 可以产生重叠事件 Block 阻碍: 可以产生碰撞事件 通道反馈 # Trace Responses 是否参与该通道轨迹计算 - Visibility 给定线段起点和终点 Camera Camera组件 物体反馈 # Object Responses 对其他物体类型作出何种反馈 - WorldStatic WorldDynamic Pawn &hellip; 产生重叠事件 # Generate Overlap Events 出于优化考虑, 默认false 勾选则触发重叠事件, 可以在蓝图中对该类型事件进行处理 产生碰撞事件 # Simulation Generates Hit Events 出于优化考虑, 默认false 勾选则触发碰撞事件, 可以获取碰撞信息 ">
+<meta property="og:description" content="概览 # Details &gt; Collision 碰撞预设 碰撞使能选项 物体类型 碰撞反馈 产生重叠事件 产生碰撞事件 碰撞预设 # Collision Presets 专注自定义选项 Custom 提供多种选项 # 默认面板 # Default 自定义面板 # Custom 查看碰撞预设定义 # 项目设置 &gt; Engine &gt; Collision 支持自定义预设, 对碰撞使能选项, 物体类型, 碰撞反馈进行设置; 可以对已有预设进行修改 碰撞使能选项 # Collision Enabled - No Collision 不产生碰撞 Query Only (No Physics Collision) 只参与轨迹计算 Logical Trace : 参与给定线段与物体相交计算 Physics Only (No Query Collision) 只用于物理仿真 Physical Simulation : 穿过或被阻挡 Collision Enabled (Query and Physics) 轨迹计算 &#43; 物理仿真 物体类型 # Object Type 对该物体的物体类型进行设置, 其他物体依据该属性作出反馈 碰撞反馈 # Collision Responses 产生碰撞时, 如何给出反馈; 通过交互矩阵 Interaction Matrix 实现 反馈类型 # - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻碍: 可以发生碰撞, 形成阻碍, 可以产生碰撞事件 对通道的反馈 # Trace Responses 是否参与该通道的轨迹计算 - Visibility 给定线段起点和终点 Camera Camera组件 对其他物体类型的反馈 # Object Responses 对其他物体类型作出何种反馈 - WorldStatic WorldDynamic Pawn &hellip; 发生碰撞时产生重叠事件 # Generate Overlap Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生重叠事件, 可以在蓝图中对该类型事件进行处理 发生碰撞时产生碰撞事件 # Simulation Generates Hit Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生碰撞事件, 可以获取碰撞信息 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-25T18:30:03+00:00">
-  <meta property="article:modified_time" content="2023-08-17T17:08:10+08:00">
+  <meta property="article:modified_time" content="2023-08-17T23:09:59+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-25T18:30:03CET",
-      "dateModified": "2023-08-17T17:08:10CET",
+      "dateModified": "2023-08-17T23:09:59CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/"
           },
           "datePublished": "2023-06-25T18:30:03CET",
-          "dateModified": "2023-08-17T17:08:10CET",
+          "dateModified": "2023-08-17T23:09:59CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2683,6 +2683,7 @@
         <li><a href="#提供多种选项">提供多种选项</a></li>
         <li><a href="#默认面板">默认面板</a></li>
         <li><a href="#自定义面板">自定义面板</a></li>
+        <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
       </ul>
     </li>
     <li><a href="#碰撞使能选项">碰撞使能选项</a></li>
@@ -2690,12 +2691,12 @@
     <li><a href="#碰撞反馈">碰撞反馈</a>
       <ul>
         <li><a href="#反馈类型">反馈类型</a></li>
-        <li><a href="#通道反馈">通道反馈</a></li>
-        <li><a href="#物体反馈">物体反馈</a></li>
+        <li><a href="#对通道的反馈">对通道的反馈</a></li>
+        <li><a href="#对其他物体类型的反馈">对其他物体类型的反馈</a></li>
       </ul>
     </li>
-    <li><a href="#产生重叠事件">产生重叠事件</a></li>
-    <li><a href="#产生碰撞事件">产生碰撞事件</a></li>
+    <li><a href="#发生碰撞时产生重叠事件">发生碰撞时产生重叠事件</a></li>
+    <li><a href="#发生碰撞时产生碰撞事件">发生碰撞时产生碰撞事件</a></li>
   </ul>
 </nav>
       </div>
@@ -2713,6 +2714,7 @@
         <li><a href="#提供多种选项">提供多种选项</a></li>
         <li><a href="#默认面板">默认面板</a></li>
         <li><a href="#自定义面板">自定义面板</a></li>
+        <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
       </ul>
     </li>
     <li><a href="#碰撞使能选项">碰撞使能选项</a></li>
@@ -2720,12 +2722,12 @@
     <li><a href="#碰撞反馈">碰撞反馈</a>
       <ul>
         <li><a href="#反馈类型">反馈类型</a></li>
-        <li><a href="#通道反馈">通道反馈</a></li>
-        <li><a href="#物体反馈">物体反馈</a></li>
+        <li><a href="#对通道的反馈">对通道的反馈</a></li>
+        <li><a href="#对其他物体类型的反馈">对其他物体类型的反馈</a></li>
       </ul>
     </li>
-    <li><a href="#产生重叠事件">产生重叠事件</a></li>
-    <li><a href="#产生碰撞事件">产生碰撞事件</a></li>
+    <li><a href="#发生碰撞时产生重叠事件">发生碰撞时产生重叠事件</a></li>
+    <li><a href="#发生碰撞时产生碰撞事件">发生碰撞时产生碰撞事件</a></li>
   </ul>
 </nav>
   </nav>
@@ -2767,6 +2769,7 @@
         <li><a href="#提供多种选项">提供多种选项</a></li>
         <li><a href="#默认面板">默认面板</a></li>
         <li><a href="#自定义面板">自定义面板</a></li>
+        <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
       </ul>
     </li>
     <li><a href="#碰撞使能选项">碰撞使能选项</a></li>
@@ -2774,12 +2777,12 @@
     <li><a href="#碰撞反馈">碰撞反馈</a>
       <ul>
         <li><a href="#反馈类型">反馈类型</a></li>
-        <li><a href="#通道反馈">通道反馈</a></li>
-        <li><a href="#物体反馈">物体反馈</a></li>
+        <li><a href="#对通道的反馈">对通道的反馈</a></li>
+        <li><a href="#对其他物体类型的反馈">对其他物体类型的反馈</a></li>
       </ul>
     </li>
-    <li><a href="#产生重叠事件">产生重叠事件</a></li>
-    <li><a href="#产生碰撞事件">产生碰撞事件</a></li>
+    <li><a href="#发生碰撞时产生重叠事件">发生碰撞时产生重叠事件</a></li>
+    <li><a href="#发生碰撞时产生碰撞事件">发生碰撞时产生碰撞事件</a></li>
   </ul>
 </nav>
       </div>
@@ -2797,6 +2800,7 @@
         <li><a href="#提供多种选项">提供多种选项</a></li>
         <li><a href="#默认面板">默认面板</a></li>
         <li><a href="#自定义面板">自定义面板</a></li>
+        <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
       </ul>
     </li>
     <li><a href="#碰撞使能选项">碰撞使能选项</a></li>
@@ -2804,12 +2808,12 @@
     <li><a href="#碰撞反馈">碰撞反馈</a>
       <ul>
         <li><a href="#反馈类型">反馈类型</a></li>
-        <li><a href="#通道反馈">通道反馈</a></li>
-        <li><a href="#物体反馈">物体反馈</a></li>
+        <li><a href="#对通道的反馈">对通道的反馈</a></li>
+        <li><a href="#对其他物体类型的反馈">对其他物体类型的反馈</a></li>
       </ul>
     </li>
-    <li><a href="#产生重叠事件">产生重叠事件</a></li>
-    <li><a href="#产生碰撞事件">产生碰撞事件</a></li>
+    <li><a href="#发生碰撞时产生重叠事件">发生碰撞时产生重叠事件</a></li>
+    <li><a href="#发生碰撞时产生碰撞事件">发生碰撞时产生碰撞事件</a></li>
   </ul>
 </nav>
   </nav>
@@ -2837,6 +2841,10 @@
 <h3 id="自定义面板">自定义面板 <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%9d%a2%e6%9d%bf" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>Custom</code> <br/></p>
 <p><img src="/pic/专题/碰撞选项/CollisionPresets-Custom.png" width="500" /> <br/> <br/></p>
+<h3 id="查看碰撞预设定义">查看碰撞预设定义 <a href="#%e6%9f%a5%e7%9c%8b%e7%a2%b0%e6%92%9e%e9%a2%84%e8%ae%be%e5%ae%9a%e4%b9%89" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>项目设置 &gt; Engine &gt; Collision</code> <br/>
+支持自定义预设, 对碰撞使能选项, 物体类型, 碰撞反馈进行设置; 可以对已有预设进行修改 <br/></p>
+<p><img src="/pic/专题/碰撞选项/CollisionPreset.png" width="1000" /> <br/> <br/></p>
 <h2 id="碰撞使能选项">碰撞使能选项 <a href="#%e7%a2%b0%e6%92%9e%e4%bd%bf%e8%83%bd%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Collision Enabled</code> <br/></p>
 <p><img src="/pic/专题/碰撞选项/collision-enabled.png" width="600" /> <br/> <br/></p>
@@ -2885,21 +2893,21 @@
 <tbody>
 <tr>
 <td>Ignore</td>
-<td>不产生碰撞</td>
+<td>不会发生碰撞</td>
 </tr>
 <tr>
 <td>Overlap</td>
-<td>重叠: 可以产生重叠事件</td>
+<td>重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件</td>
 </tr>
 <tr>
 <td>Block</td>
-<td>阻碍: 可以产生碰撞事件</td>
+<td>阻碍: 可以发生碰撞, 形成阻碍, 可以产生碰撞事件</td>
 </tr>
 </tbody>
 </table>
-<h3 id="通道反馈">通道反馈 <a href="#%e9%80%9a%e9%81%93%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="对通道的反馈">对通道的反馈 <a href="#%e5%af%b9%e9%80%9a%e9%81%93%e7%9a%84%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>Trace Responses</code> <br/>
-是否参与该通道轨迹计算 <br/></p>
+是否参与该通道的轨迹计算 <br/></p>
 <table>
 <thead>
 <tr>
@@ -2918,7 +2926,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="物体反馈">物体反馈 <a href="#%e7%89%a9%e4%bd%93%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="对其他物体类型的反馈">对其他物体类型的反馈 <a href="#%e5%af%b9%e5%85%b6%e4%bb%96%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>Object Responses</code> <br/>
 对其他物体类型作出何种反馈 <br/></p>
 <table>
@@ -2942,15 +2950,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="产生重叠事件">产生重叠事件 <a href="#%e4%ba%a7%e7%94%9f%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="发生碰撞时产生重叠事件">发生碰撞时产生重叠事件 <a href="#%e5%8f%91%e7%94%9f%e7%a2%b0%e6%92%9e%e6%97%b6%e4%ba%a7%e7%94%9f%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Generate Overlap Events</code> <br/>
 出于优化考虑, 默认false <br/></p>
-<p>勾选则触发重叠事件, 可以在蓝图中对该类型事件进行处理 <br/></p>
+<p>勾选后, 发生碰撞会产生重叠事件, 可以在蓝图中对该类型事件进行处理 <br/></p>
 <p><img src="/pic/专题/碰撞选项/generate-overlap-events.png" width="500" /> <br/> <br/></p>
-<h2 id="产生碰撞事件">产生碰撞事件 <a href="#%e4%ba%a7%e7%94%9f%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="发生碰撞时产生碰撞事件">发生碰撞时产生碰撞事件 <a href="#%e5%8f%91%e7%94%9f%e7%a2%b0%e6%92%9e%e6%97%b6%e4%ba%a7%e7%94%9f%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Simulation Generates Hit Events</code> <br/>
 出于优化考虑, 默认false <br/></p>
-<p>勾选则触发碰撞事件, 可以获取碰撞信息 <br/></p>
+<p>勾选后, 发生碰撞会产生碰撞事件, 可以获取碰撞信息 <br/></p>
 <p><img src="/pic/专题/碰撞选项/generate-hit-events.png" width="600" /> <br/> <br/></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
