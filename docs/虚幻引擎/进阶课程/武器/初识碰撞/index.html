@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>初识碰撞 - 六一的部落格</title>
-<meta name="description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 设置对其他类型物体的反馈 设置对通道的反馈 碰撞时产生重叠事件 碰撞时产生碰撞事件 自定义物体类型 碰撞 # 物体之间的交互，会发生以下情形 - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻挡：可以发生碰撞, 形成阻碍, 可以产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &amp;gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &amp;gt; Capsule Component &amp;gt; Details &amp;gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &amp;gt; Object Responses &amp;gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是Camera通道对于Block设置给出的碰撞反馈 # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与物体碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &amp;gt; 选中SpringArmComponent &amp;gt; Details &amp;gt; Camera Collision &amp;gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &amp;gt; Trace Responses &amp;gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开 BP_STUBaseCharacter &amp;gt; Event Graph Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选发生碰撞时产生重叠事件 # Sphere Details &amp;gt; 勾选 Generate Overlap Events Cube Details &amp;gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选发生碰撞时产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &amp;gt; EventGraph, 添加EventHit 自定义物体类型 # 项目设置 &amp;gt; Engine &amp;gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn ">
+<meta name="description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 设置对其他类型物体的反馈 设置对通道的反馈 碰撞时产生重叠事件 碰撞时产生碰撞事件 自定义物体类型 碰撞 # 物体之间的交互，会发生以下情形 - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻挡：可以发生碰撞, 形成阻碍, 可以产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &amp;gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &amp;gt; Capsule Component &amp;gt; Details &amp;gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &amp;gt; Object Responses &amp;gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是Camera通道对于Block设置给出的碰撞反馈 # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与物体碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &amp;gt; 选中SpringArmComponent &amp;gt; Details &amp;gt; Camera Collision &amp;gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &amp;gt; Trace Responses &amp;gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开 BP_STUBaseCharacter &amp;gt; Event Graph Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选发生碰撞时产生重叠事件 # Sphere Details &amp;gt; 勾选 Generate Overlap Events Cube Details &amp;gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选发生碰撞时产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &amp;gt; EventGraph, 添加EventHit 补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件 # 自定义物体类型 # 项目设置 &amp;gt; Engine &amp;gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识碰撞">
-<meta property="og:description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 设置对其他类型物体的反馈 设置对通道的反馈 碰撞时产生重叠事件 碰撞时产生碰撞事件 自定义物体类型 碰撞 # 物体之间的交互，会发生以下情形 - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻挡：可以发生碰撞, 形成阻碍, 可以产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &gt; Engine &gt; Input &gt; Console &gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &gt; Capsule Component &gt; Details &gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &gt; Object Responses &gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是Camera通道对于Block设置给出的碰撞反馈 # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与物体碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &gt; 选中SpringArmComponent &gt; Details &gt; Camera Collision &gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &gt; Trace Responses &gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开 BP_STUBaseCharacter &gt; Event Graph Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选发生碰撞时产生重叠事件 # Sphere Details &gt; 勾选 Generate Overlap Events Cube Details &gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选发生碰撞时产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &gt; EventGraph, 添加EventHit 自定义物体类型 # 项目设置 &gt; Engine &gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn ">
+<meta property="og:description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 设置对其他类型物体的反馈 设置对通道的反馈 碰撞时产生重叠事件 碰撞时产生碰撞事件 自定义物体类型 碰撞 # 物体之间的交互，会发生以下情形 - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻挡：可以发生碰撞, 形成阻碍, 可以产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &gt; Engine &gt; Input &gt; Console &gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &gt; Capsule Component &gt; Details &gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &gt; Object Responses &gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是Camera通道对于Block设置给出的碰撞反馈 # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与物体碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &gt; 选中SpringArmComponent &gt; Details &gt; Camera Collision &gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &gt; Trace Responses &gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开 BP_STUBaseCharacter &gt; Event Graph Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选发生碰撞时产生重叠事件 # Sphere Details &gt; 勾选 Generate Overlap Events Cube Details &gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选发生碰撞时产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &gt; EventGraph, 添加EventHit 补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件 # 自定义物体类型 # 项目设置 &gt; Engine &gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-25T16:56:18+00:00">
-  <meta property="article:modified_time" content="2023-08-17T23:11:40+08:00">
+  <meta property="article:modified_time" content="2023-08-17T23:20:35+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-25T16:56:18CET",
-      "dateModified": "2023-08-17T23:11:40CET",
+      "dateModified": "2023-08-17T23:20:35CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/"
           },
           "datePublished": "2023-06-25T16:56:18CET",
-          "dateModified": "2023-08-17T23:11:40CET",
+          "dateModified": "2023-08-17T23:20:35CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2715,6 +2715,7 @@
       <ul>
         <li><a href="#为物体勾选发生碰撞时产生碰撞事件">为物体勾选发生碰撞时产生碰撞事件</a></li>
         <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+        <li><a href="#补充-要求物体与cube的碰撞反馈互为block-发生碰撞时-才会产生碰撞事件">补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件</a></li>
       </ul>
     </li>
     <li><a href="#自定义物体类型">自定义物体类型</a>
@@ -2775,6 +2776,7 @@
       <ul>
         <li><a href="#为物体勾选发生碰撞时产生碰撞事件">为物体勾选发生碰撞时产生碰撞事件</a></li>
         <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+        <li><a href="#补充-要求物体与cube的碰撞反馈互为block-发生碰撞时-才会产生碰撞事件">补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件</a></li>
       </ul>
     </li>
     <li><a href="#自定义物体类型">自定义物体类型</a>
@@ -2859,6 +2861,7 @@
       <ul>
         <li><a href="#为物体勾选发生碰撞时产生碰撞事件">为物体勾选发生碰撞时产生碰撞事件</a></li>
         <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+        <li><a href="#补充-要求物体与cube的碰撞反馈互为block-发生碰撞时-才会产生碰撞事件">补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件</a></li>
       </ul>
     </li>
     <li><a href="#自定义物体类型">自定义物体类型</a>
@@ -2919,6 +2922,7 @@
       <ul>
         <li><a href="#为物体勾选发生碰撞时产生碰撞事件">为物体勾选发生碰撞时产生碰撞事件</a></li>
         <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+        <li><a href="#补充-要求物体与cube的碰撞反馈互为block-发生碰撞时-才会产生碰撞事件">补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件</a></li>
       </ul>
     </li>
     <li><a href="#自定义物体类型">自定义物体类型</a>
@@ -3109,6 +3113,7 @@ SpringArm组件如何进行碰撞探测, 默认为Camera通道 <br/></p>
 <p><img src="/pic/武器/初识碰撞/cube-hit-event.png" width="450" /> <br/> <br/></p>
 <h3 id="在蓝图中添加事件">在蓝图中添加事件 <a href="#%e5%9c%a8%e8%93%9d%e5%9b%be%e4%b8%ad%e6%b7%bb%e5%8a%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>BP_STUBaseCharacter &gt; EventGraph, 添加EventHit</code> <br/></p>
+<h3 id="补充-要求物体与cube的碰撞反馈互为block-发生碰撞时-才会产生碰撞事件">补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件 <a href="#%e8%a1%a5%e5%85%85-%e8%a6%81%e6%b1%82%e7%89%a9%e4%bd%93%e4%b8%8ecube%e7%9a%84%e7%a2%b0%e6%92%9e%e5%8f%8d%e9%a6%88%e4%ba%92%e4%b8%bablock-%e5%8f%91%e7%94%9f%e7%a2%b0%e6%92%9e%e6%97%b6-%e6%89%8d%e4%bc%9a%e4%ba%a7%e7%94%9f%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <h2 id="自定义物体类型">自定义物体类型 <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>项目设置 &gt; Engine &gt; Collision</code> <br/></p>
 <h3 id="创建物体类型enemy">创建物体类型Enemy <a href="#%e5%88%9b%e5%bb%ba%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8benemy" class="anchor" aria-hidden="true">#</a></h3>
