@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>初识碰撞 - 六一的部落格</title>
-<meta name="description" content="说明 # 虚幻编辑器 了解碰撞 # 碰撞 碰撞是世界中物体的物理交互 如Character的Capsule组件, 因为它的存在, 我们跳起后会落到地面, 而不是穿过地板; 我们可以上楼梯, 或是和另一个Character碰撞(而不是穿过他) Logical Trace 一条轨迹, 给定端点A和B, 计算与轨迹相交的场景中的物体 射击时通过该判断, 得到击中目标 在虚幻编辑器使用Console # 鼠标已由程序控制, 打开Console 按下 ` (apostrophe sign), 在视口下方会出现命令行, 可以输入debug命令 设置打开Console的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方角落显示, 一秒将近40帧, 40 x 25 ms = 1000 ms = 1 s 输出GPU统计数据 # stat GPU 隐藏debug信息 # 输入相同命令, 或 stat none 显示场景中碰撞相关 # show collision 可以看到Character的Capsule组件.">
+<meta name="description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 碰撞 # 碰撞是物体之间的交互，会发生以下情形 - Ignore 忽略 Overlap 重叠: 产生重叠事件 Block 阻挡：产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点A和B, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 在场景中添加Cube和Sphere Place Actors &amp;gt; Shapes 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &amp;gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &amp;gt; Capsule Component &amp;gt; Details &amp;gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &amp;gt; Object Responses &amp;gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是因为Camera通道的碰撞反馈为Block # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与Sphere碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &amp;gt; 选中SpringArmComponent &amp;gt; Details &amp;gt; Camera Collision &amp;gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &amp;gt; Trace Responses &amp;gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开BP_STUBaseCharacter &amp;gt; Event Graph 在 Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选产生重叠事件 # Sphere Details &amp;gt; 勾选 Generate Overlap Events Cube Details &amp;gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &amp;gt; EventGraph, 添加EventHit 自定义物体类型 # 项目设置 &amp;gt; Engine &amp;gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn 查看碰撞预设定义 # 可以自定义预设规则, 如A类型物体对其他类型物体如何作出反应; 或者修改已有预设 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识碰撞">
-<meta property="og:description" content="说明 # 虚幻编辑器 了解碰撞 # 碰撞 碰撞是世界中物体的物理交互 如Character的Capsule组件, 因为它的存在, 我们跳起后会落到地面, 而不是穿过地板; 我们可以上楼梯, 或是和另一个Character碰撞(而不是穿过他) Logical Trace 一条轨迹, 给定端点A和B, 计算与轨迹相交的场景中的物体 射击时通过该判断, 得到击中目标 在虚幻编辑器使用Console # 鼠标已由程序控制, 打开Console 按下 ` (apostrophe sign), 在视口下方会出现命令行, 可以输入debug命令 设置打开Console的快捷键 项目设置 &gt; Engine &gt; Input &gt; Console &gt; Console Keys 输出每秒帧数 # stat fps 在右上方角落显示, 一秒将近40帧, 40 x 25 ms = 1000 ms = 1 s 输出GPU统计数据 # stat GPU 隐藏debug信息 # 输入相同命令, 或 stat none 显示场景中碰撞相关 # show collision 可以看到Character的Capsule组件.">
+<meta property="og:description" content="概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 碰撞 # 碰撞是物体之间的交互，会发生以下情形 - Ignore 忽略 Overlap 重叠: 产生重叠事件 Block 阻挡：产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点A和B, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &gt; Engine &gt; Input &gt; Console &gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 在场景中添加Cube和Sphere Place Actors &gt; Shapes 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &gt; Capsule Component &gt; Details &gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &gt; Object Responses &gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是因为Camera通道的碰撞反馈为Block # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与Sphere碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &gt; 选中SpringArmComponent &gt; Details &gt; Camera Collision &gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &gt; Trace Responses &gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开BP_STUBaseCharacter &gt; Event Graph 在 Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选产生重叠事件 # Sphere Details &gt; 勾选 Generate Overlap Events Cube Details &gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &gt; EventGraph, 添加EventHit 自定义物体类型 # 项目设置 &gt; Engine &gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn 查看碰撞预设定义 # 可以自定义预设规则, 如A类型物体对其他类型物体如何作出反应; 或者修改已有预设 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-25T16:56:18+00:00">
-  <meta property="article:modified_time" content="2023-08-12T14:37:03+08:00">
+  <meta property="article:modified_time" content="2023-08-17T18:06:53+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-25T16:56:18CET",
-      "dateModified": "2023-08-12T14:37:03CET",
+      "dateModified": "2023-08-17T18:06:53CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/"
           },
           "datePublished": "2023-06-25T16:56:18CET",
-          "dateModified": "2023-08-12T14:37:03CET",
+          "dateModified": "2023-08-17T18:06:53CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2677,43 +2677,56 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#了解碰撞">了解碰撞</a></li>
-    <li><a href="#在虚幻编辑器使用console">在虚幻编辑器使用Console</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#碰撞">碰撞</a></li>
+    <li><a href="#轨迹计算">轨迹计算</a></li>
+    <li><a href="#在虚幻编辑器使用控制台">在虚幻编辑器使用控制台</a>
       <ul>
         <li><a href="#输出每秒帧数">输出每秒帧数</a></li>
         <li><a href="#输出gpu统计数据">输出GPU统计数据</a></li>
-        <li><a href="#隐藏debug信息">隐藏debug信息</a></li>
-        <li><a href="#显示场景中碰撞相关">显示场景中碰撞相关</a></li>
+        <li><a href="#隐藏debug信息">隐藏Debug信息</a></li>
+        <li><a href="#显示场景中的碰撞">显示场景中的碰撞</a></li>
       </ul>
     </li>
     <li><a href="#碰撞选项">碰撞选项</a></li>
-    <li><a href="#设置character碰撞选项">设置Character碰撞选项</a>
+    <li><a href="#设置游戏角色穿过物体">设置游戏角色穿过物体</a>
       <ul>
-        <li><a href="#设置capsulecomponent的碰撞选项">设置CapsuleComponent的碰撞选项</a></li>
+        <li><a href="#设置游戏角色capsule组件的碰撞选项">设置游戏角色Capsule组件的碰撞选项</a></li>
         <li><a href="#设置sphere的碰撞选项">设置Sphere的碰撞选项</a></li>
+        <li><a href="#设置cube的碰撞选项">设置Cube的碰撞选项</a></li>
+        <li><a href="#查看">查看</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置camera通道忽略物体">设置Camera通道忽略物体</a>
+      <ul>
         <li><a href="#查看springarm组件">查看SpringArm组件</a></li>
-        <li><a href="#再次设置sphere">再次设置Sphere</a></li>
+        <li><a href="#设置camera通道忽略sphere">设置Camera通道忽略Sphere</a></li>
+        <li><a href="#查看-游戏角色穿过sphere时-感官上正常">查看: 游戏角色穿过Sphere时, 感官上正常</a></li>
       </ul>
     </li>
-    <li><a href="#重叠事件-输出actor信息">重叠事件: 输出Actor信息</a>
+    <li><a href="#产生重叠事件-输出actor信息">产生重叠事件: 输出Actor信息</a>
       <ul>
-        <li><a href="#设置事件">设置事件</a></li>
-        <li><a href="#为sphere设置产生重叠事件">为Sphere设置产生重叠事件</a></li>
+        <li><a href="#在蓝图中处理事件">在蓝图中处理事件</a></li>
+        <li><a href="#为物体勾选产生重叠事件">为物体勾选产生重叠事件</a></li>
+        <li><a href="#查看日志">查看日志</a></li>
       </ul>
     </li>
-    <li><a href="#碰撞事件-获取碰撞信息">碰撞事件: 获取碰撞信息</a>
+    <li><a href="#产生碰撞事件-获取碰撞信息">产生碰撞事件: 获取碰撞信息</a>
       <ul>
+        <li><a href="#为物体勾选产生碰撞事件">为物体勾选产生碰撞事件</a></li>
+        <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义物体类型">自定义物体类型</a>
+      <ul>
+        <li><a href="#创建物体类型enemy">创建物体类型Enemy</a></li>
+        <li><a href="#创建物体类型geometry">创建物体类型Geometry</a></li>
+        <li><a href="#查看游戏角色的碰撞选项">查看游戏角色的碰撞选项</a></li>
         <li><a href="#设置cube">设置Cube</a></li>
-        <li><a href="#获取碰撞信息">获取碰撞信息</a></li>
+        <li><a href="#设置sphere">设置Sphere</a></li>
       </ul>
     </li>
-    <li><a href="#自定义碰撞相关">自定义碰撞相关</a>
-      <ul>
-        <li><a href="#自定义物体类型">自定义物体类型</a></li>
-        <li><a href="#预设">预设</a></li>
-      </ul>
-    </li>
+    <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
   </ul>
 </nav>
       </div>
@@ -2725,43 +2738,56 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#了解碰撞">了解碰撞</a></li>
-    <li><a href="#在虚幻编辑器使用console">在虚幻编辑器使用Console</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#碰撞">碰撞</a></li>
+    <li><a href="#轨迹计算">轨迹计算</a></li>
+    <li><a href="#在虚幻编辑器使用控制台">在虚幻编辑器使用控制台</a>
       <ul>
         <li><a href="#输出每秒帧数">输出每秒帧数</a></li>
         <li><a href="#输出gpu统计数据">输出GPU统计数据</a></li>
-        <li><a href="#隐藏debug信息">隐藏debug信息</a></li>
-        <li><a href="#显示场景中碰撞相关">显示场景中碰撞相关</a></li>
+        <li><a href="#隐藏debug信息">隐藏Debug信息</a></li>
+        <li><a href="#显示场景中的碰撞">显示场景中的碰撞</a></li>
       </ul>
     </li>
     <li><a href="#碰撞选项">碰撞选项</a></li>
-    <li><a href="#设置character碰撞选项">设置Character碰撞选项</a>
+    <li><a href="#设置游戏角色穿过物体">设置游戏角色穿过物体</a>
       <ul>
-        <li><a href="#设置capsulecomponent的碰撞选项">设置CapsuleComponent的碰撞选项</a></li>
+        <li><a href="#设置游戏角色capsule组件的碰撞选项">设置游戏角色Capsule组件的碰撞选项</a></li>
         <li><a href="#设置sphere的碰撞选项">设置Sphere的碰撞选项</a></li>
+        <li><a href="#设置cube的碰撞选项">设置Cube的碰撞选项</a></li>
+        <li><a href="#查看">查看</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置camera通道忽略物体">设置Camera通道忽略物体</a>
+      <ul>
         <li><a href="#查看springarm组件">查看SpringArm组件</a></li>
-        <li><a href="#再次设置sphere">再次设置Sphere</a></li>
+        <li><a href="#设置camera通道忽略sphere">设置Camera通道忽略Sphere</a></li>
+        <li><a href="#查看-游戏角色穿过sphere时-感官上正常">查看: 游戏角色穿过Sphere时, 感官上正常</a></li>
       </ul>
     </li>
-    <li><a href="#重叠事件-输出actor信息">重叠事件: 输出Actor信息</a>
+    <li><a href="#产生重叠事件-输出actor信息">产生重叠事件: 输出Actor信息</a>
       <ul>
-        <li><a href="#设置事件">设置事件</a></li>
-        <li><a href="#为sphere设置产生重叠事件">为Sphere设置产生重叠事件</a></li>
+        <li><a href="#在蓝图中处理事件">在蓝图中处理事件</a></li>
+        <li><a href="#为物体勾选产生重叠事件">为物体勾选产生重叠事件</a></li>
+        <li><a href="#查看日志">查看日志</a></li>
       </ul>
     </li>
-    <li><a href="#碰撞事件-获取碰撞信息">碰撞事件: 获取碰撞信息</a>
+    <li><a href="#产生碰撞事件-获取碰撞信息">产生碰撞事件: 获取碰撞信息</a>
       <ul>
+        <li><a href="#为物体勾选产生碰撞事件">为物体勾选产生碰撞事件</a></li>
+        <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义物体类型">自定义物体类型</a>
+      <ul>
+        <li><a href="#创建物体类型enemy">创建物体类型Enemy</a></li>
+        <li><a href="#创建物体类型geometry">创建物体类型Geometry</a></li>
+        <li><a href="#查看游戏角色的碰撞选项">查看游戏角色的碰撞选项</a></li>
         <li><a href="#设置cube">设置Cube</a></li>
-        <li><a href="#获取碰撞信息">获取碰撞信息</a></li>
+        <li><a href="#设置sphere">设置Sphere</a></li>
       </ul>
     </li>
-    <li><a href="#自定义碰撞相关">自定义碰撞相关</a>
-      <ul>
-        <li><a href="#自定义物体类型">自定义物体类型</a></li>
-        <li><a href="#预设">预设</a></li>
-      </ul>
-    </li>
+    <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
   </ul>
 </nav>
   </nav>
@@ -2797,43 +2823,56 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#了解碰撞">了解碰撞</a></li>
-    <li><a href="#在虚幻编辑器使用console">在虚幻编辑器使用Console</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#碰撞">碰撞</a></li>
+    <li><a href="#轨迹计算">轨迹计算</a></li>
+    <li><a href="#在虚幻编辑器使用控制台">在虚幻编辑器使用控制台</a>
       <ul>
         <li><a href="#输出每秒帧数">输出每秒帧数</a></li>
         <li><a href="#输出gpu统计数据">输出GPU统计数据</a></li>
-        <li><a href="#隐藏debug信息">隐藏debug信息</a></li>
-        <li><a href="#显示场景中碰撞相关">显示场景中碰撞相关</a></li>
+        <li><a href="#隐藏debug信息">隐藏Debug信息</a></li>
+        <li><a href="#显示场景中的碰撞">显示场景中的碰撞</a></li>
       </ul>
     </li>
     <li><a href="#碰撞选项">碰撞选项</a></li>
-    <li><a href="#设置character碰撞选项">设置Character碰撞选项</a>
+    <li><a href="#设置游戏角色穿过物体">设置游戏角色穿过物体</a>
       <ul>
-        <li><a href="#设置capsulecomponent的碰撞选项">设置CapsuleComponent的碰撞选项</a></li>
+        <li><a href="#设置游戏角色capsule组件的碰撞选项">设置游戏角色Capsule组件的碰撞选项</a></li>
         <li><a href="#设置sphere的碰撞选项">设置Sphere的碰撞选项</a></li>
+        <li><a href="#设置cube的碰撞选项">设置Cube的碰撞选项</a></li>
+        <li><a href="#查看">查看</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置camera通道忽略物体">设置Camera通道忽略物体</a>
+      <ul>
         <li><a href="#查看springarm组件">查看SpringArm组件</a></li>
-        <li><a href="#再次设置sphere">再次设置Sphere</a></li>
+        <li><a href="#设置camera通道忽略sphere">设置Camera通道忽略Sphere</a></li>
+        <li><a href="#查看-游戏角色穿过sphere时-感官上正常">查看: 游戏角色穿过Sphere时, 感官上正常</a></li>
       </ul>
     </li>
-    <li><a href="#重叠事件-输出actor信息">重叠事件: 输出Actor信息</a>
+    <li><a href="#产生重叠事件-输出actor信息">产生重叠事件: 输出Actor信息</a>
       <ul>
-        <li><a href="#设置事件">设置事件</a></li>
-        <li><a href="#为sphere设置产生重叠事件">为Sphere设置产生重叠事件</a></li>
+        <li><a href="#在蓝图中处理事件">在蓝图中处理事件</a></li>
+        <li><a href="#为物体勾选产生重叠事件">为物体勾选产生重叠事件</a></li>
+        <li><a href="#查看日志">查看日志</a></li>
       </ul>
     </li>
-    <li><a href="#碰撞事件-获取碰撞信息">碰撞事件: 获取碰撞信息</a>
+    <li><a href="#产生碰撞事件-获取碰撞信息">产生碰撞事件: 获取碰撞信息</a>
       <ul>
+        <li><a href="#为物体勾选产生碰撞事件">为物体勾选产生碰撞事件</a></li>
+        <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义物体类型">自定义物体类型</a>
+      <ul>
+        <li><a href="#创建物体类型enemy">创建物体类型Enemy</a></li>
+        <li><a href="#创建物体类型geometry">创建物体类型Geometry</a></li>
+        <li><a href="#查看游戏角色的碰撞选项">查看游戏角色的碰撞选项</a></li>
         <li><a href="#设置cube">设置Cube</a></li>
-        <li><a href="#获取碰撞信息">获取碰撞信息</a></li>
+        <li><a href="#设置sphere">设置Sphere</a></li>
       </ul>
     </li>
-    <li><a href="#自定义碰撞相关">自定义碰撞相关</a>
-      <ul>
-        <li><a href="#自定义物体类型">自定义物体类型</a></li>
-        <li><a href="#预设">预设</a></li>
-      </ul>
-    </li>
+    <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
   </ul>
 </nav>
       </div>
@@ -2845,111 +2884,149 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#了解碰撞">了解碰撞</a></li>
-    <li><a href="#在虚幻编辑器使用console">在虚幻编辑器使用Console</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#碰撞">碰撞</a></li>
+    <li><a href="#轨迹计算">轨迹计算</a></li>
+    <li><a href="#在虚幻编辑器使用控制台">在虚幻编辑器使用控制台</a>
       <ul>
         <li><a href="#输出每秒帧数">输出每秒帧数</a></li>
         <li><a href="#输出gpu统计数据">输出GPU统计数据</a></li>
-        <li><a href="#隐藏debug信息">隐藏debug信息</a></li>
-        <li><a href="#显示场景中碰撞相关">显示场景中碰撞相关</a></li>
+        <li><a href="#隐藏debug信息">隐藏Debug信息</a></li>
+        <li><a href="#显示场景中的碰撞">显示场景中的碰撞</a></li>
       </ul>
     </li>
     <li><a href="#碰撞选项">碰撞选项</a></li>
-    <li><a href="#设置character碰撞选项">设置Character碰撞选项</a>
+    <li><a href="#设置游戏角色穿过物体">设置游戏角色穿过物体</a>
       <ul>
-        <li><a href="#设置capsulecomponent的碰撞选项">设置CapsuleComponent的碰撞选项</a></li>
+        <li><a href="#设置游戏角色capsule组件的碰撞选项">设置游戏角色Capsule组件的碰撞选项</a></li>
         <li><a href="#设置sphere的碰撞选项">设置Sphere的碰撞选项</a></li>
+        <li><a href="#设置cube的碰撞选项">设置Cube的碰撞选项</a></li>
+        <li><a href="#查看">查看</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置camera通道忽略物体">设置Camera通道忽略物体</a>
+      <ul>
         <li><a href="#查看springarm组件">查看SpringArm组件</a></li>
-        <li><a href="#再次设置sphere">再次设置Sphere</a></li>
+        <li><a href="#设置camera通道忽略sphere">设置Camera通道忽略Sphere</a></li>
+        <li><a href="#查看-游戏角色穿过sphere时-感官上正常">查看: 游戏角色穿过Sphere时, 感官上正常</a></li>
       </ul>
     </li>
-    <li><a href="#重叠事件-输出actor信息">重叠事件: 输出Actor信息</a>
+    <li><a href="#产生重叠事件-输出actor信息">产生重叠事件: 输出Actor信息</a>
       <ul>
-        <li><a href="#设置事件">设置事件</a></li>
-        <li><a href="#为sphere设置产生重叠事件">为Sphere设置产生重叠事件</a></li>
+        <li><a href="#在蓝图中处理事件">在蓝图中处理事件</a></li>
+        <li><a href="#为物体勾选产生重叠事件">为物体勾选产生重叠事件</a></li>
+        <li><a href="#查看日志">查看日志</a></li>
       </ul>
     </li>
-    <li><a href="#碰撞事件-获取碰撞信息">碰撞事件: 获取碰撞信息</a>
+    <li><a href="#产生碰撞事件-获取碰撞信息">产生碰撞事件: 获取碰撞信息</a>
       <ul>
+        <li><a href="#为物体勾选产生碰撞事件">为物体勾选产生碰撞事件</a></li>
+        <li><a href="#在蓝图中添加事件">在蓝图中添加事件</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义物体类型">自定义物体类型</a>
+      <ul>
+        <li><a href="#创建物体类型enemy">创建物体类型Enemy</a></li>
+        <li><a href="#创建物体类型geometry">创建物体类型Geometry</a></li>
+        <li><a href="#查看游戏角色的碰撞选项">查看游戏角色的碰撞选项</a></li>
         <li><a href="#设置cube">设置Cube</a></li>
-        <li><a href="#获取碰撞信息">获取碰撞信息</a></li>
+        <li><a href="#设置sphere">设置Sphere</a></li>
       </ul>
     </li>
-    <li><a href="#自定义碰撞相关">自定义碰撞相关</a>
-      <ul>
-        <li><a href="#自定义物体类型">自定义物体类型</a></li>
-        <li><a href="#预设">预设</a></li>
-      </ul>
-    </li>
+    <li><a href="#查看碰撞预设定义">查看碰撞预设定义</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>虚幻编辑器</code> <br/></p>
-<h2 id="了解碰撞">了解碰撞 <a href="#%e4%ba%86%e8%a7%a3%e7%a2%b0%e6%92%9e" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>碰撞 <br/>
 <ul>
-<li>碰撞是世界中物体的物理交互 <br/></li>
-<li>如Character的Capsule组件, 因为它的存在, 我们跳起后会落到地面, 而不是穿过地板; 我们可以上楼梯, 或是和另一个Character碰撞(而不是穿过他) <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 在虚幻编辑器使用控制台 <code>Console</code> <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 碰撞选项 <br/></li>
 </ul>
-</li>
-<li>Logical Trace <br/>
-<ul>
-<li>一条轨迹, 给定端点A和B, 计算与轨迹相交的场景中的物体 <br/></li>
-<li>射击时通过该判断, 得到击中目标 <br/></li>
-</ul>
-</li>
-</ol>
-<h2 id="在虚幻编辑器使用console">在虚幻编辑器使用Console <a href="#%e5%9c%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%bd%bf%e7%94%a8console" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="碰撞">碰撞 <a href="#%e7%a2%b0%e6%92%9e" class="anchor" aria-hidden="true">#</a></h2>
+<p>碰撞是物体之间的交互，会发生以下情形 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ignore</td>
+<td>忽略</td>
+</tr>
+<tr>
+<td>Overlap</td>
+<td>重叠: 产生重叠事件</td>
+</tr>
+<tr>
+<td>Block</td>
+<td>阻挡：产生碰撞事件</td>
+</tr>
+</tbody>
+</table>
+<p>游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 <br/></p>
+<h2 id="轨迹计算">轨迹计算 <a href="#%e8%bd%a8%e8%bf%b9%e8%ae%a1%e7%ae%97" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Logical Trace</code> <br/>
+给定轨迹的端点A和B, 计算场景中与轨迹相交的物体 <br/></p>
+<p>通过轨迹计算得到射击击中的目标 <br/></p>
+<h2 id="在虚幻编辑器使用控制台">在虚幻编辑器使用控制台 <a href="#%e5%9c%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%bd%bf%e7%94%a8%e6%8e%a7%e5%88%b6%e5%8f%b0" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
-<li>鼠标已由程序控制, 打开Console <br/>
-按下 ` (apostrophe sign), 在视口下方会出现命令行, 可以输入debug命令 <br/></li>
-<li>设置打开Console的快捷键 <br/>
+<li>打开控制台 <br/>
+运行时, 按下 ` <code>Apostrophe Sign</code> , 在视口下方会出现命令行, 可以输入调试命令 <br/></li>
+<li>设置打开控制台的快捷键 <br/>
 <code>项目设置 &gt; Engine &gt; Input &gt; Console &gt; Console Keys</code> <br/></li>
 </ol>
 <h3 id="输出每秒帧数">输出每秒帧数 <a href="#%e8%be%93%e5%87%ba%e6%af%8f%e7%a7%92%e5%b8%a7%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-text">stat fps
 </code></pre>
-<p>在右上方角落显示, 一秒将近40帧, 40 x 25 ms = 1000 ms = 1 s <br/></p>
+<ol>
+<li>
+<p>在右上方显示 <br/></p>
 <p><img src="/pic/武器/初识碰撞/fps.png" width="800" /> <br/> <br/></p>
+</li>
+<li>
+<p>1秒将近40帧 <br/></p>
+<pre><code class="language-text">1s / 25ms = 1000ms / 25ms = 40
+</code></pre>
+</li>
+</ol>
 <h3 id="输出gpu统计数据">输出GPU统计数据 <a href="#%e8%be%93%e5%87%bagpu%e7%bb%9f%e8%ae%a1%e6%95%b0%e6%8d%ae" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-text">stat GPU    
 </code></pre>
 <p><img src="/pic/武器/初识碰撞/gpu.png" width="800" /> <br/> <br/></p>
-<h3 id="隐藏debug信息">隐藏debug信息 <a href="#%e9%9a%90%e8%97%8fdebug%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="隐藏debug信息">隐藏Debug信息 <a href="#%e9%9a%90%e8%97%8fdebug%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
 <p>输入相同命令, 或 <br/></p>
 <pre><code class="language-text">stat none
 </code></pre>
-<h3 id="显示场景中碰撞相关">显示场景中碰撞相关 <a href="#%e6%98%be%e7%a4%ba%e5%9c%ba%e6%99%af%e4%b8%ad%e7%a2%b0%e6%92%9e%e7%9b%b8%e5%85%b3" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="显示场景中的碰撞">显示场景中的碰撞 <a href="#%e6%98%be%e7%a4%ba%e5%9c%ba%e6%99%af%e4%b8%ad%e7%9a%84%e7%a2%b0%e6%92%9e" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-text">show collision    
 </code></pre>
-<ul>
+<ol>
 <li>
-<p>可以看到Character的Capsule组件. 这很方便, 因为碰撞组件纯逻辑, 在游戏中默认不可见 <br/></p>
+<p>可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 <br/></p>
 <p><img src="/pic/武器/初识碰撞/show-collision.png" width="800" /> <br/> <br/></p>
 </li>
 <li>
-<p>再次输入show collision关闭 <br/></p>
+<p>再次输入隐藏 <br/></p>
 </li>
-</ul>
-<h2 id="碰撞选项">碰撞选项 <a href="#%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>往场景中添加Cube和Sphere <br/>
-<code>Place Actors &gt; Shapes</code> <br/></li>
-<li><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/#%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9">碰撞选项</a> <br/></li>
 </ol>
-<h2 id="设置character碰撞选项">设置Character碰撞选项 <a href="#%e8%ae%be%e7%bd%aecharacter%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="设置capsulecomponent的碰撞选项">设置CapsuleComponent的碰撞选项 <a href="#%e8%ae%be%e7%bd%aecapsulecomponent%e7%9a%84%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
+<h2 id="碰撞选项">碰撞选项 <a href="#%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/#%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9">碰撞选项</a> <br/>
+在场景中添加Cube和Sphere <code>Place Actors &gt; Shapes</code>      <br/></p>
+<h2 id="设置游戏角色穿过物体">设置游戏角色穿过物体 <a href="#%e8%ae%be%e7%bd%ae%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e7%a9%bf%e8%bf%87%e7%89%a9%e4%bd%93" class="anchor" aria-hidden="true">#</a></h2>
+<p>在场景中添加Sphere和Cube <code>Place Actors &gt; Shapes</code> <br/></p>
+<h3 id="设置游戏角色capsule组件的碰撞选项">设置游戏角色Capsule组件的碰撞选项 <a href="#%e8%ae%be%e7%bd%ae%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2capsule%e7%bb%84%e4%bb%b6%e7%9a%84%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>BP_STUBaseCharacter &gt; Capsule Component &gt; Details &gt; Collision</code> <br/></p>
 <ol>
 <li>
 <p>碰撞预设默认为Pawn <br/></p>
-<p><img src="/pic/武器/初识碰撞/capsule-default.png" width="500" /> <br/> <br/></p>
+<p><img src="/pic/武器/初识碰撞/capsule-default.png" width="400" /> <br/> <br/></p>
 </li>
 <li>
 <p>将碰撞预设置为Custom <br/></p>
@@ -2958,22 +3035,36 @@
 <h3 id="设置sphere的碰撞选项">设置Sphere的碰撞选项 <a href="#%e8%ae%be%e7%bd%aesphere%e7%9a%84%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>
-<p>碰撞预设选择Custom <br/></p>
+<p>将碰撞预设设置为Custom <br/></p>
 </li>
 <li>
-<p>允许游戏角色Overlap <br/></p>
+<p>允许游戏角色穿过 <br/>
+对物体类型的碰撞反馈中, 设置对Pawn执行Overlap <code>Collision Responses &gt; Object Responses &gt; Pawn, 勾选Overlap</code> <br/></p>
 <p><img src="/pic/武器/初识碰撞/sphere-pawn-overlap.png" width="450" /> <br/> <br/></p>
 </li>
+</ol>
+<h3 id="设置cube的碰撞选项">设置Cube的碰撞选项 <a href="#%e8%ae%be%e7%bd%aecube%e7%9a%84%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
 <li>
-<p>Character不可通过Cube, 但可通过Sphere <br/></p>
+<p>设置 <code>Collision Preset</code> 为Custom <br/></p>
 </li>
 <li>
-<p>Charater与Sphere重叠时, CameraComponent会有交叉反应-放大镜头, 因为CameraComponent处于Character中间, 这是由SpringArm造成的 <br/></p>
+<p>允许Pawn穿过 <br/></p>
+<p><img src="/pic/武器/初识碰撞/cube-pawn-overlap.png" width="450" /> <br/> <br/></p>
 </li>
 </ol>
+<h3 id="查看">查看 <a href="#%e6%9f%a5%e7%9c%8b" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="游戏角色可以穿过sphere和cube">游戏角色可以穿过Sphere和Cube <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e5%8f%af%e4%bb%a5%e7%a9%bf%e8%bf%87sphere%e5%92%8ccube" class="anchor" aria-hidden="true">#</a></h4>
+<h4 id="游戏角色与物体碰撞时-镜头会放大-这是因为camera通道的碰撞反馈为block">游戏角色与物体碰撞时, 镜头会放大, 这是因为Camera通道的碰撞反馈为Block <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%b8%8e%e7%89%a9%e4%bd%93%e7%a2%b0%e6%92%9e%e6%97%b6-%e9%95%9c%e5%a4%b4%e4%bc%9a%e6%94%be%e5%a4%a7-%e8%bf%99%e6%98%af%e5%9b%a0%e4%b8%bacamera%e9%80%9a%e9%81%93%e7%9a%84%e7%a2%b0%e6%92%9e%e5%8f%8d%e9%a6%88%e4%b8%bablock" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 <br/></li>
+<li>Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与Sphere碰撞 <br/></li>
+<li>之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 <br/></li>
+</ul>
+<h2 id="设置camera通道忽略物体">设置Camera通道忽略物体 <a href="#%e8%ae%be%e7%bd%aecamera%e9%80%9a%e9%81%93%e5%bf%bd%e7%95%a5%e7%89%a9%e4%bd%93" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="查看springarm组件">查看SpringArm组件 <a href="#%e6%9f%a5%e7%9c%8bspringarm%e7%bb%84%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>BP_STUBaseCharacter &gt; 选中SpringArmComponent &gt; Details &gt; Camera Collision &gt; Probe Channel</code> <br/>
-SpringArm组件需要知道如何与世界进行物理交互 <br/></p>
+SpringArm组件如何进行碰撞探测, 默认为Camera通道 <br/></p>
 <table>
 <thead>
 <tr>
@@ -2986,61 +3077,48 @@ SpringArm组件需要知道如何与世界进行物理交互 <br/></p>
 </tr>
 </tbody>
 </table>
-<p>我们可以修改 <code>Sphere &gt; Collision Responses &gt; Trace Responses &gt; Camera</code> , 使得Character穿过Sphere时, CameraComponent忽略该事件 <br/></p>
-<h3 id="再次设置sphere">再次设置Sphere <a href="#%e5%86%8d%e6%ac%a1%e8%ae%be%e7%bd%aesphere" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="设置camera通道忽略sphere">设置Camera通道忽略Sphere <a href="#%e8%ae%be%e7%bd%aecamera%e9%80%9a%e9%81%93%e5%bf%bd%e7%95%a5sphere" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>Collision Responses &gt; Trace Responses &gt; Camera, 选择Ignore</code> <br/></p>
 <p><img src="/pic/武器/初识碰撞/Sphere-TraceResponses-Camera-Ignore.png" width="450" /> <br/> <br/></p>
-<ul>
-<li>之所以需要设置SpringArm的碰撞,因为当我们穿过墙时, 我们不应该可以看到墙的原先那一面 <br/></li>
-<li>现在我们穿过Sphere, 感官上正常 <br/></li>
-</ul>
-<h2 id="重叠事件-输出actor信息">重叠事件: 输出Actor信息 <a href="#%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6-%e8%be%93%e5%87%baactor%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="设置事件">设置事件 <a href="#%e8%ae%be%e7%bd%ae%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="查看-游戏角色穿过sphere时-感官上正常">查看: 游戏角色穿过Sphere时, 感官上正常 <a href="#%e6%9f%a5%e7%9c%8b-%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e7%a9%bf%e8%bf%87sphere%e6%97%b6-%e6%84%9f%e5%ae%98%e4%b8%8a%e6%ad%a3%e5%b8%b8" class="anchor" aria-hidden="true">#</a></h3>
+<h2 id="产生重叠事件-输出actor信息">产生重叠事件: 输出Actor信息 <a href="#%e4%ba%a7%e7%94%9f%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6-%e8%be%93%e5%87%baactor%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="在蓝图中处理事件">在蓝图中处理事件 <a href="#%e5%9c%a8%e8%93%9d%e5%9b%be%e4%b8%ad%e5%a4%84%e7%90%86%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>打开BP_STUBaseCharacter &gt; Event Graph <br/></li>
-<li>在 <code>Event ActorBeginOverlap</code> 之后, 执行PrintString(在屏幕打印) <br/></li>
+<li>在 <code>Event ActorBeginOverlap</code> 之后, 在屏幕打印 <code>PrintString</code> <br/></li>
 <li>OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 <br/></li>
 </ol>
 <p><img src="/pic/武器/初识碰撞/Overlap-PrintString.png" width="1000" /> <br/> <br/></p>
-<h3 id="为sphere设置产生重叠事件">为Sphere设置产生重叠事件 <a href="#%e4%b8%basphere%e8%ae%be%e7%bd%ae%e4%ba%a7%e7%94%9f%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="为物体勾选产生重叠事件">为物体勾选产生重叠事件 <a href="#%e4%b8%ba%e7%89%a9%e4%bd%93%e5%8b%be%e9%80%89%e4%ba%a7%e7%94%9f%e9%87%8d%e5%8f%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>
-<p><code>Sphere &gt; Details &gt; 勾选 Generate Overlap Events</code> <br/></p>
+<p>Sphere <br/>
+<code>Details &gt; 勾选 Generate Overlap Events</code> <br/></p>
 <p><img src="/pic/武器/初识碰撞/Sphere-Gen-Overlap.png" width="400" /> <br/> <br/></p>
-<p>出于优化考虑, 默认false <br/></p>
 </li>
 <li>
-<p>日志 <br/></p>
-<p><img src="/pic/武器/初识碰撞/Sphere-Overlap-Log.png" width="500" /> <br/> <br/></p>
-</li>
-</ol>
-<h2 id="碰撞事件-获取碰撞信息">碰撞事件: 获取碰撞信息 <a href="#%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6-%e8%8e%b7%e5%8f%96%e7%a2%b0%e6%92%9e%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="设置cube">设置Cube <a href="#%e8%ae%be%e7%bd%aecube" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>
-<p>设置Collision Preset为Custom <br/></p>
-</li>
-<li>
-<p>勾选产生重叠事件 <br/>
-<code>Generate Overlap Events</code> <br/></p>
-</li>
-<li>
-<p>允许Pawn重叠 <br/></p>
-<p><img src="/pic/武器/初识碰撞/cube-pawn-overlap.png" width="450" /> <br/> <br/></p>
+<p>Cube <br/>
+<code>Details &gt; 勾选 Generate Overlap Events</code> <br/></p>
 </li>
 </ol>
-<h3 id="获取碰撞信息">获取碰撞信息 <a href="#%e8%8e%b7%e5%8f%96%e7%a2%b0%e6%92%9e%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>
-<p>选择Cube, 勾选 <code>Simulation Generates Hit Events</code> <br/></p>
+<h3 id="查看日志">查看日志 <a href="#%e6%9f%a5%e7%9c%8b%e6%97%a5%e5%bf%97" class="anchor" aria-hidden="true">#</a></h3>
+<p><img src="/pic/武器/初识碰撞/Overlap-Log.png" width="500" /> <br/> <br/></p>
+<h2 id="产生碰撞事件-获取碰撞信息">产生碰撞事件: 获取碰撞信息 <a href="#%e4%ba%a7%e7%94%9f%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6-%e8%8e%b7%e5%8f%96%e7%a2%b0%e6%92%9e%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="为物体勾选产生碰撞事件">为物体勾选产生碰撞事件 <a href="#%e4%b8%ba%e7%89%a9%e4%bd%93%e5%8b%be%e9%80%89%e4%ba%a7%e7%94%9f%e7%a2%b0%e6%92%9e%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p>选择Cube, 去到Details面板, 勾选 <code>Simulation Generates Hit Events</code> <br/></p>
 <p><img src="/pic/武器/初识碰撞/cube-hit-event.png" width="450" /> <br/> <br/></p>
+<h3 id="在蓝图中添加事件">在蓝图中添加事件 <a href="#%e5%9c%a8%e8%93%9d%e5%9b%be%e4%b8%ad%e6%b7%bb%e5%8a%a0%e4%ba%8b%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>BP_STUBaseCharacter &gt; EventGraph, 添加EventHit</code> <br/></p>
+<h2 id="自定义物体类型">自定义物体类型 <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>项目设置 &gt; Engine &gt; Collision</code> <br/></p>
+<h3 id="创建物体类型enemy">创建物体类型Enemy <a href="#%e5%88%9b%e5%bb%ba%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8benemy" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p><code>New Object Channel</code> <br/></p>
+<p><img src="/pic/武器/初识碰撞/新建物体类型1.png" width="800" /> <br/> <br/></p>
 </li>
 <li>
-<p><code>BP_STUBaseCharacter &gt; EventGraph, 添加EventHit</code> <br/></p>
-</li>
-</ol>
-<h2 id="自定义碰撞相关">自定义碰撞相关 <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e7%a2%b0%e6%92%9e%e7%9b%b8%e5%85%b3" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>项目设置 &gt; Engine &gt; Collision</code> <br/></p>
+<p>设置 <br/></p>
 <table>
 <thead>
 <tr>
@@ -3050,44 +3128,53 @@ SpringArm组件需要知道如何与世界进行物理交互 <br/></p>
 </thead>
 <tbody>
 <tr>
-<td>Object Channels</td>
-<td>物体类型</td>
+<td>Name</td>
+<td>Enemy</td>
 </tr>
 <tr>
-<td>Trace Channels</td>
-<td></td>
-</tr>
-<tr>
-<td>Preset</td>
-<td>预设</td>
+<td>Default Response</td>
+<td>Block</td>
 </tr>
 </tbody>
 </table>
-<h3 id="自定义物体类型">自定义物体类型 <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8b" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>Object Channels</code> <br/></p>
-<h4 id="创建物体类型enemy">创建物体类型Enemy <a href="#%e5%88%9b%e5%bb%ba%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8benemy" class="anchor" aria-hidden="true">#</a></h4>
-<ol>
-<li>
-<p><code>点击New Object Channel</code> <br/></p>
-<p><img src="/pic/武器/初识碰撞/新建物体类型1.png" width="800" /> <br/> <br/></p>
-</li>
-<li>
-<p>命名为Enemy, Default Response为Block <br/></p>
 <p><img src="/pic/武器/初识碰撞/Enemy.png" width="250" /> <br/> <br/></p>
 </li>
+<li>
+<p>其他类型物体对Enemy采取Block <br/></p>
+</li>
 </ol>
-<h4 id="创建物体类型geometry">创建物体类型Geometry <a href="#%e5%88%9b%e5%bb%ba%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8bgeometry" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="创建物体类型geometry">创建物体类型Geometry <a href="#%e5%88%9b%e5%bb%ba%e7%89%a9%e4%bd%93%e7%b1%bb%e5%9e%8bgeometry" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>
-<p><code>点击New Object Channel, 命名为Geometry</code> <br/></p>
+<p><code>New Object Channel</code> <br/></p>
 </li>
 <li>
-<p>设置Default Response为Ignore <br/></p>
+<p>设置 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Geometry</td>
+</tr>
+<tr>
+<td>Default Response</td>
+<td>Ignore</td>
+</tr>
+</tbody>
+</table>
 <p><img src="/pic/武器/初识碰撞/Geometry.png" width="250" /> <br/> <br/></p>
-<p>其他类型自动忽略Geometry物体 <br/></p>
+</li>
+<li>
+<p>其他类型物体对Geometry采取Ignore <br/></p>
 </li>
 </ol>
-<h4 id="查看character对geometry和enemy的反馈">查看Character对Geometry和Enemy的反馈 <a href="#%e6%9f%a5%e7%9c%8bcharacter%e5%af%b9geometry%e5%92%8cenemy%e7%9a%84%e5%8f%8d%e9%a6%88" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="查看游戏角色的碰撞选项">查看游戏角色的碰撞选项 <a href="#%e6%9f%a5%e7%9c%8b%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e7%9a%84%e7%a2%b0%e6%92%9e%e9%80%89%e9%a1%b9" class="anchor" aria-hidden="true">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -3107,19 +3194,19 @@ SpringArm组件需要知道如何与世界进行物理交互 <br/></p>
 </tbody>
 </table>
 <p><img src="/pic/武器/初识碰撞/CharacterToEnemyAndGeometry.png" width="1000" /> <br/> <br/></p>
-<h4 id="设置cube">设置Cube <a href="#%e8%ae%be%e7%bd%aecube" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="设置cube">设置Cube <a href="#%e8%ae%be%e7%bd%aecube" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>物体类型为Geometry <br/></li>
 <li>忽略Pawn <br/></li>
 </ol>
 <p><img src="/pic/武器/初识碰撞/Cube-Geometry.png" width="400" /> <br/>    <br/></p>
-<h4 id="设置sphere">设置Sphere <a href="#%e8%ae%be%e7%bd%aesphere" class="anchor" aria-hidden="true">#</a></h4>
+<h3 id="设置sphere">设置Sphere <a href="#%e8%ae%be%e7%bd%aesphere" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>物体类型为Enemy <br/></li>
 <li>阻挡Pawn <br/></li>
 </ol>
 <p><img src="/pic/武器/初识碰撞/Sphere-Enemy.png" width="400" /> <br/>            <br/></p>
-<h3 id="预设">预设 <a href="#%e9%a2%84%e8%ae%be" class="anchor" aria-hidden="true">#</a></h3>
+<h2 id="查看碰撞预设定义">查看碰撞预设定义 <a href="#%e6%9f%a5%e7%9c%8b%e7%a2%b0%e6%92%9e%e9%a2%84%e8%ae%be%e5%ae%9a%e4%b9%89" class="anchor" aria-hidden="true">#</a></h2>
 <p>可以自定义预设规则, 如A类型物体对其他类型物体如何作出反应; 或者修改已有预设 <br/></p>
 <p><img src="/pic/武器/初识碰撞/CollisionPreset.png" width="1000" /> <br/> <br/></p>
 

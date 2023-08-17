@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>为骨骼网格体添加挂载点 - 六一的部落格</title>
-<meta name="description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &amp;gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &amp;gt; Add Preview Asset &amp;gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
+<meta name="description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体中的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &amp;gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &amp;gt; Add Preview Asset &amp;gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为骨骼网格体添加挂载点">
-<meta property="og:description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &gt; Add Preview Asset &gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
+<meta property="og:description" content="说明 # - 骨骼网格体 HeroTPP: Content/ExternalContent/Animation/Characters/HeroTPP/HeroTPP.uasset 挂载点上级骨骼 b_Right_Weapon 挂载点名称 WeaponSocket Socket # 骨骼网格体中的特殊物体 Object ，可以为任何骨骼添加Socket Socket的实质是骨骼网格体中的命名变换，可以在蓝图和C&#43;&#43;中获取 骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 在骨骼网格体上添加挂载点 # 打开HeroTPP # 方法一: 双击打开 方法二: 打开BP_STUBaseCharacter, 选择SkeletalMesh组件, 去到细节面板双击HeroTPP 查看骨骼网格体 # 左侧骨骼树面板，选中骨骼，可以在右侧细节面板查看骨骼的相对变换 可以是虚拟骨骼，无图形表示，具有变换属性: 如b_RightWeapon 为骨骼添加挂载点 # 选中b_RightWeapon，右键 &gt; Add Socket 设置挂载点参数 # Details 选中Socket，在右侧细节面板设置参数 - Socket Name WeaponSocket Relative Rotation X: -90 为挂载点添加预览模型 # WeaponSocket &gt; Add Preview Asset &gt; Rifle 在多种资产中预览挂载效果 # 举例 - HeroTPP_Skeleton 骨骼 HeroTPP 骨骼网格体 BS_Locomotion_Run 动画资产 ABP_BaseCharacter 动画蓝图 HeroTPP_Physics 通过编辑器的选项卡, 选择资产类型 动画资产 动画蓝图 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-21T22:00:04+00:00">
-  <meta property="article:modified_time" content="2023-08-17T03:25:25+08:00">
+  <meta property="article:modified_time" content="2023-08-17T04:37:29+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-21T22:00:04CET",
-      "dateModified": "2023-08-17T03:25:25CET",
+      "dateModified": "2023-08-17T04:37:29CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E4%B8%BA%E9%AA%A8%E9%AA%BC%E7%BD%91%E6%A0%BC%E4%BD%93%E6%B7%BB%E5%8A%A0%E6%8C%82%E8%BD%BD%E7%82%B9/"
           },
           "datePublished": "2023-06-21T22:00:04CET",
-          "dateModified": "2023-08-17T03:25:25CET",
+          "dateModified": "2023-08-17T04:37:29CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2813,7 +2813,7 @@
 </table>
 <h2 id="socket">Socket <a href="#socket" class="anchor" aria-hidden="true">#</a></h2>
 <p>骨骼网格体中的特殊物体 <code>Object</code> ，可以为任何骨骼添加Socket <br/></p>
-<p>Socket的实质是骨骼网格体的命名变换，可以在蓝图和C++中获取 <br/></p>
+<p>Socket的实质是骨骼网格体中的命名变换，可以在蓝图和C++中获取 <br/></p>
 <p>骨骼的Socket有多种用途，我们可以在Socket附加武器，用作集火点, 也可以通过Socket名称获取变换信息 <br/></p>
 <h2 id="在骨骼网格体上添加挂载点">在骨骼网格体上添加挂载点 <a href="#%e5%9c%a8%e9%aa%a8%e9%aa%bc%e7%bd%91%e6%a0%bc%e4%bd%93%e4%b8%8a%e6%b7%bb%e5%8a%a0%e6%8c%82%e8%bd%bd%e7%82%b9" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="打开herotpp">打开HeroTPP <a href="#%e6%89%93%e5%bc%80herotpp" class="anchor" aria-hidden="true">#</a></h3>
