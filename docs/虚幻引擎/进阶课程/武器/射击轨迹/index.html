@@ -2682,9 +2682,27 @@
     <li><a href="#为网格体rifle添加socket标记枪口-获取变换信息">为网格体Rifle添加Socket标记枪口, 获取变换信息</a></li>
     <li><a href="#模拟射击-绘制子弹轨迹">模拟射击: 绘制子弹轨迹</a>
       <ul>
-        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a></li>
-        <li><a href="#绘制线段">绘制线段</a></li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a>
+          <ul>
+            <li><a href="#获取socket变换">获取Socket变换</a></li>
+            <li><a href="#获取起点">获取起点</a></li>
+            <li><a href="#获取武器的朝向">获取武器的朝向</a></li>
+            <li><a href="#计算终点">计算终点</a></li>
+          </ul>
+        </li>
+        <li><a href="#绘制线段">绘制线段</a>
+          <ul>
+            <li><a href="#获取world对象">获取World对象</a></li>
+            <li><a href="#绘制线段">绘制线段</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整代码">完整代码</a>
+          <ul>
+            <li><a href="#添加数据成员">添加数据成员</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#makeshot">MakeShot</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
@@ -2706,7 +2724,13 @@
     </li>
     <li><a href="#射击游戏中发射子弹建模">射击游戏中发射子弹建模</a>
       <ul>
-        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a></li>
+        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a>
+          <ul>
+            <li><a href="#武器类生成武器时-设置其属于游戏角色">武器类生成武器时, 设置其属于游戏角色</a></li>
+            <li><a href="#获取游戏角色控制器">获取游戏角色控制器</a></li>
+            <li><a href="#通过游戏角色控制器获取camera组件的变换信息-位置和旋转">通过游戏角色控制器获取Camera组件的变换信息: 位置和旋转</a></li>
+          </ul>
+        </li>
         <li><a href="#重新计算子弹轨迹和碰撞信息">重新计算子弹轨迹和碰撞信息</a></li>
         <li><a href="#绘制子弹轨迹和交点">绘制子弹轨迹和交点</a></li>
         <li><a href="#完整代码">完整代码</a></li>
@@ -2715,8 +2739,19 @@
     <li><a href="#查看">查看</a></li>
     <li><a href="#击中游戏角色时-交点在骨骼网格体上">击中游戏角色时, 交点在骨骼网格体上</a>
       <ul>
-        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a></li>
-        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a></li>
+        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a>
+          <ul>
+            <li><a href="#放大capsule组件显示">放大Capsule组件显示</a></li>
+            <li><a href="#显示capsule组件">显示Capsule组件</a></li>
+            <li><a href="#效果图">效果图</a></li>
+          </ul>
+        </li>
+        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a>
+          <ul>
+            <li><a href="#设置capsule组件的碰撞选项">设置Capsule组件的碰撞选项</a></li>
+            <li><a href="#设置骨骼网格体的碰撞选项">设置骨骼网格体的碰撞选项</a></li>
+          </ul>
+        </li>
         <li><a href="#查看">查看</a></li>
         <li><a href="#恢复capsulecomponent的shape">恢复CapsuleComponent的Shape</a></li>
       </ul>
@@ -2750,9 +2785,27 @@
     <li><a href="#为网格体rifle添加socket标记枪口-获取变换信息">为网格体Rifle添加Socket标记枪口, 获取变换信息</a></li>
     <li><a href="#模拟射击-绘制子弹轨迹">模拟射击: 绘制子弹轨迹</a>
       <ul>
-        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a></li>
-        <li><a href="#绘制线段">绘制线段</a></li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a>
+          <ul>
+            <li><a href="#获取socket变换">获取Socket变换</a></li>
+            <li><a href="#获取起点">获取起点</a></li>
+            <li><a href="#获取武器的朝向">获取武器的朝向</a></li>
+            <li><a href="#计算终点">计算终点</a></li>
+          </ul>
+        </li>
+        <li><a href="#绘制线段">绘制线段</a>
+          <ul>
+            <li><a href="#获取world对象">获取World对象</a></li>
+            <li><a href="#绘制线段">绘制线段</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整代码">完整代码</a>
+          <ul>
+            <li><a href="#添加数据成员">添加数据成员</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#makeshot">MakeShot</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
@@ -2774,7 +2827,13 @@
     </li>
     <li><a href="#射击游戏中发射子弹建模">射击游戏中发射子弹建模</a>
       <ul>
-        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a></li>
+        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a>
+          <ul>
+            <li><a href="#武器类生成武器时-设置其属于游戏角色">武器类生成武器时, 设置其属于游戏角色</a></li>
+            <li><a href="#获取游戏角色控制器">获取游戏角色控制器</a></li>
+            <li><a href="#通过游戏角色控制器获取camera组件的变换信息-位置和旋转">通过游戏角色控制器获取Camera组件的变换信息: 位置和旋转</a></li>
+          </ul>
+        </li>
         <li><a href="#重新计算子弹轨迹和碰撞信息">重新计算子弹轨迹和碰撞信息</a></li>
         <li><a href="#绘制子弹轨迹和交点">绘制子弹轨迹和交点</a></li>
         <li><a href="#完整代码">完整代码</a></li>
@@ -2783,8 +2842,19 @@
     <li><a href="#查看">查看</a></li>
     <li><a href="#击中游戏角色时-交点在骨骼网格体上">击中游戏角色时, 交点在骨骼网格体上</a>
       <ul>
-        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a></li>
-        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a></li>
+        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a>
+          <ul>
+            <li><a href="#放大capsule组件显示">放大Capsule组件显示</a></li>
+            <li><a href="#显示capsule组件">显示Capsule组件</a></li>
+            <li><a href="#效果图">效果图</a></li>
+          </ul>
+        </li>
+        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a>
+          <ul>
+            <li><a href="#设置capsule组件的碰撞选项">设置Capsule组件的碰撞选项</a></li>
+            <li><a href="#设置骨骼网格体的碰撞选项">设置骨骼网格体的碰撞选项</a></li>
+          </ul>
+        </li>
         <li><a href="#查看">查看</a></li>
         <li><a href="#恢复capsulecomponent的shape">恢复CapsuleComponent的Shape</a></li>
       </ul>
@@ -2842,9 +2912,27 @@
     <li><a href="#为网格体rifle添加socket标记枪口-获取变换信息">为网格体Rifle添加Socket标记枪口, 获取变换信息</a></li>
     <li><a href="#模拟射击-绘制子弹轨迹">模拟射击: 绘制子弹轨迹</a>
       <ul>
-        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a></li>
-        <li><a href="#绘制线段">绘制线段</a></li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a>
+          <ul>
+            <li><a href="#获取socket变换">获取Socket变换</a></li>
+            <li><a href="#获取起点">获取起点</a></li>
+            <li><a href="#获取武器的朝向">获取武器的朝向</a></li>
+            <li><a href="#计算终点">计算终点</a></li>
+          </ul>
+        </li>
+        <li><a href="#绘制线段">绘制线段</a>
+          <ul>
+            <li><a href="#获取world对象">获取World对象</a></li>
+            <li><a href="#绘制线段">绘制线段</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整代码">完整代码</a>
+          <ul>
+            <li><a href="#添加数据成员">添加数据成员</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#makeshot">MakeShot</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
@@ -2866,7 +2954,13 @@
     </li>
     <li><a href="#射击游戏中发射子弹建模">射击游戏中发射子弹建模</a>
       <ul>
-        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a></li>
+        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a>
+          <ul>
+            <li><a href="#武器类生成武器时-设置其属于游戏角色">武器类生成武器时, 设置其属于游戏角色</a></li>
+            <li><a href="#获取游戏角色控制器">获取游戏角色控制器</a></li>
+            <li><a href="#通过游戏角色控制器获取camera组件的变换信息-位置和旋转">通过游戏角色控制器获取Camera组件的变换信息: 位置和旋转</a></li>
+          </ul>
+        </li>
         <li><a href="#重新计算子弹轨迹和碰撞信息">重新计算子弹轨迹和碰撞信息</a></li>
         <li><a href="#绘制子弹轨迹和交点">绘制子弹轨迹和交点</a></li>
         <li><a href="#完整代码">完整代码</a></li>
@@ -2875,8 +2969,19 @@
     <li><a href="#查看">查看</a></li>
     <li><a href="#击中游戏角色时-交点在骨骼网格体上">击中游戏角色时, 交点在骨骼网格体上</a>
       <ul>
-        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a></li>
-        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a></li>
+        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a>
+          <ul>
+            <li><a href="#放大capsule组件显示">放大Capsule组件显示</a></li>
+            <li><a href="#显示capsule组件">显示Capsule组件</a></li>
+            <li><a href="#效果图">效果图</a></li>
+          </ul>
+        </li>
+        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a>
+          <ul>
+            <li><a href="#设置capsule组件的碰撞选项">设置Capsule组件的碰撞选项</a></li>
+            <li><a href="#设置骨骼网格体的碰撞选项">设置骨骼网格体的碰撞选项</a></li>
+          </ul>
+        </li>
         <li><a href="#查看">查看</a></li>
         <li><a href="#恢复capsulecomponent的shape">恢复CapsuleComponent的Shape</a></li>
       </ul>
@@ -2910,9 +3015,27 @@
     <li><a href="#为网格体rifle添加socket标记枪口-获取变换信息">为网格体Rifle添加Socket标记枪口, 获取变换信息</a></li>
     <li><a href="#模拟射击-绘制子弹轨迹">模拟射击: 绘制子弹轨迹</a>
       <ul>
-        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a></li>
-        <li><a href="#绘制线段">绘制线段</a></li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#获取muzzlesocket变换以得到线段所需信息">获取MuzzleSocket变换以得到线段所需信息</a>
+          <ul>
+            <li><a href="#获取socket变换">获取Socket变换</a></li>
+            <li><a href="#获取起点">获取起点</a></li>
+            <li><a href="#获取武器的朝向">获取武器的朝向</a></li>
+            <li><a href="#计算终点">计算终点</a></li>
+          </ul>
+        </li>
+        <li><a href="#绘制线段">绘制线段</a>
+          <ul>
+            <li><a href="#获取world对象">获取World对象</a></li>
+            <li><a href="#绘制线段">绘制线段</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整代码">完整代码</a>
+          <ul>
+            <li><a href="#添加数据成员">添加数据成员</a></li>
+            <li><a href="#检查weaponmeshcomponent">检查WeaponMeshComponent</a></li>
+            <li><a href="#makeshot">MakeShot</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#在虚幻编辑器中查看">在虚幻编辑器中查看</a></li>
@@ -2934,7 +3057,13 @@
     </li>
     <li><a href="#射击游戏中发射子弹建模">射击游戏中发射子弹建模</a>
       <ul>
-        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a></li>
+        <li><a href="#在武器类获取游戏角色camera组件的变换信息">在武器类获取游戏角色Camera组件的变换信息</a>
+          <ul>
+            <li><a href="#武器类生成武器时-设置其属于游戏角色">武器类生成武器时, 设置其属于游戏角色</a></li>
+            <li><a href="#获取游戏角色控制器">获取游戏角色控制器</a></li>
+            <li><a href="#通过游戏角色控制器获取camera组件的变换信息-位置和旋转">通过游戏角色控制器获取Camera组件的变换信息: 位置和旋转</a></li>
+          </ul>
+        </li>
         <li><a href="#重新计算子弹轨迹和碰撞信息">重新计算子弹轨迹和碰撞信息</a></li>
         <li><a href="#绘制子弹轨迹和交点">绘制子弹轨迹和交点</a></li>
         <li><a href="#完整代码">完整代码</a></li>
@@ -2943,8 +3072,19 @@
     <li><a href="#查看">查看</a></li>
     <li><a href="#击中游戏角色时-交点在骨骼网格体上">击中游戏角色时, 交点在骨骼网格体上</a>
       <ul>
-        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a></li>
-        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a></li>
+        <li><a href="#当前击中游戏角色时-交点在capsule组件上">当前击中游戏角色时, 交点在Capsule组件上</a>
+          <ul>
+            <li><a href="#放大capsule组件显示">放大Capsule组件显示</a></li>
+            <li><a href="#显示capsule组件">显示Capsule组件</a></li>
+            <li><a href="#效果图">效果图</a></li>
+          </ul>
+        </li>
+        <li><a href="#轨迹计算时-忽略游戏角色capsule组件-将骨骼网格体考虑在内">轨迹计算时, 忽略游戏角色Capsule组件, 将骨骼网格体考虑在内</a>
+          <ul>
+            <li><a href="#设置capsule组件的碰撞选项">设置Capsule组件的碰撞选项</a></li>
+            <li><a href="#设置骨骼网格体的碰撞选项">设置骨骼网格体的碰撞选项</a></li>
+          </ul>
+        </li>
         <li><a href="#查看">查看</a></li>
         <li><a href="#恢复capsulecomponent的shape">恢复CapsuleComponent的Shape</a></li>
       </ul>
@@ -3611,7 +3751,7 @@ UE_LOG(LogBaseWeapon, Display, TEXT(&quot;Bone: %s&quot;), *HitResult.BoneName.T
 
 <script src="/js/bootstrap.min.650aeec64c81d69d4c0850fc73c93da3f0330cec0a27772feed7f90f60baa5f47f1c45687d71914bdafd1c4e860d40f6dc08ede27a2f08431ff929c9a2d24621.js" integrity="sha512-ZQruxkyB1p1MCFD8c8k9o/AzDOwKJ3cv7tf5D2C6pfR/HEVofXGRS9r9HE6GDUD23Ajt4novCEMf&#43;SnJotJGIQ==" crossorigin="anonymous" defer></script>
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
-  <script src="/js/toc.min.7f06e30d4b56e8745aabe816e31e455bd2664a86c8f8513a7c22ae38c26dbefe974f6fb82931eb3422aa8a4f87cba26aa827ddd408b257894d180c0fdce3a491.js" integrity="sha512-fwbjDUtW6HRaq&#43;gW4x5FW9JmSobI&#43;FE6fCKuOMJtvv6XT2&#43;4KTHrNCKqik&#43;Hy6JqqCfd1AiyV4lNGAwP3OOkkQ==" crossorigin="anonymous" defer></script>
+  <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
   <script src="https://enjoy61.github.io/js/index.js" integrity="" crossorigin="anonymous" defer></script>
   
