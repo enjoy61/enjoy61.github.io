@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>射击伤害 - 六一的部落格</title>
-<meta name="description" content="说明 # 从交点获取击中的Actor信息 创建MakeDamage, 击中目标时调用, 传入相交信息 # C&#43;&#43; 搭建框架 # 声明 preotected ShootThemUp: Weapon/STUBaseWeapon.h void MakeDamage(const FHitResult&amp;amp; HitResult); 空定义 ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp;amp; HitResult) {} MakeShot中调用 ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 获取击中的Actor ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; 添加数据成员: 伤害值 protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 对Actor造成伤害, 直接对其调用TakeDamage DamagedActor-&amp;gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物 # 虚幻编辑器 运行时显示CapsuleComponent show collision 游戏角色死亡, CapsuleComponent成为障碍物 死亡处理函数中, 禁止CapsuleComponent的碰撞 # C&#43;&#43; ShootThemUp: Player/STUBaseCharacter.">
+<meta name="description" content="概览 # 击中游戏角色时, 对其造成伤害 在代码中设置Capsule组件的碰撞反馈 搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息 # C&#43;&#43; ShootThemUp: Weapon/STUBaseWeapon.h protected void MakeDamage(const FHitResult&amp;amp; HitResult); ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp;amp; HitResult) {} 在MakeShot中调用MakeDamage ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 添加数据成员: 固定伤害值 # protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 获取碰撞Actor, 对其造成伤害 # ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; DamagedActor-&amp;gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物 # 虚幻编辑器 运行时显示Capsule组件 show collision 游戏角色死亡, 无法穿过竖立着的Capsule组件 游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件 # C&#43;&#43; ShootThemUp: Player/STUBaseCharacter.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="射击伤害">
-<meta property="og:description" content="说明 # 从交点获取击中的Actor信息 创建MakeDamage, 击中目标时调用, 传入相交信息 # C&#43;&#43; 搭建框架 # 声明 preotected ShootThemUp: Weapon/STUBaseWeapon.h void MakeDamage(const FHitResult&amp; HitResult); 空定义 ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp; HitResult) {} MakeShot中调用 ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 获取击中的Actor ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; 添加数据成员: 伤害值 protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 对Actor造成伤害, 直接对其调用TakeDamage DamagedActor-&gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物 # 虚幻编辑器 运行时显示CapsuleComponent show collision 游戏角色死亡, CapsuleComponent成为障碍物 死亡处理函数中, 禁止CapsuleComponent的碰撞 # C&#43;&#43; ShootThemUp: Player/STUBaseCharacter.">
+<meta property="og:description" content="概览 # 击中游戏角色时, 对其造成伤害 在代码中设置Capsule组件的碰撞反馈 搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息 # C&#43;&#43; ShootThemUp: Weapon/STUBaseWeapon.h protected void MakeDamage(const FHitResult&amp; HitResult); ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp; HitResult) {} 在MakeShot中调用MakeDamage ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 添加数据成员: 固定伤害值 # protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 获取碰撞Actor, 对其造成伤害 # ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; DamagedActor-&gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物 # 虚幻编辑器 运行时显示Capsule组件 show collision 游戏角色死亡, 无法穿过竖立着的Capsule组件 游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件 # C&#43;&#43; ShootThemUp: Player/STUBaseCharacter.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-11T18:23:26+00:00">
-  <meta property="article:modified_time" content="2023-08-14T20:48:15+08:00">
+  <meta property="article:modified_time" content="2023-08-18T08:44:33+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-11T18:23:26CET",
-      "dateModified": "2023-08-14T20:48:15CET",
+      "dateModified": "2023-08-18T08:44:33CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/"
           },
           "datePublished": "2023-08-11T18:23:26CET",
-          "dateModified": "2023-08-14T20:48:15CET",
+          "dateModified": "2023-08-18T08:44:33CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2677,17 +2677,18 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#创建makedamage-击中目标时调用-传入相交信息">创建MakeDamage, 击中目标时调用, 传入相交信息</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#搭建框架-轨迹计算发生碰撞时-调用makedamage-传入碰撞信息">搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息</a></li>
+    <li><a href="#实现makedamage">实现MakeDamage</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#实现makedamage">实现MakeDamage</a></li>
+        <li><a href="#添加数据成员-固定伤害值">添加数据成员: 固定伤害值</a></li>
+        <li><a href="#获取碰撞actor-对其造成伤害">获取碰撞Actor, 对其造成伤害</a></li>
       </ul>
     </li>
     <li><a href="#查看">查看</a></li>
-    <li><a href="#角色死亡播放死亡动画倒地-capsulecomponent成为障碍物">角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物</a></li>
-    <li><a href="#死亡处理函数中-禁止capsulecomponent的碰撞">死亡处理函数中, 禁止CapsuleComponent的碰撞</a></li>
-    <li><a href="#注意到游戏角色死亡后-武器还在">注意到游戏角色死亡后, 武器还在</a></li>
+    <li><a href="#游戏角色死亡后播放死亡动画倒地-其销毁前-capsule组件成为障碍物">游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物</a></li>
+    <li><a href="#游戏角色死亡后-设置所有碰撞通道忽略capsule组件">游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件</a></li>
+    <li><a href="#游戏角色死亡后-武器还在">游戏角色死亡后, 武器还在</a></li>
   </ul>
 </nav>
       </div>
@@ -2699,17 +2700,18 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#创建makedamage-击中目标时调用-传入相交信息">创建MakeDamage, 击中目标时调用, 传入相交信息</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#搭建框架-轨迹计算发生碰撞时-调用makedamage-传入碰撞信息">搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息</a></li>
+    <li><a href="#实现makedamage">实现MakeDamage</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#实现makedamage">实现MakeDamage</a></li>
+        <li><a href="#添加数据成员-固定伤害值">添加数据成员: 固定伤害值</a></li>
+        <li><a href="#获取碰撞actor-对其造成伤害">获取碰撞Actor, 对其造成伤害</a></li>
       </ul>
     </li>
     <li><a href="#查看">查看</a></li>
-    <li><a href="#角色死亡播放死亡动画倒地-capsulecomponent成为障碍物">角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物</a></li>
-    <li><a href="#死亡处理函数中-禁止capsulecomponent的碰撞">死亡处理函数中, 禁止CapsuleComponent的碰撞</a></li>
-    <li><a href="#注意到游戏角色死亡后-武器还在">注意到游戏角色死亡后, 武器还在</a></li>
+    <li><a href="#游戏角色死亡后播放死亡动画倒地-其销毁前-capsule组件成为障碍物">游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物</a></li>
+    <li><a href="#游戏角色死亡后-设置所有碰撞通道忽略capsule组件">游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件</a></li>
+    <li><a href="#游戏角色死亡后-武器还在">游戏角色死亡后, 武器还在</a></li>
   </ul>
 </nav>
   </nav>
@@ -2745,17 +2747,18 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#创建makedamage-击中目标时调用-传入相交信息">创建MakeDamage, 击中目标时调用, 传入相交信息</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#搭建框架-轨迹计算发生碰撞时-调用makedamage-传入碰撞信息">搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息</a></li>
+    <li><a href="#实现makedamage">实现MakeDamage</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#实现makedamage">实现MakeDamage</a></li>
+        <li><a href="#添加数据成员-固定伤害值">添加数据成员: 固定伤害值</a></li>
+        <li><a href="#获取碰撞actor-对其造成伤害">获取碰撞Actor, 对其造成伤害</a></li>
       </ul>
     </li>
     <li><a href="#查看">查看</a></li>
-    <li><a href="#角色死亡播放死亡动画倒地-capsulecomponent成为障碍物">角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物</a></li>
-    <li><a href="#死亡处理函数中-禁止capsulecomponent的碰撞">死亡处理函数中, 禁止CapsuleComponent的碰撞</a></li>
-    <li><a href="#注意到游戏角色死亡后-武器还在">注意到游戏角色死亡后, 武器还在</a></li>
+    <li><a href="#游戏角色死亡后播放死亡动画倒地-其销毁前-capsule组件成为障碍物">游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物</a></li>
+    <li><a href="#游戏角色死亡后-设置所有碰撞通道忽略capsule组件">游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件</a></li>
+    <li><a href="#游戏角色死亡后-武器还在">游戏角色死亡后, 武器还在</a></li>
   </ul>
 </nav>
       </div>
@@ -2767,63 +2770,58 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
-    <li><a href="#创建makedamage-击中目标时调用-传入相交信息">创建MakeDamage, 击中目标时调用, 传入相交信息</a>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#搭建框架-轨迹计算发生碰撞时-调用makedamage-传入碰撞信息">搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息</a></li>
+    <li><a href="#实现makedamage">实现MakeDamage</a>
       <ul>
-        <li><a href="#搭建框架">搭建框架</a></li>
-        <li><a href="#实现makedamage">实现MakeDamage</a></li>
+        <li><a href="#添加数据成员-固定伤害值">添加数据成员: 固定伤害值</a></li>
+        <li><a href="#获取碰撞actor-对其造成伤害">获取碰撞Actor, 对其造成伤害</a></li>
       </ul>
     </li>
     <li><a href="#查看">查看</a></li>
-    <li><a href="#角色死亡播放死亡动画倒地-capsulecomponent成为障碍物">角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物</a></li>
-    <li><a href="#死亡处理函数中-禁止capsulecomponent的碰撞">死亡处理函数中, 禁止CapsuleComponent的碰撞</a></li>
-    <li><a href="#注意到游戏角色死亡后-武器还在">注意到游戏角色死亡后, 武器还在</a></li>
+    <li><a href="#游戏角色死亡后播放死亡动画倒地-其销毁前-capsule组件成为障碍物">游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物</a></li>
+    <li><a href="#游戏角色死亡后-设置所有碰撞通道忽略capsule组件">游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件</a></li>
+    <li><a href="#游戏角色死亡后-武器还在">游戏角色死亡后, 武器还在</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
-<p>从交点获取击中的Actor信息 <br/></p>
-<h2 id="创建makedamage-击中目标时调用-传入相交信息">创建MakeDamage, 击中目标时调用, 传入相交信息 <a href="#%e5%88%9b%e5%bb%bamakedamage-%e5%87%bb%e4%b8%ad%e7%9b%ae%e6%a0%87%e6%97%b6%e8%b0%83%e7%94%a8-%e4%bc%a0%e5%85%a5%e7%9b%b8%e4%ba%a4%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 击中游戏角色时, 对其造成伤害 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 在代码中设置Capsule组件的碰撞反馈 <br/></li>
+</ul>
+<h2 id="搭建框架-轨迹计算发生碰撞时-调用makedamage-传入碰撞信息">搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息 <a href="#%e6%90%ad%e5%bb%ba%e6%a1%86%e6%9e%b6-%e8%bd%a8%e8%bf%b9%e8%ae%a1%e7%ae%97%e5%8f%91%e7%94%9f%e7%a2%b0%e6%92%9e%e6%97%b6-%e8%b0%83%e7%94%a8makedamage-%e4%bc%a0%e5%85%a5%e7%a2%b0%e6%92%9e%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>C++</code> <br/></p>
-<h3 id="搭建框架">搭建框架 <a href="#%e6%90%ad%e5%bb%ba%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
-<li>声明 <br/>
-<code>preotected</code> <br/>
-<code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/>
+<li><code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/>
+<code>protected</code> <br/>
 <pre><code class="language-cpp">void MakeDamage(const FHitResult&amp; HitResult);
 </code></pre>
 </li>
-<li>空定义 <br/>
-<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/>
+<li><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/>
 <pre><code class="language-cpp">void ASTUBaseWeapon::MakeDamage(const FHitResult&amp; HitResult) {}
 </code></pre>
 </li>
-<li>MakeShot中调用 <br/>
+<li>在MakeShot中调用MakeDamage <br/>
 <code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></li>
 </ol>
-<h3 id="实现makedamage">实现MakeDamage <a href="#%e5%ae%9e%e7%8e%b0makedamage" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>获取击中的Actor <br/>
-<code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code>          <br/>
-<pre><code class="language-cpp">const auto DamagedActor = HitResult.GetActor();
-if (!DamagedActor) return;
-</code></pre>
-</li>
-<li>添加数据成员: 伤害值 <br/>
-<code>protected</code> <br/>
-<code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/>
+<h2 id="实现makedamage">实现MakeDamage <a href="#%e5%ae%9e%e7%8e%b0makedamage" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="添加数据成员-固定伤害值">添加数据成员: 固定伤害值 <a href="#%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%88%90%e5%91%98-%e5%9b%ba%e5%ae%9a%e4%bc%a4%e5%ae%b3%e5%80%bc" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>protected</code> <br/>
+<code>ShootThemUp: Weapon/STUBaseWeapon.h</code> <br/></p>
 <pre><code class="language-cpp">UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 float DamageAmount = 10.0f;
 </code></pre>
-</li>
-<li>对Actor造成伤害, 直接对其调用TakeDamage <br/>
-<pre><code class="language-cpp">DamagedActor-&gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this);
+<h3 id="获取碰撞actor-对其造成伤害">获取碰撞Actor, 对其造成伤害 <a href="#%e8%8e%b7%e5%8f%96%e7%a2%b0%e6%92%9eactor-%e5%af%b9%e5%85%b6%e9%80%a0%e6%88%90%e4%bc%a4%e5%ae%b3" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: Weapon/STUBaseWeapon.cpp</code> <br/></p>
+<pre><code class="language-cpp">const auto DamagedActor = HitResult.GetActor();
+if (!DamagedActor) return;
+
+DamagedActor-&gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this);
 </code></pre>
-</li>
-</ol>
 <h2 id="查看">查看 <a href="#%e6%9f%a5%e7%9c%8b" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>虚幻编辑器</code> <br/></p>
 <ol>
@@ -2836,20 +2834,20 @@ float DamageAmount = 10.0f;
 <p><img src="/pic/武器/射击伤害/射死游戏角色.png" width="800" /> <br/> <br/></p>
 </li>
 </ol>
-<h2 id="角色死亡播放死亡动画倒地-capsulecomponent成为障碍物">角色死亡播放死亡动画倒地, CapsuleComponent成为障碍物 <a href="#%e8%a7%92%e8%89%b2%e6%ad%bb%e4%ba%a1%e6%92%ad%e6%94%be%e6%ad%bb%e4%ba%a1%e5%8a%a8%e7%94%bb%e5%80%92%e5%9c%b0-capsulecomponent%e6%88%90%e4%b8%ba%e9%9a%9c%e7%a2%8d%e7%89%a9" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="游戏角色死亡后播放死亡动画倒地-其销毁前-capsule组件成为障碍物">游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物 <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%ad%bb%e4%ba%a1%e5%90%8e%e6%92%ad%e6%94%be%e6%ad%bb%e4%ba%a1%e5%8a%a8%e7%94%bb%e5%80%92%e5%9c%b0-%e5%85%b6%e9%94%80%e6%af%81%e5%89%8d-capsule%e7%bb%84%e4%bb%b6%e6%88%90%e4%b8%ba%e9%9a%9c%e7%a2%8d%e7%89%a9" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>虚幻编辑器</code> <br/></p>
 <ol>
 <li>
-<p>运行时显示CapsuleComponent <br/></p>
+<p>运行时显示Capsule组件 <br/></p>
 <pre><code class="language-text">show collision     
 </code></pre>
 </li>
 <li>
-<p>游戏角色死亡, CapsuleComponent成为障碍物 <br/></p>
+<p>游戏角色死亡, 无法穿过竖立着的Capsule组件 <br/></p>
 <p><img src="/pic/武器/射击伤害/CapsuleComponent.png" width="800" /> <br/> <br/></p>
 </li>
 </ol>
-<h2 id="死亡处理函数中-禁止capsulecomponent的碰撞">死亡处理函数中, 禁止CapsuleComponent的碰撞 <a href="#%e6%ad%bb%e4%ba%a1%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0%e4%b8%ad-%e7%a6%81%e6%ad%a2capsulecomponent%e7%9a%84%e7%a2%b0%e6%92%9e" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="游戏角色死亡后-设置所有碰撞通道忽略capsule组件">游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件 <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%ad%bb%e4%ba%a1%e5%90%8e-%e8%ae%be%e7%bd%ae%e6%89%80%e6%9c%89%e7%a2%b0%e6%92%9e%e9%80%9a%e9%81%93%e5%bf%bd%e7%95%a5capsule%e7%bb%84%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>C++</code> <br/>
 <code>ShootThemUp: Player/STUBaseCharacter.cpp</code> <br/></p>
 <pre><code class="language-cpp">#include &quot;Components/CapsuleComponent.h&quot;
@@ -2857,7 +2855,7 @@ float DamageAmount = 10.0f;
 // OnDeath
 GetCapsuleComponent()-&gt;SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore); // 对所有channel的碰撞反馈统一进行设置
 </code></pre>
-<h2 id="注意到游戏角色死亡后-武器还在">注意到游戏角色死亡后, 武器还在 <a href="#%e6%b3%a8%e6%84%8f%e5%88%b0%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%ad%bb%e4%ba%a1%e5%90%8e-%e6%ad%a6%e5%99%a8%e8%bf%98%e5%9c%a8" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="游戏角色死亡后-武器还在">游戏角色死亡后, 武器还在 <a href="#%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%ad%bb%e4%ba%a1%e5%90%8e-%e6%ad%a6%e5%99%a8%e8%bf%98%e5%9c%a8" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>虚幻编辑器</code> <br/></p>
 <p><img src="/pic/武器/射击伤害/武器.png" width="800" /> <br/> <br/></p>
 
