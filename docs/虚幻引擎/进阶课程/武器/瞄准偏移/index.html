@@ -16,20 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>瞄准偏移 - 六一的部落格</title>
-<meta name="description" content="概览 # Aim Offset 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼网格体 命名前缀为AO_ 本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移 # 射击瞄准相较之前自然一些 使用到的动画资产 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量 # 通过游戏角色控制器旋转CameraComponent实现游戏角色的视角旋转 水平旋转游戏角色时, 身体跟随 绘制CameraComponent的前进向量 # 获取CameraComponent的旋转分量, 通过旋转分量获取前进向量 在动画蓝图EventGraph计算CameraComponent旋转分量 # ABP_BaseCharacter &amp;gt; EventGraph 获取CameraComponent的旋转分量 # - 输入 Pawn 函数 GetBaseAimRotation: 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 保存旋转分量到变量, AnimGraph中会用到
-Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现
-根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制 # - 起点 游戏角色位置 Pawn &amp;gt; GetActorLocation 偏移 放大的CameraComponent前进向量 Pawn &amp;gt; GetBaseAimRotation &amp;gt; GetForwardVector 终点 起点 &#43; 偏移 乘法输入转为float: 右键另一个输入 DrawDebugLine参数 - Duration 0.">
+<meta name="description" content="说明 # 游戏角色视角水平旋转时, 身体会跟随; 垂直方向旋转时, 缺乏相应动画 使用瞄准偏移资产, 游戏角色视角垂直旋转时, 显示相应动画 游戏角色视角垂直旋转和Camera组件垂直旋转一致, 使用后者旋转角度矫正动画 概览 # 导入AimOffset相关动画 绘制Camera组件的前进向量 创建瞄准偏移资产 绘制Camera组件的前进向量 # 虚幻编辑器 在蓝图中获取Camera组件前进向量 # ABP_BaseCharacter &amp;gt; EventGraph 函数 GetBaseAimRotation 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 GetForwardVector 从FRotator获取前进分量 保存旋转分量到变量, AnimGraph中会用到 # Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现 # 获取游戏角色位置 GetActorLocation # 绘制Camera组件前进方向 # - 起点 游戏角色位置 偏移 放大的Camera组件前进向量 终点 起点 &#43; 偏移 乘法输入转为float: 右键另一个输入 线段参数 - Duration 0.0 Thickness 3.0 Line Color 使用DrawDebugLine绘制 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼 命名前缀为AO_ 创建瞄准偏移资产 # 导入AimOffset相关动画 # 之前导入的动画资产打开导致程序挂死, 不用亦不删除, 从ShooterGame单独导入 使用到的动画资产 # 这些动画倾向于作为姿势, 由少数帧组成 - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 从ShooterGame迁移 # ShooterGame 选中Content/Animations/TTP_Animations，右键，选择Migrate 仅勾选AimOffset相关动画，共9个 放入指定位置并绑定骨骼 # ShootThemUp 重命名Content/Animations/TTP_Animations为AimOffsetAnimation，移动到Content/ExternalContent目录下, 删除Content/Animations 动画资产全选打开, 为其绑定骨骼HeroTPP_Skeleton 为文件夹设置颜色 创建瞄准偏移资产 # Aim Offset Content/Player/Animations文件夹空白处右键, 选择AimOffset 选择骨骼网格体 HeroTPP_Skeleton 命名为AO_BaseCharacter 配置瞄准偏移资产 # AO_BaseCharacter 双击打开, 面板和混合空间一样 配置轴 # - Name 范围 水平 Yaw -90 ~ 90 垂直 Pitch -90 ~ 90 要求Asset Browser有以下动画 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 调整动画资产参数以兼容AimOffset资产 # 使得这些动画可以附加到已有姿势上 依次打开9个动画资产, 做如下设置: Asset Details &amp;gt; Additive Settings, 将Additive Anim Type设置Mesh Space AnimOffset只和该类型动画兼容 Base Pose Type默认为Selected animation frame 选择动画Idle 使用AimOffset相关动画 # (Yaw, Pitch) AimOffsetFwd (0, 0) AimOffsetUp (0, 90) AimOffsetDown (0, -90) AimOffsetLeft (-90, 0) AimOfsetLeftDown (-90, -90) AimOffsetLeftUp (-90, 90) AimOffsetRight (90, 0) AimOfsetRightDown (90, -90) AimOffsetRightUp (90, 90) 将9个动画拖入到指定位置, 调整座标">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="瞄准偏移">
-<meta property="og:description" content="概览 # Aim Offset 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼网格体 命名前缀为AO_ 本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移 # 射击瞄准相较之前自然一些 使用到的动画资产 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量 # 通过游戏角色控制器旋转CameraComponent实现游戏角色的视角旋转 水平旋转游戏角色时, 身体跟随 绘制CameraComponent的前进向量 # 获取CameraComponent的旋转分量, 通过旋转分量获取前进向量 在动画蓝图EventGraph计算CameraComponent旋转分量 # ABP_BaseCharacter &gt; EventGraph 获取CameraComponent的旋转分量 # - 输入 Pawn 函数 GetBaseAimRotation: 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 保存旋转分量到变量, AnimGraph中会用到
-Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现
-根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制 # - 起点 游戏角色位置 Pawn &gt; GetActorLocation 偏移 放大的CameraComponent前进向量 Pawn &gt; GetBaseAimRotation &gt; GetForwardVector 终点 起点 &#43; 偏移 乘法输入转为float: 右键另一个输入 DrawDebugLine参数 - Duration 0.">
+<meta property="og:description" content="说明 # 游戏角色视角水平旋转时, 身体会跟随; 垂直方向旋转时, 缺乏相应动画 使用瞄准偏移资产, 游戏角色视角垂直旋转时, 显示相应动画 游戏角色视角垂直旋转和Camera组件垂直旋转一致, 使用后者旋转角度矫正动画 概览 # 导入AimOffset相关动画 绘制Camera组件的前进向量 创建瞄准偏移资产 绘制Camera组件的前进向量 # 虚幻编辑器 在蓝图中获取Camera组件前进向量 # ABP_BaseCharacter &gt; EventGraph 函数 GetBaseAimRotation 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 GetForwardVector 从FRotator获取前进分量 保存旋转分量到变量, AnimGraph中会用到 # Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现 # 获取游戏角色位置 GetActorLocation # 绘制Camera组件前进方向 # - 起点 游戏角色位置 偏移 放大的Camera组件前进向量 终点 起点 &#43; 偏移 乘法输入转为float: 右键另一个输入 线段参数 - Duration 0.0 Thickness 3.0 Line Color 使用DrawDebugLine绘制 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼 命名前缀为AO_ 创建瞄准偏移资产 # 导入AimOffset相关动画 # 之前导入的动画资产打开导致程序挂死, 不用亦不删除, 从ShooterGame单独导入 使用到的动画资产 # 这些动画倾向于作为姿势, 由少数帧组成 - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 从ShooterGame迁移 # ShooterGame 选中Content/Animations/TTP_Animations，右键，选择Migrate 仅勾选AimOffset相关动画，共9个 放入指定位置并绑定骨骼 # ShootThemUp 重命名Content/Animations/TTP_Animations为AimOffsetAnimation，移动到Content/ExternalContent目录下, 删除Content/Animations 动画资产全选打开, 为其绑定骨骼HeroTPP_Skeleton 为文件夹设置颜色 创建瞄准偏移资产 # Aim Offset Content/Player/Animations文件夹空白处右键, 选择AimOffset 选择骨骼网格体 HeroTPP_Skeleton 命名为AO_BaseCharacter 配置瞄准偏移资产 # AO_BaseCharacter 双击打开, 面板和混合空间一样 配置轴 # - Name 范围 水平 Yaw -90 ~ 90 垂直 Pitch -90 ~ 90 要求Asset Browser有以下动画 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 调整动画资产参数以兼容AimOffset资产 # 使得这些动画可以附加到已有姿势上 依次打开9个动画资产, 做如下设置: Asset Details &gt; Additive Settings, 将Additive Anim Type设置Mesh Space AnimOffset只和该类型动画兼容 Base Pose Type默认为Selected animation frame 选择动画Idle 使用AimOffset相关动画 # (Yaw, Pitch) AimOffsetFwd (0, 0) AimOffsetUp (0, 90) AimOffsetDown (0, -90) AimOffsetLeft (-90, 0) AimOfsetLeftDown (-90, -90) AimOffsetLeftUp (-90, 90) AimOffsetRight (90, 0) AimOfsetRightDown (90, -90) AimOffsetRightUp (90, 90) 将9个动画拖入到指定位置, 调整座标">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-16T13:59:48+00:00">
-  <meta property="article:modified_time" content="2023-08-16T22:38:35+08:00">
+  <meta property="article:modified_time" content="2023-08-18T18:25:23+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -90,7 +86,7 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-16T13:59:48CET",
-      "dateModified": "2023-08-16T22:38:35CET",
+      "dateModified": "2023-08-18T18:25:23CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/#/schema/breadcrumb/1"
       },
@@ -175,7 +171,7 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/"
           },
           "datePublished": "2023-08-16T13:59:48CET",
-          "dateModified": "2023-08-16T22:38:35CET",
+          "dateModified": "2023-08-18T18:25:23CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -2681,34 +2677,22 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#绘制camera组件的前进向量">绘制Camera组件的前进向量</a>
       <ul>
-        <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
-        <li><a href="#本节会创建瞄准偏移资产-支持水平和垂直方向的偏移-但只使用垂直方向的偏移">本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移</a></li>
-        <li><a href="#使用到的动画资产">使用到的动画资产</a></li>
-        <li><a href="#垂直方向的偏移来自cameracomponent前进向量在垂直方向的分量">垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量</a></li>
+        <li><a href="#在蓝图中获取camera组件前进向量">在蓝图中获取Camera组件前进向量</a></li>
+        <li><a href="#获取游戏角色位置-getactorlocation">获取游戏角色位置 GetActorLocation</a></li>
+        <li><a href="#绘制camera组件前进方向">绘制Camera组件前进方向</a></li>
       </ul>
     </li>
-    <li><a href="#绘制cameracomponent的前进向量">绘制CameraComponent的前进向量</a>
+    <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
+    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a>
       <ul>
-        <li><a href="#在动画蓝图eventgraph计算cameracomponent旋转分量">在动画蓝图EventGraph计算CameraComponent旋转分量</a></li>
-        <li><a href="#根据旋转分量获取cameracomponent的前进分量-使用drawdebugline绘制">根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制</a></li>
-      </ul>
-    </li>
-    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
-    <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a>
-      <ul>
-        <li><a href="#从shootergame迁移">从ShooterGame迁移</a></li>
-        <li><a href="#放入指定位置">放入指定位置</a></li>
-      </ul>
-    </li>
-    <li><a href="#配置ao-basecharacter">配置AO_BaseCharacter</a>
-      <ul>
-        <li><a href="#配置轴">配置轴</a></li>
-        <li><a href="#要求asset-browser有以下动画">要求Asset Browser有以下动画</a></li>
-        <li><a href="#调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产</a></li>
-        <li><a href="#配置瞄准偏移资产ao-basecharacter">配置瞄准偏移资产AO_BaseCharacter</a></li>
-        <li><a href="#在动画蓝图abp-basecharacter中使用瞄准偏移资产">在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产</a></li>
+        <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a></li>
+        <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
+        <li><a href="#配置瞄准偏移资产">配置瞄准偏移资产</a></li>
+        <li><a href="#在动画蓝图中使用瞄准偏移资产">在动画蓝图中使用瞄准偏移资产</a></li>
       </ul>
     </li>
     <li><a href="#查看垂直方向的瞄准偏移">查看垂直方向的瞄准偏移</a></li>
@@ -2723,34 +2707,22 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#绘制camera组件的前进向量">绘制Camera组件的前进向量</a>
       <ul>
-        <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
-        <li><a href="#本节会创建瞄准偏移资产-支持水平和垂直方向的偏移-但只使用垂直方向的偏移">本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移</a></li>
-        <li><a href="#使用到的动画资产">使用到的动画资产</a></li>
-        <li><a href="#垂直方向的偏移来自cameracomponent前进向量在垂直方向的分量">垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量</a></li>
+        <li><a href="#在蓝图中获取camera组件前进向量">在蓝图中获取Camera组件前进向量</a></li>
+        <li><a href="#获取游戏角色位置-getactorlocation">获取游戏角色位置 GetActorLocation</a></li>
+        <li><a href="#绘制camera组件前进方向">绘制Camera组件前进方向</a></li>
       </ul>
     </li>
-    <li><a href="#绘制cameracomponent的前进向量">绘制CameraComponent的前进向量</a>
+    <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
+    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a>
       <ul>
-        <li><a href="#在动画蓝图eventgraph计算cameracomponent旋转分量">在动画蓝图EventGraph计算CameraComponent旋转分量</a></li>
-        <li><a href="#根据旋转分量获取cameracomponent的前进分量-使用drawdebugline绘制">根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制</a></li>
-      </ul>
-    </li>
-    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
-    <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a>
-      <ul>
-        <li><a href="#从shootergame迁移">从ShooterGame迁移</a></li>
-        <li><a href="#放入指定位置">放入指定位置</a></li>
-      </ul>
-    </li>
-    <li><a href="#配置ao-basecharacter">配置AO_BaseCharacter</a>
-      <ul>
-        <li><a href="#配置轴">配置轴</a></li>
-        <li><a href="#要求asset-browser有以下动画">要求Asset Browser有以下动画</a></li>
-        <li><a href="#调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产</a></li>
-        <li><a href="#配置瞄准偏移资产ao-basecharacter">配置瞄准偏移资产AO_BaseCharacter</a></li>
-        <li><a href="#在动画蓝图abp-basecharacter中使用瞄准偏移资产">在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产</a></li>
+        <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a></li>
+        <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
+        <li><a href="#配置瞄准偏移资产">配置瞄准偏移资产</a></li>
+        <li><a href="#在动画蓝图中使用瞄准偏移资产">在动画蓝图中使用瞄准偏移资产</a></li>
       </ul>
     </li>
     <li><a href="#查看垂直方向的瞄准偏移">查看垂直方向的瞄准偏移</a></li>
@@ -2789,34 +2761,22 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#绘制camera组件的前进向量">绘制Camera组件的前进向量</a>
       <ul>
-        <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
-        <li><a href="#本节会创建瞄准偏移资产-支持水平和垂直方向的偏移-但只使用垂直方向的偏移">本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移</a></li>
-        <li><a href="#使用到的动画资产">使用到的动画资产</a></li>
-        <li><a href="#垂直方向的偏移来自cameracomponent前进向量在垂直方向的分量">垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量</a></li>
+        <li><a href="#在蓝图中获取camera组件前进向量">在蓝图中获取Camera组件前进向量</a></li>
+        <li><a href="#获取游戏角色位置-getactorlocation">获取游戏角色位置 GetActorLocation</a></li>
+        <li><a href="#绘制camera组件前进方向">绘制Camera组件前进方向</a></li>
       </ul>
     </li>
-    <li><a href="#绘制cameracomponent的前进向量">绘制CameraComponent的前进向量</a>
+    <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
+    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a>
       <ul>
-        <li><a href="#在动画蓝图eventgraph计算cameracomponent旋转分量">在动画蓝图EventGraph计算CameraComponent旋转分量</a></li>
-        <li><a href="#根据旋转分量获取cameracomponent的前进分量-使用drawdebugline绘制">根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制</a></li>
-      </ul>
-    </li>
-    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
-    <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a>
-      <ul>
-        <li><a href="#从shootergame迁移">从ShooterGame迁移</a></li>
-        <li><a href="#放入指定位置">放入指定位置</a></li>
-      </ul>
-    </li>
-    <li><a href="#配置ao-basecharacter">配置AO_BaseCharacter</a>
-      <ul>
-        <li><a href="#配置轴">配置轴</a></li>
-        <li><a href="#要求asset-browser有以下动画">要求Asset Browser有以下动画</a></li>
-        <li><a href="#调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产</a></li>
-        <li><a href="#配置瞄准偏移资产ao-basecharacter">配置瞄准偏移资产AO_BaseCharacter</a></li>
-        <li><a href="#在动画蓝图abp-basecharacter中使用瞄准偏移资产">在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产</a></li>
+        <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a></li>
+        <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
+        <li><a href="#配置瞄准偏移资产">配置瞄准偏移资产</a></li>
+        <li><a href="#在动画蓝图中使用瞄准偏移资产">在动画蓝图中使用瞄准偏移资产</a></li>
       </ul>
     </li>
     <li><a href="#查看垂直方向的瞄准偏移">查看垂直方向的瞄准偏移</a></li>
@@ -2831,34 +2791,22 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#绘制camera组件的前进向量">绘制Camera组件的前进向量</a>
       <ul>
-        <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
-        <li><a href="#本节会创建瞄准偏移资产-支持水平和垂直方向的偏移-但只使用垂直方向的偏移">本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移</a></li>
-        <li><a href="#使用到的动画资产">使用到的动画资产</a></li>
-        <li><a href="#垂直方向的偏移来自cameracomponent前进向量在垂直方向的分量">垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量</a></li>
+        <li><a href="#在蓝图中获取camera组件前进向量">在蓝图中获取Camera组件前进向量</a></li>
+        <li><a href="#获取游戏角色位置-getactorlocation">获取游戏角色位置 GetActorLocation</a></li>
+        <li><a href="#绘制camera组件前进方向">绘制Camera组件前进方向</a></li>
       </ul>
     </li>
-    <li><a href="#绘制cameracomponent的前进向量">绘制CameraComponent的前进向量</a>
+    <li><a href="#瞄准偏移资产">瞄准偏移资产</a></li>
+    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a>
       <ul>
-        <li><a href="#在动画蓝图eventgraph计算cameracomponent旋转分量">在动画蓝图EventGraph计算CameraComponent旋转分量</a></li>
-        <li><a href="#根据旋转分量获取cameracomponent的前进分量-使用drawdebugline绘制">根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制</a></li>
-      </ul>
-    </li>
-    <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
-    <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a>
-      <ul>
-        <li><a href="#从shootergame迁移">从ShooterGame迁移</a></li>
-        <li><a href="#放入指定位置">放入指定位置</a></li>
-      </ul>
-    </li>
-    <li><a href="#配置ao-basecharacter">配置AO_BaseCharacter</a>
-      <ul>
-        <li><a href="#配置轴">配置轴</a></li>
-        <li><a href="#要求asset-browser有以下动画">要求Asset Browser有以下动画</a></li>
-        <li><a href="#调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产</a></li>
-        <li><a href="#配置瞄准偏移资产ao-basecharacter">配置瞄准偏移资产AO_BaseCharacter</a></li>
-        <li><a href="#在动画蓝图abp-basecharacter中使用瞄准偏移资产">在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产</a></li>
+        <li><a href="#导入aimoffset相关动画">导入AimOffset相关动画</a></li>
+        <li><a href="#创建瞄准偏移资产">创建瞄准偏移资产</a></li>
+        <li><a href="#配置瞄准偏移资产">配置瞄准偏移资产</a></li>
+        <li><a href="#在动画蓝图中使用瞄准偏移资产">在动画蓝图中使用瞄准偏移资产</a></li>
       </ul>
     </li>
     <li><a href="#查看垂直方向的瞄准偏移">查看垂直方向的瞄准偏移</a></li>
@@ -2868,88 +2816,41 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
   </div>
 
 			</nav>
-			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Aim Offset</code> <br/></p>
-<h3 id="瞄准偏移资产">瞄准偏移资产 <a href="#%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>Aim Offset</code> <br/></p>
-<ol>
-<li>专门用于瞄准 <br/></li>
-<li>有常规和1D两种, 和混合空间一样 <br/></li>
-<li>常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 <br/></li>
-<li>需要绑定骨骼网格体 <br/></li>
-<li>命名前缀为AO_ <br/></li>
-</ol>
-<h3 id="本节会创建瞄准偏移资产-支持水平和垂直方向的偏移-但只使用垂直方向的偏移">本节会创建瞄准偏移资产, 支持水平和垂直方向的偏移, 但只使用垂直方向的偏移 <a href="#%e6%9c%ac%e8%8a%82%e4%bc%9a%e5%88%9b%e5%bb%ba%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7-%e6%94%af%e6%8c%81%e6%b0%b4%e5%b9%b3%e5%92%8c%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e5%81%8f%e7%a7%bb-%e4%bd%86%e5%8f%aa%e4%bd%bf%e7%94%a8%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e5%81%8f%e7%a7%bb" class="anchor" aria-hidden="true">#</a></h3>
-<p>射击瞄准相较之前自然一些 <br/></p>
-<h3 id="使用到的动画资产">使用到的动画资产 <a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e5%8a%a8%e7%94%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AimOffsetFwd</td>
-</tr>
-<tr>
-<td>AimOffsetUp</td>
-</tr>
-<tr>
-<td>AimOffsetDown</td>
-</tr>
-<tr>
-<td>AimOffsetLeft</td>
-</tr>
-<tr>
-<td>AimOfsetLeftDown</td>
-</tr>
-<tr>
-<td>AimOffsetLeftUp</td>
-</tr>
-<tr>
-<td>AimOffsetRight</td>
-</tr>
-<tr>
-<td>AimOfsetRightDown</td>
-</tr>
-<tr>
-<td>AimOffsetRightUp</td>
-</tr>
-</tbody>
-</table>
-<h3 id="垂直方向的偏移来自cameracomponent前进向量在垂直方向的分量">垂直方向的偏移来自CameraComponent前进向量在垂直方向的分量 <a href="#%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e5%81%8f%e7%a7%bb%e6%9d%a5%e8%87%aacameracomponent%e5%89%8d%e8%bf%9b%e5%90%91%e9%87%8f%e5%9c%a8%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e5%88%86%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
-<ol>
-<li>通过游戏角色控制器旋转CameraComponent实现游戏角色的视角旋转 <br/></li>
-<li>水平旋转游戏角色时, 身体跟随 <br/></li>
-</ol>
-<h2 id="绘制cameracomponent的前进向量">绘制CameraComponent的前进向量 <a href="#%e7%bb%98%e5%88%b6cameracomponent%e7%9a%84%e5%89%8d%e8%bf%9b%e5%90%91%e9%87%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p>获取CameraComponent的旋转分量, 通过旋转分量获取前进向量 <br/></p>
-<h3 id="在动画蓝图eventgraph计算cameracomponent旋转分量">在动画蓝图EventGraph计算CameraComponent旋转分量 <a href="#%e5%9c%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%beeventgraph%e8%ae%a1%e7%ae%97cameracomponent%e6%97%8b%e8%bd%ac%e5%88%86%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li>游戏角色视角水平旋转时, 身体会跟随; 垂直方向旋转时, 缺乏相应动画 <br/></li>
+<li>使用瞄准偏移资产, 游戏角色视角垂直旋转时, 显示相应动画 <br/></li>
+<li>游戏角色视角垂直旋转和Camera组件垂直旋转一致, 使用后者旋转角度矫正动画 <br/></li>
+</ul>
+<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 导入AimOffset相关动画 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 绘制Camera组件的前进向量 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 创建瞄准偏移资产 <br/></li>
+</ul>
+<h2 id="绘制camera组件的前进向量">绘制Camera组件的前进向量 <a href="#%e7%bb%98%e5%88%b6camera%e7%bb%84%e4%bb%b6%e7%9a%84%e5%89%8d%e8%bf%9b%e5%90%91%e9%87%8f" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>虚幻编辑器</code> <br/></p>
+<h3 id="在蓝图中获取camera组件前进向量">在蓝图中获取Camera组件前进向量 <a href="#%e5%9c%a8%e8%93%9d%e5%9b%be%e4%b8%ad%e8%8e%b7%e5%8f%96camera%e7%bb%84%e4%bb%b6%e5%89%8d%e8%bf%9b%e5%90%91%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>ABP_BaseCharacter &gt; EventGraph</code> <br/></p>
-<h4 id="获取cameracomponent的旋转分量">获取CameraComponent的旋转分量 <a href="#%e8%8e%b7%e5%8f%96cameracomponent%e7%9a%84%e6%97%8b%e8%bd%ac%e5%88%86%e9%87%8f" class="anchor" aria-hidden="true">#</a></h4>
 <table>
 <thead>
 <tr>
-<th>-</th>
+<th>函数</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>输入</td>
-<td>Pawn</td>
+<td>GetBaseAimRotation</td>
+<td>通过Pawn的Controller返回游戏角色CameraComponent的旋转分量</td>
 </tr>
 <tr>
-<td>函数</td>
-<td>GetBaseAimRotation: 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量</td>
+<td>GetForwardVector</td>
+<td>从FRotator获取前进分量</td>
 </tr>
 </tbody>
 </table>
-<!--list-separator-->
-<ul>
-<li>
-<p>保存旋转分量到变量, AnimGraph中会用到</p>
+<h4 id="保存旋转分量到变量-animgraph中会用到">保存旋转分量到变量, AnimGraph中会用到 <a href="#%e4%bf%9d%e5%ad%98%e6%97%8b%e8%bd%ac%e5%88%86%e9%87%8f%e5%88%b0%e5%8f%98%e9%87%8f-animgraph%e4%b8%ad%e4%bc%9a%e7%94%a8%e5%88%b0" class="anchor" aria-hidden="true">#</a></h4>
 <ol>
 <li>
 <p><code>Promote to Variable</code> <br/></p>
@@ -2960,21 +2861,14 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
 <p><img src="/pic/武器/瞄准偏移/NameAimRotation.png" width="350" /> <br/> <br/></p>
 </li>
 </ol>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>完整实现</p>
+<h4 id="完整实现">完整实现 <a href="#%e5%ae%8c%e6%95%b4%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true">#</a></h4>
 <p><img src="/pic/武器/瞄准偏移/AimRotation.png" width="700" /> <br/> <br/></p>
-</li>
-</ul>
-<h3 id="根据旋转分量获取cameracomponent的前进分量-使用drawdebugline绘制">根据旋转分量获取CameraComponent的前进分量, 使用DrawDebugLine绘制 <a href="#%e6%a0%b9%e6%8d%ae%e6%97%8b%e8%bd%ac%e5%88%86%e9%87%8f%e8%8e%b7%e5%8f%96cameracomponent%e7%9a%84%e5%89%8d%e8%bf%9b%e5%88%86%e9%87%8f-%e4%bd%bf%e7%94%a8drawdebugline%e7%bb%98%e5%88%b6" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="获取游戏角色位置-getactorlocation">获取游戏角色位置 GetActorLocation <a href="#%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bd%8d%e7%bd%ae-getactorlocation" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="绘制camera组件前进方向">绘制Camera组件前进方向 <a href="#%e7%bb%98%e5%88%b6camera%e7%bb%84%e4%bb%b6%e5%89%8d%e8%bf%9b%e6%96%b9%e5%90%91" class="anchor" aria-hidden="true">#</a></h3>
 <table>
 <thead>
 <tr>
 <th>-</th>
-<th></th>
 <th></th>
 </tr>
 </thead>
@@ -2982,17 +2876,14 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
 <tr>
 <td>起点</td>
 <td>游戏角色位置</td>
-<td>Pawn &gt; GetActorLocation</td>
 </tr>
 <tr>
 <td>偏移</td>
-<td>放大的CameraComponent前进向量</td>
-<td>Pawn &gt; GetBaseAimRotation &gt; GetForwardVector</td>
+<td>放大的Camera组件前进向量</td>
 </tr>
 <tr>
 <td>终点</td>
 <td>起点 + 偏移</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -3002,7 +2893,7 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
 <p><img src="/pic/武器/瞄准偏移/乘法输入转为float.png" width="400" /> <br/> <br/></p>
 </li>
 <li>
-<p>DrawDebugLine参数 <br/></p>
+<p>线段参数 <br/></p>
 <table>
 <thead>
 <tr>
@@ -3027,78 +2918,24 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
 </table>
 </li>
 <li>
-<p>实现 <br/></p>
+<p>使用DrawDebugLine绘制 <br/></p>
 <p><img src="/pic/武器/瞄准偏移/CameraComponentForwardVector.png" width="1000" /> <br/> <br/></p>
 </li>
 </ol>
-<h2 id="创建瞄准偏移资产">创建瞄准偏移资产 <a href="#%e5%88%9b%e5%bb%ba%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="瞄准偏移资产">瞄准偏移资产 <a href="#%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Aim Offset</code> <br/></p>
 <ol>
-<li>
-<p>Content/Player/Animations文件夹空白处右键, 选择AimOffset <br/></p>
-<p><img src="/pic/武器/瞄准偏移/创建AO_BaseCharacter.png" width="1000" /> <br/> <br/></p>
-</li>
-<li>
-<p>选择骨骼网格体 <code>HeroTPP_Skeleton</code> <br/></p>
-</li>
-<li>
-<p>命名为AO_BaseCharacter <br/></p>
-</li>
+<li>专门用于瞄准 <br/></li>
+<li>有常规和1D两种, 和混合空间一样 <br/></li>
+<li>常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 <br/></li>
+<li>需要绑定骨骼 <br/></li>
+<li>命名前缀为AO_ <br/></li>
 </ol>
-<h2 id="导入aimoffset相关动画">导入AimOffset相关动画 <a href="#%e5%af%bc%e5%85%a5aimoffset%e7%9b%b8%e5%85%b3%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h2>
+<h2 id="创建瞄准偏移资产">创建瞄准偏移资产 <a href="#%e5%88%9b%e5%bb%ba%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="导入aimoffset相关动画">导入AimOffset相关动画 <a href="#%e5%af%bc%e5%85%a5aimoffset%e7%9b%b8%e5%85%b3%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
 <p>之前导入的动画资产打开导致程序挂死, 不用亦不删除, 从ShooterGame单独导入 <br/></p>
-<h3 id="从shootergame迁移">从ShooterGame迁移 <a href="#%e4%bb%8eshootergame%e8%bf%81%e7%a7%bb" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShooterGame</code> <br/></p>
-<ol>
-<li>
-<p>选中Content/Animations/TTP_Animations，右键，选择Migrate <br/></p>
-<p><img src="/pic/武器/瞄准偏移/TTP_Animations-Migrate.png" width="400" /> <br/> <br/></p>
-</li>
-<li>
-<p>仅勾选AimOffset相关动画，共9个 <br/></p>
-<p><img src="/pic/武器/瞄准偏移/AimOffsets.png" width="300" /> <br/> <br/></p>
-</li>
-</ol>
-<h3 id="放入指定位置">放入指定位置 <a href="#%e6%94%be%e5%85%a5%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShootThemUp</code> <br/></p>
-<ol>
-<li>
-<p>重命名Content/Animations/TTP_Animations为AimOffsetAnimation，移动到Content/ExternalContent目录下, 删除Content/Animations <br/></p>
-</li>
-<li>
-<p>挨个双击动画资产, 为其绑定骨骼网格体HeroTPP <br/></p>
-</li>
-<li>
-<p>为文件夹设置颜色 <br/></p>
-<p><img src="/pic/武器/瞄准偏移/AimOffsetAnimation.png" width="900" /> <br/> <br/></p>
-</li>
-</ol>
-<h2 id="配置ao-basecharacter">配置AO_BaseCharacter <a href="#%e9%85%8d%e7%bd%aeao-basecharacter" class="anchor" aria-hidden="true">#</a></h2>
-<p>双击打开, 面板和混合空间一样 <br/></p>
-<h3 id="配置轴">配置轴 <a href="#%e9%85%8d%e7%bd%ae%e8%bd%b4" class="anchor" aria-hidden="true">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th>Name</th>
-<th>范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>水平</td>
-<td>Yaw</td>
-<td>-90 ~ 90</td>
-</tr>
-<tr>
-<td>垂直</td>
-<td>Pitch</td>
-<td>-90 ~ 90</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/pic/武器/瞄准偏移/AO_BaseCharacter-Axis.png" width="300" /> <br/> <br/></p>
-<h3 id="要求asset-browser有以下动画">要求Asset Browser有以下动画 <a href="#%e8%a6%81%e6%b1%82asset-browser%e6%9c%89%e4%bb%a5%e4%b8%8b%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="使用到的动画资产">使用到的动画资产 <a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e5%8a%a8%e7%94%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h4>
+<p>这些动画倾向于作为姿势, 由少数帧组成 <br/></p>
 <table>
 <thead>
 <tr>
@@ -3135,8 +2972,110 @@ Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实�
 </tr>
 </tbody>
 </table>
-<p>这些动画倾向于作为姿势, 由少数帧组成 <br/></p>
-<h3 id="调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产 <a href="#%e8%b0%83%e6%95%b4%e5%8a%a8%e7%94%bb%e8%b5%84%e4%ba%a7%e5%8f%82%e6%95%b0%e4%bb%a5%e5%85%bc%e5%ae%b9aimoffset%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="从shootergame迁移">从ShooterGame迁移 <a href="#%e4%bb%8eshootergame%e8%bf%81%e7%a7%bb" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>ShooterGame</code> <br/></p>
+<ol>
+<li>
+<p>选中Content/Animations/TTP_Animations，右键，选择Migrate <br/></p>
+<p><img src="/pic/武器/瞄准偏移/TTP_Animations-Migrate.png" width="400" /> <br/> <br/></p>
+</li>
+<li>
+<p>仅勾选AimOffset相关动画，共9个 <br/></p>
+<p><img src="/pic/武器/瞄准偏移/AimOffsets.png" width="300" /> <br/> <br/></p>
+</li>
+</ol>
+<h4 id="放入指定位置并绑定骨骼">放入指定位置并绑定骨骼 <a href="#%e6%94%be%e5%85%a5%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae%e5%b9%b6%e7%bb%91%e5%ae%9a%e9%aa%a8%e9%aa%bc" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>ShootThemUp</code> <br/></p>
+<ol>
+<li>
+<p>重命名Content/Animations/TTP_Animations为AimOffsetAnimation，移动到Content/ExternalContent目录下, 删除Content/Animations <br/></p>
+</li>
+<li>
+<p>动画资产全选打开, 为其绑定骨骼HeroTPP_Skeleton <br/></p>
+</li>
+<li>
+<p>为文件夹设置颜色 <br/></p>
+<p><img src="/pic/武器/瞄准偏移/AimOffsetAnimation.png" width="900" /> <br/> <br/></p>
+</li>
+</ol>
+<h3 id="创建瞄准偏移资产">创建瞄准偏移资产 <a href="#%e5%88%9b%e5%bb%ba%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Aim Offset</code> <br/></p>
+<ol>
+<li>
+<p>Content/Player/Animations文件夹空白处右键, 选择AimOffset <br/></p>
+<p><img src="/pic/武器/瞄准偏移/创建AO_BaseCharacter.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>选择骨骼网格体 <code>HeroTPP_Skeleton</code> <br/></p>
+</li>
+<li>
+<p>命名为AO_BaseCharacter <br/></p>
+</li>
+</ol>
+<h3 id="配置瞄准偏移资产">配置瞄准偏移资产 <a href="#%e9%85%8d%e7%bd%ae%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>AO_BaseCharacter</code> <br/>
+双击打开, 面板和混合空间一样 <br/></p>
+<h4 id="配置轴">配置轴 <a href="#%e9%85%8d%e7%bd%ae%e8%bd%b4" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>Name</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水平</td>
+<td>Yaw</td>
+<td>-90 ~ 90</td>
+</tr>
+<tr>
+<td>垂直</td>
+<td>Pitch</td>
+<td>-90 ~ 90</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/pic/武器/瞄准偏移/AO_BaseCharacter-Axis.png" width="300" /> <br/> <br/></p>
+<h4 id="要求asset-browser有以下动画">要求Asset Browser有以下动画 <a href="#%e8%a6%81%e6%b1%82asset-browser%e6%9c%89%e4%bb%a5%e4%b8%8b%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AimOffsetFwd</td>
+</tr>
+<tr>
+<td>AimOffsetUp</td>
+</tr>
+<tr>
+<td>AimOffsetDown</td>
+</tr>
+<tr>
+<td>AimOffsetLeft</td>
+</tr>
+<tr>
+<td>AimOfsetLeftDown</td>
+</tr>
+<tr>
+<td>AimOffsetLeftUp</td>
+</tr>
+<tr>
+<td>AimOffsetRight</td>
+</tr>
+<tr>
+<td>AimOfsetRightDown</td>
+</tr>
+<tr>
+<td>AimOffsetRightUp</td>
+</tr>
+</tbody>
+</table>
+<h4 id="调整动画资产参数以兼容aimoffset资产">调整动画资产参数以兼容AimOffset资产 <a href="#%e8%b0%83%e6%95%b4%e5%8a%a8%e7%94%bb%e8%b5%84%e4%ba%a7%e5%8f%82%e6%95%b0%e4%bb%a5%e5%85%bc%e5%ae%b9aimoffset%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h4>
 <p>使得这些动画可以附加到已有姿势上 <br/></p>
 <p>依次打开9个动画资产, 做如下设置: <br/></p>
 <ol>
@@ -3146,7 +3085,7 @@ AnimOffset只和该类型动画兼容 <br/></li>
 <li><code>选择动画Idle</code> <br/></li>
 </ol>
 <p><img src="/pic/武器/瞄准偏移/AdditiveSettings.png" width="300" /> <br/>    <br/></p>
-<h3 id="配置瞄准偏移资产ao-basecharacter">配置瞄准偏移资产AO_BaseCharacter <a href="#%e9%85%8d%e7%bd%ae%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7ao-basecharacter" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="使用aimoffset相关动画">使用AimOffset相关动画 <a href="#%e4%bd%bf%e7%94%a8aimoffset%e7%9b%b8%e5%85%b3%e5%8a%a8%e7%94%bb" class="anchor" aria-hidden="true">#</a></h4>
 <table>
 <thead>
 <tr>
@@ -3193,7 +3132,10 @@ AnimOffset只和该类型动画兼容 <br/></li>
 </tr>
 </tbody>
 </table>
-<p>将9个动画拖入到指定位置, 调整座标 <br/></p>
+<!--list-separator-->
+<ul>
+<li>
+<p>将9个动画拖入到指定位置, 调整座标</p>
 <ol>
 <li>
 <p>动画座标配置 <br/></p>
@@ -3201,23 +3143,28 @@ AnimOffset只和该类型动画兼容 <br/></li>
 <p><img src="/pic/武器/瞄准偏移/动画座标2.png" width="400" /> <br/> <br/></p>
 </li>
 <li>
-<p>分布 <br/></p>
+<p>效果 <br/></p>
 <p><img src="/pic/武器/瞄准偏移/AimOffset动画座标完整.png" width="700" /> <br/> <br/></p>
 </li>
 </ol>
-<p>正常情况下, 给玩家所控制的游戏角色添加在垂直方向旋转已经足够. CameraComponent在水平方向旋转时, 游戏角色骨骼网格体自然跟随. <br/></p>
-<p>自定义角色不会有侧面旋转 <br/></p>
-<p>如果希望AI的旋转更写实, 则需要继续设置水平方向的旋转. <br/></p>
-<h3 id="在动画蓝图abp-basecharacter中使用瞄准偏移资产">在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产 <a href="#%e5%9c%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%beabp-basecharacter%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>AnimGraph</code> <br/>
-在计算运动姿势之后, 添加AimOffset <br/></p>
+</li>
+</ul>
+<h4 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>AO_BaseCharacter在水平和垂直方向都有输入, 本节中, 只配置垂直输入 <br/></li>
+<li>对于玩家操控的游戏角色, 旋转视角时, 在水平和垂直方向都有动画; 我们也不需要看到游戏角色的侧面旋转 <br/></li>
+<li>如果希望AI的旋转更写实, 则需要配置水平输入 <br/></li>
+</ol>
+<h3 id="在动画蓝图中使用瞄准偏移资产">在动画蓝图中使用瞄准偏移资产 <a href="#%e5%9c%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be%e4%b8%ad%e4%bd%bf%e7%94%a8%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ABP_BaseCharacter &gt; AnimGraph</code> <br/></p>
+<p>计算运动姿势之后, 添加瞄准偏移 <br/></p>
 <ol>
 <li>
 <p>将AO_BaseCharacter拖入AnimGraph, Locomotion作为其输入, 输出作为Slot的输入 <br/></p>
 <p><img src="/pic/武器/瞄准偏移/在动画蓝图ABP_BaseCharacter中使用瞄准偏移资产.png" width="800" /> <br/> <br/></p>
 </li>
 <li>
-<p>可以设置AO_BaseCharacter的(Yaw, Pitch), 编译, 在窗口检视Idle姿势在该设置下的AimOffset效果 <br/></p>
+<p>可以调试AO_BaseCharacter的(Yaw, Pitch), 编译后, 在窗口检视Idle姿势在该设置下的AimOffset效果 <br/></p>
 <table>
 <thead>
 <tr>
@@ -3238,16 +3185,15 @@ AnimOffset只和该类型动画兼容 <br/></li>
 </table>
 </li>
 <li>
-<p>还可以设置Velocity的默认值, 查看运动时的AimOffset效果 <br/>
-如将Velocity设置为500 <br/></p>
+<p>以设调试Velocity, 查看运动时的瞄准偏移效果 <br/></p>
 </li>
 <li>
-<p>在AnimGraph获取AimRotation变量, 使用Pitch分量(垂直); 玩家控制游戏角色时的水平旋转角度不合理, 所以不使用Yaw <br/></p>
+<p>获取AimRotation变量, 使用Pitch分量(垂直); Camera组件旋转的水平分量与侧面动画不一致, 并不能用作Yaw的输入 <br/></p>
 <p><img src="/pic/武器/瞄准偏移/使用AimRotationPitch.png" width="800" /> <br/> <br/></p>
 </li>
 </ol>
 <h2 id="查看垂直方向的瞄准偏移">查看垂直方向的瞄准偏移 <a href="#%e6%9f%a5%e7%9c%8b%e5%9e%82%e7%9b%b4%e6%96%b9%e5%90%91%e7%9a%84%e7%9e%84%e5%87%86%e5%81%8f%e7%a7%bb" class="anchor" aria-hidden="true">#</a></h2>
-<p>武器跟随游戏角色动画偏移，从枪口出来的射线经过瞄准十字 <br/></p>
+<p>武器跟随游戏角色在垂直方向旋转, 射击瞄准相较之前自然一些 <br/></p>
 <p><img src="/pic/武器/瞄准偏移/垂直瞄准偏移.png" width="800" /> <br/> <br/></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
