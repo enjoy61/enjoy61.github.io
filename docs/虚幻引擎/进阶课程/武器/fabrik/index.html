@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>FABRIK - 六一的部落格</title>
-<meta name="description" content="概览 # 为游戏角色枪管所在arm bone设置反转运动学 Inverse Kinematics 问题描述 # 调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 # BP_STUBaseCharacter 在SpringArm组件细节面板设置Camera组件的Socket Offset 之前 SpringArm &amp;gt; Details &amp;gt; Camera &amp;gt; Socket Offset &amp;gt; X = 600 Y = 0 设置Camera组件变换属性 之前 Camera &amp;gt; Details &amp;gt; Transform &amp;gt; Rotation &amp;gt; Z = 180 效果图 操控游戏角色运动时, 左手和枪管之间未固定, 二者会有错开的情况 # 在动画蓝图添加FABRIK, 将左手固定在枪管合适位置 # FABRIK # FABRIK 在动画蓝图添加FABRIK # ABP_BaseCharacter &amp;gt; AnimGraph 在动画蓝图添加FABRIK, 取消末端执行器变换信息的针脚 确定骨骼链 # 在导航栏选择骨骼 左臂的起点为b_LeftArm, 终点为b_LeftWeapon 配置FABRIK &amp;gt; Solver - Tip Bone b_LeftWeapon Root Bone b_LeftArm 游戏角色移动时, 左手和右手都在武器上, 以右手为参照, 固定左手位置 # 设置末端执行器Target 设置相对Target的变换 - Effector Target b_RightHand Effector Transform Space Bone Space Effector Transform X=-50 Y=-11 Z=4 将FABRIK加入到输出 # 将AO_BaseCharacter作为FABRIK的输入 Component Pose 自动添加转换座标系的节点 LocalToComponent 将输出作为Slot的输入 自动添加转换座标系的节点 ComponentToLocal 播放死亡动画时, 左手不再扶在枪管上 查看 # 操控游戏角色运动时, 左手固定在枪管合适位置 ">
+<meta name="description" content="概览 # 问题描述 FABRIK 在动画蓝图中使用FABRIK 问题描述 # 调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 # BP_STUBaseCharacter 在SpringArm组件细节面板设置Camera组件的Socket Offset 之前 SpringArm &amp;gt; Details &amp;gt; Camera &amp;gt; Socket Offset &amp;gt; X = 600 Y = 0 设置Camera组件变换属性 之前 Camera &amp;gt; Details &amp;gt; Transform &amp;gt; Rotation &amp;gt; Yaw = 180 效果图 操控游戏角色运动时, 左手和枪管之间未固定, 二者会有错开的情况 # 在动画蓝图添加FABRIK, 将左手固定在枪管合适位置 # FABRIK # FABRIK 在动画蓝图添加FABRIK # ABP_BaseCharacter &amp;gt; AnimGraph 在动画蓝图添加FABRIK, 取消末端执行器变换信息的针脚 确定骨骼链 # 在导航栏选择骨骼 左臂的起点为b_LeftArm, 终点为b_LeftWeapon 配置FABRIK &amp;gt; Solver - Tip Bone b_LeftWeapon Root Bone b_LeftArm 游戏角色移动时, 左手和右手都在武器上, 以右手为参照, 固定左手位置 # 设置末端执行器Target 设置相对Target的变换 - Effector Target b_RightHand Effector Transform Space Bone Space Effector Transform X=-50 Y=-11 Z=4 将FABRIK加入到输出 # 将AO_BaseCharacter作为FABRIK的输入 Component Pose 自动添加转换座标系的节点 LocalToComponent 将输出作为Slot的输入 自动添加转换座标系的节点 ComponentToLocal 播放死亡动画时, 左手不再扶在枪管上 查看 # 操控游戏角色运动时, 左手固定在枪管合适位置 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FABRIK">
-<meta property="og:description" content="概览 # 为游戏角色枪管所在arm bone设置反转运动学 Inverse Kinematics 问题描述 # 调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 # BP_STUBaseCharacter 在SpringArm组件细节面板设置Camera组件的Socket Offset 之前 SpringArm &gt; Details &gt; Camera &gt; Socket Offset &gt; X = 600 Y = 0 设置Camera组件变换属性 之前 Camera &gt; Details &gt; Transform &gt; Rotation &gt; Z = 180 效果图 操控游戏角色运动时, 左手和枪管之间未固定, 二者会有错开的情况 # 在动画蓝图添加FABRIK, 将左手固定在枪管合适位置 # FABRIK # FABRIK 在动画蓝图添加FABRIK # ABP_BaseCharacter &gt; AnimGraph 在动画蓝图添加FABRIK, 取消末端执行器变换信息的针脚 确定骨骼链 # 在导航栏选择骨骼 左臂的起点为b_LeftArm, 终点为b_LeftWeapon 配置FABRIK &gt; Solver - Tip Bone b_LeftWeapon Root Bone b_LeftArm 游戏角色移动时, 左手和右手都在武器上, 以右手为参照, 固定左手位置 # 设置末端执行器Target 设置相对Target的变换 - Effector Target b_RightHand Effector Transform Space Bone Space Effector Transform X=-50 Y=-11 Z=4 将FABRIK加入到输出 # 将AO_BaseCharacter作为FABRIK的输入 Component Pose 自动添加转换座标系的节点 LocalToComponent 将输出作为Slot的输入 自动添加转换座标系的节点 ComponentToLocal 播放死亡动画时, 左手不再扶在枪管上 查看 # 操控游戏角色运动时, 左手固定在枪管合适位置 ">
+<meta property="og:description" content="概览 # 问题描述 FABRIK 在动画蓝图中使用FABRIK 问题描述 # 调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 # BP_STUBaseCharacter 在SpringArm组件细节面板设置Camera组件的Socket Offset 之前 SpringArm &gt; Details &gt; Camera &gt; Socket Offset &gt; X = 600 Y = 0 设置Camera组件变换属性 之前 Camera &gt; Details &gt; Transform &gt; Rotation &gt; Yaw = 180 效果图 操控游戏角色运动时, 左手和枪管之间未固定, 二者会有错开的情况 # 在动画蓝图添加FABRIK, 将左手固定在枪管合适位置 # FABRIK # FABRIK 在动画蓝图添加FABRIK # ABP_BaseCharacter &gt; AnimGraph 在动画蓝图添加FABRIK, 取消末端执行器变换信息的针脚 确定骨骼链 # 在导航栏选择骨骼 左臂的起点为b_LeftArm, 终点为b_LeftWeapon 配置FABRIK &gt; Solver - Tip Bone b_LeftWeapon Root Bone b_LeftArm 游戏角色移动时, 左手和右手都在武器上, 以右手为参照, 固定左手位置 # 设置末端执行器Target 设置相对Target的变换 - Effector Target b_RightHand Effector Transform Space Bone Space Effector Transform X=-50 Y=-11 Z=4 将FABRIK加入到输出 # 将AO_BaseCharacter作为FABRIK的输入 Component Pose 自动添加转换座标系的节点 LocalToComponent 将输出作为Slot的输入 自动添加转换座标系的节点 ComponentToLocal 播放死亡动画时, 左手不再扶在枪管上 查看 # 操控游戏角色运动时, 左手固定在枪管合适位置 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-18T19:46:42+00:00">
-  <meta property="article:modified_time" content="2023-08-19T14:13:48+08:00">
+  <meta property="article:modified_time" content="2023-08-19T16:13:59+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-18T19:46:42CET",
-      "dateModified": "2023-08-19T14:13:48CET",
+      "dateModified": "2023-08-19T16:13:59CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/"
           },
           "datePublished": "2023-08-18T19:46:42CET",
-          "dateModified": "2023-08-19T14:13:48CET",
+          "dateModified": "2023-08-19T16:13:59CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -772,6 +772,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/">FABRIK</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
                                   
 
                                 
@@ -1638,6 +1645,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -2438,6 +2452,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -2851,7 +2872,11 @@
 
 			</nav>
 			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
-<p>为游戏角色枪管所在arm bone设置反转运动学 <code>Inverse Kinematics</code> <br/></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 问题描述 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> FABRIK <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 在动画蓝图中使用FABRIK <br/></li>
+</ul>
 <h2 id="问题描述">问题描述 <a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="调整游戏角色camera组件位置-使之拍摄游戏角色正面">调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 <a href="#%e8%b0%83%e6%95%b4%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2camera%e7%bb%84%e4%bb%b6%e4%bd%8d%e7%bd%ae-%e4%bd%bf%e4%b9%8b%e6%8b%8d%e6%91%84%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e6%ad%a3%e9%9d%a2" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>BP_STUBaseCharacter</code> <br/></p>
@@ -2877,7 +2902,7 @@
 <p><img src="/pic/武器/FABRIK/CameraBefore.png" width="900" /> <br/> <br/></p>
 </li>
 <li>
-<p><code>Camera &gt; Details &gt; Transform &gt; Rotation &gt; Z = 180</code> <br/></p>
+<p><code>Camera &gt; Details &gt; Transform &gt; Rotation &gt; Yaw = 180</code> <br/></p>
 <p><img src="/pic/武器/FABRIK/Camera.png" width="900" /> <br/> <br/></p>
 </li>
 </ul>
