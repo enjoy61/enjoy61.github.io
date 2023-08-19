@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>FABRIK - 六一的部落格</title>
-<meta name="description" content="逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出末端执行器的描述, 给出骨骼链, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器默认作为针脚 允许对末端执行器变换进行设置 # Details &amp;gt; End Effector &amp;gt; Effector Transform &amp;gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标骨骼 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 ">
+<meta name="description" content="说明 # Forward and Backward Reaching Inverse Kinematics 逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出骨骼链和末端执行器的描述, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器变换默认作为针脚 切换末端执行器变换在细节面板设置 # Details &amp;gt; End Effector &amp;gt; Effector Transform &amp;gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FABRIK">
-<meta property="og:description" content="逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出末端执行器的描述, 给出骨骼链, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器默认作为针脚 允许对末端执行器变换进行设置 # Details &gt; End Effector &gt; Effector Transform &gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标骨骼 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 ">
+<meta property="og:description" content="说明 # Forward and Backward Reaching Inverse Kinematics 逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出骨骼链和末端执行器的描述, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器变换默认作为针脚 切换末端执行器变换在细节面板设置 # Details &gt; End Effector &gt; Effector Transform &gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-19T10:40:38+00:00">
-  <meta property="article:modified_time" content="2023-08-19T14:12:26+08:00">
+  <meta property="article:modified_time" content="2023-08-19T16:46:17+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-19T10:40:38CET",
-      "dateModified": "2023-08-19T14:12:26CET",
+      "dateModified": "2023-08-19T16:46:17CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/"
           },
           "datePublished": "2023-08-19T10:40:38CET",
-          "dateModified": "2023-08-19T14:12:26CET",
+          "dateModified": "2023-08-19T16:46:17CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -779,6 +779,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
                                   
 
                                 
@@ -1652,6 +1659,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -2459,6 +2473,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -2740,6 +2761,7 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#说明">说明</a></li>
     <li><a href="#逆运动学">逆运动学</a>
       <ul>
         <li><a href="#末端执行器">末端执行器</a></li>
@@ -2747,7 +2769,7 @@
     </li>
     <li><a href="#在动画蓝图中使用fabrik">在动画蓝图中使用FABRIK</a>
       <ul>
-        <li><a href="#允许对末端执行器变换进行设置">允许对末端执行器变换进行设置</a></li>
+        <li><a href="#切换末端执行器变换在细节面板设置">切换末端执行器变换在细节面板设置</a></li>
         <li><a href="#配置末端执行器">配置末端执行器</a></li>
         <li><a href="#配置solver">配置Solver</a></li>
       </ul>
@@ -2763,6 +2785,7 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#说明">说明</a></li>
     <li><a href="#逆运动学">逆运动学</a>
       <ul>
         <li><a href="#末端执行器">末端执行器</a></li>
@@ -2770,7 +2793,7 @@
     </li>
     <li><a href="#在动画蓝图中使用fabrik">在动画蓝图中使用FABRIK</a>
       <ul>
-        <li><a href="#允许对末端执行器变换进行设置">允许对末端执行器变换进行设置</a></li>
+        <li><a href="#切换末端执行器变换在细节面板设置">切换末端执行器变换在细节面板设置</a></li>
         <li><a href="#配置末端执行器">配置末端执行器</a></li>
         <li><a href="#配置solver">配置Solver</a></li>
       </ul>
@@ -2810,6 +2833,7 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#说明">说明</a></li>
     <li><a href="#逆运动学">逆运动学</a>
       <ul>
         <li><a href="#末端执行器">末端执行器</a></li>
@@ -2817,7 +2841,7 @@
     </li>
     <li><a href="#在动画蓝图中使用fabrik">在动画蓝图中使用FABRIK</a>
       <ul>
-        <li><a href="#允许对末端执行器变换进行设置">允许对末端执行器变换进行设置</a></li>
+        <li><a href="#切换末端执行器变换在细节面板设置">切换末端执行器变换在细节面板设置</a></li>
         <li><a href="#配置末端执行器">配置末端执行器</a></li>
         <li><a href="#配置solver">配置Solver</a></li>
       </ul>
@@ -2833,6 +2857,7 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#说明">说明</a></li>
     <li><a href="#逆运动学">逆运动学</a>
       <ul>
         <li><a href="#末端执行器">末端执行器</a></li>
@@ -2840,7 +2865,7 @@
     </li>
     <li><a href="#在动画蓝图中使用fabrik">在动画蓝图中使用FABRIK</a>
       <ul>
-        <li><a href="#允许对末端执行器变换进行设置">允许对末端执行器变换进行设置</a></li>
+        <li><a href="#切换末端执行器变换在细节面板设置">切换末端执行器变换在细节面板设置</a></li>
         <li><a href="#配置末端执行器">配置末端执行器</a></li>
         <li><a href="#配置solver">配置Solver</a></li>
       </ul>
@@ -2851,18 +2876,20 @@
   </div>
 
 			</nav>
-			<h2 id="逆运动学">逆运动学 <a href="#%e9%80%86%e8%bf%90%e5%8a%a8%e5%ad%a6" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Forward and Backward Reaching Inverse Kinematics</code> <br/></p>
+<h2 id="逆运动学">逆运动学 <a href="#%e9%80%86%e8%bf%90%e5%8a%a8%e5%ad%a6" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Inverse Kinematics</code> <br/></p>
 <p>给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 <br/></p>
 <h3 id="末端执行器">末端执行器 <a href="#%e6%9c%ab%e7%ab%af%e6%89%a7%e8%a1%8c%e5%99%a8" class="anchor" aria-hidden="true">#</a></h3>
 <p><code>End Effector</code> <br/>
 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 <code>End-of-Arm Tooling</code> , 缩写为EOAT <br/></p>
-<p>FABRIK的设置, 就是给出末端执行器的描述, 给出骨骼链, 计算骨骼链各关节变换 <br/></p>
+<p>FABRIK的设置, 就是给出骨骼链和末端执行器的描述, 计算骨骼链各关节变换 <br/></p>
 <h2 id="在动画蓝图中使用fabrik">在动画蓝图中使用FABRIK <a href="#%e5%9c%a8%e5%8a%a8%e7%94%bb%e8%93%9d%e5%9b%be%e4%b8%ad%e4%bd%bf%e7%94%a8fabrik" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>AnimGraph</code> <br/></p>
-<p>末端执行器默认作为针脚 <br/></p>
+<p>末端执行器变换默认作为针脚 <br/></p>
 <p><img src="/pic/专题/FABRIK/FABRIK.png" width="300" /> <br/> <br/></p>
-<h3 id="允许对末端执行器变换进行设置">允许对末端执行器变换进行设置 <a href="#%e5%85%81%e8%ae%b8%e5%af%b9%e6%9c%ab%e7%ab%af%e6%89%a7%e8%a1%8c%e5%99%a8%e5%8f%98%e6%8d%a2%e8%bf%9b%e8%a1%8c%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="切换末端执行器变换在细节面板设置">切换末端执行器变换在细节面板设置 <a href="#%e5%88%87%e6%8d%a2%e6%9c%ab%e7%ab%af%e6%89%a7%e8%a1%8c%e5%99%a8%e5%8f%98%e6%8d%a2%e5%9c%a8%e7%bb%86%e8%8a%82%e9%9d%a2%e6%9d%bf%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h3>
 <ol>
 <li>
 <p>Details &gt; End Effector &gt; Effector Transform &gt; 左键Pin, 取消Expose As Pin的勾选 <br/></p>
@@ -2888,7 +2915,7 @@
 <tbody>
 <tr>
 <td>Effector Target</td>
-<td>在动画蓝图绑定的骨骼树中选取目标骨骼</td>
+<td>在动画蓝图绑定的骨骼树中选取目标</td>
 </tr>
 <tr>
 <td>Effector Transform Space</td>

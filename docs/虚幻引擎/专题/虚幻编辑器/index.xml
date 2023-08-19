@@ -30,7 +30,7 @@
       <pubDate>Sat, 19 Aug 2023 10:40:38 +0000</pubDate>
       
       <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/</guid>
-      <description>逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出末端执行器的描述, 给出骨骼链, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器默认作为针脚 允许对末端执行器变换进行设置 # Details &amp;gt; End Effector &amp;gt; Effector Transform &amp;gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标骨骼 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 </description>
+      <description>说明 # Forward and Backward Reaching Inverse Kinematics 逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出骨骼链和末端执行器的描述, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器变换默认作为针脚 切换末端执行器变换在细节面板设置 # Details &amp;gt; End Effector &amp;gt; Effector Transform &amp;gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 </description>
     </item>
     
   </channel>

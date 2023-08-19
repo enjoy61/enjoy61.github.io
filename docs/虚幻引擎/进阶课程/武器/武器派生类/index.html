@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>Actor类 - 六一的部落格</title>
-<meta name="description" content="AActor # UE_5.1/Engine/Source/Runtime/Engine/Classes/GameFrameWork/Actor.h AActor::AttachToComponent # 将Actor附加到可变换组件的挂载点 声明 # /** * Attaches the RootComponent of this Actor to the supplied component, optionally at a named socket. It is not valid to call this on components that are not Registered. * @param Parent	Parent to attach to. * @param AttachmentRules	How to handle transforms and welding when attaching. * @param SocketName	Optional socket to attach to on the parent. */ void AttachToComponent(USceneComponent* Parent, const FAttachmentTransformRules&amp;amp; AttachmentRules, FName SocketName = NAME_None); 参数 # - Parent 目标, 可变换组件 AttachmentRules 挂载规则 SocketName 挂载点名字 ">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">
+  <title>武器派生类 - 六一的部落格</title>
+<meta name="description" content="说明 # 当前的STUBaseWeapon类基本实现了Rifle的逻辑, Launcher无连续射击和瞄准偏离逻辑 创建STUBaseWeapon的派生类STURifleWeapon和STULauncherWeapon, 把Rifle的逻辑移动到STURifleWeapon, 使STUBaseWeapon成为一个武器意义上的抽象类 武器类 基类 STUBaseWeapon 派生类 Rifle STURifleWeapon Launcher STULauncherWeapon 概览 # 创建派生自STUBaseWeapon的C&#43;&#43;类: STURifleWeapon和STULauncherWeapon 调整STUBaseWeapon逻辑 将Rifle的逻辑拷贝到STURifleWeapon 创建基于STURifleWeapon和STULauncherWeapon的蓝图类, 并为之绑定武器模型 验证Rifle逻辑正常 创建派生自STUBaseWeapon的C&#43;&#43;类 # 类别 上级文件夹 STURifleWeapon Public Weapon STULauncherWeapon Public Weapon 在内容浏览器选中C&#43;&#43; Classes &amp;gt; ShootThemUp &amp;gt; Public &amp;gt; Weapon &amp;gt; STUBaseWeapon, 右键 调整STUBaseWeapon逻辑 # 屏蔽连续射击 # 屏蔽射击定时器和时间间隔 将MakeShot声明为虚函数, 定义为空 将FireStart和FireStop定义为空 屏蔽瞄准偏离 # 将GetTraceData定义为虚函数, 屏蔽瞄准偏离逻辑 屏蔽圆锥偏移角参数 屏蔽头文件 # // #include &amp;quot;DrawDebugHelpers.h&amp;quot; // #include &amp;quot;TimerManager.h&amp;quot; 将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon # 连续射击 # 定义射击定时器和时间间隔 ShootThemUp: Weapon/STURifleWeapon.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Actor类">
-<meta property="og:description" content="AActor # UE_5.1/Engine/Source/Runtime/Engine/Classes/GameFrameWork/Actor.h AActor::AttachToComponent # 将Actor附加到可变换组件的挂载点 声明 # /** * Attaches the RootComponent of this Actor to the supplied component, optionally at a named socket. It is not valid to call this on components that are not Registered. * @param Parent	Parent to attach to. * @param AttachmentRules	How to handle transforms and welding when attaching. * @param SocketName	Optional socket to attach to on the parent. */ void AttachToComponent(USceneComponent* Parent, const FAttachmentTransformRules&amp; AttachmentRules, FName SocketName = NAME_None); 参数 # - Parent 目标, 可变换组件 AttachmentRules 挂载规则 SocketName 挂载点名字 ">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">
+<meta property="og:title" content="武器派生类">
+<meta property="og:description" content="说明 # 当前的STUBaseWeapon类基本实现了Rifle的逻辑, Launcher无连续射击和瞄准偏离逻辑 创建STUBaseWeapon的派生类STURifleWeapon和STULauncherWeapon, 把Rifle的逻辑移动到STURifleWeapon, 使STUBaseWeapon成为一个武器意义上的抽象类 武器类 基类 STUBaseWeapon 派生类 Rifle STURifleWeapon Launcher STULauncherWeapon 概览 # 创建派生自STUBaseWeapon的C&#43;&#43;类: STURifleWeapon和STULauncherWeapon 调整STUBaseWeapon逻辑 将Rifle的逻辑拷贝到STURifleWeapon 创建基于STURifleWeapon和STULauncherWeapon的蓝图类, 并为之绑定武器模型 验证Rifle逻辑正常 创建派生自STUBaseWeapon的C&#43;&#43;类 # 类别 上级文件夹 STURifleWeapon Public Weapon STULauncherWeapon Public Weapon 在内容浏览器选中C&#43;&#43; Classes &gt; ShootThemUp &gt; Public &gt; Weapon &gt; STUBaseWeapon, 右键 调整STUBaseWeapon逻辑 # 屏蔽连续射击 # 屏蔽射击定时器和时间间隔 将MakeShot声明为虚函数, 定义为空 将FireStart和FireStop定义为空 屏蔽瞄准偏离 # 将GetTraceData定义为虚函数, 屏蔽瞄准偏离逻辑 屏蔽圆锥偏移角参数 屏蔽头文件 # // #include &quot;DrawDebugHelpers.h&quot; // #include &quot;TimerManager.h&quot; 将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon # 连续射击 # 定义射击定时器和时间间隔 ShootThemUp: Weapon/STURifleWeapon.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-08-17T02:32:13+00:00">
-  <meta property="article:modified_time" content="2023-08-17T04:39:47+08:00">
+<meta property="article:published_time" content="2023-08-19T16:32:12+00:00">
+  <meta property="article:modified_time" content="2023-08-19T21:46:54+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="Actor类">
+<meta name="twitter:title" content="武器派生类">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="Actor类">
+    <meta name="twitter:image:alt" content="武器派生类">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/",
-      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/",
-      "name": "Actor类",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/",
+      "name": "武器派生类",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-08-17T02:32:13CET",
-      "dateModified": "2023-08-17T04:39:47CET",
+      "datePublished": "2023-08-19T16:32:12CET",
+      "dateModified": "2023-08-19T21:46:54CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -134,33 +134,24 @@
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/",
-          "name": "API"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
+          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/",
-          "name": "% E8%99%9 A% E5% B9% Bbc"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/",
+          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/",
+          "name": "% E6% Ad% A6% E5%99% A8"
           }
         },{
         "@type": "ListItem",
         "position":  6 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/",
-          "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/",
-          "name": "% E6% B8% B8% E6%88%8 F% E8% A7%92% E8%89% B2"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  7 ,
-        "item": {
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/"
           }
         }]
     },
@@ -171,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "Actor类",
+          "headline": "武器派生类",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/"
           },
-          "datePublished": "2023-08-17T02:32:13CET",
-          "dateModified": "2023-08-17T04:39:47CET",
+          "datePublished": "2023-08-19T16:32:12CET",
+          "dateModified": "2023-08-19T21:46:54CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -188,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/#/schema/image/2"
           }
         }
       ]
@@ -213,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "Actor类"
+          "caption": "武器派生类"
         }
       ]
     }
@@ -366,20 +357,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -454,15 +445,15 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
                                         游戏角色
                                       </button>
-                                      <div class="collapse show" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
           
                                           
 
@@ -526,10 +517,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -715,10 +706,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
                               武器
                             </button>
-                            <div class="collapse" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -794,7 +785,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
                                   
 
                                 
@@ -1243,20 +1234,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1331,15 +1322,15 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
                                         游戏角色
                                       </button>
-                                      <div class="collapse show" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
           
                                           
 
@@ -1403,10 +1394,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1592,10 +1583,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
                               武器
                             </button>
-                            <div class="collapse" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1671,7 +1662,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
                                   
 
                                 
@@ -2057,20 +2048,20 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-db974238714ca8de634a7ce1d083a14f" aria-expanded="false">
                     API
                   </button>
-                  <div class="collapse show" id="section-db974238714ca8de634a7ce1d083a14f">
+                  <div class="collapse" id="section-db974238714ca8de634a7ce1d083a14f">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-004eeae52edc8961cf5a37321b19628c" aria-expanded="false">
                               虚幻C&#43;&#43;
                             </button>
-                            <div class="collapse show" id="section-004eeae52edc8961cf5a37321b19628c">
+                            <div class="collapse" id="section-004eeae52edc8961cf5a37321b19628c">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -2145,15 +2136,15 @@
                                   
                                     
                                     <li class="my-1 ms-3">
-                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="true">
+                                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-8dd430c73864777bbf6d953b0068c43a" aria-expanded="false">
                                         游戏角色
                                       </button>
-                                      <div class="collapse show" id="section-8dd430c73864777bbf6d953b0068c43a">
+                                      <div class="collapse" id="section-8dd430c73864777bbf6d953b0068c43a">
                                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                           
 
                                             
-                                            <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
+                                            <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/">Actor类</a></li>
           
                                           
 
@@ -2217,10 +2208,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
                     进阶课程
                   </button>
-                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -2406,10 +2397,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="false">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-44a3d9a4d97f8fd2a1560251279110d1" aria-expanded="true">
                               武器
                             </button>
-                            <div class="collapse" id="section-44a3d9a4d97f8fd2a1560251279110d1">
+                            <div class="collapse show" id="section-44a3d9a4d97f8fd2a1560251279110d1">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -2485,7 +2476,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E6%B4%BE%E7%94%9F%E7%B1%BB/">武器派生类</a></li>
                                   
 
                                 
@@ -2770,13 +2761,25 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#aactor">AActor</a></li>
-    <li><a href="#aactor-attachtocomponent">AActor::AttachToComponent</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#创建派生自stubaseweapon的c-plus-plus-类">创建派生自STUBaseWeapon的C++类</a></li>
+    <li><a href="#调整stubaseweapon逻辑">调整STUBaseWeapon逻辑</a>
       <ul>
-        <li><a href="#声明">声明</a></li>
-        <li><a href="#参数">参数</a></li>
+        <li><a href="#屏蔽连续射击">屏蔽连续射击</a></li>
+        <li><a href="#屏蔽瞄准偏离">屏蔽瞄准偏离</a></li>
+        <li><a href="#屏蔽头文件">屏蔽头文件</a></li>
       </ul>
     </li>
+    <li><a href="#将stubaseweapon屏蔽的rifle逻辑拷贝到sturifleweapon">将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon</a>
+      <ul>
+        <li><a href="#连续射击">连续射击</a></li>
+        <li><a href="#瞄准偏离">瞄准偏离</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建基于sturifleweapon和stulauncherweapon的蓝图类">创建基于STURifleWeapon和STULauncherWeapon的蓝图类</a></li>
+    <li><a href="#测试bp-sturifleweapon">测试BP_STURifleWeapon</a></li>
+    <li><a href="#测试bp-stulauncherweapon">测试BP_STULauncherWeapon</a></li>
   </ul>
 </nav>
       </div>
@@ -2788,13 +2791,25 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#aactor">AActor</a></li>
-    <li><a href="#aactor-attachtocomponent">AActor::AttachToComponent</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#创建派生自stubaseweapon的c-plus-plus-类">创建派生自STUBaseWeapon的C++类</a></li>
+    <li><a href="#调整stubaseweapon逻辑">调整STUBaseWeapon逻辑</a>
       <ul>
-        <li><a href="#声明">声明</a></li>
-        <li><a href="#参数">参数</a></li>
+        <li><a href="#屏蔽连续射击">屏蔽连续射击</a></li>
+        <li><a href="#屏蔽瞄准偏离">屏蔽瞄准偏离</a></li>
+        <li><a href="#屏蔽头文件">屏蔽头文件</a></li>
       </ul>
     </li>
+    <li><a href="#将stubaseweapon屏蔽的rifle逻辑拷贝到sturifleweapon">将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon</a>
+      <ul>
+        <li><a href="#连续射击">连续射击</a></li>
+        <li><a href="#瞄准偏离">瞄准偏离</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建基于sturifleweapon和stulauncherweapon的蓝图类">创建基于STURifleWeapon和STULauncherWeapon的蓝图类</a></li>
+    <li><a href="#测试bp-sturifleweapon">测试BP_STURifleWeapon</a></li>
+    <li><a href="#测试bp-stulauncherweapon">测试BP_STULauncherWeapon</a></li>
   </ul>
 </nav>
   </nav>
@@ -2808,14 +2823,13 @@
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
 <li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/">API</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/">虚幻C&#43;&#43;</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/">游戏角色</a></li>
-<li class="breadcrumb-item active" aria-current="page">Actor类</li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/">武器</a></li>
+<li class="breadcrumb-item active" aria-current="page">武器派生类</li>
 					</ol>
 				</nav>
 			
-			<h1>Actor类</h1>
+			<h1>武器派生类</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -2831,13 +2845,25 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#aactor">AActor</a></li>
-    <li><a href="#aactor-attachtocomponent">AActor::AttachToComponent</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#创建派生自stubaseweapon的c-plus-plus-类">创建派生自STUBaseWeapon的C++类</a></li>
+    <li><a href="#调整stubaseweapon逻辑">调整STUBaseWeapon逻辑</a>
       <ul>
-        <li><a href="#声明">声明</a></li>
-        <li><a href="#参数">参数</a></li>
+        <li><a href="#屏蔽连续射击">屏蔽连续射击</a></li>
+        <li><a href="#屏蔽瞄准偏离">屏蔽瞄准偏离</a></li>
+        <li><a href="#屏蔽头文件">屏蔽头文件</a></li>
       </ul>
     </li>
+    <li><a href="#将stubaseweapon屏蔽的rifle逻辑拷贝到sturifleweapon">将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon</a>
+      <ul>
+        <li><a href="#连续射击">连续射击</a></li>
+        <li><a href="#瞄准偏离">瞄准偏离</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建基于sturifleweapon和stulauncherweapon的蓝图类">创建基于STURifleWeapon和STULauncherWeapon的蓝图类</a></li>
+    <li><a href="#测试bp-sturifleweapon">测试BP_STURifleWeapon</a></li>
+    <li><a href="#测试bp-stulauncherweapon">测试BP_STULauncherWeapon</a></li>
   </ul>
 </nav>
       </div>
@@ -2849,64 +2875,264 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#aactor">AActor</a></li>
-    <li><a href="#aactor-attachtocomponent">AActor::AttachToComponent</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#创建派生自stubaseweapon的c-plus-plus-类">创建派生自STUBaseWeapon的C++类</a></li>
+    <li><a href="#调整stubaseweapon逻辑">调整STUBaseWeapon逻辑</a>
       <ul>
-        <li><a href="#声明">声明</a></li>
-        <li><a href="#参数">参数</a></li>
+        <li><a href="#屏蔽连续射击">屏蔽连续射击</a></li>
+        <li><a href="#屏蔽瞄准偏离">屏蔽瞄准偏离</a></li>
+        <li><a href="#屏蔽头文件">屏蔽头文件</a></li>
       </ul>
     </li>
+    <li><a href="#将stubaseweapon屏蔽的rifle逻辑拷贝到sturifleweapon">将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon</a>
+      <ul>
+        <li><a href="#连续射击">连续射击</a></li>
+        <li><a href="#瞄准偏离">瞄准偏离</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建基于sturifleweapon和stulauncherweapon的蓝图类">创建基于STURifleWeapon和STULauncherWeapon的蓝图类</a></li>
+    <li><a href="#测试bp-sturifleweapon">测试BP_STURifleWeapon</a></li>
+    <li><a href="#测试bp-stulauncherweapon">测试BP_STULauncherWeapon</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="aactor">AActor <a href="#aactor" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>UE_5.1/Engine/Source/Runtime/Engine/Classes/GameFrameWork/Actor.h</code> <br/></p>
-<h2 id="aactor-attachtocomponent">AActor::AttachToComponent <a href="#aactor-attachtocomponent" class="anchor" aria-hidden="true">#</a></h2>
-<p>将Actor附加到可变换组件的挂载点 <br/></p>
-<h3 id="声明">声明 <a href="#%e5%a3%b0%e6%98%8e" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-cpp">/**
- * Attaches the RootComponent of this Actor to the supplied component, optionally at a named socket. It is not valid to call this on components that are not Registered.
- * @param  Parent					Parent to attach to.
- * @param  AttachmentRules			How to handle transforms and welding when attaching.
- * @param  SocketName				Optional socket to attach to on the parent.
- */
-void AttachToComponent(USceneComponent* Parent, const FAttachmentTransformRules&amp; AttachmentRules, FName SocketName = NAME_None);
-</code></pre>
-<h3 id="参数">参数 <a href="#%e5%8f%82%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li>当前的STUBaseWeapon类基本实现了Rifle的逻辑, Launcher无连续射击和瞄准偏离逻辑 <br/></li>
+<li>创建STUBaseWeapon的派生类STURifleWeapon和STULauncherWeapon, 把Rifle的逻辑移动到STURifleWeapon, 使STUBaseWeapon成为一个武器意义上的抽象类 <br/></li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>-</th>
 <th></th>
+<th></th>
+<th>武器类</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Parent</td>
-<td>目标, 可变换组件</td>
+<td>基类</td>
+<td></td>
+<td>STUBaseWeapon</td>
 </tr>
 <tr>
-<td>AttachmentRules</td>
-<td>挂载规则</td>
+<td>派生类</td>
+<td>Rifle</td>
+<td>STURifleWeapon</td>
 </tr>
 <tr>
-<td>SocketName</td>
-<td>挂载点名字</td>
+<td></td>
+<td>Launcher</td>
+<td>STULauncherWeapon</td>
 </tr>
 </tbody>
 </table>
+<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 创建派生自STUBaseWeapon的C++类: STURifleWeapon和STULauncherWeapon <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 调整STUBaseWeapon逻辑 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 将Rifle的逻辑拷贝到STURifleWeapon <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 创建基于STURifleWeapon和STULauncherWeapon的蓝图类, 并为之绑定武器模型 <br/></li>
+<li><input checked="" disabled="" type="checkbox"> 验证Rifle逻辑正常 <br/></li>
+</ul>
+<h2 id="创建派生自stubaseweapon的c-plus-plus-类">创建派生自STUBaseWeapon的C++类 <a href="#%e5%88%9b%e5%bb%ba%e6%b4%be%e7%94%9f%e8%87%aastubaseweapon%e7%9a%84c-plus-plus-%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>上级文件夹</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STURifleWeapon</td>
+<td>Public</td>
+<td>Weapon</td>
+</tr>
+<tr>
+<td>STULauncherWeapon</td>
+<td>Public</td>
+<td>Weapon</td>
+</tr>
+</tbody>
+</table>
+<p>在内容浏览器选中C++ Classes &gt; ShootThemUp &gt; Public &gt; Weapon &gt; STUBaseWeapon, 右键 <br/></p>
+<p><img src="/pic/武器/武器派生类/C++派生类.png" width="350" /> <br/> <br/></p>
+<p><img src="/pic/武器/武器派生类/派生类.png" width="700" /> <br/> <br/></p>
+<h2 id="调整stubaseweapon逻辑">调整STUBaseWeapon逻辑 <a href="#%e8%b0%83%e6%95%b4stubaseweapon%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="屏蔽连续射击">屏蔽连续射击 <a href="#%e5%b1%8f%e8%94%bd%e8%bf%9e%e7%bb%ad%e5%b0%84%e5%87%bb" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>屏蔽射击定时器和时间间隔 <br/></li>
+<li>将MakeShot声明为虚函数, 定义为空 <br/></li>
+<li>将FireStart和FireStop定义为空 <br/></li>
+</ol>
+<h3 id="屏蔽瞄准偏离">屏蔽瞄准偏离 <a href="#%e5%b1%8f%e8%94%bd%e7%9e%84%e5%87%86%e5%81%8f%e7%a6%bb" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>将GetTraceData定义为虚函数, 屏蔽瞄准偏离逻辑 <br/></li>
+<li>屏蔽圆锥偏移角参数 <br/></li>
+</ol>
+<h3 id="屏蔽头文件">屏蔽头文件 <a href="#%e5%b1%8f%e8%94%bd%e5%a4%b4%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-cpp">// #include &quot;DrawDebugHelpers.h&quot;
+// #include &quot;TimerManager.h&quot;
+</code></pre>
+<h2 id="将stubaseweapon屏蔽的rifle逻辑拷贝到sturifleweapon">将STUBaseWeapon屏蔽的Rifle逻辑拷贝到STURifleWeapon <a href="#%e5%b0%86stubaseweapon%e5%b1%8f%e8%94%bd%e7%9a%84rifle%e9%80%bb%e8%be%91%e6%8b%b7%e8%b4%9d%e5%88%b0sturifleweapon" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="连续射击">连续射击 <a href="#%e8%bf%9e%e7%bb%ad%e5%b0%84%e5%87%bb" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>定义射击定时器和时间间隔 <br/>
+<code>ShootThemUp: Weapon/STURifleWeapon.h</code> <br/>
+<ul>
+<li><code>protected</code> <br/>
+<pre><code class="language-cpp">UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+float TimeBetweenShots = 0.1f;
+</code></pre>
+</li>
+<li><code>private</code> <br/>
+<pre><code class="language-cpp">FTimerHandle ShotTimerHandle;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>覆写虚函数MakeShot <br/>
+<ul>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.h</code> <br/>
+<code>protected</code> <br/>
+<pre><code class="language-cpp">virtual void MakeShot() override;
+</code></pre>
+</li>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.cpp</code> <br/>
+<pre><code class="language-cpp">#include &quot;Engine/World.h&quot;
+#include &quot;DrawDebugHelpers.h&quot;
+
+void ASTURifleWeapon::MakeShot()
+{
+    if (!GetWorld()) return;
+
+    FVector TraceStart, TraceEnd;
+    if (!GetTraceData(TraceStart, TraceEnd)) return;         
+
+    FHitResult HitResult;
+    MakeHit(HitResult, TraceStart, TraceEnd);
+
+    if (HitResult.bBlockingHit)
+    {
+        DrawDebugLine(GetWorld(), GetMuzzleWorldLocation(), HitResult.ImpactPoint, FColor::Red, false, 3.0f, 0, 3.0f);
+        DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red, false, 5.0f);
+        MakeDamage(HitResult);
+    }
+    else
+    {
+        DrawDebugLine(GetWorld(), GetMuzzleWorldLocation(), TraceEnd, FColor::Red, false, 3.0f, 0, 3.0f);
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>覆写FireStart和FireStop <br/>
+<ul>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.h</code> <br/>
+<code>public</code> <br/>
+<pre><code class="language-cpp">virtual void FireStart() override;
+virtual void FireStop() override;
+</code></pre>
+</li>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.cpp</code> <br/>
+<pre><code class="language-cpp">#include &quot;TimerManager.h&quot;
+
+void ASTURifleWeapon::FireStart()
+{
+    MakeShot();
+    GetWorldTimerManager().SetTimer(ShotTimerHandle, this, &amp;ASTURifleWeapon::MakeShot, TimeBetweenShots, true);
+}
+
+void ASTURifleWeapon::FireStop()
+{
+    GetWorldTimerManager().ClearTimer(ShotTimerHandle);
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="瞄准偏离">瞄准偏离 <a href="#%e7%9e%84%e5%87%86%e5%81%8f%e7%a6%bb" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>定义偏移角 <br/>
+<code>protected</code> <br/>
+<code>ShootThemUp: Weapon/STURifleWeapon.cpp</code>          <br/>
+<pre><code class="language-cpp">UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+float BulletSpread = 1.5f;
+</code></pre>
+</li>
+<li>覆写GetTraceData <br/>
+<ul>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.h</code>          <br/>
+<code>protected</code> <br/>
+<pre><code class="language-cpp">virtual void GetTraceData(FVector&amp; TraceStart, FVector&amp; TraceEnd) const override;
+</code></pre>
+</li>
+<li><code>ShootThemUp: Weapon/STURifleWeapon.cpp</code> <br/>
+<pre><code class="language-cpp">bool ASTURifleWeapon::GetTraceData(FVector&amp; TraceStart, FVector&amp; TraceEnd) const
+{
+    FVector ViewLocation;
+     FRotator ViewRotation;
+    if (!GetPlayerViewPoint(ViewLocation, ViewRotation)) return false;
+
+    TraceStart = ViewLocation;
+
+    const auto HalfRad = FMath::DegreesToRadians(BulletSpread);
+    const FVector ShootDirection = FMath::VRandCone(ViewRotation.Vector(), HalfRad);
+
+    TraceEnd = TraceStart + ShootDirection * TraceMaxDistance;
+    return true;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="创建基于sturifleweapon和stulauncherweapon的蓝图类">创建基于STURifleWeapon和STULauncherWeapon的蓝图类 <a href="#%e5%88%9b%e5%bb%ba%e5%9f%ba%e4%ba%8esturifleweapon%e5%92%8cstulauncherweapon%e7%9a%84%e8%93%9d%e5%9b%be%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
+<p>保存到Content/Weapon/目录下 <br/></p>
+<p><img src="/pic/武器/武器派生类/蓝图类.png" width="500" /> <br/> <br/></p>
+<h2 id="测试bp-sturifleweapon">测试BP_STURifleWeapon <a href="#%e6%b5%8b%e8%af%95bp-sturifleweapon" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>为BP_STURifleWeapon绑定武器模型Rifle <br/></li>
+<li>设置游戏角色武器类属性为BP_STURifleWeapon <br/></li>
+<li>功能正常 <br/></li>
+</ol>
+<h2 id="测试bp-stulauncherweapon">测试BP_STULauncherWeapon <a href="#%e6%b5%8b%e8%af%95bp-stulauncherweapon" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>
+<p>为BP_STULauncherWeapon绑定武器模型Launcher <br/></p>
+</li>
+<li>
+<p>设置游戏角色武器类属性为BP_STULauncherWeapon <br/></p>
+</li>
+<li>
+<p>武器正常显示, 射击无反应 <br/></p>
+<p><img src="/pic/武器/武器派生类/Launcher.png" width="800" /> <br/> <br/></p>
+</li>
+</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E7%BB%84%E4%BB%B6/textrender%E7%BB%84%E4%BB%B6/">
+	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					TextRender组件 &rarr;
+					&larr; 打包游戏
+				</div>
+			</div>
+		</a>
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">
+			<div class="card my-1">
+				<div class="card-body py-2">
+					阶段性总结 &rarr;
 				</div>
 			</div>
 		</a>
