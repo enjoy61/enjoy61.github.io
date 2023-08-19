@@ -24,5 +24,14 @@
       <description>概览 # Details &amp;gt; Collision API 碰撞预设 碰撞使能选项 物体类型 碰撞反馈 产生重叠事件 产生碰撞事件 碰撞预设 # Collision Presets 专注自定义选项 Custom 提供多种选项 # 默认面板 # Default 自定义面板 # Custom 查看碰撞预设定义 # 项目设置 &amp;gt; Engine &amp;gt; Collision 支持自定义预设, 对碰撞使能选项, 物体类型, 碰撞反馈进行设置; 可以对已有预设进行修改 碰撞使能选项 # Collision Enabled - No Collision 不产生碰撞 Query Only (No Physics Collision) 只参与轨迹计算 Logical Trace : 参与给定线段与物体相交计算 Physics Only (No Query Collision) 只用于物理仿真 Physical Simulation : 穿过或被阻挡 Collision Enabled (Query and Physics) 轨迹计算 + 物理仿真 物体类型 # Object Type 对该物体的物体类型进行设置, 其他物体依据该属性作出反馈 碰撞反馈 # Collision Responses 产生碰撞时, 如何给出反馈; 通过交互矩阵 Interaction Matrix 实现 反馈类型 # - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻碍: 可以发生碰撞, 形成阻碍, 可以产生碰撞事件 对通道的反馈 # Trace Responses 是否参与该通道的轨迹计算 - Visibility 给定线段起点和终点 Camera Camera组件 对其他物体类型的反馈 # Object Responses 对其他物体类型作出何种反馈 - WorldStatic WorldDynamic Pawn &amp;hellip; 发生碰撞时产生重叠事件 # Generate Overlap Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生重叠事件, 可以在蓝图中对该类型事件进行处理 发生碰撞时产生碰撞事件 # Simulation Generates Hit Events 出于优化考虑, 默认false 勾选后, 发生碰撞会产生碰撞事件, 可以获取碰撞信息 </description>
     </item>
     
+    <item>
+      <title>FABRIK</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/</link>
+      <pubDate>Sat, 19 Aug 2023 10:40:38 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/fabrik/</guid>
+      <description>逆运动学 # Inverse Kinematics 给出子骨骼的位置, 反求推导出其所在骨骼链上n级父骨骼位置, 从而确定整条骨骼链的方法 末端执行器 # End Effector 位于机械臂末端、与外界环境进行物理交互的工具, 也称作臂端工具 End-of-Arm Tooling , 缩写为EOAT FABRIK的设置, 就是给出末端执行器的描述, 给出骨骼链, 计算骨骼链各关节变换 在动画蓝图中使用FABRIK # AnimGraph 末端执行器默认作为针脚 允许对末端执行器变换进行设置 # Details &amp;gt; End Effector &amp;gt; Effector Transform &amp;gt; 左键Pin, 取消Expose As Pin的勾选 FABRIK Effector Transform 配置末端执行器 # - Effector Target 在动画蓝图绑定的骨骼树中选取目标骨骼 Effector Transform Space 与Target类型有关, 默认Component Space, 骨骼对应Bone Space Effector Transform 相对于Target的变换 配置Solver # 设置骨骼链 - Tip Bone 机械臂末端骨骼 Root Bone 机械臂根骨骼 </description>
+    </item>
+    
   </channel>
 </rss>
