@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>elisp - 六一的部落格</title>
-<meta name="description" content="便签 # Manual 文件 # 打开文件 # (find-file &amp;quot;path/to/file&amp;quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &amp;quot;path/to/file&amp;quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &amp;quot;Hello&amp;quot;) 读取输入 # (read-string &amp;quot;Promots: &amp;quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &amp;quot;file:tt.txt&amp;quot; nil t) (replace-match &amp;quot;file:pp.txt&amp;quot; nil t)) 字符串查找 # search-backward # (search-backward &amp;quot;=&amp;quot;) ;; 查找成功返回t (search-backward &amp;quot;[[ue:&amp;quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; )) ;; 匹配返回t (re-search-forward (rx &amp;quot;[[ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &amp;quot;hello&amp;quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &amp;quot;hello&amp;quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &amp;quot;equal&amp;quot;) (message &amp;quot;not equal&amp;quot;)) when：cond为true时继续 # (when (&amp;lt; 3 5) (setq ooout &#39;(&amp;quot;less&amp;quot;)) (message &amp;quot;%s&amp;quot; (cons &amp;quot;multi&amp;quot; ooout))) unless：cond为false时继续 # (unless (&amp;gt; 3 4) (setq ooout &#39;(&amp;quot;false&amp;quot; &amp;quot;3 &amp;lt; 4&amp;quot; &amp;quot;is&amp;quot; &amp;quot;true&amp;quot; &amp;quot;!">
+<meta name="description" content="便签 # - Manual 李杀-Buffer 文件 # 打开文件 # (find-file &amp;quot;path/to/file&amp;quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &amp;quot;path/to/file&amp;quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &amp;quot;Hello&amp;quot;) 读取输入 # (read-string &amp;quot;Promots: &amp;quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &amp;quot;file:tt.txt&amp;quot; nil t) (replace-match &amp;quot;file:pp.txt&amp;quot; nil t)) 字符串查找 # search-backward # (search-backward &amp;quot;test&amp;quot;) ;; 查找成功返回t (search-backward &amp;quot;test&amp;quot; nil t) 正则查找 # re-search-forward # 目的字符串 ![[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h][虚幻引擎:Interval.h]] 正则匹配 (re-search-forward (rx &amp;quot;[[&amp;quot; &amp;quot;ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; )) ;; 匹配返回t (re-search-forward (rx &amp;quot;[[&amp;quot; &amp;quot;ue:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0&#43; (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &amp;quot;hello&amp;quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 创建buffer # (generate-new-buffer &amp;quot;test&amp;quot;) 返回已有buffer或创建新buffer # (get-buffer-create &amp;quot;test&amp;quot;) 在指定buffer中处理 # (with-current-buffer (get-buffer-create &amp;quot;test&amp;quot;) (insert &amp;quot;hello&amp;quot;) ) 在临时buffer中处理 # (with-temp-buffer (insert &amp;quot;hello&amp;quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取buffer对应文件的完整路径 # (buffer-file-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &amp;quot;equal&amp;quot;) (message &amp;quot;not equal&amp;quot;)) when：cond为true时继续 # (when (&amp;lt; 3 5) (setq ooout &#39;(&amp;quot;less&amp;quot;)) (message &amp;quot;%s&amp;quot; (cons &amp;quot;multi&amp;quot; ooout))) unless：cond为false时继续 # (unless (&amp;gt; 3 4) (setq ooout &#39;(&amp;quot;false&amp;quot; &amp;quot;3 &amp;lt; 4&amp;quot; &amp;quot;is&amp;quot; &amp;quot;true&amp;quot; &amp;quot;!">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="elisp">
-<meta property="og:description" content="便签 # Manual 文件 # 打开文件 # (find-file &quot;path/to/file&quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &quot;path/to/file&quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &quot;Hello&quot;) 读取输入 # (read-string &quot;Promots: &quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &quot;file:tt.txt&quot; nil t) (replace-match &quot;file:pp.txt&quot; nil t)) 字符串查找 # search-backward # (search-backward &quot;=&quot;) ;; 查找成功返回t (search-backward &quot;[[ue:&quot; nil t) 正则查找 # re-search-forward # 目的字符串 [[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h= 正则匹配 (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; )) ;; 匹配返回t (re-search-forward (rx &quot;[[ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &quot;hello&quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 在临时buffer中做处理 # (with-temp-buffer (insert &quot;hello&quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &quot;equal&quot;) (message &quot;not equal&quot;)) when：cond为true时继续 # (when (&lt; 3 5) (setq ooout &#39;(&quot;less&quot;)) (message &quot;%s&quot; (cons &quot;multi&quot; ooout))) unless：cond为false时继续 # (unless (&gt; 3 4) (setq ooout &#39;(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!">
+<meta property="og:description" content="便签 # - Manual 李杀-Buffer 文件 # 打开文件 # (find-file &quot;path/to/file&quot;) 使用打开链接的方式，打开指定文件 # (org-open-file &quot;path/to/file&quot;) 打开链接 # C-c C-o (org-open-at-point) 文本 # 在光标处插入 # (insert &quot;Hello&quot;) 读取输入 # (read-string &quot;Promots: &quot;) 搜索并替换 # 字符串replace-string # replace-string会跳过链接匹配 全文搜索并替换 # (while (search-forward &quot;file:tt.txt&quot; nil t) (replace-match &quot;file:pp.txt&quot; nil t)) 字符串查找 # search-backward # (search-backward &quot;test&quot;) ;; 查找成功返回t (search-backward &quot;test&quot; nil t) 正则查找 # re-search-forward # 目的字符串 ![[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h][虚幻引擎:Interval.h]] 正则匹配 (re-search-forward (rx &quot;[[&quot; &quot;ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; )) ;; 匹配返回t (re-search-forward (rx &quot;[[&quot; &quot;ue:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0&#43; (not &quot;]&quot;))) &quot;]]&quot; ) nil t) 复制 # (copy-region-as-kill (point-min) (point-max)) 光标 # 光标所在位置 # (point) 去到指定位置 # (goto-char (point)) 光标信息 # (what-cursor-position) 记忆光标位置, 处理结束恢复 # (save-excursion (insert &quot;hello&quot;)) 获取光标间字符串 # (buffer-substring-no-properties (point-min) (point-max)) 缓冲区 # 获取buffer内容 # (buffer-string) 创建buffer # (generate-new-buffer &quot;test&quot;) 返回已有buffer或创建新buffer # (get-buffer-create &quot;test&quot;) 在指定buffer中处理 # (with-current-buffer (get-buffer-create &quot;test&quot;) (insert &quot;hello&quot;) ) 在临时buffer中处理 # (with-temp-buffer (insert &quot;hello&quot;)) 保存buffer # (save-buffer) 关闭buffer # (kill-buffer) 获取buffer对应的文件名 # (buffer-name) 获取buffer对应文件的完整路径 # (buffer-file-name) 获取给定文件的buffer # (get-buffer (buffer-name)) 控制语句 # 条件控制语句 # if # 缩进作为true和false的分支 各一条语句 (if (= 3 5) (message &quot;equal&quot;) (message &quot;not equal&quot;)) when：cond为true时继续 # (when (&lt; 3 5) (setq ooout &#39;(&quot;less&quot;)) (message &quot;%s&quot; (cons &quot;multi&quot; ooout))) unless：cond为false时继续 # (unless (&gt; 3 4) (setq ooout &#39;(&quot;false&quot; &quot;3 &lt; 4&quot; &quot;is&quot; &quot;true&quot; &quot;!">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-12T23:48:25+00:00">
-  <meta property="article:modified_time" content="2023-08-14T13:17:22+08:00">
+  <meta property="article:modified_time" content="2023-08-21T14:18:08+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-12T23:48:25CET",
-      "dateModified": "2023-08-14T13:17:22CET",
+      "dateModified": "2023-08-21T14:18:08CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/#/schema/breadcrumb/1"
       },
@@ -162,7 +162,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/"
           },
           "datePublished": "2023-08-12T23:48:25CET",
-          "dateModified": "2023-08-14T13:17:22CET",
+          "dateModified": "2023-08-21T14:18:08CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -3368,10 +3368,14 @@
     <li><a href="#缓冲区">缓冲区</a>
       <ul>
         <li><a href="#获取buffer内容">获取buffer内容</a></li>
-        <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+        <li><a href="#创建buffer">创建buffer</a></li>
+        <li><a href="#返回已有buffer或创建新buffer">返回已有buffer或创建新buffer</a></li>
+        <li><a href="#在指定buffer中处理">在指定buffer中处理</a></li>
+        <li><a href="#在临时buffer中处理">在临时buffer中处理</a></li>
         <li><a href="#保存buffer">保存buffer</a></li>
         <li><a href="#关闭buffer">关闭buffer</a></li>
         <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+        <li><a href="#获取buffer对应文件的完整路径">获取buffer对应文件的完整路径</a></li>
         <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
       </ul>
     </li>
@@ -3394,6 +3398,7 @@
     <li><a href="#功能函数">功能函数</a>
       <ul>
         <li><a href="#等待">等待</a></li>
+        <li><a href="#执行shell命令">执行shell命令</a></li>
         <li><a href="#hook">hook</a>
           <ul>
             <li><a href="#添加hook">添加hook</a></li>
@@ -3517,10 +3522,14 @@
     <li><a href="#缓冲区">缓冲区</a>
       <ul>
         <li><a href="#获取buffer内容">获取buffer内容</a></li>
-        <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+        <li><a href="#创建buffer">创建buffer</a></li>
+        <li><a href="#返回已有buffer或创建新buffer">返回已有buffer或创建新buffer</a></li>
+        <li><a href="#在指定buffer中处理">在指定buffer中处理</a></li>
+        <li><a href="#在临时buffer中处理">在临时buffer中处理</a></li>
         <li><a href="#保存buffer">保存buffer</a></li>
         <li><a href="#关闭buffer">关闭buffer</a></li>
         <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+        <li><a href="#获取buffer对应文件的完整路径">获取buffer对应文件的完整路径</a></li>
         <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
       </ul>
     </li>
@@ -3543,6 +3552,7 @@
     <li><a href="#功能函数">功能函数</a>
       <ul>
         <li><a href="#等待">等待</a></li>
+        <li><a href="#执行shell命令">执行shell命令</a></li>
         <li><a href="#hook">hook</a>
           <ul>
             <li><a href="#添加hook">添加hook</a></li>
@@ -3689,10 +3699,14 @@
     <li><a href="#缓冲区">缓冲区</a>
       <ul>
         <li><a href="#获取buffer内容">获取buffer内容</a></li>
-        <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+        <li><a href="#创建buffer">创建buffer</a></li>
+        <li><a href="#返回已有buffer或创建新buffer">返回已有buffer或创建新buffer</a></li>
+        <li><a href="#在指定buffer中处理">在指定buffer中处理</a></li>
+        <li><a href="#在临时buffer中处理">在临时buffer中处理</a></li>
         <li><a href="#保存buffer">保存buffer</a></li>
         <li><a href="#关闭buffer">关闭buffer</a></li>
         <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+        <li><a href="#获取buffer对应文件的完整路径">获取buffer对应文件的完整路径</a></li>
         <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
       </ul>
     </li>
@@ -3715,6 +3729,7 @@
     <li><a href="#功能函数">功能函数</a>
       <ul>
         <li><a href="#等待">等待</a></li>
+        <li><a href="#执行shell命令">执行shell命令</a></li>
         <li><a href="#hook">hook</a>
           <ul>
             <li><a href="#添加hook">添加hook</a></li>
@@ -3838,10 +3853,14 @@
     <li><a href="#缓冲区">缓冲区</a>
       <ul>
         <li><a href="#获取buffer内容">获取buffer内容</a></li>
-        <li><a href="#在临时buffer中做处理">在临时buffer中做处理</a></li>
+        <li><a href="#创建buffer">创建buffer</a></li>
+        <li><a href="#返回已有buffer或创建新buffer">返回已有buffer或创建新buffer</a></li>
+        <li><a href="#在指定buffer中处理">在指定buffer中处理</a></li>
+        <li><a href="#在临时buffer中处理">在临时buffer中处理</a></li>
         <li><a href="#保存buffer">保存buffer</a></li>
         <li><a href="#关闭buffer">关闭buffer</a></li>
         <li><a href="#获取buffer对应的文件名">获取buffer对应的文件名</a></li>
+        <li><a href="#获取buffer对应文件的完整路径">获取buffer对应文件的完整路径</a></li>
         <li><a href="#获取给定文件的buffer">获取给定文件的buffer</a></li>
       </ul>
     </li>
@@ -3864,6 +3883,7 @@
     <li><a href="#功能函数">功能函数</a>
       <ul>
         <li><a href="#等待">等待</a></li>
+        <li><a href="#执行shell命令">执行shell命令</a></li>
         <li><a href="#hook">hook</a>
           <ul>
             <li><a href="#添加hook">添加hook</a></li>
@@ -3940,7 +3960,21 @@
 
 			</nav>
 			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html">Manual</a> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html">Manual</a></td>
+</tr>
+<tr>
+<td><a href="http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html">李杀-Buffer</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="文件">文件 <a href="#%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="打开文件">打开文件 <a href="#%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(find-file &quot;path/to/file&quot;)
@@ -3968,23 +4002,23 @@
 </code></pre>
 <h3 id="字符串查找">字符串查找 <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
 <h4 id="search-backward">search-backward <a href="#search-backward" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">(search-backward &quot;=&quot;)
+<pre><code class="language-elisp">(search-backward &quot;test&quot;)
 
 ;; 查找成功返回t
-(search-backward &quot;[[ue:&quot; nil t)
+(search-backward &quot;test&quot; nil t)
 </code></pre>
 <h3 id="正则查找">正则查找 <a href="#%e6%ad%a3%e5%88%99%e6%9f%a5%e6%89%be" class="anchor" aria-hidden="true">#</a></h3>
 <h4 id="re-search-forward">re-search-forward <a href="#re-search-forward" class="anchor" aria-hidden="true">#</a></h4>
 <ul>
 <li>目的字符串 <br/>
-<pre><code class="language-text">[[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h=
+<pre><code class="language-text">![[ue:UE_5.1/Engine/Source/Runtime/Core/Public/Math/Interval.h][虚幻引擎:Interval.h]]
 </code></pre>
 </li>
 <li>正则匹配 <br/>
-<pre><code class="language-elisp">(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ))
+<pre><code class="language-elisp">(re-search-forward (rx &quot;[[&quot; &quot;ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ))
 
 ;; 匹配返回t
-(re-search-forward (rx &quot;[[ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ) nil t)
+(re-search-forward (rx &quot;[[&quot; &quot;ue:&quot; (group (0+ (not &quot;]&quot;))) &quot;][虚幻引擎:&quot; (group (0+ (not &quot;]&quot;))) &quot;]]&quot; ) nil t)
 </code></pre>
 </li>
 </ul>
@@ -4012,7 +4046,18 @@
 <h3 id="获取buffer内容">获取buffer内容 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%86%85%e5%ae%b9" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(buffer-string)
 </code></pre>
-<h3 id="在临时buffer中做处理">在临时buffer中做处理 <a href="#%e5%9c%a8%e4%b8%b4%e6%97%b6buffer%e4%b8%ad%e5%81%9a%e5%a4%84%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="创建buffer">创建buffer <a href="#%e5%88%9b%e5%bb%babuffer" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(generate-new-buffer &quot;test&quot;)
+</code></pre>
+<h3 id="返回已有buffer或创建新buffer">返回已有buffer或创建新buffer <a href="#%e8%bf%94%e5%9b%9e%e5%b7%b2%e6%9c%89buffer%e6%88%96%e5%88%9b%e5%bb%ba%e6%96%b0buffer" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(get-buffer-create &quot;test&quot;)
+</code></pre>
+<h3 id="在指定buffer中处理">在指定buffer中处理 <a href="#%e5%9c%a8%e6%8c%87%e5%ae%9abuffer%e4%b8%ad%e5%a4%84%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(with-current-buffer (get-buffer-create &quot;test&quot;)
+  (insert &quot;hello&quot;)
+  )
+</code></pre>
+<h3 id="在临时buffer中处理">在临时buffer中处理 <a href="#%e5%9c%a8%e4%b8%b4%e6%97%b6buffer%e4%b8%ad%e5%a4%84%e7%90%86" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(with-temp-buffer
   (insert &quot;hello&quot;))
 </code></pre>
@@ -4024,6 +4069,9 @@
 </code></pre>
 <h3 id="获取buffer对应的文件名">获取buffer对应的文件名 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%af%b9%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6%e5%90%8d" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(buffer-name)
+</code></pre>
+<h3 id="获取buffer对应文件的完整路径">获取buffer对应文件的完整路径 <a href="#%e8%8e%b7%e5%8f%96buffer%e5%af%b9%e5%ba%94%e6%96%87%e4%bb%b6%e7%9a%84%e5%ae%8c%e6%95%b4%e8%b7%af%e5%be%84" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(buffer-file-name)       
 </code></pre>
 <h3 id="获取给定文件的buffer">获取给定文件的buffer <a href="#%e8%8e%b7%e5%8f%96%e7%bb%99%e5%ae%9a%e6%96%87%e4%bb%b6%e7%9a%84buffer" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(get-buffer (buffer-name))
@@ -4069,6 +4117,9 @@
 <h2 id="功能函数">功能函数 <a href="#%e5%8a%9f%e8%83%bd%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="等待">等待 <a href="#%e7%ad%89%e5%be%85" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-elisp">(sleep-for 2)
+</code></pre>
+<h3 id="执行shell命令">执行shell命令 <a href="#%e6%89%a7%e8%a1%8cshell%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-elisp">(shell-command &quot;ps&quot;)
 </code></pre>
 <h3 id="hook">hook <a href="#hook" class="anchor" aria-hidden="true">#</a></h3>
 <h4 id="添加hook">添加hook <a href="#%e6%b7%bb%e5%8a%a0hook" class="anchor" aria-hidden="true">#</a></h4>
@@ -4293,17 +4344,17 @@
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-bullets/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; HTML
+					&larr; org-bullets
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					绘制瞄准十字 &rarr;
+					虚幻引擎源码跳转 &rarr;
 				</div>
 			</div>
 		</a>
