@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>尝试Evil - 六一的部落格</title>
-<meta name="description" content="安装evil # Manual GitHub 依赖 # - goto-chg github undo-tree elpa undo-fu melpa ;; (use-package goto-chg ;; :ensure t) ;; (use-package undo-tree ;; :ensure t) ;; (use-package undo-fu ;; :ensure t) 安装evil # ;; (use-package evil ;; :ensure t ;; :config (progn (evil-mode t) ;; (setq evil-default-state &#39;emacs) ;; ;; (evil-set-initial-state evil-mode &#39;emacs) ;; (setq evil-emacs-state-cursor &#39;(&amp;quot;grey&amp;quot; box)) ;; C-z ;; (setq evil-normal-state-cursor &#39;(&amp;quot;green&amp;quot; box)) ;; esc ;; (setq evil-insert-state-cursor &#39;(&amp;quot;red&amp;quot; box)) ;; i ;; (setq evil-replace-state-cursor &#39;(&amp;quot;red&amp;quot; hollow)) ;; r ;; (setq evil-visual-state-cursor &#39;(&amp;quot;yellow&amp;quot; box)))) 相关插件 # - evil-tabs tabs标签 evil-leader 定义evil-mode下使用的快捷键 evil-tabs # ;;(use-package evil-tabs ;;:ensure t ;;:config (global-evil-tabs-mode t)) evil-leader # GitHub ;; (use-package evil-leader ;; :ensure t ;; :init (progn ;; (global-evil-leader-mode t) ;; (evil-leader/set-leader &amp;quot;&amp;lt;SPC&amp;gt;&amp;quot;) ;; (evil-leader/set-key ;; &amp;quot;e&amp;quot; &#39;find-file))) ">
+<meta name="description" content="evil ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="尝试Evil">
-<meta property="og:description" content="安装evil # Manual GitHub 依赖 # - goto-chg github undo-tree elpa undo-fu melpa ;; (use-package goto-chg ;; :ensure t) ;; (use-package undo-tree ;; :ensure t) ;; (use-package undo-fu ;; :ensure t) 安装evil # ;; (use-package evil ;; :ensure t ;; :config (progn (evil-mode t) ;; (setq evil-default-state &#39;emacs) ;; ;; (evil-set-initial-state evil-mode &#39;emacs) ;; (setq evil-emacs-state-cursor &#39;(&quot;grey&quot; box)) ;; C-z ;; (setq evil-normal-state-cursor &#39;(&quot;green&quot; box)) ;; esc ;; (setq evil-insert-state-cursor &#39;(&quot;red&quot; box)) ;; i ;; (setq evil-replace-state-cursor &#39;(&quot;red&quot; hollow)) ;; r ;; (setq evil-visual-state-cursor &#39;(&quot;yellow&quot; box)))) 相关插件 # - evil-tabs tabs标签 evil-leader 定义evil-mode下使用的快捷键 evil-tabs # ;;(use-package evil-tabs ;;:ensure t ;;:config (global-evil-tabs-mode t)) evil-leader # GitHub ;; (use-package evil-leader ;; :ensure t ;; :init (progn ;; (global-evil-leader-mode t) ;; (evil-leader/set-leader &quot;&lt;SPC&gt;&quot;) ;; (evil-leader/set-key ;; &quot;e&quot; &#39;find-file))) ">
+<meta property="og:description" content="evil ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-12T22:51:51+00:00">
-  <meta property="article:modified_time" content="2023-08-12T22:58:47+08:00">
+  <meta property="article:modified_time" content="2023-08-21T13:30:28+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-12T22:51:51CET",
-      "dateModified": "2023-08-12T22:58:47CET",
+      "dateModified": "2023-08-21T13:30:28CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/"
           },
           "datePublished": "2023-08-12T22:51:51CET",
-          "dateModified": "2023-08-12T22:58:47CET",
+          "dateModified": "2023-08-21T13:30:28CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -254,6 +254,444 @@
             
 <ul class="list-unstyled collapsible-sidebar">
   
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                    Emacs
+                  </button>
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
+                              插件
+                            </button>
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/try/">try</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/exec-path-from-shell/">exec-path-from-shell</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-bullets/">org-bullets</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/which-key/">which-key</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ace-window/">ace-window</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smex/">smex</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/counsel/">counsel</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/swiper/">swiper</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/avy/">avy</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam/">org-roam</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam-ui/">org-roam-ui</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/emms/">emms</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/prettry-hydra/">prettry-hydra</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ox-hugo/">ox-hugo</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/evil/">evil</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rime/">rime</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs/">treemacs</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs-all-the-icons/">treemacs-all-the-icons</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/hungry-delete/">hungry-delete</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smartparens/">smartparens</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rainbow-delimiters/">rainbow-delimiters</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yasnippet/">yasnippet</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company/">company</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company-box/">company-box</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/dashboard/">dashboard</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
+                              需求
+                            </button>
+                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
+                              想法
+                            </button>
+                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
     
       
       <li class="mb-1">
@@ -792,253 +1230,6 @@
                               </ul>
                             </div>
                           </li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
-          分享
-        </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
-                    Emacs
-                  </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
-                              需求
-                            </button>
-                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
-                              想法
-                            </button>
-                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
-                    开发工具
-                  </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
-                    开发语言
-                  </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
-                    Hugo
-                  </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
-                    macOS应用
-                  </button>
-                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
                         
                         
                       
@@ -1134,6 +1325,444 @@
     
       
       <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                    Emacs
+                  </button>
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
+                              插件
+                            </button>
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/try/">try</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/exec-path-from-shell/">exec-path-from-shell</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-bullets/">org-bullets</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/which-key/">which-key</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ace-window/">ace-window</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smex/">smex</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/counsel/">counsel</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/swiper/">swiper</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/avy/">avy</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam/">org-roam</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam-ui/">org-roam-ui</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/emms/">emms</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/prettry-hydra/">prettry-hydra</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ox-hugo/">ox-hugo</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/evil/">evil</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rime/">rime</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs/">treemacs</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs-all-the-icons/">treemacs-all-the-icons</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/hungry-delete/">hungry-delete</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smartparens/">smartparens</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rainbow-delimiters/">rainbow-delimiters</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yasnippet/">yasnippet</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company/">company</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company-box/">company-box</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/dashboard/">dashboard</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
+                              需求
+                            </button>
+                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
+                              想法
+                            </button>
+                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
@@ -1669,253 +2298,6 @@
                               </ul>
                             </div>
                           </li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
-          分享
-        </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
-                    Emacs
-                  </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
-                              需求
-                            </button>
-                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
-                              想法
-                            </button>
-                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
-                    开发工具
-                  </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
-                    开发语言
-                  </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
-                    Hugo
-                  </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
-                    macOS应用
-                  </button>
-                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
                         
                         
                       
@@ -1948,6 +2330,444 @@
     
       
       <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+          分享
+        </button>
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                    Emacs
+                  </button>
+                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
+                              插件
+                            </button>
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/try/">try</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/exec-path-from-shell/">exec-path-from-shell</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-bullets/">org-bullets</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/which-key/">which-key</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ace-window/">ace-window</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smex/">smex</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/counsel/">counsel</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/swiper/">swiper</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/avy/">avy</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam/">org-roam</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/org-roam-ui/">org-roam-ui</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/emms/">emms</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/prettry-hydra/">prettry-hydra</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/ox-hugo/">ox-hugo</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/evil/">evil</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rime/">rime</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs/">treemacs</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/treemacs-all-the-icons/">treemacs-all-the-icons</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/hungry-delete/">hungry-delete</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/smartparens/">smartparens</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rainbow-delimiters/">rainbow-delimiters</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yasnippet/">yasnippet</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company/">company</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/company-box/">company-box</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/dashboard/">dashboard</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
+                              需求
+                            </button>
+                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
+                              想法
+                            </button>
+                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
+                                  
+
+                                
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                    开发工具
+                  </button>
+                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
+                    开发语言
+                  </button>
+                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
+                    Hugo
+                  </button>
+                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+              
+                
+                <li class="my-1 ms-3">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
+                    macOS应用
+                  </button>
+                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
+                        
+                        
+                      
+                    </ul>
+                  </div>
+                </li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
           🧱
         </button>
@@ -2495,312 +3315,13 @@
         </div>
       </li>
     
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
-          分享
-        </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
-                    Emacs
-                  </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/org-mode/">org-mode</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/elisp/">elisp</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-e6cefb85dc60e5c9c0d7d804f85f6572" aria-expanded="false">
-                              需求
-                            </button>
-                            <div class="collapse" id="section-e6cefb85dc60e5c9c0d7d804f85f6572">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/">双链笔记本</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎项目源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">虚幻引擎源码跳转</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">使用Emacs做视频笔记</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/">使用ox-hugo导出博客</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/">表格中文对齐</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/">使用中文输入法不影响快捷键</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b5502af7b881499f34f840f46a9487b6" aria-expanded="true">
-                              想法
-                            </button>
-                            <div class="collapse show" id="section-b5502af7b881499f34f840f46a9487b6">
-                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                
-                                
-                                  
-                                    
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/">尝试Evil</a></li>
-                                  
-
-                                
-                              </ul>
-                            </div>
-                          </li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
-                    开发工具
-                  </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">Git</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-262a78b7bebf63c3eaefb8b7370826cb" aria-expanded="false">
-                    开发语言
-                  </button>
-                  <div class="collapse" id="section-262a78b7bebf63c3eaefb8b7370826cb">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/bash/">Shell脚本</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/markdown/">Markdown</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">HTML</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="false">
-                    Hugo
-                  </button>
-                  <div class="collapse" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
-                    macOS应用
-                  </button>
-                  <div class="collapse" id="section-38194113315ac9d72df4a0d5e45398d9">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/">终端</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
   
 </ul>
 
 			</nav>
 		</div>
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
-			<div class="d-xl-none">
-  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
-    <span>文章目录</span>
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
-    </span>
-  </button>
-  <div class="collapse" id="onThisPage">
-    <div class="card card-body mt-3 py-1">
-      <div class="page-links">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#安装evil">安装evil</a>
-      <ul>
-        <li><a href="#依赖">依赖</a></li>
-        <li><a href="#安装evil">安装evil</a></li>
-        <li><a href="#相关插件">相关插件</a>
-          <ul>
-            <li><a href="#evil-tabs">evil-tabs</a></li>
-            <li><a href="#evil-leader">evil-leader</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="page-links d-none d-xl-block">
-  <h3>文章目录</h3>
-  <nav class="my-toc">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#安装evil">安装evil</a>
-      <ul>
-        <li><a href="#依赖">依赖</a></li>
-        <li><a href="#安装evil">安装evil</a></li>
-        <li><a href="#相关插件">相关插件</a>
-          <ul>
-            <li><a href="#evil-tabs">evil-tabs</a></li>
-            <li><a href="#evil-leader">evil-leader</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </nav>
-  </div>
-
+			
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
 		
@@ -2818,148 +3339,18 @@
 			<h1>尝试Evil</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
-				<div class="d-xl-none">
-  <button class="btn btn-outline-primary btn-sm doks-toc-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#onThisPage" aria-controls="doks-docs-nav" aria-expanded="false" aria-label="Toggle On this page navigation">
-    <span>文章目录</span>
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-expand" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand</title><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="doks doks-collapse" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Collapse</title><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
-    </span>
-  </button>
-  <div class="collapse" id="onThisPage">
-    <div class="card card-body mt-3 py-1">
-      <div class="page-links">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#安装evil">安装evil</a>
-      <ul>
-        <li><a href="#依赖">依赖</a></li>
-        <li><a href="#安装evil">安装evil</a></li>
-        <li><a href="#相关插件">相关插件</a>
-          <ul>
-            <li><a href="#evil-tabs">evil-tabs</a></li>
-            <li><a href="#evil-leader">evil-leader</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="page-links d-none d-xl-block">
-  <h3>文章目录</h3>
-  <nav class="my-toc">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#安装evil">安装evil</a>
-      <ul>
-        <li><a href="#依赖">依赖</a></li>
-        <li><a href="#安装evil">安装evil</a></li>
-        <li><a href="#相关插件">相关插件</a>
-          <ul>
-            <li><a href="#evil-tabs">evil-tabs</a></li>
-            <li><a href="#evil-leader">evil-leader</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </nav>
-  </div>
-
+				
 			</nav>
-			<h2 id="安装evil">安装evil <a href="#%e5%ae%89%e8%a3%85evil" class="anchor" aria-hidden="true">#</a></h2>
-<p><a href="https://evil.readthedocs.io/en/latest/index.html">Manual</a> <br/>
-<a href="https://github.com/emacs-evil/evil/tree/8231fe57b8420ae4d7c7b4d99b65ba0809073565">GitHub</a> <br/></p>
-<h3 id="依赖">依赖 <a href="#%e4%be%9d%e8%b5%96" class="anchor" aria-hidden="true">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>goto-chg</td>
-<td><a href="https://github.com/emacs-evil/goto-chg/tree/278cd3e6d5107693aa2bb33189ca503f22f227d0">github</a></td>
-</tr>
-<tr>
-<td>undo-tree</td>
-<td><a href="https://elpa.gnu.org/packages/undo-tree.html">elpa</a></td>
-</tr>
-<tr>
-<td>undo-fu</td>
-<td><a href="https://melpa.org/#/?q=undo-fu">melpa</a></td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-elisp">;; (use-package goto-chg
-;;   :ensure t)
-;; (use-package undo-tree
-;;   :ensure t)
-;; (use-package undo-fu
-;;   :ensure t)
-</code></pre>
-<h3 id="安装evil">安装evil <a href="#%e5%ae%89%e8%a3%85evil" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-elisp">;; (use-package evil
-;;   :ensure t
-;;   :config (progn (evil-mode t)
-;;                  (setq evil-default-state 'emacs)
-;;                  ;; (evil-set-initial-state evil-mode 'emacs)
-;;                  (setq evil-emacs-state-cursor '(&quot;grey&quot; box)) ;; C-z
-;;                  (setq evil-normal-state-cursor '(&quot;green&quot; box)) ;; esc
-;;                  (setq evil-insert-state-cursor '(&quot;red&quot; box)) ;; i
-;;                  (setq evil-replace-state-cursor '(&quot;red&quot; hollow)) ;; r
-;;                  (setq evil-visual-state-cursor '(&quot;yellow&quot; box))))
-</code></pre>
-<h3 id="相关插件">相关插件 <a href="#%e7%9b%b8%e5%85%b3%e6%8f%92%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>evil-tabs</td>
-<td>tabs标签</td>
-</tr>
-<tr>
-<td>evil-leader</td>
-<td>定义evil-mode下使用的快捷键</td>
-</tr>
-</tbody>
-</table>
-<h4 id="evil-tabs">evil-tabs <a href="#evil-tabs" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-elisp">;;(use-package evil-tabs
-;;:ensure t
-;;:config (global-evil-tabs-mode t))
-</code></pre>
-<h4 id="evil-leader">evil-leader <a href="#evil-leader" class="anchor" aria-hidden="true">#</a></h4>
-<p><a href="https://github.com/cofi/evil-leader/tree/39f7014bcf8b36463e0c7512c638bda4bac6c2cf">GitHub</a> <br/></p>
-<pre><code class="language-elisp">;; (use-package evil-leader
-;; :ensure t
-;; :init (progn
-;;           (global-evil-leader-mode t)
-;;           (evil-leader/set-leader &quot;&lt;SPC&gt;&quot;)
-;;           (evil-leader/set-key
-;;             &quot;e&quot; 'find-file)))
-</code></pre>
+			<p><a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/evil/#evil">evil</a> <br/></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/try/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; 阶段性总结
+					&larr; try
 				</div>
 			</div>
 		</a>
