@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>yaml-mode - 六一的部落格</title>
-<meta name="description" content="代码框语法高亮, 文件语法高亮 yaml-mode-安装 # (use-package yaml-mode :ensure t) ">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">
+  <title>Windows上使用Sublime进行Unreal开发 - 六一的部落格</title>
+<meta name="description" content="便签 # Unreal Engine C&#43;&#43; Project Setup, From Scratch 说明 # - Cmder 终端模拟器 Sublime 虚幻引擎5.1版本说明: 依赖.NET 6.0 Cmder # 显示/隐藏窗口: C-` 在文件资源管理器打开Cmder当前路径 cd /d C:\Projects explorer . Sublime # 使用以下插件 - Project Manager Switch File Deluxe 在源文件和头文件之间切换; Windows Alt-O ; macOS Option-O Unreal Snippets UP主提供 从零创建Unreal项目 # 创建项目文件夹Dirk 创建项目 # Sublime &amp;gt; 命令行 &amp;gt; Project Manager: Add New Project 命名为Dirk 添加文件夹 # Sublime &amp;gt; 命令行 &amp;gt; Project: Add Folder 选择Dirk 创建Unreal项目文件 # Dirk/Dirk.">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yaml-mode">
-<meta property="og:description" content="代码框语法高亮, 文件语法高亮 yaml-mode-安装 # (use-package yaml-mode :ensure t) ">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">
+<meta property="og:title" content="Windows上使用Sublime进行Unreal开发">
+<meta property="og:description" content="便签 # Unreal Engine C&#43;&#43; Project Setup, From Scratch 说明 # - Cmder 终端模拟器 Sublime 虚幻引擎5.1版本说明: 依赖.NET 6.0 Cmder # 显示/隐藏窗口: C-` 在文件资源管理器打开Cmder当前路径 cd /d C:\Projects explorer . Sublime # 使用以下插件 - Project Manager Switch File Deluxe 在源文件和头文件之间切换; Windows Alt-O ; macOS Option-O Unreal Snippets UP主提供 从零创建Unreal项目 # 创建项目文件夹Dirk 创建项目 # Sublime &gt; 命令行 &gt; Project Manager: Add New Project 命名为Dirk 添加文件夹 # Sublime &gt; 命令行 &gt; Project: Add Folder 选择Dirk 创建Unreal项目文件 # Dirk/Dirk.">
+<meta property="og:url" content="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-08-21T14:55:48+00:00">
-  <meta property="article:modified_time" content="2023-08-21T15:02:54+08:00">
+<meta property="article:published_time" content="2023-08-25T12:27:04+00:00">
+  <meta property="article:modified_time" content="2023-08-25T12:39:02+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="yaml-mode">
+<meta name="twitter:title" content="Windows上使用Sublime进行Unreal开发">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="yaml-mode">
+    <meta name="twitter:image:alt" content="Windows上使用Sublime进行Unreal开发">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/",
-      "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/",
-      "name": "yaml-mode",
+      "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/",
+      "url": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/",
+      "name": "Windows上使用Sublime进行Unreal开发",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-08-21T14:55:48CET",
-      "dateModified": "2023-08-21T15:02:54CET",
+      "datePublished": "2023-08-25T12:27:04CET",
+      "dateModified": "2023-08-25T12:39:02CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,33 +125,15 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
-          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/",
-          "name": "% E5%88%86% E4% Ba% Ab"
+          "@id": "https://enjoy61.github.io/docs/brick/",
+          "url": "https://enjoy61.github.io/docs/brick/",
+          "name": "Brick"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
-          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/",
-          "name": "Emacs"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  5 ,
-        "item": {
-          "@type": "WebPage",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/",
-          "url": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/",
-          "name": "% E6%8 F%92% E4% Bb% B6"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  6 ,
-        "item": {
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/"
+          "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/"
           }
         }]
     },
@@ -162,16 +144,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "yaml-mode",
+          "headline": "Windows上使用Sublime进行Unreal开发",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/"
+            "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/"
+            "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/"
           },
-          "datePublished": "2023-08-21T14:55:48CET",
-          "dateModified": "2023-08-21T15:02:54CET",
+          "datePublished": "2023-08-25T12:27:04CET",
+          "dateModified": "2023-08-25T12:39:02CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -179,7 +161,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/#/schema/image/2"
           }
         }
       ]
@@ -204,10 +186,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "yaml-mode"
+          "caption": "Windows上使用Sublime进行Unreal开发"
         }
       ]
     }
@@ -257,19 +239,19 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -290,10 +272,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
                               插件
                             </button>
-                            <div class="collapse show" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -481,7 +463,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
                                   
 
                                 
@@ -730,10 +712,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
           🧱
         </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -743,7 +725,7 @@
             
               
                 
-                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
               
             
           </ul>
@@ -1379,19 +1361,19 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1412,10 +1394,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
                               插件
                             </button>
-                            <div class="collapse show" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1603,7 +1585,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
                                   
 
                                 
@@ -1852,10 +1834,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
           🧱
         </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -1865,7 +1847,7 @@
             
               
                 
-                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
               
             
           </ul>
@@ -2438,19 +2420,19 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-169bafefac5c96e7ad8b1714ec46c585" aria-expanded="false">
                     Emacs
                   </button>
-                  <div class="collapse show" id="section-169bafefac5c96e7ad8b1714ec46c585">
+                  <div class="collapse" id="section-169bafefac5c96e7ad8b1714ec46c585">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -2471,10 +2453,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-236b0cdd2e18418fd17d3cdfcace239e" aria-expanded="false">
                               插件
                             </button>
-                            <div class="collapse show" id="section-236b0cdd2e18418fd17d3cdfcace239e">
+                            <div class="collapse" id="section-236b0cdd2e18418fd17d3cdfcace239e">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -2662,7 +2644,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yaml-mode/">yaml-mode</a></li>
                                   
 
                                 
@@ -2911,10 +2893,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="true">
           🧱
         </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+        <div class="collapse show" id="section-3bd2c20a732475803482c020650a0852">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2924,7 +2906,7 @@
             
               
                 
-                <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+                <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
               
             
           </ul>
@@ -3496,7 +3478,94 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#yaml-mode-安装">yaml-mode-安装</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#cmder">Cmder</a></li>
+    <li><a href="#sublime">Sublime</a></li>
+    <li><a href="#从零创建unreal项目">从零创建Unreal项目</a>
+      <ul>
+        <li><a href="#创建项目">创建项目</a></li>
+        <li><a href="#添加文件夹">添加文件夹</a></li>
+        <li><a href="#创建unreal项目文件">创建Unreal项目文件</a></li>
+        <li><a href="#创建target文件">创建Target文件</a>
+          <ul>
+            <li><a href="#游戏实例">游戏实例</a></li>
+            <li><a href="#虚幻编辑器">虚幻编辑器</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建游戏主模块dirkcore">创建游戏主模块DirkCore</a>
+          <ul>
+            <li><a href="#创建源码文件夹">创建源码文件夹</a></li>
+            <li><a href="#模块编译规则">模块编译规则</a></li>
+            <li><a href="#模块实现">模块实现</a></li>
+            <li><a href="#创建日志类别">创建日志类别</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#编译项目">编译项目</a>
+      <ul>
+        <li><a href="#编译虚幻编辑器使用的动态库">编译虚幻编辑器使用的动态库</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#虚幻头文件工具">虚幻头文件工具</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器打开项目">使用虚幻编辑器打开项目</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器运行游戏实例-不加载编辑器本身">使用虚幻编辑器运行游戏实例, 不加载编辑器本身</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+          </ul>
+        </li>
+        <li><a href="#编译游戏实例">编译游戏实例</a>
+          <ul>
+            <li><a href="#编译游戏实例">编译游戏实例</a></li>
+            <li><a href="#烘培资产">烘培资产</a></li>
+            <li><a href="#运行游戏实例">运行游戏实例</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#运行脚本">运行脚本</a>
+      <ul>
+        <li><a href="#变量">变量</a></li>
+        <li><a href="#编译">编译</a></li>
+        <li><a href="#在虚幻编辑器中打开项目">在虚幻编辑器中打开项目</a></li>
+        <li><a href="#运行脚本">运行脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建c-plus-plus-类">创建C++类</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#testactor-dot-h">TestActor.h</a></li>
+            <li><a href="#testactor-dot-cpp">TestActor.cpp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#查看引擎代码">查看引擎代码</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#visual-studio">Visual Studio</a></li>
+        <li><a href="#unreal-engine">Unreal Engine</a></li>
+        <li><a href="#虚幻引擎项目">虚幻引擎项目</a></li>
+        <li><a href="#项目编译">项目编译</a>
+          <ul>
+            <li><a href="#模块编译">模块编译</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -3508,7 +3577,94 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#yaml-mode-安装">yaml-mode-安装</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#cmder">Cmder</a></li>
+    <li><a href="#sublime">Sublime</a></li>
+    <li><a href="#从零创建unreal项目">从零创建Unreal项目</a>
+      <ul>
+        <li><a href="#创建项目">创建项目</a></li>
+        <li><a href="#添加文件夹">添加文件夹</a></li>
+        <li><a href="#创建unreal项目文件">创建Unreal项目文件</a></li>
+        <li><a href="#创建target文件">创建Target文件</a>
+          <ul>
+            <li><a href="#游戏实例">游戏实例</a></li>
+            <li><a href="#虚幻编辑器">虚幻编辑器</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建游戏主模块dirkcore">创建游戏主模块DirkCore</a>
+          <ul>
+            <li><a href="#创建源码文件夹">创建源码文件夹</a></li>
+            <li><a href="#模块编译规则">模块编译规则</a></li>
+            <li><a href="#模块实现">模块实现</a></li>
+            <li><a href="#创建日志类别">创建日志类别</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#编译项目">编译项目</a>
+      <ul>
+        <li><a href="#编译虚幻编辑器使用的动态库">编译虚幻编辑器使用的动态库</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#虚幻头文件工具">虚幻头文件工具</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器打开项目">使用虚幻编辑器打开项目</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器运行游戏实例-不加载编辑器本身">使用虚幻编辑器运行游戏实例, 不加载编辑器本身</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+          </ul>
+        </li>
+        <li><a href="#编译游戏实例">编译游戏实例</a>
+          <ul>
+            <li><a href="#编译游戏实例">编译游戏实例</a></li>
+            <li><a href="#烘培资产">烘培资产</a></li>
+            <li><a href="#运行游戏实例">运行游戏实例</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#运行脚本">运行脚本</a>
+      <ul>
+        <li><a href="#变量">变量</a></li>
+        <li><a href="#编译">编译</a></li>
+        <li><a href="#在虚幻编辑器中打开项目">在虚幻编辑器中打开项目</a></li>
+        <li><a href="#运行脚本">运行脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建c-plus-plus-类">创建C++类</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#testactor-dot-h">TestActor.h</a></li>
+            <li><a href="#testactor-dot-cpp">TestActor.cpp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#查看引擎代码">查看引擎代码</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#visual-studio">Visual Studio</a></li>
+        <li><a href="#unreal-engine">Unreal Engine</a></li>
+        <li><a href="#虚幻引擎项目">虚幻引擎项目</a></li>
+        <li><a href="#项目编译">项目编译</a>
+          <ul>
+            <li><a href="#模块编译">模块编译</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </nav>
@@ -3521,14 +3677,12 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/emacs/">Emacs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/">插件</a></li>
-<li class="breadcrumb-item active" aria-current="page">yaml-mode</li>
+<li class="breadcrumb-item"><a href="/docs/brick/">🧱</a></li>
+<li class="breadcrumb-item active" aria-current="page">Windows上使用Sublime进行Unreal开发</li>
 					</ol>
 				</nav>
 			
-			<h1>yaml-mode</h1>
+			<h1>Windows上使用Sublime进行Unreal开发</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -3544,7 +3698,94 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#yaml-mode-安装">yaml-mode-安装</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#cmder">Cmder</a></li>
+    <li><a href="#sublime">Sublime</a></li>
+    <li><a href="#从零创建unreal项目">从零创建Unreal项目</a>
+      <ul>
+        <li><a href="#创建项目">创建项目</a></li>
+        <li><a href="#添加文件夹">添加文件夹</a></li>
+        <li><a href="#创建unreal项目文件">创建Unreal项目文件</a></li>
+        <li><a href="#创建target文件">创建Target文件</a>
+          <ul>
+            <li><a href="#游戏实例">游戏实例</a></li>
+            <li><a href="#虚幻编辑器">虚幻编辑器</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建游戏主模块dirkcore">创建游戏主模块DirkCore</a>
+          <ul>
+            <li><a href="#创建源码文件夹">创建源码文件夹</a></li>
+            <li><a href="#模块编译规则">模块编译规则</a></li>
+            <li><a href="#模块实现">模块实现</a></li>
+            <li><a href="#创建日志类别">创建日志类别</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#编译项目">编译项目</a>
+      <ul>
+        <li><a href="#编译虚幻编辑器使用的动态库">编译虚幻编辑器使用的动态库</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#虚幻头文件工具">虚幻头文件工具</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器打开项目">使用虚幻编辑器打开项目</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器运行游戏实例-不加载编辑器本身">使用虚幻编辑器运行游戏实例, 不加载编辑器本身</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+          </ul>
+        </li>
+        <li><a href="#编译游戏实例">编译游戏实例</a>
+          <ul>
+            <li><a href="#编译游戏实例">编译游戏实例</a></li>
+            <li><a href="#烘培资产">烘培资产</a></li>
+            <li><a href="#运行游戏实例">运行游戏实例</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#运行脚本">运行脚本</a>
+      <ul>
+        <li><a href="#变量">变量</a></li>
+        <li><a href="#编译">编译</a></li>
+        <li><a href="#在虚幻编辑器中打开项目">在虚幻编辑器中打开项目</a></li>
+        <li><a href="#运行脚本">运行脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建c-plus-plus-类">创建C++类</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#testactor-dot-h">TestActor.h</a></li>
+            <li><a href="#testactor-dot-cpp">TestActor.cpp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#查看引擎代码">查看引擎代码</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#visual-studio">Visual Studio</a></li>
+        <li><a href="#unreal-engine">Unreal Engine</a></li>
+        <li><a href="#虚幻引擎项目">虚幻引擎项目</a></li>
+        <li><a href="#项目编译">项目编译</a>
+          <ul>
+            <li><a href="#模块编译">模块编译</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -3556,34 +3797,877 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#yaml-mode-安装">yaml-mode-安装</a></li>
+    <li><a href="#便签">便签</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#cmder">Cmder</a></li>
+    <li><a href="#sublime">Sublime</a></li>
+    <li><a href="#从零创建unreal项目">从零创建Unreal项目</a>
+      <ul>
+        <li><a href="#创建项目">创建项目</a></li>
+        <li><a href="#添加文件夹">添加文件夹</a></li>
+        <li><a href="#创建unreal项目文件">创建Unreal项目文件</a></li>
+        <li><a href="#创建target文件">创建Target文件</a>
+          <ul>
+            <li><a href="#游戏实例">游戏实例</a></li>
+            <li><a href="#虚幻编辑器">虚幻编辑器</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建游戏主模块dirkcore">创建游戏主模块DirkCore</a>
+          <ul>
+            <li><a href="#创建源码文件夹">创建源码文件夹</a></li>
+            <li><a href="#模块编译规则">模块编译规则</a></li>
+            <li><a href="#模块实现">模块实现</a></li>
+            <li><a href="#创建日志类别">创建日志类别</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#编译项目">编译项目</a>
+      <ul>
+        <li><a href="#编译虚幻编辑器使用的动态库">编译虚幻编辑器使用的动态库</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#虚幻头文件工具">虚幻头文件工具</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器打开项目">使用虚幻编辑器打开项目</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+            <li><a href="#新增文件夹">新增文件夹</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用虚幻编辑器运行游戏实例-不加载编辑器本身">使用虚幻编辑器运行游戏实例, 不加载编辑器本身</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#macos">macOS</a></li>
+          </ul>
+        </li>
+        <li><a href="#编译游戏实例">编译游戏实例</a>
+          <ul>
+            <li><a href="#编译游戏实例">编译游戏实例</a></li>
+            <li><a href="#烘培资产">烘培资产</a></li>
+            <li><a href="#运行游戏实例">运行游戏实例</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#运行脚本">运行脚本</a>
+      <ul>
+        <li><a href="#变量">变量</a></li>
+        <li><a href="#编译">编译</a></li>
+        <li><a href="#在虚幻编辑器中打开项目">在虚幻编辑器中打开项目</a></li>
+        <li><a href="#运行脚本">运行脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建c-plus-plus-类">创建C++类</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#testactor-dot-h">TestActor.h</a></li>
+            <li><a href="#testactor-dot-cpp">TestActor.cpp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#查看引擎代码">查看引擎代码</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#visual-studio">Visual Studio</a></li>
+        <li><a href="#unreal-engine">Unreal Engine</a></li>
+        <li><a href="#虚幻引擎项目">虚幻引擎项目</a></li>
+        <li><a href="#项目编译">项目编译</a>
+          <ul>
+            <li><a href="#模块编译">模块编译</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<p>代码框语法高亮, 文件语法高亮 <br/></p>
-<h2 id="yaml-mode-安装">yaml-mode-安装 <a href="#yaml-mode-%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h2>
-<pre><code class="language-elisp">(use-package yaml-mode
-  :ensure t)
+			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://www.youtube.com/watch?v=94FvzO1HVzY&amp;list=PLjri7a1yVSW6BgWS2b9Fqh3dU79y5rznc">Unreal Engine C++ Project Setup, From Scratch</a>     <br/></p>
+<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cmder.app/">Cmder</a></td>
+<td>终端模拟器</td>
+</tr>
+<tr>
+<td><a href="https://www.sublimetext.com/">Sublime</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://docs.unrealengine.com/5.1/zh-CN/unreal-engine-5.1-release-notes/">虚幻引擎5.1版本说明</a>: 依赖.NET 6.0 <br/></p>
+<h2 id="cmder">Cmder <a href="#cmder" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>显示/隐藏窗口: C-` <br/></li>
+<li>在文件资源管理器打开Cmder当前路径 <br/>
+<pre><code class="language-bash">cd /d C:\Projects
+explorer .
 </code></pre>
+</li>
+</ol>
+<h2 id="sublime">Sublime <a href="#sublime" class="anchor" aria-hidden="true">#</a></h2>
+<p>使用以下插件 <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Manager</td>
+<td></td>
+</tr>
+<tr>
+<td>Switch File Deluxe</td>
+<td>在源文件和头文件之间切换; Windows <code>Alt-O</code> ; macOS <code>Option-O</code></td>
+</tr>
+<tr>
+<td>Unreal Snippets</td>
+<td>UP主提供</td>
+</tr>
+</tbody>
+</table>
+<h2 id="从零创建unreal项目">从零创建Unreal项目 <a href="#%e4%bb%8e%e9%9b%b6%e5%88%9b%e5%bb%baunreal%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<p>创建项目文件夹Dirk <br/></p>
+<h3 id="创建项目">创建项目 <a href="#%e5%88%9b%e5%bb%ba%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>Sublime &gt; 命令行 &gt; Project Manager: Add New Project <br/></li>
+<li>命名为Dirk <br/></li>
+</ol>
+<h3 id="添加文件夹">添加文件夹 <a href="#%e6%b7%bb%e5%8a%a0%e6%96%87%e4%bb%b6%e5%a4%b9" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>Sublime &gt; 命令行 &gt; Project: Add Folder <br/></li>
+<li>选择Dirk <br/></li>
+</ol>
+<h3 id="创建unreal项目文件">创建Unreal项目文件 <a href="#%e5%88%9b%e5%bb%baunreal%e9%a1%b9%e7%9b%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Dirk/Dirk.uproject</code> <br/>
+包含项目对应的引擎版本, 以及打开该项目所需的动态库 <br/></p>
+<ol>
+<li>插入代码段: uuproj &gt; TAB <br/></li>
+<li>修改 <code>Modules Name</code> <br/>
+<pre><code class="language-json">{
+    &quot;FileVersion&quot;: 3,
+    &quot;EngineAssociation&quot;: &quot;4.25&quot;,
+    &quot;Category&quot;: &quot;&quot;,
+    &quot;Description&quot;: &quot;&quot;,
+    &quot;Modules&quot;: [
+        {
+            &quot;Name&quot;: &quot;DirkCore&quot;,
+            &quot;Type&quot;: &quot;Runtime&quot;,
+            &quot;LoadingPhase&quot;: &quot;Default&quot;
+        }
+    ]
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="创建target文件">创建Target文件 <a href="#%e5%88%9b%e5%bb%batarget%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>指示如何编译Target <br/>
+<code>Target Rules Definition</code> <br/></li>
+<li>有两个Target, 游戏实例和虚幻编辑器 <br/></li>
+</ul>
+<h4 id="游戏实例">游戏实例 <a href="#%e6%b8%b8%e6%88%8f%e5%ae%9e%e4%be%8b" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Dirk/Source/Dirk.Target.cs</code> <br/></p>
+<ol>
+<li>插入代码段: umt &gt; TAB <br/></li>
+<li>给出需要构造的模块 <br/>
+<pre><code class="language-csharp">using UnrealBuildTool;
+
+public class DirkTarget : TargetRules
+{
+    public DirkTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Game;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
+        ExtraModuleNames.AddRange( new string[] { &quot;DirkCore&quot; } );
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="虚幻编辑器">虚幻编辑器 <a href="#%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Dirk/Source/DirkEditor.Target.cs</code> <br/></p>
+<ol>
+<li>插入代码段: umt &gt; TAB <br/></li>
+<li>填写Target类型为Editor <br/></li>
+<li>给出需要构造的模块 <br/>
+<pre><code class="language-csharp">using UnrealBuildTool;
+
+public class DirkEditorTarget : TargetRules
+{
+    public DirkEditorTarget(TargetInfo Target) : base(Target)
+    {
+        Type = TargetType.Editor;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
+        ExtraModuleNames.AddRange( new string[] { &quot;DirkCore&quot; } );
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="创建游戏主模块dirkcore">创建游戏主模块DirkCore <a href="#%e5%88%9b%e5%bb%ba%e6%b8%b8%e6%88%8f%e4%b8%bb%e6%a8%a1%e5%9d%97dirkcore" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Primary Game Module</code> <br/>
+一个项目只有一个游戏主模块; 创建文件夹Dirk/Source/DirkCore <br/></p>
+<h4 id="创建源码文件夹">创建源码文件夹 <a href="#%e5%88%9b%e5%bb%ba%e6%ba%90%e7%a0%81%e6%96%87%e4%bb%b6%e5%a4%b9" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dirk/Source/DirkCore/Public</td>
+<td>存放对其他模块可见的头文件</td>
+</tr>
+<tr>
+<td>Dirk/Source/DirkCore/Private</td>
+<td>存放实现  <code>Implementataion</code> 和模块内部逻辑</td>
+</tr>
+</tbody>
+</table>
+<h4 id="模块编译规则">模块编译规则 <a href="#%e6%a8%a1%e5%9d%97%e7%bc%96%e8%af%91%e8%a7%84%e5%88%99" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Module Build Rules</code> <br/>
+<code>Dirk/Source/DirkCore/DirkCore.Build.cs</code> <br/></p>
+<ol>
+<li>插入代码段: umb &gt; TAB <br/></li>
+<li>填写依赖模块: 已填写最少依赖 <br/>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core</td>
+</tr>
+<tr>
+<td>CoreUObject</td>
+</tr>
+<tr>
+<td>Engine</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<!--listend-->
+<pre><code class="language-csharp">using UnrealBuildTool;
+
+public class DirkCore : ModuleRules
+{
+    public DirkCore(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        bEnforceIWYU = true;
+
+        PublicDependencyModuleNames.AddRange(new string[] { &quot;Core&quot;, &quot;CoreUObject&quot;, &quot;Engine&quot; });
+        PrivateDependencyModuleNames.AddRange(new string[] { });
+    }
+}
+</code></pre>
+<!--list-separator-->
+<ul>
+<li>
+<p>虚幻引擎由各个模块组成</p>
+<ul>
+<li>查看 <code>C:\Epic Games\UE_5.1\Engine\Source</code> ，组织方式为模块类型 <br/></li>
+<li>Runtime模块：引擎代码，不包含虚幻编辑器和开发工具; 包含各种运行时模块, 如Core、CoreUObject和Engine <br/>
+如果想要开发VR游戏, 则需添加依赖模块HeadMountedDisplay <br/></li>
+</ul>
+</li>
+</ul>
+<h4 id="模块实现">模块实现 <a href="#%e6%a8%a1%e5%9d%97%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true">#</a></h4>
+<p>模块定义和模块同名 <br/></p>
+<!--list-separator-->
+<ul>
+<li>
+<p>DirkCore.h</p>
+<p><code>Dirk/Source/DirkCore/Public/DirkCore.h</code>        <br/></p>
+<ol>
+<li>插入代码段: umh &gt; TAB <br/></li>
+<li>定义了模块入口 <br/></li>
+<li>加载模块之后, 调用StartupModule; 卸载模块之前, 调用ShutdownModule <br/></li>
+</ol>
+ <!--listend-->
+<pre><code class="language-cpp">#pragma once
+
+#include &quot;CoreMinimal.h&quot;
+#include &quot;Modules/ModuleInterface.h&quot;
+
+class FDirkCore : public IModuleInterface
+{
+public:
+    static inline FDirkCore&amp; Get()
+    {
+        return FModuleManager::LoadModuleChecked&lt;FDirkCore&gt;(&quot;DirkCore&quot;);
+    }
+
+    static inline bool IsAvailable()
+    {
+        return FModuleManager::Get().IsModuleLoaded(&quot;DirkCore&quot;);
+    }
+
+    virtual void StartupModule() override;
+    virtual void ShutdownModule() override;
+};
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>DirkCore.cpp</p>
+<p><code>Dirk/Source/DirkCore/Private/DirkCore.cpp</code>        <br/>
+插入代码段: umcp &gt; TAB <br/></p>
+<pre><code class="language-cpp">#include &quot;DirkCore.h&quot;
+#include &quot;Modules/ModuleManager.h&quot;
+
+#include &quot;Log.h&quot;
+
+void FDirkCore::StartupModule()
+{
+    UE_LOG(LogDirkCore, Log, TEXT(&quot;DirkCore module starting up&quot;));
+}
+
+void FDirkCore::ShutdownModule()
+{
+    UE_LOG(LogDirkCore, Log, TEXT(&quot;DirkCore module shutting down&quot;));
+}
+
+IMPLEMENT_PRIMARY_GAME_MODULE(FDirkCore, DirkCore, &quot;DirkCore&quot;);
+</code></pre>
+</li>
+</ul>
+<h4 id="创建日志类别">创建日志类别 <a href="#%e5%88%9b%e5%bb%ba%e6%97%a5%e5%bf%97%e7%b1%bb%e5%88%ab" class="anchor" aria-hidden="true">#</a></h4>
+<p>只在DirkCore内部使用, 头文件和源文件均存放在Dirk/Source/DirkCore/Private中 <br/></p>
+<ol>
+<li>Log.h <br/>
+插入代码段: ulh &gt; TAB <br/>
+<pre><code class="language-cpp">#pragma once
+
+#include &quot;Logging/LogMacros.h&quot;
+
+DECLARE_LOG_CATEGORY_EXTERN(LogDirkCore, All, All);
+</code></pre>
+</li>
+<li>Log.cpp <br/>
+插入代码段: ulc &gt; TAB <br/>
+<pre><code class="language-cpp">#include &quot;Log.h&quot;
+
+DEFINE_LOG_CATEGORY(LogDirkCore);
+</code></pre>
+</li>
+<li>插入日志语句: ull &gt; TAB <br/></li>
+</ol>
+<h2 id="编译项目">编译项目 <a href="#%e7%bc%96%e8%af%91%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<p>虚幻引擎有自己的交叉编译系统 <code>Cross-Platform</code> , 我们通过C#文件配置Target和模块的编译规则 <br/></p>
+<h3 id="编译虚幻编辑器使用的动态库">编译虚幻编辑器使用的动态库 <a href="#%e7%bc%96%e8%af%91%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%bd%bf%e7%94%a8%e7%9a%84%e5%8a%a8%e6%80%81%e5%ba%93" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Windows</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Epic Games\UE_5.1\Engine\Build\BatchFiles\</td>
+<td>脚本</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Build脚本包括UnrealBuildTool的调用, 和一些参数配置 <br/></li>
+<li>运行Build脚本, 指定Target、Platform和Build Configuration, 给出uproject文件路径 <br/></li>
+<li>最终, 模块被链接成动态库, 供虚幻编辑器加载 <br/></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target</td>
+<td>DirkEditor</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>Mac</td>
+</tr>
+<tr>
+<td>编译配置</td>
+<td>Development, 介于Debug和Shipping之间</td>
+</tr>
+</tbody>
+</table>
+<h4 id="windows">Windows <a href="#windows" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">&quot;C:\Epic Games\UE_5.1\Engine\Build\BatchFiles\Build.bat&quot; DirkEditor Win64 Development &quot;C:\Dirk\Dirk.uproject&quot; -waitmutex -NoHotReload
+</code></pre>
+<h4 id="macos">macOS <a href="#macos" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">#!/bin/bash
+
+Project=&quot;Dirk/Dirk.uproject&quot;
+BuildScript=&quot;UE_5.1/Engine/Build/BatchFiles/Mac/Build.sh&quot;
+Target=&quot;DirkEditor&quot;
+
+$BuildScript $Target Mac Development $Project -waitmutex -NoHotReload
+</code></pre>
+<h4 id="虚幻头文件工具">虚幻头文件工具 <a href="#%e8%99%9a%e5%b9%bb%e5%a4%b4%e6%96%87%e4%bb%b6%e5%b7%a5%e5%85%b7" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Unreal Header Tool</code> <br/>
+虚幻引擎源码里使用了很多宏，在编译之前，需要进行解析，在源码文件中进行替换 <br/></p>
+<h4 id="新增文件夹">新增文件夹 <a href="#%e6%96%b0%e5%a2%9e%e6%96%87%e4%bb%b6%e5%a4%b9" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binaries</td>
+<td></td>
+</tr>
+<tr>
+<td>Intermediate</td>
+<td>生成文件</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dirk/Binaries/Mac/UnrealEditor.modules</td>
+<td>元数据 <code>Meta Data</code> , 说明该模块所需的动态库文件, 和引擎版本</td>
+</tr>
+<tr>
+<td></td>
+<td>打开虚幻编辑器, 会比对引擎版本和项目对应的引擎版本是否一致</td>
+</tr>
+<tr>
+<td>Dirk/Binaries/Mac/DirkEditor.target</td>
+<td>元数据</td>
+</tr>
+</tbody>
+</table>
+<!--list-separator-->
+<ul>
+<li>Windows
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dirk/Binaries/Win64/UnrealEditor-DirkCore.dll</td>
+<td>模块动态库</td>
+</tr>
+<tr>
+<td>Dirk/Binaries/Win64/UnrealEditor-DirkCore.pdb</td>
+<td>存放调试信息</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>macOS
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dirk/Binaries/Mac/UnrealEditor-DirkCore.dylib</td>
+<td>模块动态库</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="使用虚幻编辑器打开项目">使用虚幻编辑器打开项目 <a href="#%e4%bd%bf%e7%94%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e6%89%93%e5%bc%80%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="windows">Windows <a href="#windows" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">&quot;C:\Epic Games\UE_5.1\Engine\Binaries\Win64\UnrealEditor.exe&quot; &quot;C:\Dirk\Dirk.uproject&quot; -log
+</code></pre>
+<h4 id="macos">macOS <a href="#macos" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">#!/bin/bash
+
+Project=&quot;Dirk/Dirk.uproject&quot;
+UnrealEditor=&quot;UE_5.1/Engine/Binaries/Mac/UnrealEditor.app&quot;
+
+open -a $UnrealEditor $Project
+</code></pre>
+<h4 id="新增文件夹">新增文件夹 <a href="#%e6%96%b0%e5%a2%9e%e6%96%87%e4%bb%b6%e5%a4%b9" class="anchor" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saved</td>
+<td>存放日志和运行时 <code>Runtime</code> 生成</td>
+</tr>
+<tr>
+<td>DerivedDataCache</td>
+<td>虚幻编辑器导入资产时的缓存</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>存放各种资产</td>
+</tr>
+<tr>
+<td>Config</td>
+<td>项目配置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="使用虚幻编辑器运行游戏实例-不加载编辑器本身">使用虚幻编辑器运行游戏实例, 不加载编辑器本身 <a href="#%e4%bd%bf%e7%94%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e8%bf%90%e8%a1%8c%e6%b8%b8%e6%88%8f%e5%ae%9e%e4%be%8b-%e4%b8%8d%e5%8a%a0%e8%bd%bd%e7%bc%96%e8%be%91%e5%99%a8%e6%9c%ac%e8%ba%ab" class="anchor" aria-hidden="true">#</a></h3>
+<p>使用-game选项 <br/></p>
+<h4 id="windows">Windows <a href="#windows" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">&quot;C:\Epic Games\UE_5.1\Engine\Binaries\Win64\UnrealEditor.exe&quot; &quot;C:\Dirk\Dirk.uproject&quot; -game -log -windowed -resx=1280 -rexy=720       
+</code></pre>
+<h4 id="macos">macOS <a href="#macos" class="anchor" aria-hidden="true">#</a></h4>
+<pre><code class="language-bash">#!/bin/bash
+
+Project=&quot;Dirk/Dirk.uproject&quot;
+UnrealEditor=&quot;UE_5.1/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor&quot;
+
+$UnrealEditor $Project -game -log -windowed -resx=1280 -rexy=720
+</code></pre>
+<h3 id="编译游戏实例">编译游戏实例 <a href="#%e7%bc%96%e8%af%91%e6%b8%b8%e6%88%8f%e5%ae%9e%e4%be%8b" class="anchor" aria-hidden="true">#</a></h3>
+<h4 id="编译游戏实例">编译游戏实例 <a href="#%e7%bc%96%e8%af%91%e6%b8%b8%e6%88%8f%e5%ae%9e%e4%be%8b" class="anchor" aria-hidden="true">#</a></h4>
+<ul>
+<li>使用游戏实例Target, 得到项目的独立运行版本 <code>Standalone Version</code> <br/></li>
+<li>不再把模块链接成动态库, 将项目和引擎源码链接在一起, 生成一个可执行游戏, 不包含虚幻编辑器的特定功能 <br/></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Windows</p>
+<pre><code class="language-bash">&quot;C:\Epic Games\UE_5.1\Engine\Build\BatchFiles\build.bat&quot; Dirk Win64 Development &quot;C:\Dirk\Dirk.uproject&quot; -waitmutex -NoHotReload
+</code></pre>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>macOS</p>
+<pre><code class="language-bash">#!/bin/bash
+
+Project=&quot;Dirk/Dirk.uproject&quot;
+BuildScript=&quot;UE_5.1/Engine/Build/BatchFiles/Mac/Build.sh&quot;
+Target=&quot;Dirk&quot;
+
+$BuildScript $Target Mac Development $Project -waitmutex -NoHotReload
+</code></pre>
+</li>
+</ul>
+<h4 id="烘培资产">烘培资产 <a href="#%e7%83%98%e5%9f%b9%e8%b5%84%e4%ba%a7" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Windows</code> <br/>
+<code>Cook Content</code> <br/></p>
+<ul>
+<li>虚幻编辑器使用未烘培资产, 而游戏实例直接将压缩纹理加载到GPU <br/></li>
+<li>Saved/Cooked存放游戏实例运行时所需资产 <br/></li>
+<li>macOS无UnrealEditor-cmd程序 <br/></li>
+</ul>
+<!--listend-->
+<pre><code class="language-bash">&quot;C:\Epic Games\UE_5.1\Engine\Binaries\Win64\UnrealEditor-cmd.exe&quot; &quot;C:\Dirk\Dirk.uproject&quot; -run=cook -targetplatform=Windows
+</code></pre>
+<h4 id="运行游戏实例">运行游戏实例 <a href="#%e8%bf%90%e8%a1%8c%e6%b8%b8%e6%88%8f%e5%ae%9e%e4%be%8b" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Windows</code> <br/>
+构建时使用了Development参数, 运行时可以使用开发工具 <br/></p>
+<pre><code class="language-bash">&quot;C:\Dirk\Binaries\Win64\Dirk.exe&quot; -log -windowed -resx=1280 -resy=720
+</code></pre>
+<h2 id="运行脚本">运行脚本 <a href="#%e8%bf%90%e8%a1%8c%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
+<p>和Dirk文件夹同级 <br/></p>
+<h3 id="变量">变量 <a href="#%e5%8f%98%e9%87%8f" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>vars.bat</code> <br/></p>
+<pre><code class="language-bash">@echo off 
+Rem 不打印命令
+
+set ROOTDIR=%~dp0
+Rem ~dp0为脚本所在目录
+
+set ROOTDIR=%ROOTDIR:~0,-1% 
+Rem  ~0,-1% 去除目录最后的/
+
+set PROJECT=Dirk
+set PROJECT_DIR=%ROOTDIR%\%PROJECT%
+set UPROJECT_PATH=%PROJECT_DIR%\%PROJECT%.uproject
+
+set UE5_DIR=C:\Epic Games\UE_5.1
+set UE5EDITOR_EXE=%UE5_DIR%\Engine\Binaries\Win64\UnrealEditor.exe
+set BUILD_BAT=%UE5_DIR%\Engine\Build\BatchFiles\Build.bat
+</code></pre>
+<h3 id="编译">编译 <a href="#%e7%bc%96%e8%af%91" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>build.bat</code> <br/></p>
+<pre><code class="language-bash">@echo off
+
+call %~dp0\vars.bat
+
+call &quot;%BUILD_BAT%&quot; %PROJECT%Editor Win64 Development &quot;%UPROJECT_PATH%&quot; -waitmutex -NoHotReload
+</code></pre>
+<h3 id="在虚幻编辑器中打开项目">在虚幻编辑器中打开项目 <a href="#%e5%9c%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%b8%ad%e6%89%93%e5%bc%80%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>editor.bat</code> <br/></p>
+<pre><code class="language-bash">@echo off
+
+call %~dp0\vars.bat
+
+start &quot;%UE5EDITOR_EXE%&quot; &quot;%UPROJECT_PATH%&quot; %*
+</code></pre>
+<h3 id="运行脚本">运行脚本 <a href="#%e8%bf%90%e8%a1%8c%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>在虚幻编辑器中打开项目 <br/>
+<pre><code class="language-bash">editor
+editor -log
+</code></pre>
+</li>
+<li>编译成功则在虚幻编辑器中打开 <br/>
+<pre><code class="language-bash">build &amp;&amp; editor
+</code></pre>
+</li>
+</ul>
+<h2 id="创建c-plus-plus-类">创建C++类 <a href="#%e5%88%9b%e5%bb%bac-plus-plus-%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
+<h4 id="testactor-dot-h">TestActor.h <a href="#testactor-dot-h" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Dirk/Source/DirkCore/Public/TestActor.h</code>       <br/></p>
+<!--list-separator-->
+<ul>
+<li>
+<p>插入代码段</p>
+<ol>
+<li>定义Actor派生类: uca &gt; TAB <br/></li>
+<li>添加组件: upc &gt; TAB <br/>
+<code>protected</code> <br/>
+<pre><code class="language-cpp">class UBillboardComponent;
+
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=&quot;Components&quot;)
+class UBillboardComponent* BillboardComponentSprite;	
+</code></pre>
+</li>
+<li>添加蓝图可编辑属性: upe &gt; TAB <br/>
+<code>protected</code> <br/>
+<pre><code class="language-cpp">UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Test&quot;)
+int32 Value;
+</code></pre>
+</li>
+<li>覆写BeginPlay <br/>
+<code>public</code> <br/>
+<pre><code class="language-cpp">virtual void BeginPlay() override;
+</code></pre>
+</li>
+<li>构造函数: ufc &gt; TAB <br/>
+<code>public</code> <br/>
+<pre><code class="language-cpp">ATestActor(const FObjectInitializer&amp; ObjectInitializer);
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>完整代码</p>
+<pre><code class="language-cpp">#pragma once
+
+#include &quot;CoreMinimal.h&quot;
+#include &quot;GameFramework/Actor.h&quot;
+
+#include &quot;TestActor.generated.h&quot;
+
+class UBillboardComponent;
+
+UCLASS()
+class ATestActor : public AActor
+{
+    GENERATED_BODY()
+
+public:
+    ATestActor(const FObjectInitializer&amp; ObjectInitializer);
+    virtual void BeginPlay() override;
+
+protected:
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=&quot;Components&quot;)
+    class UBillboardComponent* Sprite;	
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=&quot;Test&quot;)
+    int32 Value;
+};
+</code></pre>
+</li>
+</ul>
+<h4 id="testactor-dot-cpp">TestActor.cpp <a href="#testactor-dot-cpp" class="anchor" aria-hidden="true">#</a></h4>
+<p><code>Dirk/Source/DirkCore/Private/TestActor.cpp</code>       <br/></p>
+<pre><code class="language-cpp">#include &quot;TestActor.h&quot;
+#include &quot;Components/SceneComponent.h&quot;
+#include &quot;Components/BillboardComponent.h&quot;
+#include &quot;Log.h&quot;
+
+ATestActor::ATestActor(const FObjectInitializer&amp; ObjectInitializer)
+    : Super(ObjectInitializer)
+{
+    Value = 42;
+
+    RootComponent = ObjectInitializer.CreateDefaultSubobject&lt;USceneComponent&gt;(this, TEXT(&quot;RootComponent&quot;));
+
+    Sprite = ObjectInitializer.CreateDefaultSubobject&lt;UBillboardComponent&gt;(this, TEXT(&quot;Sprite&quot;));
+    Sprite-&gt;SetupAttachment(RootComponent);
+}
+
+void ATestActor::BeginPlay()
+{
+    Super::BeginPlay();
+
+    UE_LOG(LogDirkCore, Log, TEXT(&quot;%s: on BeginPlay, Value is %d&quot;), *GetName(), Value);
+}
+</code></pre>
+<h2 id="查看引擎代码">查看引擎代码 <a href="#%e6%9f%a5%e7%9c%8b%e5%bc%95%e6%93%8e%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>添加引擎源码文件夹 <br/>
+命令行 &gt; Project: Add Folder &gt; Epic Games\UE_5.1\Engine\Source\Runtime <br/></li>
+<li>项目内查找: 查找派生类 <br/>
+<ul>
+<li>Find <br/>
+<pre><code class="language-text">: public FPrimitiveSceneProxy
+</code></pre>
+</li>
+<li>Where <br/>
+<pre><code class="language-text">C:\Epic Games\UE_5.1\Engine\Plugins,*.h,*.cpp,*.inl         
+</code></pre>
+</li>
+</ul>
+</li>
+<li>文件内查找 <br/>
+支持正则匹配 <br/>
+<ul>
+<li>去到文件Actor.h <br/></li>
+<li>Set.*Tranform <br/></li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结 <a href="#%e6%80%bb%e7%bb%93" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="visual-studio">Visual Studio <a href="#visual-studio" class="anchor" aria-hidden="true">#</a></h3>
+<p>MSVC++提供cl.exe和link.exe, 作为编译器 <code>Compiler</code> 和链接器 <code>Linker</code> <br/></p>
+<h3 id="unreal-engine">Unreal Engine <a href="#unreal-engine" class="anchor" aria-hidden="true">#</a></h3>
+<p>提供UnrealBuildTool.exe, UnrealHeaderTool.exe和UnrealEditor.exe <br/></p>
+<h3 id="虚幻引擎项目">虚幻引擎项目 <a href="#%e8%99%9a%e5%b9%bb%e5%bc%95%e6%93%8e%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>项目文件: Dirk.uproject <br/></li>
+<li>蓝图项目: 没有模块项 <br/>
+<pre><code class="language-json">{
+    &quot;FileVersion&quot;: 3,
+    &quot;EngineAssociation&quot;: &quot;5.1&quot;,
+    &quot;Category&quot;: &quot;&quot;,
+    &quot;Description&quot;: &quot;&quot;
+}
+</code></pre>
+</li>
+<li>C++项目: <br/>
+<ul>
+<li>虚幻编辑器需加载指定模块 <br/>
+<pre><code class="language-json">{
+    &quot;FileVersion&quot;: 3,
+    &quot;EngineAssociation&quot;: &quot;5.1&quot;,
+    &quot;Category&quot;: &quot;&quot;,
+    &quot;Description&quot;: &quot;&quot;,
+    &quot;Modules&quot;: [
+        {
+            &quot;Name&quot;: &quot;DirkCore&quot;,
+            &quot;Type&quot;: &quot;Runtime&quot;,
+            &quot;LoadingPhase&quot;: &quot;Default&quot;
+        }
+    ]
+
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="项目编译">项目编译 <a href="#%e9%a1%b9%e7%9b%ae%e7%bc%96%e8%af%91" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>模块定义在Dirk/Source, 每个模块的构造规则在Build.cs文件中说明 <br/></li>
+<li>每个项目有两个Target.cs文件, 说明其依赖的模块 <br/></li>
+<li>UnrealBuildTool根据Target构造规则编译依赖模块, 模块编译则依据模块编译规则 <br/></li>
+</ol>
+<h4 id="模块编译">模块编译 <a href="#%e6%a8%a1%e5%9d%97%e7%bc%96%e8%af%91" class="anchor" aria-hidden="true">#</a></h4>
+<ol>
+<li>解析头文件得到生成代码，保存在Intermediate文件夹 <br/>
+<code>Unreal Header Tool</code> <br/>
+DirkCore.init.gen.cpp <br/>
+TestActor.gen.cpp <br/>
+TestActor.generated.h <br/></li>
+<li>编译解析完的单元, 生成目标文件 <br/>
+<code>Unreal Build Tool</code> <br/>
+DirkCore.cpp.obj <br/>
+DirkCore.init.gen.cpp.obj <br/>
+TestActor.cpp.obj <br/>
+TestActor.gen.cpp.obj <br/></li>
+<li>将代码链接到一起，根据编译规则 <code>Build Rules</code> 提供的依赖名单解决模块见交叉引用 <br/>
+<code>Unreal Build Tool</code> <br/></li>
+<li>最后, 得到编辑器所需的动态库 <br/>
+UEEditor-DirkCore.dll <br/>
+UEEditor-DirCore.pdb <br/></li>
+<li>给出uproject文件，可以在编辑器中编辑或运行未烘培资产的项目 <br/></li>
+<li>也可以使用编辑器为项目烘培资产, 之后, 可以运行独立游戏 <br/></li>
+</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/csharp-mode/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; csharp-mode
+					&larr; Git
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/markdown-mode/">
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/exec-path-from-shell/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					markdown-mode &rarr;
+					exec-path-from-shell &rarr;
 				</div>
 			</div>
 		</a>
