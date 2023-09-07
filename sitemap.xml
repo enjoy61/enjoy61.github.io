@@ -493,15 +493,8 @@
   </url>
   
   <url>
-    <loc>https://enjoy61.github.io/docs/chrome/</loc>
-    <lastmod>2023-08-25T18:27:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://enjoy61.github.io/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/</loc>
-    <lastmod>2023-09-05T17:55:39+08:00</lastmod>
+    <lastmod>2023-09-06T07:56:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -746,7 +739,7 @@
   
   <url>
     <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%BC%B9%E8%8D%AF%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2023-08-28T21:24:29+08:00</lastmod>
+    <lastmod>2023-09-07T14:00:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -759,6 +752,13 @@
   </url>
   
   <url>
+    <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2023-09-07T14:27:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/rainbow-delimiters/</loc>
     <lastmod>2023-08-21T13:30:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -766,8 +766,22 @@
   </url>
   
   <url>
+    <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E4%B8%BA%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E6%B7%BB%E5%8A%A0%E9%80%9A%E7%9F%A5/</loc>
+    <lastmod>2023-09-07T16:48:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/yasnippet/</loc>
     <lastmod>2023-08-21T13:30:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%AE%8C%E5%96%84%E8%A3%85%E5%BC%B9%E9%80%BB%E8%BE%91/</loc>
+    <lastmod>2023-09-07T21:56:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

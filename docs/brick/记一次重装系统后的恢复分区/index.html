@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>记一次重装系统后的恢复分区 - 六一的部落格</title>
-<meta name="description" content="好用的写镜像工具 # - Rufus Windows Ventoy Linux, Windows 将镜像拷贝到U盘即可 老毛桃 Windows 同上 常见的数据恢复软件 # - EaseUS EasyRecovery DiskGenius 概览 # 我重装系统时, 都会使用DiskGenius重新分区, 这回碰到个使用习惯完全不一样的, 捅了个大篓子 整盘扫描 # EaseUS和EasyRecovery Professional均提供该功能, 但找回的文件没有层级结构, 使用编号命名 按现有分区搜索 # 因为与原分区不同, 找回的文件有限 搜索分区表 # DiskGenius提供该功能 我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 &#43; &amp;hellip;, 原分区50 &#43; &amp;hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 DiskGenius # 其搜索分区表的优势在于, 在找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 连接机械硬盘 # 主机用机械硬盘需购买电源线, 笔记本用的机械硬盘只需转换线 接入顺序: 给硬盘连接电源, 再连接到USB接口 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 ">
+<meta name="description" content="好用的写镜像工具 # - Rufus Windows 写镜像到U盘 Ventoy Linux, Windows 将镜像拷贝到U盘即可 老毛桃 Windows 以上两种均可 常见的数据恢复软件 # - EaseUS EasyRecovery DiskGenius 概览 # 我重装系统时, 都会使用DiskGenius重新分区, 这回碰到个使用习惯完全不一样的, 捅了个大篓子 整盘扫描 # EaseUS和EasyRecovery Professional均提供该功能, 但找回的文件没有层级结构, 使用编号命名 按现有分区搜索 # 因为与原分区不同, 找回的文件有限 搜索分区表 # DiskGenius提供该功能 我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 &#43; &amp;hellip;, 原分区50 &#43; &amp;hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 DiskGenius # 其搜索分区表的优势在于, 找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 连接机械硬盘 # SATA 3.5英寸机械硬盘(主机用)需购买电源线, 2.5英寸机械硬盘(笔记本用)只需转换线 接入顺序: 给硬盘通上电, 再连接到USB接口 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 ">
   <link rel="canonical" href="https://enjoy61.github.io/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次重装系统后的恢复分区">
-<meta property="og:description" content="好用的写镜像工具 # - Rufus Windows Ventoy Linux, Windows 将镜像拷贝到U盘即可 老毛桃 Windows 同上 常见的数据恢复软件 # - EaseUS EasyRecovery DiskGenius 概览 # 我重装系统时, 都会使用DiskGenius重新分区, 这回碰到个使用习惯完全不一样的, 捅了个大篓子 整盘扫描 # EaseUS和EasyRecovery Professional均提供该功能, 但找回的文件没有层级结构, 使用编号命名 按现有分区搜索 # 因为与原分区不同, 找回的文件有限 搜索分区表 # DiskGenius提供该功能 我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 &#43; &hellip;, 原分区50 &#43; &hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 DiskGenius # 其搜索分区表的优势在于, 在找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 连接机械硬盘 # 主机用机械硬盘需购买电源线, 笔记本用的机械硬盘只需转换线 接入顺序: 给硬盘连接电源, 再连接到USB接口 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 ">
+<meta property="og:description" content="好用的写镜像工具 # - Rufus Windows 写镜像到U盘 Ventoy Linux, Windows 将镜像拷贝到U盘即可 老毛桃 Windows 以上两种均可 常见的数据恢复软件 # - EaseUS EasyRecovery DiskGenius 概览 # 我重装系统时, 都会使用DiskGenius重新分区, 这回碰到个使用习惯完全不一样的, 捅了个大篓子 整盘扫描 # EaseUS和EasyRecovery Professional均提供该功能, 但找回的文件没有层级结构, 使用编号命名 按现有分区搜索 # 因为与原分区不同, 找回的文件有限 搜索分区表 # DiskGenius提供该功能 我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 &#43; &hellip;, 原分区50 &#43; &hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 DiskGenius # 其搜索分区表的优势在于, 找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 连接机械硬盘 # SATA 3.5英寸机械硬盘(主机用)需购买电源线, 2.5英寸机械硬盘(笔记本用)只需转换线 接入顺序: 给硬盘通上电, 再连接到USB接口 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 ">
 <meta property="og:url" content="https://enjoy61.github.io/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-09-05T17:25:50+00:00">
-  <meta property="article:modified_time" content="2023-09-05T17:55:39+08:00">
+  <meta property="article:modified_time" content="2023-09-06T07:56:08+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-09-05T17:25:50CET",
-      "dateModified": "2023-09-05T17:55:39CET",
+      "dateModified": "2023-09-06T07:56:08CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/#/schema/breadcrumb/1"
       },
@@ -153,7 +153,7 @@
             "@id": "https://enjoy61.github.io/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/"
           },
           "datePublished": "2023-09-05T17:25:50CET",
-          "dateModified": "2023-09-05T17:55:39CET",
+          "dateModified": "2023-09-06T07:56:08CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -1321,6 +1321,27 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%BC%B9%E8%8D%AF%E6%95%B0%E6%8D%AE/">弹药数据</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB/">装弹动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E4%B8%BA%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E6%B7%BB%E5%8A%A0%E9%80%9A%E7%9F%A5/">为装弹动画剪辑添加通知</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%AE%8C%E5%96%84%E8%A3%85%E5%BC%B9%E9%80%BB%E8%BE%91/">完善装弹逻辑</a></li>
                                   
 
                                 
@@ -2507,6 +2528,27 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB/">装弹动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E4%B8%BA%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E6%B7%BB%E5%8A%A0%E9%80%9A%E7%9F%A5/">为装弹动画剪辑添加通知</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%AE%8C%E5%96%84%E8%A3%85%E5%BC%B9%E9%80%BB%E8%BE%91/">完善装弹逻辑</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -3627,6 +3669,27 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB/">装弹动画</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E4%B8%BA%E8%A3%85%E5%BC%B9%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E6%B7%BB%E5%8A%A0%E9%80%9A%E7%9F%A5/">为装弹动画剪辑添加通知</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%AE%8C%E5%96%84%E8%A3%85%E5%BC%B9%E9%80%BB%E8%BE%91/">完善装弹逻辑</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -3779,7 +3842,7 @@
 <tr>
 <td>Rufus</td>
 <td>Windows</td>
-<td></td>
+<td>写镜像到U盘</td>
 </tr>
 <tr>
 <td>Ventoy</td>
@@ -3789,7 +3852,7 @@
 <tr>
 <td>老毛桃</td>
 <td>Windows</td>
-<td>同上</td>
+<td>以上两种均可</td>
 </tr>
 </tbody>
 </table>
@@ -3823,10 +3886,11 @@
 <p>我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 <br/></p>
 <p>联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 + &hellip;, 原分区50 + &hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 <br/></p>
 <h2 id="diskgenius">DiskGenius <a href="#diskgenius" class="anchor" aria-hidden="true">#</a></h2>
-<p>其搜索分区表的优势在于, 在找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 <br/></p>
+<p>其搜索分区表的优势在于, 找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 <br/></p>
 <h2 id="连接机械硬盘">连接机械硬盘 <a href="#%e8%bf%9e%e6%8e%a5%e6%9c%ba%e6%a2%b0%e7%a1%ac%e7%9b%98" class="anchor" aria-hidden="true">#</a></h2>
-<p>主机用机械硬盘需购买电源线, 笔记本用的机械硬盘只需转换线 <br/></p>
-<p>接入顺序: 给硬盘连接电源, 再连接到USB接口 <br/>
+<p><code>SATA</code> <br/></p>
+<p>3.5英寸机械硬盘(主机用)需购买电源线, 2.5英寸机械硬盘(笔记本用)只需转换线 <br/></p>
+<p>接入顺序: 给硬盘通上电, 再连接到USB接口 <br/>
 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 <br/></p>
 <p><img src="/pic/brick/恢复分区/绿联.jpeg" width="500" /> <br/> <br/></p>
 
@@ -3834,10 +3898,10 @@
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/chrome/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Chrome
+					&larr; Sublime
 				</div>
 			</div>
 		</a>
