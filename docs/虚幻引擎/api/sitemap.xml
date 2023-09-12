@@ -37,10 +37,4 @@
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
-      <url>
-        <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E5%8A%A8%E7%94%BB/</loc>
-        <lastmod>2023-09-12T16:13:10+08:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-      </url>
       </urlset>
