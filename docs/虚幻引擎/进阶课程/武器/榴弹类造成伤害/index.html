@@ -4267,14 +4267,15 @@ void OnProjectileHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPri
 <ol>
 <li>委托成员 <br/>
 <code>UE_5.1/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h</code> <code>1189</code> <br/>
-<pre><code class="language-cpp">//	Event called when a component hits (or is hit by) something solid. This could happen due to things like Character movement, using Set Location with 'sweep' enabled, or physics simulation.
-//	For events when objects overlap (e.g. walking into a trigger) see the 'Overlap' event.
-//
-//	@note For collisions during physics simulation to generate hit events, 'Simulation Generates Hit Events' must be enabled for this component.
-//	@note When receiving a hit from another object's movement, the directions of 'Hit.Normal' and 'Hit.ImpactNormal'
-//	will be adjusted to indicate force from the other object against this object.
-//	@note NormalImpulse will be filled in for physics-simulating bodies, but will be zero for swept-component blocking collisions.
-
+<pre><code class="language-cpp">/** 
+ *	Event called when a component hits (or is hit by) something solid. This could happen due to things like Character movement, using Set Location with 'sweep' enabled, or physics simulation.
+ *	For events when objects overlap (e.g. walking into a trigger) see the 'Overlap' event.
+ *
+ *	@note For collisions during physics simulation to generate hit events, 'Simulation Generates Hit Events' must be enabled for this component.
+ *	@note When receiving a hit from another object's movement, the directions of 'Hit.Normal' and 'Hit.ImpactNormal'
+ *	will be adjusted to indicate force from the other object against this object.
+ *	@note NormalImpulse will be filled in for physics-simulating bodies, but will be zero for swept-component blocking collisions.
+ */
 UPROPERTY(BlueprintAssignable, Category=&quot;Collision&quot;)
 FComponentHitSignature OnComponentHit;
 </code></pre>
