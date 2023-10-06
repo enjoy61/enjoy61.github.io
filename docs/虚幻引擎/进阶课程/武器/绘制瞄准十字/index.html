@@ -10,22 +10,22 @@
 
   <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
 
-  <link rel="stylesheet" href="https://enjoy61.github.io/main.035408f6dd611fc553b884ce6003a3eb7b77d5822df8c446e4e5bdaecd5dda0f0ea48d47b6f5029361fbd8c9b25e0e9772ad9e1a89fbc5b4d11df1a6c7f258b9.css" integrity="sha512-A1QI9t1hH8VTuITOYAOj63t31YIt&#43;MRG5OW9rs1d2g8OpI1HtvUCk2H72MmyXg6Xcq2eGon7xbTRHfGmx/JYuQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.8b7056c955d0d6c67405cfa97cb4217798bb0b4c5dd253b5ea3b83eda2537469cfbc547025a3611139ad36af9451059000c2de69629d52f1140b62a10432b8d2.css" integrity="sha512-i3BWyVXQ1sZ0Bc&#43;pfLQhd5i7C0xd0lO16juD7aJTdGnPvFRwJaNhETmtNq&#43;UUQWQAMLeaWKdUvEUC2KhBDK40g==" crossorigin="anonymous">
 <noscript><style>img.lazyload { display: none; }</style></noscript>
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>绘制瞄准十字 - 六一的部落格</title>
-<meta name="description" content="概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 创建抬头显示类STUGameHUD 设置关卡使用STUGameHUD, 绘制瞄准十字 调整SpringArm组件的Camera偏移, 使得游戏角色在瞄准十字左侧 调整HealthText组件, 生命值对敌人可见, 对自己不可见 在代码中设置SpringArm组件Socket偏移和TextRender组件渲染标志位的方法 HUD # Head-Up Display 抬头显示, 包含一些常用信息 用得不多, 很多功能使用Widget完成 AHUD 创建抬头显示类 # 创建C&#43;&#43;类: UI/STUGameHUD # 虚幻编辑器 Actor &amp;gt; AHUD 公有类 更新头文件搜索路径 # C&#43;&#43; ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot; }); 绘制瞄准十字 # 虚幻C&#43;&#43; 设置关卡使用STUGameHUD # AGameModeBase::HUDClass ShootThemUp: STUGameModeBase.cpp #include &amp;quot;UI/STUGameHUD.h&amp;quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 获取屏幕中心位置 # 通过AHUD::Canvas获取屏幕长和宽，中心点保存到TInterval类型变量 AHUD::Canvas UCanvas UCanvas::SizeX 和 UCanvas::SizeY TInterval #include &amp;quot;Engine/Canvas.">
+<meta name="description" content="概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 创建抬头显示类STUGameHUD 设置关卡使用STUGameHUD, 绘制瞄准十字 调整SpringArm组件的Camera偏移, 使得游戏角色在瞄准十字左侧 调整HealthText组件, 生命值对敌人可见, 对自己不可见 在代码中设置SpringArm组件Socket偏移和TextRender组件渲染标志位的方法 HUD # Head-Up Display 抬头显示, 包含一些常用信息 用得不多, 很多功能使用Widget替换完成 AHUD 创建抬头显示类 # 创建C&#43;&#43;类: UI/STUGameHUD # 虚幻编辑器 Actor &amp;gt; AHUD 公有类 更新头文件搜索路径 # C&#43;&#43; ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot; }); 绘制瞄准十字 # 虚幻C&#43;&#43; 设置关卡使用STUGameHUD # AGameModeBase::HUDClass ShootThemUp: STUGameModeBase.cpp #include &amp;quot;UI/STUGameHUD.h&amp;quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 获取屏幕中心位置 # 通过AHUD::Canvas获取屏幕长和宽，中心点保存到TInterval类型变量 AHUD::Canvas UCanvas UCanvas::SizeX 和 UCanvas::SizeY TInterval #include &amp;quot;Engine/Canvas.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="绘制瞄准十字">
-<meta property="og:description" content="概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 创建抬头显示类STUGameHUD 设置关卡使用STUGameHUD, 绘制瞄准十字 调整SpringArm组件的Camera偏移, 使得游戏角色在瞄准十字左侧 调整HealthText组件, 生命值对敌人可见, 对自己不可见 在代码中设置SpringArm组件Socket偏移和TextRender组件渲染标志位的方法 HUD # Head-Up Display 抬头显示, 包含一些常用信息 用得不多, 很多功能使用Widget完成 AHUD 创建抬头显示类 # 创建C&#43;&#43;类: UI/STUGameHUD # 虚幻编辑器 Actor &gt; AHUD 公有类 更新头文件搜索路径 # C&#43;&#43; ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &quot;ShootThemUp/Public/Player&quot;, &quot;ShootThemUp/Public/Components&quot;, &quot;ShootThemUp/Public/Dev&quot;, &quot;ShootThemUp/Public/Weapon&quot;, &quot;ShootThemUp/Public/UI&quot; }); 绘制瞄准十字 # 虚幻C&#43;&#43; 设置关卡使用STUGameHUD # AGameModeBase::HUDClass ShootThemUp: STUGameModeBase.cpp #include &quot;UI/STUGameHUD.h&quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 获取屏幕中心位置 # 通过AHUD::Canvas获取屏幕长和宽，中心点保存到TInterval类型变量 AHUD::Canvas UCanvas UCanvas::SizeX 和 UCanvas::SizeY TInterval #include &quot;Engine/Canvas.">
+<meta property="og:description" content="概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 创建抬头显示类STUGameHUD 设置关卡使用STUGameHUD, 绘制瞄准十字 调整SpringArm组件的Camera偏移, 使得游戏角色在瞄准十字左侧 调整HealthText组件, 生命值对敌人可见, 对自己不可见 在代码中设置SpringArm组件Socket偏移和TextRender组件渲染标志位的方法 HUD # Head-Up Display 抬头显示, 包含一些常用信息 用得不多, 很多功能使用Widget替换完成 AHUD 创建抬头显示类 # 创建C&#43;&#43;类: UI/STUGameHUD # 虚幻编辑器 Actor &gt; AHUD 公有类 更新头文件搜索路径 # C&#43;&#43; ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &quot;ShootThemUp/Public/Player&quot;, &quot;ShootThemUp/Public/Components&quot;, &quot;ShootThemUp/Public/Dev&quot;, &quot;ShootThemUp/Public/Weapon&quot;, &quot;ShootThemUp/Public/UI&quot; }); 绘制瞄准十字 # 虚幻C&#43;&#43; 设置关卡使用STUGameHUD # AGameModeBase::HUDClass ShootThemUp: STUGameModeBase.cpp #include &quot;UI/STUGameHUD.h&quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 获取屏幕中心位置 # 通过AHUD::Canvas获取屏幕长和宽，中心点保存到TInterval类型变量 AHUD::Canvas UCanvas UCanvas::SizeX 和 UCanvas::SizeY TInterval #include &quot;Engine/Canvas.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-21T19:03:08+00:00">
-  <meta property="article:modified_time" content="2023-08-17T04:30:15+08:00">
+  <meta property="article:modified_time" content="2023-10-05T22:46:35+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-06-21T19:03:08CET",
-      "dateModified": "2023-08-17T04:30:15CET",
+      "dateModified": "2023-10-05T22:46:35CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/"
           },
           "datePublished": "2023-06-21T19:03:08CET",
-          "dateModified": "2023-08-17T04:30:15CET",
+          "dateModified": "2023-10-05T22:46:35CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -709,13 +709,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -731,6 +724,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -1302,13 +1302,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -1359,6 +1352,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -1446,10 +1453,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -2003,13 +2026,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -2025,6 +2041,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -2596,13 +2619,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -2653,6 +2669,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -2740,10 +2770,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -3234,13 +3280,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -3256,6 +3295,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -3827,13 +3873,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -3884,6 +3923,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -3971,10 +4024,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -4223,7 +4292,7 @@
 <h2 id="hud">HUD <a href="#hud" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Head-Up Display</code> <br/>
 抬头显示, 包含一些常用信息 <br/></p>
-<p>用得不多, 很多功能使用Widget完成 <br/></p>
+<p>用得不多, 很多功能使用Widget替换完成 <br/></p>
 <p><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/#ahud">AHUD</a> <br/></p>
 <h2 id="创建抬头显示类">创建抬头显示类 <a href="#%e5%88%9b%e5%bb%ba%e6%8a%ac%e5%a4%b4%e6%98%be%e7%a4%ba%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="创建c-plus-plus-类-ui-stugamehud">创建C++类: UI/STUGameHUD <a href="#%e5%88%9b%e5%bb%bac-plus-plus-%e7%b1%bb-ui-stugamehud" class="anchor" aria-hidden="true">#</a></h3>
@@ -4445,17 +4514,17 @@ HealthTextComponent-&gt;SetOwnerNoSee(true);
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; HTML
+					&larr; 虚幻引擎源码跳转
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					文章目录标题高亮 &rarr;
+					VSCode &rarr;
 				</div>
 			</div>
 		</a>
@@ -4490,7 +4559,7 @@ HealthTextComponent-&gt;SetOwnerNoSee(true);
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.204e9c55e08969ba9efdcf19b24911c0e8aa026769b9c62d6dac3d49580796663b9becbed2d0adc17737f743513d6800f7568609c731fcbfc5de21a19ba11f0b.js" integrity="sha512-IE6cVeCJabqe/c8ZskkRwOiqAmdpucYtbaw9SVgHlmY7m&#43;y&#43;0tCtwXc390NRPWgA91aGCccx/L/F3iGhm6EfCw==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.d7f8aa460fdb0fe2d003d03a238b1103aeb79bec921a0772becf73daf82bd28e7fd46bdb56bbb6e63b0588eca57dd515d34f1ec1102d41ef42cfb2b82c1daf31.js" integrity="sha512-1/iqRg/bD&#43;LQA9A6I4sRA663m&#43;ySGgdyvs9z2vgr0o5/1GvbVru25jsFiOylfdUV008ewRAtQe9Cz7K4LB2vMQ==" crossorigin="anonymous" defer></script>
   
     
   </body>

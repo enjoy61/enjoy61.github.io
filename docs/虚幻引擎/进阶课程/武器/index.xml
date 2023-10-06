@@ -16,15 +16,6 @@
     </item>
     
     <item>
-      <title>绘制瞄准十字</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</link>
-      <pubDate>Wed, 21 Jun 2023 19:03:08 +0000</pubDate>
-      
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</guid>
-      <description>概览 # 瞄准十字：垂直的两条线，处于屏幕正中间 创建抬头显示类STUGameHUD 设置关卡使用STUGameHUD, 绘制瞄准十字 调整SpringArm组件的Camera偏移, 使得游戏角色在瞄准十字左侧 调整HealthText组件, 生命值对敌人可见, 对自己不可见 在代码中设置SpringArm组件Socket偏移和TextRender组件渲染标志位的方法 HUD # Head-Up Display 抬头显示, 包含一些常用信息 用得不多, 很多功能使用Widget完成 AHUD 创建抬头显示类 # 创建C++类: UI/STUGameHUD # 虚幻编辑器 Actor &amp;gt; AHUD 公有类 更新头文件搜索路径 # C++ ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot; }); 绘制瞄准十字 # 虚幻C++ 设置关卡使用STUGameHUD # AGameModeBase::HUDClass ShootThemUp: STUGameModeBase.cpp #include &amp;quot;UI/STUGameHUD.h&amp;quot; // ASTUGameModeBase HUDClass = ASTUGameHUD::StaticClass(); 获取屏幕中心位置 # 通过AHUD::Canvas获取屏幕长和宽，中心点保存到TInterval类型变量 AHUD::Canvas UCanvas UCanvas::SizeX 和 UCanvas::SizeY TInterval #include &amp;quot;Engine/Canvas.</description>
-    </item>
-    
-    <item>
       <title>武器组件</title>
       <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sun, 25 Jun 2023 16:42:52 +0000</pubDate>
@@ -96,6 +87,15 @@ protected ShootThemUp: Components/STUWeaponComponent.h UPROPERTY(EditDefaultsOnl
       
       <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/</guid>
       <description>说明 # 当前: 按下鼠标左键触发武器组件的回调函数, 其会调用武器的Fire接口; 只发射一次子弹 为发射子弹添加定时器, 鼠标左键按下开启定时器, 进行持续射击, 松开时关闭定时器 概览 # 恢复Camera组件位置 为武器发射子弹添加定时器 修改武器组件和游戏角色相关逻辑 实现瞄准偏离 恢复Camera组件位置, 使之拍摄游戏角色背面 # BP_STUBaseCharacter 设置Camera组件变换属性 Camera &amp;gt; Details &amp;gt; Transform &amp;gt; Rotation &amp;gt; Yaw = 0 在SpringArm组件细节面板设置Camera组件的Socket Offset SpringArm &amp;gt; Details &amp;gt; Camera &amp;gt; Socket Offset &amp;gt; X = 0 Y = 100 持续射击 # 修改武器发射子弹逻辑 # Stub # ShootThemUp: Weapon/STUBaseWeapon.h 定时器 private FTimerHandle ShotTimerHandle; 定时器间隔 protected UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float TimeBetweenShots = 0.1f; 回调函数使用MakeShot 添加FireStart和FireStop接口 # public ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
+    <item>
+      <title>打包</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/</link>
+      <pubDate>Thu, 05 Oct 2023 14:49:29 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/</guid>
+      <description>在代码中添加检查 # 使用 checkf , 和 check 相比, 可以设置提示信息 使用 checkNoEntry , 等价于调用 check 返回false; 立即触发断言 assertion STUBaseWeapon # ShootThemUp: Weapon/STUBaseWeapon.cpp 检查蓝图中设置的子弹数, 要求大于等于0 可以使用ClampMin和ClampMax进行元信息 meta information 检查 之后在蓝图设置错误数值触发检查 // BeginPlay checkf(DefaultAmmo.Bullets &amp;gt; 0, TEXT(&amp;quot;Bullets count couldn&#39;t be less or equal zero&amp;quot;)); checkf(DefaultAmmo.Clips &amp;gt; 0, TEXT(&amp;quot;Clips count couldn&#39;t be less or equal zero&amp;quot;)); STUWeaponComponent # ShootThemUp: Components/STUWeaponComponent.cpp 定义常量, 检查蓝图中配置的武器个数 constexpr static int32 WeaponNum = 2; // BeginPlay checkf(WeaponData.Num() == 2, TEXT(&amp;quot;Our character can hold only %d weapon items&amp;quot;), WeaponNum); AnimNotify # ShootThemUp: Components/STUWeaponComponent.</description>
     </item>
     
   </channel>

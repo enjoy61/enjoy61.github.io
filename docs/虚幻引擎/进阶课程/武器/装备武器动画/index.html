@@ -10,22 +10,22 @@
 
   <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
 
-  <link rel="stylesheet" href="https://enjoy61.github.io/main.035408f6dd611fc553b884ce6003a3eb7b77d5822df8c446e4e5bdaecd5dda0f0ea48d47b6f5029361fbd8c9b25e0e9772ad9e1a89fbc5b4d11df1a6c7f258b9.css" integrity="sha512-A1QI9t1hH8VTuITOYAOj63t31YIt&#43;MRG5OW9rs1d2g8OpI1HtvUCk2H72MmyXg6Xcq2eGon7xbTRHfGmx/JYuQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://enjoy61.github.io/main.8b7056c955d0d6c67405cfa97cb4217798bb0b4c5dd253b5ea3b83eda2537469cfbc547025a3611139ad36af9451059000c2de69629d52f1140b62a10432b8d2.css" integrity="sha512-i3BWyVXQ1sZ0Bc&#43;pfLQhd5i7C0xd0lO16juD7aJTdGnPvFRwJaNhETmtNq&#43;UUQWQAMLeaWKdUvEUC2KhBDK40g==" crossorigin="anonymous">
 <noscript><style>img.lazyload { display: none; }</style></noscript>
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>装备武器动画 - 六一的部落格</title>
-<meta name="description" content="说明 # 装备武器时, 播放动画, 使用动画剪辑 AnimMontage 资产实现 播放装备武器动画时, 锁定其他操作, 使用动画提醒 AnimNotify 资产实现 概览 # 使用动画剪辑播放装备武器动画 创建动画剪辑资产 在蓝图中实现Notify 创建UAnimNotify派生类 在C&#43;&#43;中实现Notify 在委托处理函数中判断骨骼网格体所属 使用动画剪辑资产播放装备武器动画 # 添加数据成员, 指向装备武器动画剪辑 # protected ShootThemUp: Components/STUWeaponComponent.h class UAnimMontage; UPROPERTY(EditDefaultsOnly) UAnimMontage *EquipAnimMontage; 添加函数, 播放动画剪辑 # 定义 # ShootThemUp: Components/STUWeaponComponent.h private void PlayAnimMontage(UAnimMontage *Animation); ShootThemUp: Components/STUWeaponComponent.cpp #include &amp;quot;Animation/AnimMontage.h&amp;quot; void USTUWeaponComponent::PlayAnimMontage(UAnimMontage *Animation) { ACharacter *Character = Cast&amp;lt;ACharacter&amp;gt;(GetOwner()); if (!Character) return; Character-&amp;gt;PlayAnimMontage(Animation); } 调用 # ShootThemUp: Components/STUWeaponComponent.cpp // EquipWeapon PlayAnimMontage(EquipAnimMontage); 创建动画剪辑资产 # 虚幻编辑器 选中Content/ExternalContent/Animation/Animations/TTP_Animations/Equip, 右键, 选择 Create AnimMontage 命名为AM_Equip 移动到Content/Player/Animations 打开BP_STUBaseCharacter, 设置EquipAnimMontage为AM_Equip 当前问题 # 频繁快速切换武器, 持续调用PlayAnimMontage, 表现为最后一次才完整播放装备武器动画 播放动画时, 可以射击 引入动画提醒资产, 设想是, 在动画剪辑播放将近结束之前, 锁定其他操作 # 提醒机制 # Notify 在动画资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 蓝图 # 在动画蓝图 &amp;gt; EventGraph中对事件进行处理 C&#43;&#43; # Decorator 覆写Notify函数, 添加处理 查看动画资产 # 双击打开AM_Equip, 点击暂停 移动滑杆, 可以查看时间线上对应的帧 时间线右侧有Notifies栏 Notifies栏 # 有Track按钮, 可以添加其他轨道, 用于成组的事件 Grouping Events 在蓝图中测试提醒机制 # 添加Notify事件 # 双击打开AM_Equip 将滑杆拖动到动画较后位置 在轨道1右键, 选择 Add Notify &amp;gt; New Notify 命名为 EquipFinished 查看 在动画蓝图中处理事件 # 打开ABP_BaseCharacter, 去到EventGraph 在空白处右键, 选择 Add Anim Notify Event &amp;gt; Event AnimNotify_EquipFinished 执行字符串打印 切换武器时, 屏幕有输出 在C&#43;&#43;中实现Notify # 创建AnimNotify的派生类, 作为委托服务的服务端 武器组件注册委托服务, 搭建好框架, 之后再实现播放装备武器动画的锁定和解锁逻辑 在装备武器动画剪辑中添加AnimNotify派生类事件 新建AnimNotify的派生类 # 虚幻编辑器 - 基类 AnimNotify 上级文件夹 Animations 访问属性 Public 名称 STUEquipFinishedAnimNotify 添加头文件搜索路径 # ShootThemUp: ShootThemUp.">
+<meta name="description" content="说明 # 装备武器时, 播放动画, 使用动画剪辑 AnimMontage 资产实现 播放装备武器动画时, 锁定其他操作, 使用动画提醒 AnimNotify 资产实现 概览 # 使用动画剪辑播放装备武器动画 创建动画剪辑资产 在蓝图中实现Notify 创建UAnimNotify派生类 在C&#43;&#43;中实现Notify 在委托处理函数中判断骨骼网格体所属 使用动画剪辑资产播放装备武器动画 # 添加数据成员, 指向装备武器动画剪辑 # protected ShootThemUp: Components/STUWeaponComponent.h class UAnimMontage; UPROPERTY(EditDefaultsOnly) UAnimMontage *EquipAnimMontage; 添加函数, 播放动画剪辑 # 定义 # ShootThemUp: Components/STUWeaponComponent.h private void PlayAnimMontage(UAnimMontage *Animation); ShootThemUp: Components/STUWeaponComponent.cpp #include &amp;quot;Animation/AnimMontage.h&amp;quot; void USTUWeaponComponent::PlayAnimMontage(UAnimMontage *Animation) { ACharacter *Character = Cast&amp;lt;ACharacter&amp;gt;(GetOwner()); if (!Character) return; Character-&amp;gt;PlayAnimMontage(Animation); } 调用 # ShootThemUp: Components/STUWeaponComponent.cpp // EquipWeapon PlayAnimMontage(EquipAnimMontage); 创建动画剪辑资产 # 虚幻编辑器 选中Content/ExternalContent/Animation/Animations/TTP_Animations/Equip, 右键, 选择 Create AnimMontage 命名为AM_Equip 移动到Content/Player/Animations 打开BP_STUBaseCharacter, 设置EquipAnimMontage为AM_Equip 当前问题 # 频繁快速切换武器, 持续调用PlayAnimMontage, 表现为最后一次才完整播放装备武器动画 播放动画时, 可以射击 引入动画提醒资产, 设想是, 在动画剪辑播放将近结束之前, 锁定其他操作 # 提醒机制 # Notify 在动画剪辑资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 蓝图 # 在动画蓝图 &amp;gt; EventGraph中对事件进行处理 C&#43;&#43; # Decorator 覆写Notify函数, 添加处理 查看动画资产 # 双击打开AM_Equip, 点击暂停 移动滑杆, 可以查看时间线上对应的帧 时间线右侧有Notifies栏 Notifies栏 # 有Track按钮, 可以添加其他轨道, 用于成组的事件 Grouping Events 在蓝图中测试提醒机制 # 添加Notify事件 # 双击打开AM_Equip 将滑杆拖动到动画较后位置 在轨道1右键, 选择 Add Notify &amp;gt; New Notify 命名为 EquipFinished 查看 在动画蓝图中处理事件 # 打开ABP_BaseCharacter, 去到EventGraph 在空白处右键, 选择 Add Anim Notify Event &amp;gt; Event AnimNotify_EquipFinished 执行字符串打印 切换武器时, 屏幕有输出 在C&#43;&#43;中实现Notify # 创建AnimNotify的派生类, 作为委托服务的服务端 武器组件注册委托服务, 搭建好框架, 之后再实现播放装备武器动画的锁定和解锁逻辑 在装备武器动画剪辑中添加AnimNotify派生类事件 新建AnimNotify的派生类 # 虚幻编辑器 - 基类 AnimNotify 上级文件夹 Animations 访问属性 Public 名称 STUEquipFinishedAnimNotify 添加头文件搜索路径 # ShootThemUp: ShootThemUp.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%A4%87%E6%AD%A6%E5%99%A8%E5%8A%A8%E7%94%BB/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="装备武器动画">
-<meta property="og:description" content="说明 # 装备武器时, 播放动画, 使用动画剪辑 AnimMontage 资产实现 播放装备武器动画时, 锁定其他操作, 使用动画提醒 AnimNotify 资产实现 概览 # 使用动画剪辑播放装备武器动画 创建动画剪辑资产 在蓝图中实现Notify 创建UAnimNotify派生类 在C&#43;&#43;中实现Notify 在委托处理函数中判断骨骼网格体所属 使用动画剪辑资产播放装备武器动画 # 添加数据成员, 指向装备武器动画剪辑 # protected ShootThemUp: Components/STUWeaponComponent.h class UAnimMontage; UPROPERTY(EditDefaultsOnly) UAnimMontage *EquipAnimMontage; 添加函数, 播放动画剪辑 # 定义 # ShootThemUp: Components/STUWeaponComponent.h private void PlayAnimMontage(UAnimMontage *Animation); ShootThemUp: Components/STUWeaponComponent.cpp #include &quot;Animation/AnimMontage.h&quot; void USTUWeaponComponent::PlayAnimMontage(UAnimMontage *Animation) { ACharacter *Character = Cast&lt;ACharacter&gt;(GetOwner()); if (!Character) return; Character-&gt;PlayAnimMontage(Animation); } 调用 # ShootThemUp: Components/STUWeaponComponent.cpp // EquipWeapon PlayAnimMontage(EquipAnimMontage); 创建动画剪辑资产 # 虚幻编辑器 选中Content/ExternalContent/Animation/Animations/TTP_Animations/Equip, 右键, 选择 Create AnimMontage 命名为AM_Equip 移动到Content/Player/Animations 打开BP_STUBaseCharacter, 设置EquipAnimMontage为AM_Equip 当前问题 # 频繁快速切换武器, 持续调用PlayAnimMontage, 表现为最后一次才完整播放装备武器动画 播放动画时, 可以射击 引入动画提醒资产, 设想是, 在动画剪辑播放将近结束之前, 锁定其他操作 # 提醒机制 # Notify 在动画资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 蓝图 # 在动画蓝图 &gt; EventGraph中对事件进行处理 C&#43;&#43; # Decorator 覆写Notify函数, 添加处理 查看动画资产 # 双击打开AM_Equip, 点击暂停 移动滑杆, 可以查看时间线上对应的帧 时间线右侧有Notifies栏 Notifies栏 # 有Track按钮, 可以添加其他轨道, 用于成组的事件 Grouping Events 在蓝图中测试提醒机制 # 添加Notify事件 # 双击打开AM_Equip 将滑杆拖动到动画较后位置 在轨道1右键, 选择 Add Notify &gt; New Notify 命名为 EquipFinished 查看 在动画蓝图中处理事件 # 打开ABP_BaseCharacter, 去到EventGraph 在空白处右键, 选择 Add Anim Notify Event &gt; Event AnimNotify_EquipFinished 执行字符串打印 切换武器时, 屏幕有输出 在C&#43;&#43;中实现Notify # 创建AnimNotify的派生类, 作为委托服务的服务端 武器组件注册委托服务, 搭建好框架, 之后再实现播放装备武器动画的锁定和解锁逻辑 在装备武器动画剪辑中添加AnimNotify派生类事件 新建AnimNotify的派生类 # 虚幻编辑器 - 基类 AnimNotify 上级文件夹 Animations 访问属性 Public 名称 STUEquipFinishedAnimNotify 添加头文件搜索路径 # ShootThemUp: ShootThemUp.">
+<meta property="og:description" content="说明 # 装备武器时, 播放动画, 使用动画剪辑 AnimMontage 资产实现 播放装备武器动画时, 锁定其他操作, 使用动画提醒 AnimNotify 资产实现 概览 # 使用动画剪辑播放装备武器动画 创建动画剪辑资产 在蓝图中实现Notify 创建UAnimNotify派生类 在C&#43;&#43;中实现Notify 在委托处理函数中判断骨骼网格体所属 使用动画剪辑资产播放装备武器动画 # 添加数据成员, 指向装备武器动画剪辑 # protected ShootThemUp: Components/STUWeaponComponent.h class UAnimMontage; UPROPERTY(EditDefaultsOnly) UAnimMontage *EquipAnimMontage; 添加函数, 播放动画剪辑 # 定义 # ShootThemUp: Components/STUWeaponComponent.h private void PlayAnimMontage(UAnimMontage *Animation); ShootThemUp: Components/STUWeaponComponent.cpp #include &quot;Animation/AnimMontage.h&quot; void USTUWeaponComponent::PlayAnimMontage(UAnimMontage *Animation) { ACharacter *Character = Cast&lt;ACharacter&gt;(GetOwner()); if (!Character) return; Character-&gt;PlayAnimMontage(Animation); } 调用 # ShootThemUp: Components/STUWeaponComponent.cpp // EquipWeapon PlayAnimMontage(EquipAnimMontage); 创建动画剪辑资产 # 虚幻编辑器 选中Content/ExternalContent/Animation/Animations/TTP_Animations/Equip, 右键, 选择 Create AnimMontage 命名为AM_Equip 移动到Content/Player/Animations 打开BP_STUBaseCharacter, 设置EquipAnimMontage为AM_Equip 当前问题 # 频繁快速切换武器, 持续调用PlayAnimMontage, 表现为最后一次才完整播放装备武器动画 播放动画时, 可以射击 引入动画提醒资产, 设想是, 在动画剪辑播放将近结束之前, 锁定其他操作 # 提醒机制 # Notify 在动画剪辑资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 蓝图 # 在动画蓝图 &gt; EventGraph中对事件进行处理 C&#43;&#43; # Decorator 覆写Notify函数, 添加处理 查看动画资产 # 双击打开AM_Equip, 点击暂停 移动滑杆, 可以查看时间线上对应的帧 时间线右侧有Notifies栏 Notifies栏 # 有Track按钮, 可以添加其他轨道, 用于成组的事件 Grouping Events 在蓝图中测试提醒机制 # 添加Notify事件 # 双击打开AM_Equip 将滑杆拖动到动画较后位置 在轨道1右键, 选择 Add Notify &gt; New Notify 命名为 EquipFinished 查看 在动画蓝图中处理事件 # 打开ABP_BaseCharacter, 去到EventGraph 在空白处右键, 选择 Add Anim Notify Event &gt; Event AnimNotify_EquipFinished 执行字符串打印 切换武器时, 屏幕有输出 在C&#43;&#43;中实现Notify # 创建AnimNotify的派生类, 作为委托服务的服务端 武器组件注册委托服务, 搭建好框架, 之后再实现播放装备武器动画的锁定和解锁逻辑 在装备武器动画剪辑中添加AnimNotify派生类事件 新建AnimNotify的派生类 # 虚幻编辑器 - 基类 AnimNotify 上级文件夹 Animations 访问属性 Public 名称 STUEquipFinishedAnimNotify 添加头文件搜索路径 # ShootThemUp: ShootThemUp.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%A4%87%E6%AD%A6%E5%99%A8%E5%8A%A8%E7%94%BB/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-08-28T08:49:44+00:00">
-  <meta property="article:modified_time" content="2023-08-28T09:35:13+08:00">
+  <meta property="article:modified_time" content="2023-10-05T22:42:26+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-08-28T08:49:44CET",
-      "dateModified": "2023-08-28T09:35:13CET",
+      "dateModified": "2023-10-05T22:42:26CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%A4%87%E6%AD%A6%E5%99%A8%E5%8A%A8%E7%94%BB/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E8%A3%85%E5%A4%87%E6%AD%A6%E5%99%A8%E5%8A%A8%E7%94%BB/"
           },
           "datePublished": "2023-08-28T08:49:44CET",
-          "dateModified": "2023-08-28T09:35:13CET",
+          "dateModified": "2023-10-05T22:42:26CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -709,13 +709,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -731,6 +724,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -1302,13 +1302,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -1359,6 +1352,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -1446,10 +1453,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -2003,13 +2026,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -2025,6 +2041,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -2596,13 +2619,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -2653,6 +2669,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -2740,10 +2770,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -3234,13 +3280,6 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-
-                        
-                          
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
                         
                         
@@ -3256,6 +3295,13 @@
                         
                           
                           <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
                         
                         
                       
@@ -3827,13 +3873,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/">武器组件</a></li>
                                   
 
@@ -3884,6 +3923,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/">持续射击和瞄准偏离</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/">绘制瞄准十字</a></li>
                                   
 
                                 
@@ -3971,10 +4024,26 @@
                                   
 
                                 
+                              </ul>
+                            </div>
+                          </li>
+                        
+                        
+                      
+
+                        
+                          
+                          <li class="my-1 ms-3">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
+                              虚幻运动图表
+                            </button>
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">打包</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">在蓝图中使用窗口部件实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -4413,7 +4482,7 @@ PlayAnimMontage(EquipAnimMontage);
 <h3 id="引入动画提醒资产-设想是-在动画剪辑播放将近结束之前-锁定其他操作">引入动画提醒资产, 设想是, 在动画剪辑播放将近结束之前, 锁定其他操作 <a href="#%e5%bc%95%e5%85%a5%e5%8a%a8%e7%94%bb%e6%8f%90%e9%86%92%e8%b5%84%e4%ba%a7-%e8%ae%be%e6%83%b3%e6%98%af-%e5%9c%a8%e5%8a%a8%e7%94%bb%e5%89%aa%e8%be%91%e6%92%ad%e6%94%be%e5%b0%86%e8%bf%91%e7%bb%93%e6%9d%9f%e4%b9%8b%e5%89%8d-%e9%94%81%e5%ae%9a%e5%85%b6%e4%bb%96%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true">#</a></h3>
 <h2 id="提醒机制">提醒机制 <a href="#%e6%8f%90%e9%86%92%e6%9c%ba%e5%88%b6" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>Notify</code> <br/>
-在动画资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 <br/></p>
+在动画剪辑资产的时间线上添加Notify事件; 动画提醒的实现基于把事件和特定帧绑定在一起 <br/></p>
 <h3 id="蓝图">蓝图 <a href="#%e8%93%9d%e5%9b%be" class="anchor" aria-hidden="true">#</a></h3>
 <p>在动画蓝图 &gt; EventGraph中对事件进行处理 <br/></p>
 <h3 id="c-plus-plus">C++ <a href="#c-plus-plus" class="anchor" aria-hidden="true">#</a></h3>
@@ -4766,7 +4835,7 @@ OnNotified.Broadcast(MeshComp);
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/index.min.204e9c55e08969ba9efdcf19b24911c0e8aa026769b9c62d6dac3d49580796663b9becbed2d0adc17737f743513d6800f7568609c731fcbfc5de21a19ba11f0b.js" integrity="sha512-IE6cVeCJabqe/c8ZskkRwOiqAmdpucYtbaw9SVgHlmY7m&#43;y&#43;0tCtwXc390NRPWgA91aGCccx/L/F3iGhm6EfCw==" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.d7f8aa460fdb0fe2d003d03a238b1103aeb79bec921a0772becf73daf82bd28e7fd46bdb56bbb6e63b0588eca57dd515d34f1ec1102d41ef42cfb2b82c1daf31.js" integrity="sha512-1/iqRg/bD&#43;LQA9A6I4sRA663m&#43;ySGgdyvs9z2vgr0o5/1GvbVru25jsFiOylfdUV008ewRAtQe9Cz7K4LB2vMQ==" crossorigin="anonymous" defer></script>
   
     
   </body>
