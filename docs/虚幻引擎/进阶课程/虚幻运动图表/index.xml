@@ -24,5 +24,14 @@
       <description>概览 # 创建C++类: 窗口部件; 返回生命值百分比 在STUGameHUD中创建并添加窗口部件 修改WBP_PlayerHUD基类; 使用STUPlayerHUDWidget提供的接口获取生命值百分比 移除BP_STUGameHUD中创建并添加窗口部件逻辑; 配置窗口部件类属性 C++类: 窗口部件 # 在虚幻编辑器中创建C++类 # - 基类 UserWidget 名称 STUPlayerHUDWidget 路径 UI/ Public 添加接口: 获取生命值百分比 # ShootThemUp: UI/STUPlayerHUDWidget.h public UFUNCTION(BlueprintCallable) float GetHealthPercent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp 使用Cast转换空指针得到空指针 #include &amp;quot;Components/STUHealthComponent.h&amp;quot; float USTUPlayerHUDWidget::GetHealthPercent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return 0.0f; const auto Component = Player-&amp;gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&amp;lt;USTUHealthComponent&amp;gt;(Component); if (!HealthComponent) return 0.0f; return HealthComponent-&amp;gt;GetHealthPercent(); } 在STUGameHUD中创建并添加窗口部件 # 添加数据成员: 保存窗口部件类 # ShootThemUp: UI/STUGameHUD.</description>
     </item>
     
+    <item>
+      <title>在窗口部件绘制瞄准十字</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</link>
+      <pubDate>Sat, 07 Oct 2023 17:45:18 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</guid>
+      <description>概览 # 获取并导入素材 在窗口部件中添加瞄准十字图片 窗口部件实现接口返回当前武器图片 在窗口部件中实现逻辑加载图片 获取素材 # ShooterGame 选中Conent/UI/HUD/HUDMain 右键 裁剪武器图标和对应的十字瞄准线, 命名并保存到Image文件夹 导入素材 # ShootThemUp 将Image文件夹拖入到Content/UI下, 虚幻引擎自动将图片转换成资产 所有的外部资源, 如图片, 音频, 导入时均会被转换为资产格式. 这样, 在不同平台打包时更便利 本节课使用瞄准十字图片, 武器图标供下节课使用 在窗口部件中添加瞄准十字图片 # WBP_PlayerHUD 从选项板中, 将图片元素拖入到视口 # Palette &amp;gt; Image 可以在视口中调整图片大小 选择测试图片 # Details &amp;gt; Appearance &amp;gt; Brush &amp;gt; Image 选择RifleCrossHair 使用图片原大小 # 勾选 Details &amp;gt; Slot &amp;gt; Size To Content 使图片居中 # 添加锚 Details &amp;gt; Slot(Canvas Panel Slot) &amp;gt; Anchors , 选择居中项 设置图片位置 Details &amp;gt; Slot , 设置Position X = Position Y = 0 设置对齐 Details &amp;gt; Slot , 设置Alignment X = Y = 0.</description>
+    </item>
+    
   </channel>
 </rss>
