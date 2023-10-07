@@ -33,5 +33,14 @@
       <description>概览 # 获取并导入素材 在窗口部件中添加瞄准十字图片 窗口部件实现接口返回当前武器图片 在窗口部件中实现逻辑加载图片 获取素材 # ShooterGame 选中Conent/UI/HUD/HUDMain 右键 裁剪武器图标和对应的十字瞄准线, 命名并保存到Image文件夹 导入素材 # ShootThemUp 将Image文件夹拖入到Content/UI下, 虚幻引擎自动将图片转换成资产 所有的外部资源, 如图片, 音频, 导入时均会被转换为资产格式. 这样, 在不同平台打包时更便利 本节课使用瞄准十字图片, 武器图标供下节课使用 在窗口部件中添加瞄准十字图片 # WBP_PlayerHUD 从选项板中, 将图片元素拖入到视口 # Palette &amp;gt; Image 可以在视口中调整图片大小 选择测试图片 # Details &amp;gt; Appearance &amp;gt; Brush &amp;gt; Image 选择RifleCrossHair 使用图片原大小 # 勾选 Details &amp;gt; Slot &amp;gt; Size To Content 使图片居中 # 添加锚 Details &amp;gt; Slot(Canvas Panel Slot) &amp;gt; Anchors , 选择居中项 设置图片位置 Details &amp;gt; Slot , 设置Position X = Position Y = 0 设置对齐 Details &amp;gt; Slot , 设置Alignment X = Y = 0.</description>
     </item>
     
+    <item>
+      <title>在窗口部件显示当前武器和弹药库</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</link>
+      <pubDate>Sun, 08 Oct 2023 01:42:15 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</guid>
+      <description>说明 # 在窗口部件的右下角显示武器图标, 子弹数和弹匣数 概览 # 给武器组件和窗口部件的接口添加Current关键字 窗口部件实现接口: 返回弹药数据 窗口部件显示武器图标 窗口部件显示弹药库存 修改接口: 窗口部件返回武器图片 # 添加内部接口: 获取武器组件 # ShootThemUp: UI/STUPlayerHUDWidget.h private class USTUWeaponComponent; USTUWeaponComponent *GetWeaponComponent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp USTUWeaponComponent *USTUPlayerHUDWidget::GetWeaponComponent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return nullptr; const auto Component = Player-&amp;gt;GetComponentByClass(USTUWeaponComponent::StaticClass()); const auto WeaponComponent = Cast&amp;lt;USTUWeaponComponent&amp;gt;(Component); return WeaponComponent; } 使用内部接口: 获取武器组件 # ShootThemUp: UI/STUPlayerHUDWidget.cpp // GetCrrentWeaponUIData const auto WeaponComponent = GetWeaponComponent(); 修改接口名: 武器组件返回武器图片 # GetWeaponUIData &amp;gt; GetCurrentWeaponUIData =ShootThemUp: Components/STUWeaponComponent.</description>
+    </item>
+    
   </channel>
 </rss>
