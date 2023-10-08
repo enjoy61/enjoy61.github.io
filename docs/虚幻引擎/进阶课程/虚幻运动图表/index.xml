@@ -51,5 +51,14 @@
       <description>说明 # 角色死亡进入观察者视角时隐藏窗口部件, 并显示死亡状态 Spectator Widget 概览 # 添加接口: 判断游戏角色死亡和观察者模式 游戏角色死亡后隐藏进度条、瞄准十字和武器信息 游戏角色死亡后添加加载图标和提示, 并提示添加动画 添加接口 # STUPlayerHUDWidget 获取健康组件 判断游戏角色死亡 判断观察者模式 ShootThemUp: UI/STUPlayerHUDWidget.h class USTUHealthComponent; // private USTUHealthComponent *GetHealthComponent() const; // public UFUNCTION(BlueprintCallable) bool IsPlayerAlive() const; UFUNCTION(BlueprintCallable) bool IsPlayerSpectating() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp USTUHealthComponent *USTUPlayerHUDWidget::GetHealthComponent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return nullptr; const auto Component = Player-&amp;gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&amp;lt;USTUHealthComponent&amp;gt;(Component); return HealthComponent; } bool USTUPlayerHUDWidget::IsPlayerAlive() const { const auto HealthComponent = GetHealthComponent(); return HealthComponent &amp;amp;&amp;amp; !</description>
     </item>
     
+    <item>
+      <title>重构和打包</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
+      <pubDate>Mon, 09 Oct 2023 04:19:50 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
+      <description>重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&amp;lt;typename T&amp;gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&amp;gt;GetComponentByClass(T::StaticClass()); return Cast&amp;lt;T&amp;gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &amp;quot;STUUtils.h&amp;quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUWeaponComponent&amp;gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponCOmponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.cpp DecreaseAmmo 修改生命值百分比和武器信息颜色 # WBP_PlayerHUD 进度条 # 移动到左下角; 修改颜色 文本框 # 修改颜色 武器图标 # 进入到 GetWeaponIcon MakeSlateBrush , 展开Tint针脚; 修改颜色 修改元素名 # 打包 # </description>
+    </item>
+    
   </channel>
 </rss>
