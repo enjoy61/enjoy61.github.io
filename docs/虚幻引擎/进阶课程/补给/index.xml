@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>补给 on </title>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/</link>
+    <description>Recent content in 补给 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 11 Oct 2023 12:18:41 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>补给基类、生命补给和弹药补给</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</link>
+      <pubDate>Wed, 11 Oct 2023 12:15:48 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</guid>
+      <description>为地板和楼梯添加材质 # 从ShooterGame导出材质 # Content/Environment/Materials - M_FFA_Floor_02_Dark 地板 M_FFA_Wall_04 楼梯 导出 相关资产 导入到ShootThemUp # 创建文件夹 Content/ExternalContent/Pickup , 保存到此处 设置地板 # 应用材质 设置变换 设置楼梯 # 移除楼梯 添加楼梯 Place Actors &amp;gt; Geometry &amp;gt; Box 设置纹理 设置变换 设置规格 一共四级台阶 按下Option键, 延Z轴拖动台阶; Z方向按80递增, X方向按250递增 创建所需静态网格体和材质 # 创建材质类 # Content/Materials 创建材质, 命名为M_BaseGlow 两个参数: Color和Glow 发光参数默认值设为10 创建材质实例 MI_BlueGlow MI_GreenGlow 如图 创建静态网格体 # 新建文件夹 Content/Pickups/StaticMeshes 创建生命补给 # Place Actors &amp;gt; Geometry &amp;gt; Box , 添加 设置 Details &amp;gt; Brush Settings , X = 40, Y = 80, Z = 40 按下E, 切换到旋转模式 按下Option, 绕X轴旋转90渡 按下Command, 选中两个笔刷 Brush , Details &amp;gt; Brush Settings &amp;gt; Create Static Mesh 保存到 Content/Pickups/StaticMeshes , 命名为S_Health 双击打开, 应用材质 创建弹药补给 # Place Actors &amp;gt; Geometry &amp;gt; Cylinder , 添加 设置基准 Transform &amp;gt; Location : X = 1000, Y = 2000, Z = 50 圆柱有三个参数, 高度, 半径和分片 按下Option, 向上拖动, 设置参数 按下Option, 向上拖动, 设置参数 Place Actors &amp;gt; Geometry &amp;gt; Sphere , 添加 球体有两个参数, 半径和细分 按下Command, 选中三个圆柱和球体, 拖动, 二者间隔50 选中6个圆柱体, 2个球体, Details &amp;gt; Brush Settings &amp;gt; Create Static Mesh 命名为S_Rockets 应用材质 创建补给类 # 基类 上级文件夹 属性 STUBasePickup Actor Pickups Public STUAmmoPickup STUBasePickup STUHealthPickup STUBasePickup 创建派生类 C++ Classes &amp;gt; ShootThemUp &amp;gt; Public &amp;gt; Pickups &amp;gt; STUBasePickup 添加头文件搜索路径 ShootThemUp: ShootThemUp.</description>
+    </item>
+    
+  </channel>
+</rss>
