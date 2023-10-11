@@ -51,5 +51,14 @@
       <description>说明 # 让补给绕Z轴旋转, 旋转角度为给定范围里的随机值 添加属性 # ShootThemUp: Pickups/STUBasePickup.h private float RotationYaw = 0.0f; 添加接口 # ShootThemUp: Pickups/STUBasePickup.h private void GenerateRotationYaw(); ShootThemUp: Pickups/STUBasePickup.cpp // BeginPlay GenerateRotationYaw(); // Respawn GenerateRotationYaw(); // Tick AddActorLocalRotation(FRotator(0.0f, RotationYaw, 0.0f)); // AddActorWorldRotation void ASTUBasePickup::GenerateRotationYaw() { const auto Direction = FMath::RandBool() ? -1.0f : 1.0f; RotationYaw = FMath::RandRange(1.0f, 2.0f) * Direction; } 查看 # 按下按钮, 控制器释放对游戏角色的控制, 可以选择场景中的任意物体进行观察 在本地座标系和世界座标系间进行切换 </description>
     </item>
     
+    <item>
+      <title>重构和打包</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
+      <pubDate>Wed, 11 Oct 2023 18:27:15 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
+      <description>更改 # 没有弹药时, 不需要做加法 ShootThemUp: Weapon/STUBaseWeapon.cpp // TryToAddAmmo CurrentAmmo.Clips = FMath::Clamp(ClipsAmount, 0, DefaultAmmo.Clips + 1); </description>
+    </item>
+    
   </channel>
 </rss>
