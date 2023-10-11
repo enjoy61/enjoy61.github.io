@@ -42,5 +42,14 @@
       <description>生命补给逻辑 # 添加属性 # ShootThemUp: Pickups/STUHealthPickup.h protected UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = &amp;quot;1.0&amp;quot;, ClampMax = &amp;quot;100.0&amp;quot;)) float HealthAmount = 100.0f; 添加接口: 若非死亡跌倒或组件不可寻, 调用健康组件接口 # ShootThemUp: Pickups/STUHealthPickup.cpp #include &amp;quot;Components/STUHealthComponent.h&amp;quot; #include &amp;quot;GameFramework/Pawn.h&amp;quot; #include &amp;quot;STUUtils.h&amp;quot; // GivePickupTo const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(PlayerPawn); if (!HealthComponent || HealthComponent-&amp;gt;IsDead()) return false; return HealthComponent-&amp;gt;TryToAddHealth(HealthAmount); 生命组件逻辑 # ShootThemUp: Components/STUHealthComponent.h public bool TryToAddHealth(float HealthAmount); bool IsHealthFull() const; ShootThemUp: Components/STUHealthComponent.cpp bool USTUHealthComponent::IsHealthFull() const { return FMath::IsNearlyEqual(Health, MaxHealth); } bool USTUHealthComponent::TryToAddHealth(float HealthAmount) { if (IsHealthFull()) return false; SetHealth(Health + HealthAmount); return true; } 修改当前接口调用 # ShootThemUp: Components/STUHealthComponent.</description>
     </item>
     
+    <item>
+      <title>补给绕Z轴旋转</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</link>
+      <pubDate>Wed, 11 Oct 2023 18:15:22 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</guid>
+      <description>说明 # 让补给绕Z轴旋转, 旋转角度为给定范围里的随机值 添加属性 # ShootThemUp: Pickups/STUBasePickup.h private float RotationYaw = 0.0f; 添加接口 # ShootThemUp: Pickups/STUBasePickup.h private void GenerateRotationYaw(); ShootThemUp: Pickups/STUBasePickup.cpp // BeginPlay GenerateRotationYaw(); // Respawn GenerateRotationYaw(); // Tick AddActorLocalRotation(FRotator(0.0f, RotationYaw, 0.0f)); // AddActorWorldRotation void ASTUBasePickup::GenerateRotationYaw() { const auto Direction = FMath::RandBool() ? -1.0f : 1.0f; RotationYaw = FMath::RandRange(1.0f, 2.0f) * Direction; } 查看 # 按下按钮, 控制器释放对游戏角色的控制, 可以选择场景中的任意物体进行观察 在本地座标系和世界座标系间进行切换 </description>
+    </item>
+    
   </channel>
 </rss>
