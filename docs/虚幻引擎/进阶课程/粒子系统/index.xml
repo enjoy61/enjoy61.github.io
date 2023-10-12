@@ -15,5 +15,14 @@
       <description>说明 # VFX 视觉特效 Visual Effects 的缩写 Niagara 和 Cascade 虚幻引擎提供的两个特效编辑器, Niagara较新 从ShooterGame导出资产 # 选中 Content/Effects/ParticleSystems/Weapon , 右键, Migrate 导出文件夹Effects包含4个子文件夹 导入到ShootThemUp # 移动到 Content/ExternalContent/ 为Pickup和Effects文件夹设置颜色 熟悉Cascade # 创建文件夹 Content/VFX 空白处右键, 命名为PS_Test 双击打开: 视口在左侧, 显示粒子系统; 发射器 Emitter 在右侧, 对粒子系统进行设置 选择设置项类别, 去到 Details 进行设置 设置每帧生成粒子数 # Emitters &amp;gt; Spawn , Details &amp;gt; Spawn &amp;gt; Rate &amp;gt; Distribution &amp;gt; Constant , 由20改为200: 视口粒子数便多 设置粒子生存时间 # Emitters &amp;gt; Lifetime , Details &amp;gt; Lifetime &amp;gt; Distribution &amp;gt; Max , 由1.</description>
     </item>
     
+    <item>
+      <title>撞击特效组件</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Thu, 12 Oct 2023 20:05:28 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</guid>
+      <description>说明 # 子弹和榴弹击中时, 生成特效 创建VFX组件 # 武器的下级组件 - 基类 ActorComponent STUWeaponFXComponent Weapon/Components 添加到头文件搜索路径 # ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot;, &amp;quot;ShootThemUp/Public/Animations&amp;quot;, &amp;quot;ShootThemUp/Public/Pickups&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon/Components&amp;quot; }); 添加依赖模块 # ShootThemUp: ShootThemUp.Build.cs PublicDependencyModuleNames.AddRange(new string[] { &amp;quot;Core&amp;quot;, &amp;quot;CoreUObject&amp;quot;, &amp;quot;Engine&amp;quot;, &amp;quot;InputCore&amp;quot;, &amp;quot;Niagara&amp;quot; }); 编译项目 实现撞击特效组件 # ShootThemUp: Weapon/Components/STUWeaponFXComponent.h class UNiagaraSystem; // public void PlayImpactFX(const FHitResult &amp;amp;Hit); // protected UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UNiagaraSystem *Effect; 碰撞信息结构体包含生成特效的所有信息: 位置, 法向量等 ShootThemUp: Weapon/Components/STUWeaponFXComponent.cpp #include &amp;quot;NiagaraFunctionLibrary.h&amp;quot; void USTUWeaponFXComponent::PlayImpactFX(const FHitResult &amp;amp;Hit) { UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), Effect, Hit.</description>
+    </item>
+    
   </channel>
 </rss>
