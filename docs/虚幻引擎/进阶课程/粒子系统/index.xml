@@ -78,5 +78,14 @@
       <description>说明 # 使用后期处理 Postprocessing , 应用于最终渲染帧的视觉特效 后期处理可以用来实现视觉特效, 也可以通过色彩矫正为帧营造氛围 属于美化范畴, 适合用蓝图实现 熟悉参数 # 运行游戏, 在世界大纲选择 BP_STUBaseCharacter , 在细节面板选择 Camera 组件, 查看后期处理 Post Process 设置: 很多设置都会对最终帧产生影响 设置虚光照 # 调暗图片边缘 添加噪音 # 饱和度 # 黑白后期: 设置Y = 0, 即亮度设置为0 创建观察者蓝图类 # Content/Player , 右键, 选择 Blueprint Class 基类选择 SpectatorPawn, 命名为BP_STUSpectatorPawn 设置关卡设置该观察者类 打开观察者类, 为其添加摄像机组件, 命名为CameraComponent 设置摄像机组件 # 摄像机受鼠标控制, 支持在垂直方向旋转 勾选 Details &amp;gt; Camera Options &amp;gt; UsePawnControlRotation 黑白后期 Global &amp;gt; Saturation , 设置Y = 0 查看 # </description>
     </item>
     
+    <item>
+      <title>枪口特效</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</link>
+      <pubDate>Mon, 16 Oct 2023 06:00:02 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</guid>
+      <description>说明 # 创建一个发射器NE_LauncherFlash, 两个粒子系统NS_LauncherMuzzle和NS_RiffleMuzzle 发射器的枪口特效较简单. 步枪的射击涉及定时器, 只创建一次粒子系统, 开始射击时, 令其开始并将其渲染, 停止射击时令其暂停, 不再对其进行渲染 创建Niagara粒子发射器 # 创建文件夹 Content/VFX/Muzzles 创建Niagara粒子发射器 使用模板 选择 Simple Sprite Burst , 命名为NE_LauncherFlash 设置纹理 使用默认发射器状态: 不循环; 设置时长 设置粒子数 设置外观 生存时间, 颜色, 聚集方式, 分布, 旋转模式 添加属性: Scale Sprite Size 起点 终点 添加属性: Sprite Rotation Rate 设置Rotation Rate为 Particles &amp;gt; Initial &amp;gt; MaterialRandom 基于NE_LauncherFlash创建发射器使用的Niagara粒子系统资产 # 右键NE_LauncherFlash, 命名为NS_LauncherMuzzle 设置不变, 只播放一次 基于NE_LauncherFlash创建步枪使用的Niagara粒子系统资产 # 命名为NS_RifleMuzzle 循环播放, 设置时长 添加属性: Spawn Rate 设置为90 设置颜色 优化榴弹冲击特效 # NS_ProjectileImpact 设置粒子数 设置分布 枪口特效 # 武器基类: 在枪口生成特效, 返回Niagara组件 # 添加属性: 保存特效类型 # ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
   </channel>
 </rss>
