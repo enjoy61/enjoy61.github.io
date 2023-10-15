@@ -33,5 +33,14 @@
       <description>说明 # 实现: 与不同材质的表面发生碰撞时, 产生不同的撞击特效 三类物理材质: 地面和楼梯, 游戏角色身体部分, 游戏角色头部 也是击中游戏角色不同部位造成不同伤害数值的另一种实现 为网格体设置物理材质 Physical Material 获取撞击物体的物理材质, 生成对应特效 物理材质 # 如果对物体使能物理仿真, 其会根据设置与其他物体互动 设置物体的物理特性, 对应一种表面类型 通过物理材质, 创建表面类型, 根据撞击物体的表面类型, 产生对应特效 目前只使用物理材质来定义表面类型, 而不用于物理仿真 创建多种特效 # 未设定当前物理材质对应的特效时, 生成默认特效 重命名NS_BaseImpact为NS_DefaultImpact, 设置颜色为黑色 按下 Ctrl-D 复制NS_DefaultImpact, 命名为NS_GroundImpact、NS_HeadImpact和NS_BodyImpact 设置NS_GroundImpact 设置为绿色 设置NS_HeadImpact 设置为暗红色 设置粒子数 设置NS_BodyImpact 设置为红色 创建物理材质 # 创建文件夹 Content/PhysMaterials 选择类, 命名为PhysMat_Ground 复制PhysMat_Ground, 命名为PhysMat_Head和PhysMat_Body 为物体设置物理材质 # 物理材质只能应用到网格体, 而地板和楼梯使用几何体笔刷构造, 并不是网格体. 我们可以将其转换为网格体 目前, 击中地板和楼梯时, 生成默认特效 添加几何网格体 Place Actors &amp;gt; Shapes &amp;gt; Cube , 设置物理材质为PhysMat_Ground 为游戏角色设置物理材质 # 打开 Content &amp;gt; ExternalContent &amp;gt; Animation &amp;gt; Characters &amp;gt; HeroTPP &amp;gt; HeroTPP_Physics 为头部设置物理材质 为身体其他部位挨个设置物理材质 获取物理材质信息生成对应类型特效 # 添加依赖模块PhysicsCore # ShootThemUp: ShootThemUp.</description>
     </item>
     
+    <item>
+      <title>使用贴花实现弹痕</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</link>
+      <pubDate>Sun, 15 Oct 2023 16:49:35 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</guid>
+      <description>说明 # 使用贴花实现弹痕 从ShooterGame获取贴花资产 # Content/Effects/materials/Weapon/M_Impact_Decal , 右键 文件夹结构 导入ShootThemUp # 将Effect重命名为BulletDecal, 移动到 ExternalContent , 设置文件夹颜色 用来实现弹痕 重新构造光照 # 有对应提示时 设置光照质量 Build &amp;gt; Lighting Quality 构造光照 贴花 # 可以投影到网格体的特殊材质. 支持静态网格体和骨骼网格体 可以设置贴花的体积大小, 纹理, 隐入隐出相关参数 贴花Actor对应一个立方体, 立方体与包含物体的相交面作为投影面 我们可以使用贴花在墙上画涂鸦, 在不同表面上生成不同子弹特效 测试贴花Actor # 创建测试纹理 # 创建文件夹 Content/Dev 从网络下载虚幻引擎Logo作为纹理, 保存到Content/Dev 右键图片, 创建纹理, 命名为M_TestDecal 和之前的材质比较, 图片作为BaseColor的输入 将材质作为贴花使用的设置 延后贴花; 半透明渲染: Details &amp;gt; Material &amp;gt; Material Domain , 设置为 Deferred Decal ; Blend Mode 设置为 Translucent Alpha通道作为透明度的输入 设置贴花 # 添加贴花Actor到关卡中 Place Actors &amp;gt; Visual Effects &amp;gt; Decal Actor 使用M_TestDecal 选中贴花, 点击应用图标 设置贴花体积 选中DecalActor, Details &amp;gt; Decal &amp;gt; Decal Size , 设置X = 10, Y = Z = 20 查看弹痕贴花 # Content/ExternalContent/BulletDecal/Materials/Weapon/M_Impact_Decal 双击打开, 较M_TestDecal更为复杂, 添加了法向量和饱和度设置, 用以提高视觉质量 击中时生成贴花 # 产生冲击特效时生成贴花 添加数据结构 # STUCoreTypes.</description>
+    </item>
+    
   </channel>
 </rss>
