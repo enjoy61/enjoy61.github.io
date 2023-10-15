@@ -42,5 +42,14 @@
       <description>说明 # 使用贴花实现弹痕 从ShooterGame获取贴花资产 # Content/Effects/materials/Weapon/M_Impact_Decal , 右键 文件夹结构 导入ShootThemUp # 将Effect重命名为BulletDecal, 移动到 ExternalContent , 设置文件夹颜色 用来实现弹痕 重新构造光照 # 有对应提示时 设置光照质量 Build &amp;gt; Lighting Quality 构造光照 贴花 # 可以投影到网格体的特殊材质. 支持静态网格体和骨骼网格体 可以设置贴花的体积大小, 纹理, 隐入隐出相关参数 贴花Actor对应一个立方体, 立方体与包含物体的相交面作为投影面 我们可以使用贴花在墙上画涂鸦, 在不同表面上生成不同子弹特效 测试贴花Actor # 创建测试纹理 # 创建文件夹 Content/Dev 从网络下载虚幻引擎Logo作为纹理, 保存到Content/Dev 右键图片, 创建纹理, 命名为M_TestDecal 和之前的材质比较, 图片作为BaseColor的输入 将材质作为贴花使用的设置 延后贴花; 半透明渲染: Details &amp;gt; Material &amp;gt; Material Domain , 设置为 Deferred Decal ; Blend Mode 设置为 Translucent Alpha通道作为透明度的输入 设置贴花 # 添加贴花Actor到关卡中 Place Actors &amp;gt; Visual Effects &amp;gt; Decal Actor 使用M_TestDecal 选中贴花, 点击应用图标 设置贴花体积 选中DecalActor, Details &amp;gt; Decal &amp;gt; Decal Size , 设置X = 10, Y = Z = 20 查看弹痕贴花 # Content/ExternalContent/BulletDecal/Materials/Weapon/M_Impact_Decal 双击打开, 较M_TestDecal更为复杂, 添加了法向量和饱和度设置, 用以提高视觉质量 击中时生成贴花 # 产生冲击特效时生成贴花 添加数据结构 # STUCoreTypes.</description>
     </item>
     
+    <item>
+      <title>肌肉松弛效果</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</link>
+      <pubDate>Sun, 15 Oct 2023 17:40:36 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</guid>
+      <description>说明 # Mesh Relaxation 使用游戏角色身体的物理仿真来替换死亡动画, 该技术被称作 Ragdoll Physics 游戏角色骨骼在重力的作用下跌倒 代码实现 # ShootThemUp: Player/STUBaseCharacter.cpp 检查网格体组件获取 // BeginPlay check(GetMesh()); 游戏角色死亡时 屏蔽动画播放 设置碰撞使能为QueryAndPhysics或者PhysicsOnly 激活物理仿真 // OnDeath GetMesh()-&amp;gt;SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); GetMesh()-&amp;gt;SetSimulatePhysics(true); </description>
+    </item>
+    
   </channel>
 </rss>
