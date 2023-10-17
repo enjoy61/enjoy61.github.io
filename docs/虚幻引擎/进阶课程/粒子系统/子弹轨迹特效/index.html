@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>子弹轨迹特效 - 六一的部落格</title>
-<meta name="description" content="说明 # 子弹在空间中的轨迹 图示只做说明 修正榴弹弹痕体积 # BP_STUProjectile 修正枪口特效 # NE_LauncherFlash 火花样式 弹射旋转 Sprite Rotation 调整 Scale Sprite Size 和 Sprite Rotation Rate 顺序, 设置旋转比例范围 解决神龙甩尾效果 减小火花 修正榴弹冲击特效 # NS_ProjectileImpact SimpleSpriteBurst # 腾云特效 设置时长 粒子数 生存时间和大小 分布属性 添加 设置半径和原型 排序 UpwardMeshBurst # 箭簇特效 粒子数 生存期, 颜色, 体积等 取消模块勾选 大小分布 移除不需要的网格体等 OmnidirectionalBurst # 击碎雪球特效 添加属性 调整属性位置, 设置圆形分布半径等 排序 实现轨迹特效 # 创建文件夹 Content/VFX/Trace , 创建下属文件夹 Projectile 和 Rifle 创建步枪子弹轨迹用粒子发射器 # Content/VFX/Trace/Rifle 基于模板Dynamic Beam, 命名为NE_RifleBeam Initialize Particle Beam Width Color 创建步枪子弹轨迹用粒子系统 # Content/VFX/Trace/Rifle 使用粒子发射器NE_RifleBeam 命名为NS_RifleBeam 创建榴弹轨迹用粒子发射器 # Content/VFX/Trace/Projectile NE_BlueCore # 基于模板SimpleSpriteBurst Properties Emitter State Spawn Burst Instantaneous Initialize Particle Scale Color 添加模块 Scale Sprite Size 添加模块 Sprite Rotation Rate Sprite Renderer NE_Electric # 基于模板SimpleSpriteBurst Properties Emitter State 添加模块: Spawn Rate Initialize Particle 添加模块: Shape Location Scale Color 添加模块: Scale Sprite Size 添加模块: Sprite Rotation Rate 添加模块: Sub UVAnimation Sprite Renderer NE_Fountain # 基于模板Fountain Spawn Rate Initialize Particle Shape Location Add Velocity Gravity Force 添加模块: Collision 添加模块: Acceleration Force Sprite Renderer 添加模块Scale Velocity">
+<meta name="description" content="说明 # 子弹在空间中的轨迹 图示只做说明 修正枪口特效 # NE_LauncherFlash 火花样式 弹射旋转 Sprite Rotation 调整 Scale Sprite Size 和 Sprite Rotation Rate 顺序, 设置旋转比例范围 解决神龙甩尾效果 减小火花 修正榴弹冲击特效 # NS_ProjectileImpact SimpleSpriteBurst # 腾云特效 设置时长 粒子数 生存时间和大小 分布属性 添加 设置半径和原型 排序 UpwardMeshBurst # 箭簇特效 粒子数 生存期, 颜色, 体积等 取消模块勾选 大小分布 移除不需要的网格体等 OmnidirectionalBurst # 击碎雪球特效 添加属性 调整属性位置, 设置圆形分布半径等 排序 实现轨迹特效 # 创建文件夹 Content/VFX/Trace , 创建下属文件夹 Projectile 和 Rifle 创建步枪子弹轨迹用粒子发射器 # Content/VFX/Trace/Rifle 基于模板Dynamic Beam, 命名为NE_RifleBeam Initialize Particle Beam Width Color 创建步枪子弹轨迹用粒子系统 # Content/VFX/Trace/Rifle 使用粒子发射器NE_RifleBeam 命名为NS_RifleBeam 创建榴弹轨迹用粒子发射器 # Content/VFX/Trace/Projectile NE_BlueCore # 基于模板SimpleSpriteBurst Properties Emitter State Spawn Burst Instantaneous Initialize Particle Scale Color 添加模块 Scale Sprite Size 添加模块 Sprite Rotation Rate Sprite Renderer NE_Electric # 基于模板SimpleSpriteBurst Properties Emitter State 添加模块: Spawn Rate Initialize Particle 添加模块: Shape Location Scale Color 添加模块: Scale Sprite Size 添加模块: Sprite Rotation Rate 添加模块: Sub UVAnimation Sprite Renderer NE_Fountain # 基于模板Fountain Spawn Rate Initialize Particle Shape Location Add Velocity Gravity Force 添加模块: Collision 添加模块: Acceleration Force Sprite Renderer 添加模块Scale Velocity">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="子弹轨迹特效">
-<meta property="og:description" content="说明 # 子弹在空间中的轨迹 图示只做说明 修正榴弹弹痕体积 # BP_STUProjectile 修正枪口特效 # NE_LauncherFlash 火花样式 弹射旋转 Sprite Rotation 调整 Scale Sprite Size 和 Sprite Rotation Rate 顺序, 设置旋转比例范围 解决神龙甩尾效果 减小火花 修正榴弹冲击特效 # NS_ProjectileImpact SimpleSpriteBurst # 腾云特效 设置时长 粒子数 生存时间和大小 分布属性 添加 设置半径和原型 排序 UpwardMeshBurst # 箭簇特效 粒子数 生存期, 颜色, 体积等 取消模块勾选 大小分布 移除不需要的网格体等 OmnidirectionalBurst # 击碎雪球特效 添加属性 调整属性位置, 设置圆形分布半径等 排序 实现轨迹特效 # 创建文件夹 Content/VFX/Trace , 创建下属文件夹 Projectile 和 Rifle 创建步枪子弹轨迹用粒子发射器 # Content/VFX/Trace/Rifle 基于模板Dynamic Beam, 命名为NE_RifleBeam Initialize Particle Beam Width Color 创建步枪子弹轨迹用粒子系统 # Content/VFX/Trace/Rifle 使用粒子发射器NE_RifleBeam 命名为NS_RifleBeam 创建榴弹轨迹用粒子发射器 # Content/VFX/Trace/Projectile NE_BlueCore # 基于模板SimpleSpriteBurst Properties Emitter State Spawn Burst Instantaneous Initialize Particle Scale Color 添加模块 Scale Sprite Size 添加模块 Sprite Rotation Rate Sprite Renderer NE_Electric # 基于模板SimpleSpriteBurst Properties Emitter State 添加模块: Spawn Rate Initialize Particle 添加模块: Shape Location Scale Color 添加模块: Scale Sprite Size 添加模块: Sprite Rotation Rate 添加模块: Sub UVAnimation Sprite Renderer NE_Fountain # 基于模板Fountain Spawn Rate Initialize Particle Shape Location Add Velocity Gravity Force 添加模块: Collision 添加模块: Acceleration Force Sprite Renderer 添加模块Scale Velocity">
+<meta property="og:description" content="说明 # 子弹在空间中的轨迹 图示只做说明 修正枪口特效 # NE_LauncherFlash 火花样式 弹射旋转 Sprite Rotation 调整 Scale Sprite Size 和 Sprite Rotation Rate 顺序, 设置旋转比例范围 解决神龙甩尾效果 减小火花 修正榴弹冲击特效 # NS_ProjectileImpact SimpleSpriteBurst # 腾云特效 设置时长 粒子数 生存时间和大小 分布属性 添加 设置半径和原型 排序 UpwardMeshBurst # 箭簇特效 粒子数 生存期, 颜色, 体积等 取消模块勾选 大小分布 移除不需要的网格体等 OmnidirectionalBurst # 击碎雪球特效 添加属性 调整属性位置, 设置圆形分布半径等 排序 实现轨迹特效 # 创建文件夹 Content/VFX/Trace , 创建下属文件夹 Projectile 和 Rifle 创建步枪子弹轨迹用粒子发射器 # Content/VFX/Trace/Rifle 基于模板Dynamic Beam, 命名为NE_RifleBeam Initialize Particle Beam Width Color 创建步枪子弹轨迹用粒子系统 # Content/VFX/Trace/Rifle 使用粒子发射器NE_RifleBeam 命名为NS_RifleBeam 创建榴弹轨迹用粒子发射器 # Content/VFX/Trace/Projectile NE_BlueCore # 基于模板SimpleSpriteBurst Properties Emitter State Spawn Burst Instantaneous Initialize Particle Scale Color 添加模块 Scale Sprite Size 添加模块 Sprite Rotation Rate Sprite Renderer NE_Electric # 基于模板SimpleSpriteBurst Properties Emitter State 添加模块: Spawn Rate Initialize Particle 添加模块: Shape Location Scale Color 添加模块: Scale Sprite Size 添加模块: Sprite Rotation Rate 添加模块: Sub UVAnimation Sprite Renderer NE_Fountain # 基于模板Fountain Spawn Rate Initialize Particle Shape Location Add Velocity Gravity Force 添加模块: Collision 添加模块: Acceleration Force Sprite Renderer 添加模块Scale Velocity">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-10-17T01:49:09+00:00">
-  <meta property="article:modified_time" content="2023-10-17T12:26:16+08:00">
+  <meta property="article:modified_time" content="2023-10-17T13:02:15+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-10-17T01:49:09CET",
-      "dateModified": "2023-10-17T12:26:16CET",
+      "dateModified": "2023-10-17T13:02:15CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/"
           },
           "datePublished": "2023-10-17T01:49:09CET",
-          "dateModified": "2023-10-17T12:26:16CET",
+          "dateModified": "2023-10-17T13:02:15CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -1652,6 +1652,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/">子弹轨迹特效</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/">重构和打包</a></li>
                                   
 
                                 
@@ -3151,6 +3158,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/">重构和打包</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -4584,6 +4598,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/">重构和打包</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -4619,7 +4640,6 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#修正榴弹弹痕体积">修正榴弹弹痕体积</a></li>
     <li><a href="#修正枪口特效">修正枪口特效</a></li>
     <li><a href="#修正榴弹冲击特效">修正榴弹冲击特效</a>
       <ul>
@@ -4691,7 +4711,6 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#修正榴弹弹痕体积">修正榴弹弹痕体积</a></li>
     <li><a href="#修正枪口特效">修正枪口特效</a></li>
     <li><a href="#修正榴弹冲击特效">修正榴弹冲击特效</a>
       <ul>
@@ -4787,7 +4806,6 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#修正榴弹弹痕体积">修正榴弹弹痕体积</a></li>
     <li><a href="#修正枪口特效">修正枪口特效</a></li>
     <li><a href="#修正榴弹冲击特效">修正榴弹冲击特效</a>
       <ul>
@@ -4859,7 +4877,6 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#修正榴弹弹痕体积">修正榴弹弹痕体积</a></li>
     <li><a href="#修正枪口特效">修正枪口特效</a></li>
     <li><a href="#修正榴弹冲击特效">修正榴弹冲击特效</a>
       <ul>
@@ -4928,9 +4945,6 @@
 			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
 <p>子弹在空间中的轨迹 <br/></p>
 <p>图示只做说明 <br/></p>
-<h2 id="修正榴弹弹痕体积">修正榴弹弹痕体积 <a href="#%e4%bf%ae%e6%ad%a3%e6%a6%b4%e5%bc%b9%e5%bc%b9%e7%97%95%e4%bd%93%e7%a7%af" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>BP_STUProjectile</code> <br/></p>
-<p><img src="/pic/粒子系统/子弹轨迹特效/projectile-size.png" width="500" /> <br/> <br/></p>
 <h2 id="修正枪口特效">修正枪口特效 <a href="#%e4%bf%ae%e6%ad%a3%e6%9e%aa%e5%8f%a3%e7%89%b9%e6%95%88" class="anchor" aria-hidden="true">#</a></h2>
 <p><code>NE_LauncherFlash</code> <br/></p>
 <ul>
