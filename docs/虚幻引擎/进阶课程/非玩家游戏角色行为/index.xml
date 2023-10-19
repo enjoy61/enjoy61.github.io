@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>非玩家游戏角色行为 on </title>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/</link>
+    <description>Recent content in 非玩家游戏角色行为 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 19 Oct 2023 21:26:29 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让NPC移动到指定位置</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 19 Oct 2023 19:05:23 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/</guid>
+      <description>说明 # AI Character / Controller / Navmesh 创建类 # NPC游戏角色 - 基类 STUBaseCharacter Public 路径 AI/ STUAICharacter 相应控制器 - 基类 AIController Public 路径 AI/ STUAIController 添加到头文件搜索路径 ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot;, &amp;quot;ShootThemUp/Public/Animations&amp;quot;, &amp;quot;ShootThemUp/Public/Pickups&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon/Components&amp;quot;, &amp;quot;ShootThemUp/Public/AI&amp;quot; }); 创建文件夹 Content/AI 创建基于STUAICharacter和STUAIController的蓝图类, 添加前缀BP_ 配置BP_STUAICharacter # 参照BP_STUBaseCharacter 显示修改过的属性 设置属性时善用复制粘贴 对BP_AIBaseCharacter进行修改 生命值文本 网格体 设置动画蓝图类 健康组件 武器组件 允许该游戏角色直接添加到场景中或动态生成; 设置控制器类型 移除添加到场景中的BP_STUBaseCharacter, 添加BP_AIBaseCharacter 运行游戏, 正常生成NPC和AI控制器 让NPC移动到指定位置 # 设置地板大小 添加Actor到场景一角 Place Actors &amp;gt; Basic &amp;gt; Actor 双击打开BP_STUAIController 添加节点AIMoveTo, 在BeginPlay之后执行: 将控制器当前控制的游戏角色移动到目的地, 通过给出目的地座标或指示Actor 添加NavMeshBoundsVolume: 覆盖NPC移动区域 Place Actors &amp;gt; Volumes &amp;gt; NavMeshBoundsVolume 设置NavMeshBoundsVolume大小: 高度管控层级; 与场景中的其他网格体有交互 Details &amp;gt; Brush Settings 绿色高亮显示导航网格体的覆盖区域, 按下 P 显示 / 隐藏 Unreal Editor &amp;gt; Preference &amp;gt; General &amp;gt; Keyboard Shortcuts 优化榴弹爆炸特效 # Content/VFX/Projectile 烟雾和火球无法扩散, 将烟雾效果扩大, 火球效果缩小 NE_Burst NE_Fireball NE_Flash NE_Smoke Properties使能Local Space NE_Fireball # 分布半径 NE_Smoke # 粒子数 分布半径 NS_ProjectileExplosion # 优化步枪击中特效 # NE_CoreFast # NE_ShortBurst1 # NE_ShortBurst2 # </description>
+    </item>
+    
+  </channel>
+</rss>
