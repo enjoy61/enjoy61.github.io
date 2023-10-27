@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>🎮 on </title>
+    <link>https://enjoy61.github.io/docs/game/</link>
+    <description>Recent content in 🎮 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Oct 2023 17:25:11 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>星露谷物语</title>
+      <link>https://enjoy61.github.io/docs/game/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/</link>
+      <pubDate>Fri, 27 Oct 2023 17:21:30 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/game/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/</guid>
+      <description>书签 # 官方wiki 灰机wiki 模组 # 官方wiki-模组指南 mod推荐 说明 # 介绍的模组均为了提高可玩性, 并节省不必要的时间 安装环境 # macOS - 模组系统 SMAPI 模组网站 NexusMods SMAPI # Mod系统：SMAPI 下载 &amp;gt; 解压 &amp;gt; 运行 install on macOS.command &amp;gt; 2 浅色背景板 &amp;gt; 1 安装到默认路径: 要求包含Stardew Valley.dll文件 &amp;gt; 1 安装SMAPI 下载模组 # NexusMods 免费创建帐号 将下载好的模组拷贝到 /Users/XXX/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/Mods 通过名字搜索模组时, 使用下载量分辨 边下载边测试 模组配置菜单 # Generic Mod Config Menu 和农场动物培养感情 # auto-petter - 在玛妮家购买 Marnie Sells Auto-Petter 修改商店框架 Shop Tile Framework 添加限制条件 Expanded Preconditions Utility 设备自动化 # Automate 批量处理 # Tractor Mod 门自动打开/关闭 # Auto-gate 布告栏和日历便捷查询 # Billboard Anywhere 信息查询 # Lookup Anything npc地图 # NPC Map Locations 动物好友度提示 # Loved Labels Redux 沙漠矿洞电梯 # Better Elevator 宝箱管理 # Chests Anywhere 其他模组 # 任意位置召唤马: 平替拖拉机 Horse Flute Anywhere </description>
+    </item>
+    
+  </channel>
+</rss>

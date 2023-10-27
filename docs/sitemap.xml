@@ -9,6 +9,13 @@
     </url>
     
     <url>
+      <loc>https://enjoy61.github.io/docs/game/</loc>
+      <lastmod>2023-10-27T17:26:00+08:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
       <loc>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/</loc>
       <lastmod>2023-09-05T17:45:04+08:00</lastmod>
       <changefreq>weekly</changefreq>
@@ -37,6 +44,12 @@
       <url>
         <loc>https://enjoy61.github.io/docs/%E5%B0%8F%E8%BD%A6%E8%BD%A6/%E6%8D%A2%E9%9B%A8%E5%88%AE/</loc>
         <lastmod>2023-10-04T11:40:15+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>https://enjoy61.github.io/docs/game/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/</loc>
+        <lastmod>2023-10-27T17:29:09+08:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
       </url>
