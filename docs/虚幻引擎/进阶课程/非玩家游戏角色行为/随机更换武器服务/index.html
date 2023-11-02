@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>让NPC移动到指定位置 - 六一的部落格</title>
-<meta name="description" content="说明 # AI Character / Controller / Navmesh 创建类 # NPC游戏角色 - 基类 STUBaseCharacter Public 路径 AI/ STUAICharacter 相应控制器 - 基类 AIController Public 路径 AI/ STUAIController 添加到头文件搜索路径 ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot;, &amp;quot;ShootThemUp/Public/Animations&amp;quot;, &amp;quot;ShootThemUp/Public/Pickups&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon/Components&amp;quot;, &amp;quot;ShootThemUp/Public/AI&amp;quot; }); 创建文件夹 Content/AI 创建基于STUAICharacter和STUAIController的蓝图类, 添加前缀BP_ 配置BP_STUAICharacter # 参照BP_STUBaseCharacter 显示修改过的属性 设置属性时善用复制粘贴 对BP_AIBaseCharacter进行修改 生命值文本 网格体 设置动画蓝图类 健康组件 武器组件 为NPC使能AI # BP_STUAICharacter 允许该游戏角色直接添加到场景中或动态生成; 设置控制器类型 移除添加到场景中的BP_STUBaseCharacter, 添加BP_AIBaseCharacter 运行游戏, 正常生成NPC和AI控制器 让NPC移动到指定位置 # 设置地板大小 添加Actor到场景一角 Place Actors &amp;gt; Basic &amp;gt; Actor 双击打开BP_STUAIController 添加节点AIMoveTo, 在BeginPlay之后执行: 将控制器当前控制的游戏角色移动到目的地, 通过给出目的地座标或指示Actor 添加NavMeshBoundsVolume: 覆盖NPC移动区域 Place Actors &amp;gt; Volumes &amp;gt; NavMeshBoundsVolume 设置NavMeshBoundsVolume大小: 高度管控层级; 与场景中的其他网格体有交互 Details &amp;gt; Brush Settings 绿色高亮显示导航网格体的覆盖区域, 按下 P 显示 / 隐藏 Unreal Editor &amp;gt; Preference &amp;gt; General &amp;gt; Keyboard Shortcuts 优化榴弹爆炸特效 # Content/VFX/Projectile 烟雾和火球无法扩散, 将烟雾效果扩大, 火球效果缩小 NE_Burst NE_Fireball NE_Flash NE_Smoke Properties使能Local Space NE_Fireball # 分布半径 NE_Smoke # 粒子数 分布半径 NS_ProjectileExplosion # 优化步枪击中特效 # NE_CoreFast # NE_ShortBurst1 # NE_ShortBurst2 # ">
-  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">
+  <title>随机更换武器服务 - 六一的部落格</title>
+<meta name="description" content="说明 # Homework - Change Weapon Service 和弹药耗尽更换武器性质不同; 使用当时实现的NextWeapon接口 NPC攻击时执行: 加入到Attack序列 设置参数, 生成随机数大于该值时不作操作 补充 # 应该在TickNode最后调用基类TickNode ShootThemUp: AI/Services/STUFireService.cpp // TickNode Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds); 创建服务类 # - 基类 BTService 路径 AI/Services 属性 Public 类名 STUChangeWeaponService 基本函数声明 # ShootThemUp: AI/Services/STUChangeWeaponService.h // public USTUChangeWeaponService(); // protected void TickNode(UBehaviorTreeComponent &amp;amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds); 构造函数实现: 设置服务名称 # ShootThemUp: AI/Services/STUChangeWeaponService.cpp USTUChangeWeaponService::USTUChangeWeaponService() { NodeName = &amp;quot;Change Weapon&amp;quot;; } TickNode框架 # ShootThemUp: AI/Services/STUChangeWeaponService.cpp void USTUChangeWeaponService::TickNode(UBehaviorTreeComponent &amp;amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds) { // .">
+  <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让NPC移动到指定位置">
-<meta property="og:description" content="说明 # AI Character / Controller / Navmesh 创建类 # NPC游戏角色 - 基类 STUBaseCharacter Public 路径 AI/ STUAICharacter 相应控制器 - 基类 AIController Public 路径 AI/ STUAIController 添加到头文件搜索路径 ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &quot;ShootThemUp/Public/Player&quot;, &quot;ShootThemUp/Public/Components&quot;, &quot;ShootThemUp/Public/Dev&quot;, &quot;ShootThemUp/Public/Weapon&quot;, &quot;ShootThemUp/Public/UI&quot;, &quot;ShootThemUp/Public/Animations&quot;, &quot;ShootThemUp/Public/Pickups&quot;, &quot;ShootThemUp/Public/Weapon/Components&quot;, &quot;ShootThemUp/Public/AI&quot; }); 创建文件夹 Content/AI 创建基于STUAICharacter和STUAIController的蓝图类, 添加前缀BP_ 配置BP_STUAICharacter # 参照BP_STUBaseCharacter 显示修改过的属性 设置属性时善用复制粘贴 对BP_AIBaseCharacter进行修改 生命值文本 网格体 设置动画蓝图类 健康组件 武器组件 为NPC使能AI # BP_STUAICharacter 允许该游戏角色直接添加到场景中或动态生成; 设置控制器类型 移除添加到场景中的BP_STUBaseCharacter, 添加BP_AIBaseCharacter 运行游戏, 正常生成NPC和AI控制器 让NPC移动到指定位置 # 设置地板大小 添加Actor到场景一角 Place Actors &gt; Basic &gt; Actor 双击打开BP_STUAIController 添加节点AIMoveTo, 在BeginPlay之后执行: 将控制器当前控制的游戏角色移动到目的地, 通过给出目的地座标或指示Actor 添加NavMeshBoundsVolume: 覆盖NPC移动区域 Place Actors &gt; Volumes &gt; NavMeshBoundsVolume 设置NavMeshBoundsVolume大小: 高度管控层级; 与场景中的其他网格体有交互 Details &gt; Brush Settings 绿色高亮显示导航网格体的覆盖区域, 按下 P 显示 / 隐藏 Unreal Editor &gt; Preference &gt; General &gt; Keyboard Shortcuts 优化榴弹爆炸特效 # Content/VFX/Projectile 烟雾和火球无法扩散, 将烟雾效果扩大, 火球效果缩小 NE_Burst NE_Fireball NE_Flash NE_Smoke Properties使能Local Space NE_Fireball # 分布半径 NE_Smoke # 粒子数 分布半径 NS_ProjectileExplosion # 优化步枪击中特效 # NE_CoreFast # NE_ShortBurst1 # NE_ShortBurst2 # ">
-<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">
+<meta property="og:title" content="随机更换武器服务">
+<meta property="og:description" content="说明 # Homework - Change Weapon Service 和弹药耗尽更换武器性质不同; 使用当时实现的NextWeapon接口 NPC攻击时执行: 加入到Attack序列 设置参数, 生成随机数大于该值时不作操作 补充 # 应该在TickNode最后调用基类TickNode ShootThemUp: AI/Services/STUFireService.cpp // TickNode Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds); 创建服务类 # - 基类 BTService 路径 AI/Services 属性 Public 类名 STUChangeWeaponService 基本函数声明 # ShootThemUp: AI/Services/STUChangeWeaponService.h // public USTUChangeWeaponService(); // protected void TickNode(UBehaviorTreeComponent &amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds); 构造函数实现: 设置服务名称 # ShootThemUp: AI/Services/STUChangeWeaponService.cpp USTUChangeWeaponService::USTUChangeWeaponService() { NodeName = &quot;Change Weapon&quot;; } TickNode框架 # ShootThemUp: AI/Services/STUChangeWeaponService.cpp void USTUChangeWeaponService::TickNode(UBehaviorTreeComponent &amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds) { // .">
+<meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-10-19T19:05:23+00:00">
-  <meta property="article:modified_time" content="2023-10-29T11:33:55+08:00">
+<meta property="article:published_time" content="2023-11-02T21:48:43+00:00">
+  <meta property="article:modified_time" content="2023-11-02T21:54:18+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="让NPC移动到指定位置">
+<meta name="twitter:title" content="随机更换武器服务">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://enjoy61.github.io/doks.png">
-    <meta name="twitter:image:alt" content="让NPC移动到指定位置">
+    <meta name="twitter:image:alt" content="随机更换武器服务">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/",
-      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/",
-      "name": "让NPC移动到指定位置",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/",
+      "url": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/",
+      "name": "随机更换武器服务",
       "description": "",
       "isPartOf": {
         "@id": "https://enjoy61.github.io/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
-      "datePublished": "2023-10-19T19:05:23CET",
-      "dateModified": "2023-10-29T11:33:55CET",
+      "datePublished": "2023-11-02T21:48:43CET",
+      "dateModified": "2023-11-02T21:54:18CET",
       "breadcrumb": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/#/schema/breadcrumb/1"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/#/schema/image/2"
+        "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/"]
+        "@type": "ReadAction", "target": ["https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/#/schema/breadcrumb/1",
+      "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -151,7 +151,7 @@
         "@type": "ListItem",
         "position":  6 ,
         "item": {
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/"
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/"
           }
         }]
     },
@@ -162,16 +162,16 @@
         {
           "@type": "Article",
           "@id": "https://enjoy61.github.io/#/schema/article/1",
-          "headline": "让NPC移动到指定位置",
+          "headline": "随机更换武器服务",
           "description": "",
           "isPartOf": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/"
           },
           "mainEntityOfPage": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/"
           },
-          "datePublished": "2023-10-19T19:05:23CET",
-          "dateModified": "2023-10-29T11:33:55CET",
+          "datePublished": "2023-11-02T21:48:43CET",
+          "dateModified": "2023-11-02T21:54:18CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -179,7 +179,7 @@
               "@id": "https://enjoy61.github.io/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/#/schema/image/2"
+            "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/#/schema/image/2"
           }
         }
       ]
@@ -204,10 +204,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/#/schema/image/2",
+          "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/#/schema/image/2",
           "url": "https://enjoy61.github.io/doks.png",
           "contentUrl": "https://enjoy61.github.io/doks.png",
-          "caption": "让NPC移动到指定位置"
+          "caption": "随机更换武器服务"
         }
       ]
     }
@@ -1735,7 +1735,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
                                   
 
                                 
@@ -1791,7 +1791,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
                                   
 
                                 
@@ -3371,7 +3371,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
                                   
 
                                 
@@ -3427,7 +3427,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
                                   
 
                                 
@@ -4944,7 +4944,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E8%AE%A9npc%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE/">让NPC移动到指定位置</a></li>
                                   
 
                                 
@@ -5000,7 +5000,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
+                                    <li><a class="docs-link rounded active" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E9%9A%8F%E6%9C%BA%E6%9B%B4%E6%8D%A2%E6%AD%A6%E5%99%A8%E6%9C%8D%E5%8A%A1/">随机更换武器服务</a></li>
                                   
 
                                 
@@ -5039,24 +5039,22 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#创建类">创建类</a></li>
-    <li><a href="#配置bp-stuaicharacter">配置BP_STUAICharacter</a></li>
-    <li><a href="#为npc使能ai">为NPC使能AI</a></li>
-    <li><a href="#让npc移动到指定位置">让NPC移动到指定位置</a></li>
-    <li><a href="#优化榴弹爆炸特效">优化榴弹爆炸特效</a>
+    <li><a href="#补充">补充</a></li>
+    <li><a href="#创建服务类">创建服务类</a>
       <ul>
-        <li><a href="#ne-fireball">NE_Fireball</a></li>
-        <li><a href="#ne-smoke">NE_Smoke</a></li>
-        <li><a href="#ns-projectileexplosion">NS_ProjectileExplosion</a></li>
+        <li><a href="#基本函数声明">基本函数声明</a></li>
+        <li><a href="#构造函数实现-设置服务名称">构造函数实现: 设置服务名称</a></li>
+        <li><a href="#ticknode框架">TickNode框架</a></li>
+        <li><a href="#添加属性-更换武器概率">添加属性: 更换武器概率</a></li>
+        <li><a href="#实现服务逻辑">实现服务逻辑</a>
+          <ul>
+            <li><a href="#fmath-frand">FMath::FRand</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#优化步枪击中特效">优化步枪击中特效</a>
-      <ul>
-        <li><a href="#ne-corefast">NE_CoreFast</a></li>
-        <li><a href="#ne-shortburst1">NE_ShortBurst1</a></li>
-        <li><a href="#ne-shortburst2">NE_ShortBurst2</a></li>
-      </ul>
-    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#查看">查看</a></li>
   </ul>
 </nav>
       </div>
@@ -5069,24 +5067,22 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#创建类">创建类</a></li>
-    <li><a href="#配置bp-stuaicharacter">配置BP_STUAICharacter</a></li>
-    <li><a href="#为npc使能ai">为NPC使能AI</a></li>
-    <li><a href="#让npc移动到指定位置">让NPC移动到指定位置</a></li>
-    <li><a href="#优化榴弹爆炸特效">优化榴弹爆炸特效</a>
+    <li><a href="#补充">补充</a></li>
+    <li><a href="#创建服务类">创建服务类</a>
       <ul>
-        <li><a href="#ne-fireball">NE_Fireball</a></li>
-        <li><a href="#ne-smoke">NE_Smoke</a></li>
-        <li><a href="#ns-projectileexplosion">NS_ProjectileExplosion</a></li>
+        <li><a href="#基本函数声明">基本函数声明</a></li>
+        <li><a href="#构造函数实现-设置服务名称">构造函数实现: 设置服务名称</a></li>
+        <li><a href="#ticknode框架">TickNode框架</a></li>
+        <li><a href="#添加属性-更换武器概率">添加属性: 更换武器概率</a></li>
+        <li><a href="#实现服务逻辑">实现服务逻辑</a>
+          <ul>
+            <li><a href="#fmath-frand">FMath::FRand</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#优化步枪击中特效">优化步枪击中特效</a>
-      <ul>
-        <li><a href="#ne-corefast">NE_CoreFast</a></li>
-        <li><a href="#ne-shortburst1">NE_ShortBurst1</a></li>
-        <li><a href="#ne-shortburst2">NE_ShortBurst2</a></li>
-      </ul>
-    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#查看">查看</a></li>
   </ul>
 </nav>
   </nav>
@@ -5102,11 +5098,11 @@
 <li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
 <li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
 <li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/">非玩家游戏角色行为</a></li>
-<li class="breadcrumb-item active" aria-current="page">让NPC移动到指定位置</li>
+<li class="breadcrumb-item active" aria-current="page">随机更换武器服务</li>
 					</ol>
 				</nav>
 			
-			<h1>让NPC移动到指定位置</h1>
+			<h1>随机更换武器服务</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -5123,24 +5119,22 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#创建类">创建类</a></li>
-    <li><a href="#配置bp-stuaicharacter">配置BP_STUAICharacter</a></li>
-    <li><a href="#为npc使能ai">为NPC使能AI</a></li>
-    <li><a href="#让npc移动到指定位置">让NPC移动到指定位置</a></li>
-    <li><a href="#优化榴弹爆炸特效">优化榴弹爆炸特效</a>
+    <li><a href="#补充">补充</a></li>
+    <li><a href="#创建服务类">创建服务类</a>
       <ul>
-        <li><a href="#ne-fireball">NE_Fireball</a></li>
-        <li><a href="#ne-smoke">NE_Smoke</a></li>
-        <li><a href="#ns-projectileexplosion">NS_ProjectileExplosion</a></li>
+        <li><a href="#基本函数声明">基本函数声明</a></li>
+        <li><a href="#构造函数实现-设置服务名称">构造函数实现: 设置服务名称</a></li>
+        <li><a href="#ticknode框架">TickNode框架</a></li>
+        <li><a href="#添加属性-更换武器概率">添加属性: 更换武器概率</a></li>
+        <li><a href="#实现服务逻辑">实现服务逻辑</a>
+          <ul>
+            <li><a href="#fmath-frand">FMath::FRand</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#优化步枪击中特效">优化步枪击中特效</a>
-      <ul>
-        <li><a href="#ne-corefast">NE_CoreFast</a></li>
-        <li><a href="#ne-shortburst1">NE_ShortBurst1</a></li>
-        <li><a href="#ne-shortburst2">NE_ShortBurst2</a></li>
-      </ul>
-    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#查看">查看</a></li>
   </ul>
 </nav>
       </div>
@@ -5153,24 +5147,22 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#说明">说明</a></li>
-    <li><a href="#创建类">创建类</a></li>
-    <li><a href="#配置bp-stuaicharacter">配置BP_STUAICharacter</a></li>
-    <li><a href="#为npc使能ai">为NPC使能AI</a></li>
-    <li><a href="#让npc移动到指定位置">让NPC移动到指定位置</a></li>
-    <li><a href="#优化榴弹爆炸特效">优化榴弹爆炸特效</a>
+    <li><a href="#补充">补充</a></li>
+    <li><a href="#创建服务类">创建服务类</a>
       <ul>
-        <li><a href="#ne-fireball">NE_Fireball</a></li>
-        <li><a href="#ne-smoke">NE_Smoke</a></li>
-        <li><a href="#ns-projectileexplosion">NS_ProjectileExplosion</a></li>
+        <li><a href="#基本函数声明">基本函数声明</a></li>
+        <li><a href="#构造函数实现-设置服务名称">构造函数实现: 设置服务名称</a></li>
+        <li><a href="#ticknode框架">TickNode框架</a></li>
+        <li><a href="#添加属性-更换武器概率">添加属性: 更换武器概率</a></li>
+        <li><a href="#实现服务逻辑">实现服务逻辑</a>
+          <ul>
+            <li><a href="#fmath-frand">FMath::FRand</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#优化步枪击中特效">优化步枪击中特效</a>
-      <ul>
-        <li><a href="#ne-corefast">NE_CoreFast</a></li>
-        <li><a href="#ne-shortburst1">NE_ShortBurst1</a></li>
-        <li><a href="#ne-shortburst2">NE_ShortBurst2</a></li>
-      </ul>
-    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#查看">查看</a></li>
   </ul>
 </nav>
   </nav>
@@ -5178,200 +5170,142 @@
 
 			</nav>
 			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
-<p>AI Character / Controller / Navmesh <br/></p>
-<h2 id="创建类">创建类 <a href="#%e5%88%9b%e5%bb%ba%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
+<p>Homework - Change Weapon Service <br/></p>
 <ul>
-<li>NPC游戏角色 <br/>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>基类</td>
-<td>STUBaseCharacter</td>
-</tr>
-<tr>
-<td></td>
-<td>Public</td>
-</tr>
-<tr>
-<td>路径</td>
-<td>AI/</td>
-</tr>
-<tr>
-<td></td>
-<td>STUAICharacter</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>相应控制器 <br/>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>基类</td>
-<td>AIController</td>
-</tr>
-<tr>
-<td></td>
-<td>Public</td>
-</tr>
-<tr>
-<td>路径</td>
-<td>AI/</td>
-</tr>
-<tr>
-<td></td>
-<td>STUAIController</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>添加到头文件搜索路径 <br/>
-<code>ShootThemUp: ShootThemUp.Build.cs</code> <br/>
-<pre><code class="language-cpp">PublicIncludePaths.AddRange(new string[]
-{
-    &quot;ShootThemUp/Public/Player&quot;,
-    &quot;ShootThemUp/Public/Components&quot;,
-    &quot;ShootThemUp/Public/Dev&quot;,
-    &quot;ShootThemUp/Public/Weapon&quot;,
-    &quot;ShootThemUp/Public/UI&quot;,
-    &quot;ShootThemUp/Public/Animations&quot;,
-    &quot;ShootThemUp/Public/Pickups&quot;,
-    &quot;ShootThemUp/Public/Weapon/Components&quot;,
-    &quot;ShootThemUp/Public/AI&quot;
-});
+<li>和弹药耗尽更换武器性质不同; 使用当时实现的NextWeapon接口 <br/></li>
+<li>NPC攻击时执行: 加入到Attack序列 <br/></li>
+<li>设置参数, 生成随机数大于该值时不作操作 <br/></li>
+</ul>
+<h2 id="补充">补充 <a href="#%e8%a1%a5%e5%85%85" class="anchor" aria-hidden="true">#</a></h2>
+<p><strong>应该在TickNode最后调用基类TickNode</strong> <br/>
+<code>ShootThemUp: AI/Services/STUFireService.cpp</code> <br/></p>
+<pre><code class="language-cpp">// TickNode
+
+Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 </code></pre>
-</li>
-<li>创建文件夹 <code>Content/AI</code> <br/></li>
-<li>创建基于STUAICharacter和STUAIController的蓝图类, 添加前缀BP_ <br/></li>
-</ul>
-<h2 id="配置bp-stuaicharacter">配置BP_STUAICharacter <a href="#%e9%85%8d%e7%bd%aebp-stuaicharacter" class="anchor" aria-hidden="true">#</a></h2>
-<p>参照BP_STUBaseCharacter <br/></p>
+<h2 id="创建服务类">创建服务类 <a href="#%e5%88%9b%e5%bb%ba%e6%9c%8d%e5%8a%a1%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基类</td>
+<td>BTService</td>
+</tr>
+<tr>
+<td>路径</td>
+<td>AI/Services</td>
+</tr>
+<tr>
+<td>属性</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>类名</td>
+<td>STUChangeWeaponService</td>
+</tr>
+</tbody>
+</table>
+<h3 id="基本函数声明">基本函数声明 <a href="#%e5%9f%ba%e6%9c%ac%e5%87%bd%e6%95%b0%e5%a3%b0%e6%98%8e" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: AI/Services/STUChangeWeaponService.h</code> <br/></p>
+<pre><code class="language-cpp">// public
+USTUChangeWeaponService();
+
+// protected
+void TickNode(UBehaviorTreeComponent &amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds);
+</code></pre>
+<h3 id="构造函数实现-设置服务名称">构造函数实现: 设置服务名称 <a href="#%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0%e5%ae%9e%e7%8e%b0-%e8%ae%be%e7%bd%ae%e6%9c%8d%e5%8a%a1%e5%90%8d%e7%a7%b0" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: AI/Services/STUChangeWeaponService.cpp</code> <br/></p>
+<pre><code class="language-cpp">USTUChangeWeaponService::USTUChangeWeaponService()
+{
+    NodeName = &quot;Change Weapon&quot;;
+}
+</code></pre>
+<h3 id="ticknode框架">TickNode框架 <a href="#ticknode%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: AI/Services/STUChangeWeaponService.cpp</code> <br/></p>
+<pre><code class="language-cpp">void USTUChangeWeaponService::TickNode(UBehaviorTreeComponent &amp;OwnerComp, uint8 *NodeMemory, float DeltaSeconds)
+{
+    // ...
+
+    Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
+}
+</code></pre>
+<h3 id="添加属性-更换武器概率">添加属性: 更换武器概率 <a href="#%e6%b7%bb%e5%8a%a0%e5%b1%9e%e6%80%a7-%e6%9b%b4%e6%8d%a2%e6%ad%a6%e5%99%a8%e6%a6%82%e7%8e%87" class="anchor" aria-hidden="true">#</a></h3>
+<p>为0时, 不触发该服务 <br/></p>
+<p><code>protected</code> <br/>
+<code>ShootThemUp: AI/Services/STUChangeWeaponService.h</code> <br/></p>
+<pre><code class="language-cpp">UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = &quot;0.0&quot;, ClampMax = &quot;1.0&quot;))
+float Probability = 0.5f;
+</code></pre>
+<h3 id="实现服务逻辑">实现服务逻辑 <a href="#%e5%ae%9e%e7%8e%b0%e6%9c%8d%e5%8a%a1%e9%80%bb%e8%be%91" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>ShootThemUp: AI/Services/STUChangeWeaponService.cpp</code> <br/></p>
+<pre><code class="language-cpp">#include &quot;AIController.h&quot;
+#include &quot;Components/STUWeaponComponent.h&quot;
+#include &quot;STUUtils.h&quot;
+
+// TickNode
+
+const auto Controller = OwnerComp.GetAIOwner();
+if (Controller)
+{
+    const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&lt;USTUWeaponComponent&gt;(Controller-&gt;GetPawn());
+    if (WeaponComponent &amp;&amp; Probability &gt; 0 &amp;&amp; FMath::FRand() &lt;= Probability)
+    {
+        WeaponComponent-&gt;NextWeapon();
+    }
+}
+</code></pre>
+<h4 id="fmath-frand">FMath::FRand <a href="#fmath-frand" class="anchor" aria-hidden="true">#</a></h4>
+<p>返回[0, 1] <br/></p>
+<h2 id="测试">测试 <a href="#%e6%b5%8b%e8%af%95" class="anchor" aria-hidden="true">#</a></h2>
 <ul>
 <li>
-<p>显示修改过的属性 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/show-modified-properties.png" width="1000" /> <br/> <br/></p>
+<p>为Selector添加STUChangeWeaponService <br/></p>
 </li>
 <li>
-<p>设置属性时善用复制粘贴 <br/></p>
+<p>设置Probability = 0.8, Interval = 1 <br/></p>
+<p><img src="/pic/非玩家游戏角色行为/随机更换武器服务/selector.png" width="1200" /> <br/> <br/></p>
 </li>
 <li>
-<p>对BP_AIBaseCharacter进行修改 <br/>
-生命值文本 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/health-text.png" width="1000" /> <br/> <br/></p>
-<p>网格体 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/mesh.png" width="1000" /> <br/> <br/></p>
-<p>设置动画蓝图类 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/abp.png" width="1000" /> <br/> <br/></p>
-<p>健康组件 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/health.png" width="1000" /> <br/> <br/></p>
-<p>武器组件 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/weapon.png" width="1000" /> <br/> <br/></p>
+<p>一切正常 <br/></p>
 </li>
 </ul>
-<h2 id="为npc使能ai">为NPC使能AI <a href="#%e4%b8%banpc%e4%bd%bf%e8%83%bdai" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>BP_STUAICharacter</code> <br/></p>
+<h2 id="查看">查看 <a href="#%e6%9f%a5%e7%9c%8b" class="anchor" aria-hidden="true">#</a></h2>
 <ul>
 <li>
-<p>允许该游戏角色直接添加到场景中或动态生成; 设置控制器类型 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/set-ai-controller.png" width="1000" /> <br/> <br/></p>
+<p>将Selector &gt; STUChangeWeaponService拖动到Attack序列, 设置Interval = 3 <br/></p>
+<p><img src="/pic/非玩家游戏角色行为/随机更换武器服务/attack.png" width="1200" /> <br/> <br/></p>
 </li>
 <li>
-<p>移除添加到场景中的BP_STUBaseCharacter, 添加BP_AIBaseCharacter <br/></p>
+<p>勾选发射器和步枪的子弹数 <code>Infinite</code> 选项 <br/>
+<code>BP_STURifleWeapon</code> <code>BP_STULauncherWeapon</code> <br/>
+<code>Details &gt; Default Ammo &gt; Infinite</code> <br/></p>
 </li>
 <li>
-<p>运行游戏, 正常生成NPC和AI控制器 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/scene-ai.png" width="1000" /> <br/> <br/></p>
+<p>NPC捕获敌人时, 正常随机更换武器进行射击; 触发概率不高 <br/>
+可以改善的地方: 事件发生时不一定切换成功, 如动画播放中途, 如正在射击 <br/></p>
 </li>
 </ul>
-<h2 id="让npc移动到指定位置">让NPC移动到指定位置 <a href="#%e8%ae%a9npc%e7%a7%bb%e5%8a%a8%e5%88%b0%e6%8c%87%e5%ae%9a%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true">#</a></h2>
-<ul>
-<li>
-<p>设置地板大小 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/floor.png" width="400" /> <br/> <br/></p>
-</li>
-<li>
-<p>添加Actor到场景一角 <br/>
-<code>Place Actors &gt; Basic &gt; Actor</code> <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/actor-location.png" width="700" /> <br/> <br/></p>
-</li>
-<li>
-<p>双击打开BP_STUAIController <br/>
-添加节点AIMoveTo, 在BeginPlay之后执行: 将控制器当前控制的游戏角色移动到目的地, 通过给出目的地座标或指示Actor <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/ai-move.png" width="700" /> <br/> <br/></p>
-</li>
-<li>
-<p>添加NavMeshBoundsVolume: 覆盖NPC移动区域 <br/>
-<code>Place Actors &gt; Volumes &gt; NavMeshBoundsVolume</code> <br/></p>
-</li>
-<li>
-<p>设置NavMeshBoundsVolume大小: 高度管控层级; 与场景中的其他网格体有交互 <br/>
-<code>Details &gt; Brush Settings</code> <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/add-nav-mesh.png" width="1000" /> <br/> <br/></p>
-</li>
-<li>
-<p>绿色高亮显示导航网格体的覆盖区域, 按下 <code>P</code> 显示 / 隐藏 <br/>
-<code>Unreal Editor &gt; Preference &gt; General &gt; Keyboard Shortcuts</code> <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/show-nav.png" width="800" /> <br/> <br/></p>
-</li>
-</ul>
-<h2 id="优化榴弹爆炸特效">优化榴弹爆炸特效 <a href="#%e4%bc%98%e5%8c%96%e6%a6%b4%e5%bc%b9%e7%88%86%e7%82%b8%e7%89%b9%e6%95%88" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>Content/VFX/Projectile</code> <br/></p>
-<p>烟雾和火球无法扩散, 将烟雾效果扩大, 火球效果缩小 <br/></p>
-<ul>
-<li>NE_Burst <br/></li>
-<li>NE_Fireball <br/></li>
-<li>NE_Flash <br/></li>
-<li>NE_Smoke <br/></li>
-</ul>
-<p>Properties使能Local Space <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/enable-local.png" width="600" /> <br/> <br/></p>
-<h3 id="ne-fireball">NE_Fireball <a href="#ne-fireball" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/fb-frame.png" width="600" /> <br/> <br/></p>
-<p>分布半径 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/fb-radius.png" width="600" /> <br/> <br/></p>
-<h3 id="ne-smoke">NE_Smoke <a href="#ne-smoke" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/s-frame.png" width="600" /> <br/> <br/></p>
-<p>粒子数 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/s-count.png" width="600" /> <br/> <br/></p>
-<p>分布半径 <br/></p>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/s-radius.png" width="600" /> <br/> <br/></p>
-<h3 id="ns-projectileexplosion">NS_ProjectileExplosion <a href="#ns-projectileexplosion" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/explosion.png" width="600" /> <br/> <br/></p>
-<h2 id="优化步枪击中特效">优化步枪击中特效 <a href="#%e4%bc%98%e5%8c%96%e6%ad%a5%e6%9e%aa%e5%87%bb%e4%b8%ad%e7%89%b9%e6%95%88" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="ne-corefast">NE_CoreFast <a href="#ne-corefast" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/cf-frame.png" width="600" /> <br/> <br/></p>
-<h3 id="ne-shortburst1">NE_ShortBurst1 <a href="#ne-shortburst1" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/sb1-frame.png" width="600" /> <br/> <br/></p>
-<h3 id="ne-shortburst2">NE_ShortBurst2 <a href="#ne-shortburst2" class="anchor" aria-hidden="true">#</a></h3>
-<p><img src="/pic/非玩家游戏角色行为/让NPC移动到指定位置/sb2-frame.png" width="600" /> <br/> <br/></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/npc%E7%A7%BB%E5%8A%A8/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/emacs/%E6%8F%92%E4%BB%B6/avy/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; NPC移动
+					&larr; avy
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%88%9D%E8%AF%86cascade%E5%92%8Cniagara/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					初识Cascade和Niagara &rarr;
+					枪口特效 &rarr;
 				</div>
 			</div>
 		</a>
