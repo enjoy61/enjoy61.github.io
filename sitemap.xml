@@ -122,13 +122,6 @@
   </url>
   
   <url>
-    <loc>https://enjoy61.github.io/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</loc>
-    <lastmod>2023-08-16T15:15:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://enjoy61.github.io/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</loc>
     <lastmod>2023-08-16T13:26:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -411,6 +404,13 @@
   <url>
     <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/</loc>
     <lastmod>2023-09-12T16:45:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://enjoy61.github.io/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</loc>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -913,6 +913,13 @@
   </url>
   
   <url>
+    <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E6%B8%85%E9%99%A4%E8%A1%8C%E4%B8%BA%E6%A0%91/</loc>
+    <lastmod>2023-11-03T11:27:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/</loc>
     <lastmod>2023-10-17T13:02:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1390,42 +1397,63 @@
   
   <url>
     <loc>https://enjoy61.github.io/categories/</loc>
-    <lastmod>2023-08-16T15:17:34+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://enjoy61.github.io/tags/colortheme/</loc>
-    <lastmod>2023-08-16T15:15:08+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://enjoy61.github.io/contributors/</loc>
-    <lastmod>2023-08-16T15:17:34+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://enjoy61.github.io/tags/emacs/</loc>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://enjoy61.github.io/categories/hacking/</loc>
-    <lastmod>2023-08-16T15:15:08+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://enjoy61.github.io/tags/iterm2/</loc>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://enjoy61.github.io/tags/</loc>
-    <lastmod>2023-08-16T15:17:34+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://enjoy61.github.io/tags/vscode/</loc>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://enjoy61.github.io/contributors/%E5%85%AD%E4%B8%80/</loc>
-    <lastmod>2023-08-16T15:17:34+08:00</lastmod>
+    <lastmod>2023-11-03T09:38:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
