@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>控制器 on </title>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/</link>
+    <description>Recent content in 控制器 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 05 Nov 2023 20:55:17 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Controller类</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/controller%E7%B1%BB/</link>
+      <pubDate>Sun, 05 Nov 2023 20:56:22 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/controller%E7%B1%BB/</guid>
+      <description>AController # 切换Pawn # AController::Possess # 切换到指定Pawn AController::OnPossess # protected 切换Pawn时被调用 // * // * Overridable native function for when this controller is asked to possess a pawn. // * @param InPawn The Pawn to be possessed // * virtual void OnPossess(APawn* InPawn); AController::GetPawn # 访问当前Pawn /** Getter for Pawn */ FORCEINLINE APawn* GetPawn() const { return Pawn; } AController::GetPawn&amp;lt;T&amp;gt; # 访问当前Pawn /** Templated version of GetPawn, will return nullptr if cast fails */ template&amp;lt;class T&amp;gt; T* GetPawn() const { return Cast&amp;lt;T&amp;gt;(Pawn); } AController::GetPlayerViewPoint # // * // * Returns Player&#39;s Point of View // * For the AI this means the Pawn&#39;s &#39;Eyes&#39; ViewPoint // * For a Human player, this means the Camera&#39;s ViewPoint // * // * @output	out_Location, view location of player // * @output	out_rotation, view rotation of player // * UFUNCTION(BlueprintCallable, Category = Pawn) virtual void GetPlayerViewPoint( FVector&amp;amp; Location, FRotator&amp;amp; Rotation ) const; </description>
+    </item>
+    
+    <item>
+      <title>PlayerController类</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/playercontroller%E7%B1%BB/</link>
+      <pubDate>Sun, 05 Nov 2023 20:56:29 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/playercontroller%E7%B1%BB/</guid>
+      <description>APlayerController # APlayerController::GetPlayerViewPoint # 获取摄像机的位置和方向向量 对基类函数进行覆写 AController::GetPlayerViewPoint 在多个游戏角色间切换 # AController::Possess </description>
+    </item>
+    
+    <item>
+      <title>AIController类</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/aicontroller%E7%B1%BB/</link>
+      <pubDate>Sun, 05 Nov 2023 20:56:44 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/aicontroller%E7%B1%BB/</guid>
+      <description>NPC的控制器 AAIController # AAIController::SetPerceptionComponent # 设置感知组件, 传参 引用 void SetPerceptionComponent(UAIPerceptionComponent&amp;amp; InPerceptionComponent); AAIController::RunBehaviorTree # 运行行为树 /** Starts executing behavior tree. */ UFUNCTION(BlueprintCallable, Category = &amp;quot;AI&amp;quot;) virtual bool RunBehaviorTree(UBehaviorTree* BTAsset); 访问当前Pawn # AController::GetPawn 运行行为树 # 在下列函数中实现 AController::OnPossess </description>
+    </item>
+    
+  </channel>
+</rss>
