@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>重构和打包 - 六一的部落格</title>
-<meta name="description" content="重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&amp;lt;typename T&amp;gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&amp;gt;GetComponentByClass(T::StaticClass()); return Cast&amp;lt;T&amp;gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &amp;quot;STUUtils.h&amp;quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUWeaponComponent&amp;gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponComponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.cpp DecreaseAmmo 修改生命值百分比和武器信息颜色 # WBP_PlayerHUD 进度条 # 移动到左下角; 修改颜色 文本框 # 修改颜色 武器图标 # 进入到 GetWeaponIcon MakeSlateBrush , 展开Tint针脚; 修改颜色 修改元素名 # 打包 # ">
+<meta name="description" content="重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # 预编译命令应为pragma once, 代码框中有遗漏错误 Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&amp;lt;typename T&amp;gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&amp;gt;GetComponentByClass(T::StaticClass()); return Cast&amp;lt;T&amp;gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &amp;quot;STUUtils.h&amp;quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUWeaponComponent&amp;gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponComponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重构和打包">
-<meta property="og:description" content="重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&lt;typename T&gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&gt;GetComponentByClass(T::StaticClass()); return Cast&lt;T&gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &quot;STUUtils.h&quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&lt;USTUHealthComponent&gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&lt;USTUWeaponComponent&gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponComponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.cpp DecreaseAmmo 修改生命值百分比和武器信息颜色 # WBP_PlayerHUD 进度条 # 移动到左下角; 修改颜色 文本框 # 修改颜色 武器图标 # 进入到 GetWeaponIcon MakeSlateBrush , 展开Tint针脚; 修改颜色 修改元素名 # 打包 # ">
+<meta property="og:description" content="重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # 预编译命令应为pragma once, 代码框中有遗漏错误 Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&lt;typename T&gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&gt;GetComponentByClass(T::StaticClass()); return Cast&lt;T&gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &quot;STUUtils.h&quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&lt;USTUHealthComponent&gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&lt;USTUWeaponComponent&gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponComponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-10-09T04:19:50+00:00">
-  <meta property="article:modified_time" content="2023-10-11T07:24:15+08:00">
+  <meta property="article:modified_time" content="2023-11-06T18:10:35+08:00">
   
   <meta property="og:image" content="https://enjoy61.github.io/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://enjoy61.github.io/#/schema/organization/1"
         },
       "datePublished": "2023-10-09T04:19:50CET",
-      "dateModified": "2023-10-11T07:24:15CET",
+      "dateModified": "2023-11-06T18:10:35CET",
       "breadcrumb": {
         "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/"
           },
           "datePublished": "2023-10-09T04:19:50CET",
-          "dateModified": "2023-10-11T07:24:15CET",
+          "dateModified": "2023-11-06T18:10:35CET",
           "author": {
             "@id": "https://enjoy61.github.io/#/schema/person/2"
           },
@@ -883,6 +883,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/npc%E5%89%8D%E8%BF%9B%E5%90%91%E9%87%8F%E5%8F%98%E5%8C%96%E6%97%B6%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E6%97%8B%E8%BD%AC%E8%BF%87%E6%B8%A1/">NPC前进向量变化时自动插入旋转过渡</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/%E4%BB%8B%E7%BB%8Deqs%E8%B5%84%E4%BA%A7/">介绍EQS资产</a></li>
                                   
 
                                 
@@ -1904,6 +1911,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%AE%9E%E7%8E%B0%E5%B7%A1%E9%80%BB/">使用EQS实现巡逻</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%9C%A8%E6%95%8C%E4%BA%BA%E9%99%84%E8%BF%91%E7%A7%BB%E5%8A%A8/">使用EQS在敌人附近移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%AF%BB%E6%89%BE%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/">使用EQS寻找生命补给</a></li>
                                   
 
                                 
@@ -2634,6 +2655,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/%E4%BB%8B%E7%BB%8Deqs%E8%B5%84%E4%BA%A7/">介绍EQS资产</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -3652,6 +3680,20 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%AE%9E%E7%8E%B0%E5%B7%A1%E9%80%BB/">使用EQS实现巡逻</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%9C%A8%E6%95%8C%E4%BA%BA%E9%99%84%E8%BF%91%E7%A7%BB%E5%8A%A8/">使用EQS在敌人附近移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%AF%BB%E6%89%BE%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/">使用EQS寻找生命补给</a></li>
                                   
 
                                 
@@ -4319,6 +4361,13 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/%E4%BB%8B%E7%BB%8Deqs%E8%B5%84%E4%BA%A7/">介绍EQS资产</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -5340,6 +5389,20 @@
                                   
 
                                 
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%9C%A8%E6%95%8C%E4%BA%BA%E9%99%84%E8%BF%91%E7%A7%BB%E5%8A%A8/">使用EQS在敌人附近移动</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded" href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E9%9D%9E%E7%8E%A9%E5%AE%B6%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A1%8C%E4%B8%BA/%E4%BD%BF%E7%94%A8eqs%E5%AF%BB%E6%89%BE%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/">使用EQS寻找生命补给</a></li>
+                                  
+
+                                
                               </ul>
                             </div>
                           </li>
@@ -5524,7 +5587,8 @@
 			<h2 id="重构">重构 <a href="#%e9%87%8d%e6%9e%84" class="anchor" aria-hidden="true">#</a></h2>
 <h3 id="实现模板函数-获取pawn组件">实现模板函数: 获取Pawn组件 <a href="#%e5%ae%9e%e7%8e%b0%e6%a8%a1%e6%9d%bf%e5%87%bd%e6%95%b0-%e8%8e%b7%e5%8f%96pawn%e7%bb%84%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h3>
 <h4 id="添加头文件">添加头文件 <a href="#%e6%b7%bb%e5%8a%a0%e5%a4%b4%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h4>
-<p><code>Public/STUUtil.h</code> <br/></p>
+<p><strong>预编译命令应为pragma once, 代码框中有遗漏错误</strong> <br/>
+<code>Public/STUUtil.h</code> <br/></p>
 <pre><code class="language-cpp">#pragma
 
 class APawn;
