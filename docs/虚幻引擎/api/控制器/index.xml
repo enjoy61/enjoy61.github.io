@@ -30,7 +30,7 @@
       <pubDate>Sun, 05 Nov 2023 20:56:44 +0000</pubDate>
       
       <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%8E%A7%E5%88%B6%E5%99%A8/aicontroller%E7%B1%BB/</guid>
-      <description>NPC的控制器 AAIController # AAIController::SetPerceptionComponent # 设置感知组件, 传参 引用 void SetPerceptionComponent(UAIPerceptionComponent&amp;amp; InPerceptionComponent); AAIController::RunBehaviorTree # 运行行为树 /** Starts executing behavior tree. */ UFUNCTION(BlueprintCallable, Category = &amp;quot;AI&amp;quot;) virtual bool RunBehaviorTree(UBehaviorTree* BTAsset); 访问当前Pawn # AController::GetPawn 运行行为树 # 在下列函数中实现 AController::OnPossess </description>
+      <description>NPC的控制器 AAIController # AAIController::SetPerceptionComponent # 设置感知组件, 传参 引用 void SetPerceptionComponent(UAIPerceptionComponent&amp;amp; InPerceptionComponent); AAIController::RunBehaviorTree # 运行行为树 // Starts executing behavior tree UFUNCTION(BlueprintCallable, Category = &amp;quot;AI&amp;quot;) virtual bool RunBehaviorTree(UBehaviorTree* BTAsset); 访问当前Pawn # AController::GetPawn 运行行为树 # 在下列函数中实现 AController::OnPossess </description>
     </item>
     
   </channel>
