@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 05 Nov 2023 20:55:04 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>自定义组件</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 05 Nov 2023 20:58:40 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</guid>
+      <description>ActorComponent UActorComponent # UActorComponent::GetOwner # 访问组件上级 // Follow the Outer chain to get the AActor that &#39;Owns&#39; this component UFUNCTION(BlueprintCallable, Category=&amp;quot;Components&amp;quot;, meta=(Keywords = &amp;quot;Actor Owning Parent&amp;quot;)) AActor* GetOwner() const; UActorComponent::GetOwner&amp;lt;T&amp;gt; # 访问组件上级 // Templated version of GetOwner(), will return nullptr if cast fails template&amp;lt; class T &amp;gt; T* GetOwner() const { return Cast&amp;lt;T&amp;gt;(GetOwner()); } </description>
+    </item>
+    
+    <item>
       <title>创建组件</title>
       <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sun, 05 Nov 2023 20:58:36 +0000</pubDate>
@@ -16,12 +25,12 @@
     </item>
     
     <item>
-      <title>自定义组件</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</link>
-      <pubDate>Sun, 05 Nov 2023 20:58:40 +0000</pubDate>
+      <title>棋子运动组件</title>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%A3%8B%E5%AD%90%E8%BF%90%E5%8A%A8%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 05 Nov 2023 20:59:53 +0000</pubDate>
       
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</guid>
-      <description>ActorComponent UActorComponent # UActorComponent::GetOwner # 访问组件上级 /** Follow the Outer chain to get the AActor that &#39;Owns&#39; this component */ UFUNCTION(BlueprintCallable, Category=&amp;quot;Components&amp;quot;, meta=(Keywords = &amp;quot;Actor Owning Parent&amp;quot;)) AActor* GetOwner() const; UActorComponent::GetOwner&amp;lt;T&amp;gt; # 访问组件上级 /** Templated version of GetOwner(), will return nullptr if cast fails */ template&amp;lt; class T &amp;gt; T* GetOwner() const { return Cast&amp;lt;T&amp;gt;(GetOwner()); } </description>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%A3%8B%E5%AD%90%E8%BF%90%E5%8A%A8%E7%BB%84%E4%BB%B6/</guid>
+      <description>Pawn Movement UPawnMovementComponent # UPawnMovementComponent::GetPawnOwner # 获取组件上级 // Return the Pawn that owns UpdatedComponent UFUNCTION(BlueprintCallable, Category=&amp;quot;Pawn|Components|PawnMovement&amp;quot;) class APawn* GetPawnOwner() const; </description>
     </item>
     
     <item>
@@ -58,15 +67,6 @@
       
       <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%96%87%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%BB%84%E4%BB%B6/</guid>
       <description>Text Render UTextRenderComponent # 基类 # UPrimitiveComponent 相关函数 # UPrimitiveComponent::SetOwnerNoSee </description>
-    </item>
-    
-    <item>
-      <title>棋子运动组件</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%A3%8B%E5%AD%90%E8%BF%90%E5%8A%A8%E7%BB%84%E4%BB%B6/</link>
-      <pubDate>Sun, 05 Nov 2023 20:59:53 +0000</pubDate>
-      
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%A3%8B%E5%AD%90%E8%BF%90%E5%8A%A8%E7%BB%84%E4%BB%B6/</guid>
-      <description>Pawn Movement UPawnMovementComponent # UPawnMovementComponent::GetPawnOwner # 获取组件上级 /** Return the Pawn that owns UpdatedComponent. */ UFUNCTION(BlueprintCallable, Category=&amp;quot;Pawn|Components|PawnMovement&amp;quot;) class APawn* GetPawnOwner() const; </description>
     </item>
     
     <item>
