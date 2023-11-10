@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>补给 on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/</link>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/</link>
     <description>Recent content in 补给 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 11 Oct 2023 12:18:41 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Oct 2023 12:18:41 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>补给基类、生命补给和弹药补给</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</link>
       <pubDate>Wed, 11 Oct 2023 12:15:48 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E5%9F%BA%E7%B1%BB%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99%E5%92%8C%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</guid>
       <description>为地板和楼梯添加材质 # 从ShooterGame导出材质 # Content/Environment/Materials - M_FFA_Floor_02_Dark 地板 M_FFA_Wall_04 楼梯 导出 相关资产 导入到ShootThemUp # 创建文件夹 Content/ExternalContent/Pickup , 保存到此处 设置地板 # 应用材质 设置变换 设置楼梯 # 移除楼梯 添加楼梯 Place Actors &amp;gt; Geometry &amp;gt; Box 设置纹理 设置变换 设置规格 一共四级台阶 按下Option键, 延Z轴拖动台阶; Z方向按80递增, X方向按250递增 创建所需静态网格体和材质 # 创建材质类 # Content/Materials 创建材质, 命名为M_BaseGlow 两个参数: Color和Glow 发光参数默认值设为10 创建材质实例 MI_BlueGlow MI_GreenGlow 如图 创建静态网格体 # 新建文件夹 Content/Pickups/StaticMeshes 创建生命补给 # Place Actors &amp;gt; Geometry &amp;gt; Box , 添加 设置 Details &amp;gt; Brush Settings , X = 40, Y = 80, Z = 40 按下E, 切换到旋转模式 按下Option, 绕X轴旋转90渡 按下Command, 选中两个笔刷 Brush , Details &amp;gt; Brush Settings &amp;gt; Create Static Mesh 保存到 Content/Pickups/StaticMeshes , 命名为S_Health 双击打开, 应用材质 创建弹药补给 # Place Actors &amp;gt; Geometry &amp;gt; Cylinder , 添加 设置基准 Transform &amp;gt; Location : X = 1000, Y = 2000, Z = 50 圆柱有三个参数, 高度, 半径和分片 按下Option, 向上拖动, 设置参数 按下Option, 向上拖动, 设置参数 Place Actors &amp;gt; Geometry &amp;gt; Sphere , 添加 球体有两个参数, 半径和细分 按下Command, 选中三个圆柱和球体, 拖动, 二者间隔50 选中6个圆柱体, 2个球体, Details &amp;gt; Brush Settings &amp;gt; Create Static Mesh 命名为S_Rockets 应用材质 创建补给类 # 基类 上级文件夹 属性 STUBasePickup Actor Pickups Public STUAmmoPickup STUBasePickup STUHealthPickup STUBasePickup 创建派生类 C++ Classes &amp;gt; ShootThemUp &amp;gt; Public &amp;gt; Pickups &amp;gt; STUBasePickup 添加头文件搜索路径 ShootThemUp: ShootThemUp.</description>
     </item>
     
     <item>
       <title>持续提供补给</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E6%8C%81%E7%BB%AD%E6%8F%90%E4%BE%9B%E8%A1%A5%E7%BB%99/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E6%8C%81%E7%BB%AD%E6%8F%90%E4%BE%9B%E8%A1%A5%E7%BB%99/</link>
       <pubDate>Wed, 11 Oct 2023 14:10:57 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E6%8C%81%E7%BB%AD%E6%8F%90%E4%BE%9B%E8%A1%A5%E7%BB%99/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E6%8C%81%E7%BB%AD%E6%8F%90%E4%BE%9B%E8%A1%A5%E7%BB%99/</guid>
       <description>说明 # 拾取补给后开启定时器 实现 # 添加属性: 拾取后, 给定时长后可再次拾取补给 # ShootThemUp: Pickups/STUBasePickup.h protected UPROPERTY(EditAnywhere, BlueprintReadWrite) float RespawnTime = 5.0f; 添加函数: 拾取补给后, 关闭碰撞并隐藏补给, 开启定时器; 在定时器中开启碰撞再次显示补给 # ShootThemUp: Pickups/STUBasePickup.h private void PickupWasTaken(); void Respawn(); ShootThemUp: Pickups/STUBasePickup.cpp #include &amp;quot;TimerManager.h&amp;quot; // BeginPlay check(CollisionComponent); // NotifyActorBeginOverlap // Destroy PickupWasTaken(); void ASTUBasePickup::PickupWasTaken() { CollisionComponent-&amp;gt;SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore); if (GetRootComponent()) { GetRootComponent()-&amp;gt;SetVisibility(false, true); } FTimerHandle RespawnTimerHandle; GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &amp;amp;ASTUBasePickup::Respawn, RespawnTime); } void ASTUBasePickup::Respawn() { CollisionComponent-&amp;gt;SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Overlap); if (GetRootComponent()) { GetRootComponent()-&amp;gt;SetVisibility(true, true); } } 隐藏补给 # SetVisibility 第一个参数决定当前组件是否被渲染; 第二个参数决定其下级组件的渲染设置是否与该组件一致 查看 # 运行游戏实例, 按下 ` 打开终端, 输入 show collision 拾取补给后, 碰撞胶囊仍在, 若干秒后补给再次出现, 可反复领取 考虑到补给可能会导致用户数据的修改 # 实现接口 GivePickupTo 通过Pawn对象获取组件, 修改用户数据 private 基类实现 # 返回false ShootThemUp: Pickups/STUBasePickup.</description>
     </item>
     
     <item>
       <title>弹药补给</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</link>
       <pubDate>Wed, 11 Oct 2023 17:23:42 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E5%BC%B9%E8%8D%AF%E8%A1%A5%E7%BB%99/</guid>
       <description>说明 # 弹药补给包含2个参数: 武器类型和弹匣数 弹药补给逻辑 # 添加属性 # ShootThemUp: Pickups/STUAmmoPickup.h protected class ASTUBaseWeapon; UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = &amp;quot;1.0&amp;quot;, ClampMax = &amp;quot;10.0&amp;quot;)) int32 ClipsAmount = 10; UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf&amp;lt;ASTUBaseWeapon&amp;gt; WeaponType; 添加接口: 若非死亡跌倒或组件不可寻, 调用武器组件接口 # ShootThemUp: Pickups/STUAmmoPickup.cpp #include &amp;quot;Components/STUHealthComponent.h&amp;quot; #include &amp;quot;Components/STUWeaponComponent.h&amp;quot; #include &amp;quot;GameFramework/Pawn.h&amp;quot; #include &amp;quot;STUUtils.h&amp;quot; // GivePickupTo const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(PlayerPawn); if (!HealthComponent || HealthComponent-&amp;gt;IsDead()) return false; const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUWeaponComponent&amp;gt;(PlayerPawn); if (!WeaponComponent) return false; return WeaponComponent-&amp;gt;TryToAddAmmo(WeaponType, ClipsAmount); 武器组件逻辑 # 添加接口: 调用对应类型武器接口 ShootThemUp: Components/STUWeaponComponent.</description>
     </item>
     
     <item>
       <title>生命补给</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/</link>
       <pubDate>Wed, 11 Oct 2023 17:52:06 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E7%94%9F%E5%91%BD%E8%A1%A5%E7%BB%99/</guid>
       <description>生命补给逻辑 # 添加属性 # ShootThemUp: Pickups/STUHealthPickup.h protected UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = &amp;quot;1.0&amp;quot;, ClampMax = &amp;quot;100.0&amp;quot;)) float HealthAmount = 100.0f; 添加接口: 若非死亡跌倒或组件不可寻, 调用健康组件接口 # ShootThemUp: Pickups/STUHealthPickup.cpp #include &amp;quot;Components/STUHealthComponent.h&amp;quot; #include &amp;quot;GameFramework/Pawn.h&amp;quot; #include &amp;quot;STUUtils.h&amp;quot; // GivePickupTo const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(PlayerPawn); if (!HealthComponent || HealthComponent-&amp;gt;IsDead()) return false; return HealthComponent-&amp;gt;TryToAddHealth(HealthAmount); 生命组件逻辑 # ShootThemUp: Components/STUHealthComponent.h public bool TryToAddHealth(float HealthAmount); bool IsHealthFull() const; ShootThemUp: Components/STUHealthComponent.cpp bool USTUHealthComponent::IsHealthFull() const { return FMath::IsNearlyEqual(Health, MaxHealth); } bool USTUHealthComponent::TryToAddHealth(float HealthAmount) { if (IsHealthFull()) return false; SetHealth(Health + HealthAmount); return true; } 修改当前接口调用: 使用IsHealthFull # ShootThemUp: Components/STUHealthComponent.</description>
     </item>
     
     <item>
       <title>补给绕Z轴旋转</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</link>
       <pubDate>Wed, 11 Oct 2023 18:15:22 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E8%A1%A5%E7%BB%99%E7%BB%95z%E8%BD%B4%E6%97%8B%E8%BD%AC/</guid>
       <description>说明 # 让补给绕Z轴旋转, 旋转角度为给定范围里的随机值 添加属性 # ShootThemUp: Pickups/STUBasePickup.h private float RotationYaw = 0.0f; 添加接口 # ShootThemUp: Pickups/STUBasePickup.h private void GenerateRotationYaw(); ShootThemUp: Pickups/STUBasePickup.cpp // BeginPlay GenerateRotationYaw(); // Respawn GenerateRotationYaw(); // Tick AddActorLocalRotation(FRotator(0.0f, RotationYaw, 0.0f)); // AddActorWorldRotation void ASTUBasePickup::GenerateRotationYaw() { const auto Direction = FMath::RandBool() ? -1.0f : 1.0f; RotationYaw = FMath::RandRange(1.0f, 2.0f) * Direction; } 查看 # 按下按钮, 控制器释放对游戏角色的控制, 可以选择场景中的任意物体进行观察 在本地座标系和世界座标系间进行切换 </description>
     </item>
     
     <item>
       <title>重构和打包</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
       <pubDate>Wed, 11 Oct 2023 18:27:15 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
       <description>更改 # 没有弹药时, 不需要做加法 ShootThemUp: Weapon/STUBaseWeapon.cpp // TryToAddAmmo CurrentAmmo.Clips = FMath::Clamp(ClipsAmount, 0, DefaultAmmo.Clips + 1); </description>
     </item>
     

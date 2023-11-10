@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>虚幻C&#43;&#43; on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/</link>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/</link>
     <description>Recent content in 虚幻C&#43;&#43; on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Jun 2023 21:55:21 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 21:55:21 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>将Actor附加到可变换组件的挂载点</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</link>
       <pubDate>Wed, 21 Jun 2023 21:56:47 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%B0%86actor%E9%99%84%E5%8A%A0%E5%88%B0%E5%8F%AF%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8C%82%E8%BD%BD%E7%82%B9/</guid>
       <description>说明 # 通过AActor::AttachToComponent将Actor附加到可变换组件的挂载点上, 要求已在组件上添加挂载点, 并提供以下信息 - Actor 可变换组件 挂载规则 挂载点名称 挂载函数 AActor::AttachToComponent # AActor::AttachToComponent 可变换组件: USceneComponent及其派生类 # 基类 UPrimitiveComponent USceneComponent UMeshComponent UPrimitiveComponent USkeletalMeshComponent UMeshComponent UStaticMeshComponent UMeshComponent 挂载规则: FAttachmentTransformRules对象 # FAttachmentTransformRules # 说明 # UE_5.1/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h 如何计算附加Actor的变换属性 数据成员 # LocationRule, RotationRule和ScaleRule
 对应变换属性的三个分量 使用EAttachmentRule进行设置 bInWeldSimulatedBodies
 Whether to weld simulated bodies together when attaching 不知道效果, 设为false 构造函数 # 对变换属性的分量应用相同规则 FAttachmentTransformRules(EAttachmentRule InRule, bool bInWeldSimulatedBodies) : LocationRule(InRule) , RotationRule(InRule) , ScaleRule(InRule) , bWeldSimulatedBodies(bInWeldSimulatedBodies) {} 为变换属性定制规则 FAttachmentTransformRules(EAttachmentRule InLocationRule, EAttachmentRule InRotationRule, EAttachmentRule InScaleRule, bool bInWeldSimulatedBodies) : LocationRule(InLocationRule) , RotationRule(InRotationRule) , ScaleRule(InScaleRule) , bWeldSimulatedBodies(bInWeldSimulatedBodies) {} EAttachmentRule # 说明 # UE_5.</description>

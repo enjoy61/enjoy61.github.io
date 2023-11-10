@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>关卡设置 on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/</link>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/</link>
     <description>Recent content in 关卡设置 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 21 Jun 2023 19:52:11 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 19:52:11 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc++/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HUD类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/</link>
       <pubDate>Wed, 21 Jun 2023 21:50:34 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/hud%E7%B1%BB/</guid>
       <description>AHUD # Head Up Display 在世界设置中，可设置关卡使用HUD类 负责渲染接口，使之始终显示在游戏的最上方, 属于UI范畴 其功能很多都可被widget代替 UE_5.1/Engine/Source/Runtime/Engine/Classes/GameFramework/HUD.h AHUD::DrawHUD # HUD类主要循环函数，负责渲染，每帧调用 我们在其中绘制所需元素，线，长方形，显示纹理和文本，等等 AHUD::DrawLine # 在屏幕上绘制线条 参数 # - StartScreenX, StartScreenY 起点在屏幕的X和Y坐标 EndScreenX，EndScreenY 终点在屏幕的X和Y坐标 LineColor 线条颜色 LineThickness 线条粗细 AHUD::Canvas # 指针，指向可绘制HUD的画布（当前屏幕） 获取屏幕相关信息，或直接通过Canvas绘制图元 </description>
     </item>
     
     <item>
       <title>GameModeBase类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/</link>
       <pubDate>Wed, 21 Jun 2023 21:50:22 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E8%99%9A%E5%B9%BBc&#43;&#43;/%E5%85%B3%E5%8D%A1%E8%AE%BE%E7%BD%AE/gamemodebase%E7%B1%BB/</guid>
       <description>AGameModeBase # 关卡类 AGameModeBase::HUDClass # 设置关卡使用HUD类 </description>
     </item>
     
