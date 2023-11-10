@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>声明</title>
-      <link>https://www.enjoy61.com/license/</link>
-      <pubDate>Fri, 10 Nov 2023 18:30:10 +0000</pubDate>
-      
-      <guid>https://www.enjoy61.com/license/</guid>
-      <description>本博客属于个人所有，不涉及商业目的。 本博客的所有原创作品，包括文字、图片、资料、代码等，转载时请标注作者与来源。未经允许，不得用于赢利目的。 本博客的所有原创作品采用“知识共享”署名-非商业性使用-相同方式共享4.0协议进行许可。 </description>
-    </item>
-    
-    <item>
       <title>书签</title>
       <link>https://www.enjoy61.com/bookmark/</link>
       <pubDate>Mon, 14 Aug 2023 15:17:00 +0000</pubDate>
@@ -31,20 +22,20 @@
     </item>
     
     <item>
-      <title>日志</title>
-      <link>https://www.enjoy61.com/blog/</link>
-      <pubDate>Sat, 10 Jun 2023 23:03:44 +0000</pubDate>
-      
-      <guid>https://www.enjoy61.com/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>关于</title>
       <link>https://www.enjoy61.com/about/</link>
       <pubDate>Sat, 10 Jun 2023 23:03:25 +0000</pubDate>
       
       <guid>https://www.enjoy61.com/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日志</title>
+      <link>https://www.enjoy61.com/blog/</link>
+      <pubDate>Sat, 10 Jun 2023 23:03:44 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/blog/</guid>
       <description></description>
     </item>
     
