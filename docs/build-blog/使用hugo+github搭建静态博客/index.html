@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>图片水平循环滚动 - 六一的部落格</title>
-<meta name="description" content="便签 # - 环状滚动 1. html格式 2. css样式 3. transform: translateX 多个li显示在一行 display: inline-block 基础html格式&#43;css样式 通过js设置css参数 1. element.style.setProperty(&amp;rsquo;transform&amp;rsquo;, &amp;rsquo;translateX(1px)&#39;) 2. element.style.getPropertyValue(&amp;rsquo;transform&#39;) 3. element.style.cssText = &amp;rsquo;left: 10px&#39; 4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置 css Position 1. li标签不自动换行: absolute, fixed 2. 计算绝对位置 样式 # css - imageList height 滚动框高度, 滚动框之间的边界 overflow 向右滚动时, 溢出不触发滚动条 perspective 1. 滚动框左右的边界 2. 垂直滚动时, 滚动框跟随滚动 li width 图片宽度 padding 第一个参数: top边界, 滚动框之间的间隔 第二个参数: 嵌套时长宽边界 position 1. 多个li不自动换行 2. 采用绝对位置 3. fixed或absolute都可 display li显示在一行 .">
-  <link rel="canonical" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">
+  <title>使用Hugo&#43;GitHub搭建静态博客 - 六一的部落格</title>
+<meta name="description" content="说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.">
+  <link rel="canonical" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片水平循环滚动">
-<meta property="og:description" content="便签 # - 环状滚动 1. html格式 2. css样式 3. transform: translateX 多个li显示在一行 display: inline-block 基础html格式&#43;css样式 通过js设置css参数 1. element.style.setProperty(&rsquo;transform&rsquo;, &rsquo;translateX(1px)&#39;) 2. element.style.getPropertyValue(&rsquo;transform&#39;) 3. element.style.cssText = &rsquo;left: 10px&#39; 4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置 css Position 1. li标签不自动换行: absolute, fixed 2. 计算绝对位置 样式 # css - imageList height 滚动框高度, 滚动框之间的边界 overflow 向右滚动时, 溢出不触发滚动条 perspective 1. 滚动框左右的边界 2. 垂直滚动时, 滚动框跟随滚动 li width 图片宽度 padding 第一个参数: top边界, 滚动框之间的间隔 第二个参数: 嵌套时长宽边界 position 1. 多个li不自动换行 2. 采用绝对位置 3. fixed或absolute都可 display li显示在一行 .">
-<meta property="og:url" content="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">
+<meta property="og:title" content="使用Hugo&#43;GitHub搭建静态博客">
+<meta property="og:description" content="说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.">
+<meta property="og:url" content="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-08-14T01:20:15+00:00">
-  <meta property="article:modified_time" content="2023-08-16T13:26:55+08:00">
+<meta property="article:published_time" content="2023-06-08T10:57:46+00:00">
+  <meta property="article:modified_time" content="2023-11-10T14:52:08+08:00">
   
   <meta property="og:image" content="https://www.enjoy61.com/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="图片水平循环滚动">
+<meta name="twitter:title" content="使用Hugo&#43;GitHub搭建静态博客">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.enjoy61.com/doks.png">
-    <meta name="twitter:image:alt" content="图片水平循环滚动">
+    <meta name="twitter:image:alt" content="使用Hugo&#43;GitHub搭建静态博客">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/",
-      "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/",
-      "name": "图片水平循环滚动",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/",
+      "url": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/",
+      "name": "使用Hugo\u002bGitHub搭建静态博客",
       "description": "",
       "isPartOf": {
         "@id": "https://www.enjoy61.com/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://www.enjoy61.com/#/schema/organization/1"
         },
-      "datePublished": "2023-08-14T01:20:15CET",
-      "dateModified": "2023-08-16T13:26:55CET",
+      "datePublished": "2023-06-08T10:57:46CET",
+      "dateModified": "2023-11-10T14:52:08CET",
       "breadcrumb": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/#/schema/image/2"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/"]
+        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,24 +125,15 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "name": "% E5%88%86% E4% Ba% Ab"
+          "@id": "https://www.enjoy61.com/docs/build-blog/",
+          "url": "https://www.enjoy61.com/docs/build-blog/",
+          "name": "Build Blog"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "name": "Hugo"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  5 ,
-        "item": {
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/"
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
           }
         }]
     },
@@ -153,16 +144,16 @@
         {
           "@type": "Article",
           "@id": "https://www.enjoy61.com/#/schema/article/1",
-          "headline": "图片水平循环滚动",
+          "headline": "使用Hugo\u002bGitHub搭建静态博客",
           "description": "",
           "isPartOf": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
           },
           "mainEntityOfPage": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
           },
-          "datePublished": "2023-08-14T01:20:15CET",
-          "dateModified": "2023-08-16T13:26:55CET",
+          "datePublished": "2023-06-08T10:57:46CET",
+          "dateModified": "2023-11-10T14:52:08CET",
           "author": {
             "@id": "https://www.enjoy61.com/#/schema/person/2"
           },
@@ -170,7 +161,7 @@
               "@id": "https://www.enjoy61.com/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/#/schema/image/2"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2"
           }
         }
       ]
@@ -195,10 +186,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/#/schema/image/2",
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo+github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/#/schema/image/2",
           "url": "https://www.enjoy61.com/doks.png",
           "contentUrl": "https://www.enjoy61.com/doks.png",
-          "caption": "图片水平循环滚动"
+          "caption": "使用Hugo\u002bGitHub搭建静态博客"
         }
       ]
     }
@@ -287,10 +278,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -708,48 +763,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -773,33 +786,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -2100,10 +2086,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2521,48 +2571,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -2586,33 +2594,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -3850,10 +3831,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -4271,48 +4316,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -4336,33 +4339,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -5560,30 +5536,22 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#便签">便签</a></li>
-    <li><a href="#样式">样式</a></li>
-    <li><a href="#图片存放在无序列表-使用id标识">图片存放在无序列表, 使用id标识</a></li>
-    <li><a href="#图片水平循环滚动">图片水平循环滚动</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装hugo">安装Hugo</a>
       <ul>
-        <li><a href="#进入判断">进入判断</a></li>
-        <li><a href="#图片组规格">图片组规格</a></li>
-        <li><a href="#步长">步长</a></li>
-        <li><a href="#游标">游标</a>
-          <ul>
-            <li><a href="#定义游标">定义游标</a></li>
-            <li><a href="#开启循环定时器-更新游标">开启循环定时器, 更新游标</a></li>
-          </ul>
-        </li>
-        <li><a href="#实现函数-根据游标实时位置-平移图片组成员">实现函数: 根据游标实时位置, 平移图片组成员</a>
-          <ul>
-            <li><a href="#参数">参数</a></li>
-            <li><a href="#遍历图片组">遍历图片组</a></li>
-            <li><a href="#根据成员的相对位置计算平移">根据成员的相对位置计算平移</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+        <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
       </ul>
     </li>
+    <li><a href="#创建站点项目">创建站点项目</a></li>
+    <li><a href="#使用主题anubis">使用主题anubis</a></li>
+    <li><a href="#构建静态网页">构建静态网页</a>
+      <ul>
+        <li><a href="#本地测试">本地测试</a></li>
+        <li><a href="#构建静态页面">构建静态页面</a></li>
+      </ul>
+    </li>
+    <li><a href="#在github创建项目">在Github创建项目</a></li>
   </ul>
 </nav>
       </div>
@@ -5595,30 +5563,22 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#便签">便签</a></li>
-    <li><a href="#样式">样式</a></li>
-    <li><a href="#图片存放在无序列表-使用id标识">图片存放在无序列表, 使用id标识</a></li>
-    <li><a href="#图片水平循环滚动">图片水平循环滚动</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装hugo">安装Hugo</a>
       <ul>
-        <li><a href="#进入判断">进入判断</a></li>
-        <li><a href="#图片组规格">图片组规格</a></li>
-        <li><a href="#步长">步长</a></li>
-        <li><a href="#游标">游标</a>
-          <ul>
-            <li><a href="#定义游标">定义游标</a></li>
-            <li><a href="#开启循环定时器-更新游标">开启循环定时器, 更新游标</a></li>
-          </ul>
-        </li>
-        <li><a href="#实现函数-根据游标实时位置-平移图片组成员">实现函数: 根据游标实时位置, 平移图片组成员</a>
-          <ul>
-            <li><a href="#参数">参数</a></li>
-            <li><a href="#遍历图片组">遍历图片组</a></li>
-            <li><a href="#根据成员的相对位置计算平移">根据成员的相对位置计算平移</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+        <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
       </ul>
     </li>
+    <li><a href="#创建站点项目">创建站点项目</a></li>
+    <li><a href="#使用主题anubis">使用主题anubis</a></li>
+    <li><a href="#构建静态网页">构建静态网页</a>
+      <ul>
+        <li><a href="#本地测试">本地测试</a></li>
+        <li><a href="#构建静态页面">构建静态页面</a></li>
+      </ul>
+    </li>
+    <li><a href="#在github创建项目">在Github创建项目</a></li>
   </ul>
 </nav>
   </nav>
@@ -5631,13 +5591,12 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/hugo/">Hugo</a></li>
-<li class="breadcrumb-item active" aria-current="page">图片水平循环滚动</li>
+<li class="breadcrumb-item"><a href="/docs/build-blog/">🔨📓</a></li>
+<li class="breadcrumb-item active" aria-current="page">使用Hugo&#43;GitHub搭建静态博客</li>
 					</ol>
 				</nav>
 			
-			<h1>图片水平循环滚动</h1>
+			<h1>使用Hugo&#43;GitHub搭建静态博客</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -5653,30 +5612,22 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#便签">便签</a></li>
-    <li><a href="#样式">样式</a></li>
-    <li><a href="#图片存放在无序列表-使用id标识">图片存放在无序列表, 使用id标识</a></li>
-    <li><a href="#图片水平循环滚动">图片水平循环滚动</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装hugo">安装Hugo</a>
       <ul>
-        <li><a href="#进入判断">进入判断</a></li>
-        <li><a href="#图片组规格">图片组规格</a></li>
-        <li><a href="#步长">步长</a></li>
-        <li><a href="#游标">游标</a>
-          <ul>
-            <li><a href="#定义游标">定义游标</a></li>
-            <li><a href="#开启循环定时器-更新游标">开启循环定时器, 更新游标</a></li>
-          </ul>
-        </li>
-        <li><a href="#实现函数-根据游标实时位置-平移图片组成员">实现函数: 根据游标实时位置, 平移图片组成员</a>
-          <ul>
-            <li><a href="#参数">参数</a></li>
-            <li><a href="#遍历图片组">遍历图片组</a></li>
-            <li><a href="#根据成员的相对位置计算平移">根据成员的相对位置计算平移</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+        <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
       </ul>
     </li>
+    <li><a href="#创建站点项目">创建站点项目</a></li>
+    <li><a href="#使用主题anubis">使用主题anubis</a></li>
+    <li><a href="#构建静态网页">构建静态网页</a>
+      <ul>
+        <li><a href="#本地测试">本地测试</a></li>
+        <li><a href="#构建静态页面">构建静态页面</a></li>
+      </ul>
+    </li>
+    <li><a href="#在github创建项目">在Github创建项目</a></li>
   </ul>
 </nav>
       </div>
@@ -5688,421 +5639,280 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#便签">便签</a></li>
-    <li><a href="#样式">样式</a></li>
-    <li><a href="#图片存放在无序列表-使用id标识">图片存放在无序列表, 使用id标识</a></li>
-    <li><a href="#图片水平循环滚动">图片水平循环滚动</a>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装hugo">安装Hugo</a>
       <ul>
-        <li><a href="#进入判断">进入判断</a></li>
-        <li><a href="#图片组规格">图片组规格</a></li>
-        <li><a href="#步长">步长</a></li>
-        <li><a href="#游标">游标</a>
-          <ul>
-            <li><a href="#定义游标">定义游标</a></li>
-            <li><a href="#开启循环定时器-更新游标">开启循环定时器, 更新游标</a></li>
-          </ul>
-        </li>
-        <li><a href="#实现函数-根据游标实时位置-平移图片组成员">实现函数: 根据游标实时位置, 平移图片组成员</a>
-          <ul>
-            <li><a href="#参数">参数</a></li>
-            <li><a href="#遍历图片组">遍历图片组</a></li>
-            <li><a href="#根据成员的相对位置计算平移">根据成员的相对位置计算平移</a></li>
-          </ul>
-        </li>
-        <li><a href="#完整代码">完整代码</a></li>
+        <li><a href="#方法一-使用go安装">方法一: 使用go安装</a></li>
+        <li><a href="#方法二-使用homebrew安装">方法二: 使用homebrew安装</a></li>
       </ul>
     </li>
+    <li><a href="#创建站点项目">创建站点项目</a></li>
+    <li><a href="#使用主题anubis">使用主题anubis</a></li>
+    <li><a href="#构建静态网页">构建静态网页</a>
+      <ul>
+        <li><a href="#本地测试">本地测试</a></li>
+        <li><a href="#构建静态页面">构建静态页面</a></li>
+      </ul>
+    </li>
+    <li><a href="#在github创建项目">在Github创建项目</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>-</th>
 <th></th>
+<th>-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://blog.csdn.net/weixin_30823001/article/details/97182949">环状滚动</a></td>
-<td>1. html格式</td>
+<td>Github Pages</td>
+<td>使用Github提供的免费服务部署静态博客</td>
 </tr>
 <tr>
-<td></td>
-<td>2. css样式</td>
+<td>Hugo</td>
+<td>本地构建静态网页</td>
 </tr>
 <tr>
-<td></td>
-<td>3. transform: translateX</td>
-</tr>
-<tr>
-<td><a href="https://blog.csdn.net/asxxf/article/details/53303987">多个li显示在一行</a></td>
-<td>display: inline-block</td>
-</tr>
-<tr>
-<td><a href="https://cloud.tencent.com/developer/article/1093726">基础html格式+css样式</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.cnblogs.com/LiuWeiLong/p/6058059.html">通过js设置css参数</a></td>
-<td>1. element.style.setProperty(&rsquo;transform&rsquo;, &rsquo;translateX(1px)')</td>
-</tr>
-<tr>
-<td></td>
-<td>2. element.style.getPropertyValue(&rsquo;transform')</td>
-</tr>
-<tr>
-<td></td>
-<td>3. element.style.cssText = &rsquo;left: 10px'</td>
-</tr>
-<tr>
-<td></td>
-<td>4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置</td>
-</tr>
-<tr>
-<td><a href="https://www.runoob.com/css/css-positioning.html">css Position</a></td>
-<td>1. li标签不自动换行: absolute, fixed</td>
-</tr>
-<tr>
-<td></td>
-<td>2. 计算绝对位置</td>
+<td>anubis</td>
+<td>主题</td>
 </tr>
 </tbody>
 </table>
-<h2 id="样式">样式 <a href="#%e6%a0%b7%e5%bc%8f" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>css</code> <br/></p>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>imageList</td>
-<td>height</td>
-<td>滚动框高度, 滚动框之间的边界</td>
-</tr>
-<tr>
-<td></td>
-<td>overflow</td>
-<td>向右滚动时, 溢出不触发滚动条</td>
-</tr>
-<tr>
-<td></td>
-<td>perspective</td>
-<td>1. 滚动框左右的边界</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>2. 垂直滚动时, 滚动框跟随滚动</td>
-</tr>
-<tr>
-<td>li</td>
-<td>width</td>
-<td>图片宽度</td>
-</tr>
-<tr>
-<td></td>
-<td>padding</td>
-<td>第一个参数: top边界, 滚动框之间的间隔</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>第二个参数: 嵌套时长宽边界</td>
-</tr>
-<tr>
-<td></td>
-<td>position</td>
-<td>1. 多个li不自动换行</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>2. 采用绝对位置</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>3. fixed或absolute都可</td>
-</tr>
-<tr>
-<td></td>
-<td>display</td>
-<td>li显示在一行</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-css">.imageList {
-  height: 158px;
-  overflow: hidden;
-  perspective: 2000px;
-
-  ul li {
-    width: 200px;
-    padding: 2px 2px;
-    position: fixed;
-    display: inline-block;
-
-    // 去除小黑点
-    // overflow: hidden;
-
-    // 四个角圆润
-    // border-radius: 5px;
-  }
-}
-</code></pre>
-<h2 id="图片存放在无序列表-使用id标识">图片存放在无序列表, 使用id标识 <a href="#%e5%9b%be%e7%89%87%e5%ad%98%e6%94%be%e5%9c%a8%e6%97%a0%e5%ba%8f%e5%88%97%e8%a1%a8-%e4%bd%bf%e7%94%a8id%e6%a0%87%e8%af%86" class="anchor" aria-hidden="true">#</a></h2>
-<p><code>html</code> <br/>
-scrollpic1向右滚动, scrollpic2向左滚动 <br/></p>
-<pre><code class="language-html">&lt;div class=&quot;imageList&quot; id=&quot;scrollpic1&quot;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;img src=&quot;1.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;2.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;3.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;4.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;5.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;6.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;1.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;2.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;3.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;4.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;5.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;6.jpg&quot; /&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageList&quot; id=&quot;scrollpic2&quot;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;img src=&quot;7.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;8.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;9.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;10.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;11.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;12.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;7.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;8.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;9.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;10.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;11.jpg&quot; /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;img src=&quot;12.jpg&quot; /&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-<h2 id="图片水平循环滚动">图片水平循环滚动 <a href="#%e5%9b%be%e7%89%87%e6%b0%b4%e5%b9%b3%e5%be%aa%e7%8e%af%e6%bb%9a%e5%8a%a8" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="进入判断">进入判断 <a href="#%e8%bf%9b%e5%85%a5%e5%88%a4%e6%96%ad" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', () =&gt; {
-  const pics1 = document.querySelectorAll('#scrollpic1 li');
-  const pics2 = document.querySelectorAll('#scrollpic2 li');
-  if (!pics1.length || !pics2.length) return;
-
-  // 后续处理
-});
-</code></pre>
-<h3 id="图片组规格">图片组规格 <a href="#%e5%9b%be%e7%89%87%e7%bb%84%e8%a7%84%e6%a0%bc" class="anchor" aria-hidden="true">#</a></h3>
+<h2 id="安装hugo">安装Hugo <a href="#%e5%ae%89%e8%a3%85hugo" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://github.com/gohugoio/hugo#install-hugo-as-your-site-generator-binary-install">Github</a> <br/>
+<a href="https://gohugo.io/">官网</a> <br/></p>
+<h3 id="方法一-使用go安装">方法一: 使用go安装 <a href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e4%bd%bf%e7%94%a8go%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>Windows</code> <br/></p>
 <ol>
-<li>单张图片宽度200px(ul li width) <br/>
-考虑到图片间隔: <br/>
-<pre><code class="language-javascript">const PicWidth = 205;
+<li>安装go <br/>
+<a href="https://go.dev/dl/">官网下载</a> <br/>
+<ul>
+<li>环境变量 <br/>
+<pre><code class="language-bash"># go
+export PATH=/usr/local/go/bin:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=/Users/USERNAME/go
+export GOBIN=/Users/USERNAME/go/bin
+
+# go安装的软件
+export PATH=$GOBIN:$PATH
 </code></pre>
 </li>
-<li>一组12张图, 实际滚动框宽度: <br/>
-<pre><code class="language-text">205px * 12 = 2460px
+</ul>
+</li>
+<li>安装hugo <br/>
+<ul>
+<li>如若遇上网络不佳, 配置代理 <br/>
+<pre><code class="language-bash">go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GOSUMDB=off
 </code></pre>
 </li>
-<li>考虑到左右溢出和窗口宽度, 图片水平位移范围: <br/>
-<pre><code class="language-javascript">const FrontEnd = 2000; // &gt; window.innerWidth
-const BackEnd = -460;
+<li>安装并验证 <br/>
+<pre><code class="language-bash">go install github.com/gohugoio/hugo@latest
+hugo env -v
+</code></pre>
+</li>
+<li><a href="https://github.com/gohugoio/hugo/releases">部分主题需用hugo_extended提供的支持</a> <br/></li>
+</ul>
+</li>
+</ol>
+<h3 id="方法二-使用homebrew安装">方法二: 使用homebrew安装 <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e4%bd%bf%e7%94%a8homebrew%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true">#</a></h3>
+<p><code>macOS</code> <br/></p>
+<pre><code class="language-bash">brew install hugo
+</code></pre>
+<h2 id="创建站点项目">创建站点项目 <a href="#%e5%88%9b%e5%bb%ba%e7%ab%99%e7%82%b9%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>新建站点 <br/>
+<pre><code class="language-bash">hugo new site /site/path
+</code></pre>
+</li>
+<li>站点项目结构 <br/>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config.toml</td>
+<td>配置文件；yaml格式也可以</td>
+</tr>
+<tr>
+<td>content</td>
+<td>存放blog；支持md和org</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>存放主题</td>
+</tr>
+<tr>
+<td>public</td>
+<td>生成的静态页面；同步到Github项目</td>
+</tr>
+<tr>
+<td>archetypes</td>
+<td>文章模版</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>新建博客 <br/>
+所在目录为 ./content/post <br/>
+<pre><code class="language-bash">hugo new post/first-blog.org
 </code></pre>
 </li>
 </ol>
-<h3 id="步长">步长 <a href="#%e6%ad%a5%e9%95%bf" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">const Step = 0.2;
+<h2 id="使用主题anubis">使用主题anubis <a href="#%e4%bd%bf%e7%94%a8%e4%b8%bb%e9%a2%98anubis" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://themes.gohugo.io/themes/hugo-theme-anubis/">anubis on hugo</a> <br/>
+<a href="https://github.com/mitrichius/hugo-theme-anubis">anubis on github</a> <br/></p>
+<ol>
+<li>将主题作为项目子模块 <br/>
+<pre><code class="language-bash">git init
+git submodule add https://github.com/mitrichius/hugo-theme-anubis.git themes/anubis
 </code></pre>
-<h3 id="游标">游标 <a href="#%e6%b8%b8%e6%a0%87" class="anchor" aria-hidden="true">#</a></h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>向右滚动</td>
-<td>0 ~ (FrontEnd - BackEnd)</td>
-</tr>
-<tr>
-<td>向左滚动</td>
-<td>(BackEnd - FrontEnd) ~ 0</td>
-</tr>
-</tbody>
-</table>
-<h4 id="定义游标">定义游标 <a href="#%e5%ae%9a%e4%b9%89%e6%b8%b8%e6%a0%87" class="anchor" aria-hidden="true">#</a></h4>
-<p>全局变量 <br/></p>
-<pre><code class="language-javascript">let Cur1 = 0;
-let Cur2 = 0;
+</li>
+<li>使用anubis提供的模板 <br/>
+<code>./themes/anubis/exampleSite/</code> <br/>
+<pre><code class="language-bash">cp themes/anubis/exampleSite/config.toml .
+cp themes/anubis/exampleSite/content/. content
 </code></pre>
-<h4 id="开启循环定时器-更新游标">开启循环定时器, 更新游标 <a href="#%e5%bc%80%e5%90%af%e5%be%aa%e7%8e%af%e5%ae%9a%e6%97%b6%e5%99%a8-%e6%9b%b4%e6%96%b0%e6%b8%b8%e6%a0%87" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-javascript">const ScrollTimerInterval = 5;
-
-const scrollTimer = window.setInterval(function () {
-    Cur1 = (Cur1 + Step) % (FrontEnd - BackEnd); // 向右滚动
-    Cur2 = (Cur2 - Step) % (FrontEnd - BackEnd); // 向左滚动
-}, ScrollTimerInterval);
-</code></pre>
-<h3 id="实现函数-根据游标实时位置-平移图片组成员">实现函数: 根据游标实时位置, 平移图片组成员 <a href="#%e5%ae%9e%e7%8e%b0%e5%87%bd%e6%95%b0-%e6%a0%b9%e6%8d%ae%e6%b8%b8%e6%a0%87%e5%ae%9e%e6%97%b6%e4%bd%8d%e7%bd%ae-%e5%b9%b3%e7%a7%bb%e5%9b%be%e7%89%87%e7%bb%84%e6%88%90%e5%91%98" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>translatePic</code> <br/></p>
-<h4 id="参数">参数 <a href="#%e5%8f%82%e6%95%b0" class="anchor" aria-hidden="true">#</a></h4>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pics</td>
-<td>图片组</td>
-</tr>
-<tr>
-<td>cur</td>
-<td>游标</td>
-</tr>
-</tbody>
-</table>
-<h4 id="遍历图片组">遍历图片组 <a href="#%e9%81%8d%e5%8e%86%e5%9b%be%e7%89%87%e7%bb%84" class="anchor" aria-hidden="true">#</a></h4>
-<pre><code class="language-javascript">function translatePic(pics, cur) {
-    for (let i = 0; i &lt; pics.length; ++i) {
-        // 处理成员
-    }
-}
-</code></pre>
-<h4 id="根据成员的相对位置计算平移">根据成员的相对位置计算平移 <a href="#%e6%a0%b9%e6%8d%ae%e6%88%90%e5%91%98%e7%9a%84%e7%9b%b8%e5%af%b9%e4%bd%8d%e7%bd%ae%e8%ae%a1%e7%ae%97%e5%b9%b3%e7%a7%bb" class="anchor" aria-hidden="true">#</a></h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th>-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>向右滚动</td>
-<td>cur</td>
-<td>0 ~ (FrontEnd - BackEnd)</td>
-</tr>
-<tr>
-<td></td>
-<td>成员偏移</td>
-<td>0 ~ (FrontEnd - BackEnd)</td>
-</tr>
-<tr>
-<td></td>
-<td>thisCur</td>
-<td>0 ~ 2 * (FrontEnd - BackEnd)</td>
-</tr>
-<tr>
-<td>向左滚动</td>
-<td>cur</td>
-<td>(BackEnd - FrontEnd) ~ 0</td>
-</tr>
-<tr>
-<td></td>
-<td>成员偏移</td>
-<td>0 ~ (FrontEnd - BackEnd)</td>
-</tr>
-<tr>
-<td></td>
-<td>thisCur</td>
-<td>(BackEnd - FrontEnd) ~ (FrontEnd - BackEnd)</td>
-</tr>
-</tbody>
-</table>
-<!--list-separator-->
+</li>
+<li>主题说明 <br/>
 <ul>
-<li>
-<p>控制成员平移范围</p>
-<p>thisCur范围应该为BackEnd ~ FrontEnd <br/></p>
-<pre><code class="language-javascript">let thisCur = cur + i * PicWidth;
+<li>提供标签(tags)和分类(categories)功能, 提供文章列表(archives) <br/></li>
+<li>文章存放到content/post目录下 <br/></li>
+</ul>
+</li>
+<li>文章模板 <br/>
+<code>yaml</code> <br/>
+<pre><code class="language-text">---
+author: &quot;author&quot;
+title: &quot;article title&quot;
+date: &quot;2023-03-17&quot;
+description: &quot;article description&quot;
+tags: [
+&quot;tag-1&quot;,
+&quot;tag-2&quot;,
+]
+categories: [
+&quot;category&quot;,
+]
+---
+简单介绍
 
-if (thisCur &gt; FrontEnd)
-    thisCur -= FrontEnd - BackEnd;
-else if (thisCur &lt; BackEnd)
-    thisCur += FrontEnd - BackEnd;
+&lt;!- -more- -&gt;
+
+正文
+</code></pre>
+<strong>移除 <code>- -</code> 之间的空格</strong> <br/></li>
+</ol>
+<h2 id="构建静态网页">构建静态网页 <a href="#%e6%9e%84%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" class="anchor" aria-hidden="true">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th></th>
+<th>构建或测试</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- -theme=anubis</td>
+<td>设置主题</td>
+<td>-t anubis</td>
+<td>both</td>
+</tr>
+<tr>
+<td>- -watch</td>
+<td>修改文件后自动刷新浏览器</td>
+<td>-w</td>
+<td>server</td>
+</tr>
+<tr>
+<td>- -buildDrafts</td>
+<td>包括标记为draft的笔记</td>
+<td>-D</td>
+<td>both</td>
+</tr>
+<tr>
+<td>- -buildFuture</td>
+<td>包括新发布笔记；检查date选项</td>
+<td>-F</td>
+<td>both</td>
+</tr>
+<tr>
+<td>- -baseUrl=&quot;<a href="http://enjoy61.github.io/">http://enjoy61.github.io/</a>&quot;</td>
+<td>未配置编译，GithubPage部署会丢失样式</td>
+<td></td>
+<td>both</td>
+</tr>
+<tr>
+<td>- -cleanDestinationDir</td>
+<td>将public文件夹中不再使用的文件删除</td>
+<td></td>
+<td>hugo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>移除 <code>- -</code> 之间的空格</strong> <br/></p>
+<h3 id="本地测试">本地测试 <a href="#%e6%9c%ac%e5%9c%b0%e6%b5%8b%e8%af%95" class="anchor" aria-hidden="true">#</a></h3>
+<ul>
+<li>查询server选项 <br/>
+<a href="https://www.gohugo.org/doc/overview/quickstart/">参考</a> <br/>
+<pre><code class="language-bash">hugo help server
+</code></pre>
+</li>
+<li>访问 <a href="http://localhost:1313/">http://localhost:1313/</a> <br/>
+<pre><code class="language-bash">hugo server --theme=anubis --watch
+# hugo server
 </code></pre>
 </li>
 </ul>
-<!--list-separator-->
+<h3 id="构建静态页面">构建静态页面 <a href="#%e6%9e%84%e5%bb%ba%e9%9d%99%e6%80%81%e9%a1%b5%e9%9d%a2" class="anchor" aria-hidden="true">#</a></h3>
+<p>生成文件路径 ./public/ <br/></p>
+<pre><code class="language-bash">hugo --theme=anubis --baseUrl=&quot;https://enjoy61.github.io/&quot;
+# hugo
+</code></pre>
+<h2 id="在github创建项目">在Github创建项目 <a href="#%e5%9c%a8github%e5%88%9b%e5%bb%ba%e9%a1%b9%e7%9b%ae" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>创建仓库 <br/>
 <ul>
-<li>
-<p>平移成员</p>
-<pre><code class="language-javascript">const value = 'translateX(' + thisCur + 'px)';
-pics[i].style.setProperty('transform', value);
+<li>仓库名为enjoy61.github.io <br/></li>
+<li>使用Github Pages提供的免费服务需公开项目 <br/></li>
+</ul>
+</li>
+<li>测试服务: 为github设置主题 <br/>
+添加_config.yaml文件 <br/>
+<pre><code class="language-bash">remote_theme: pages-themes/midnight@v0.2.0
 </code></pre>
 </li>
-</ul>
-<h3 id="完整代码">完整代码 <a href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">const PicWidth = 205;
-const FrontEnd = 2000;
-const BackEnd = -460;
-const Step = 0.2;
-const ScrollTimerInterval = 5;
-
-function translatePic(pics, cur) {
-  for (let i = 0; i &lt; pics.length; ++i) {
-    let thisCur = cur + i * PicWidth;
-
-    if (thisCur &gt; FrontEnd)
-      thisCur -= FrontEnd - BackEnd;
-    else if (thisCur &lt; BackEnd)
-      thisCur += FrontEnd - BackEnd;
-
-    const value = 'translateX(' + thisCur + 'px)';
-    pics[i].style.setProperty('transform', value);
-  }
-}
-
-let Cur1 = 0;
-let Cur2 = 0;
-document.addEventListener('DOMContentLoaded', () =&gt; {
-  const pics1 = document.querySelectorAll('#scrollpic1 li');
-  const pics2 = document.querySelectorAll('#scrollpic2 li');
-  if (!pics1.length || !pics2.length) return;
-
-  const scrollTimer = window.setInterval(function () {
-    Cur1 = (Cur1 + Step) % (FrontEnd - BackEnd); // 0 ~ (FrontEnd - BackEnd)
-    Cur2 = (Cur2 - Step) % (FrontEnd - BackEnd); // (BackEnd - FrontEnd) ~ 0
-    translatePic(pics1, Cur1);
-    translatePic(pics2, Cur2);
-  }, ScrollTimerInterval);
-});
-</code></pre>
+<li>将public文件夹提交到仓库 <br/></li>
+</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/brick/%E7%BB%88%E7%AB%AF/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; 终端
+					&larr; Git
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8/%E7%A2%B0%E6%92%9E%E9%80%89%E9%A1%B9/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					碰撞选项 &rarr;
+					介绍游戏模式 &rarr;
 				</div>
 			</div>
 		</a>
@@ -6137,7 +5947,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://www.enjoy61.com/index.min.5305ab823188230d71dd328df16d052560f9cd1e1f923199538f64162d0f59ebdfe3548de710e8376271e3e87efca889ffac0a5198fb8c3b10dcdf7dddf7cadf.js" integrity="sha512-UwWrgjGIIw1x3TKN8W0FJWD5zR4fkjGZU49kFi0PWevf41SN5xDoN2Jx4&#43;h&#43;/KiJ/6wKUZj7jDsQ3N993ffK3w==" crossorigin="anonymous" defer></script>
+  <script src="https://www.enjoy61.com/index.min.e31569b9c0d93f08dba25f14eea55a1b4ea4a59da7c7c6e7df5ddbfc0e990ec4b8bf8093b7c6e4d18f4ec60a70df5a376edbc9332fbb3409413e2bd87856a5e5.js" integrity="sha512-4xVpucDZPwjbol8U7qVaG06kpZ2nx8bn313b/A6ZDsS4v4CTt8bk0Y9Oxgpw31o3btvJMy&#43;7NAlBPivYeFal5Q==" crossorigin="anonymous" defer></script>
   
     
   </body>

@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>文章目录标题高亮 - 六一的部落格</title>
-<meta name="description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 config/_default/markup.toml - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 提供一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &amp;ldquo;a[target]&amp;rdquo; 2. 获取指定父元素的元素: &amp;ldquo;div &amp;gt; p&amp;rdquo; 3. 获取多个分类元素: &amp;ldquo;h2[id], h3[id]&amp;rdquo; 获取元素的方式 1. id: getElementById, 上下文要求是documnet 2. name: getElementsByName, 一组 将NodeList转换为数组 apply 从数组中移除元素 filter 设置数组初始值 fill 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
-  <link rel="canonical" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
+  <title>为技术博客绑定域名 - 六一的部落格</title>
+<meta name="description" content="前提 # 依托GitHub的技术博客网址国内不可访问 域名说明 # 购买域名需要实名认证 &#43; 信息模板实名认证, 腾讯云在信息模板认证通过后才能注册域名 即, 需要在购买处提供个人实名信息 域名无法买断, 通常按年购买和续费, 且首年和续费的费用不一致. 用作技术博客, 主要考虑续费费用 为博客绑定域名之后, 国内可以正常访问, 使用百度也可以搜索得到, 但速度还是不快, 因此, 后续就存在租用服务器的可能 大家见仁见智吧 域名服务商 # 参考 国内 阿里云 腾讯云 爱名网 聚名 西部数码 国外 GoDaddy Dynadot CloudFlare 购买域名之前, 查询域名历史 # 域名选购注意 - 爱站 站长之家 网站时光机 域名购买流程 # 在腾讯云上注册帐号 实名认证 信息模板实名认证 据说1-3个小时, 还是比较快的 注册域名 等待域名实名通过 需要一会 为博客绑定域名流程 # 获取GitHub服务器IP # 在终端ping博客网址 在域名服务商处设置域名解析 # 为域名添加解析 快速添加解析 填写GitHub服务器IP 得到两条解析记录, 点击确定 修改www子域的解析记录 设置记录类型为CNAME, 即将记录值解析成本域名 设置记录值为www.enjoy61.com enjoy61.">
+  <link rel="canonical" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文章目录标题高亮">
-<meta property="og:description" content="说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 config/_default/markup.toml - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 提供一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &ldquo;a[target]&rdquo; 2. 获取指定父元素的元素: &ldquo;div &gt; p&rdquo; 3. 获取多个分类元素: &ldquo;h2[id], h3[id]&rdquo; 获取元素的方式 1. id: getElementById, 上下文要求是documnet 2. name: getElementsByName, 一组 将NodeList转换为数组 apply 从数组中移除元素 filter 设置数组初始值 fill 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.">
-<meta property="og:url" content="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
+<meta property="og:title" content="为技术博客绑定域名">
+<meta property="og:description" content="前提 # 依托GitHub的技术博客网址国内不可访问 域名说明 # 购买域名需要实名认证 &#43; 信息模板实名认证, 腾讯云在信息模板认证通过后才能注册域名 即, 需要在购买处提供个人实名信息 域名无法买断, 通常按年购买和续费, 且首年和续费的费用不一致. 用作技术博客, 主要考虑续费费用 为博客绑定域名之后, 国内可以正常访问, 使用百度也可以搜索得到, 但速度还是不快, 因此, 后续就存在租用服务器的可能 大家见仁见智吧 域名服务商 # 参考 国内 阿里云 腾讯云 爱名网 聚名 西部数码 国外 GoDaddy Dynadot CloudFlare 购买域名之前, 查询域名历史 # 域名选购注意 - 爱站 站长之家 网站时光机 域名购买流程 # 在腾讯云上注册帐号 实名认证 信息模板实名认证 据说1-3个小时, 还是比较快的 注册域名 等待域名实名通过 需要一会 为博客绑定域名流程 # 获取GitHub服务器IP # 在终端ping博客网址 在域名服务商处设置域名解析 # 为域名添加解析 快速添加解析 填写GitHub服务器IP 得到两条解析记录, 点击确定 修改www子域的解析记录 设置记录类型为CNAME, 即将记录值解析成本域名 设置记录值为www.enjoy61.com enjoy61.">
+<meta property="og:url" content="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-06-12T12:00:38+00:00">
-  <meta property="article:modified_time" content="2023-08-16T13:32:35+08:00">
+<meta property="article:published_time" content="2023-11-10T15:05:49+00:00">
+  <meta property="article:modified_time" content="2023-11-10T16:03:20+08:00">
   
   <meta property="og:image" content="https://www.enjoy61.com/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="文章目录标题高亮">
+<meta name="twitter:title" content="为技术博客绑定域名">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.enjoy61.com/doks.png">
-    <meta name="twitter:image:alt" content="文章目录标题高亮">
+    <meta name="twitter:image:alt" content="为技术博客绑定域名">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/",
-      "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/",
-      "name": "文章目录标题高亮",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/",
+      "url": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/",
+      "name": "为技术博客绑定域名",
       "description": "",
       "isPartOf": {
         "@id": "https://www.enjoy61.com/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://www.enjoy61.com/#/schema/organization/1"
         },
-      "datePublished": "2023-06-12T12:00:38CET",
-      "dateModified": "2023-08-16T13:32:35CET",
+      "datePublished": "2023-11-10T15:05:49CET",
+      "dateModified": "2023-11-10T16:03:20CET",
       "breadcrumb": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"]
+        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/breadcrumb/1",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,24 +125,15 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "name": "% E5%88%86% E4% Ba% Ab"
+          "@id": "https://www.enjoy61.com/docs/build-blog/",
+          "url": "https://www.enjoy61.com/docs/build-blog/",
+          "name": "Build Blog"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "name": "Hugo"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  5 ,
-        "item": {
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"
           }
         }]
     },
@@ -153,16 +144,16 @@
         {
           "@type": "Article",
           "@id": "https://www.enjoy61.com/#/schema/article/1",
-          "headline": "文章目录标题高亮",
+          "headline": "为技术博客绑定域名",
           "description": "",
           "isPartOf": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"
           },
           "mainEntityOfPage": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"
           },
-          "datePublished": "2023-06-12T12:00:38CET",
-          "dateModified": "2023-08-16T13:32:35CET",
+          "datePublished": "2023-11-10T15:05:49CET",
+          "dateModified": "2023-11-10T16:03:20CET",
           "author": {
             "@id": "https://www.enjoy61.com/#/schema/person/2"
           },
@@ -170,7 +161,7 @@
               "@id": "https://www.enjoy61.com/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/#/schema/image/2"
           }
         }
       ]
@@ -195,10 +186,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/#/schema/image/2",
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/#/schema/image/2",
           "url": "https://www.enjoy61.com/doks.png",
           "contentUrl": "https://www.enjoy61.com/doks.png",
-          "caption": "文章目录标题高亮"
+          "caption": "为技术博客绑定域名"
         }
       ]
     }
@@ -287,10 +278,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -708,48 +763,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -773,33 +786,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -2100,10 +2086,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2521,48 +2571,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -2586,33 +2594,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -3850,10 +3831,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -4271,48 +4316,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -4336,33 +4339,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -5560,28 +5536,25 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#域名说明">域名说明</a></li>
+    <li><a href="#域名服务商">域名服务商</a></li>
+    <li><a href="#购买域名之前-查询域名历史">购买域名之前, 查询域名历史</a></li>
+    <li><a href="#域名购买流程">域名购买流程</a></li>
+    <li><a href="#为博客绑定域名流程">为博客绑定域名流程</a>
+      <ul>
+        <li><a href="#获取github服务器ip">获取GitHub服务器IP</a></li>
+        <li><a href="#在域名服务商处设置域名解析">在域名服务商处设置域名解析</a></li>
+        <li><a href="#在github设置绑定域名">在GitHub设置绑定域名</a>
+          <ul>
+            <li><a href="#在部署博客的项目中-设置自定义域名">在部署博客的项目中，设置自定义域名</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#修改博客项目配置信息">修改博客项目配置信息</a></li>
+    <li><a href="#查看">查看</a></li>
     <li><a href="#便签">便签</a></li>
-    <li><a href="#文章目录">文章目录</a>
-      <ul>
-        <li><a href="#高亮样式">高亮样式</a></li>
-        <li><a href="#为toc设置类">为ToC设置类</a></li>
-      </ul>
-    </li>
-    <li><a href="#进入判断">进入判断</a></li>
-    <li><a href="#文章目录标题">文章目录标题</a></li>
-    <li><a href="#正文标题">正文标题</a></li>
-    <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
-    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
-      <ul>
-        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
-        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
-      </ul>
-    </li>
-    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
-    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
       </div>
@@ -5593,28 +5566,25 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#域名说明">域名说明</a></li>
+    <li><a href="#域名服务商">域名服务商</a></li>
+    <li><a href="#购买域名之前-查询域名历史">购买域名之前, 查询域名历史</a></li>
+    <li><a href="#域名购买流程">域名购买流程</a></li>
+    <li><a href="#为博客绑定域名流程">为博客绑定域名流程</a>
+      <ul>
+        <li><a href="#获取github服务器ip">获取GitHub服务器IP</a></li>
+        <li><a href="#在域名服务商处设置域名解析">在域名服务商处设置域名解析</a></li>
+        <li><a href="#在github设置绑定域名">在GitHub设置绑定域名</a>
+          <ul>
+            <li><a href="#在部署博客的项目中-设置自定义域名">在部署博客的项目中，设置自定义域名</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#修改博客项目配置信息">修改博客项目配置信息</a></li>
+    <li><a href="#查看">查看</a></li>
     <li><a href="#便签">便签</a></li>
-    <li><a href="#文章目录">文章目录</a>
-      <ul>
-        <li><a href="#高亮样式">高亮样式</a></li>
-        <li><a href="#为toc设置类">为ToC设置类</a></li>
-      </ul>
-    </li>
-    <li><a href="#进入判断">进入判断</a></li>
-    <li><a href="#文章目录标题">文章目录标题</a></li>
-    <li><a href="#正文标题">正文标题</a></li>
-    <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
-    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
-      <ul>
-        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
-        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
-      </ul>
-    </li>
-    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
-    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
   </nav>
@@ -5627,13 +5597,12 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/hugo/">Hugo</a></li>
-<li class="breadcrumb-item active" aria-current="page">文章目录标题高亮</li>
+<li class="breadcrumb-item"><a href="/docs/build-blog/">🔨📓</a></li>
+<li class="breadcrumb-item active" aria-current="page">为技术博客绑定域名</li>
 					</ol>
 				</nav>
 			
-			<h1>文章目录标题高亮</h1>
+			<h1>为技术博客绑定域名</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -5649,28 +5618,25 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#域名说明">域名说明</a></li>
+    <li><a href="#域名服务商">域名服务商</a></li>
+    <li><a href="#购买域名之前-查询域名历史">购买域名之前, 查询域名历史</a></li>
+    <li><a href="#域名购买流程">域名购买流程</a></li>
+    <li><a href="#为博客绑定域名流程">为博客绑定域名流程</a>
+      <ul>
+        <li><a href="#获取github服务器ip">获取GitHub服务器IP</a></li>
+        <li><a href="#在域名服务商处设置域名解析">在域名服务商处设置域名解析</a></li>
+        <li><a href="#在github设置绑定域名">在GitHub设置绑定域名</a>
+          <ul>
+            <li><a href="#在部署博客的项目中-设置自定义域名">在部署博客的项目中，设置自定义域名</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#修改博客项目配置信息">修改博客项目配置信息</a></li>
+    <li><a href="#查看">查看</a></li>
     <li><a href="#便签">便签</a></li>
-    <li><a href="#文章目录">文章目录</a>
-      <ul>
-        <li><a href="#高亮样式">高亮样式</a></li>
-        <li><a href="#为toc设置类">为ToC设置类</a></li>
-      </ul>
-    </li>
-    <li><a href="#进入判断">进入判断</a></li>
-    <li><a href="#文章目录标题">文章目录标题</a></li>
-    <li><a href="#正文标题">正文标题</a></li>
-    <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
-    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
-      <ul>
-        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
-        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
-      </ul>
-    </li>
-    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
-    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
       </div>
@@ -5682,363 +5648,219 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#说明">说明</a></li>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#域名说明">域名说明</a></li>
+    <li><a href="#域名服务商">域名服务商</a></li>
+    <li><a href="#购买域名之前-查询域名历史">购买域名之前, 查询域名历史</a></li>
+    <li><a href="#域名购买流程">域名购买流程</a></li>
+    <li><a href="#为博客绑定域名流程">为博客绑定域名流程</a>
+      <ul>
+        <li><a href="#获取github服务器ip">获取GitHub服务器IP</a></li>
+        <li><a href="#在域名服务商处设置域名解析">在域名服务商处设置域名解析</a></li>
+        <li><a href="#在github设置绑定域名">在GitHub设置绑定域名</a>
+          <ul>
+            <li><a href="#在部署博客的项目中-设置自定义域名">在部署博客的项目中，设置自定义域名</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#修改博客项目配置信息">修改博客项目配置信息</a></li>
+    <li><a href="#查看">查看</a></li>
     <li><a href="#便签">便签</a></li>
-    <li><a href="#文章目录">文章目录</a>
-      <ul>
-        <li><a href="#高亮样式">高亮样式</a></li>
-        <li><a href="#为toc设置类">为ToC设置类</a></li>
-      </ul>
-    </li>
-    <li><a href="#进入判断">进入判断</a></li>
-    <li><a href="#文章目录标题">文章目录标题</a></li>
-    <li><a href="#正文标题">正文标题</a></li>
-    <li><a href="#将文章目录标题和正文标题关联">将文章目录标题和正文标题关联</a></li>
-    <li><a href="#搭建交叉观察框架">搭建交叉观察框架</a></li>
-    <li><a href="#为标题添加-移除高亮">为标题添加/移除高亮</a>
-      <ul>
-        <li><a href="#添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false</a></li>
-        <li><a href="#添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0</a></li>
-        <li><a href="#进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数</a></li>
-      </ul>
-    </li>
-    <li><a href="#完整javascript代码">完整JavaScript代码</a></li>
-    <li><a href="#doks主题执行javascript脚本">Doks主题执行JavaScript脚本</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+			<h2 id="前提">前提 <a href="#%e5%89%8d%e6%8f%90" class="anchor" aria-hidden="true">#</a></h2>
+<p>依托GitHub的技术博客网址国内不可访问 <br/></p>
+<h2 id="域名说明">域名说明 <a href="#%e5%9f%9f%e5%90%8d%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
 <ol>
-<li>设置高亮样式 <code>css</code> <br/></li>
-<li>使用Intersection Observer实现 <code>JavaScript</code> <br/></li>
-<li>文章目录设置 <br/>
-config/_default/markup.toml <br/>
+<li>购买域名需要实名认证 + 信息模板实名认证, 腾讯云在信息模板认证通过后才能注册域名 <br/>
+即, 需要在购买处提供个人实名信息 <br/></li>
+<li>域名无法买断, 通常按年购买和续费, 且首年和续费的费用不一致. 用作技术博客, 主要考虑续费费用 <br/></li>
+<li>为博客绑定域名之后, 国内可以正常访问, 使用百度也可以搜索得到, 但速度还是不快, 因此, 后续就存在租用服务器的可能 <br/>
+大家见仁见智吧 <br/></li>
+</ol>
+<h2 id="域名服务商">域名服务商 <a href="#%e5%9f%9f%e5%90%8d%e6%9c%8d%e5%8a%a1%e5%95%86" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://zhuanlan.zhihu.com/p/622045726">参考</a> <br/></p>
 <table>
 <thead>
 <tr>
-<th>-</th>
-<th></th>
+<th>国内</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>startLevel</td>
-<td>2</td>
+<td>阿里云</td>
 </tr>
 <tr>
-<td>endLevel</td>
-<td>3</td>
+<td><a href="https://dnspod.cloud.tencent.com/?from=qcloudHpProductDns/">腾讯云</a></td>
+</tr>
+<tr>
+<td>爱名网</td>
+</tr>
+<tr>
+<td>聚名</td>
+</tr>
+<tr>
+<td>西部数码</td>
 </tr>
 </tbody>
 </table>
-</li>
-<li>另一个实现思路为Scrollspy <br/></li>
-<li>移植到Doks主题 <br/></li>
+<table>
+<thead>
+<tr>
+<th>国外</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GoDaddy</td>
+</tr>
+<tr>
+<td>Dynadot</td>
+</tr>
+<tr>
+<td>CloudFlare</td>
+</tr>
+</tbody>
+</table>
+<h2 id="购买域名之前-查询域名历史">购买域名之前, 查询域名历史 <a href="#%e8%b4%ad%e4%b9%b0%e5%9f%9f%e5%90%8d%e4%b9%8b%e5%89%8d-%e6%9f%a5%e8%af%a2%e5%9f%9f%e5%90%8d%e5%8e%86%e5%8f%b2" class="anchor" aria-hidden="true">#</a></h2>
+<p><a href="https://zhuanlan.zhihu.com/p/640822963">域名选购注意</a> <br/></p>
+<table>
+<thead>
+<tr>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.aizhan.com/">爱站</a></td>
+</tr>
+<tr>
+<td><a href="https://tool.chinaz.com/">站长之家</a></td>
+</tr>
+<tr>
+<td><a href="http://web.archive.org">网站时光机</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="域名购买流程">域名购买流程 <a href="#%e5%9f%9f%e5%90%8d%e8%b4%ad%e4%b9%b0%e6%b5%81%e7%a8%8b" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>在腾讯云上注册帐号 <br/></li>
+<li>实名认证 <br/></li>
+<li>信息模板实名认证 <br/>
+据说1-3个小时, 还是比较快的 <br/></li>
+<li>注册域名 <br/></li>
+<li>等待域名实名通过 <br/>
+需要一会 <br/></li>
 </ol>
+<h2 id="为博客绑定域名流程">为博客绑定域名流程 <a href="#%e4%b8%ba%e5%8d%9a%e5%ae%a2%e7%bb%91%e5%ae%9a%e5%9f%9f%e5%90%8d%e6%b5%81%e7%a8%8b" class="anchor" aria-hidden="true">#</a></h2>
+<h3 id="获取github服务器ip">获取GitHub服务器IP <a href="#%e8%8e%b7%e5%8f%96github%e6%9c%8d%e5%8a%a1%e5%99%a8ip" class="anchor" aria-hidden="true">#</a></h3>
+<p>在终端ping博客网址 <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/ping.png" width="500" /> <br/> <br/></p>
+<h3 id="在域名服务商处设置域名解析">在域名服务商处设置域名解析 <a href="#%e5%9c%a8%e5%9f%9f%e5%90%8d%e6%9c%8d%e5%8a%a1%e5%95%86%e5%a4%84%e8%ae%be%e7%bd%ae%e5%9f%9f%e5%90%8d%e8%a7%a3%e6%9e%90" class="anchor" aria-hidden="true">#</a></h3>
+<ol>
+<li>
+<p>为域名添加解析 <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/add-resolve.png" width="1000" /> <br/> <br/></p>
+</li>
+<li>
+<p>快速添加解析 <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/quick.png" width="500" /> <br/> <br/></p>
+</li>
+<li>
+<p>填写GitHub服务器IP <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/server.png" width="500" /> <br/> <br/></p>
+</li>
+<li>
+<p>得到两条解析记录, 点击确定 <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/2.png" width="600" /> <br/> <br/></p>
+</li>
+<li>
+<p>修改www子域的解析记录 <br/>
+设置记录类型为CNAME, 即将记录值解析成本域名 <br/>
+设置记录值为www.enjoy61.com <br/></p>
+<p><img src="/pic/搭建博客/为博客绑定域名/modify.png" width="1000" /> <br/> <br/></p>
+<p><strong>enjoy61.github.io</strong> 末尾的*表示根域, 为系统默认添加 <br/></p>
+</li>
+</ol>
+<h3 id="在github设置绑定域名">在GitHub设置绑定域名 <a href="#%e5%9c%a8github%e8%ae%be%e7%bd%ae%e7%bb%91%e5%ae%9a%e5%9f%9f%e5%90%8d" class="anchor" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>官方说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">管理GitHub Pages站点的自定义域</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site">关于自定义域名和GitHub页面</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="在部署博客的项目中-设置自定义域名">在部署博客的项目中，设置自定义域名 <a href="#%e5%9c%a8%e9%83%a8%e7%bd%b2%e5%8d%9a%e5%ae%a2%e7%9a%84%e9%a1%b9%e7%9b%ae%e4%b8%ad-%e8%ae%be%e7%bd%ae%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%9f%e5%90%8d" class="anchor" aria-hidden="true">#</a></h4>
+<p><img src="/pic/搭建博客/为博客绑定域名/domain.png" width="1000" /> <br/> <br/></p>
+<ol>
+<li>生成博客内容的方法有很多, 比如Hugo, Hexo, 但最终都是把生成内容上传到部署博客的项目 <br/></li>
+<li>这一项设置对应项目内一个名为CNAME的文件，内容如下, 即把配置内容写到CNAME中 <br/>
+<pre><code class="language-text">www.enjoy61.com
+</code></pre>
+也就是说, 再次生成博客内容时, 要想解析仍旧有效, 项目里需始终包含CNAME文件 <br/></li>
+</ol>
+<h2 id="修改博客项目配置信息">修改博客项目配置信息 <a href="#%e4%bf%ae%e6%94%b9%e5%8d%9a%e5%ae%a2%e9%a1%b9%e7%9b%ae%e9%85%8d%e7%bd%ae%e4%bf%a1%e6%81%af" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>Hugo</code> <code>Doks</code> <br/></p>
+<ol>
+<li>
+<p>修改配置项中的主页网址 <br/>
+<code>config &gt; _default &gt; config.toml</code> <br/></p>
+<pre><code class="language-toml">baseurl = &quot;https://www.enjoy61.com/&quot;
+</code></pre>
+</li>
+<li>
+<p>生成博客内容时, 如果设置了baseurl, 相应修改 <br/></p>
+<pre><code class="language-bash">hugo --baseUrl=&quot;https://www.enjoy61.com/&quot; --buildFuture --cleanDestinationDir
+</code></pre>
+</li>
+</ol>
+<h2 id="查看">查看 <a href="#%e6%9f%a5%e7%9c%8b" class="anchor" aria-hidden="true">#</a></h2>
+<ul>
+<li>在浏览器能正常访问www.enjoy61.com <br/></li>
+<li>在浏览器输入enjoy61.github.io, 会自动跳转到www.enjoy61.com <br/></li>
+</ul>
 <h2 id="便签">便签 <a href="#%e4%be%bf%e7%ad%be" class="anchor" aria-hidden="true">#</a></h2>
 <table>
 <thead>
 <tr>
 <th>-</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://atpx.com/blog/typecho-to-hugo/#3-%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%BB%9A%E5%8A%A8%E9%AB%98%E4%BA%AE">文章目录滚动高亮</a></td>
-<td>1. 为文章目录设置类</td>
-</tr>
-<tr>
-<td></td>
-<td>2. 高亮样式</td>
-</tr>
-<tr>
-<td></td>
-<td>3. 提供一种实现</td>
-</tr>
-<tr>
-<td><a href="https://blog.csdn.net/dangbai01_/article/details/120130875">高亮样式</a></td>
-<td>当前标题底部加横线</td>
-</tr>
-<tr>
-<td><a href="https://johnmu.com/dynamic-toc-io/">滚动高亮</a></td>
-<td>设置元素的父元素</td>
-</tr>
-<tr>
-<td><a href="https://tj.ie/building-a-table-of-contents-with-the-intersection-observer-api/">滚动高亮</a></td>
-<td>option和intersectionObserver的callback</td>
-</tr>
-<tr>
-<td><a href="https://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html">IntersectionObserver API</a></td>
-<td>1. 添加观察元素: observe</td>
-</tr>
-<tr>
-<td></td>
-<td>2. intersectionRatio</td>
-</tr>
-<tr>
-<td></td>
-<td>3. target</td>
-</tr>
-<tr>
-<td><a href="https://www.runoob.com/jsref/met-document-queryselectorall.html">querySelectorAll用法</a></td>
-<td>1. 获取有指定属性的元素: &ldquo;a[target]&rdquo;</td>
-</tr>
-<tr>
-<td></td>
-<td>2. 获取指定父元素的元素: &ldquo;div &gt; p&rdquo;</td>
-</tr>
-<tr>
-<td></td>
-<td>3. 获取多个分类元素: &ldquo;h2[id], h3[id]&rdquo;</td>
-</tr>
-<tr>
-<td><a href="https://www.jianshu.com/p/6fefda57b51f">获取元素的方式</a></td>
-<td>1. id: getElementById, 上下文要求是documnet</td>
-</tr>
-<tr>
-<td></td>
-<td>2. name: getElementsByName, 一组</td>
-</tr>
-<tr>
-<td><a href="https://www.jstips.co/zh_cn/javascript/converting-a-node-list-to-an-array/#google_vignette">将NodeList转换为数组</a></td>
-<td>apply</td>
-</tr>
-<tr>
-<td><a href="https://kinboyw.github.io/2018/11/13/%E4%BB%8EJavaScript%E6%95%B0%E7%BB%84%E4%B8%AD%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">从数组中移除元素</a></td>
-<td>filter</td>
-</tr>
-<tr>
-<td><a href="https://blog.csdn.net/dpj514/article/details/81905034">设置数组初始值</a></td>
-<td>fill</td>
+<td><a href="https://blog.csdn.net/heimu24/article/details/81159099">绑定域名</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="文章目录">文章目录 <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95" class="anchor" aria-hidden="true">#</a></h2>
-<ul>
-<li>Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 <br/></li>
-<li>高亮的是ToC中的链接 <br/></li>
-</ul>
-<h3 id="高亮样式">高亮样式 <a href="#%e9%ab%98%e4%ba%ae%e6%a0%b7%e5%bc%8f" class="anchor" aria-hidden="true">#</a></h3>
-<ul>
-<li>设置颜色 <br/></li>
-<li>加粗 <br/></li>
-<li>过渡 <br/></li>
-<li>暗色主题 <br/></li>
-</ul>
-<p>assets/scss/common/_global.scss   <br/></p>
-<pre><code class="language-css">.my-toc a.active {
-    color: $primary;
-    font-weight: 800;
-    transition: all .25s ease-in-out
-}
-</code></pre>
-<p>assets/scss/common/_dark.scss <br/></p>
-<pre><code class="language-css">[data-dark-mode] .my-toc a.active {
-    // color: $link-color-dark;
-    color: $zdoc-highlight-dark;
-}
-</code></pre>
-<h3 id="为toc设置类">为ToC设置类 <a href="#%e4%b8%batoc%e8%ae%be%e7%bd%ae%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h3>
-<p>layouts/partials/sidebar/docs-toc.html:23 <br/></p>
-<pre><code class="language-css">&lt;nav class=&quot;my-toc&quot;&gt;
-  {{ .TableOfContents }}
-&lt;/nav&gt;
-</code></pre>
-<h2 id="进入判断">进入判断 <a href="#%e8%bf%9b%e5%85%a5%e5%88%a4%e6%96%ad" class="anchor" aria-hidden="true">#</a></h2>
-<pre><code class="language-javascript">document.addEventListener('DOMContentLoaded', () =&gt; {
-  const toc = document.querySelector('.my-toc');
-  if (!toc) return;
-
-  // 后续处理  
-});
-</code></pre>
-<h2 id="文章目录标题">文章目录标题 <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98" class="anchor" aria-hidden="true">#</a></h2>
-<p>获取有类my-toc的元素的链接 <br/></p>
-<pre><code class="language-javascript">const tocHeadings = toc.querySelectorAll('a');
-</code></pre>
-<h2 id="正文标题">正文标题 <a href="#%e6%ad%a3%e6%96%87%e6%a0%87%e9%a2%98" class="anchor" aria-hidden="true">#</a></h2>
-<p>只关注显示在文章目录的标题, 筛选时, 要求标题的下级链接有类anchor <br/></p>
-<pre><code class="language-javascript">const headings = Array.apply(null, document.querySelectorAll('h2[id], h3[id]')).filter(function (value, index, arr) {
-    return arr[index].querySelector('.anchor');
-});
-</code></pre>
-<h2 id="将文章目录标题和正文标题关联">将文章目录标题和正文标题关联 <a href="#%e5%b0%86%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95%e6%a0%87%e9%a2%98%e5%92%8c%e6%ad%a3%e6%96%87%e6%a0%87%e9%a2%98%e5%85%b3%e8%81%94" class="anchor" aria-hidden="true">#</a></h2>
-<p>当二者标题数一致时, 认为一一对应, 设置标号; 否则就此结束 <br/></p>
-<pre><code class="language-javascript">function addHeadingIdx(list) {
-  let i = 0;
-  list.forEach((item) =&gt; {
-    item.setAttribute('headingIdx', i++);
-  });
-}
-
-if (tocHeadings.length !== headings.length) return;
-
-addHeadingIdx(tocHeadings);
-addHeadingIdx(headings);
-</code></pre>
-<h2 id="搭建交叉观察框架">搭建交叉观察框架 <a href="#%e6%90%ad%e5%bb%ba%e4%ba%a4%e5%8f%89%e8%a7%82%e5%af%9f%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>触发条件：当标题的intersectionRatio变为threshold，或者不再为threshold时，对标题进行处理 <br/>
-<pre><code class="language-javascript">const intersectionOptions = {
-  threshold: 1.0
-}
-</code></pre>
-</li>
-<li>创建观察器 <br/>
-<pre><code class="language-javascript">const headingObserver = new IntersectionObserver(headings =&gt; {
-    headings.forEach(heading =&gt; {
-        // 处理标题
-    })
-}, intersectionOptions); 
-</code></pre>
-</li>
-<li>将正文标题添加到观察列表 <br/>
-<pre><code class="language-javascript">headings.forEach((heading) =&gt; {
-    headingObserver.observe(heading);
-});
-</code></pre>
-</li>
-</ol>
-<h2 id="为标题添加-移除高亮">为标题添加/移除高亮 <a href="#%e4%b8%ba%e6%a0%87%e9%a2%98%e6%b7%bb%e5%8a%a0-%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae" class="anchor" aria-hidden="true">#</a></h2>
-<ol>
-<li>标题的intersectionRatio满足阈值，isIntersecting为true，intersectionRatio不满足阈值，为false <br/></li>
-<li>根据isIntersecting更新标题高亮状态 <br/></li>
-<li>新增高亮标题, 或者有多个标题高亮时移除高亮: 根据高亮状态刷新, 更新高亮标题个数 <br/></li>
-</ol>
-<h3 id="添加全局数组-保存标题高亮状态-初始值为false">添加全局数组，保存标题高亮状态，初始值为false <a href="#%e6%b7%bb%e5%8a%a0%e5%85%a8%e5%b1%80%e6%95%b0%e7%bb%84-%e4%bf%9d%e5%ad%98%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%bafalse" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">let HeadingFlag;
-
-HeadingFlag = new Array(headings.length).fill(false);
-</code></pre>
-<h3 id="添加变量-保存高亮标题个数-初始值为0">添加变量，保存高亮标题个数, 初始值为0 <a href="#%e6%b7%bb%e5%8a%a0%e5%8f%98%e9%87%8f-%e4%bf%9d%e5%ad%98%e9%ab%98%e4%ba%ae%e6%a0%87%e9%a2%98%e4%b8%aa%e6%95%b0-%e5%88%9d%e5%a7%8b%e5%80%bc%e4%b8%ba0" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">let HeadingCnt;
-
-HeadingCnt = 0;
-</code></pre>
-<h3 id="进入观察器回调函数-更新标题高亮状态-新增高亮-或者有多个标题高亮时移除高亮-根据高亮状态设置标题-更新高亮个数">进入观察器回调函数: 更新标题高亮状态; 新增高亮, 或者有多个标题高亮时移除高亮, 根据高亮状态设置标题，更新高亮个数 <a href="#%e8%bf%9b%e5%85%a5%e8%a7%82%e5%af%9f%e5%99%a8%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0-%e6%9b%b4%e6%96%b0%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81-%e6%96%b0%e5%a2%9e%e9%ab%98%e4%ba%ae-%e6%88%96%e8%80%85%e6%9c%89%e5%a4%9a%e4%b8%aa%e6%a0%87%e9%a2%98%e9%ab%98%e4%ba%ae%e6%97%b6%e7%a7%bb%e9%99%a4%e9%ab%98%e4%ba%ae-%e6%a0%b9%e6%8d%ae%e9%ab%98%e4%ba%ae%e7%8a%b6%e6%80%81%e8%ae%be%e7%bd%ae%e6%a0%87%e9%a2%98-%e6%9b%b4%e6%96%b0%e9%ab%98%e4%ba%ae%e4%b8%aa%e6%95%b0" class="anchor" aria-hidden="true">#</a></h3>
-<pre><code class="language-javascript">function refreshHighlight() {
-    HeadingCnt = 0;
-    for (let i = 0; i &lt; HeadingFlag.length; ++i) {
-        if (HeadingFlag[i]) {
-            ++HeadingCnt;
-            document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
-        }
-        else
-        {
-            document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.remove('active');
-        }
-    }
-}
-
-const idx = heading.target.getAttribute('headingIdx');
-if ((HeadingFlag[idx] = heading.isIntersecting) || (HeadingCnt !== 1)) {
-    refreshHighlight();
-}
-</code></pre>
-<h2 id="完整javascript代码">完整JavaScript代码 <a href="#%e5%ae%8c%e6%95%b4javascript%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true">#</a></h2>
-<p>assets/js/toc.js <br/></p>
-<pre><code class="language-javascript">let HeadingFlag;
-let HeadingCnt;
-
-function addHeadingIdx(list) {
-  let i = 0;
-  list.forEach((item) =&gt; {
-    item.setAttribute('headingIdx', i++);
-  });
-}
-
-function refreshHighlight() {
-  HeadingCnt = 0;
-  for (let i = 0; i &lt; HeadingFlag.length; ++i) {
-    if (HeadingFlag[i]) {
-      ++HeadingCnt;
-      document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.add('active');
-    }
-    else
-    {
-      document.querySelector(`.my-toc a[headingIdx=&quot;${i}&quot;]`).classList.remove('active');
-    }
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () =&gt; {
-  const toc = document.querySelector('.my-toc');
-  if (!toc) return;
-
-  const tocHeadings = toc.querySelectorAll('a');
-  const headings = Array.apply(null, document.querySelectorAll('h2[id], h3[id]')).filter(function (value, index, arr) {
-    return arr[index].querySelector('.anchor');
-  });
-
-  if (tocHeadings.length !== headings.length) return;
-
-  addHeadingIdx(tocHeadings);
-  addHeadingIdx(headings);
-
-  HeadingFlag = new Array(headings.length).fill(false);
-  HeadingCnt = 0;
-
-  const intersectionOptions = {
-    threshold: 1.0
-  };
-
-  const headingObserver = new IntersectionObserver(headings =&gt; {
-    headings.forEach(heading =&gt; {
-      // console.log('ratio', heading.target.getAttribute('id'), heading.intersectionRatio, heading.isIntersecting, HeadingCnt);
-      const idx = heading.target.getAttribute('headingIdx');
-      if ((HeadingFlag[idx] = heading.isIntersecting) || (HeadingCnt !== 1)) {
-        refreshHighlight();
-      }
-    });
-  }, intersectionOptions); 
-
-  headings.forEach((heading) =&gt; {
-    headingObserver.observe(heading);
-  });
-});
-</code></pre>
-<h2 id="doks主题执行javascript脚本">Doks主题执行JavaScript脚本 <a href="#doks%e4%b8%bb%e9%a2%98%e6%89%a7%e8%a1%8cjavascript%e8%84%9a%e6%9c%ac" class="anchor" aria-hidden="true">#</a></h2>
-<p>参照assets/highlight.js的执行 <br/></p>
-<p><code>layouts/partials/footer/script-footer.html</code>     <br/></p>
-<ol>
-<li><code>10</code> <br/>
-<pre><code class="language-html">{{ $toc := resources.Get &quot;js/toc.js&quot; -}}
-{{ $toc := $toc | js.Build -}}
-</code></pre>
-</li>
-<li><code>86</code> <br/>
-<pre><code class="language-html">&lt;script src=&quot;{{ $toc.RelPermalink }}&quot; defer&gt;&lt;/script&gt;
-</code></pre>
-</li>
-<li><code>103</code> <br/>
-<pre><code class="language-html">{{ $toc := $toc | minify | fingerprint &quot;sha512&quot; -}}         
-</code></pre>
-</li>
-<li><code>113</code> <br/>
-<pre><code class="language-html">&lt;script src=&quot;{{ $toc.RelPermalink }}&quot; integrity=&quot;{{ $toc.Data.Integrity }}&quot; crossorigin=&quot;anonymous&quot; defer&gt;&lt;/script&gt;
-</code></pre>
-</li>
-</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
+	<a href="/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; HTML
+					&larr; 文章目录跟随文章内容滚动
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E4%B8%93%E9%A2%98/npc%E8%A1%8C%E4%B8%BA/%E4%BB%8B%E7%BB%8Deqs%E8%B5%84%E4%BA%A7/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					代码规范 &rarr;
+					介绍EQS资产 &rarr;
 				</div>
 			</div>
 		</a>
@@ -6073,7 +5895,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://www.enjoy61.com/index.min.5305ab823188230d71dd328df16d052560f9cd1e1f923199538f64162d0f59ebdfe3548de710e8376271e3e87efca889ffac0a5198fb8c3b10dcdf7dddf7cadf.js" integrity="sha512-UwWrgjGIIw1x3TKN8W0FJWD5zR4fkjGZU49kFi0PWevf41SN5xDoN2Jx4&#43;h&#43;/KiJ/6wKUZj7jDsQ3N993ffK3w==" crossorigin="anonymous" defer></script>
+  <script src="https://www.enjoy61.com/index.min.e31569b9c0d93f08dba25f14eea55a1b4ea4a59da7c7c6e7df5ddbfc0e990ec4b8bf8093b7c6e4d18f4ec60a70df5a376edbc9332fbb3409413e2bd87856a5e5.js" integrity="sha512-4xVpucDZPwjbol8U7qVaG06kpZ2nx8bn313b/A6ZDsS4v4CTt8bk0Y9Oxgpw31o3btvJMy&#43;7NAlBPivYeFal5Q==" crossorigin="anonymous" defer></script>
   
     
   </body>

@@ -17,15 +17,15 @@
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>文章目录跟随文章内容滚动 - 六一的部落格</title>
 <meta name="description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.">
-  <link rel="canonical" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
+  <link rel="canonical" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文章目录跟随文章内容滚动">
 <meta property="og:description" content="说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.">
-<meta property="og:url" content="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
+<meta property="og:url" content="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-10T10:46:13+00:00">
-  <meta property="article:modified_time" content="2023-08-18T04:11:19+08:00">
+  <meta property="article:modified_time" content="2023-11-10T14:52:22+08:00">
   
   <meta property="og:image" content="https://www.enjoy61.com/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -75,8 +75,8 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
-      "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
+      "url": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/",
       "name": "文章目录跟随文章内容滚动",
       "description": "",
       "isPartOf": {
@@ -86,21 +86,21 @@
           "@id": "https://www.enjoy61.com/#/schema/organization/1"
         },
       "datePublished": "2023-06-10T10:46:13CET",
-      "dateModified": "2023-08-18T04:11:19CET",
+      "dateModified": "2023-11-10T14:52:22CET",
       "breadcrumb": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
+        "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"]
+        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1",
+      "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,24 +125,15 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
-          "name": "% E5%88%86% E4% Ba% Ab"
+          "@id": "https://www.enjoy61.com/docs/build-blog/",
+          "url": "https://www.enjoy61.com/docs/build-blog/",
+          "name": "Build Blog"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/",
-          "name": "Hugo"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  5 ,
-        "item": {
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           }
         }]
     },
@@ -156,13 +147,13 @@
           "headline": "文章目录跟随文章内容滚动",
           "description": "",
           "isPartOf": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "mainEntityOfPage": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/"
           },
           "datePublished": "2023-06-10T10:46:13CET",
-          "dateModified": "2023-08-18T04:11:19CET",
+          "dateModified": "2023-11-10T14:52:22CET",
           "author": {
             "@id": "https://www.enjoy61.com/#/schema/person/2"
           },
@@ -170,7 +161,7 @@
               "@id": "https://www.enjoy61.com/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
+            "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2"
           }
         }
       ]
@@ -195,7 +186,7 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2",
+          "@id": "https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/#/schema/image/2",
           "url": "https://www.enjoy61.com/doks.png",
           "contentUrl": "https://www.enjoy61.com/doks.png",
           "caption": "文章目录跟随文章内容滚动"
@@ -287,10 +278,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -708,48 +763,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -773,33 +786,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -2100,10 +2086,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2521,48 +2571,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -2586,33 +2594,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -3850,10 +3831,74 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b28206c75f4d9367711c56af0749f8d4" aria-expanded="true">
+          🔨📓
+        </button>
+        <div class="collapse show" id="section-b28206c75f4d9367711c56af0749f8d4">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">为技术博客绑定域名</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
+          🧱
+        </button>
+        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
+              
+            
+              
+                
+                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
+              
+            
+          </ul>
+        </div>
+      </li>
+    
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
           分享
         </button>
-        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -4271,48 +4316,6 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-1b3840b0b70d91c17e70014c8537dbba" aria-expanded="true">
-                    Hugo
-                  </button>
-                  <div class="collapse show" id="section-1b3840b0b70d91c17e70014c8537dbba">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/">图片水平循环滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">文章目录标题高亮</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/">文章目录跟随文章内容滚动</a></li>
-                        
-                        
-                      
-
-                        
-                          
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/hugo/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">使用Hugo&#43;GitHub搭建静态博客</a></li>
-                        
-                        
-                      
-                    </ul>
-                  </div>
-                </li>
-              
-            
-              
-                
-                <li class="my-1 ms-3">
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-38194113315ac9d72df4a0d5e45398d9" aria-expanded="false">
                     macOS应用
                   </button>
@@ -4336,33 +4339,6 @@
                     </ul>
                   </div>
                 </li>
-              
-            
-          </ul>
-        </div>
-      </li>
-    
-      
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-3bd2c20a732475803482c020650a0852" aria-expanded="false">
-          🧱
-        </button>
-        <div class="collapse" id="section-3bd2c20a732475803482c020650a0852">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/">终端</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/">Windows上使用Sublime进行Unreal开发</a></li>
-              
-            
-              
-                
-                <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/">记一次重装系统后的恢复分区</a></li>
               
             
           </ul>
@@ -5607,8 +5583,7 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/hugo/">Hugo</a></li>
+<li class="breadcrumb-item"><a href="/docs/build-blog/">🔨📓</a></li>
 <li class="breadcrumb-item active" aria-current="page">文章目录跟随文章内容滚动</li>
 					</ol>
 				</nav>
@@ -5838,17 +5813,17 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/chrome/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; 使用伤害类型
+					&larr; Chrome
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/">
+	<a class="ms-auto" href="/docs/build-blog/%E4%B8%BA%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					初识碰撞 &rarr;
+					为技术博客绑定域名 &rarr;
 				</div>
 			</div>
 		</a>
@@ -5883,7 +5858,7 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://www.enjoy61.com/index.min.5305ab823188230d71dd328df16d052560f9cd1e1f923199538f64162d0f59ebdfe3548de710e8376271e3e87efca889ffac0a5198fb8c3b10dcdf7dddf7cadf.js" integrity="sha512-UwWrgjGIIw1x3TKN8W0FJWD5zR4fkjGZU49kFi0PWevf41SN5xDoN2Jx4&#43;h&#43;/KiJ/6wKUZj7jDsQ3N993ffK3w==" crossorigin="anonymous" defer></script>
+  <script src="https://www.enjoy61.com/index.min.e31569b9c0d93f08dba25f14eea55a1b4ea4a59da7c7c6e7df5ddbfc0e990ec4b8bf8093b7c6e4d18f4ec60a70df5a376edbc9332fbb3409413e2bd87856a5e5.js" integrity="sha512-4xVpucDZPwjbol8U7qVaG06kpZ2nx8bn313b/A6ZDsS4v4CTt8bk0Y9Oxgpw31o3btvJMy&#43;7NAlBPivYeFal5Q==" crossorigin="anonymous" defer></script>
   
     
   </body>
