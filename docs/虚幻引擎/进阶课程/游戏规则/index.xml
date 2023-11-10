@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>游戏规则 on </title>
-    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/</link>
+    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/</link>
     <description>Recent content in 游戏规则 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Nov 2023 20:47:53 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Nov 2023 20:47:53 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>介绍游戏模式</title>
-      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Thu, 09 Nov 2023 20:42:45 +0000</pubDate>
       
-      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</guid>
       <description>Game Mode Overview 注意 # 当前运行游戏, 在地板中心位置会有火花特效, 不知什么原因 说明 # GameModeBase 对游戏进行设置和管理 游戏模式 Game Mode 根据游戏规则计算游戏分数, 调整游戏设置 Gameplay Setting , 玩家个数, AI玩家参与情况, 一个回合的时长, 回合总数, 如何判定游戏结束, 并计算各种游戏统计数据 BP_STUGameModeBase 对关卡各种基础类类型进行设置, 使用基类或覆写后的派生类, 游戏开始运行, 动态创建指定类对象 - Pawn HUD Player Controller Game State Player State Spectator GameMode的应用对象为给关卡 到目前为止, 我们都在使用默认关卡 本节会添加测试关卡 创建关卡 # File &amp;gt; New Level , 选择Basic, 命名为TestLevel, 保存到 Content/Levels 查看世界设置 World Settings , 可以看到各项都是默认设置, 即使用虚幻引擎提供的基类 运行, 世界大纲 World Outliner 中可以看到Actor列表和对应类型 - GameMode GameModeBase Pawn DefaultPawn 将游戏模式 Game Mode 设置为BP_STUGameModeBase, 则出现我们熟悉的游戏角色和HUD等 每个关卡都可以拥有自己的游戏模式, 而基本的游戏逻辑依旧存在 GameMode # GameMode派生自GameModeBase, 并扩展了额外功能 多玩家在游戏中匹配 Match State 逻辑 本课程会创建自己的匹配逻辑, 而不使用 GameModeBase GameModeBase # 会讲解该类的许多函数, 它们如何工作, 以何种顺序调用, 我们可以从游戏状态中获得何种信息, 如何暂停、重启游戏等 </description>
     </item>
     
