@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on </title>
+    <link>https://www.enjoy61.com/categories/</link>
+    <description>Recent content in Categories on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Aug 2023 14:16:57 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hacking</title>
+      <link>https://www.enjoy61.com/categories/hacking/</link>
+      <pubDate>Wed, 16 Aug 2023 14:16:57 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MovieScreenshot</title>
+      <link>https://www.enjoy61.com/categories/moviescreenshot/</link>
+      <pubDate>Thu, 03 Aug 2023 23:06:31 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/categories/moviescreenshot/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

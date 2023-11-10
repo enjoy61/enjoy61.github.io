@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>武器 on </title>
+    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/</link>
+    <description>Recent content in 武器 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Jun 2023 05:37:09 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>给游戏角色装载武器</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/</link>
+      <pubDate>Sun, 11 Jun 2023 07:24:08 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%BB%99%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A3%85%E8%BD%BD%E6%AD%A6%E5%99%A8/</guid>
+      <description>概览 # 导入武器相关资产 创建武器类STUBaseWeapon和BP_STUBaseWeapon 为STUBaseWeapon添加骨骼网格体, 绑定武器模型 武器模型 说明 Launcher 发射导弹 Rifle 发射子弹 Shoot Regular Cartridges 为游戏角色骨骼网格体添加挂载点, 动态创建武器对象并挂载到游戏角色 导入武器相关资产 # 虚幻编辑器 之前将资产导入到Content/ExternalContent/Animation，有两点需注意 资产之前存在相互引用，这个在Migrate过程中，不一定会全无问题 我们选择Migrate ShooterGame/Content/Animations/TTP_Animations ，而实际导出有多个文件夹，里面的内容都和TTP_Animations有关 本节需要Migrate的武器资产，其相关内容与之前的内容有重叠; 和之前一样, 在ExternalContent下单独创建一个文件夹，存放本次导入资产 从ShooterGame导出 # 选中Content/Weapons &amp;gt; Migrate 相关文件存放在Characters，Environment和Weapons中 保存到ShootThemUp/Content 导入到ShootThemUp # 创建ExternalContent/Weapon，并设置文件夹颜色 将资产移动到ExternalContent/Weapon 创建武器类 # 初始化C++类: STUBaseWeapon # 创建C++类: Weapon/STUBaseWeapon # 虚幻编辑器 Actor 公有类 设置头文件路径 # C++ ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot; }); 调整框架 # C++ - 构造函数 每帧调用置为false Tick 屏蔽 BeginPlay - ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
+    <item>
+      <title>武器组件</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 25 Jun 2023 16:42:52 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%AD%A6%E5%99%A8%E7%BB%84%E4%BB%B6/</guid>
+      <description>概览 # 创建武器组件类 STUWeaponComponent 武器组件负责武器相关逻辑: 将SpawnWeapon移到武器组件 为游戏角色添加武器组件 为武器类添加 Fire 接口, 对应扣动扳机逻辑 为游戏角色绑定鼠标左键, 武器组件提供回调函数 Fire , 调用武器类 Fire 接口 初始化武器组件类 # 创建C++类: Components/STUWeaponComponent # 虚幻编辑器 - ActorComponent Public Components 调整框架 # C++ - 构造函数 每帧调用置false TickComponent 屏蔽 ShootThemUp: Components/STUWeaponComponent.h ShootThemUp: Components/STUWeaponComponent.cpp 将SpawnWeapon逻辑移动到武器组件 # C++ 在STUWeaponComponent中实现SpawnWeapon # 添加武器类型属性, 动态创建Actor时使用
+ShootThemUp: Components/STUWeaponComponent.h protected class ASTUBaseWeapon; UPROPERTY(EditDefaultsOnly) TSubclassOf&amp;lt;ASTUBaseWeapon&amp;gt; WeaponClass; ShootThemUp: Components/STUWeaponComponent.cpp #include &amp;quot;Weapon/STUBaseWeapon.h&amp;quot; 添加变量: 存放挂载点名称
+protected ShootThemUp: Components/STUWeaponComponent.h UPROPERTY(EditDefaultsOnly) FName WeaponAttachPointName = &amp;quot;WeaponSocket&amp;quot;; 添加变量: 存放武器指针</description>
+    </item>
+    
+    <item>
+      <title>初识碰撞</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/</link>
+      <pubDate>Sun, 25 Jun 2023 16:56:18 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%88%9D%E8%AF%86%E7%A2%B0%E6%92%9E/</guid>
+      <description>概览 # 虚幻编辑器 在虚幻编辑器使用控制台 Console 碰撞选项 设置对其他类型物体的反馈 设置对通道的反馈 碰撞时产生重叠事件 碰撞时产生碰撞事件 自定义物体类型 碰撞 # 物体之间的交互，会发生以下情形 - Ignore 不会发生碰撞 Overlap 重叠: 可以发生碰撞, 允许通过, 可以产生重叠事件 Block 阻挡：可以发生碰撞, 形成阻碍, 可以产生碰撞事件 游戏角色拥有Capsule组件, 用以处理碰撞相关逻辑: 如游戏角色跳起后会落到地面, 而不是穿过地板; 可以操控其上楼梯; 和另一个游戏角色碰撞, 而不是穿过他 轨迹计算 # Logical Trace 给定轨迹的端点, 计算场景中与轨迹相交的物体 通过轨迹计算得到射击击中的目标 在虚幻编辑器使用控制台 # 打开控制台 运行时, 按下 ` Apostrophe Sign , 在视口下方会出现命令行, 可以输入调试命令 设置打开控制台的快捷键 项目设置 &amp;gt; Engine &amp;gt; Input &amp;gt; Console &amp;gt; Console Keys 输出每秒帧数 # stat fps 在右上方显示 1秒将近40帧 1s / 25ms = 1000ms / 25ms = 40 输出GPU统计数据 # stat GPU 隐藏Debug信息 # 输入相同命令, 或 stat none 显示场景中的碰撞 # show collision 可以看到Character的Capsule组件；碰撞组件纯逻辑, 在游戏中默认不可见 再次输入隐藏 碰撞选项 # 碰撞选项 设置游戏角色穿过物体 # 在场景中添加Sphere和Cube Place Actors &amp;gt; Shapes 设置游戏角色Capsule组件的碰撞选项 # BP_STUBaseCharacter &amp;gt; Capsule Component &amp;gt; Details &amp;gt; Collision 碰撞预设默认为Pawn 将碰撞预设置为Custom 设置Sphere的碰撞选项 # 将碰撞预设设置为Custom 允许游戏角色穿过 对物体类型的碰撞反馈中, 设置对Pawn执行Overlap Collision Responses &amp;gt; Object Responses &amp;gt; Pawn, 勾选Overlap 设置Cube的碰撞选项 # 设置 Collision Preset 为Custom 允许Pawn穿过 查看 # 游戏角色可以穿过Sphere和Cube # 游戏角色与物体碰撞时, 镜头会放大, 这是Camera通道对于Block设置给出的碰撞反馈 # 可以在SpringArm组件设置碰撞探测通道, 默认使用Camera通道 Camera组件作为SpringArm组件的下级组件, 是游戏角色的一部分, 此时也与物体碰撞 之所以会放大镜头, 在于发生碰撞时要表示阻挡; 我们不应该看到已经穿过物体那部分 设置Camera通道忽略物体 # 查看SpringArm组件 # BP_STUBaseCharacter &amp;gt; 选中SpringArmComponent &amp;gt; Details &amp;gt; Camera Collision &amp;gt; Probe Channel SpringArm组件如何进行碰撞探测, 默认为Camera通道 Probe Channel Camera 设置Camera通道忽略Sphere # Collision Responses &amp;gt; Trace Responses &amp;gt; Camera, 选择Ignore 查看: 游戏角色穿过Sphere时, 感官上正常 # 产生重叠事件: 输出Actor信息 # 在蓝图中处理事件 # 打开 BP_STUBaseCharacter &amp;gt; Event Graph Event ActorBeginOverlap 之后, 在屏幕打印 PrintString OtherActor作为PrintString输入, 实际输出产生碰撞的物体名称 为物体勾选发生碰撞时产生重叠事件 # Sphere Details &amp;gt; 勾选 Generate Overlap Events Cube Details &amp;gt; 勾选 Generate Overlap Events 查看日志 # 产生碰撞事件: 获取碰撞信息 # 为物体勾选发生碰撞时产生碰撞事件 # 选择Cube, 去到Details面板, 勾选 Simulation Generates Hit Events 在蓝图中添加事件 # BP_STUBaseCharacter &amp;gt; EventGraph, 添加EventHit 补充： 要求物体与Cube的碰撞反馈互为Block，发生碰撞时，才会产生碰撞事件 # 自定义物体类型 # 项目设置 &amp;gt; Engine &amp;gt; Collision 创建物体类型Enemy # New Object Channel 设置 - Name Enemy Default Response Block 其他类型物体对Enemy采取Block 创建物体类型Geometry # New Object Channel 设置 - Name Geometry Default Response Ignore 其他类型物体对Geometry采取Ignore 查看游戏角色的碰撞选项 # - Enemy Block Geometry Ignore 设置Cube # 物体类型为Geometry 忽略Pawn 设置Sphere # 物体类型为Enemy 阻挡Pawn </description>
+    </item>
+    
+    <item>
+      <title>射击轨迹</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E8%BD%A8%E8%BF%B9/</link>
+      <pubDate>Fri, 11 Aug 2023 18:01:42 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E8%BD%A8%E8%BF%B9/</guid>
+      <description>概览 # Line Trace 获取Socket变换信息 获取游戏角色Camera组件的变换信息 射击游戏对发射子弹的建模 完成轨迹计算并获取碰撞信息 绘制子弹轨迹和交点 为轨迹计算添加屏蔽Actor Socket # 之前我们使用Socket作为锚来附加武器 现在我们使用它来标记枪口, 获取变换信息 为网格体Rifle添加Socket标记枪口, 获取变换信息 # 虚幻编辑器 双击打开 Content &amp;gt; ExternalContent &amp;gt; Weapon &amp;gt; Weapons &amp;gt; Rifle 选中 Skeleton Tree &amp;gt; RifleRoot , 右键, 选择 Add Socket , 命名为MuzzleSocket 在细节面板设置MuzzleSocket的位置 Relative Location 默认在武器坐标系的0坐标, 调整到枪口位置 更换观察视角, 检查MuzzleSocket变换参数 Top视角 模拟射击: 绘制子弹轨迹 # C++ STUBaseWeapon - 起点 枪口 MuzzleSocket的位置分量 偏移 放大的武器朝向 MuzzleSocket的前进方向: 通过MuzzleSocket的旋转分量, 获取前进向量 终点 起点 + 偏移 获取MuzzleSocket变换以得到线段所需信息 # Stub MuzzleSocketName 保存Socket名称 TraceMaxDistance 放大系数, 亦是子弹射击距离; 1 unreal unit = 1 cm 获取Socket变换 # 加载WeaponMeshComponent时检查其有效性</description>
+    </item>
+    
+    <item>
+      <title>重构MakeShot</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E9%87%8D%E6%9E%84makeshot/</link>
+      <pubDate>Fri, 11 Aug 2023 18:23:16 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E9%87%8D%E6%9E%84makeshot/</guid>
+      <description>说明 # 本节使用的重构被称作提取 The Extract Method , 将函数切分, 使得代码可读性更高 对武器类的MakeShot重构 纯理论逻辑放在 protected , 供派生类调用 调整逻辑 # void ASTUBaseWeapon::MakeShot() { if(!GetWorld()) return; // 获取PlayerController const auto Player = Cast&amp;lt;ACharacter&amp;gt;(GetOwner()); if (!Player) return; const auto Controller = Player-&amp;gt;GetController&amp;lt;APlayerController&amp;gt;(); if (!Controller) return; // 通过Controller获取CameraComponent的位置和方向 FVector ViewLocation; FRotator ViewRotation; Controller-&amp;gt;GetPlayerViewPoint(ViewLocation, ViewRotation); // 通过CameraComponent的位置和方向计算轨迹信息 const FVector TraceStart = ViewLocation; const FVector ShootDirection = ViewRotation.Vector(); const FVector TraceEnd = TraceStart + ShootDirection * TraceMaxDistance; // 提供轨迹获取碰撞信息 FHitResult HitResult; FCollisionQueryParams CollisionParams; CollisionParams.</description>
+    </item>
+    
+    <item>
+      <title>射击伤害</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/</link>
+      <pubDate>Fri, 11 Aug 2023 18:23:26 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E5%B0%84%E5%87%BB%E4%BC%A4%E5%AE%B3/</guid>
+      <description>概览 # 击中游戏角色时, 对其造成伤害 在代码中设置Capsule组件的碰撞反馈 搭建框架: 轨迹计算发生碰撞时, 调用MakeDamage, 传入碰撞信息 # C++ ShootThemUp: Weapon/STUBaseWeapon.h protected void MakeDamage(const FHitResult&amp;amp; HitResult); ShootThemUp: Weapon/STUBaseWeapon.cpp void ASTUBaseWeapon::MakeDamage(const FHitResult&amp;amp; HitResult) {} 在MakeShot中调用MakeDamage ShootThemUp: Weapon/STUBaseWeapon.cpp 实现MakeDamage # 添加数据成员: 固定伤害值 # protected ShootThemUp: Weapon/STUBaseWeapon.h UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float DamageAmount = 10.0f; 获取碰撞Actor, 对其造成伤害 # ShootThemUp: Weapon/STUBaseWeapon.cpp const auto DamagedActor = HitResult.GetActor(); if (!DamagedActor) return; DamagedActor-&amp;gt;TakeDamage(DamageAmount, FDamageEvent(), GetPlayerController(), this); 查看 # 虚幻编辑器 对游戏角色造成射击伤害 游戏角色死亡 游戏角色死亡后播放死亡动画倒地, 其销毁前, Capsule组件成为障碍物 # 虚幻编辑器 运行时显示Capsule组件 show collision 游戏角色死亡, 无法穿过竖立着的Capsule组件 游戏角色死亡后, 设置所有碰撞通道忽略Capsule组件 # C++ ShootThemUp: Player/STUBaseCharacter.</description>
+    </item>
+    
+    <item>
+      <title>瞄准偏移</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/</link>
+      <pubDate>Wed, 16 Aug 2023 13:59:48 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E7%9E%84%E5%87%86%E5%81%8F%E7%A7%BB/</guid>
+      <description>说明 # 游戏角色视角水平旋转时, 身体会跟随; 垂直方向旋转时, 缺乏相应动画 使用瞄准偏移资产, 游戏角色视角垂直旋转时, 显示相应动画 游戏角色视角垂直旋转即Camera组件垂直旋转, 可以用来校准处垂直方向上的瞄准偏移 概览 # 导入AimOffset相关动画 绘制Camera组件的前进向量 创建瞄准偏移资产 在动画蓝图中使用瞄准偏移资产校准垂直方向上的动画 绘制Camera组件的前进向量 # 虚幻编辑器 函数 GetBaseAimRotation 通过Pawn的Controller返回游戏角色CameraComponent的旋转分量 GetForwardVector 从FRotator获取前进分量 GetActorLocation 获取游戏角色位置 在蓝图中获取Camera组件旋转分量 # ABP_BaseCharacter &amp;gt; EventGraph 保存旋转分量到变量, AnimGraph中会用到 # Promote to Variable 变量列表出现新变量, 命名为AimRotation 完整实现 # 绘制Camera组件前进方向 # - 起点 游戏角色位置 偏移 放大的Camera组件前进向量 终点 起点 + 偏移 乘法输入转为float: 右键另一个输入 使用DrawDebugLine绘制 线段参数 Duration 0.0 Thickness 3.0 Line Color 瞄准偏移资产 # Aim Offset 专门用于瞄准 有常规和1D两种, 和混合空间一样 常规AimOffset有两个轴, 覆盖瞄准在水平和垂直方向的偏移 需要绑定骨骼 命名前缀为AO_ 使用瞄准偏移资产 # 导入AimOffset相关动画 # 之前导入的动画资产打开导致程序挂死, 不用亦不删除, 从ShooterGame单独导入 使用到的动画资产 # 这些动画倾向于作为姿势, 由少数帧组成 - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 从ShooterGame迁移 # ShooterGame 选中Content/Animations/TTP_Animations，右键，选择Migrate 仅勾选AimOffset相关动画，共9个 放入指定位置并绑定骨骼 # ShootThemUp 重命名Content/Animations/TTP_Animations为AimOffsetAnimation，移动到Content/ExternalContent目录下, 删除Content/Animations 动画资产全选打开, 为其绑定骨骼HeroTPP_Skeleton 为文件夹设置颜色 创建瞄准偏移资产 # Aim Offset Content/Player/Animations文件夹空白处右键, 选择AimOffset 选择骨骼 HeroTPP_Skeleton 命名为AO_BaseCharacter 配置瞄准偏移资产 # AO_BaseCharacter 双击打开, 面板和混合空间一样 配置轴 # - Name 范围 水平 Yaw -90 ~ 90 垂直 Pitch -90 ~ 90 要求Asset Browser有以下动画 # - AimOffsetFwd AimOffsetUp AimOffsetDown AimOffsetLeft AimOfsetLeftDown AimOffsetLeftUp AimOffsetRight AimOfsetRightDown AimOffsetRightUp 调整动画资产参数以兼容AimOffset资产 # 使得这些动画可以附加到已有姿势上 依次打开9个动画资产, 做如下设置: Asset Details &amp;gt; Additive Settings, 将Additive Anim Type设置为Mesh Space AnimOffset只和该类型动画兼容 Base Pose Type默认为Selected animation frame 选择动画Idle 使用AimOffset相关动画 # 将9个动画拖入到指定位置, 调整座标 (Yaw, Pitch) AimOffsetFwd (0, 0) AimOffsetUp (0, 90) AimOffsetDown (0, -90) AimOffsetLeft (-90, 0) AimOfsetLeftDown (-90, -90) AimOffsetLeftUp (-90, 90) AimOffsetRight (90, 0) AimOfsetRightDown (90, -90) AimOffsetRightUp (90, 90) 动画座标配置 效果 说明 # AO_BaseCharacter在水平和垂直方向都有输入, 本节中, 只配置垂直输入 对于玩家操控的游戏角色, 旋转视角时, 在水平和垂直方向都有动画; 玩家不需要看到游戏角色的侧面旋转 如果希望AI的旋转更写实, 需要配置瞄准偏移的水平输入 在动画蓝图中使用瞄准偏移资产 # ABP_BaseCharacter &amp;gt; AnimGraph 计算运动姿势之后, 添加瞄准偏移 将AO_BaseCharacter拖入AnimGraph, Locomotion作为其输入, 输出作为Slot的输入 可以调试AO_BaseCharacter的(Yaw, Pitch), 编译后, 在窗口检视Idle姿势在该设置下的AimOffset效果 - (90, 0) 右转 (90, 45) 右下 可以调试Velocity, 查看运动时的瞄准偏移效果 获取AimRotation变量, 使用Pitch分量(垂直); Camera组件旋转的水平分量与侧面动画不一致, 不能用作Yaw的输入 查看垂直方向的瞄准偏移 # 武器跟随游戏角色在垂直方向旋转, 射击瞄准相较之前自然一些 </description>
+    </item>
+    
+    <item>
+      <title>FABRIK</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/</link>
+      <pubDate>Fri, 18 Aug 2023 19:46:42 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/fabrik/</guid>
+      <description>概览 # 问题描述 FABRIK 在动画蓝图中使用FABRIK 问题描述 # 调整游戏角色Camera组件位置, 使之拍摄游戏角色正面 # BP_STUBaseCharacter 在SpringArm组件细节面板设置Camera组件的Socket Offset 之前 SpringArm &amp;gt; Details &amp;gt; Camera &amp;gt; Socket Offset &amp;gt; X = 600 Y = 0 设置Camera组件变换属性 之前 Camera &amp;gt; Details &amp;gt; Transform &amp;gt; Rotation &amp;gt; Yaw = 180 效果图 操控游戏角色运动时, 左手和枪管之间未固定, 二者会有错开的情况 # 在动画蓝图添加FABRIK, 将左手固定在枪管合适位置 # FABRIK # FABRIK 在动画蓝图添加FABRIK # ABP_BaseCharacter &amp;gt; AnimGraph 在动画蓝图添加FABRIK, 切换末端执行器变换在细节面板设置 确定骨骼链 # 在导航栏选择骨骼 左臂的起点为b_LeftArm, 终点为b_LeftWeapon 配置FABRIK &amp;gt; Solver - Tip Bone b_LeftWeapon Root Bone b_LeftArm 游戏角色移动时, 左手和右手都在武器上, 以右手为参照, 固定左手位置 # 设置末端执行器Target 设置相对Target的变换 - Effector Target b_RightHand Effector Transform Space Bone Space Effector Transform X=-50 Y=-11 Z=4 将FABRIK加入到输出 # 将AO_BaseCharacter作为FABRIK的输入 Component Pose 自动添加转换座标系的节点 LocalToComponent 将输出作为Slot的输入 自动添加转换座标系的节点 ComponentToLocal 播放死亡动画时, 左手不需要扶在枪管上 查看 # 操控游戏角色运动时, 左手固定在枪管合适位置 </description>
+    </item>
+    
+    <item>
+      <title>持续射击和瞄准偏离</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/</link>
+      <pubDate>Sat, 19 Aug 2023 14:23:46 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%8C%81%E7%BB%AD%E5%B0%84%E5%87%BB%E5%92%8C%E7%9E%84%E5%87%86%E5%81%8F%E7%A6%BB/</guid>
+      <description>说明 # 当前: 按下鼠标左键触发武器组件的回调函数, 其会调用武器的Fire接口; 只发射一次子弹 为发射子弹添加定时器, 鼠标左键按下开启定时器, 进行持续射击, 松开时关闭定时器 概览 # 恢复Camera组件位置 为武器发射子弹添加定时器 修改武器组件和游戏角色相关逻辑 实现瞄准偏离 恢复Camera组件位置, 使之拍摄游戏角色背面 # BP_STUBaseCharacter 设置Camera组件变换属性 Camera &amp;gt; Details &amp;gt; Transform &amp;gt; Rotation &amp;gt; Yaw = 0 在SpringArm组件细节面板设置Camera组件的Socket Offset SpringArm &amp;gt; Details &amp;gt; Camera &amp;gt; Socket Offset &amp;gt; X = 0 Y = 100 持续射击 # 修改武器发射子弹逻辑 # Stub # ShootThemUp: Weapon/STUBaseWeapon.h 定时器 private FTimerHandle ShotTimerHandle; 定时器间隔 protected UPROPERTY(VisibleAnywhere, BlueprintReadWrite) float TimeBetweenShots = 0.1f; 回调函数使用MakeShot 添加FireStart和FireStop接口 # public ShootThemUp: Weapon/STUBaseWeapon.</description>
+    </item>
+    
+    <item>
+      <title>打包</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/</link>
+      <pubDate>Thu, 05 Oct 2023 14:49:29 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/</guid>
+      <description>在代码中添加检查 # 使用 checkf , 和 check 相比, 可以设置提示信息 使用 checkNoEntry , 等价于调用 check 返回false; 立即触发断言 assertion STUBaseWeapon # ShootThemUp: Weapon/STUBaseWeapon.cpp 检查蓝图中设置的子弹数, 要求大于等于0 可以使用ClampMin和ClampMax进行元信息 meta information 检查 之后在蓝图设置错误数值触发检查 // BeginPlay checkf(DefaultAmmo.Bullets &amp;gt; 0, TEXT(&amp;quot;Bullets count couldn&#39;t be less or equal zero&amp;quot;)); checkf(DefaultAmmo.Clips &amp;gt; 0, TEXT(&amp;quot;Clips count couldn&#39;t be less or equal zero&amp;quot;)); STUWeaponComponent # ShootThemUp: Components/STUWeaponComponent.cpp 定义常量, 检查蓝图中配置的武器个数 constexpr static int32 WeaponNum = 2; // BeginPlay checkf(WeaponData.Num() == 2, TEXT(&amp;quot;Our character can hold only %d weapon items&amp;quot;), WeaponNum); AnimNotify # ShootThemUp: Components/STUWeaponComponent.</description>
+    </item>
+    
+  </channel>
+</rss>
