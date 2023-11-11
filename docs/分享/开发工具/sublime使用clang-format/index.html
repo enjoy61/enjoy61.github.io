@@ -15,17 +15,17 @@
   <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>使用C&#43;&#43;实现游戏角色生命条 - 六一的部落格</title>
-<meta name="description" content="概览 # 创建C&#43;&#43;类: 窗口部件; 返回生命值百分比 在STUGameHUD中创建并添加窗口部件 修改WBP_PlayerHUD基类; 使用STUPlayerHUDWidget提供的接口获取生命值百分比 移除BP_STUGameHUD中创建并添加窗口部件逻辑; 配置窗口部件类属性 C&#43;&#43;类: 窗口部件 # 在虚幻编辑器中创建C&#43;&#43;类 # - 基类 UserWidget 名称 STUPlayerHUDWidget 路径 UI/ Public 添加接口: 获取生命值百分比 # ShootThemUp: UI/STUPlayerHUDWidget.h public UFUNCTION(BlueprintCallable) float GetHealthPercent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp 使用Cast转换空指针得到空指针 #include &amp;quot;Components/STUHealthComponent.h&amp;quot; float USTUPlayerHUDWidget::GetHealthPercent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return 0.0f; const auto Component = Player-&amp;gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&amp;lt;USTUHealthComponent&amp;gt;(Component); if (!HealthComponent) return 0.0f; return HealthComponent-&amp;gt;GetHealthPercent(); } 在STUGameHUD中创建并添加窗口部件 # 添加数据成员: 保存窗口部件类 # ShootThemUp: UI/STUGameHUD.">
-  <link rel="canonical" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">
+  <title>Sublime使用clang-format - 六一的部落格</title>
+<meta name="description" content="说明 # 需要安装clang-format程序 对所有项目生效 安装clang-format # macOS where clang-format brew search clang-format brew install clang-format 查看clang-format路径 where clang-format /usr/local/bin/clang-format Sublime安装clang-format插件 # 可以这么理解, 在Sublime和clang-format之间建立桥梁 包管理器安装clang-format Command-Shift-P 配置路径 Sublime Text &amp;gt; Preferences &amp;gt; Package Settings &amp;gt; Clang Format 参照 CustomStyle - Default clang_format_custom.sublime-settings &amp;ndash; Clang Format Settings - Default clang_format.sublime-settings &amp;ndash; Clang Format 用户设置 CustomStyle - User clang_format_custom.sublime-settings &amp;ndash; User Settings - User clang_format.sublime-settings &amp;ndash; User 将参照拷贝到用户设置 设置clang-format # 使用默认配置 打开 Settings - User - binary 程序路径 默认 style 样式 Custom format_on_save 保存时对文件格式化 true languages 格式化语言 默认 { // This is the path to the binary for clang-format.">
+  <link rel="canonical" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用C&#43;&#43;实现游戏角色生命条">
-<meta property="og:description" content="概览 # 创建C&#43;&#43;类: 窗口部件; 返回生命值百分比 在STUGameHUD中创建并添加窗口部件 修改WBP_PlayerHUD基类; 使用STUPlayerHUDWidget提供的接口获取生命值百分比 移除BP_STUGameHUD中创建并添加窗口部件逻辑; 配置窗口部件类属性 C&#43;&#43;类: 窗口部件 # 在虚幻编辑器中创建C&#43;&#43;类 # - 基类 UserWidget 名称 STUPlayerHUDWidget 路径 UI/ Public 添加接口: 获取生命值百分比 # ShootThemUp: UI/STUPlayerHUDWidget.h public UFUNCTION(BlueprintCallable) float GetHealthPercent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp 使用Cast转换空指针得到空指针 #include &quot;Components/STUHealthComponent.h&quot; float USTUPlayerHUDWidget::GetHealthPercent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return 0.0f; const auto Component = Player-&gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&lt;USTUHealthComponent&gt;(Component); if (!HealthComponent) return 0.0f; return HealthComponent-&gt;GetHealthPercent(); } 在STUGameHUD中创建并添加窗口部件 # 添加数据成员: 保存窗口部件类 # ShootThemUp: UI/STUGameHUD.">
-<meta property="og:url" content="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">
+<meta property="og:title" content="Sublime使用clang-format">
+<meta property="og:description" content="说明 # 需要安装clang-format程序 对所有项目生效 安装clang-format # macOS where clang-format brew search clang-format brew install clang-format 查看clang-format路径 where clang-format /usr/local/bin/clang-format Sublime安装clang-format插件 # 可以这么理解, 在Sublime和clang-format之间建立桥梁 包管理器安装clang-format Command-Shift-P 配置路径 Sublime Text &gt; Preferences &gt; Package Settings &gt; Clang Format 参照 CustomStyle - Default clang_format_custom.sublime-settings &ndash; Clang Format Settings - Default clang_format.sublime-settings &ndash; Clang Format 用户设置 CustomStyle - User clang_format_custom.sublime-settings &ndash; User Settings - User clang_format.sublime-settings &ndash; User 将参照拷贝到用户设置 设置clang-format # 使用默认配置 打开 Settings - User - binary 程序路径 默认 style 样式 Custom format_on_save 保存时对文件格式化 true languages 格式化语言 默认 { // This is the path to the binary for clang-format.">
+<meta property="og:url" content="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">
 <meta property="og:site_name" content="六一的部落格">
-<meta property="article:published_time" content="2023-10-06T23:30:32+00:00">
-  <meta property="article:modified_time" content="2023-10-07T17:44:12+08:00">
+<meta property="article:published_time" content="2023-11-11T14:53:10+00:00">
+  <meta property="article:modified_time" content="2023-11-11T15:43:50+08:00">
   
   <meta property="og:image" content="https://www.enjoy61.com/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -33,10 +33,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@getdoks">
 <meta name="twitter:creator" content="@henkverlinde">
-<meta name="twitter:title" content="使用C&#43;&#43;实现游戏角色生命条">
+<meta name="twitter:title" content="Sublime使用clang-format">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.enjoy61.com/doks.png">
-    <meta name="twitter:image:alt" content="使用C&#43;&#43;实现游戏角色生命条">
+    <meta name="twitter:image:alt" content="Sublime使用clang-format">
 
 <script type="application/ld+json">
 {
@@ -75,9 +75,9 @@
       },
     {
       "@type": "WebPage",
-      "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/",
-      "url": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/",
-      "name": "使用C\u002b\u002b实现游戏角色生命条",
+      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/",
+      "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/",
+      "name": "Sublime使用clang-format",
       "description": "",
       "isPartOf": {
         "@id": "https://www.enjoy61.com/#/schema/website/1"
@@ -85,22 +85,22 @@
       "about": {
           "@id": "https://www.enjoy61.com/#/schema/organization/1"
         },
-      "datePublished": "2023-10-06T23:30:32CET",
-      "dateModified": "2023-10-07T17:44:12CET",
+      "datePublished": "2023-11-11T14:53:10CET",
+      "dateModified": "2023-11-11T15:43:50CET",
       "breadcrumb": {
-        "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/#/schema/breadcrumb/1"
+        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/#/schema/breadcrumb/1"
       },
       "primaryImageOfPage": {
-        "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/#/schema/image/2"
+        "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/#/schema/image/2"
       },
       "inLanguage": "en-US",
       "potentialAction": [{
-        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/"]
+        "@type": "ReadAction", "target": ["https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/"]
       }]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/#/schema/breadcrumb/1",
+      "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/#/schema/breadcrumb/1",
       "name": "Breadcrumbs",
       "itemListElement": [{
         "@type": "ListItem",
@@ -125,33 +125,24 @@
         "position":  3 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "url": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/",
-          "name": "% E8%99%9 A% E5% B9% Bb% E5% Bc%95% E6%93%8 E"
+          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
+          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/",
+          "name": "% E5%88%86% E4% Ba% Ab"
           }
         },{
         "@type": "ListItem",
         "position":  4 ,
         "item": {
           "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
-          "url": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/",
-          "name": "% E8% Bf%9 B% E9%98% B6% E8% Af% Be% E7% A8%8 B"
+          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/",
+          "url": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/",
+          "name": "% E5% Bc%80% E5%8 F%91% E5% B7% A5% E5%85% B7"
           }
         },{
         "@type": "ListItem",
         "position":  5 ,
         "item": {
-          "@type": "WebPage",
-          "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/",
-          "url": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/",
-          "name": "% E8%99%9 A% E5% B9% Bb% E8% Bf%90% E5%8 A% A8% E5%9 B% Be% E8% A1% A8"
-          }
-        },{
-        "@type": "ListItem",
-        "position":  6 ,
-        "item": {
-          "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/"
+          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/"
           }
         }]
     },
@@ -162,16 +153,16 @@
         {
           "@type": "Article",
           "@id": "https://www.enjoy61.com/#/schema/article/1",
-          "headline": "使用C\u002b\u002b实现游戏角色生命条",
+          "headline": "Sublime使用clang-format",
           "description": "",
           "isPartOf": {
-            "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/"
+            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/"
           },
           "mainEntityOfPage": {
-            "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/"
+            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/"
           },
-          "datePublished": "2023-10-06T23:30:32CET",
-          "dateModified": "2023-10-07T17:44:12CET",
+          "datePublished": "2023-11-11T14:53:10CET",
+          "dateModified": "2023-11-11T15:43:50CET",
           "author": {
             "@id": "https://www.enjoy61.com/#/schema/person/2"
           },
@@ -179,7 +170,7 @@
               "@id": "https://www.enjoy61.com/#/schema/organization/1"
             },
           "image": {
-            "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/#/schema/image/2"
+            "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/#/schema/image/2"
           }
         }
       ]
@@ -204,10 +195,10 @@
       "@graph": [
         {
           "@type": "ImageObject",
-          "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/#/schema/image/2",
+          "@id": "https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/#/schema/image/2",
           "url": "https://www.enjoy61.com/doks.png",
           "contentUrl": "https://www.enjoy61.com/doks.png",
-          "caption": "使用C\u002b\u002b实现游戏角色生命条"
+          "caption": "Sublime使用clang-format"
         }
       ]
     }
@@ -360,10 +351,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -727,10 +718,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
                     开发工具
                   </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -750,7 +741,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
+                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
                         
                         
                       
@@ -842,10 +833,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -1281,10 +1272,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -1647,10 +1638,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
                               虚幻运动图表
                             </button>
-                            <div class="collapse show" id="section-64c85d56a8e71355a653189ff0580cfe">
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -1663,7 +1654,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
+                                    <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -2201,10 +2192,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -2568,10 +2559,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
                     开发工具
                   </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -2591,7 +2582,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
+                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
                         
                         
                       
@@ -2683,10 +2674,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -3122,10 +3113,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -3488,10 +3479,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
                               虚幻运动图表
                             </button>
-                            <div class="collapse show" id="section-64c85d56a8e71355a653189ff0580cfe">
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -3504,7 +3495,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
+                                    <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -3976,10 +3967,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="false">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-c31f48f84ef207e66a03c015a7243b43" aria-expanded="true">
           分享
         </button>
-        <div class="collapse" id="section-c31f48f84ef207e66a03c015a7243b43">
+        <div class="collapse show" id="section-c31f48f84ef207e66a03c015a7243b43">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -4343,10 +4334,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="false">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-2c509530bf439a36168a86e21c160c06" aria-expanded="true">
                     开发工具
                   </button>
-                  <div class="collapse" id="section-2c509530bf439a36168a86e21c160c06">
+                  <div class="collapse show" id="section-2c509530bf439a36168a86e21c160c06">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -4366,7 +4357,7 @@
 
                         
                           
-                          <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
+                          <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/">Sublime使用clang-format</a></li>
                         
                         
                       
@@ -4458,10 +4449,10 @@
     
       
       <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="true">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-b1452797227c8dd79ace0e323009d662" aria-expanded="false">
           虚幻引擎
         </button>
-        <div class="collapse show" id="section-b1452797227c8dd79ace0e323009d662">
+        <div class="collapse" id="section-b1452797227c8dd79ace0e323009d662">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             
               
@@ -4897,10 +4888,10 @@
               
                 
                 <li class="my-1 ms-3">
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="true">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-4696f1ad74f4d52f8329560155ef762b" aria-expanded="false">
                     进阶课程
                   </button>
-                  <div class="collapse show" id="section-4696f1ad74f4d52f8329560155ef762b">
+                  <div class="collapse" id="section-4696f1ad74f4d52f8329560155ef762b">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                       
 
@@ -5263,10 +5254,10 @@
                         
                           
                           <li class="my-1 ms-3">
-                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="true">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#section-64c85d56a8e71355a653189ff0580cfe" aria-expanded="false">
                               虚幻运动图表
                             </button>
-                            <div class="collapse show" id="section-64c85d56a8e71355a653189ff0580cfe">
+                            <div class="collapse" id="section-64c85d56a8e71355a653189ff0580cfe">
                               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                 
                                 
@@ -5279,7 +5270,7 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
+                                    <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/">使用C&#43;&#43;实现游戏角色生命条</a></li>
                                   
 
                                 
@@ -5647,32 +5638,10 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a></li>
-    <li><a href="#c-plus-plus-类-窗口部件">C++类: 窗口部件</a>
-      <ul>
-        <li><a href="#在虚幻编辑器中创建c-plus-plus-类">在虚幻编辑器中创建C++类</a></li>
-        <li><a href="#添加接口-获取生命值百分比">添加接口: 获取生命值百分比</a></li>
-      </ul>
-    </li>
-    <li><a href="#在stugamehud中创建并添加窗口部件">在STUGameHUD中创建并添加窗口部件</a>
-      <ul>
-        <li><a href="#添加数据成员-保存窗口部件类">添加数据成员: 保存窗口部件类</a></li>
-        <li><a href="#创建窗口部件并添加到视口">创建窗口部件并添加到视口</a>
-          <ul>
-            <li><a href="#创建窗口部件">创建窗口部件</a></li>
-            <li><a href="#添加到视口">添加到视口</a></li>
-            <li><a href="#在beginplay中完成">在BeginPlay中完成</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#修改wbp-playerhud">修改WBP_PlayerHUD</a>
-      <ul>
-        <li><a href="#将基类从userwidget改为stuplayerhudwidget">将基类从UserWidget改为STUPlayerHUDWidget</a></li>
-        <li><a href="#修改蓝图gethealthpercent实现">修改蓝图GetHealthPercent实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#修改bp-stugamehud">修改BP_STUGameHUD</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装clang-format">安装clang-format</a></li>
+    <li><a href="#sublime安装clang-format插件">Sublime安装clang-format插件</a></li>
+    <li><a href="#设置clang-format">设置clang-format</a></li>
   </ul>
 </nav>
       </div>
@@ -5684,32 +5653,10 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a></li>
-    <li><a href="#c-plus-plus-类-窗口部件">C++类: 窗口部件</a>
-      <ul>
-        <li><a href="#在虚幻编辑器中创建c-plus-plus-类">在虚幻编辑器中创建C++类</a></li>
-        <li><a href="#添加接口-获取生命值百分比">添加接口: 获取生命值百分比</a></li>
-      </ul>
-    </li>
-    <li><a href="#在stugamehud中创建并添加窗口部件">在STUGameHUD中创建并添加窗口部件</a>
-      <ul>
-        <li><a href="#添加数据成员-保存窗口部件类">添加数据成员: 保存窗口部件类</a></li>
-        <li><a href="#创建窗口部件并添加到视口">创建窗口部件并添加到视口</a>
-          <ul>
-            <li><a href="#创建窗口部件">创建窗口部件</a></li>
-            <li><a href="#添加到视口">添加到视口</a></li>
-            <li><a href="#在beginplay中完成">在BeginPlay中完成</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#修改wbp-playerhud">修改WBP_PlayerHUD</a>
-      <ul>
-        <li><a href="#将基类从userwidget改为stuplayerhudwidget">将基类从UserWidget改为STUPlayerHUDWidget</a></li>
-        <li><a href="#修改蓝图gethealthpercent实现">修改蓝图GetHealthPercent实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#修改bp-stugamehud">修改BP_STUGameHUD</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装clang-format">安装clang-format</a></li>
+    <li><a href="#sublime安装clang-format插件">Sublime安装clang-format插件</a></li>
+    <li><a href="#设置clang-format">设置clang-format</a></li>
   </ul>
 </nav>
   </nav>
@@ -5722,14 +5669,13 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/docs/">Docs</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">虚幻引擎</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/">进阶课程</a></li>
-<li class="breadcrumb-item"><a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/">虚幻运动图表</a></li>
-<li class="breadcrumb-item active" aria-current="page">使用C&#43;&#43;实现游戏角色生命条</li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/">分享</a></li>
+<li class="breadcrumb-item"><a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li>
+<li class="breadcrumb-item active" aria-current="page">Sublime使用clang-format</li>
 					</ol>
 				</nav>
 			
-			<h1>使用C&#43;&#43;实现游戏角色生命条</h1>
+			<h1>Sublime使用clang-format</h1>
 			<p class="lead"></p>
 			<nav class="d-xl-none" aria-label="Quaternary navigation">
 				<div class="d-xl-none">
@@ -5745,32 +5691,10 @@
       <div class="page-links">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a></li>
-    <li><a href="#c-plus-plus-类-窗口部件">C++类: 窗口部件</a>
-      <ul>
-        <li><a href="#在虚幻编辑器中创建c-plus-plus-类">在虚幻编辑器中创建C++类</a></li>
-        <li><a href="#添加接口-获取生命值百分比">添加接口: 获取生命值百分比</a></li>
-      </ul>
-    </li>
-    <li><a href="#在stugamehud中创建并添加窗口部件">在STUGameHUD中创建并添加窗口部件</a>
-      <ul>
-        <li><a href="#添加数据成员-保存窗口部件类">添加数据成员: 保存窗口部件类</a></li>
-        <li><a href="#创建窗口部件并添加到视口">创建窗口部件并添加到视口</a>
-          <ul>
-            <li><a href="#创建窗口部件">创建窗口部件</a></li>
-            <li><a href="#添加到视口">添加到视口</a></li>
-            <li><a href="#在beginplay中完成">在BeginPlay中完成</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#修改wbp-playerhud">修改WBP_PlayerHUD</a>
-      <ul>
-        <li><a href="#将基类从userwidget改为stuplayerhudwidget">将基类从UserWidget改为STUPlayerHUDWidget</a></li>
-        <li><a href="#修改蓝图gethealthpercent实现">修改蓝图GetHealthPercent实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#修改bp-stugamehud">修改BP_STUGameHUD</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装clang-format">安装clang-format</a></li>
+    <li><a href="#sublime安装clang-format插件">Sublime安装clang-format插件</a></li>
+    <li><a href="#设置clang-format">设置clang-format</a></li>
   </ul>
 </nav>
       </div>
@@ -5782,173 +5706,186 @@
   <nav class="my-toc">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#概览">概览</a></li>
-    <li><a href="#c-plus-plus-类-窗口部件">C++类: 窗口部件</a>
-      <ul>
-        <li><a href="#在虚幻编辑器中创建c-plus-plus-类">在虚幻编辑器中创建C++类</a></li>
-        <li><a href="#添加接口-获取生命值百分比">添加接口: 获取生命值百分比</a></li>
-      </ul>
-    </li>
-    <li><a href="#在stugamehud中创建并添加窗口部件">在STUGameHUD中创建并添加窗口部件</a>
-      <ul>
-        <li><a href="#添加数据成员-保存窗口部件类">添加数据成员: 保存窗口部件类</a></li>
-        <li><a href="#创建窗口部件并添加到视口">创建窗口部件并添加到视口</a>
-          <ul>
-            <li><a href="#创建窗口部件">创建窗口部件</a></li>
-            <li><a href="#添加到视口">添加到视口</a></li>
-            <li><a href="#在beginplay中完成">在BeginPlay中完成</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#修改wbp-playerhud">修改WBP_PlayerHUD</a>
-      <ul>
-        <li><a href="#将基类从userwidget改为stuplayerhudwidget">将基类从UserWidget改为STUPlayerHUDWidget</a></li>
-        <li><a href="#修改蓝图gethealthpercent实现">修改蓝图GetHealthPercent实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#修改bp-stugamehud">修改BP_STUGameHUD</a></li>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#安装clang-format">安装clang-format</a></li>
+    <li><a href="#sublime安装clang-format插件">Sublime安装clang-format插件</a></li>
+    <li><a href="#设置clang-format">设置clang-format</a></li>
   </ul>
 </nav>
   </nav>
   </div>
 
 			</nav>
-			<h2 id="概览">概览 <a href="#%e6%a6%82%e8%a7%88" class="anchor" aria-hidden="true">#</a></h2>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 创建C++类: 窗口部件; 返回生命值百分比 <br/></li>
-<li><input checked="" disabled="" type="checkbox"> 在STUGameHUD中创建并添加窗口部件 <br/></li>
-<li><input checked="" disabled="" type="checkbox"> 修改WBP_PlayerHUD基类; 使用STUPlayerHUDWidget提供的接口获取生命值百分比 <br/></li>
-<li><input checked="" disabled="" type="checkbox"> 移除BP_STUGameHUD中创建并添加窗口部件逻辑; 配置窗口部件类属性 <br/></li>
-</ul>
-<h2 id="c-plus-plus-类-窗口部件">C++类: 窗口部件 <a href="#c-plus-plus-%e7%b1%bb-%e7%aa%97%e5%8f%a3%e9%83%a8%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="在虚幻编辑器中创建c-plus-plus-类">在虚幻编辑器中创建C++类 <a href="#%e5%9c%a8%e8%99%9a%e5%b9%bb%e7%bc%96%e8%be%91%e5%99%a8%e4%b8%ad%e5%88%9b%e5%bb%bac-plus-plus-%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h3>
+			<h2 id="说明">说明 <a href="#%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>需要安装clang-format程序 <br/></li>
+<li>对所有项目生效 <br/></li>
+</ol>
+<h2 id="安装clang-format">安装clang-format <a href="#%e5%ae%89%e8%a3%85clang-format" class="anchor" aria-hidden="true">#</a></h2>
+<p><code>macOS</code> <br/></p>
+<pre><code class="language-bash">where clang-format
+brew search clang-format
+brew install clang-format
+</code></pre>
+<p>查看clang-format路径 <br/></p>
+<pre><code class="language-bash">where clang-format      
+</code></pre>
+<pre><code class="language-text">/usr/local/bin/clang-format
+</code></pre>
+<h2 id="sublime安装clang-format插件">Sublime安装clang-format插件 <a href="#sublime%e5%ae%89%e8%a3%85clang-format%e6%8f%92%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
+<p>可以这么理解, 在Sublime和clang-format之间建立桥梁 <br/></p>
+<ol>
+<li>
+<p>包管理器安装clang-format <br/>
+<code>Command-Shift-P</code> <br/></p>
+</li>
+<li>
+<p>配置路径 <br/>
+<code>Sublime Text &gt; Preferences &gt; Package Settings &gt; Clang Format</code> <br/></p>
 <table>
 <thead>
 <tr>
+<th>参照</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CustomStyle - Default</code></td>
+<td>clang_format_custom.sublime-settings &ndash; Clang Format</td>
+</tr>
+<tr>
+<td><code>Settings - Default</code></td>
+<td>clang_format.sublime-settings &ndash; Clang Format</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>用户设置</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CustomStyle - User</code></td>
+<td>clang_format_custom.sublime-settings &ndash; User</td>
+</tr>
+<tr>
+<td><code>Settings - User</code></td>
+<td>clang_format.sublime-settings &ndash; User</td>
+</tr>
+</tbody>
+</table>
+<p>将参照拷贝到用户设置 <br/></p>
+</li>
+</ol>
+<h2 id="设置clang-format">设置clang-format <a href="#%e8%ae%be%e7%bd%aeclang-format" class="anchor" aria-hidden="true">#</a></h2>
+<ol>
+<li>
+<p>使用默认配置 <br/>
+打开 <code>Settings - User</code> <br/></p>
+<table>
+<thead>
+<tr>
+<th></th>
 <th>-</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>基类</td>
-<td>UserWidget</td>
+<td>binary</td>
+<td>程序路径</td>
+<td>默认</td>
 </tr>
 <tr>
-<td>名称</td>
-<td>STUPlayerHUDWidget</td>
+<td>style</td>
+<td>样式</td>
+<td>Custom</td>
 </tr>
 <tr>
-<td>路径</td>
-<td>UI/</td>
+<td>format_on_save</td>
+<td>保存时对文件格式化</td>
+<td>true</td>
 </tr>
 <tr>
-<td></td>
-<td>Public</td>
+<td>languages</td>
+<td>格式化语言</td>
+<td>默认</td>
 </tr>
 </tbody>
 </table>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/create-STUPlayerHUDWidget.png" width="800" /> <br/> <br/></p>
-<h3 id="添加接口-获取生命值百分比">添加接口: 获取生命值百分比 <a href="#%e6%b7%bb%e5%8a%a0%e6%8e%a5%e5%8f%a3-%e8%8e%b7%e5%8f%96%e7%94%9f%e5%91%bd%e5%80%bc%e7%99%be%e5%88%86%e6%af%94" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShootThemUp: UI/STUPlayerHUDWidget.h</code> <br/>
-<code>public</code> <br/></p>
-<pre><code class="language-cpp">UFUNCTION(BlueprintCallable)
-float GetHealthPercent() const;
-</code></pre>
-<p><code>ShootThemUp: UI/STUPlayerHUDWidget.cpp</code> <br/>
-使用Cast转换空指针得到空指针 <br/></p>
-<pre><code class="language-cpp">#include &quot;Components/STUHealthComponent.h&quot;
+<pre><code class="language-json">{
+    // This is the path to the binary for clang-format. If it is in your path,
+    // it should just work out-of-the-box. Otherwise, you can set the full path,
+    // which will look like this: 
+    //    &quot;binary&quot;: &quot;/path/to/clang/bin/clang-format&quot;
+    // Note that you can set this from within ST directly through the Command
+    // Palette. 
 
-float USTUPlayerHUDWidget::GetHealthPercent() const
-{
-    const auto Player = GetOwningPlayerPawn();
-    if (!Player) return 0.0f;
+    &quot;binary&quot;: &quot;clang-format&quot;,
 
-    const auto Component = Player-&gt;GetComponentByClass(USTUHealthComponent::StaticClass());
-    const auto HealthComponent = Cast&lt;USTUHealthComponent&gt;(Component);
-    if (!HealthComponent) return 0.0f;
+    // We use the Google style by default. This can be selected from ST using
+    // the Command Palette. Choosing 'Custom' means that the settings will
+    // be loaded from the Sublime Text settings file (which is accessed
+    // from within ST through preferences. Choosing 'File' will look in the 
+    // local directories from a clang-format settings file. See the clang-format
+    // documentation to see how this works. 
 
-    return HealthComponent-&gt;GetHealthPercent();
+    &quot;style&quot;: &quot;Custom&quot;,
+
+    // Setting this to true will run the formatter on every save. If you want to
+    // only enable this for a given project, try checking out the package
+    // &quot;Project-Specific&quot;.
+
+    &quot;format_on_save&quot;: true,
+
+    // If format_on_save is set to true, ClangFormat checks if the current file
+    // has its syntax set to a language in the list below. If it is in the list,
+    // then the file will be formatted by ClangFormat.
+
+    &quot;languages&quot;: [&quot;C&quot;, &quot;C++&quot;, &quot;C++11&quot;, &quot;JavaScript&quot;, &quot;Objective-C&quot;, &quot;Objective-C++&quot;]
 }
 </code></pre>
-<h2 id="在stugamehud中创建并添加窗口部件">在STUGameHUD中创建并添加窗口部件 <a href="#%e5%9c%a8stugamehud%e4%b8%ad%e5%88%9b%e5%bb%ba%e5%b9%b6%e6%b7%bb%e5%8a%a0%e7%aa%97%e5%8f%a3%e9%83%a8%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="添加数据成员-保存窗口部件类">添加数据成员: 保存窗口部件类 <a href="#%e6%b7%bb%e5%8a%a0%e6%95%b0%e6%8d%ae%e6%88%90%e5%91%98-%e4%bf%9d%e5%ad%98%e7%aa%97%e5%8f%a3%e9%83%a8%e4%bb%b6%e7%b1%bb" class="anchor" aria-hidden="true">#</a></h3>
-<p><code>ShootThemUp: UI/STUGameHUD.h</code> <br/>
-<code>protected</code> <br/></p>
-<pre><code class="language-cpp">class UUserWidget;
-
-UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-TSubclassOf&lt;UUserWidget&gt; PlayerHUDWidgetClass;
-</code></pre>
-<h3 id="创建窗口部件并添加到视口">创建窗口部件并添加到视口 <a href="#%e5%88%9b%e5%bb%ba%e7%aa%97%e5%8f%a3%e9%83%a8%e4%bb%b6%e5%b9%b6%e6%b7%bb%e5%8a%a0%e5%88%b0%e8%a7%86%e5%8f%a3" class="anchor" aria-hidden="true">#</a></h3>
-<p>通常, 在蓝图中使用的函数和C++中提供同样功能的函数一一对应, 甚至同名 <br/></p>
-<h4 id="创建窗口部件">创建窗口部件 <a href="#%e5%88%9b%e5%bb%ba%e7%aa%97%e5%8f%a3%e9%83%a8%e4%bb%b6" class="anchor" aria-hidden="true">#</a></h4>
-<p>头文件 <code>Blueprint/UserWidget.h</code> 提供CreateWidget函数 <br/></p>
-<h4 id="添加到视口">添加到视口 <a href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e8%a7%86%e5%8f%a3" class="anchor" aria-hidden="true">#</a></h4>
-<p>使用AddToViewport函数 <br/></p>
-<p>添加到视口时可以设置景深 <code>Z-order</code> 参数, 涉及到窗口部件的渲染顺序, 默认为0 <br/></p>
-<h4 id="在beginplay中完成">在BeginPlay中完成 <a href="#%e5%9c%a8beginplay%e4%b8%ad%e5%ae%8c%e6%88%90" class="anchor" aria-hidden="true">#</a></h4>
-<p><code>ShootThemUp: UI/STUGameHUD.h</code> <br/>
-<code>protected</code> <br/></p>
-<pre><code class="language-cpp">virtual void BeginPlay() override;
-</code></pre>
-<p><code>ShootThemUp: UI/STUGameHUD.cpp</code> <br/></p>
-<pre><code class="language-cpp">#include &quot;Blueprint/UserWidget.h&quot; // Provide CreateWidget: Template function
-
-void ASTUGameHUD::BeginPlay()
-{
-    Super::BeginPlay();
-    auto PlayerHUDWidget = CreateWidget&lt;UUserWidget&gt;(GetWorld(), PlayerHUDWidgetClass);
-    if (PlayerHUDWidget)
-    {
-        PlayerHUDWidget-&gt;AddToViewport();
-    }
+</li>
+<li>
+<p>自定义样式 <br/>
+屏蔽所有内容, 并添加以下内容 <br/></p>
+<pre><code class="language-json">{
+    &quot;BasedOnStyle&quot;: &quot;Microsoft&quot;,
+    &quot;IndentWidth&quot;: &quot;4&quot;,
+    &quot;UseTab&quot;: &quot;Never&quot;,
+    &quot;BreakBeforeBraces&quot;: &quot;Allman&quot;,
+    &quot;ColumnLimit&quot;: &quot;140&quot;,
+    &quot;AccessModifierOffset&quot;: &quot;-4&quot;,
+    &quot;SortIncludes&quot;: false,
+    &quot;AllowShortBlocksOnASingleLine&quot;: true,
+    &quot;AlignAfterOpenBracket&quot;: &quot;Align&quot;,
+    &quot;AllowShortFunctionsOnASingleLine&quot;: &quot;Inline&quot;,
+    &quot;PointerAlignment&quot;: &quot;Right&quot;,
 }
 </code></pre>
-<h2 id="修改wbp-playerhud">修改WBP_PlayerHUD <a href="#%e4%bf%ae%e6%94%b9wbp-playerhud" class="anchor" aria-hidden="true">#</a></h2>
-<h3 id="将基类从userwidget改为stuplayerhudwidget">将基类从UserWidget改为STUPlayerHUDWidget <a href="#%e5%b0%86%e5%9f%ba%e7%b1%bb%e4%bb%8euserwidget%e6%94%b9%e4%b8%bastuplayerhudwidget" class="anchor" aria-hidden="true">#</a></h3>
-<p>打开WBP_PlayerHUD, <code>File &gt; Reparent Blueprint</code> <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/WBP_PlayerHUD-set-parent.png" width="1000" /> <br/> <br/></p>
-<p>选择STUPlayerHUDWidget <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/reparent.png" width="400" /> <br/> <br/></p>
-<p>右上角查看当前基类 <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/new-parent.png" width="1000" /> <br/> <br/></p>
-<h3 id="修改蓝图gethealthpercent实现">修改蓝图GetHealthPercent实现 <a href="#%e4%bf%ae%e6%94%b9%e8%93%9d%e5%9b%begethealthpercent%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true">#</a></h3>
-<p>去到 <code>Graph</code> <br/></p>
-<ul>
-<li>
-<p>添加节点: <code>GetHealthPercent</code> <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/add-node-STUPlayerHUDWidget-GetHealthPercent.png" width="400" /> <br/> <br/></p>
+<p>AllowShortBlocksOnASingleLine不生效 <br/></p>
 </li>
-<li>
-<p>蓝图实现 <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/bp.png" width="700" /> <br/> <br/></p>
-<p>窗口部件的逻辑和功能封装在C++中, 在虚幻运动图表编辑器, 我们可以从设计的角度装饰窗口部件 <br/></p>
-</li>
-</ul>
-<h2 id="修改bp-stugamehud">修改BP_STUGameHUD <a href="#%e4%bf%ae%e6%94%b9bp-stugamehud" class="anchor" aria-hidden="true">#</a></h2>
-<p>已在C++中实现创建并添加窗口部件到关卡, 移除 <code>Event Graph</code> 操作 <br/></p>
-<p>点击按钮 <code>Class Defaults</code> <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/class-default.png" width="700" /> <br/> <br/></p>
-<p>设置PlayerHUDWidgetClass为WBP_PlayerHUD <br/></p>
-<p><img src="/pic/虚幻运动图表/使用C++实现游戏角色生命条/configure-PlayerHUDWidgetClass.png" width="400" /> <br/> <br/></p>
+</ol>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A1%A5%E7%BB%99/%E6%8C%81%E7%BB%AD%E6%8F%90%E4%BE%9B%E8%A1%A5%E7%BB%99/">
+	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; 持续提供补给
+					&larr; Sublime
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%AD%A6%E5%99%A8/%E6%89%93%E5%8C%85/">
+	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E7%BB%84%E4%BB%B6/%E6%A3%8B%E5%AD%90%E8%BF%90%E5%8A%A8%E7%BB%84%E4%BB%B6/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					打包 &rarr;
+					棋子运动组件 &rarr;
 				</div>
 			</div>
 		</a>

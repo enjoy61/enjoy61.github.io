@@ -25,6 +25,15 @@
     </item>
     
     <item>
+      <title>Sublime使用clang-format</title>
+      <link>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/</link>
+      <pubDate>Sat, 11 Nov 2023 14:53:10 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/sublime%E4%BD%BF%E7%94%A8clang-format/</guid>
+      <description>说明 # 需要安装clang-format程序 对所有项目生效 安装clang-format # macOS where clang-format brew search clang-format brew install clang-format 查看clang-format路径 where clang-format /usr/local/bin/clang-format Sublime安装clang-format插件 # 可以这么理解, 在Sublime和clang-format之间建立桥梁 包管理器安装clang-format Command-Shift-P 配置路径 Sublime Text &amp;gt; Preferences &amp;gt; Package Settings &amp;gt; Clang Format 参照 CustomStyle - Default clang_format_custom.sublime-settings &amp;ndash; Clang Format Settings - Default clang_format.sublime-settings &amp;ndash; Clang Format 用户设置 CustomStyle - User clang_format_custom.sublime-settings &amp;ndash; User Settings - User clang_format.sublime-settings &amp;ndash; User 将参照拷贝到用户设置 设置clang-format # 使用默认配置 打开 Settings - User - binary 程序路径 默认 style 样式 Custom format_on_save 保存时对文件格式化 true languages 格式化语言 默认 { // This is the path to the binary for clang-format.</description>
+    </item>
+    
+    <item>
       <title>VSCode</title>
       <link>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/</link>
       <pubDate>Sat, 10 Jun 2023 21:37:23 +0000</pubDate>
