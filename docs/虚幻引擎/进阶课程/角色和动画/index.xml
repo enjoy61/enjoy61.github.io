@@ -25,15 +25,6 @@
     </item>
     
     <item>
-      <title>代码规范</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Sun, 11 Jun 2023 06:15:03 +0000</pubDate>
-      
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
-      <description>说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当语句较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .</description>
-    </item>
-    
-    <item>
       <title>为游戏角色绑定模型</title>
       <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 11 Jun 2023 06:15:23 +0000</pubDate>
@@ -94,6 +85,15 @@
       
       <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/</guid>
       <description>概览 # 已实现动作 # Walk: 从静止到跑起来支持加速，使用 BS_Locomotion_Walk_1D Run: BS_Locomotion_Run Jump: JumpStart , JumpEnd , JumpLoop 本节内容 # 重新实现走路动画，根据游戏角色前进方向和速度方向的夹角，增加转向和后退动画 之后还有 装弹 Reloading , 死亡 Death 和瞄准 Aiming 动画 2D混合空间 # Blend Space 拥有两个轴， Vertial Axis 和 Horizontal Axis 建模 # 游戏角色朝向 # - 前进和后退 ForwardVector 左右 RightVector 游戏角色前后左右移动有使用到这两个方向向量 我们水平移动鼠标时， ForwardVector 和 RightVector 随之发生改变 在视觉上， ForwardVector 一直向前， RightVector 一直向右，二者在水平面垂直 数学基础 # 点乘 # 计算向量夹角 其中一个向量为 0向量 时，点乘结果为 0 ，而反余弦计算得到其夹角为 PI/2 叉乘 # 将向量夹角从[0, PI]扩充到[-PI, PI] theta 为 0 PI 和 -PI 时，叉乘结果为 0 ，此时无法通过向量确定平面，也就无法得到平面法向量 向量c的z坐标 c.</description>
+    </item>
+    
+    <item>
+      <title>打包游戏</title>
+      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Sun, 11 Jun 2023 06:17:48 +0000</pubDate>
+      
+      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</guid>
+      <description>说明 # 打包游戏，从二进制文件运行 定期打包游戏，确保所做改动能正常运行 设置玩家出发点 # 参考 LevelEditor &amp;gt; PlaceActors &amp;gt; Basic &amp;gt; PlayerStart，添加到关卡中 设置编译选项 # 项目设置 &amp;gt; Project &amp;gt; Packaging &amp;gt; Project &amp;gt; Build Configuration，选择 发行(Shipping) 编译游戏 # 参考 创建文件夹 ShootThemUp/Build 设置二进制文件保存路径 工具栏 &amp;gt; Platforms &amp;gt; Mac &amp;gt; Package Project，选择 Build 文件夹 可在日志窗口查看过程 打包成功 生成 ShootThemUp/Build/Mac/ShootThemUp-Shipping.app 尝试 Development 和 DebugGame 选项，均可 纯蓝图项目没有 DebugGame 选项 metal-ar报错 # 当前项目路径不包含空格，但包含汉字 打包项目 菜单栏 &amp;gt; File &amp;gt; Zip Project 移动到不含空格的英文路径 </description>
     </item>
     
   </channel>

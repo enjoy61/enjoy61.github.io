@@ -16,16 +16,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>代码规范 - 六一的部落格</title>
-<meta name="description" content="说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当语句较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .">
+<meta name="description" content="说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当块较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当If语句较短时, 是否允许写在单行 # AllowShortIfStatementsOnASingleLine: true if (true) return; 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .">
   <link rel="canonical" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码规范">
-<meta property="og:description" content="说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当语句较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .">
+<meta property="og:description" content="说明 # .clang-format .gitignore 虚幻引擎编码规范 - 大括号 放在新行 缩进 使用空格 缩进、制表符和空格 # 缩进 # indent 编写代码时，按下Tab键，会按制表符宽度留出空位，用以控制格式 使用制表符 Tab 和空格填充缩进 制表符的宽度可设置，不同平台制表符的宽度不一，视觉上，查看代码会有不习惯的感觉；可在本地设置使用空格，即用空格替换制表符 缩进使用空格 # 示例: 缩进使用空格, 制表符宽度 TabWidth 无效；缩进宽度 IndentWidth 生效, 一次缩进对应7个空格 IndentWidth: &#39;7&#39; UseTab: &#39;Never&#39; TabWidth: &#39;9&#39; 缩进使用制表符和空格 # 若缩进宽度小于制表符宽度, 使用空格填充缩进; 若缩进宽度大于等于制表符宽度, 使用制表符和空格填充缩进 示例: 一次缩进对应7个空格，不会被替换为制表符；两个缩进对应14个空格，会被替换为1个制表符加5个空格 IndentWidth: &#39;7&#39; TabWidth: &#39;9&#39; UseTab: &#39;Always&#39; 格式化代码规则 # .clang-format 官方文档 YAML标记文件 作为项目的一部分，描述管理代码文件的统一格式 每行遵循格式 key: value 设置受约束的开发语言 # Language: Cpp 如果项目中只一种开发语言，或者所有开发语言使用相同规范，可忽略该配置 通用样式 # Google: 一个制表符对应2个空格，大括号在行尾 BasedOnStyle: Google Microsoft: 一个制表符对应4个空格，大括号在新行 BasedOnStyle: Microsoft 制表符宽度 # 若缩进使用制表符，每6个空格替换一个制表符；当缩进宽度和制表符宽度不一致时，效果很糟糕 TabWidth: &#39;6&#39; 缩进宽度 # IndentWidth: &#39;4&#39; 缩进样式 # 空格 UseTab: Never 制表符: 源文件中既有空格又有制表符 UseTab: Always 设置大括号位置 # 行尾 BreakBeforeBraces: Attach 新行 BreakBeforeBraces: Allman 显示时, 每行最大字符个数 # 为0时，按输入的实际情况显示 ColumnLimit: &#39;140&#39; 向前缩进 # 控制访问说明符的缩进 AccessModifierOffset: &#39;-4&#39; 头文件排序 # SortIncludes: false 括号换行时，参数的对齐方式 # AlignAfterOpenBracket: Align 不对齐 DontAlign someLongFunction(argument1, argument2); 对齐 Align someLongFunction(argument1, argument2); 当块较短时，是否允许写在单行 # AllowShortBlocksOnASingleLine: false 条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 while (true) { } while (true) { continue; } 当If语句较短时, 是否允许写在单行 # AllowShortIfStatementsOnASingleLine: true if (true) return; 当函数语句较短时，是否允许写在单行 # - Inline 若函数体为空，允许；若函数在类内定义，允许 InlineOnly 只允许一种情况：函数在类内定义 Empty 只允许一种情况：函数体为空 AllowShortFunctionsOnASingleLine: Inline 指针和引用的对齐方式 # PointerAlignment: Right Right int *a; Left int* a; Git仓库同步 # .">
 <meta property="og:url" content="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-06-11T06:15:03+00:00">
-  <meta property="article:modified_time" content="2023-08-05T15:19:14+08:00">
+  <meta property="article:modified_time" content="2023-11-11T17:20:32+08:00">
   
   <meta property="og:image" content="https://www.enjoy61.com/doks.png"/>
       <meta property="og:image:alt" content="六一的部落格">
@@ -86,7 +86,7 @@
           "@id": "https://www.enjoy61.com/#/schema/organization/1"
         },
       "datePublished": "2023-06-11T06:15:03CET",
-      "dateModified": "2023-08-05T15:19:14CET",
+      "dateModified": "2023-11-11T17:20:32CET",
       "breadcrumb": {
         "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/#/schema/breadcrumb/1"
       },
@@ -171,7 +171,7 @@
             "@id": "https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"
           },
           "datePublished": "2023-06-11T06:15:03CET",
-          "dateModified": "2023-08-05T15:19:14CET",
+          "dateModified": "2023-11-11T17:20:32CET",
           "author": {
             "@id": "https://www.enjoy61.com/#/schema/person/2"
           },
@@ -1314,13 +1314,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
                                   
 
@@ -1378,6 +1371,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
                                   
 
                                 
@@ -3155,13 +3155,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
                                   
 
@@ -3219,6 +3212,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
                                   
 
                                 
@@ -4930,13 +4930,6 @@
                                 
                                   
                                     
-                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
-                                  
-
-                                
-                                
-                                  
-                                    
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/">为游戏角色绑定模型</a></li>
                                   
 
@@ -4994,6 +4987,13 @@
                                   
                                     
                                     <li><a class="docs-link rounded" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93/">阶段性总结</a></li>
+                                  
+
+                                
+                                
+                                  
+                                    
+                                    <li><a class="docs-link rounded active" href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a></li>
                                   
 
                                 
@@ -5667,7 +5667,8 @@
         <li><a href="#向前缩进">向前缩进</a></li>
         <li><a href="#头文件排序">头文件排序</a></li>
         <li><a href="#括号换行时-参数的对齐方式">括号换行时，参数的对齐方式</a></li>
-        <li><a href="#当语句较短时-是否允许写在单行">当语句较短时，是否允许写在单行</a></li>
+        <li><a href="#当块较短时-是否允许写在单行">当块较短时，是否允许写在单行</a></li>
+        <li><a href="#当if语句较短时-是否允许写在单行">当If语句较短时, 是否允许写在单行</a></li>
         <li><a href="#当函数语句较短时-是否允许写在单行">当函数语句较短时，是否允许写在单行</a></li>
         <li><a href="#指针和引用的对齐方式">指针和引用的对齐方式</a></li>
       </ul>
@@ -5705,7 +5706,8 @@
         <li><a href="#向前缩进">向前缩进</a></li>
         <li><a href="#头文件排序">头文件排序</a></li>
         <li><a href="#括号换行时-参数的对齐方式">括号换行时，参数的对齐方式</a></li>
-        <li><a href="#当语句较短时-是否允许写在单行">当语句较短时，是否允许写在单行</a></li>
+        <li><a href="#当块较短时-是否允许写在单行">当块较短时，是否允许写在单行</a></li>
+        <li><a href="#当if语句较短时-是否允许写在单行">当If语句较短时, 是否允许写在单行</a></li>
         <li><a href="#当函数语句较短时-是否允许写在单行">当函数语句较短时，是否允许写在单行</a></li>
         <li><a href="#指针和引用的对齐方式">指针和引用的对齐方式</a></li>
       </ul>
@@ -5767,7 +5769,8 @@
         <li><a href="#向前缩进">向前缩进</a></li>
         <li><a href="#头文件排序">头文件排序</a></li>
         <li><a href="#括号换行时-参数的对齐方式">括号换行时，参数的对齐方式</a></li>
-        <li><a href="#当语句较短时-是否允许写在单行">当语句较短时，是否允许写在单行</a></li>
+        <li><a href="#当块较短时-是否允许写在单行">当块较短时，是否允许写在单行</a></li>
+        <li><a href="#当if语句较短时-是否允许写在单行">当If语句较短时, 是否允许写在单行</a></li>
         <li><a href="#当函数语句较短时-是否允许写在单行">当函数语句较短时，是否允许写在单行</a></li>
         <li><a href="#指针和引用的对齐方式">指针和引用的对齐方式</a></li>
       </ul>
@@ -5805,7 +5808,8 @@
         <li><a href="#向前缩进">向前缩进</a></li>
         <li><a href="#头文件排序">头文件排序</a></li>
         <li><a href="#括号换行时-参数的对齐方式">括号换行时，参数的对齐方式</a></li>
-        <li><a href="#当语句较短时-是否允许写在单行">当语句较短时，是否允许写在单行</a></li>
+        <li><a href="#当块较短时-是否允许写在单行">当块较短时，是否允许写在单行</a></li>
+        <li><a href="#当if语句较短时-是否允许写在单行">当If语句较短时, 是否允许写在单行</a></li>
         <li><a href="#当函数语句较短时-是否允许写在单行">当函数语句较短时，是否允许写在单行</a></li>
         <li><a href="#指针和引用的对齐方式">指针和引用的对齐方式</a></li>
       </ul>
@@ -5933,29 +5937,36 @@ UseTab: 'Always'
 </code></pre>
 <ul>
 <li>不对齐 <code>DontAlign</code> <br/>
-<pre><code class="language-C++">someLongFunction(argument1,
+<pre><code class="language-cpp">someLongFunction(argument1,
     argument2);
 </code></pre>
 </li>
 <li>对齐 <code>Align</code> <br/>
-<pre><code class="language-C++">someLongFunction(argument1,
+<pre><code class="language-cpp">someLongFunction(argument1,
                  argument2);
 </code></pre>
 </li>
 </ul>
-<h3 id="当语句较短时-是否允许写在单行">当语句较短时，是否允许写在单行 <a href="#%e5%bd%93%e8%af%ad%e5%8f%a5%e8%be%83%e7%9f%ad%e6%97%b6-%e6%98%af%e5%90%a6%e5%85%81%e8%ae%b8%e5%86%99%e5%9c%a8%e5%8d%95%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
+<h3 id="当块较短时-是否允许写在单行">当块较短时，是否允许写在单行 <a href="#%e5%bd%93%e5%9d%97%e8%be%83%e7%9f%ad%e6%97%b6-%e6%98%af%e5%90%a6%e5%85%81%e8%ae%b8%e5%86%99%e5%9c%a8%e5%8d%95%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
 <pre><code class="language-yaml">AllowShortBlocksOnASingleLine: false
 </code></pre>
 <ul>
 <li>条件语句的执行部分为空，或只有一行语句时，可认为语句较短；为false则如下输出 <br/>
-<pre><code class="language-C++">while (true) {
+<pre><code class="language-cpp">while (true)
+{
 }
-while (true) {
+while (true)
+{
   continue;
 }
 </code></pre>
 </li>
 </ul>
+<h3 id="当if语句较短时-是否允许写在单行">当If语句较短时, 是否允许写在单行 <a href="#%e5%bd%93if%e8%af%ad%e5%8f%a5%e8%be%83%e7%9f%ad%e6%97%b6-%e6%98%af%e5%90%a6%e5%85%81%e8%ae%b8%e5%86%99%e5%9c%a8%e5%8d%95%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
+<pre><code class="language-yaml">AllowShortIfStatementsOnASingleLine: true
+</code></pre>
+<pre><code class="language-cpp">if (true) return;
+</code></pre>
 <h3 id="当函数语句较短时-是否允许写在单行">当函数语句较短时，是否允许写在单行 <a href="#%e5%bd%93%e5%87%bd%e6%95%b0%e8%af%ad%e5%8f%a5%e8%be%83%e7%9f%ad%e6%97%b6-%e6%98%af%e5%90%a6%e5%85%81%e8%ae%b8%e5%86%99%e5%9c%a8%e5%8d%95%e8%a1%8c" class="anchor" aria-hidden="true">#</a></h3>
 <table>
 <thead>
@@ -6047,17 +6058,17 @@ while (true) {
 				</div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/html/">
+	<a href="/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; HTML
+					&larr; 文章目录标题高亮
 				</div>
 			</div>
 		</a>
-	<a class="ms-auto" href="/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E5%81%A5%E5%BA%B7%E7%B3%BB%E7%BB%9F/%E6%A8%A1%E6%8B%9F%E6%A6%B4%E5%BC%B9%E7%88%86%E7%82%B8/">
+	<a class="ms-auto" href="/docs/%E5%88%86%E4%BA%AB/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					模拟榴弹爆炸 &rarr;
+					VSCode &rarr;
 				</div>
 			</div>
 		</a>
@@ -6092,7 +6103,7 @@ while (true) {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://www.enjoy61.com/index.min.593efb00941da005b9f5d17e7dc259bfdc4ffed2e4abb2683a7d48952563446cb7ff6ab998cf6773174938b63594b134bc93fb01624a4eac7492eb586cac7198.js" integrity="sha512-WT77AJQdoAW59dF&#43;fcJZv9xP/tLkq7JoOn1IlSVjRGy3/2q5mM9ncxdJOLY1lLE0vJP7AWJKTqx0kutYbKxxmA==" crossorigin="anonymous" defer></script>
+  <script src="https://www.enjoy61.com/index.min.241dddc5c3f71b32ffd34934a2f670e2037893680850fb21699d7f9529ecef9b11d39b7ed1d9292209d10da4f7afc45bf2da4f698fbcab0c6e714cb527efb4aa.js" integrity="sha512-JB3dxcP3GzL/00k0ovZw4gN4k2gIUPshaZ1/lSns75sR05t&#43;0dkpIgnRDaT3r8Rb8tpPaY&#43;8qwxucUy1J&#43;&#43;0qg==" crossorigin="anonymous" defer></script>
   
     
   </body>
