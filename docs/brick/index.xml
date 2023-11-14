@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>🧱 on </title>
-    <link>https://www.enjoy61.com/docs/brick/</link>
+    <link>https://enjoy61.com/docs/brick/</link>
     <description>Recent content in 🧱 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Jun 2023 23:04:53 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/brick/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 23:04:53 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/brick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>终端</title>
-      <link>https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/</link>
+      <link>https://enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/</link>
       <pubDate>Sat, 10 Jun 2023 22:11:40 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/</guid>
+      <guid>https://enjoy61.com/docs/brick/%E7%BB%88%E7%AB%AF/</guid>
       <description>便签 # 介绍CLI，Terminal，Shell和Prompt视频 shell概念 # 接口 shell，和core相区分，是操作系统的外层。通过Shell程序，可以使用系统服务或其他程序提供的功能。 根据操作系统类别和操作类型，shell可以分为图形shell（图形用户界面）和命令行shell（命令行界面）。 CLI Command-Line Interface 命令行界面 通过文本命令和计算机交互 GUI Graphical User Interface 图形用户界面 通过鼠标操作 早期的操作系统并没有图形用户接口，我们通常说的shell，指的是命令行shel。 终端程序 # Terminal Wrapper Program 在终端输入文本命令 终端程序 说明 iTerm MacOS Windows Terminal Windows Gnome Terminal 使用Gnome作为桌面的Linux自带的终端程序 Hyper Warp 目前MacOS；自动补全，鼠标交互，内置工作流，AI功能 Alacrity 命令解释器 # Shell 程序 终端中运行的程序。接受命令，然后解释并执行。 Shell启动时自动读取配置文件。 Shell 说明 sh Bourne Shell UNIX上的标准shell bash Bourne-Again Shell GNU开发；Linux默认 不完全兼容sh shell，对一些命令和参数进行了扩展 配置文件 ~/.bash_profile zsh 19年之前MacOS默认Bash；之后使用zsh 配置文件 ~/zshrc 第三方框架oh-my-zsh提供其他功能 phish 脚本语言 # 需要解释器，每次运行时都需要解释。 - JavaScript PHP Lua Python C# Shell脚本 # 开发语言 Shell Script 由一连串Shell命令组成，可以指定解释脚本的Shell程序。 命令提示符 # Prompt 命令解释器提供并在终端显示，如当前路径和git信息。 类别 第三方提示 Powerline Starship Power Level 10K Spaceship 第三方框架 oh-my-zsh 提供各种promots，configuration options，aliases，plugins。支持自定义prompt，调整Shell行为 查看Shell信息 # 命令解释器 当前使用的Shell echo $SHELL echo $0 已安装Shell cat /etc/shells Shell操作 # 切换Shell程序 重新打开终端生效 chsh -s /bin/bash 不修改SHELL环境变量 zsh 手动读取配置文件 zsh source ~/.</description>
     </item>
     
     <item>
       <title>Windows上使用Sublime进行Unreal开发</title>
-      <link>https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</link>
+      <link>https://enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</link>
       <pubDate>Fri, 25 Aug 2023 12:27:04 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</guid>
+      <guid>https://enjoy61.com/docs/brick/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</guid>
       <description>便签 # Unreal Engine C++ Project Setup, From Scratch 说明 # - Cmder 终端模拟器 Sublime 虚幻引擎5.1版本说明: 依赖.NET 6.0 概览 # 从零创建Unreal项目 在命令行编译和运行项目, 封装在脚本中 创建Actor派生类 查看引擎代码 Cmder # 显示/隐藏窗口: C-` 在文件资源管理器打开Cmder当前路径 cd /d C:\Dirk explorer . Sublime # 使用以下插件 - Project Manager Switch File Deluxe 在源文件和头文件之间切换; Windows Alt-O ; macOS Option-Command-UP Unreal Snippets UP主提供 从零创建Unreal项目 # 创建项目文件夹Dirk 创建项目 # Sublime &amp;gt; 命令行 &amp;gt; Project Manager: Add New Project 命名为Dirk 添加文件夹 # Sublime &amp;gt; 命令行 &amp;gt; Project: Add Folder 选择Dirk 创建Unreal项目文件 # Dirk/Dirk.</description>
     </item>
     
     <item>
       <title>记一次重装系统后的恢复分区</title>
-      <link>https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/</link>
+      <link>https://enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/</link>
       <pubDate>Tue, 05 Sep 2023 17:25:50 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/</guid>
+      <guid>https://enjoy61.com/docs/brick/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84%E6%81%A2%E5%A4%8D%E5%88%86%E5%8C%BA/</guid>
       <description>好用的写镜像工具 # - Rufus Windows 写镜像到U盘 Ventoy Linux, Windows 将镜像拷贝到U盘即可 老毛桃 Windows 以上两种均可 常见的数据恢复软件 # - EaseUS EasyRecovery DiskGenius 概览 # 我重装系统时, 都会使用DiskGenius重新分区, 这回碰到个使用习惯完全不一样的, 捅了个大篓子 整盘扫描 # EaseUS和EasyRecovery Professional均提供该功能, 但找回的文件没有层级结构, 使用编号命名 按现有分区搜索 # 因为与原分区不同, 找回的文件有限 搜索分区表 # DiskGenius提供该功能 我对硬盘一无所知, 知道分区表这个概念, 但不知道如何实现 联系DiskGenius客服后, 要我搜索分区表, 当前分区 120 + &amp;hellip;, 原分区50 + &amp;hellip;, DiskGenius按扇柱搜索, 正好 当前扇柱/总扇柱=50/465 时找到原分区表, 至此可以打开重装系统前硬盘上的文件 DiskGenius # 其搜索分区表的优势在于, 找到所需的分区表后, 可以立即应用; 在此之前按扇柱搜索, 不会有所遗漏 连接机械硬盘 # SATA 3.5英寸机械硬盘(主机用)需购买电源线, 2.5英寸机械硬盘(笔记本用)只需转换线 接入顺序: 给硬盘通上电, 再连接到USB接口 拔出顺序: 安全弹出后, 先断掉USB接口, 再关闭电源 </description>
     </item>
     

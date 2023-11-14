@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>虚幻运动图表 on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/</link>
+    <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/</link>
     <description>Recent content in 虚幻运动图表 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Oct 2023 19:19:19 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Oct 2023 19:19:19 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在蓝图中使用窗口部件实现游戏角色生命条</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</link>
       <pubDate>Fri, 06 Oct 2023 19:21:06 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E8%93%9D%E5%9B%BE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</guid>
       <description>说明 # 了解如何在UE中实现用户接口 了解窗口部件, 用来显示游戏角色生命值 Widget Health Bar 纯蓝图 概览 # 在C++中返回生命值百分比 创建窗口部件蓝图 WBP 在HUD类中创建窗口部件并添加到关卡 实现窗口部件: 添加进度条 便签 # 命名规范 实现接口: 返回生命值百分比 # C++ ShootThemUp: Components/STUHealthComponent.h public UFUNCTION(BlueprintCallable) float GetHealthPercent() const { return Health / MaxHealth; } 要求MaxHealth大于0 # ShootThemUp: Components/STUHealthComponent.cpp // BeginPlay checkf(MaxHealth &amp;gt; 0, TEXT(&amp;quot;MaxHealth must more than 0&amp;quot;)); 了解用户接口 # 虚幻编辑器 创建UI文件夹 # Content/UI 创建窗口蓝图 # 去到UI文件夹, 在空白处右键 User Interface &amp;gt; Widget Blueprint 设置基类: 选择 Common &amp;gt; User Widget 命名为WBP_PlayerHUD 虚幻用户接口编辑器 # 双击WBP_PlayerHUD 模式 # 在右上角进行切换 - 设计 Designer Blueprint Designer Mode 图表 Graph Graph Editing Mode 和EventGraph类似, 根据游戏事件实现用户接口 设计模式 # 层级结构窗口</description>
     </item>
     
     <item>
       <title>使用C&#43;&#43;实现游戏角色生命条</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</link>
       <pubDate>Fri, 06 Oct 2023 23:30:32 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E4%BD%BF%E7%94%A8c&#43;&#43;%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%94%9F%E5%91%BD%E6%9D%A1/</guid>
       <description>概览 # 创建C++类: 窗口部件; 返回生命值百分比 在STUGameHUD中创建并添加窗口部件 修改WBP_PlayerHUD基类; 使用STUPlayerHUDWidget提供的接口获取生命值百分比 移除BP_STUGameHUD中创建并添加窗口部件逻辑; 配置窗口部件类属性 C++类: 窗口部件 # 在虚幻编辑器中创建C++类 # - 基类 UserWidget 名称 STUPlayerHUDWidget 路径 UI/ Public 添加接口: 获取生命值百分比 # ShootThemUp: UI/STUPlayerHUDWidget.h public UFUNCTION(BlueprintCallable) float GetHealthPercent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp 使用Cast转换空指针得到空指针 #include &amp;quot;Components/STUHealthComponent.h&amp;quot; float USTUPlayerHUDWidget::GetHealthPercent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return 0.0f; const auto Component = Player-&amp;gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&amp;lt;USTUHealthComponent&amp;gt;(Component); if (!HealthComponent) return 0.0f; return HealthComponent-&amp;gt;GetHealthPercent(); } 在STUGameHUD中创建并添加窗口部件 # 添加数据成员: 保存窗口部件类 # ShootThemUp: UI/STUGameHUD.</description>
     </item>
     
     <item>
       <title>在窗口部件绘制瞄准十字</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</link>
       <pubDate>Sat, 07 Oct 2023 17:45:18 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E7%BB%98%E5%88%B6%E7%9E%84%E5%87%86%E5%8D%81%E5%AD%97/</guid>
       <description>概览 # 获取并导入素材 在窗口部件中添加瞄准十字图片 窗口部件实现接口返回当前武器图片 在窗口部件中实现逻辑加载图片 获取素材 # ShooterGame 选中Conent/UI/HUD/HUDMain 右键 裁剪武器图标和对应的十字瞄准线, 命名并保存到Image文件夹 导入素材 # ShootThemUp 将Image文件夹拖入到Content/UI下, 虚幻引擎自动将图片转换成资产 所有的外部资源, 如图片, 音频, 导入时均会被转换为资产格式. 这样, 在不同平台打包时更便利 本节课使用瞄准十字图片, 武器图标供下节课使用 在窗口部件中添加瞄准十字图片 # WBP_PlayerHUD 从选项板中, 将图片元素拖入到视口 # Palette &amp;gt; Image 可以在视口中调整图片大小 选择测试图片 # Details &amp;gt; Appearance &amp;gt; Brush &amp;gt; Image 选择RifleCrossHair 使用图片原大小 # 勾选 Details &amp;gt; Slot &amp;gt; Size To Content 使图片居中 # 添加锚 Details &amp;gt; Slot(Canvas Panel Slot) &amp;gt; Anchors , 选择居中项 设置图片位置 Details &amp;gt; Slot , 设置Position X = Position Y = 0 设置对齐 Details &amp;gt; Slot , 设置Alignment X = Y = 0.</description>
     </item>
     
     <item>
       <title>在窗口部件显示当前武器和弹药库</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</link>
       <pubDate>Sun, 08 Oct 2023 01:42:15 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E5%9C%A8%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%AD%A6%E5%99%A8%E5%92%8C%E5%BC%B9%E8%8D%AF%E5%BA%93/</guid>
       <description>说明 # 在窗口部件的右下角显示武器图标, 子弹数和弹匣数 概览 # 给武器组件和窗口部件的接口添加Current关键字 窗口部件实现接口: 返回弹药数据 窗口部件显示武器图标 窗口部件显示弹药库存 修改接口: 窗口部件返回武器图片 # 添加内部接口: 获取武器组件 # ShootThemUp: UI/STUPlayerHUDWidget.h private class USTUWeaponComponent; USTUWeaponComponent *GetWeaponComponent() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp USTUWeaponComponent *USTUPlayerHUDWidget::GetWeaponComponent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return nullptr; const auto Component = Player-&amp;gt;GetComponentByClass(USTUWeaponComponent::StaticClass()); const auto WeaponComponent = Cast&amp;lt;USTUWeaponComponent&amp;gt;(Component); return WeaponComponent; } 使用内部接口: 获取武器组件 # ShootThemUp: UI/STUPlayerHUDWidget.cpp // GetCrrentWeaponUIData const auto WeaponComponent = GetWeaponComponent(); 修改接口名: 武器组件返回武器图片 # GetWeaponUIData &amp;gt; GetCurrentWeaponUIData =ShootThemUp: Components/STUWeaponComponent.</description>
     </item>
     
     <item>
       <title>观察者模式下的窗口部件以及元素动画</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E4%BB%A5%E5%8F%8A%E5%85%83%E7%B4%A0%E5%8A%A8%E7%94%BB/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E4%BB%A5%E5%8F%8A%E5%85%83%E7%B4%A0%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Sun, 08 Oct 2023 21:08:38 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E4%BB%A5%E5%8F%8A%E5%85%83%E7%B4%A0%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E7%AA%97%E5%8F%A3%E9%83%A8%E4%BB%B6%E4%BB%A5%E5%8F%8A%E5%85%83%E7%B4%A0%E5%8A%A8%E7%94%BB/</guid>
       <description>说明 # 角色死亡进入观察者视角时隐藏窗口部件, 并显示死亡状态 Spectator Widget 概览 # 添加接口: 判断游戏角色死亡和观察者模式 游戏角色死亡后隐藏进度条、瞄准十字和武器信息 游戏角色死亡后添加加载图标和提示, 并提示添加动画 添加接口 # STUPlayerHUDWidget 获取健康组件 判断游戏角色死亡 判断观察者模式 ShootThemUp: UI/STUPlayerHUDWidget.h class USTUHealthComponent; // private USTUHealthComponent *GetHealthComponent() const; // public UFUNCTION(BlueprintCallable) bool IsPlayerAlive() const; UFUNCTION(BlueprintCallable) bool IsPlayerSpectating() const; ShootThemUp: UI/STUPlayerHUDWidget.cpp USTUHealthComponent *USTUPlayerHUDWidget::GetHealthComponent() const { const auto Player = GetOwningPlayerPawn(); if (!Player) return nullptr; const auto Component = Player-&amp;gt;GetComponentByClass(USTUHealthComponent::StaticClass()); const auto HealthComponent = Cast&amp;lt;USTUHealthComponent&amp;gt;(Component); return HealthComponent; } bool USTUPlayerHUDWidget::IsPlayerAlive() const { const auto HealthComponent = GetHealthComponent(); return HealthComponent &amp;amp;&amp;amp; !</description>
     </item>
     
     <item>
       <title>重构和打包</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</link>
       <pubDate>Mon, 09 Oct 2023 04:19:50 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%99%9A%E5%B9%BB%E8%BF%90%E5%8A%A8%E5%9B%BE%E8%A1%A8/%E9%87%8D%E6%9E%84%E5%92%8C%E6%89%93%E5%8C%85/</guid>
       <description>重构 # 实现模板函数: 获取Pawn组件 # 添加头文件 # 预编译命令应为pragma once, 代码框中有遗漏错误 Public/STUUtil.h #pragma class APawn; class STUUtils { public: template&amp;lt;typename T&amp;gt; static T* GetSTUPlayerComponent(APawn *PlayerPawn) { if (!PlayerPawn) return nullptr; const auto Component = PlayerPawn-&amp;gt;GetComponentByClass(T::StaticClass()); return Cast&amp;lt;T&amp;gt;(Component); } }; 修改获取Pawn组件的地方 # ShootThemUp: UI/STUPlayerHUDWidget.cpp #include &amp;quot;STUUtils.h&amp;quot; // GetHealthPercent, IsPlayerAlive const auto HealthComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUHealthComponent&amp;gt;(GetOwningPlayerPawn()); // GetCurrentWeaponUIData, GetCurrentWeaponAmmoData const auto WeaponComponent = STUUtils::GetSTUPlayerComponent&amp;lt;USTUWeaponComponent&amp;gt;(GetOwningPlayerPawn()); 屏蔽GetWeaponComponent和GetHealthComponent # ShootThemUp: UI/STUPlayerHUDWidget.cpp 定义 ShootThemUp: UI/STUPlayerHUDWidget.h 屏蔽USTUWeaponComponent和USTUHealthComponent的前向声明 屏蔽GetWeaponComponent和GetHealthComponent 屏蔽弹药日志 # ShootThemUp: Weapon/STUBaseWeapon.</description>
     </item>
     

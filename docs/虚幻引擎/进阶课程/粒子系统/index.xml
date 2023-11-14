@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>粒子系统 on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
+    <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 粒子系统 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 12 Oct 2023 17:33:16 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 17:33:16 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>初识Cascade和Niagara</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%88%9D%E8%AF%86cascade%E5%92%8Cniagara/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%88%9D%E8%AF%86cascade%E5%92%8Cniagara/</link>
       <pubDate>Thu, 12 Oct 2023 17:23:39 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%88%9D%E8%AF%86cascade%E5%92%8Cniagara/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%88%9D%E8%AF%86cascade%E5%92%8Cniagara/</guid>
       <description>说明 # VFX 视觉特效 Visual Effects 的缩写 Niagara 和 Cascade 虚幻引擎提供的两个特效编辑器, Niagara较新 从ShooterGame导出资产 # 选中 Content/Effects/ParticleSystems/Weapon , 右键, Migrate 导出文件夹Effects包含4个子文件夹 导入到ShootThemUp # 移动到 Content/ExternalContent/ 为Pickup和Effects文件夹设置颜色 熟悉Cascade # 创建文件夹 Content/VFX 空白处右键, 命名为PS_Test 双击打开: 视口在左侧, 显示粒子系统; 发射器 Emitter 在右侧, 对粒子系统进行设置 选择设置项类别, 去到 Details 进行设置 设置每帧生成粒子数 # Emitters &amp;gt; Spawn , Details &amp;gt; Spawn &amp;gt; Rate &amp;gt; Distribution &amp;gt; Constant , 由20改为200: 视口粒子数便多 设置粒子生存时间 # Emitters &amp;gt; Lifetime , Details &amp;gt; Lifetime &amp;gt; Distribution &amp;gt; Max , 由1.</description>
     </item>
     
     <item>
       <title>撞击特效组件</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Thu, 12 Oct 2023 20:05:28 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%92%9E%E5%87%BB%E7%89%B9%E6%95%88%E7%BB%84%E4%BB%B6/</guid>
       <description>说明 # 子弹和榴弹击中时, 生成特效 创建VFX组件 # 武器的下级组件 - 基类 ActorComponent STUWeaponFXComponent Weapon/Components 添加到头文件搜索路径 # ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot;, &amp;quot;ShootThemUp/Public/Components&amp;quot;, &amp;quot;ShootThemUp/Public/Dev&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon&amp;quot;, &amp;quot;ShootThemUp/Public/UI&amp;quot;, &amp;quot;ShootThemUp/Public/Animations&amp;quot;, &amp;quot;ShootThemUp/Public/Pickups&amp;quot;, &amp;quot;ShootThemUp/Public/Weapon/Components&amp;quot; }); 添加依赖模块 # ShootThemUp: ShootThemUp.Build.cs PublicDependencyModuleNames.AddRange(new string[] { &amp;quot;Core&amp;quot;, &amp;quot;CoreUObject&amp;quot;, &amp;quot;Engine&amp;quot;, &amp;quot;InputCore&amp;quot;, &amp;quot;Niagara&amp;quot; }); 编译项目 实现撞击特效组件 # ShootThemUp: Weapon/Components/STUWeaponFXComponent.h class UNiagaraSystem; // public void PlayImpactFX(const FHitResult &amp;amp;Hit); // protected UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UNiagaraSystem *Effect; 碰撞信息结构体包含生成特效的所有信息: 位置, 法向量等 ShootThemUp: Weapon/Components/STUWeaponFXComponent.cpp #include &amp;quot;NiagaraFunctionLibrary.h&amp;quot; void USTUWeaponFXComponent::PlayImpactFX(const FHitResult &amp;amp;Hit) { UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), Effect, Hit.</description>
     </item>
     
     <item>
       <title>物理材质</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</link>
       <pubDate>Fri, 13 Oct 2023 21:10:56 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</guid>
       <description>说明 # 实现: 与不同材质的表面发生碰撞时, 产生不同的撞击特效 三类物理材质: 地面和楼梯, 游戏角色身体部分, 游戏角色头部 也是击中游戏角色不同部位造成不同伤害数值的另一种实现 为网格体设置物理材质 Physical Material 获取撞击物体的物理材质, 生成对应特效 物理材质 # 如果对物体使能物理仿真, 其会根据设置与其他物体互动 设置物体的物理特性, 对应一种表面类型 通过物理材质, 创建表面类型, 根据撞击物体的表面类型, 产生对应特效 目前只使用物理材质来定义表面类型, 而不用于物理仿真 创建多种特效 # 未设定当前物理材质对应的特效时, 生成默认特效 重命名NS_BaseImpact为NS_DefaultImpact, 设置颜色为黑色 按下 Ctrl-D 复制NS_DefaultImpact, 命名为NS_GroundImpact、NS_HeadImpact和NS_BodyImpact 设置NS_GroundImpact 设置为绿色 设置NS_HeadImpact 设置为暗红色 设置粒子数 设置NS_BodyImpact 设置为红色 创建物理材质 # 创建文件夹 Content/PhysMaterials 选择类, 命名为PhysMat_Ground 复制PhysMat_Ground, 命名为PhysMat_Head和PhysMat_Body 为物体设置物理材质 # 物理材质只能应用到网格体, 而地板和楼梯使用几何体笔刷构造, 并不是网格体. 我们可以将其转换为网格体 目前, 击中地板和楼梯时, 生成默认特效 添加几何网格体 Place Actors &amp;gt; Shapes &amp;gt; Cube , 设置物理材质为PhysMat_Ground 为游戏角色设置物理材质 # 打开 Content &amp;gt; ExternalContent &amp;gt; Animation &amp;gt; Characters &amp;gt; HeroTPP &amp;gt; HeroTPP_Physics 为头部设置物理材质 为身体其他部位挨个设置物理材质 获取物理材质信息生成对应类型特效 # 添加依赖模块PhysicsCore # ShootThemUp: ShootThemUp.</description>
     </item>
     
     <item>
       <title>使用贴花实现弹痕</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</link>
       <pubDate>Sun, 15 Oct 2023 16:49:35 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%BD%BF%E7%94%A8%E8%B4%B4%E8%8A%B1%E5%AE%9E%E7%8E%B0%E5%BC%B9%E7%97%95/</guid>
       <description>说明 # 使用贴花实现弹痕 从ShooterGame获取贴花资产 # Content/Effects/materials/Weapon/M_Impact_Decal , 右键 文件夹结构 导入ShootThemUp # 将Effect重命名为BulletDecal, 移动到 ExternalContent , 设置文件夹颜色 用来实现弹痕 重新构造光照 # 有对应提示时 设置光照质量 Build &amp;gt; Lighting Quality 构造光照 贴花 # 可以投影到网格体的特殊材质. 支持静态网格体和骨骼网格体 可以设置贴花的体积大小, 纹理, 隐入隐出相关参数 贴花Actor对应一个立方体, 立方体与包含物体的相交面作为投影面 我们可以使用贴花在墙上画涂鸦, 在不同表面上生成不同子弹特效 测试贴花Actor # 创建测试纹理 # 创建文件夹 Content/Dev 从网络下载虚幻引擎Logo作为纹理, 保存到Content/Dev 右键图片, 创建纹理, 命名为M_TestDecal 和之前的材质比较, 图片作为BaseColor的输入 将材质作为贴花使用的设置 延后贴花; 半透明渲染: Details &amp;gt; Material &amp;gt; Material Domain , 设置为 Deferred Decal ; Blend Mode 设置为 Translucent Alpha通道作为透明度的输入 设置贴花 # 添加贴花Actor到关卡中 Place Actors &amp;gt; Visual Effects &amp;gt; Decal Actor 使用M_TestDecal 选中贴花, 点击应用图标 设置贴花体积 选中DecalActor, Details &amp;gt; Decal &amp;gt; Decal Size , 设置X = 10, Y = Z = 20 查看弹痕贴花 # Content/ExternalContent/BulletDecal/Materials/Weapon/M_Impact_Decal 双击打开, 较M_TestDecal更为复杂, 添加了法向量和饱和度设置, 用以提高视觉质量 击中时生成贴花 # 产生冲击特效时生成贴花 添加数据结构 # STUCoreTypes.</description>
     </item>
     
     <item>
       <title>肌肉松弛效果</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</link>
       <pubDate>Sun, 15 Oct 2023 17:40:36 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E8%82%8C%E8%82%89%E6%9D%BE%E5%BC%9B%E6%95%88%E6%9E%9C/</guid>
       <description>说明 # Mesh Relaxation 使用游戏角色身体的物理仿真来替换死亡动画, 该技术被称作 Ragdoll Physics 游戏角色骨骼在重力的作用下跌倒 代码实现 # ShootThemUp: Player/STUBaseCharacter.cpp 检查网格体组件获取 // BeginPlay check(GetMesh()); 游戏角色死亡时 屏蔽动画播放 设置碰撞使能为QueryAndPhysics或者PhysicsOnly 激活物理仿真 // OnDeath GetMesh()-&amp;gt;SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); GetMesh()-&amp;gt;SetSimulatePhysics(true); </description>
     </item>
     
     <item>
       <title>游戏角色受到伤害时为摄像机添加抖动</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E5%88%B0%E4%BC%A4%E5%AE%B3%E6%97%B6%E4%B8%BA%E6%91%84%E5%83%8F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E6%8A%96%E5%8A%A8/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E5%88%B0%E4%BC%A4%E5%AE%B3%E6%97%B6%E4%B8%BA%E6%91%84%E5%83%8F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E6%8A%96%E5%8A%A8/</link>
       <pubDate>Sun, 15 Oct 2023 17:44:34 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E5%88%B0%E4%BC%A4%E5%AE%B3%E6%97%B6%E4%B8%BA%E6%91%84%E5%83%8F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E6%8A%96%E5%8A%A8/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E5%88%B0%E4%BC%A4%E5%AE%B3%E6%97%B6%E4%B8%BA%E6%91%84%E5%83%8F%E6%9C%BA%E6%B7%BB%E5%8A%A0%E6%8A%96%E5%8A%A8/</guid>
       <description>说明 # MatineeCameraShake 已被 LegacyCameraShake 取代 创建抖动蓝图类 # Content/VFX 右键, Blueprint Class 选择基类 LegacyCameraSh , 命名为BP_DamageCameraShake 开箱即用的解决方案让我们可以很快的实现抖动效果 双击打开, 查看细节面板 Oscillation &amp;gt; Oscillation Duration : 摄像机晃动的时间 绕各轴的振动, 如 Pitch, Yaw, 和 Roll 测试抖动类 # 为摄像机添加抖动 # BP_STUPlayerController &amp;gt; EventGraph 添加节点 GetPlayerCameraManager , 作为节点 StartCameraShake 的输入; 在Tick函数中调用; 设置抖动类为BP_DamageCameraShake 设置抖动时长 # BP_DamageCameraShake 设置 Oscillation Duration 为0.2 添加垂直方向 Pitch 和水平方向 Yaw 的抖动 如果添加摄像机旋转 Roll 抖动, 有地板晃动效果, 暂不需要 抖动参数由设计师提供 断开摄像机抖动 # BP_STUPlayerController &amp;gt; EventGraph 游戏角色受伤时为摄像机添加抖动 # 添加依赖模块GameplayCameras # ShootThemUp: ShootThemUp.</description>
     </item>
     
     <item>
       <title>游戏角色受伤时添加闪烁红屏</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E4%BC%A4%E6%97%B6%E6%B7%BB%E5%8A%A0%E9%97%AA%E7%83%81%E7%BA%A2%E5%B1%8F/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E4%BC%A4%E6%97%B6%E6%B7%BB%E5%8A%A0%E9%97%AA%E7%83%81%E7%BA%A2%E5%B1%8F/</link>
       <pubDate>Sun, 15 Oct 2023 23:17:32 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E4%BC%A4%E6%97%B6%E6%B7%BB%E5%8A%A0%E9%97%AA%E7%83%81%E7%BA%A2%E5%B1%8F/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%8F%97%E4%BC%A4%E6%97%B6%E6%B7%BB%E5%8A%A0%E9%97%AA%E7%83%81%E7%BA%A2%E5%B1%8F/</guid>
       <description>说明 # UMG Damage Effect 通过窗口部件实现. 游戏角色受伤时添加闪烁红屏, 作为流血特效 窗口部件 # WBP_PlayerHUD 添加图片 Image 元素, 命名为DamageImage, 移动到层级结构上方 铺满视口 Details &amp;gt; Anchors , 选择铺满 设置Offset Left = Offset Top = Offset Right = Offset Bottom = 0 设置颜色 Details &amp;gt; Appearance &amp;gt; Color and Opacity , 设置为红色; 设置Alpha分量为0 为DamageImage添加动画 # 选中DamageImage, 打开Animations窗口 点击 +Animation , 命名为DamageAnimation 为DamageAnimation添加Track 选择DamageImage 设置关键帧0.25 # 在DamageImage这一栏, 点击 +Track 选择Color and Opacity 设置Alpha通道为0.6 设置关键帧0.5 # 同上, 设置Alpha通道为0 播放DamageImage动画 # WBP_PlayerHUD &amp;gt; Event Graph 稍后在C++中定义事件 添加DamageAnimation变量 作为PlayAnimation的输入 生命值减少触发事件 # 定义蓝图事件 # 使用宏声明符创建蓝图事件, 该函数只声明不定义 ShootThemUp: UI/STUPlayerHUDWidget.</description>
     </item>
     
     <item>
       <title>为观察者视角添加黑白后期</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%B8%BA%E8%A7%82%E5%AF%9F%E8%80%85%E8%A7%86%E8%A7%92%E6%B7%BB%E5%8A%A0%E9%BB%91%E7%99%BD%E5%90%8E%E6%9C%9F/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%B8%BA%E8%A7%82%E5%AF%9F%E8%80%85%E8%A7%86%E8%A7%92%E6%B7%BB%E5%8A%A0%E9%BB%91%E7%99%BD%E5%90%8E%E6%9C%9F/</link>
       <pubDate>Mon, 16 Oct 2023 01:07:15 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%B8%BA%E8%A7%82%E5%AF%9F%E8%80%85%E8%A7%86%E8%A7%92%E6%B7%BB%E5%8A%A0%E9%BB%91%E7%99%BD%E5%90%8E%E6%9C%9F/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E4%B8%BA%E8%A7%82%E5%AF%9F%E8%80%85%E8%A7%86%E8%A7%92%E6%B7%BB%E5%8A%A0%E9%BB%91%E7%99%BD%E5%90%8E%E6%9C%9F/</guid>
       <description>说明 # 使用后期处理 Postprocessing , 应用于最终渲染帧的视觉特效 后期处理可以用来实现视觉特效, 也可以通过色彩矫正为帧营造氛围 属于美化范畴, 适合用蓝图实现 熟悉参数 # 运行游戏, 在世界大纲选择 BP_STUBaseCharacter , 在细节面板选择 Camera 组件, 查看后期处理 Post Process 设置: 很多设置都会对最终帧产生影响 设置虚光照 # 调暗图片边缘 添加噪音 # 饱和度 # 黑白后期: 设置Y = 0, 即亮度设置为0 创建观察者蓝图类 # Content/Player , 右键, 选择 Blueprint Class 基类选择 SpectatorPawn, 命名为BP_STUSpectatorPawn 设置关卡设置该观察者类 打开观察者类, 为其添加摄像机组件, 命名为CameraComponent 设置摄像机组件 # 摄像机受鼠标控制, 支持在垂直方向旋转 勾选 Details &amp;gt; Camera Options &amp;gt; UsePawnControlRotation 黑白后期 Global &amp;gt; Saturation , 设置Y = 0 查看 # </description>
     </item>
     
     <item>
       <title>枪口特效</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</link>
       <pubDate>Mon, 16 Oct 2023 06:00:02 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E6%9E%AA%E5%8F%A3%E7%89%B9%E6%95%88/</guid>
       <description>说明 # 创建一个发射器NE_LauncherFlash, 两个粒子系统NS_LauncherMuzzle和NS_RiffleMuzzle 发射器的枪口特效较简单. 步枪的射击涉及定时器, 只创建一次粒子系统, 开始射击时, 令其开始并将其渲染, 停止射击时令其暂停, 不再对其进行渲染 创建Niagara粒子发射器 # 创建文件夹 Content/VFX/Muzzles 创建Niagara粒子发射器 使用模板 选择 Simple Sprite Burst , 命名为NE_LauncherFlash 设置纹理 使用默认发射器状态: 不循环; 设置时长 设置粒子数 设置外观 生存时间, 颜色, 聚集方式, 分布, 旋转模式 添加属性: Scale Sprite Size 起点 终点 添加属性: Sprite Rotation Rate 设置Rotation Rate为 Particles &amp;gt; Initial &amp;gt; MaterialRandom 基于NE_LauncherFlash创建发射器使用的Niagara粒子系统资产 # 右键NE_LauncherFlash, 命名为NS_LauncherMuzzle 设置不变, 只播放一次 基于NE_LauncherFlash创建步枪使用的Niagara粒子系统资产 # 命名为NS_RifleMuzzle 循环播放, 设置时长 添加属性: Spawn Rate 设置为90 设置颜色 优化榴弹冲击特效 # NS_ProjectileImpact 设置粒子数 设置分布 枪口特效 # 武器基类: 在枪口生成特效, 返回Niagara组件 # 添加属性: 保存特效类型 # ShootThemUp: Weapon/STUBaseWeapon.</description>
     </item>
     
     <item>
       <title>子弹轨迹特效</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/</link>
       <pubDate>Tue, 17 Oct 2023 01:49:09 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/%E5%AD%90%E5%BC%B9%E8%BD%A8%E8%BF%B9%E7%89%B9%E6%95%88/</guid>
       <description>说明 # 子弹在空间中的轨迹 图示只做说明 修正枪口特效 # NE_LauncherFlash 火花样式 弹射旋转 Sprite Rotation 调整 Scale Sprite Size 和 Sprite Rotation Rate 顺序, 设置旋转比例范围 解决神龙甩尾效果 减小火花 修正榴弹冲击特效 # NS_ProjectileImpact SimpleSpriteBurst # 腾云特效 设置时长 粒子数 生存时间和大小 分布属性 添加 设置半径和原型 排序 UpwardMeshBurst # 箭簇特效 粒子数 生存期, 颜色, 体积等 取消模块勾选 大小分布 移除不需要的网格体等 OmnidirectionalBurst # 击碎雪球特效 添加属性 调整属性位置, 设置圆形分布半径等 排序 实现轨迹特效 # 创建文件夹 Content/VFX/Trace , 创建下属文件夹 Projectile 和 Rifle 创建步枪子弹轨迹用粒子发射器 # Content/VFX/Trace/Rifle 基于模板Dynamic Beam, 命名为NE_RifleBeam Initialize Particle Beam Width Color 创建步枪子弹轨迹用粒子系统 # Content/VFX/Trace/Rifle 使用粒子发射器NE_RifleBeam 命名为NS_RifleBeam 创建榴弹轨迹用粒子发射器 # Content/VFX/Trace/Projectile NE_BlueCore # 基于模板SimpleSpriteBurst Properties Emitter State Spawn Burst Instantaneous Initialize Particle Scale Color 添加模块 Scale Sprite Size 添加模块 Sprite Rotation Rate Sprite Renderer NE_Electric # 基于模板SimpleSpriteBurst Properties Emitter State 添加模块: Spawn Rate Initialize Particle 添加模块: Shape Location Scale Color 添加模块: Scale Sprite Size 添加模块: Sprite Rotation Rate 添加模块: Sub UVAnimation Sprite Renderer NE_Fountain # 基于模板Fountain Spawn Rate Initialize Particle Shape Location Add Velocity Gravity Force 添加模块: Collision 添加模块: Acceleration Force Sprite Renderer 添加模块Scale Velocity</description>
     </item>
     

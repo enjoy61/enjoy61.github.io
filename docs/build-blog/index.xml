@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>🔨📓 on </title>
-    <link>https://www.enjoy61.com/docs/build-blog/</link>
+    <link>https://enjoy61.com/docs/build-blog/</link>
     <description>Recent content in 🔨📓 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 11 Jun 2023 01:34:44 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/build-blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jun 2023 01:34:44 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/build-blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Hugo&#43;GitHub搭建静态博客</title>
-      <link>https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 08 Jun 2023 10:57:46 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/%E4%BD%BF%E7%94%A8hugo&#43;github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
       <description>说明 # - Github Pages 使用Github提供的免费服务部署静态博客 Hugo 本地构建静态网页 anubis 主题 安装Hugo # Github 官网 方法一: 使用go安装 # Windows 安装go 官网下载 环境变量 # go export PATH=/usr/local/go/bin:$PATH export GOROOT=/usr/local/go export GOPATH=/Users/USERNAME/go export GOBIN=/Users/USERNAME/go/bin # go安装的软件 export PATH=$GOBIN:$PATH 安装hugo 如若遇上网络不佳, 配置代理 go env -w GOPROXY=https://goproxy.cn,direct go env -w GOSUMDB=off 安装并验证 go install github.com/gohugoio/hugo@latest hugo env -v 部分主题需用hugo_extended提供的支持 方法二: 使用homebrew安装 # macOS brew install hugo 创建站点项目 # 新建站点 hugo new site /site/path 站点项目结构 文件 说明 config.</description>
     </item>
     
     <item>
       <title>图片水平循环滚动</title>
-      <link>https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</link>
+      <link>https://enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</link>
       <pubDate>Mon, 14 Aug 2023 01:20:15 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/%E5%9B%BE%E7%89%87%E6%B0%B4%E5%B9%B3%E5%BE%AA%E7%8E%AF%E6%BB%9A%E5%8A%A8/</guid>
       <description>便签 # - 环状滚动 1. html格式 2. css样式 3. transform: translateX 多个li显示在一行 display: inline-block 基础html格式+css样式 通过js设置css参数 1. element.style.setProperty(&amp;rsquo;transform&amp;rsquo;, &amp;rsquo;translateX(1px)&#39;) 2. element.style.getPropertyValue(&amp;rsquo;transform&#39;) 3. element.style.cssText = &amp;rsquo;left: 10px&#39; 4. 猜测：通过js获取的css参数, 不来自css文件, 而是html代码的设置 css Position 1. li标签不自动换行: absolute, fixed 2. 计算绝对位置 样式 # css - imageList height 滚动框高度, 滚动框之间的边界 overflow 向右滚动时, 溢出不触发滚动条 perspective 1. 滚动框左右的边界 2. 垂直滚动时, 滚动框跟随滚动 li width 图片宽度 padding 第一个参数: top边界, 滚动框之间的间隔 第二个参数: 嵌套时长宽边界 position 1. 多个li不自动换行 2. 采用绝对位置 3. fixed或absolute都可 display li显示在一行 .</description>
     </item>
     
     <item>
       <title>文章目录标题高亮</title>
-      <link>https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/</link>
+      <link>https://enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/</link>
       <pubDate>Mon, 12 Jun 2023 12:00:38 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E6%A0%87%E9%A2%98%E9%AB%98%E4%BA%AE/</guid>
       <description>说明 # 设置高亮样式 css 使用Intersection Observer实现 JavaScript 文章目录设置 config/_default/markup.toml - startLevel 2 endLevel 3 另一个实现思路为Scrollspy 移植到Doks主题 便签 # - 文章目录滚动高亮 1. 为文章目录设置类 2. 高亮样式 3. 提供一种实现 高亮样式 当前标题底部加横线 滚动高亮 设置元素的父元素 滚动高亮 option和intersectionObserver的callback IntersectionObserver API 1. 添加观察元素: observe 2. intersectionRatio 3. target querySelectorAll用法 1. 获取有指定属性的元素: &amp;ldquo;a[target]&amp;rdquo; 2. 获取指定父元素的元素: &amp;ldquo;div &amp;gt; p&amp;rdquo; 3. 获取多个分类元素: &amp;ldquo;h2[id], h3[id]&amp;rdquo; 获取元素的方式 1. id: getElementById, 上下文要求是documnet 2. name: getElementsByName, 一组 将NodeList转换为数组 apply 从数组中移除元素 filter 设置数组初始值 fill 文章目录 # Doks主题通过设置startLevel和endLevel限制ToC显示的标题。endLevel上限为4，startLevel一般从2开始 高亮的是ToC中的链接 高亮样式 # 设置颜色 加粗 过渡 暗色主题 assets/scss/common/_global.</description>
     </item>
     
     <item>
       <title>文章目录跟随文章内容滚动</title>
-      <link>https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/</link>
+      <link>https://enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/</link>
       <pubDate>Sat, 10 Jun 2023 10:46:13 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%9F%E9%9A%8F%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%BB%9A%E5%8A%A8/</guid>
       <description>说明 # 监听滚动事件, 触发定时器, 到时实现文章目录滚动跟随 浏览器支持 - docs-toc scrollTop my-toc scrollTop 文章目录跳转 Safari O X - Firefox O X - Chrome O O docs-toc需要定时器, 延时要求大于文章目录跳转最大耗时 滚动监听 # window添加事件监听 window.addEventListener(&#39;scroll&#39;, () =&amp;gt; { // 处理 }); window注册滚动处理 window.onscroll = function () { // 处理 }; 进入判断 # document.addEventListener(&#39;DOMContentLoaded&#39;, () =&amp;gt; { const myToc = document.querySelector(&#39;.my-toc&#39;); const fullToc = document.querySelector(&#39;.docs-toc&#39;); if (!myToc || !fullToc) return; // 后续处理 }); 滚动计算 # 为标题排序, 厘清高亮标题在文章目录中的位置 # let i = 0; myToc.</description>
     </item>
     
     <item>
       <title>为博客绑定域名</title>
-      <link>https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</link>
+      <link>https://enjoy61.com/docs/build-blog/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</link>
       <pubDate>Fri, 10 Nov 2023 15:05:49 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</guid>
       <description>前提 # 依托GitHub Pages的博客网址国内不可访问 域名说明 # 购买域名需要实名认证 + 信息模板实名认证, 腾讯云在信息模板认证通过后才能注册域名 即, 需要在购买处提供个人实名信息 域名无法买断, 通常按年购买和续费, 且首年和续费的费用不一致. 用作技术博客, 主要考虑续费费用 为博客绑定域名之后, 国内可以正常访问, 使用百度也可以搜索得到, 但速度不快, 因此, 后续就存在租用服务器的可能 大家见仁见智吧 域名服务商 # 参考 国内 阿里云 腾讯云 爱名网 聚名 西部数码 国外 GoDaddy Dynadot CloudFlare 购买域名之前, 查询域名历史 # 域名选购注意 - 爱站 站长之家 网站时光机 域名购买流程 # 在腾讯云上注册帐号 实名认证 信息模板实名认证 据说1-3个小时, 还是比较快的 注册域名 等待域名实名通过 需要一会 为博客绑定域名流程 # 获取GitHub服务器IP # 在终端ping博客网址 在域名服务商处设置域名解析 # 为域名添加解析 快速添加解析 填写GitHub服务器IP 得到两条解析记录, 点击确定 修改www子域的解析记录 设置记录类型为CNAME, 即将记录值解析成本域名 设置记录值为enjoy61.</description>
     </item>
     
     <item>
       <title>Hugo Theme - 博文页</title>
-      <link>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E9%A1%B5/</link>
+      <link>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E9%A1%B5/</link>
       <pubDate>Mon, 13 Nov 2023 03:40:24 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E9%A1%B5/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E9%A1%B5/</guid>
       <description>说明 # 本节目的是能打开localhost:1313/post/page1/链接 准备工作 # 根目录 ./ 创建项目 hugo new site tass cd tass 出现文件夹 ./tass 创建主题 hugo new theme tass 出现文件夹 ./tass/themes/tass 创建项目内第一篇博文 hugo new post/page1.md 出现文件 ./post/page1.md 填写内容 第一篇博文 Hello World！ 创建项目内第二篇博文 hugo new post/page2.md 出现文件 ./post/page2.md 博文模板 # ./archetypes/default.md 为所有以(.md)结尾的文件的模板 目前不会对其做修改 相应地, 在本地测试时需使用 -D 参数 hugo -D 配置主题 # ./config.toml 添加主题设置 theme = &amp;quot;tass&amp;quot; 显示博文逻辑 # ./tass/themes/tass/layouts/_default/single.html &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.</description>
     </item>
     
     <item>
       <title>Hugo Theme - 博文列表</title>
-      <link>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E5%88%97%E8%A1%A8/</link>
+      <link>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E5%88%97%E8%A1%A8/</link>
       <pubDate>Mon, 13 Nov 2023 04:02:34 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E5%88%97%E8%A1%A8/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%8D%9A%E6%96%87%E5%88%97%E8%A1%A8/</guid>
       <description>说明 # 将分区内博文罗列出来, 并显示在单页面 - 博文列表 单页面 Single Page Section属性值为空字符串, Type属性为 page _index.md 博文页 章节页面 Section Page Section属性值为所在目录名 创建分区页面 # hugo new post/_index.md 博文列表逻辑 # ./tass/themes/tass/layouts/_default/list.html - .Pages 获取当前分区的文章集合, 注意, 时间上由新到旧 range 遍历集合 .Permalink 获取页面链接 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;列表页面&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- {{ with .Site.GetPage &amp;quot;/post&amp;quot; }}&amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt;{{ end }} --&amp;gt; {{ range .Pages }} &amp;lt;div&amp;gt; &amp;lt;a href=&amp;quot;{{ .</description>
     </item>
     
     <item>
       <title>Hugo Theme - 主页</title>
-      <link>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E4%B8%BB%E9%A1%B5/</link>
+      <link>https://enjoy61.com/docs/build-blog/hugo-theme-%E4%B8%BB%E9%A1%B5/</link>
       <pubDate>Mon, 13 Nov 2023 04:24:58 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E4%B8%BB%E9%A1%B5/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/hugo-theme-%E4%B8%BB%E9%A1%B5/</guid>
       <description>说明 # 在首页显示所有分区列表 创建另一个分区 # hugo new news/page1.md hugo new news/page2.md 可以不执行下列命令, localhost:1313/news/页面仍会显示分区内文章列表 hugo new news/_index.md 主页 # 对应 ./tass/content/_index.md 同样可以不创建 主页逻辑 # ./tass/themes/tass/layouts/index.html - .Site 站内 .RegularPages 常规页面 .Site.RegularPages 获取了站内所有页面, 包括news和post分区 where用来查询集合中满足条件的项目, 即筛选出指定分区的页面. 用法如下 where COLLECTION KEY [OPERATOR] MATCH &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;网站首页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h2&amp;gt; 新闻列表 &amp;lt;/h2&amp;gt; {{ range where .Site.RegularPages &amp;quot;Section&amp;quot; &amp;quot;news&amp;quot; }} &amp;lt;div&amp;gt; &amp;lt;a href=&amp;quot;{{ .</description>
     </item>
     
     <item>
       <title>Hugo Theme - 导航菜单</title>
-      <link>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/</link>
+      <link>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/</link>
       <pubDate>Mon, 13 Nov 2023 04:43:03 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/hugo-theme-%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/hugo-theme-%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95/</guid>
       <description>说明 # 添加导航菜单 添加导航菜单 # config.toml menu.main 中的 main 为表名 子项有 parent 属性, 用于关联上级菜单, 可以设置为上级菜单名字和ID. 因为名字可以重复, 建议设置为ID # 主导航菜单 [[menu.main]] name=&amp;quot;主页&amp;quot; url=&amp;quot;/&amp;quot; weight=&amp;quot;10&amp;quot; [[menu.main]] name=&amp;quot;笔记&amp;quot; url=&amp;quot;/notebook&amp;quot; weight=&amp;quot;20&amp;quot; [[menu.main]] name=&amp;quot;日志&amp;quot; url=&amp;quot;/blog&amp;quot; weight=&amp;quot;30&amp;quot; [[menu.main]] name=&amp;quot;书签&amp;quot; url=&amp;quot;/bookmark&amp;quot; weight=&amp;quot;40&amp;quot; [[menu.main]] name=&amp;quot;关于&amp;quot; identifier=&amp;quot;about&amp;quot; url=&amp;quot;/about&amp;quot; weight=&amp;quot;50&amp;quot; [[menu.main]] parent=&amp;quot;about&amp;quot; name=&amp;quot;技能树&amp;quot; url=&amp;quot;/about/skill-tree&amp;quot; weight=&amp;quot;5001&amp;quot; [[menu.main]] parent=&amp;quot;about&amp;quot; name=&amp;quot;Hobby&amp;quot; url=&amp;quot;/about/hobby&amp;quot; weight=&amp;quot;5002&amp;quot; [[menu.main]] parent=&amp;quot;about&amp;quot; name=&amp;quot;版权声明&amp;quot; url=&amp;quot;/about/copyright&amp;quot; weight=&amp;quot;5003&amp;quot; 导航菜单项仓用属性 # - .Name 名称 .Identifier 唯一标识, 不允许重复 .Weight 权重 .Parent 上级菜单ID .URL 该项链接 获取导航菜单逻辑 # 按理说所有页面都有导航菜单.</description>
     </item>
     
     <item>
       <title>Bootstrap 5 - 导航栏</title>
-      <link>https://www.enjoy61.com/docs/build-blog/bootstrap-5-%E5%AF%BC%E8%88%AA%E6%A0%8F/</link>
+      <link>https://enjoy61.com/docs/build-blog/bootstrap-5-%E5%AF%BC%E8%88%AA%E6%A0%8F/</link>
       <pubDate>Mon, 13 Nov 2023 17:16:04 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/build-blog/bootstrap-5-%E5%AF%BC%E8%88%AA%E6%A0%8F/</guid>
+      <guid>https://enjoy61.com/docs/build-blog/bootstrap-5-%E5%AF%BC%E8%88%AA%E6%A0%8F/</guid>
       <description>前置 # Bootstrap是前端插件库 Bootstrap 使用RUNOOB-Bootstrap5教程 说明 # 导航栏 不同颜色导航栏 品牌/Logo 导航栏使用下拉菜单 固定导航栏 框架 # 使用bootstrap5 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;zh&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;{{ .Title }}&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; &amp;lt;link href=&amp;quot;https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;!-- 导航栏逻辑 --&amp;gt; &amp;lt;/html&amp;gt; 添加导航栏 # 框架 # 暗色背景需对应浅色文本 navbar-dark , 浅色背景需要深色文本 navbar-light - 浅色文本 navbar-dark 背景色是深色 深色文本 navbar-light 背景色时浅色 没有写错 背景颜色 - 文本色 bg-light 浅灰色 navbar-light bg-dark 黑色 navbar-dark bg-primary 蓝色 navbar-dark bg-success 绿色 navbar-dark bg-info 青色 navbar-dark bg-warning 黄色 navbar-dark bg-danger 红色 navbar-dark bg-secondary 深灰色 navbar-dark 使用 fixed-top 将导航栏固定在顶部 &amp;lt;body&amp;gt; &amp;lt;nav class=&amp;quot;navbar navbar-expand-sm bg-info navbar-light fixed-top&amp;quot;&amp;gt; &amp;lt;!</description>
     </item>
     

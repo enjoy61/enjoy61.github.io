@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>macOS应用 on </title>
-    <link>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/</link>
+    <link>https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/</link>
     <description>Recent content in macOS应用 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Jun 2023 23:51:10 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 23:51:10 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>终端</title>
-      <link>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/</link>
+      <link>https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/</link>
       <pubDate>Sat, 10 Jun 2023 23:49:52 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/</guid>
+      <guid>https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E7%BB%88%E7%AB%AF/</guid>
       <description>iTerm2 # 官网下载 窗口管理 # 快捷键 操作 Command-W 关闭窗口 分屏 # 快捷键 操作 Command-D 左右分屏 Command-Shift-D 上下分屏 Command-[ 切换 Command-] Option-Command-UP 根据方向键切换 Option-Command-Down Option-Command-Left Option-Command-Right 标签页 # 快捷键 操作 Command-T 新建标签页 Command-NUM 根据标号切换标签页 Command-Shift-[ 切换标签页 Command-Shift-] Command-Left 根据方向键切换标签页窗口 Command-Right 状态栏 # Status Bar 使能 # Preferences &amp;gt; Profiles &amp;gt; Session 勾选 Status bar enabled 点击 Configure Status Bar , 选择显示组件 设置状态栏位置 # Preferences &amp;gt; Appearence &amp;gt; General &amp;gt; Status bar location 选择 Bottom 配色 # 下载配色 # - 官方提供的配色 : lovelace Afterglow Dracula 导入配色 # Preferences &amp;gt; Profiles &amp;gt; Color &amp;gt; Color Presets &amp;gt; Import 设置窗口大小 # Preferences &amp;gt; Profiles &amp;gt; Window 设置 Columns 和 Rows 透明度 # Preferences &amp;gt; Profiles &amp;gt; Window &amp;gt; Transparency 选择 3 字体 # 下载字体 # - Consolas Victor Mono 配置 # Preferences &amp;gt; Profiles &amp;gt; Text &amp;gt; Font 选择 Victor Mono 字号选择 14 Homebrew # 官网 使用中科大 USTC 提供的安装脚本和软件源 参考 安装Homebrew # /bin/bash -c &amp;quot;$(curl -fsSL https://mirrors.</description>
     </item>
     
     <item>
       <title>调度中心</title>
-      <link>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E8%B0%83%E5%BA%A6%E4%B8%AD%E5%BF%83/</link>
+      <link>https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E8%B0%83%E5%BA%A6%E4%B8%AD%E5%BF%83/</link>
       <pubDate>Tue, 12 Sep 2023 12:42:36 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E8%B0%83%E5%BA%A6%E4%B8%AD%E5%BF%83/</guid>
+      <guid>https://enjoy61.com/docs/%E5%88%86%E4%BA%AB/macos%E5%BA%94%E7%94%A8/%E8%B0%83%E5%BA%A6%E4%B8%AD%E5%BF%83/</guid>
       <description>键盘操作 # 可以在 系统偏好设置 &amp;gt; 键盘 &amp;gt; 快捷键 &amp;gt; 调度中心 中设置快捷键 - Control-Up 进入调度中心：查看当前桌面内应用程序和桌面选项 按Control-Up / Control-Down返回 Control-Down 列出当前应用的所有窗口 同上 - Control-Left / Control-Right 左右切换桌面 Control-NUM 切换到指定桌面 触控板操作 # 可以在 系统偏好设置 &amp;gt; 触控板 &amp;gt; 更多手势 中进行设置 - 三指 向上轻扫 进入调度中心 三指 向下轻扫 列出当前应用的所有窗口 三指 左右轻扫 左右切换桌面 </description>
     </item>
     

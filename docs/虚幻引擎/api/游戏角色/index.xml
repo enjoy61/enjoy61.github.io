@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>游戏角色 on </title>
-    <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/</link>
+    <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/</link>
     <description>Recent content in 游戏角色 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Nov 2023 20:54:07 +0000</lastBuildDate><atom:link href="https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 20:54:07 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Object类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/object%E7%B1%BB/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/object%E7%B1%BB/</link>
       <pubDate>Sun, 05 Nov 2023 20:50:43 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/object%E7%B1%BB/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/object%E7%B1%BB/</guid>
       <description>虚幻引擎中最基础的类型，AActor类型的父类 不能在场景中添加UObject对象，可以在代码中创建UObject对象并对逻辑进行封装 UObject # UObject::CreateDefaultSubobject&amp;lt;T&amp;gt; # 创建组件 返回指向组件的指针 将this设置为组件的上级 参数 含义 说明 SubobjectName 虚幻编辑器中显示的组件名 FName类型 BTransient 使用默认值 使用 # StaticMesh = CreateDefaultSubobject&amp;lt;UStaticMeshComponent&amp;gt;(&amp;quot;StaticMeshInEditor&amp;quot;); 在C++中对变量StaticMesh做设置，在虚幻编辑器中对名为&amp;quot;StaticMeshInEditor&amp;quot;的组件做设置；二者相对应。 可以在C++中修改变量名；如果修改组件名，虚幻编辑器中该组件的已有设置会因找不到目标载体而无法生效。 </description>
     </item>
     
     <item>
       <title>Actor类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/</link>
       <pubDate>Sun, 05 Nov 2023 20:50:41 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/actor%E7%B1%BB/</guid>
       <description>虚幻C++基础类型，能放置到世界场景中的物体，具有相同的基类AActor。 所有能添加到世界场景中的物体都可称作Actor，如几何体，特效，声音。Actor对象有无实体均可。 可视化需要USceneComponent组件，模型需要UStaticMeshComponent组件。 可以在虚幻编辑器中往关卡添加Actor对象，也可以在代码中动态生成Actor对象。 Actor对象由各种Component组成，所有组件可以根据需求进行组装，方便重用。 AActor # 头文件 # UE_5.1/Engine/Source/Runtime/Engine/Classes/GameFrameWork/Actor.h 派生关系 # AActor ^ UObject ^ UObjectBaseUtility 构成 # - 构造函数 BeginPlay 出现在场景中 Tick 每秒更新 AActor::AttachToComponent # 将Actor附加到可变换组件的挂载点 声明 # // ** // * Attaches the RootComponent of this Actor to the supplied component, optionally at a named socket. It is not valid to call this on components that are not Registered. // * @param Parent	Parent to attach to. // * @param AttachmentRules	How to handle transforms and welding when attaching.</description>
     </item>
     
     <item>
       <title>Pawn类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/pawn%E7%B1%BB/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/pawn%E7%B1%BB/</link>
       <pubDate>Sun, 05 Nov 2023 20:50:38 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/pawn%E7%B1%BB/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/pawn%E7%B1%BB/</guid>
       <description>玩家所操作的角色，提供键位绑定 由PlayerController控制，可在多个Pawn之间进行切换 APawn # 构成 # APawn::SetupPlayerInputComponent # 配置用户输入: 在该函数内绑定键位 APawn::StaticClass # 静态成员 返回指向UClass的指针 在GENERATED_BODY宏中定义 UObject也有StaticClass，UObjectBaseUtility没有 控制器 # 访问Controller对象 # APawn::GetController # 获取指向AController的指针 可以是PlayerController，也可以是AIController, 自行转换 APawn::Controller # public 使用指向AController的指针 APawn::GetController&amp;lt;T&amp;gt; # 获取指定类型控制器 // Returns controller for this actor cast to the template type. May return NULL is the cast fails template &amp;lt; class T &amp;gt; T* GetController() const { return Cast&amp;lt;T&amp;gt;(GetController()); } 控制状态 # APawn::IsControlled # 是否被PlayerController接管 APawn::IsPawnControlled # 是否被Controller接管: AIController或PlayerController 受控于AI控制器 # APawn::AIControllerClass # 设置AIController类型 // Default class to use when pawn is controlled by AI UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(DisplayName=&amp;quot;AI Controller Class&amp;quot;), Category=Pawn) TSubclassOf&amp;lt;AController&amp;gt; AIControllerClass; APawn::AutoPossessAI # 设置Pawn被创建和被AI控制器接管的条件 // * // * Determines when the Pawn creates and is possessed by an AI Controller (on level start, when spawned, etc).</description>
     </item>
     
     <item>
       <title>Character类</title>
-      <link>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/</link>
+      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/</link>
       <pubDate>Sun, 05 Nov 2023 20:50:34 +0000</pubDate>
       
-      <guid>https://www.enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/</guid>
+      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/api/%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2/character%E7%B1%BB/</guid>
       <description>派生自APawn，实现了角色的动作(motion)，动画(animation)和物理交互(physical interaction) ACharacter # 构成 # - 构造函数 BeginPlay 出现在场景中调用 Tick 每秒调用 SetupPlayerInputComponent 键位绑定 ACharacter::ACharacter # 构造函数 设置组件类型(派生类or基类) ACharacter::GetMesh # 获取Character的SkeletalMesh组件 访问Controller对象 # 访问Controller对象 受控于AI控制器 # 受控于AI控制器 </description>
     </item>
     
