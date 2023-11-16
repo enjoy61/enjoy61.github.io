@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>关于 on </title>
-    <link>https://enjoy61.com/about/</link>
-    <description>Recent content in 关于 on </description>
+    <title>Abouts on </title>
+    <link>https://enjoy61.github.io/about/</link>
+    <description>Recent content in Abouts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Jun 2023 23:03:25 +0000</lastBuildDate><atom:link href="https://enjoy61.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Nov 2023 19:54:03 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>技能树</title>
-      <link>https://enjoy61.com/about/skill-tree/</link>
+      <link>https://enjoy61.github.io/about/skill-tree/</link>
       <pubDate>Mon, 12 Jun 2023 00:58:10 +0000</pubDate>
       
-      <guid>https://enjoy61.com/about/skill-tree/</guid>
+      <guid>https://enjoy61.github.io/about/skill-tree/</guid>
       <description> - Emacs C++ 计算机图形学 Shell脚本 </description>
     </item>
     
     <item>
       <title>版权声明</title>
-      <link>https://enjoy61.com/about/copyright/</link>
+      <link>https://enjoy61.github.io/about/copyright/</link>
       <pubDate>Fri, 10 Nov 2023 19:54:03 +0000</pubDate>
       
-      <guid>https://enjoy61.com/about/copyright/</guid>
+      <guid>https://enjoy61.github.io/about/copyright/</guid>
       <description>本站属于个人所有，不涉及商业目的。 本站所有原创作品，使用Creative Commons: Attribution-NonCommercial-ShareAlike 4.0 International许可： 使用本站原创作品时请署名、并标注出处，方便有需要的人查看更新和后续 可以对本站原创作品进行更新、纠正和补充，满足相应需求，但请不要用于商业目的，一个良好的分享环境需要大家共同维护 使用本站原创作品时请同样使用CC BY-NC-SA 4.0进行许可 </description>
     </item>
     
     <item>
       <title>Hobby</title>
-      <link>https://enjoy61.com/about/hobby/</link>
+      <link>https://enjoy61.github.io/about/hobby/</link>
       <pubDate>Mon, 12 Jun 2023 00:59:38 +0000</pubDate>
       
-      <guid>https://enjoy61.com/about/hobby/</guid>
+      <guid>https://enjoy61.github.io/about/hobby/</guid>
       <description>Happy Hacking! </description>
     </item>
     

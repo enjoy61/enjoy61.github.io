@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>角色和动画 on </title>
-    <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/</link>
+    <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/</link>
     <description>Recent content in 角色和动画 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 11 Jun 2023 05:36:39 +0000</lastBuildDate><atom:link href="https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jun 2023 05:36:39 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>运行ShooterGame示例项目</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sun, 11 Jun 2023 06:14:27 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E8%BF%90%E8%A1%8Cshootergame%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
       <description>下载ShooterGame # Epic Games Launcher &amp;gt; Samples &amp;gt; Shooter Game 支持引擎版本 4.0 - 4.27 ，当前使用引擎版本 5.1.1 修改源码 # 退化类 # UMatineeCameraShake 已被 ULegacyCameraShake 替代 不再支持的宏 # PLATFORM_PS4 改法一: 定义该宏 # 在引擎代码中，紧接着 SWITCH 定义该宏 改法二: 屏蔽该宏的出现 # 条件运算符第二个和第三个操作数类型不一致, 且可以互相转换 # 参考 AController * 和 AActor * 可以相互转换，此处有歧义 Source/ShooterGame/Private/Player/ShooterCharacter.cpp:322 运行效果 # </description>
     </item>
     
     <item>
       <title>初始化ShootThemUp项目</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Sun, 11 Jun 2023 06:14:49 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%88%9D%E5%A7%8B%E5%8C%96shootthemup%E9%A1%B9%E7%9B%AE/</guid>
       <description>说明 # 虚幻编辑器 将 ShooterGame 作为内容包，基于此开发 ShootThemUp 。好比室内设计师提供游戏资料，我们在此之上开发游戏。 创建ShootThemUp项目 # Blank Blueprint 配置ShootThemUp # 添加版权信息 # 项目设置 &amp;gt; Project &amp;gt; Description &amp;gt; Legal &amp;gt; Copyright Notice Shoot Them Up Game, All Rights Reserved. 关卡设置 # 添加关卡文件夹 Content/Levels 创建关卡 新建关卡 选择 Basic 保存到Content/Levels/，命名为DefaultMap 设置 EditorStartupMap 和 GameDefaultMap 使用 DefaultMap 项目设置 &amp;gt; Project &amp;gt; Maps &amp;amp; Modes 从ShooterGame导入资产 # ShooterGame导出 # 打开ShooterGame项目 &amp;gt; 在内容浏览器选中Content/Animations/TTP_Animations，右键 &amp;gt; Migrate 取消Sounds勾选 默认勾选的文件夹里的内容都与 TTP_Animations 相关 保存到 ShootThemUp/Content 目录下 不能直接迁移到 5.</description>
     </item>
     
     <item>
       <title>为游戏角色绑定模型</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 11 Jun 2023 06:15:23 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%9E%8B/</guid>
       <description>概览 # - 玩家控制的游戏角色 Character 游戏角色控制器 PlayerController 关卡设置 GameModeBase: DefaultPawnClass, PlayerControllerClass 第三视角 CameraComponent 创建Character类和PlayController类 # 虚幻编辑器 创建 Player/STUBaseCharacter ACharacter 公有类 创建 Player/STUPlayerController APlayerController 公有类 设置头文件搜索路径 # 源文件路径已包含上级文件夹 ShootThemUp: Player/STUBaseCharacter.cpp 设置头文件搜索路径之后，可以不指明上级文件夹 ShootThemUp: ShootThemUp.Build.cs PublicIncludePaths.AddRange(new string[] { &amp;quot;ShootThemUp/Public/Player&amp;quot; }); 设置STUGameModeBase使用STUBaseCharacter和STUPlayController # C++ - DefaultPawnClass 游戏角色类型 PlayerControllerClass 游戏角色控制器类型 添加默认构造函数声明 ShootThemUp: STUGameModeBase.h 设置默认游戏角色类型和游戏角色控制器类型 ShootThemUp: STUGameModeBase.cpp #include &amp;quot;Player/STUBaseCharacter.h&amp;quot; #include &amp;quot;Player/STUPlayerController.h&amp;quot; // 以下亦正确 // #include &amp;quot;STUBaseCharacter.h&amp;quot; // #include &amp;quot;STUPlayerController.h&amp;quot; ASTUGameModeBase::ASTUGameModeBase() { DefaultPawnClass = ASTUBaseCharacter::StaticClass(); PlayerControllerClass = ASTUPlayerController::StaticClass(); } 为游戏角色添加第三视角 # C++ 为STUBaseCharacter添加UCameraComponent类型成员 添加CameraComponent类型成员 ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
     <item>
       <title>实现游戏角色前后左右移动</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</link>
       <pubDate>Sun, 11 Jun 2023 06:15:39 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E5%89%8D%E5%90%8E%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8/</guid>
       <description>概览 # 举例 轴映射 连续 前后左右移动 动作映射 离散 跳跃，装弹，更换武器 绑定移动键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 轴映射 函数描述 键位 Scale MoveRight Left/A -1 Right/D 1 MoveForward Up/W 1 Down/S -1 实现前后左右移动逻辑 # C++ - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 方向 输入处理 MoveForward MoveForward GetActorForwardVector AddMovementInput MoveRight MoveRight GetActorRightVector AddMovementInput 实现回调函数 ShootThemUp: Player/STUBaseCharacter.cpp #include &amp;quot;Components/InputComponent.h&amp;quot; void ASTUBaseCharacter::MoveForward(float Amount) { AddMovementInput(GetActorForwardVector(), Amount); } void ASTUBaseCharacter::MoveRight(float Amount) { AddMovementInput(GetActorRightVector(), Amount); } 绑定到函数描述 ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
     <item>
       <title>实现游戏角色视角旋转</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:23 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%A7%86%E8%A7%92%E6%97%8B%E8%BD%AC/</guid>
       <description>说明 # 视角旋转 垂直方向 抬头低头 Camera绕Y轴旋转 鼠标垂直方向位移决定旋转角度 水平方向 环顾左右 Camera绕Z轴旋转 鼠标水平方向位移决定旋转角度 绑定旋转键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 轴映射 函数描述 键位 LookUp MouseY TurnAround MouseX 实现视角旋转逻辑 # C++ - 回调函数签名 BindAxis void handler(float Amount) 函数描述 回调函数 LookUp LookUp AddControllerPitchInput 绕Y轴旋转，增加Y轴旋转角度(Pitch) TurnAround TurnAround AddControllerYawInput 绕Z轴旋转，增加Z轴旋转角度(Yaw) 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::LookUp(float Amount) {} void ASTUBaseCharacter::TurnAround(float Amount) {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;LookUp&amp;quot;, this, &amp;amp;ASTUBaseCharacter::LookUp); PlayerInputComponent-&amp;gt;BindAxis(&amp;quot;TurnAround&amp;quot;, this, &amp;amp;ASTUBaseCharacter::TurnAround); 添加函数声明 ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
     <item>
       <title>为游戏角色添加向前走路动画</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:31 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E4%B8%BA%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%90%91%E5%89%8D%E8%B5%B0%E8%B7%AF%E5%8A%A8%E7%94%BB/</guid>
       <description>概览 # 虚幻编辑器 动画随着游戏角色的运动速度而变化 brush # 最简单的可编辑几何体，我们可以修改其顶点位置，调整其他参数，然后将其转换成静态网格体 CharacterMovementComponent # 负责 Character 运动，其各种属性均和 Character 运动有关 动画蓝图 # Animation Blueprint 动画蓝图需绑定 Skeleton Mesh 命名：ABP_ 打头 动画混合 # Animation Blend 流畅地从一个动画切入到另一个动画 混合空间 # Blend Space 能在两个骨骼动画之间创建过渡动画 使用插值来得到动画姿势的中间值 需绑定 Skeleton Mesh 命名： 混合空间 和 混合空间1D 均以 BS_ 打头 一维混合空间 # Blend Space 1D 横轴 混合空间 # Blend Space 横轴和纵轴 重新设置平台 # 从场景中移除Floor 添加 Geometry/Box 恢复 Box Brush 默认位置，设置长宽高 Character运动速度上限 # BP_STUBaseCharacter CharacterMovementComponent 选择CharacterMovementComponent &amp;gt; 细节面板 &amp;gt; Character Movement: Walking &amp;gt; MaxWalkSpeed MaxWalkSpeed 即 Character 的最大运动速度，单位 cm/s 虚幻引擎里的步长使用 cm 修改 MaxWalkSpeed ，当速度改为 1600 时，可以看到单位时间内移动的距离增加，而跑步动画缺少对应的加速过程 获取实时速度并打印 # BP_STUBaseCharacter 在 EventGraph 实现 - GetVelocity函数 获取Character速度 获得Actor各个方向上的速度，保存在FVector中 FVector::VectorLength 获得速度标量 PrintString 在屏幕上输出实时速度 PrintString 使用 AddOnScreenDebugMessage 可以看到加速过程 移除打印 创建动画蓝图ABP_BaseCharacter # Animation Blueprint 创建文件夹Content/Players/Animations # 方法一: 基于Skeleton Mesh创建动画蓝图 # 选中ExternalContent/Animation/Characters/HeroTPP/HeroTPP &amp;gt; 右键 &amp;gt; Create &amp;gt; AnimBlueprint 方法二: 在指定位置创建动画蓝图 # 去到 Content/Player/Animations，右键 &amp;gt; Animation &amp;gt; 选择Animation Blueprint 选择 HeroTPP_Skeleton 命名为 ABP_BaseCharacter 在蓝图编辑器中查看动画蓝图 # ABP_BaseCharacter - EventGraph 事件图表 处理各种动画事件；像使用 Tick 一样使用 EventBlueprintUpdateAnimation AnimGraph 动画图表 处理所有动画；可以将动画资产作为 OutputPose 的输入 AssetBrowser 动画资产窗口 可以从 Window &amp;gt; AssetBrowser 打开，罗列了 SkeletonMesh 所有相关动画 为游戏角色设置动画时使用动画蓝图 # 为ABP_BaseCharacter设置输入 # 动画图表 将 Run_Fwd 作为 OutputPose 的输入 设置 Run_Fwd 重复播放 选中Run_Fwd &amp;gt; Details &amp;gt; Settings &amp;gt; 使能 LoopAnimation 让Character使用动画蓝图 # BP_STBaseCharacter - Animation Mode Use Animation Blueprint Anim Class ABP_BaseCharacter 查看动画资产 # 去到Content/ExternalContent/Animation/Animations/TTP_Animations，双击 Run_Fwd 可在 AssetBrowser 中选择其他动画 混合空间资产 # Blend Space 速度从 0 - 600 ，动画从 Idle 过渡到 Run_Fwd 创建BS_Locomotion_Walk_1D # 去到Content/Player/Animations，右键 选择 HeroTPP_Skeleton 命名为 BS_Locomotion_Walk_1D 配置BS_Locomotion_Walk_1D # 双击打开 BS_Locomotion_Walk_1D 配置横轴 Asset Details &amp;gt; Axis Settings &amp;gt; Horizontal Axis 说明 Name 名称 Velocity Minimum Axis Value 轴最小值 0 Maximum Axis Value 轴最大值 600 游戏角色运动速度上限 Grid Divisions 过渡区间 4 使用默认值；和可以添加的动画个数有关 配置动画 动画资产 Velocity 起点 Idle 0 终点 Run_Fwd 600 查看插值 系统 键位 Windows Control MacOS Command 按下键位，水平移动鼠标，绿色X随之在起点和终点间移动，视口展示过渡动画 将BS_Locomotion_Walk_1D作为动画蓝图输入 # ABP_BaseCharacter 添加变量Velocity # 在 MyBlueprint 添加变量 Velocity ，在Details设置名称和类型 设置变量Velocity # EventGraph 将变量Velocity拖动到EventGraph, 选择设置变量值 在 EventBlueprintUpdateAnimation 之后，执行 SetVelocity GetPawnOwner 返回 Pawn 实例的引用, 变量 Velocity 的输入是 Actor 实时速度 设置动画蓝图输入 # AnimGraph 将BS_Locomotion_Walk_1D作为OutputPose的输入 将变量Velocity拖动到AnimGraph, 选择获取变量值 将变量Velocity作为BS_Locomotion_Walk_1D的输入 </description>
     </item>
     
     <item>
       <title>实现游戏角色跳跃</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:39 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%B3%E8%B7%83/</guid>
       <description>概览 # 状态机 # State Machine 定义多个状态，每个状态对应一个动画 在一个动画蓝图中管理多个状态，并定义状态之间的迁移条件 ACharacter::IsFalling # 当Character在空中时返回true，Character落地时返回false 绑定跳跃键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 动作映射 函数描述 键位 Jump SpaceBar 实现跳跃逻辑 # C++ - 回调函数签名 BindAction void handler() 函数描述 回调函数 Jump Jump 回调函数由虚幻引擎提供，按下时触发 绑定函数描述和回调函数 # ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Jump&amp;quot;, IE_Pressed, this, &amp;amp;ASTUBaseCharacter::Jump); 使用状态机实现跳跃动画 # 虚幻编辑器 实现跳跃动画 # ABP_BaseCharacter 添加状态机, 将其作为OutPose的输入 # AnimGraph 添加 状态机 ，命名为 Locomotion 将 Locomotion 作为 OutputPose 的输入 状态机说明 # 跳跃动画资产 - JumpStart 跳起 JumpLoop 在空中 JumpEnd 落地 状态 - Walk JumpStart JumpLoop JumpEnd 状态迁移 - Walk &amp;gt; JumpStart 游戏角色在空中 JumpStart &amp;gt; JumpLoop JumpStart 动画播放结束 JumpLoop &amp;gt; JumpEnd 游戏角色落地 JumpEnd &amp;gt; Walk JumpEnd 动画播放结束 实现状态机 # 双击Locomotion，进入状态机</description>
     </item>
     
     <item>
       <title>实现游戏角色跑步</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:43 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E5%AE%9E%E7%8E%B0%E6%B8%B8%E6%88%8F%E8%A7%92%E8%89%B2%E8%B7%91%E6%AD%A5/</guid>
       <description>概览 # 跑步条件 # 按下Shift键 运动方向为向前 判断方法1：同时按下 W 或 Up 判断方法2：速度矢量和朝向的夹角为0 速度不为0 前方有障碍物时，游戏角色无法跑步 跑步时，播放跑步动画 # 跑步时，游戏角色运动速度提高 # 绑定跑步键位 # 虚幻编辑器 项目设置 &amp;gt; Engine &amp;gt; Input 动作映射 函数描述 键位 Run LeftShift 实现跑步逻辑 # C++ - 回调函数签名 BindAction void handler() 函数描述 回调函数 Run RunEnable 按下时触发 RunDisable 松开时触发 搭建框架 # 添加空函数 ShootThemUp: Player/STUBaseCharacter.cpp void ASTUBaseCharacter::RunEnable() {} void ASTUBaseCharacter::RunDisable() {} 绑定函数描述和回调函数 ShootThemUp: Player/STUBaseCharacter.cpp // SetupPlayerInputComponent PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Run&amp;quot;, IE_Pressed, this, &amp;amp;ASTUBaseCharacter::RunEnable); PlayerInputComponent-&amp;gt;BindAction(&amp;quot;Run&amp;quot;, IE_Released, this, &amp;amp;ASTUBaseCharacter::RunDisable); 添加函数声明 private ShootThemUp: Player/STUBaseCharacter.</description>
     </item>
     
     <item>
       <title>添加走路转向动画</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:45 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%B7%BB%E5%8A%A0%E8%B5%B0%E8%B7%AF%E6%97%B6%E8%BD%AC%E5%90%91%E5%8A%A8%E7%94%BB/</guid>
       <description>概览 # 已实现动作 # Walk: 从静止到跑起来支持加速，使用 BS_Locomotion_Walk_1D Run: BS_Locomotion_Run Jump: JumpStart , JumpEnd , JumpLoop 本节内容 # 重新实现走路动画，根据游戏角色前进方向和速度方向的夹角，增加转向和后退动画 之后还有 装弹 Reloading , 死亡 Death 和瞄准 Aiming 动画 2D混合空间 # Blend Space 拥有两个轴， Vertial Axis 和 Horizontal Axis 建模 # 游戏角色朝向 # - 前进和后退 ForwardVector 左右 RightVector 游戏角色前后左右移动有使用到这两个方向向量 我们水平移动鼠标时， ForwardVector 和 RightVector 随之发生改变 在视觉上， ForwardVector 一直向前， RightVector 一直向右，二者在水平面垂直 数学基础 # 点乘 # 计算向量夹角 其中一个向量为 0向量 时，点乘结果为 0 ，而反余弦计算得到其夹角为 PI/2 叉乘 # 将向量夹角从[0, PI]扩充到[-PI, PI] theta 为 0 PI 和 -PI 时，叉乘结果为 0 ，此时无法通过向量确定平面，也就无法得到平面法向量 向量c的z坐标 c.</description>
     </item>
     
     <item>
       <title>打包游戏</title>
-      <link>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</link>
+      <link>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</link>
       <pubDate>Sun, 11 Jun 2023 06:17:48 +0000</pubDate>
       
-      <guid>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</guid>
+      <guid>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E8%A7%92%E8%89%B2%E5%92%8C%E5%8A%A8%E7%94%BB/%E6%89%93%E5%8C%85%E6%B8%B8%E6%88%8F/</guid>
       <description>说明 # 打包游戏，从二进制文件运行 定期打包游戏，确保所做改动能正常运行 设置玩家出发点 # 参考 LevelEditor &amp;gt; PlaceActors &amp;gt; Basic &amp;gt; PlayerStart，添加到关卡中 设置编译选项 # 项目设置 &amp;gt; Project &amp;gt; Packaging &amp;gt; Project &amp;gt; Build Configuration，选择 发行(Shipping) 编译游戏 # 参考 创建文件夹 ShootThemUp/Build 设置二进制文件保存路径 工具栏 &amp;gt; Platforms &amp;gt; Mac &amp;gt; Package Project，选择 Build 文件夹 可在日志窗口查看过程 打包成功 生成 ShootThemUp/Build/Mac/ShootThemUp-Shipping.app 尝试 Development 和 DebugGame 选项，均可 纯蓝图项目没有 DebugGame 选项 metal-ar报错 # 当前项目路径不包含空格，但包含汉字 打包项目 菜单栏 &amp;gt; File &amp;gt; Zip Project 移动到不含空格的英文路径 </description>
     </item>
     

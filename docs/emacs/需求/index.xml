@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>需求 on </title>
+    <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/</link>
+    <description>Recent content in 需求 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Aug 2023 15:59:37 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>双链笔记本</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/</link>
+      <pubDate>Sat, 12 Aug 2023 16:25:51 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0%E6%9C%AC/</guid>
+      <description>说明 # 不可能在多个地方维护同一个知识点 知识点之间的关联性有多种，方便的组织可以使笔记保持整洁 便签 # 显示引用 需配置roam文件根目录 # ;; (setq my/org-roam-directory &amp;quot;path/to/roam/notes/directory&amp;quot;) 安装org-roam # org-roam-安装 安装org-roam-ui # org-roam-ui-安装 为子树添加roam-id # (global-set-key (kbd &amp;quot;C-c y&amp;quot;) &#39;org-id-get-create) </description>
+    </item>
+    
+    <item>
+      <title>虚幻引擎项目源码跳转</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/</link>
+      <pubDate>Sat, 12 Aug 2023 16:35:21 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/</guid>
+      <description>项目源码路径样式 # 无! !=ShootThemUp: Weapon/STUBaseWeapon.h= 需设置项目文件夹 # ;; (setq my/ue-project-path &amp;quot;path/to/ue/project&amp;quot;) 插入项目源码链接 # (defun my/insert-ue-project-source-path () (interactive) (let ((proj (read-string &amp;quot;Project: (Default - ShootThemUp)&amp;quot;)) (type (read-string &amp;quot;Category: &amp;quot;)) (file (read-string &amp;quot;File: &amp;quot;)) (path) (attr)) (if (string= &amp;quot;&amp;quot; proj) (setq proj &amp;quot;ShootThemUp&amp;quot;)) (when (string= &amp;quot;&amp;quot; type) (insert (format (concat &amp;quot;[[&amp;quot; &amp;quot;uep:%s][%s:%s]]&amp;quot;) file proj file))) (unless (string= type &amp;quot;&amp;quot;) (if (string-suffix-p &amp;quot;.h&amp;quot; file) (setq attr &amp;quot;Public&amp;quot;) (setq attr &amp;quot;Private&amp;quot;)) (setq path (format &amp;quot;%s/%s/%s&amp;quot; attr type file)) (insert (format (concat &amp;quot;[[&amp;quot; &amp;quot;uep:%s][%s:%s/%s]]&amp;quot;) path proj type file))))) (global-set-key (kbd &amp;quot;C-c u p&amp;quot;) &#39;my/insert-ue-project-source-path) 打开源码文件 # (defun my/go-to-ue-project-source () (interactive) (when (search-backward (concat &amp;quot;[[&amp;quot; &amp;quot;uep:&amp;quot;) nil t) (when (re-search-forward (rx &amp;quot;[[&amp;quot; &amp;quot;uep:&amp;quot; (group (0+ (not &amp;quot;]&amp;quot;))) &amp;quot;][&amp;quot; (group (0+ (not &amp;quot;:&amp;quot;))) &amp;quot;:&amp;quot; (group (0+ (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) (let ((file (string-join (mapcar #&#39;string (match-string 1)))) (proj (string-join (mapcar #&#39;string (match-string 2))))) (org-open-file (format &amp;quot;%s/%s/Source/%s/%s&amp;quot; my/ue-project-path proj proj file)))))) (global-set-key (kbd &amp;quot;C-c u l&amp;quot;) &#39;my/go-to-ue-project-source) </description>
+    </item>
+    
+    <item>
+      <title>虚幻引擎源码跳转</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/</link>
+      <pubDate>Sat, 12 Aug 2023 16:35:51 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E%E6%BA%90%E7%A0%81%E8%B7%B3%E8%BD%AC/</guid>
+      <description>说明 # API会标注类源码路径 源码路径样式 # 无! ![[file:file.cpp][源码:name]] 需设置引擎源码文件夹 # ;; (setq my/ue-source-path &amp;quot;path/to/ue/source&amp;quot;) 插入源码路径 # (defun my/insert-ue-source-path () (interactive) (let* ((path (read-string &amp;quot;Path: UE_5.1/Engine/Source/&amp;quot;)) (file (car (last (split-string path &amp;quot;/&amp;quot; t))))) (insert (format (concat &amp;quot;[[&amp;quot; &amp;quot;ue:UE_5.1/Engine/Source/%s][虚幻引擎:%s]]&amp;quot;) path file)))) (global-set-key (kbd &amp;quot;C-c u e&amp;quot;) &#39;my/insert-ue-source-path) 打开源码文件 # (defun my/go-to-ue-source () (interactive) (when (search-backward (concat &amp;quot;[[&amp;quot; &amp;quot;ue:&amp;quot;) nil t) (when (re-search-forward (rx &amp;quot;[[&amp;quot; &amp;quot;ue:&amp;quot; (group (0+ (not &amp;quot;]&amp;quot;))) &amp;quot;][虚幻引擎:&amp;quot; (group (0+ (not &amp;quot;]&amp;quot;))) &amp;quot;]]&amp;quot; ) nil t) (let ((file (string-join (mapcar #&#39;string (match-string 1))))) (org-open-file (concat my/ue-source-path &amp;quot;/&amp;quot; file)))))) (global-set-key (kbd &amp;quot;C-c u g&amp;quot;) &#39;my/go-to-ue-source) </description>
+    </item>
+    
+    <item>
+      <title>使用Emacs做视频笔记</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 12 Aug 2023 16:27:08 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8emacs%E5%81%9A%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/</guid>
+      <description>需求 # 有尝试使用Logseq和Obsidian做视频笔记，结果不太满意，不过弄清楚了需求 - 在笔记页面控制视频的暂停，前进，后退 播放器能加载字幕，能设置屏幕大小(全屏) 在笔记页面添加时间戳 从时间戳播放视频 说明 # - 播放器 mpv 插件 emms 播放器和Emacs间的接口：控制播放器，获取相关参数 插件 pretty-hydra 自定义快捷键菜单 自定义函数 打时间戳，跳转 时间戳样式 # 无! ! 需设置emms默认播放路径 # ;; (setq my/movie-path &amp;quot;path/to/movie&amp;quot;) 需设置视频根目录 # ;; (setq my/video-path &amp;quot;path/to/video&amp;quot;) 安装emms # emms-安装 安装pretty-hydra # pretty-hydra-安装 插入时间戳 # (defun my/insert-timestamp() (interactive) (let ((desc (read-string &amp;quot;Description: &amp;quot;))) (setq my/mpv-current-file nil) (setq my/mpv-timestamp nil) (emms-player-mpv-ipc-req-send &#39;(get_property path) #&#39;(lambda (ret err) (unless err (setq my/mpv-current-file (file-relative-name ret my/video-path)) ) ) ) (emms-player-mpv-ipc-req-send &#39;(get_property time-pos) #&#39;(lambda (ret err) (unless err (setq my/mpv-timestamp ret) ) ) ) (sleep-for 0.</description>
+    </item>
+    
+    <item>
+      <title>使用ox-hugo导出博客</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 12 Aug 2023 16:36:21 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8ox-hugo%E5%AF%BC%E5%87%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>说明 # - 描述 解决方法 ox-hugo 安装 导出子树时, 整个文件的所有链接要求正确 提取options和子树文本 导出子树时, 自动计算weight, 需要保留其他子树 计算子树的weight 导出文件时, 若在临时文件, 需输入导出文件名 导出子树, 计算子树的导出路径 转换后的下划线无效 不用 Doks主题 markdown文件图片链接无法正确解析 替换图片链接 会检查所有文本(包括代码块)的图片链接 分隔&amp;quot;{{&amp;ldquo;和&amp;rdquo;&amp;lt; figure src&amp;hellip;&amp;quot; 图片链接后接文本, 会作为图片描述 图片链接和文本之间空一行 org-roam 希望能跳转到博客对应标题 将roam节点链接替换为博客+标题链接 时间戳链接 不需要 删除 源码链接 不需要跳转, 需提供说明 在文本块中显示相对路径 安装ox-hugo # ox-hugo-安装 子树路径 # 获取导出文件路径 # 保存到列表 只能有选项SECTION, 子树使用SECTION_FRAG 缺乏子树从属判断 (defun my/compute-subtree-path (export-name) (interactive) (let ((base-dir) (section) (dir) (slotlist &#39;()) (cur-level) (frag) (new-level) ) (save-excursion (beginning-of-buffer) (when (re-search-forward (rx &amp;quot;#+&amp;quot; &amp;quot;HUGO_BASE_DIR&amp;quot; &amp;quot;: &amp;quot; (group (0+ (not &amp;quot;\n&amp;quot;))) &amp;quot;\n&amp;quot;) nil t) (setq base-dir (string-join (mapcar #&#39;string (match-string 1)))) (beginning-of-buffer) (when (re-search-forward (rx &amp;quot;#+&amp;quot; &amp;quot;HUGO_SECTION&amp;quot; &amp;quot;: &amp;quot; (group (0+ (not &amp;quot;\n&amp;quot;))) &amp;quot;\n&amp;quot;) nil t) (setq section (string-join (mapcar #&#39;string (match-string 1)))) (setq dir (concat base-dir &amp;quot;/content/&amp;quot; section)) ) ) ) (add-to-list &#39;slotlist export-name) (save-excursion (setq cur-level (funcall outline-level)) (while (re-search-backward (rx &amp;quot;:&amp;quot; &amp;quot;EXPORT_HUGO_SECTION_FRAG&amp;quot; &amp;quot;: &amp;quot; (group (0+ (not &amp;quot;\n&amp;quot;))) &amp;quot;\n&amp;quot; ) nil t) (setq frag (string-join (mapcar #&#39;string (match-string 1)))) (setq new-level (funcall outline-level)) (when (&amp;lt; new-level cur-level) ;;(message &amp;quot;%d %d %s&amp;quot; (funcall outline-level) ocur-level ofrag) ;;(sleep-for 5) (add-to-list &#39;slotlist frag) (setq cur-level new-level) ) ) ) (add-to-list &#39;slotlist dir) ) ) 获取导出文件路径的字符串 # (defun my/subtree-path-str (export-name) (interactive) (let ((slotlist (my/compute-subtree-path export-name)) (slot)) (dolist (item slotlist) (setq slot (concat slot &amp;quot;/&amp;quot; item)) ) (string-remove-prefix &amp;quot;/&amp;quot; slot) ) ) Doks主题 # 替换markdown文件图片链接格式 # (defun my/replace-pic-link-format (file) (interactive) (with-current-buffer (find-file-noselect file) (beginning-of-buffer) (while (re-search-forward (rx &amp;quot;{{&amp;quot; &amp;quot;&amp;lt; figure src=\&amp;quot;&amp;quot; (group (0+ (not &amp;quot;\&amp;quot;&amp;quot;))) &amp;quot;\&amp;quot; width=\&amp;quot;&amp;quot; (group (0+ (not &amp;quot;\&amp;quot;&amp;quot;))) &amp;quot;\&amp;quot; &amp;gt;}}&amp;quot;) nil t) (let ((src (string-join (mapcar #&#39;string (match-string 1)))) (width (string-join (mapcar #&#39;string (match-string 2))))) (replace-match (format &amp;quot;&amp;lt;img src=\&amp;quot;/%s\&amp;quot; width=\&amp;quot;%s\&amp;quot; /&amp;gt; &amp;lt;br/&amp;gt;&amp;quot; src width)) ) ) (save-buffer) (kill-buffer) ) ) 替换子树导出文件图片链接格式 # (defun my/amend-pic-link (export-name) (interactive) (my/replace-pic-link-format (concat (my/subtree-path-str export-name) &amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>表格中文对齐</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/</link>
+      <pubDate>Sat, 12 Aug 2023 10:37:18 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E8%A1%A8%E6%A0%BC%E4%B8%AD%E6%96%87%E5%AF%B9%E9%BD%90/</guid>
+      <description>便签 # 参考 方法一: 使用valign # 像素对齐 使用时会导致图片加载卡顿 ;; (use-package valign ;; :ensure t ;; ) ;; (add-hook &#39;org-mode-hook #&#39;valign-mode) 方法二: 使用cnfonts # GitHub 字体受到cnfonts支持的限制 ;; (use-package cnfonts ;; :ensure t) ;; (cnfonts-mode 1) ;; (define-key cnfonts-mode-map (kbd &amp;quot;C--&amp;quot;) #&#39;cnfonts-decrease-fontsize) ;; (define-key cnfonts-mode-map (kbd &amp;quot;C-=&amp;quot;) #&#39;cnfonts-increase-fontsize) 方法三: 分别对中文字体和英文字体进行设置 # 找到满足英文:中文=1:2的两个字体 下载Iosevka # GitHub # brew tap homebrew/cask-fonts # brew install font-iosevka 设置Emacs中英文字体 # 字号使用14, 16正常 ;; (let ((default-font (font-spec :name &amp;quot;Iosevka&amp;quot; :size 14)) ;; (cn-font (font-spec :name &amp;quot;Sarasa Mono SC&amp;quot;))) ;; (set-face-attribute &#39;default nil :font default-font) ;; (dolist (charset &#39;(kana han symbol cjk-misc bopomofo)) ;; (set-fontset-font t charset cn-font))) 方法四: 对org-mode表格字体进行设置 # 要求字体英文:中文=1:2 下载更纱字体 # # brew install font-sarasa-gothic 设置表格字体 # 更纱黑体 # ;; (custom-set-faces ;; &#39;(org-table ((t (:family &amp;quot;等距更纱黑体 SC&amp;quot;))))) Iosevka # (custom-set-faces &#39;(org-table ((t (:family &amp;quot;Iosevka&amp;quot;))))) Sarasa Mono SC # ;; (custom-set-faces ;; &#39;(org-table ((t (:family &amp;quot;Sarasa Mono SC&amp;quot;))))) 设置Emacs字体 # ;; (let ((emacs-font-size 14) ;; (emacs-font-name &amp;quot;Victor Mono&amp;quot;)) ;; (set-frame-font (format &amp;quot;%s-%s&amp;quot; (eval emacs-font-name) (eval emacs-font-size))) ;; (set-fontset-font (frame-parameter nil &#39;font) &#39;unicode (eval emacs-font-name))) </description>
+    </item>
+    
+    <item>
+      <title>使用中文输入法不影响快捷键</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Sat, 12 Aug 2023 16:17:07 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E9%9C%80%E6%B1%82/%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>说明 # C-c e g不用切换输入法 Vim除Insert模式外锁定英文 逗号和句号使用全角, 其他符号使用半角 安装并配置rime # rime </description>
+    </item>
+    
+  </channel>
+</rss>

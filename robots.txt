@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enjoy61.com/sitemap.xml
+Sitemap: https://enjoy61.github.io/sitemap.xml

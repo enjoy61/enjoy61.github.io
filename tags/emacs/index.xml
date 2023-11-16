@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emacs on </title>
-    <link>https://enjoy61.com/tags/emacs/</link>
+    <link>https://enjoy61.github.io/tags/emacs/</link>
     <description>Recent content in Emacs on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs-tango主题和Sublime-Flatland主题</title>
-      <link>https://enjoy61.com/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</link>
+      <link>https://enjoy61.github.io/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</link>
       <pubDate>Sat, 11 Nov 2023 11:37:40 +0000</pubDate>
       
-      <guid>https://enjoy61.com/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://enjoy61.github.io/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</guid>
       <description> - Emacs tango Sublime Flatland Dark </description>
     </item>
     
     <item>
       <title>低饱和高亮度配色主题</title>
-      <link>https://enjoy61.com/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</link>
+      <link>https://enjoy61.github.io/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</link>
       <pubDate>Wed, 16 Aug 2023 14:16:57 +0000</pubDate>
       
-      <guid>https://enjoy61.com/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://enjoy61.github.io/blog/%E4%BD%8E%E9%A5%B1%E5%92%8C%E9%AB%98%E4%BA%AE%E5%BA%A6%E9%85%8D%E8%89%B2%E4%B8%BB%E9%A2%98/</guid>
       <description> Theme Emacs wombat VSCode Dark Modern iTerm2 Afterglow + robbyrussell </description>
     </item>
     

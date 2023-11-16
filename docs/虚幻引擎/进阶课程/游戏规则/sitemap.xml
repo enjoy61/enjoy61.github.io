@@ -2,15 +2,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</loc>
+      <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E4%BB%8B%E7%BB%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F/</loc>
       <lastmod>2023-11-09T20:48:48+08:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>https://enjoy61.com/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BAnpc/</loc>
+      <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BAnpc/</loc>
       <lastmod>2023-11-12T21:24:39+08:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>https://enjoy61.github.io/docs/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/%E8%BF%9B%E9%98%B6%E8%AF%BE%E7%A8%8B/%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/%E6%B8%B8%E6%88%8F%E5%9B%9E%E5%90%88/</loc>
+      <lastmod>2023-11-15T18:30:19+08:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>

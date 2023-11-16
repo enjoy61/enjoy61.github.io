@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>想法 on </title>
+    <link>https://enjoy61.github.io/docs/emacs/%E6%83%B3%E6%B3%95/</link>
+    <description>Recent content in 想法 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Aug 2023 22:50:33 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/emacs/%E6%83%B3%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>尝试Evil</title>
+      <link>https://enjoy61.github.io/docs/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/</link>
+      <pubDate>Sat, 12 Aug 2023 22:51:51 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/emacs/%E6%83%B3%E6%B3%95/%E5%B0%9D%E8%AF%95evil/</guid>
+      <description>evil </description>
+    </item>
+    
+  </channel>
+</rss>

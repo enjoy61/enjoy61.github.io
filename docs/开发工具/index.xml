@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发工具 on </title>
+    <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 开发工具 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 10 Jun 2023 11:15:09 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode</title>
+      <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/</link>
+      <pubDate>Sat, 10 Jun 2023 21:37:23 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/</guid>
+      <description>便签 # 使用clang-format 快捷键 # 操作 减小字体 Command&amp;ndash; 放大字体 Command-+ 文件内查找 Command-F 注释代码 Command-K Command-C 去注释 Command-K Command-U 头文件/源文件 切换 Option-O 打开首选项 Command-, 使用clang-format # 安装扩展C/C++，自动安装clang-format 保存文件时，应用格式 首选项 &amp;gt; Text Editor &amp;gt; Formatting，勾选 Format On Save </description>
+    </item>
+    
+    <item>
+      <title>Chrome</title>
+      <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/chrome/</link>
+      <pubDate>Sat, 10 Jun 2023 11:14:18 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/chrome/</guid>
+      <description>开发者工具 # F12 设置页面布局 查看日志 查看元素信息 跟踪事件 # 开始Record 停止 页面滚动事件 文章目录滚动 </description>
+    </item>
+    
+  </channel>
+</rss>

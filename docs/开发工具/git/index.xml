@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on </title>
+    <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/</link>
+    <description>Recent content in Git on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 15 Nov 2023 19:49:19 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初识Git</title>
+      <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/%E5%88%9D%E8%AF%86git/</link>
+      <pubDate>Sat, 10 Jun 2023 21:44:19 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/%E5%88%9D%E8%AF%86git/</guid>
+      <description>代码管理, 版本控制 安装 # macOS 方法一: Xcode自带 # 方法二: 使用homebrew安装较新版本 # brew install git 方法三: 下载源码, 编译安装 # 官网下载git-2.41.0.tar.gz make install 验证 # git -v 配置 # 查看Git配置 # git config --list 配置Git账户 # git config --global user.name &amp;quot;enjoy61&amp;quot; git config --global user.email &amp;quot;enjoy61@protonmail.com&amp;quot; 配置SSH # 生成密钥 ssh-keygen cat ~/.ssh/id_rsa.pub 拷贝公钥到Github 代理 # 设置 # 使用代理端口替换1949 git config --global https.proxy https://localhost:1949 git config --global http.proxy http://localhost:1949 取消 git config --global --unset http.</description>
+    </item>
+    
+    <item>
+      <title>提交规范</title>
+      <link>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 15 Nov 2023 20:03:48 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/docs/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</guid>
+      <description>格式 # &amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt; &amp;lt;body&amp;gt; &amp;lt;footer&amp;gt; 标题行 # 必填 类型 # type 标识 feat feature 新功能 fix 修复bug docs 文档 style 格式，如.clang-format refactor 重构 test 测试用例 build 项目构建和依赖项 revert 回退 ci 持续集成 perf 性能优化 merge 代码合并 sync 同步主线或分支的bug chore 其他类型 release 新版本发布 workflow 工作流 受到提交影响的范围 # scope 概述 # subject 动词开头 如果用英文，使用第一人称现在时，首字母小写 结尾不加句号 正文 # body 具体修改内容, 可多行 页脚注释 # footer 备注 </description>
+    </item>
+    
+  </channel>
+</rss>

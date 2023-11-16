@@ -2,17 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sublime on </title>
-    <link>https://enjoy61.com/tags/sublime/</link>
+    <link>https://enjoy61.github.io/tags/sublime/</link>
     <description>Recent content in Sublime on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.com/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs-tango主题和Sublime-Flatland主题</title>
-      <link>https://enjoy61.com/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</link>
+      <link>https://enjoy61.github.io/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</link>
       <pubDate>Sat, 11 Nov 2023 11:37:40 +0000</pubDate>
       
-      <guid>https://enjoy61.com/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://enjoy61.github.io/blog/emacs-tango%E4%B8%BB%E9%A2%98%E5%92%8Csublime-flatland%E4%B8%BB%E9%A2%98/</guid>
       <description> - Emacs tango Sublime Flatland Dark </description>
+    </item>
+    
+    <item>
+      <title>Windows上使用Sublime进行Unreal开发</title>
+      <link>https://enjoy61.github.io/blog/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 25 Aug 2023 12:27:04 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/blog/windows%E4%B8%8A%E4%BD%BF%E7%94%A8sublime%E8%BF%9B%E8%A1%8Cunreal%E5%BC%80%E5%8F%91/</guid>
+      <description>便签 # Unreal Engine C++ Project Setup, From Scratch 说明 # - Cmder 终端模拟器 Sublime 虚幻引擎5.1版本说明: 依赖.NET 6.0 概览 # 从零创建Unreal项目 在命令行编译和运行项目, 封装在脚本中 创建Actor派生类 查看引擎代码 Cmder # 显示/隐藏窗口: C-` 在文件资源管理器打开Cmder当前路径 cd /d C:\Dirk explorer . Sublime # 使用以下插件 - Project Manager Switch File Deluxe 在源文件和头文件之间切换; Windows Alt-O ; macOS Option-Command-UP Unreal Snippets UP主提供 从零创建Unreal项目 # 创建项目文件夹Dirk 创建项目 # Sublime &amp;gt; 命令行 &amp;gt; Project Manager: Add New Project 命名为Dirk 添加文件夹 # Sublime &amp;gt; 命令行 &amp;gt; Project: Add Folder 选择Dirk 创建Unreal项目文件 # Dirk/Dirk.</description>
     </item>
     
   </channel>

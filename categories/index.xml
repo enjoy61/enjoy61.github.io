@@ -2,25 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>https://enjoy61.com/categories/</link>
+    <link>https://enjoy61.github.io/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Nov 2023 11:37:40 +0000</lastBuildDate><atom:link href="https://enjoy61.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hacking</title>
-      <link>https://enjoy61.com/categories/hacking/</link>
+      <link>https://enjoy61.github.io/categories/hacking/</link>
       <pubDate>Sat, 11 Nov 2023 11:37:40 +0000</pubDate>
       
-      <guid>https://enjoy61.com/categories/hacking/</guid>
+      <guid>https://enjoy61.github.io/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Game</title>
+      <link>https://enjoy61.github.io/categories/game/</link>
+      <pubDate>Fri, 27 Oct 2023 17:21:30 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/categories/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>小车车</title>
+      <link>https://enjoy61.github.io/categories/%E5%B0%8F%E8%BD%A6%E8%BD%A6/</link>
+      <pubDate>Thu, 14 Sep 2023 14:26:10 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/categories/%E5%B0%8F%E8%BD%A6%E8%BD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer</title>
+      <link>https://enjoy61.github.io/categories/computer/</link>
+      <pubDate>Tue, 05 Sep 2023 17:25:50 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/categories/computer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://enjoy61.github.io/categories/programming/</link>
+      <pubDate>Fri, 25 Aug 2023 12:27:04 +0000</pubDate>
+      
+      <guid>https://enjoy61.github.io/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MovieScreenshot</title>
-      <link>https://enjoy61.com/categories/moviescreenshot/</link>
+      <link>https://enjoy61.github.io/categories/moviescreenshot/</link>
       <pubDate>Thu, 03 Aug 2023 23:06:31 +0000</pubDate>
       
-      <guid>https://enjoy61.com/categories/moviescreenshot/</guid>
+      <guid>https://enjoy61.github.io/categories/moviescreenshot/</guid>
       <description></description>
     </item>
     
