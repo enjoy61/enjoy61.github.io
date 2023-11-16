@@ -16,12 +16,12 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <title>Hugo Theme - 表格使用CSS样式 - 六一的部落格</title>
-<meta name="description" content="说明 # 已将主题名称由 tass 改为 tess CSS，SCSS和Sass之间的区别 # CSS Cascading Style Sheets 层叠样式表 Sass Syntactically Awesome StyleSheets 和html一样有严格的缩进风格, 和CSS相比, 不使用花括号和分号, 喜欢这一点的不多 Sass是一款强化CSS的辅助工具, 对CSS进行了扩展 #sidebar width: 30% background-color: #faa SCSS Sassy CSS 语法完全兼容CSS3, 并继承了Sass的强大功能 使用分号和花括号, 而不是换行和缩进 可以直接把 .css 文件后缀改为 .scss #sidebar { width: 30%; background-color: #faa; } 支持使用/*和*/进行多行注释, 使用 // 进行单行注释 获取资源方法 # 按理说, 主题相关内容, 应该存放在 themes/tess 文件夹中. 但 resource.Resource 只能获取 assets 目录下资源. 暂时将样式文件存放在 assets 目录下 另外, content 和 static 目录下文件可以通过 /文件名 路径获取 resource.">
+<meta name="description" content="说明 # 已将主题名称由 tass 改为 tess CSS，SCSS和Sass之间的区别 # CSS Cascading Style Sheets 层叠样式表 Sass Syntactically Awesome StyleSheets 和html一样有严格的缩进风格, 和CSS相比, 不使用花括号和分号, 喜欢这一点的不多 Sass是一款强化CSS的辅助工具, 对CSS进行了扩展 #sidebar width: 30% background-color: #faa SCSS Sassy CSS 语法完全兼容CSS3, 并继承了Sass的强大功能 使用分号和花括号, 而不是换行和缩进 可以直接把 .css 文件后缀改为 .scss #sidebar { width: 30%; background-color: #faa; } 支持使用多行注释, 使用 // 进行单行注释 获取资源方法 # 按理说, 主题相关内容, 应该存放在 themes/tess 文件夹中. 但 resource.Resource 只能获取 assets 目录下资源. 暂时将样式文件存放在 assets 目录下 另外, content 和 static 目录下文件可以通过 /文件名 路径获取 resource.">
   <link rel="canonical" href="https://enjoy61.github.io/docs/build-blog/hugo-theme-%E8%A1%A8%E6%A0%BC%E4%BD%BF%E7%94%A8css%E6%A0%B7%E5%BC%8F/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hugo Theme - 表格使用CSS样式">
-<meta property="og:description" content="说明 # 已将主题名称由 tass 改为 tess CSS，SCSS和Sass之间的区别 # CSS Cascading Style Sheets 层叠样式表 Sass Syntactically Awesome StyleSheets 和html一样有严格的缩进风格, 和CSS相比, 不使用花括号和分号, 喜欢这一点的不多 Sass是一款强化CSS的辅助工具, 对CSS进行了扩展 #sidebar width: 30% background-color: #faa SCSS Sassy CSS 语法完全兼容CSS3, 并继承了Sass的强大功能 使用分号和花括号, 而不是换行和缩进 可以直接把 .css 文件后缀改为 .scss #sidebar { width: 30%; background-color: #faa; } 支持使用/*和*/进行多行注释, 使用 // 进行单行注释 获取资源方法 # 按理说, 主题相关内容, 应该存放在 themes/tess 文件夹中. 但 resource.Resource 只能获取 assets 目录下资源. 暂时将样式文件存放在 assets 目录下 另外, content 和 static 目录下文件可以通过 /文件名 路径获取 resource.">
+<meta property="og:description" content="说明 # 已将主题名称由 tass 改为 tess CSS，SCSS和Sass之间的区别 # CSS Cascading Style Sheets 层叠样式表 Sass Syntactically Awesome StyleSheets 和html一样有严格的缩进风格, 和CSS相比, 不使用花括号和分号, 喜欢这一点的不多 Sass是一款强化CSS的辅助工具, 对CSS进行了扩展 #sidebar width: 30% background-color: #faa SCSS Sassy CSS 语法完全兼容CSS3, 并继承了Sass的强大功能 使用分号和花括号, 而不是换行和缩进 可以直接把 .css 文件后缀改为 .scss #sidebar { width: 30%; background-color: #faa; } 支持使用多行注释, 使用 // 进行单行注释 获取资源方法 # 按理说, 主题相关内容, 应该存放在 themes/tess 文件夹中. 但 resource.Resource 只能获取 assets 目录下资源. 暂时将样式文件存放在 assets 目录下 另外, content 和 static 目录下文件可以通过 /文件名 路径获取 resource.">
 <meta property="og:url" content="https://enjoy61.github.io/docs/build-blog/hugo-theme-%E8%A1%A8%E6%A0%BC%E4%BD%BF%E7%94%A8css%E6%A0%B7%E5%BC%8F/">
 <meta property="og:site_name" content="六一的部落格">
 <meta property="article:published_time" content="2023-11-16T19:35:22+00:00">
@@ -5941,7 +5941,7 @@
     background-color: #faa;
 }
 </code></pre>
-<p>支持使用<code>/*</code>和<code>*/</code>进行多行注释, 使用 <code>//</code> 进行单行注释 <br/></p>
+<p>支持使用多行注释, 使用 <code>//</code> 进行单行注释 <br/></p>
 </li>
 </ol>
 <h2 id="获取资源方法">获取资源方法 <a href="#%e8%8e%b7%e5%8f%96%e8%b5%84%e6%ba%90%e6%96%b9%e6%b3%95" class="anchor" aria-hidden="true">#</a></h2>
@@ -6106,7 +6106,7 @@ th {
   <script src="/js/highlight.min.f93a6965b35b6dd05aaa956905e2c7764177bf383af322a4689cbfc77a0e4d2123d940c05fa65455932a26bd966c0b9d2699db56e3b85eb753a1928eee863d0a.js" integrity="sha512-&#43;TppZbNbbdBaqpVpBeLHdkF3vzg68yKkaJy/x3oOTSEj2UDAX6ZUVZMqJr2WbAudJpnbVuO4XrdToZKO7oY9Cg==" crossorigin="anonymous" defer></script>
   <script src="/js/toc.min.cb76ea534db8ab3502ba69d1c11ca7a7f6cd907f23b409098768755a91ac7c4305d4450dfdecd0ea46f66cd0bec1d0654bb5af6ba3e1802629c21e9643e6f09b.js" integrity="sha512-y3bqU024qzUCumnRwRynp/bNkH8jtAkJh2h1WpGsfEMF1EUN/ezQ6kb2bNC&#43;wdBlS7Wva6PhgCYpwh6WQ&#43;bwmw==" crossorigin="anonymous" defer></script>
   <script src="/main.min.cb2e2ebbf2e4002f3117addc33582923b2b3ae5265c22944cd117ebec7abe61c170417c4506d7a0f8f0fc9053dfdf441421d53601ac467042ff3d06ec0ba07fa.js" integrity="sha512-yy4uu/LkAC8xF63cM1gpI7KzrlJlwilEzRF&#43;vser5hwXBBfEUG16D48PyQU9/fRBQh1TYBrEZwQv89BuwLoH&#43;g==" crossorigin="anonymous" defer></script>
-  <script src="https://enjoy61.github.io/js/index.js" integrity="" crossorigin="anonymous" defer></script>
+  <script src="https://enjoy61.github.io/index.min.2b9698bde3b2c014e3e3674bc74960ffa48e9fb9c95df18c53c04ccef3a52445ef123a0e9c60866047b255d26060de46f84df9abf85731314273eee5d20b176e.js" integrity="sha512-K5aYveOywBTj42dLx0lg/6SOn7nJXfGMU8BMzvOlJEXvEjoOnGCGYEeyVdJgYN5G&#43;E35q/hXMTFCc&#43;7l0gsXbg==" crossorigin="anonymous" defer></script>
   
     
   </body>
